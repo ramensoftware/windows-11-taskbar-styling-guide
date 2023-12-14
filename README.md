@@ -1,33 +1,11 @@
 # The Windows 11 taskbar styling guide
 
-This is a collection of commonly requested taskbar styling customizations for
-Windows 11. It is intended to be used with the [Windows 11 Taskbar
-Styler](https://windhawk.net/mods/windows-11-taskbar-styler) Windhawk mod.
-
-If you're not familiar with Windhawk, here are the steps for installing the mod:
-
-* Download Windhawk from [windhawk.net](https://windhawk.net/) and install it.
-* Go to "Mods" in the upper right menu.
-* Find and install the "Windows 11 Taskbar Styler" mod.
-
-After installing the mod, open its Settings tab and adjust the styles according
-to your preferences.
-
-Some customizations are best to be adjusted with other Windhawk mods. Links to
-those mods are provided where applicable.
-
-### Missing customizations
-
-If you're looking for a customization that is not listed here, please [open an
-issue](https://github.com/ramensoftware/windows-11-taskbar-styling-guide/issues/new).
-
-### Contributing
-
-If you have a taskbar styling customization that you would like to share, please
-submit a pull request.
-
 ## Table of contents
 
+* [Introduction](#introduction)
+  * [Missing customizations](#missing-customizations)
+  * [Contributing](#contributing)
+* [Themes](#themes)
 * [General](#general)
   * [Taskbar size](#taskbar-size)
   * [Taskbar background color](#taskbar-background-color)
@@ -51,6 +29,41 @@ submit a pull request.
   * [Clock](#clock)
   * [Hide the notification bell icon](#hide-the-notification-bell-icon)
   * [Hide the "Show Desktop" button](#hide-the-show-desktop-button)
+
+## Introduction
+
+This is a collection of commonly requested taskbar styling customizations for
+Windows 11. It is intended to be used with the [Windows 11 Taskbar
+Styler](https://windhawk.net/mods/windows-11-taskbar-styler) Windhawk mod.
+
+If you're not familiar with Windhawk, here are the steps for installing the mod:
+
+* Download Windhawk from [windhawk.net](https://windhawk.net/) and install it.
+* Go to "Mods" in the upper right menu.
+* Find and install the "Windows 11 Taskbar Styler" mod.
+
+After installing the mod, open its Settings tab and adjust the styles according
+to your preferences.
+
+Some customizations are best to be adjusted with other Windhawk mods. Links to
+those mods are provided where applicable.
+
+### Missing customizations
+
+If you're looking for a customization that is not listed here, please [open an
+issue](https://github.com/ramensoftware/windows-11-taskbar-styling-guide/issues/new).
+
+### Contributing
+
+If you have a taskbar styling customization or theme that you would like to
+share, please submit a pull request.
+
+## Themes
+
+Themes are collections of styles that can be imported into the Windows 11
+Taskbar Styler mod. The following themes are available:
+
+* [WinXP](Themes/WinXP/README.md)
 
 ## General
 
