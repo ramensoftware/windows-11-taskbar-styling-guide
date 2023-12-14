@@ -32,6 +32,7 @@ submit a pull request.
   * [Taskbar size](#taskbar-size)
   * [Taskbar background color](#taskbar-background-color)
 * [Task list](#task-list)
+  * [Start button image](#start-button-image)
   * [Hide the start button](#hide-the-start-button)
   * [Task list buttons size](#task-list-buttons-size)
   * [Task list buttons corner radius](#task-list-buttons-corner-radius)
@@ -81,6 +82,28 @@ Fill:=<LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5"><GradientStop Col
 ```
 
 ## Task list
+
+### Start button image
+
+Target:
+```
+taskbar:ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > taskbar:TaskListButtonPanel > Border#BackgroundElement
+```
+Style:
+```
+Background:=<ImageBrush Stretch="None" ImageSource="<image>" />
+```
+Target:
+```
+taskbar:ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > taskbar:TaskListButtonPanel > muxc:AnimatedVisualPlayer#Icon
+```
+Style:
+```
+Visibility=Collapsed
+```
+
+Replace `<image>` with your own image, a URL or a local file path (for example,
+`https://i.imgur.com/BvXJlkj.png`).
 
 ### Hide the start button
 
