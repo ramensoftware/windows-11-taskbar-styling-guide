@@ -8,7 +8,8 @@
 * [Themes](#themes)
 * [General](#general)
   * [Taskbar size](#taskbar-size)
-  * [Taskbar background color](#taskbar-background-color)
+  * [Taskbar background](#taskbar-background)
+  * [Taskbar border](#taskbar-border)
 * [Task list](#task-list)
   * [Start button image](#start-button-image)
   * [Hide the start button](#hide-the-start-button)
@@ -71,13 +72,14 @@ Taskbar Styler mod. The following themes are available:
 
 Use the [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size) mod.
 
-### Taskbar background color
+### Taskbar background
 
 Target:
 ```
 Rectangle#BackgroundFill
 ```
-Style:
+
+To set a solid color background, use the following style:
 ```
 Fill=<color>
 ```
@@ -93,6 +95,23 @@ yellow to red to blue to lime green, use the following style:
 ```
 Fill:=<LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5"><GradientStop Color="Yellow" Offset="0.0" /><GradientStop Color="Red" Offset="0.25" /><GradientStop Color="Blue" Offset="0.75" /><GradientStop Color="LimeGreen" Offset="1.0" /></LinearGradientBrush>
 ```
+
+The background can also be an image:
+```
+Fill:=<ImageBrush Stretch="UniformToFill" ImageSource="<image>" />
+```
+
+Replace `<image>` with your own image, a URL or a local file path.
+
+### Taskbar border
+
+Target:
+```
+Rectangle#BackgroundStroke
+```
+
+It can be customized in the same way as the background, see [Taskbar
+background](#taskbar-background).
 
 ## Task list
 
