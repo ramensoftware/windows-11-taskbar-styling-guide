@@ -49,6 +49,9 @@ to your preferences.
 Some customizations are best to be adjusted with other Windhawk mods. Links to
 those mods are provided where applicable.
 
+**See also**: [The Windows 11 start menu styling
+guide](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/blob/main/README.md).
+
 ### Missing customizations
 
 If you're looking for a customization that is not listed here, please [open an
