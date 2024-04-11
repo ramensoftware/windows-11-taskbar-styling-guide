@@ -67,7 +67,9 @@ share, please submit a pull request.
 Themes are collections of styles that can be imported into the Windows 11
 Taskbar Styler mod. The following themes are available:
 
-* [WinXP](Themes/WinXP/README.md)
+| Link  | Screenshot
+| ----- | ----------
+| [WinXP](Themes/WinXP/README.md)  | <img src="Themes/WinXP/screenshot.png" alt="WinXP" height="200" />
 
 ## General
 
