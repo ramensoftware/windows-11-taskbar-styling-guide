@@ -69,7 +69,7 @@ Taskbar Styler mod. The following themes are available:
 
 | Link  | Screenshot
 | ----- | ----------
-| [WinXP](Themes/WinXP/README.md)  | <img src="Themes/WinXP/screenshot.png" alt="WinXP" height="200" />
+| [WinXP](Themes/WinXP/README.md) | [![WinXP](Themes/WinXP/screenshot-small.png)](Themes/WinXP/screenshot.png)
 
 ## General
 
