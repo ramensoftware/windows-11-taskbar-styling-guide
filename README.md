@@ -75,7 +75,8 @@ Taskbar Styler mod. The following themes are available:
 
 ### Taskbar size
 
-Use the [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size) mod.
+Use the [Taskbar height and icon
+size](https://windhawk.net/mods/taskbar-icon-size) mod.
 
 ### Taskbar background
 
@@ -93,7 +94,8 @@ Replace `<color>` with the desired color.
 
 A color can be a name (e.g. `Red`) or a hex code (e.g. `#FF0000`).
 
-The color can be semi-transparent (e.g. `#80FF0000`). To have a fully transparent background, use `Transparent`.
+The color can be semi-transparent (e.g. `#80FF0000`). To have a fully
+transparent background, use `Transparent`.
 
 The background can also be a gradient. For example, to have a gradient from
 yellow to red to blue to lime green, use the following style:
@@ -155,7 +157,8 @@ Visibility=Collapsed
 
 ### Task list buttons size
 
-Use the [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size) mod.
+Use the [Taskbar height and icon
+size](https://windhawk.net/mods/taskbar-icon-size) mod.
 
 ### Task list buttons corner radius
 
@@ -174,7 +177,8 @@ Style:
 CornerRadius=<radius>
 ```
 
-Replace `<radius>` with the desired radius. A larger value will make the corners more rounded. Default: 4.
+Replace `<radius>` with the desired radius. A larger value will make the corners
+more rounded. Default: 4.
 
 ### Task list labels
 
@@ -272,7 +276,8 @@ Style:
 MinWidth=<width>
 ```
 
-Replace `<width>` with the desired width for the icon and the spacing. Default: 32.
+Replace `<width>` with the desired width for the icon and the spacing. Default:
+32.
 
 ### Tray icons padding
 
@@ -285,7 +290,8 @@ Style:
 Padding=<padding>
 ```
 
-To reduce the spacing even more, replace `<padding>` with the desired padding. Default: `4,0`.
+To reduce the spacing even more, replace `<padding>` with the desired padding.
+Default: `4,0`.
 
 ### Tray icons padding (system icons)
 
@@ -337,7 +343,8 @@ Replace `<width>` with the desired width. Default: 32.
 
 ### Clock
 
-Clock customizations are available in the [Taskbar Clock Customization](https://windhawk.net/mods/taskbar-clock-customization) mod.
+Clock customizations are available in the [Taskbar Clock
+Customization](https://windhawk.net/mods/taskbar-clock-customization) mod.
 
 ### Hide the notification bell icon
 
