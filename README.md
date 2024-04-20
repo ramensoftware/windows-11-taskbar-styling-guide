@@ -126,7 +126,7 @@ background](#taskbar-background).
 
 Target:
 ```
-taskbar:ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > taskbar:TaskListButtonPanel > Border#BackgroundElement
+Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
 ```
 Style:
 ```
@@ -134,7 +134,7 @@ Background:=<ImageBrush Stretch="None" ImageSource="<image>" />
 ```
 Target:
 ```
-taskbar:ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > taskbar:TaskListButtonPanel > muxc:AnimatedVisualPlayer#Icon
+Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer.AnimatedVisualPlayer#Icon
 ```
 Style:
 ```
@@ -148,7 +148,7 @@ Replace `<image>` with your own image, a URL or a local file path (for example,
 
 Target:
 ```
-taskbar:ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
+Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
 ```
 Style:
 ```
@@ -164,13 +164,13 @@ size](https://windhawk.net/mods/taskbar-icon-size) mod.
 
 Targets:
 ```
-taskbar:ExperienceToggleButton
+Taskbar.ExperienceToggleButton
 ```
 ```
-taskbar:SearchBoxButton
+Taskbar.SearchBoxButton
 ```
 ```
-taskbar:TaskListButton
+Taskbar.TaskListButton
 ```
 Style:
 ```
@@ -204,7 +204,7 @@ https://learn.microsoft.com/en-us/typography/fonts/windows_11_font_list).
 
 Target:
 ```
-taskbar:TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
 ```
 
 Various styles can be applied to the running indicator. Here are some examples:
@@ -240,7 +240,7 @@ Labels for Windows 11](https://windhawk.net/mods/taskbar-labels) mod.
 
 Target:
 ```
-systemtray:ImageIconContent > Grid#ContainerGrid > Image
+SystemTray.ImageIconContent > Grid#ContainerGrid > Image
 ```
 Styles: 
 ```
@@ -256,7 +256,7 @@ Replace `<size>` with the desired size. Default: 16.
 
 Target:
 ```
-systemtray:TextIconContent > Grid#ContainerGrid > systemtray:AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
 ```
 Style:
 ```
@@ -269,7 +269,7 @@ Replace `<size>` with the desired size. Default: 32.
 
 Target:
 ```
-systemtray:NotifyIconView#NotifyItemIcon
+SystemTray.NotifyIconView#NotifyItemIcon
 ```
 Style:
 ```
@@ -283,7 +283,7 @@ Replace `<width>` with the desired width for the icon and the spacing. Default:
 
 Target:
 ```
-systemtray:ImageIconContent > Grid#ContainerGrid
+SystemTray.ImageIconContent > Grid#ContainerGrid
 ```
 Style:
 ```
@@ -297,7 +297,7 @@ Default: `4,0`.
 
 Target:
 ```
-systemtray:TextIconContent > Grid#ContainerGrid
+SystemTray.TextIconContent > Grid#ContainerGrid
 ```
 Style:
 ```
@@ -310,7 +310,7 @@ Replace `<padding>` with the desired padding. Default: `4,0`.
 
 Target:
 ```
-systemtray:OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > systemtray:IconView > Grid > Grid
+SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
 ```
 Style:
 ```
@@ -321,7 +321,7 @@ Visibility=Collapsed
 
 Target:
 ```
-systemtray:OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[2] > systemtray:IconView > Grid > Grid
+SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[2] > SystemTray.IconView > Grid > Grid
 ```
 Style:
 ```
@@ -332,7 +332,7 @@ Visibility=Collapsed
 
 Target:
 ```
-systemtray:ChevronIconView
+SystemTray.ChevronIconView
 ```
 Style:
 ```
@@ -350,7 +350,7 @@ Customization](https://windhawk.net/mods/taskbar-clock-customization) mod.
 
 Target:
 ```
-systemtray:OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid > Grid > systemtray:TextIconContent
+SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent
 ```
 Style:
 ```
@@ -361,7 +361,7 @@ Visibility=Collapsed
 
 Target:
 ```
-systemtray:Stack#ShowDesktopStack
+SystemTray.Stack#ShowDesktopStack
 ```
 Style:
 ```
