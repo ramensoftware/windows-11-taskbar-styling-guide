@@ -1,0 +1,69 @@
+# Bubbles theme for Windows 11 Taskbar Styler
+
+This theme was created as a showcase in response to [this question on
+Reddit](https://www.reddit.com/r/windows/comments/1c7522o/anyone_know_if_this_taskbar_is_possible_to_get_on/).
+
+![Screenshot](screenshot.png)
+
+## Installation
+
+The easiest way to install this theme is to import its mod settings. To do that,
+follow these steps:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Advanced" tab.
+* Copy the content below to the text box under "Mod settings" and click "Save".
+
+<details>
+<summary>Content to import (click to expand)</summary>
+
+```json
+{
+  "controlStyles[0].target": "Rectangle#BackgroundFill",
+  "controlStyles[0].styles[0]": "Fill=#EE080810",
+  "controlStyles[1].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement",
+  "controlStyles[1].styles[0]": "Background=#303030",
+  "controlStyles[1].styles[1]": "CornerRadius=20",
+  "controlStyles[1].styles[2]": "Background@NoRunningIndicator=#40303030",
+  "controlStyles[2].target": "Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement",
+  "controlStyles[2].styles[0]": "Background=#303030",
+  "controlStyles[2].styles[1]": "CornerRadius=20",
+  "controlStyles[2].styles[2]": "Background@ActivePointerOver=#202020",
+  "controlStyles[2].styles[3]": "Background@InactivePointerOver=#202020",
+  "controlStyles[2].styles[4]": "Background@ActivePressed=#101010",
+  "controlStyles[2].styles[5]": "Background@InactivePressed=#101010",
+  "controlStyles[3].target": "Grid#SystemTrayFrameGrid",
+  "controlStyles[3].styles[0]": "Background=#303030",
+  "controlStyles[3].styles[1]": "CornerRadius=20",
+  "controlStyles[3].styles[2]": "Margin=0,5,4,5",
+  "controlStyles[3].styles[3]": "Padding=10,0,0,0",
+  "controlStyles[4].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator",
+  "controlStyles[4].styles[0]": "Width=40",
+  "controlStyles[4].styles[1]": "Height=40",
+  "controlStyles[4].styles[10]": "Stroke@InactivePointerOver=#75A8E6",
+  "controlStyles[4].styles[11]": "Stroke@InactivePressed=#7CB1F2",
+  "controlStyles[4].styles[2]": "Stroke@ActiveNormal=#5F87B9",
+  "controlStyles[4].styles[3]": "Stroke@ActivePointerOver=#75A8E6",
+  "controlStyles[4].styles[4]": "Stroke@ActivePressed=#7CB1F2",
+  "controlStyles[4].styles[5]": "Fill=Transparent",
+  "controlStyles[4].styles[6]": "RadiusX=20",
+  "controlStyles[4].styles[7]": "RadiusY=20",
+  "controlStyles[4].styles[8]": "StrokeThickness=3",
+  "controlStyles[4].styles[9]": "Margin=0",
+  "controlStyles[5].target": "TextBlock#TimeInnerTextBlock",
+  "controlStyles[5].styles[0]": "Foreground=White",
+  "controlStyles[6].target": "TextBlock#DateInnerTextBlock",
+  "controlStyles[6].styles[0]": "Foreground=White",
+  "controlStyles[7].target": "SystemTray.TextIconContent > Grid > SystemTray.AdaptiveTextBlock#Base > TextBlock",
+  "controlStyles[7].styles[0]": "Foreground=White",
+  "controlStyles[8].target": "Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl",
+  "controlStyles[8].styles[0]": "Margin=4,0,0,0",
+  "controlStyles[8].styles[1]": "Foreground=White",
+  "controlStyles[9].target": "Taskbar.SearchBoxButton",
+  "controlStyles[9].styles[0]": "Height=56",
+  "controlStyles[9].styles[1]": "Margin=0,-4,0,0",
+  "controlStyles[10].target": "TextBlock#SearchBoxTextBlock",
+  "controlStyles[10].styles[0]": "Foreground=White"
+}
+```
+</details>
