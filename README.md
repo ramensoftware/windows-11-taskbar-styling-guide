@@ -70,7 +70,7 @@ Taskbar Styler mod. The following themes are available:
 | Link  | Screenshot
 | ----- | ----------
 | [WinXP](Themes/WinXP/README.md) | [![WinXP](Themes/WinXP/screenshot-small.png)](Themes/WinXP/screenshot.png)
-| [Bubbles](Themes/Bubbles/README.md) | [![Bubbles](Themes/Bubbles/screenshot-small.png)](Themes/Bubbles/screenshot.png)
+| [Bubbles](Themes/Bubbles/README.md) | [![Bubbles](Themes/Bubbles/screenshot.png)](Themes/Bubbles/screenshot.png)
 
 ## General
 
