@@ -135,15 +135,16 @@ Background:=<ImageBrush Stretch="None" ImageSource="<image>" />
 ```
 Target:
 ```
-Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer.AnimatedVisualPlayer#Icon
+Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
 ```
 Style:
 ```
 Visibility=Collapsed
 ```
 
-Replace `<image>` with your own image, a URL or a local file path (for example,
-`https://i.imgur.com/BvXJlkj.png`).
+Replace `<image>` with your own image, a local file path or a URL, for example:
+* Windows 10: `https://i.imgur.com/lEvZStx.png`.
+* Windows XP: `https://i.imgur.com/BvXJlkj.png`.
 
 ### Hide the start button
 
