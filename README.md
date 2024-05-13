@@ -131,7 +131,7 @@ Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationI
 ```
 Style:
 ```
-Background:=<ImageBrush Stretch="None" ImageSource="<image>" />
+Background:=<ImageBrush Stretch="Uniform" ImageSource="<image>" />
 ```
 Target:
 ```
@@ -144,7 +144,7 @@ Visibility=Collapsed
 
 Replace `<image>` with your own image, a local file path or a URL, for example:
 * Windows 10: `https://i.imgur.com/lEvZStx.png`.
-* Windows XP: `https://i.imgur.com/BvXJlkj.png`.
+* Windows XP: `https://i.imgur.com/RX5DqT3.png` (use with `Stretch="None"`).
 
 ### Hide the start button
 
