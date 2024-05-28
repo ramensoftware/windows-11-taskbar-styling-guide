@@ -71,7 +71,7 @@ Taskbar Styler mod. The following themes are available:
 | ----- | ----------
 | [WinXP](Themes/WinXP/README.md) | [![WinXP](Themes/WinXP/screenshot-small.png)](Themes/WinXP/screenshot.png)
 | [Bubbles](Themes/Bubbles/README.md) | [![Bubbles](Themes/Bubbles/screenshot.png)](Themes/Bubbles/screenshot.png)
-| [TranslucentTaskbar](Themes/TranslucentTaskbar.README.md) | [![TranslucentTaskbar](Themes/TranslucentTaskbar/screenshot.png)](Themes/TranslucentTaskbar/screenshot.png)
+| [TranslucentTaskbar](Themes/TranslucentTaskbar/README.md) | [![TranslucentTaskbar](Themes/TranslucentTaskbar/screenshot.png)](Themes/TranslucentTaskbar/screenshot.png)
 
 ## General
 
