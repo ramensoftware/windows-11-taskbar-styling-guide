@@ -32,7 +32,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[2].styles[0]": "Background:=<AcrylicBrush TintColor=\"Transparent\" TintOpacity=\"0\" TintLuminosityOpacity=\"0\" Opacity=\"1\"/>",
   "controlStyles[2].styles[1]": "BorderThickness=0,0,0,0",
   "controlStyles[2].styles[2]": "CornerRadius=14",
-  "controlStyles[2].styles[3]": "Padding=,3,4,3,4",
+  "controlStyles[2].styles[3]": "Padding=3,4,3,4",
   "controlStyles[3].target": "Border#OverflowFlyoutBackgroundBorder",
   "controlStyles[3].styles[0]": "Background:=<AcrylicBrush TintColor=\"Transparent\" TintOpacity=\"0\" TintLuminosityOpacity=\"0\" Opacity=\"1\"/>",
   "controlStyles[3].styles[1]": "BorderThickness=0,0,0,0",
