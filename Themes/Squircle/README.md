@@ -1,6 +1,9 @@
 # Squircle theme for Windows 11 Taskbar Styler
 
-This theme was originally [shared on reddit](https://www.reddit.com/r/desktops/comments/1dna90y/comment/la4vxw1/).
+**Author**: [AsvnDG](https://github.com/AsvnDG)
+
+This theme was originally [shared on
+Reddit](https://www.reddit.com/r/desktops/comments/1dna90y/comment/la4vxw1/).
 
 ![Screenshot](screenshot.png)
 
@@ -26,7 +29,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-  "theme": "",
   "controlStyles[0].target": "Rectangle#BackgroundFill",
   "controlStyles[0].styles[0]": "Fill=Transparent",
   "controlStyles[1].target": "Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement@RunningIndicatorStates",
@@ -62,38 +64,31 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[6].target": "Taskbar.SearchBoxButton",
   "controlStyles[6].styles[0]": "Margin=0,-4,0,-4",
   "controlStyles[7].target": "TextBlock#SearchBoxTextBlock",
+  "controlStyles[7].styles[0]": "FontSize=12.5",
   "controlStyles[8].target": "Rectangle#BackgroundStroke",
   "controlStyles[8].styles[0]": "Visibility=Collapsed",
-  "controlStyles[9].target": "SystemTray.Stack#ShowDesktopStack",
-  "controlStyles[7].styles[0]": "FontSize=12.5",
-  "controlStyles[9].styles[0]": "//Visibility=Collapsed",
-  "controlStyles[10].target": "Grid",
-  "controlStyles[10].styles[0]": "RequestedTheme=2",
-  "controlStyles[11].target": "Windows.UI.Xaml.Controls.Grid#DynamicSearchBoxGleamContainer",
-  "controlStyles[11].styles[0]": "Margin=6",
-  "controlStyles[12].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement",
-  "controlStyles[12].styles[0]": "Background:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.4\" />",
-  "controlStyles[13].target": "Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement",
-  "controlStyles[13].styles[0]": "Background:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.6\" />",
-  "controlStyles[14].target": "Border#BackgroundBorder",
-  "controlStyles[14].styles[0]": "Margin=0,3,0,3",
-  "controlStyles[14].styles[1]": "CornerRadius=5",
-  "controlStyles[15].target": "//Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe",
-  "controlStyles[15].styles[0]": "Height=40",
-  "controlStyles[15].styles[1]": "Width=8",
-  "controlStyles[15].styles[2]": "Fill:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.5\" />",
-  "controlStyles[15].styles[3]": "Margin=2,0,0,0",
-  "controlStyles[16].target": "Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Border#BackgroundElement",
-  "controlStyles[16].styles[0]": "Background:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.6\" />",
-  "controlStyles[16].styles[1]": "Background@InactivePointerOver:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.7\" />",
-  "controlStyles[16].styles[2]": "Background@ActivePointerOver:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.7\" />",
-  "controlStyles[17].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton",
-  "controlStyles[17].styles[0]": "Margin=0,0,-6,-0.5",
-  "controlStyles[18].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates",
-  "controlStyles[18].styles[0]": "Background@InactivePointerOver:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0\" />",
-  "controlStyles[18].styles[1]": "Background:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.4\" />",
-  "controlStyles[19].target": "Border#MultiWindowElement",
-  "controlStyles[19].styles[0]": "Background:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.6\" />"
+  "controlStyles[9].target": "Grid",
+  "controlStyles[9].styles[0]": "RequestedTheme=2",
+  "controlStyles[10].target": "Windows.UI.Xaml.Controls.Grid#DynamicSearchBoxGleamContainer",
+  "controlStyles[10].styles[0]": "Margin=6",
+  "controlStyles[11].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement",
+  "controlStyles[11].styles[0]": "Background:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.4\" />",
+  "controlStyles[12].target": "Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement",
+  "controlStyles[12].styles[0]": "Background:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.6\" />",
+  "controlStyles[13].target": "Border#BackgroundBorder",
+  "controlStyles[13].styles[0]": "Margin=0,3,0,3",
+  "controlStyles[13].styles[1]": "CornerRadius=5",
+  "controlStyles[14].target": "Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Border#BackgroundElement",
+  "controlStyles[14].styles[0]": "Background:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.6\" />",
+  "controlStyles[14].styles[1]": "Background@InactivePointerOver:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.7\" />",
+  "controlStyles[14].styles[2]": "Background@ActivePointerOver:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.7\" />",
+  "controlStyles[15].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton",
+  "controlStyles[15].styles[0]": "Margin=0,0,-6,-0.5",
+  "controlStyles[16].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates",
+  "controlStyles[16].styles[0]": "Background@InactivePointerOver:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0\" />",
+  "controlStyles[16].styles[1]": "Background:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.4\" />",
+  "controlStyles[17].target": "Border#MultiWindowElement",
+  "controlStyles[17].styles[0]": "Background:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.6\" />"
 }
 ```
 </details>
