@@ -1,5 +1,7 @@
 # TranslucentTaskbar theme for Windows 11 Taskbar Styler
 
+**Author**: [Undisputed00x](https://github.com/Undisputed00x)
+
 ![Screenshot](screenshot.png)
 
 ## Theme selection
