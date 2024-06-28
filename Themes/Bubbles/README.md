@@ -10,7 +10,7 @@ Reddit](https://www.reddit.com/r/windows/comments/1c7522o/anyone_know_if_this_ta
 The theme is integrated into the mod, and can be simply selected from the mod's
 settings:
 
-* Open the Windows 11 Start Menu Styler mod in Windhawk.
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
 * Select the theme and save the settings.
 
