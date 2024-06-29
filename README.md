@@ -12,6 +12,7 @@
   * [Taskbar border](#taskbar-border)
 * [Task list](#task-list)
   * [Start button image](#start-button-image)
+  * [Copilot button image](#copilot-button-image)
   * [Hide the start button](#hide-the-start-button)
   * [Task list buttons size](#task-list-buttons-size)
   * [Task list buttons corner radius](#task-list-buttons-corner-radius)
@@ -149,6 +150,30 @@ Visibility=Collapsed
 Replace `<image>` with your own image, a local file path or a URL, for example:
 * Windows 10: `https://i.imgur.com/lEvZStx.png`.
 * Windows XP: `https://i.imgur.com/RX5DqT3.png` (use with `Stretch="None"`).
+
+
+### Copilot button image
+
+Target:
+```
+ContentPresenter#ContentPresenter > Grid#ContentGrid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#LottieIcon
+```
+Style:
+```
+Visibility=Collapsed
+```
+Target:
+```
+SystemTray.CopilotIcon#CopilotIcon > Grid#ContainerGrid > Border#BackgroundBorder
+```
+Style:
+```
+Background:=<ImageBrush Stretch="None" ImageSource="<image>" />
+```
+
+* Copilot icon without preview label: `https://i.imgur.com/lfwEWzI.png`.
+* Old Copilot icon: `https://i.imgur.com/Z6eCNH3.png`.
+
 
 ### Hide the start button
 
