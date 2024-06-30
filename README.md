@@ -29,6 +29,7 @@
   * [Chevron icon width](#chevron-icon-width)
   * [Clock](#clock)
   * [Hide the notification bell icon](#hide-the-notification-bell-icon)
+  * [Copilot button image](#copilot-button-image)
   * [Hide the "Show Desktop" button](#hide-the-show-desktop-button)
 
 ## Introduction
@@ -362,6 +363,28 @@ Style:
 ```
 Visibility=Collapsed
 ```
+
+### Copilot button image
+
+Target:
+```
+ContentPresenter#ContentPresenter > Grid#ContentGrid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#LottieIcon
+```
+Style:
+```
+Visibility=Collapsed
+```
+Target:
+```
+SystemTray.CopilotIcon#CopilotIcon > Grid#ContainerGrid > Border#BackgroundBorder
+```
+Style:
+```
+Background:=<ImageBrush Stretch="None" ImageSource="<image>" />
+```
+
+* Copilot icon without preview label: `https://i.imgur.com/lfwEWzI.png`.
+* Old Copilot icon: `https://i.imgur.com/Z6eCNH3.png`.
 
 ### Hide the "Show Desktop" button
 
