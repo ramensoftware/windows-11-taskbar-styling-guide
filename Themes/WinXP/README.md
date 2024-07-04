@@ -4,6 +4,8 @@ This theme was created as a showcase for the [Windows 11 Taskbar
 Styler](https://windhawk.net/mods/windows-11-taskbar-styler) mod, demonstrating
 various customizations that can be done with it.
 
+**Author**: [m417z](https://github.com/m417z)
+
 ![Screenshot](screenshot.png)
 
 ## Theme selection

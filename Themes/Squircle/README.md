@@ -1,9 +1,9 @@
 # Squircle theme for Windows 11 Taskbar Styler
 
-**Author**: [AsvnDG](https://github.com/AsvnDG)
-
 This theme was originally [shared on
 Reddit](https://www.reddit.com/r/desktops/comments/1dna90y/comment/la4vxw1/).
+
+**Author**: [AsvnDG](https://github.com/AsvnDG)
 
 ![Screenshot](screenshot.png) \
 ![Screenshot](screenshot-rw.png)

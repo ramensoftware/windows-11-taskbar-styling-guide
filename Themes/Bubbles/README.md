@@ -3,6 +3,8 @@
 This theme was created as a showcase in response to [this question on
 Reddit](https://www.reddit.com/r/windows/comments/1c7522o/anyone_know_if_this_taskbar_is_possible_to_get_on/).
 
+**Author**: [m417z](https://github.com/m417z)
+
 ![Screenshot](screenshot.png)
 
 ## Theme selection
