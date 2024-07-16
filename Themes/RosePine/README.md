@@ -12,6 +12,7 @@ Reddit](https://www.reddit.com/r/desktops/comments/1e0o08e/windows_11_rose_pine_
  
  - The theme is based off of [RosePine Theme](https://rosepinetheme.com/)
  - It removes the start button and the network icon. If you need these, add them using the [guide](https://github.com/ramensoftware/windows-11-taskbar-styling-guide)
+ - Font used is [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip)
 
 ## Theme selection
 
