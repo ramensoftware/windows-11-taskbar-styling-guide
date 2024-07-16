@@ -8,11 +8,19 @@ Reddit](https://www.reddit.com/r/desktops/comments/1e0o08e/windows_11_rose_pine_
 ![Screenshot](screenshot.png) 
 
 ## Notes
- - This theme is intended to be used with [these taskbar height settings](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20height%20and%20icon%20size), these [taskbar clock](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20Clock%20Customization) and these [Taskbar Labels settings](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20Labels%20for%20Windows%2011) 
- 
- - The theme is based off of [RosePine Theme](https://rosepinetheme.com/)
- - It removes the start button and the network icon. If you need these, add them using the [guide](https://github.com/ramensoftware/windows-11-taskbar-styling-guide)
- - Font used is [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip)
+
+* This theme is intended to be used with [these taskbar height
+  settings](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20height%20and%20icon%20size),
+  these [taskbar
+  clock](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20Clock%20Customization)
+  and these [Taskbar Labels
+  settings](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20Labels%20for%20Windows%2011).
+* The theme is based off of [RosePine Theme](https://rosepinetheme.com/).
+* It removes the start button and the network icon. If you need these, add them
+  using the
+  [guide](https://github.com/ramensoftware/windows-11-taskbar-styling-guide).
+* Font used is [JetBrainsMono Nerd
+  Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip).
 
 ## Theme selection
 
@@ -31,7 +39,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 * Go to the "Advanced" tab.
 * Copy the content below to the text box under "Mod settings" and click "Save".
 
-#### RosePine Theme:
 <details>
 <summary>Content to import (click to expand)</summary>
 
