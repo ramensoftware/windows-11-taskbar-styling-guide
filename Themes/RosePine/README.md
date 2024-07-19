@@ -94,7 +94,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[15].target": "Rectangle#BackgroundFill",
   "controlStyles[15].styles[0]": "Fill=Transparent",
   "controlStyles[16].target": "Rectangle#BackgroundStroke",
-  "controlStyles[16].styles[0]": "Fill=Transparent"
+  "controlStyles[16].styles[0]": "Fill=Transparent",
+  "controlStyles[17].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement",
+  "controlStyles[17].styles[0]": "Background=#302d47"
 }
 ```
 </details>
