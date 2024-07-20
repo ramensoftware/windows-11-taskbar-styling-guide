@@ -9,12 +9,16 @@ Reddit](https://www.reddit.com/r/desktops/comments/1e0o08e/windows_11_rose_pine_
 
 ## Notes
 
-* This theme is intended to be used with [these taskbar height
-  settings](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20height%20and%20icon%20size),
-  these [taskbar
-  clock](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20Clock%20Customization)
-  and these [Taskbar Labels
-  settings](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20Labels%20for%20Windows%2011).
+* This theme is intended to be used with the following mods and settings.
+  Install each mod, go to the "Advanced" tab, copy the settings to the text box
+  under "Mod settings" and click "Save".
+  * [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size):
+    [Settings](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20height%20and%20icon%20size).
+  * [Taskbar Clock
+    Customization](https://windhawk.net/mods/taskbar-clock-customization):
+    [Settings](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20Clock%20Customization).
+  * [Taskbar Labels for Windows 11](https://windhawk.net/mods/taskbar-labels):
+    [Settings](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20Labels%20for%20Windows%2011).
 * The theme is based off of [RosePine Theme](https://rosepinetheme.com/).
 * It removes the start button and the network icon. If you need these, add them
   using the
