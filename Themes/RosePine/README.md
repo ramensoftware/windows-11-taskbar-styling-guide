@@ -50,9 +50,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 {
   "theme": "",
   "controlStyles[0].target": "Taskbar.TaskListButton",
-  "controlStyles[0].styles[0]": "CornerRadius=3",
-  "resourceVariables[0].variableKey": "",
-  "resourceVariables[0].value": "",
+  "controlStyles[0].styles[0]": "CornerRadius=3", 
   "controlStyles[1].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
   "controlStyles[1].styles[0]": "FontSize=16",
   "controlStyles[2].target": "SystemTray.NotifyIconView#NotifyItemIcon",
@@ -75,8 +73,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[7].styles[1]": "CornerRadius=6",
   "controlStyles[9].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator",
   "controlStyles[9].styles[0]": "Height=27",
-  "controlStyles[9].styles[1]": "RadiusX=6",
-  "controlStyles[9].styles[2]": "RadiusY=6",
+  "controlStyles[9].styles[1]": "RadiusX=5",
+  "controlStyles[9].styles[2]": "RadiusY=5",
   "controlStyles[9].styles[3]": "StrokeThickness=2",
   "controlStyles[9].styles[4]": "Stroke@InactivePointerOver=#ebbcba",
   "controlStyles[9].styles[5]": "Stroke@InactivePressed=#ebbcba",
@@ -84,12 +82,15 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[9].styles[7]": "Stroke@ActivePointerOver=#ebbcba",
   "controlStyles[9].styles[8]": "Stroke@ActivePressed=#ebbcba",
   "controlStyles[9].styles[9]": "Fill=Transparent",
+  "controlStyles[9].styles[10]": "Width=36.5%",
+  "controlStyles[9].styles[11]": "VerticalAlignment=1",
   "controlStyles[10].target": "SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
   "controlStyles[10].styles[0]": "Width=13",
   "controlStyles[11].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
   "controlStyles[11].styles[0]": "FontSize=14",
   "controlStyles[12].target": "TextBlock#LabelControl",
   "controlStyles[12].styles[0]": "FontFamily=JetBrainsMono NF",
+  "controlStyles[12].styles[2]": "Padding=2,0,8,0",
   "controlStyles[13].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]",
   "controlStyles[13].styles[0]": "Visibility=Collapsed",
   "controlStyles[12].styles[1]": "Foreground=#e0def4",
@@ -100,7 +101,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[16].target": "Rectangle#BackgroundStroke",
   "controlStyles[16].styles[0]": "Fill=Transparent",
   "controlStyles[17].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement",
-  "controlStyles[17].styles[0]": "Background=#302d47"
+  "controlStyles[17].styles[0]": "Background=#302d47",
+  "resourceVariables[0].variableKey": "",
+  "resourceVariables[0].value": ""
 }
 ```
 </details>
