@@ -150,7 +150,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[4].target": "Grid#SystemTrayFrameGrid",
   "controlStyles[4].styles[0]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.8\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
   "controlStyles[4].styles[1]": "Margin=8,0,8,0",
-  "controlStyles[4].styles[2]": "CornerRadius=6",
+  "controlStyles[4].styles[2]": "CornerRadius=8,8,0,0",
   "controlStyles[4].styles[3]": "BorderBrush:=<SolidColorBrush Color=\"{ThemeResource SurfaceStrokeColorDefault}\" />",
   "controlStyles[4].styles[4]": "Padding=4,4,0,4",
 
