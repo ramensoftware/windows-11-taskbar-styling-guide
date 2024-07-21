@@ -77,6 +77,7 @@ Taskbar Styler mod. The following themes are available:
 | [TranslucentTaskbar](Themes/TranslucentTaskbar/README.md) | [![TranslucentTaskbar](Themes/TranslucentTaskbar/screenshot.png)](Themes/TranslucentTaskbar/screenshot.png)
 | [Squircle](Themes/Squircle/README.md) | [![Squircle](Themes/Squircle/screenshot.png)](Themes/Squircle/screenshot.png)
 | [RosePine](Themes/RosePine/README.md) | [![RosePine](Themes/RosePine/screenshot.png)](Themes/RosePine/screenshot.png)
+| [DockLike](Themes/DockLike/README.md) | [![DockLike](Themes/DockLike/screenshot.png)](Themes/DockLike/screenshot.png)
 
 ## General
 
