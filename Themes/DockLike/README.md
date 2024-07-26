@@ -131,46 +131,44 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
   "controlStyles[0].styles[0]": "Width=Auto",
   "controlStyles[0].styles[1]": "HorizontalAlignment=Center",
-  "controlStyles[0].styles[2]": "Margin=0,0,275,0",
+  "controlStyles[0].styles[2]": "Margin=250,0,250,0",
 
   "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.8\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
-  "controlStyles[1].styles[1]": "Padding=2,0,2,2",
+  "controlStyles[1].styles[1]": "Padding=2,0,2,0",
   "controlStyles[1].styles[2]": "CornerRadius=8,8,0,0",
   "controlStyles[1].styles[3]": "BorderBrush:=<SolidColorBrush Color=\"{ThemeResource SurfaceStrokeColorDefault}\" />",
-  "controlStyles[1].styles[4]": "Margin=0,0,0,-2",
-  "controlStyles[1].styles[5]": "HorizontalAlignment=Center",
 
-  "controlStyles[2].target": "Rectangle#BackgroundStroke",
+  "controlStyles[2].target": "Rectangle#BackgroundFill",
   "controlStyles[2].styles[0]": "Visibility=Collapsed",
 
-  "controlStyles[3].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
-  "controlStyles[3].styles[0]": "Margin=0",
+  "controlStyles[3].target": "Rectangle#BackgroundStroke",
+  "controlStyles[3].styles[0]": "Visibility=Collapsed",
 
-  "controlStyles[4].target": "Grid#SystemTrayFrameGrid",
-  "controlStyles[4].styles[0]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.8\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
-  "controlStyles[4].styles[1]": "Margin=8,0,8,0",
-  "controlStyles[4].styles[2]": "CornerRadius=8,8,0,0",
-  "controlStyles[4].styles[3]": "BorderBrush:=<SolidColorBrush Color=\"{ThemeResource SurfaceStrokeColorDefault}\" />",
-  "controlStyles[4].styles[4]": "Padding=4,4,0,4",
+  "controlStyles[4].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
+  "controlStyles[4].styles[0]": "Margin=0",
 
-  "controlStyles[5].target": "SystemTray.ChevronIconView",
-  "controlStyles[5].styles[0]": "Padding=0",
+  "controlStyles[5].target": "Grid#SystemTrayFrameGrid",
+  "controlStyles[5].styles[0]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.8\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
+  "controlStyles[5].styles[1]": "Margin=-4,-8,-4,-8",
+  "controlStyles[5].styles[2]": "CornerRadius=12",
+  "controlStyles[5].styles[3]": "BorderThickness=12,12,12,12",
+  "controlStyles[5].styles[4]": "BackgroundSizing=InnerBorderEdge",
 
-  "controlStyles[6].target": "SystemTray.NotifyIconView#NotifyItemIcon",
+  "controlStyles[6].target": "SystemTray.ChevronIconView",
   "controlStyles[6].styles[0]": "Padding=0",
 
-  "controlStyles[7].target": "SystemTray.OmniButton",
+  "controlStyles[7].target": "SystemTray.NotifyIconView#NotifyItemIcon",
   "controlStyles[7].styles[0]": "Padding=0",
 
-  "controlStyles[8].target": "SystemTray.CopilotIcon",
+  "controlStyles[8].target": "SystemTray.OmniButton",
   "controlStyles[8].styles[0]": "Padding=0",
 
-  "controlStyles[9].target": "SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid",
-  "controlStyles[9].styles[0]": "Padding=4,0,4,0",
+  "controlStyles[9].target": "SystemTray.CopilotIcon",
+  "controlStyles[9].styles[0]": "Padding=0",
 
-  "controlStyles[10].target": "SystemTray.Stack#ShowDesktopStack",
-  "controlStyles[10].styles[0]": "Visibility=Visible",
+  "controlStyles[10].target": "SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid",
+  "controlStyles[10].styles[0]": "Padding=4,0,4,0",
 
   "controlStyles[11].target": "SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid",
   "controlStyles[11].styles[0]": "Padding=0",
@@ -178,8 +176,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[12].target": "SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon",
   "controlStyles[12].styles[0]": "Padding=0",
 
-  "controlStyles[13].target": "Rectangle#BackgroundFill",
-  "controlStyles[13].styles[0]": "Visibility=Collapsed"
+  "controlStyles[13].target": "SystemTray.Stack#ShowDesktopStack",
+  "controlStyles[13].styles[0]": "Margin=0,-4,-12,-4"
 }
 ```
 </details>
