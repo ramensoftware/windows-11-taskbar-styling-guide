@@ -66,12 +66,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[5].styles[3]": "BorderBrush=#33000000",
   "controlStyles[5].styles[4]": "BorderThickness=1",
   "controlStyles[5].styles[5]": "Margin=1",
-  "controlStyles[6].target": "TextBlock",
-  "controlStyles[6].styles[0]": "FontFamily=Segoe UI",
-  "controlStyles[7].target": "Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement",
-  "controlStyles[7].styles[0]": "BorderBrush=#22BBBBBB",
-  "controlStyles[7].styles[1]": "Margin=0,0,0,2",
-  "controlStyles[7].styles[2]": "BorderThickness=1",
+  "controlStyles[6].target": "Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement",
+  "controlStyles[6].styles[0]": "BorderBrush=#22BBBBBB",
+  "controlStyles[6].styles[1]": "Margin=0,0,0,2",
+  "controlStyles[6].styles[2]": "BorderThickness=1",
   "resourceVariables[0].variableKey": "",
   "resourceVariables[0].value": ""
 }
