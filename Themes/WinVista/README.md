@@ -2,7 +2,7 @@
 
 **Author**: [Haitch-1](https://github.com/Haitch-1)
 
-![Screenshot](Screenshot.png)
+![Screenshot](screenshot.png)
 
 ## Notes
 
