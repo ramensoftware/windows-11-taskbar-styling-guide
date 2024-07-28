@@ -82,7 +82,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[9].styles[7]": "Stroke@ActivePointerOver=#ebbcba",
   "controlStyles[9].styles[8]": "Stroke@ActivePressed=#ebbcba",
   "controlStyles[9].styles[9]": "Fill=Transparent",
-  "controlStyles[9].styles[10]": "Width=36.5%",
+  "controlStyles[9].styles[10]": "Width=37%",
   "controlStyles[9].styles[11]": "VerticalAlignment=1",
   "controlStyles[10].target": "SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
   "controlStyles[10].styles[0]": "Width=13",
