@@ -70,8 +70,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[8].styles[0]": "Margin=4,0,0,0",
   "controlStyles[8].styles[1]": "Foreground=White",
   "controlStyles[9].target": "Taskbar.SearchBoxButton",
-  "controlStyles[9].styles[0]": "Height=56",
-  "controlStyles[9].styles[1]": "Margin=0,-4,0,0",
+  "controlStyles[9].styles[0]": "Height=48%",
+  "controlStyles[9].styles[1]": "Margin=0,-2,0,0",
   "controlStyles[10].target": "TextBlock#SearchBoxTextBlock",
   "controlStyles[10].styles[0]": "Foreground=White"
 }
