@@ -78,7 +78,7 @@ Taskbar Styler mod. The following themes are available:
 | [Squircle](Themes/Squircle/README.md) | [![Squircle](Themes/Squircle/screenshot.png)](Themes/Squircle/screenshot.png)
 | [RosePine](Themes/RosePine/README.md) | [![RosePine](Themes/RosePine/screenshot.png)](Themes/RosePine/screenshot.png)
 | [DockLike](Themes/DockLike/README.md) | [![DockLike](Themes/DockLike/screenshot.png)](Themes/DockLike/screenshot.png)
-| [WinVista](Themes/WinVista/README.md) | [![WinVista](Themes/WinVista/Screenshot.png)](Themes/WinVista/Screenshot.png)
+| [WinVista](Themes/WinVista/README.md) | [![WinVista](Themes/WinVista/Screenshot.png)](Themes/WinVista/screenshot.png)
 
 ## General
 
@@ -118,6 +118,11 @@ Fill:=<ImageBrush Stretch="UniformToFill" ImageSource="<image>" />
 ```
 
 Replace `<image>` with your own image, a URL or a local file path.
+
+A Color can also be a ThemeResource or StaticResource. There are many such styles built into Windows. 
+```
+Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.8" />
+```
 
 ### Taskbar border
 
