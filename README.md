@@ -78,7 +78,7 @@ Taskbar Styler mod. The following themes are available:
 | [Squircle](Themes/Squircle/README.md) | [![Squircle](Themes/Squircle/screenshot.png)](Themes/Squircle/screenshot.png)
 | [RosePine](Themes/RosePine/README.md) | [![RosePine](Themes/RosePine/screenshot.png)](Themes/RosePine/screenshot.png)
 | [DockLike](Themes/DockLike/README.md) | [![DockLike](Themes/DockLike/screenshot.png)](Themes/DockLike/screenshot.png)
-| [WinVista](Themes/WinVista/README.md) | [![WinVista](Themes/WinVista/Screenshot.png)](Themes/WinVista/screenshot.png)
+| [WinVista](Themes/WinVista/README.md) | [![WinVista](Themes/WinVista/screenshot.png)](Themes/WinVista/screenshot.png)
 
 ## General
 
