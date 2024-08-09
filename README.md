@@ -93,7 +93,10 @@ Target:
 ```
 Rectangle#BackgroundFill
 ```
-
+If this target does not work for you, use this target:
+```
+Taskbar.TaskbarBackground#BackgroundControl > Grid
+```
 To set a solid color background, use the following style:
 ```
 Fill=<color>
