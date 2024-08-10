@@ -60,6 +60,14 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[4].styles[9]": "RadiusY=20",
   "controlStyles[4].styles[10]": "StrokeThickness=3",
   "controlStyles[4].styles[11]": "Margin=0",
+  "controlStyles[4].styles[12]": "Stroke@MultiWindowPointerOver=#CCCCDD",
+  "controlStyles[4].styles[13]": "Stroke@MultiWindowPressed=White",
+  "controlStyles[4].styles[14]": "Stroke@MultiWindowActive=#BBBBCC",
+  "controlStyles[4].styles[15]": "Stroke@MultiWindowNormal=#AAAABB",
+  "controlStyles[4].styles[16]": "Fill@MultiWindowNormal=#88AAAABB",
+  "controlStyles[4].styles[17]": "Fill@MultiWindowPointerOver=#88AAAABB",
+  "controlStyles[4].styles[18]": "Fill@MultiWindowActive=#88AAAABB",
+  "controlStyles[4].styles[19]": "Fill@MultiWindowPressed=#88AAAABB",
   "controlStyles[5].target": "TextBlock#TimeInnerTextBlock",
   "controlStyles[5].styles[0]": "Foreground=White",
   "controlStyles[6].target": "TextBlock#DateInnerTextBlock",
@@ -73,7 +81,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[9].styles[0]": "Height=48%",
   "controlStyles[9].styles[1]": "Margin=0,-2,0,0",
   "controlStyles[10].target": "TextBlock#SearchBoxTextBlock",
-  "controlStyles[10].styles[0]": "Foreground=White"
+  "controlStyles[10].styles[0]": "Foreground=White",
+  "controlStyles[11].target": "Border#MultiWindowElement",
+  "controlStyles[11].styles[0]": "Height=0"
 }
 ```
 </details>
