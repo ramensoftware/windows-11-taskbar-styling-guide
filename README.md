@@ -393,9 +393,9 @@ Visibility=Collapsed
 
 # Colors
 
-### Solid color
+In the following examples we're gonna use `Fill` as an example, but this also works for other properties that accept colors like `Background`
 
-In this example we're gonna use Fill, but this also works for Background so we're only using it as an example here
+### Solid color
 
 ```
 Fill:=Color
