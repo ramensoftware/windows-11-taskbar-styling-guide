@@ -108,9 +108,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[20].styles[5]": "Margin=1",
   "controlStyles[21].target": "Rectangle#ShowDesktopPipe",
   "controlStyles[21].styles[0]": "Width=12",
-  "controlStyles[21].styles[1]": "//Fill=Red",
-  "controlStyles[21].styles[2]": "Height=38",
-  "controlStyles[21].styles[3]": "Margin=-6,0,0,0",
+  "controlStyles[21].styles[1]": "Height=38",
+  "controlStyles[21].styles[2]": "Margin=-6,0,0,0",
   "controlStyles[22].target": "SystemTray.Stack#ShowDesktopStack",
   "controlStyles[22].styles[0]": "Width=12"
 }
