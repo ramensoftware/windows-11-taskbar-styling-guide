@@ -2,7 +2,7 @@
 
 **Author**: [Xerios](https://github.com/Xerios)
 
-![Screenshot of taskbar](screenshot.png)
+![Screenshot of taskbar](screenshot.png) \
 ![Screenshot of taskbar](screenshot-light.png)
 
 ## Notes

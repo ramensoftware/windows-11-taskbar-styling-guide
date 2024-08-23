@@ -62,7 +62,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[4].styles[11]": "Margin=0",
   "controlStyles[4].styles[12]": "Stroke@MultiWindowPointerOver=#CCCCDD",
   "controlStyles[4].styles[13]": "Stroke@MultiWindowPressed=White",
-  "controlStyles[4].styles[14]": "Stroke@MultiWindowActive=#BBBBCC",  
+  "controlStyles[4].styles[14]": "Stroke@MultiWindowActive=#BBBBCC",
   "controlStyles[4].styles[15]": "Fill@MultiWindowNormal=#88AAAABB",
   "controlStyles[4].styles[16]": "Fill@MultiWindowPointerOver=#88AAAABB",
   "controlStyles[4].styles[17]": "Fill@MultiWindowActive=#88AAAABB",

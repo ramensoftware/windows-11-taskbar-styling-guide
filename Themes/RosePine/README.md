@@ -3,9 +3,9 @@
 This theme was originally [shared on
 Reddit](https://www.reddit.com/r/desktops/comments/1e0o08e/windows_11_rose_pine_been_messing_with_windhawk_a/).
 
-**Author**: [asev](https://github.com/lunar-os/)
+**Author**: [asev](https://github.com/lunar-os)
 
-![Screenshot](screenshot.png) 
+![Screenshot](screenshot.png)
 
 ## Notes
 
@@ -50,7 +50,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 {
   "theme": "",
   "controlStyles[0].target": "Taskbar.TaskListButton",
-  "controlStyles[0].styles[0]": "CornerRadius=3", 
+  "controlStyles[0].styles[0]": "CornerRadius=3",
   "controlStyles[1].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
   "controlStyles[1].styles[0]": "FontSize=16",
   "controlStyles[2].target": "SystemTray.NotifyIconView#NotifyItemIcon",

@@ -12,7 +12,7 @@ This theme is meant as a fairly vanilla implementation of a dock-like taskbar. I
 
 - Set taskbar alignment to center
 - Hide the widgets button
-- If you have another clock, for example from a Rainmeter skin or an application like ElevenClock, you can hide the taskbar clock in Windows date & time settings 
+- If you have another clock, for example from a Rainmeter skin or an application like ElevenClock, you can hide the taskbar clock in Windows date & time settings
 
 ### Left align the taskbar (tweak)
 
@@ -38,7 +38,7 @@ CornerRadius=0,8,0,0
 
 ### Make the taskbar float (tweak)
 
-This gives it an appearence closer to the MacOS dock.
+This gives it an appearance closer to the MacOS dock.
 
 ![Screenshot of floating taskbar](screenshot_floating.png)
 
