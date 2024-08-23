@@ -31,6 +31,14 @@
   * [Hide the notification bell icon](#hide-the-notification-bell-icon)
   * [Copilot button image](#copilot-button-image)
   * [Hide the "Show Desktop" button](#hide-the-show-desktop-button)
+* [Colors](#colors)
+  * [Solid color](#solid-color)
+  * [Accent colors](#accent-colors)
+  * [Transparent color](#transparent-color)
+  * [Acrylic effect as color](#acrylic-effect-as-color)
+  * [Mica effect as color](#mica-effect-as-color)
+  * [Gradient as color](#gradient-as-color)
+  * [Image as color](#image-as-color)
 
 ## Introduction
 
@@ -101,29 +109,7 @@ Fill=<color>
 ```
 
 Replace `<color>` with the desired color.
-
-A color can be a name (e.g. `Red`) or a hex code (e.g. `#FF0000`).
-
-The color can be semi-transparent (e.g. `#80FF0000`). To have a fully
-transparent background, use `Transparent`.
-
-The background can also be a gradient. For example, to have a gradient from
-yellow to red to blue to lime green, use the following style:
-```
-Fill:=<LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5"><GradientStop Color="Yellow" Offset="0.0" /><GradientStop Color="Red" Offset="0.25" /><GradientStop Color="Blue" Offset="0.75" /><GradientStop Color="LimeGreen" Offset="1.0" /></LinearGradientBrush>
-```
-
-The background can also be an image:
-```
-Fill:=<ImageBrush Stretch="UniformToFill" ImageSource="<image>" />
-```
-
-Replace `<image>` with your own image, a URL or a local file path.
-
-A Color can also be a ThemeResource or StaticResource. There are many such styles built into Windows.
-```
-Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.8" />
-```
+See [colors section](#colors) for all options (e.g. if you want blurred background effect).
 
 ### Taskbar border
 
@@ -405,3 +391,78 @@ Style:
 ```
 Visibility=Collapsed
 ```
+
+# Colors
+
+In the following examples we're gonna use `Fill` as an example, but this also works for other properties that accept colors like `Background`
+
+### Solid color
+
+```
+Fill:=Color
+```
+
+Replace `Color` with the desired color.
+
+A color can be a name (e.g. `Red`) or a hex code (e.g. `#FF0000`).
+
+The color can be semi-transparent (e.g. `#80FF0000`). To have a fully
+transparent background, use `Transparent`.
+
+### Accent colors
+
+A Color can also be a ThemeResource or StaticResource. There are many such styles built into Windows.
+
+```
+Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.8" />
+```
+
+Accent colors have different lightness available like `SystemAccentColorLight2` or `SystemAccentColorDark1`, the word `Light` or `Dark` is appended at end with a number ranging from 1-3 ( checkout [official microsoft docs for all variations](https://learn.microsoft.com/en-us/windows/apps/design/style/color#accent-color-palette) )
+
+```
+Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark2}" Opacity="0.5" />
+```
+
+### Transparent color
+
+```
+Fill:=Transparent
+```
+
+### Acrylic effect as color
+
+In order to have acrylic effect ( blurred background ) you can use AcrylicBrush, this comes with `TintOpacity` which defines how much of the color needs to be applied
+
+```
+Fill:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" />
+```
+
+You can also mix Acrylic with a variation of an accent color for a more dynamic look that fits current theme
+
+```
+Fill:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.3" />
+```
+
+### Mica effect as color
+
+> [!NOTE]  
+> Unfortunately I haven't figured this out yet. If you have any info please contribute by making a Pull Request.
+
+### Gradient as color
+
+The background can also be a gradient. For example, to have a gradient from
+yellow to red to blue to lime green, use the following style:
+
+```
+Fill:=<LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5"><GradientStop Color="Yellow" Offset="0.0" /><GradientStop Color="Red" Offset="0.25" /><GradientStop Color="Blue" Offset="0.75" /><GradientStop Color="LimeGreen" Offset="1.0" /></LinearGradientBrush>
+```
+
+### Image as color
+
+The background can also be an image:
+
+```
+Fill:=<ImageBrush Stretch="UniformToFill" ImageSource="<image>" />
+```
+
+Replace `<image>` with your own image, a URL or a local file path.
