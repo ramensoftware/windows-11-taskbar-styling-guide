@@ -87,6 +87,7 @@ Taskbar Styler mod. The following themes are available:
 | [RosePine](Themes/RosePine/README.md) | [![RosePine](Themes/RosePine/screenshot.png)](Themes/RosePine/screenshot.png)
 | [DockLike](Themes/DockLike/README.md) | [![DockLike](Themes/DockLike/screenshot.png)](Themes/DockLike/screenshot.png)
 | [WinVista](Themes/WinVista/README.md) | [![WinVista](Themes/WinVista/screenshot.png)](Themes/WinVista/screenshot.png)
+| [CleanSlate](Themes/CleanSlate/README.md) | [![CleanSlate](Themes/CleanSlate/screenshot.png)](Themes/CleanSlate/screenshot.png)
 
 ## General
 
@@ -243,7 +244,7 @@ Target:
 ```
 SystemTray.ImageIconContent > Grid#ContainerGrid > Image
 ```
-Styles: 
+Styles:
 ```
 Width=<size>
 ```
