@@ -108,8 +108,8 @@ To set a solid color background, use the following style:
 Fill=<color>
 ```
 
-Replace `<color>` with the desired color.
-See [colors section](#colors) for all options (e.g. if you want blurred background effect).
+Replace `<color>` with the desired color. See [colors section](#colors) for all
+options (e.g. if you want blurred background effect).
 
 ### Taskbar border
 
@@ -394,15 +394,16 @@ Visibility=Collapsed
 
 # Colors
 
-In the following examples we're gonna use `Fill` as an example, but this also works for other properties that accept colors like `Background`
+In the following examples we're gonna use `Fill` as an example, but this also
+works for other properties that accept colors like `Background`.
 
 ### Solid color
 
 ```
-Fill:=Color
+Fill=<color>
 ```
 
-Replace `Color` with the desired color.
+Replace `<color>` with the desired color.
 
 A color can be a name (e.g. `Red`) or a hex code (e.g. `#FF0000`).
 
@@ -411,13 +412,18 @@ transparent background, use `Transparent`.
 
 ### Accent colors
 
-A Color can also be a ThemeResource or StaticResource. There are many such styles built into Windows.
+A Color can also be a `ThemeResource` or `StaticResource`. There are many such
+styles built into Windows.
 
 ```
 Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.8" />
 ```
 
-Accent colors have different lightness available like `SystemAccentColorLight2` or `SystemAccentColorDark1`, the word `Light` or `Dark` is appended at end with a number ranging from 1-3 ( checkout [official microsoft docs for all variations](https://learn.microsoft.com/en-us/windows/apps/design/style/color#accent-color-palette) )
+Accent colors have different lightness available, like `SystemAccentColorLight2`
+or `SystemAccentColorDark1`. The word `Light` or `Dark` is appended at end with
+a number ranging from 1-3. Check out [the official Microsoft
+docs](https://learn.microsoft.com/en-us/windows/apps/design/style/color#accent-color-palette)
+for all variations.
 
 ```
 Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark2}" Opacity="0.5" />
@@ -425,19 +431,24 @@ Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark2}" Opacity="0
 
 ### Transparent color
 
+To have a fully transparent background, use the following style:
+
 ```
-Fill:=Transparent
+Fill=Transparent
 ```
 
 ### Acrylic effect as color
 
-In order to have acrylic effect ( blurred background ) you can use AcrylicBrush, this comes with `TintOpacity` which defines how much of the color needs to be applied
+In order to have an acrylic effect (a blurred background) you can use
+`AcrylicBrush`, this comes with `TintOpacity` which defines how much of the
+color needs to be applied.
 
 ```
 Fill:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" />
 ```
 
-You can also mix Acrylic with a variation of an accent color for a more dynamic look that fits current theme
+You can also mix Acrylic with a variation of an accent color for a more dynamic
+look that fits current theme.
 
 ```
 Fill:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.3" />
@@ -446,7 +457,8 @@ Fill:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpaci
 ### Mica effect as color
 
 > [!NOTE]  
-> Unfortunately I haven't figured this out yet. If you have any info please contribute by making a Pull Request.
+> Unfortunately I haven't figured this out yet. If you have any info please
+> contribute by making a pull request.
 
 ### Gradient as color
 
