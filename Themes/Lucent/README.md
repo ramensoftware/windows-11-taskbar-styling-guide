@@ -10,13 +10,12 @@ Alternate Light Bar Style
 ![Screenshot](snapshot_light.png)
 
 ### Suggested Windows settings
- * Left-aligned taskbar
- * Combine taskbar buttons set to "When taskbar is full"
- * Dark wallpaper with matching accent color
+ * Left-aligned taskbar.
+ * Combine taskbar buttons set to "When taskbar is full".
+ * Dark wallpaper with matching accent color.
 
 ## Modifications
-#### Tasklist too wide
-Browser bars getting too wide? Adjust the _MaxWidth_ value, or remove it.
+**Browser getting too wide!** Adjust the _MaxWidth_ value, or remove it.
 
 ## Theme selection
 
