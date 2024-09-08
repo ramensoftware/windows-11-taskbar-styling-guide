@@ -1,25 +1,28 @@
 # Lucent theme for Windows 11 Taskbar Styler
-A dark theme with gradients and colourful glows that use your theme color.
+
+A dark theme with gradients and colorful glows that use your theme color.
 
 **Author**: [twistthoseknobs](https://github.com/twistthoseknobs)
 
-![Screenshot](snapshot_blue.png)
-![Screenshot](snapshot_red.png)
+![Screenshot](screenshot.png) \
+![Screenshot](screenshot_red.png)
 
-Alternate Light Bar Style
-![Screenshot](snapshot_light.png)
+Alternate Light Bar Style: \
+![Screenshot](screenshot_light.png)
 
-### Suggested Windows settings
- * Left-aligned taskbar.
- * Combine taskbar buttons set to "When taskbar is full".
- * Dark wallpaper with matching accent color.
+## Suggested Windows settings
+
+* Left-aligned taskbar.
+* Combine taskbar buttons set to "When taskbar is full".
+* Dark wallpaper with matching accent color.
 
 ## Modifications
-**Adjust Running Apps Button Width** - If the text of an app's button is very long, it can result in an unnecessarily wide button
-![image](https://github.com/user-attachments/assets/eee2e0ea-dbb1-4db8-bcd1-a87bf6ee7387)
+
+**Adjust Running Apps Button Width** - If the text of an app's button is very long, it can result in an unnecessarily wide button: \
+![Wide button](wide_button.png)
 
 To remedy this behavior:
-- adjust the `MaxWidth` value to restrict the button's width to a preferred maximum value
+- Adjust the `MaxWidth` value to restrict the button's width to a preferred maximum value
 - Remove `MaxWidth` to use Windows' default behavior
 - Remove `MaxWidth` and set `Width` to set an identical static width to every running app
 
@@ -84,7 +87,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[9].target": "Grid",
   "controlStyles[9].styles[0]": "RequestedTheme=2"
 }
-
 ```
 </details>
 
@@ -132,6 +134,5 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[9].target": "Grid",
   "controlStyles[9].styles[0]": "RequestedTheme=2"
 }
-
 ```
 </details>
