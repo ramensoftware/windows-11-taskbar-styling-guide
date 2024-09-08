@@ -1,22 +1,22 @@
 # Lucent theme for Windows 11 Taskbar Styler
+A dark theme with gradients and colourful glows that use your theme color.
+
 **Author**: [twistthoseknobs](https://github.com/twistthoseknobs)
-
-A theme with gradients and glows that uses your theme color.
-
-I use this with these taskbar settings in Windows:
- * left-aligned taskbar
- * Combine taskbar buttons set to "When taskbar is full"
- * Dark wallpaper with matching accent color
-
-WARNING: Browser bars will get really wide. To remove it, take off the _MaxWidth_ line.
-
-
 
 ![Screenshot](snapshot_blue.png)
 ![Screenshot](snapshot_red.png)
 
-Alternate Light Bar:
+Alternate Light Bar Style
 ![Screenshot](snapshot_light.png)
+
+### Suggested Windows settings
+ * Left-aligned taskbar
+ * Combine taskbar buttons set to "When taskbar is full"
+ * Dark wallpaper with matching accent color
+
+## Modifications
+#### Tasklist too wide
+Browser bars getting too wide? Adjust the _MaxWidth_ value, or remove it.
 
 ## Theme selection
 
