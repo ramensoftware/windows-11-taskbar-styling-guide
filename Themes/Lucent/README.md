@@ -15,7 +15,13 @@ Alternate Light Bar Style
  * Dark wallpaper with matching accent color.
 
 ## Modifications
-**Browser getting too wide!** Adjust the _MaxWidth_ value, or remove it.
+**Adjust Running Apps Button Width** - If the text of an app's button is very long, it can result in an unnecessarily wide button
+![image](https://github.com/user-attachments/assets/eee2e0ea-dbb1-4db8-bcd1-a87bf6ee7387)
+
+To remedy this behavior:
+- adjust the `MaxWidth` value to restrict the button's width to a preferred maximum value
+- Remove `MaxWidth` to use Windows' default behavior
+- Remove `MaxWidth` and set `Width` to set an identical static width to every running app
 
 ## Theme selection
 
