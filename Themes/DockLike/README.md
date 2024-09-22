@@ -135,7 +135,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
   "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.8\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
-  "controlStyles[1].styles[1]": "Padding=2,0,2,0",
+  "controlStyles[1].styles[1]": "Padding=6,0,6,0",
   "controlStyles[1].styles[2]": "CornerRadius=8,8,0,0",
   "controlStyles[1].styles[3]": "BorderBrush:=<SolidColorBrush Color=\"{ThemeResource SurfaceStrokeColorDefault}\" />",
 
@@ -181,10 +181,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
   "controlStyles[14].target": "Taskbar.Gripper#GripperControl",
   "controlStyles[14].styles[0]": "Width=Auto",
-  "controlStyles[14].styles[1]": "MinWidth=24",
-
-  "controlStyles[15].target": "Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater",
-  "controlStyles[15].styles[0]": "Margin=5,0,5,0"
+  "controlStyles[14].styles[1]": "MinWidth=24"
 }
 ```
 </details>
