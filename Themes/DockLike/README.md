@@ -177,7 +177,14 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[12].styles[0]": "Padding=0",
 
   "controlStyles[13].target": "SystemTray.Stack#ShowDesktopStack",
-  "controlStyles[13].styles[0]": "Margin=0,-4,-12,-4"
+  "controlStyles[13].styles[0]": "Margin=0,-4,-12,-4",
+
+  "controlStyles[14].target": "Taskbar.Gripper#GripperControl",
+  "controlStyles[14].styles[0]": "Width=Auto",
+  "controlStyles[14].styles[1]": "MinWidth=24",
+
+  "controlStyles[15].target": "Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater",
+  "controlStyles[15].styles[0]": "Margin=5,0,5,0"
 }
 ```
 </details>
