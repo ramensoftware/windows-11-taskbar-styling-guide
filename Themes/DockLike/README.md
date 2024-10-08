@@ -22,9 +22,10 @@ Target:
 ```
 Taskbar.TaskbarFrame#TaskbarFrame
 ```
-Style:
+Styles:
 ```
 HorizontalAlignment=Left
+Margin=0,0,250,0
 ```
 
 Target:
