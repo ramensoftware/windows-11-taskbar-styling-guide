@@ -18,7 +18,7 @@ Reddit](https://www.reddit.com/r/desktops/comments/1e0o08e/windows_11_rose_pine_
     Customization](https://windhawk.net/mods/taskbar-clock-customization):
     [Settings](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20Clock%20Customization).
   * [Taskbar Labels for Windows 11](https://windhawk.net/mods/taskbar-labels):
-    [Settings](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20Labels%20for%20Windows%2011).
+    [Settings](https://github.com/lunar-os/windowsdesktop/blob/main/WindhawkConfigs/Taskbar%20Labels).
 * The theme is based off of [RosePine Theme](https://rosepinetheme.com/).
 * It removes the start button and the network icon. If you need these, add them
   using the
