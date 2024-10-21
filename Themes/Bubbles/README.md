@@ -77,12 +77,16 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[8].styles[0]": "Margin=4,0,0,0",
   "controlStyles[8].styles[1]": "Foreground=White",
   "controlStyles[9].target": "Taskbar.SearchBoxButton",
-  "controlStyles[9].styles[0]": "Height=48%",
+  "controlStyles[9].styles[0]": "Height=48",
   "controlStyles[9].styles[1]": "Margin=0,-2,0,0",
   "controlStyles[10].target": "TextBlock#SearchBoxTextBlock",
   "controlStyles[10].styles[0]": "Foreground=White",
   "controlStyles[11].target": "Border#MultiWindowElement",
-  "controlStyles[11].styles[0]": "Height=0"
+  "controlStyles[11].styles[0]": "Height=0",
+  "controlStyles[12].target": "Grid#OverflowRootGrid > Border",
+  "controlStyles[12].styles[0]": "Background=#EE080810",
+  "controlStyles[12].styles[1]": "BorderBrush=#303030",
+  "controlStyles[12].styles[2]": "BorderThickness=2.5"
 }
 ```
 </details>
