@@ -134,7 +134,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[8].styles[2]": "CornerRadius=0",
   "controlStyles[8].styles[3]": "Margin=0",
   "controlStyles[9].target": "Grid",
-  "controlStyles[9].styles[0]": "RequestedTheme=2"
+  "controlStyles[9].styles[0]": "RequestedTheme=2",
+"controlStyles[10].target": "Grid#OverflowRootGrid > Border",
+  "controlStyles[10].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0,0.5\" EndPoint=\"0,1\"><GradientStop Color=\"#3300290c\" Offset=\"0.1\" /><GradientStop Color=\"{ThemeResource SystemAccentColorDark2}\" Offset=\"0.9\" /><GradientStop Color=\"#AAFFFFFF\" Offset=\"1.0\" /></LinearGradientBrush>"
 }
 ```
 </details>
