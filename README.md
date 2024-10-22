@@ -3,9 +3,9 @@
 ## Table of contents
 
 * [Introduction](#introduction)
-  * [Missing customizations](#missing-customizations)
-  * [Contributing](#contributing)
   * [Finding targets](#finding-targets)
+  * [Missing customizations](#missing-customizations)
+  * [Contributing](#contributing) 
 * [Themes](#themes)
 * [General](#general)
   * [Taskbar size](#taskbar-size)
@@ -64,13 +64,13 @@ guide](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/blob
 [The Windows 11 notification center styling
 guide](https://github.com/ramensoftware/windows-11-notification-center-styling-guide/blob/main/README.md).
 
+### Finding Targets
+[How to find targets using UWPspy](https://github.com/bbmaster123/FWFU/blob/main/uwpspy.md)
+
 ### Missing customizations
 
 If you're looking for a customization that is not listed here, please [open an
 issue](https://github.com/ramensoftware/windows-11-taskbar-styling-guide/issues/new).
-
-### Finding Targets
-[How to find targets using UWPspy](https://github.com/bbmaster123/FWFU/blob/main/uwpspy.md)
 
 ### Contributing
 
