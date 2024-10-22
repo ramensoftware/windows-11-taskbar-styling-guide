@@ -5,6 +5,7 @@
 * [Introduction](#introduction)
   * [Missing customizations](#missing-customizations)
   * [Contributing](#contributing)
+  * [Finding targets](#finding-targets)
 * [Themes](#themes)
 * [General](#general)
   * [Taskbar size](#taskbar-size)
@@ -67,6 +68,9 @@ guide](https://github.com/ramensoftware/windows-11-notification-center-styling-g
 
 If you're looking for a customization that is not listed here, please [open an
 issue](https://github.com/ramensoftware/windows-11-taskbar-styling-guide/issues/new).
+
+### Finding Targets
+[How to find targets using UWPspy](https://github.com/bbmaster123/FWFU/blob/main/uwpspy.md)
 
 ### Contributing
 
