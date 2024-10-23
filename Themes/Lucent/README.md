@@ -107,7 +107,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[3].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement",
   "controlStyles[3].styles[0]": "CornerRadius=15",
   "controlStyles[3].styles[1]": "Background@ActiveRunningIndicator:=#FCFCFC",
-  "controlStyles[3].styles[2]": "Background@InactiveRunningIndicator:=<LinearGradientBrush StartPoint=\"0,0.5\" EndPoint=\"0,1\"><GradientStop Color=\"#3300290c\" Offset=\"0.1\" /><GradientStop Color=\"{ThemeResource SystemAccentColorDark2}\" Offset=\"0.9\" /><GradientStop     Color=\"#AAFFFFFF\" Offset=\"1.0\" /></LinearGradientBrush>",
+  "controlStyles[3].styles[2]": "Background@InactiveRunningIndicator:=<LinearGradientBrush StartPoint=\"0,0.5\" EndPoint=\"0,1\"><GradientStop Color=\"#3300290c\" Offset=\"0.1\" /><GradientStop Color=\"{ThemeResource SystemAccentColorDark2}\" Offset=\"0.9\" /><GradientStop Color=\"#AAFFFFFF\" Offset=\"1.0\" /></LinearGradientBrush>",
   "controlStyles[3].styles[3]": "Margin@ActiveRunningIndicator=-4",
   "controlStyles[3].styles[4]": "Margin=0,-1,0,-1",
   "controlStyles[3].styles[5]": "CornerRadius@ActiveRunningIndicator=2",

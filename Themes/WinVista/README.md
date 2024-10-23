@@ -20,7 +20,6 @@ This theme was intended to be used with a slim taskbar, you may achieve a slim t
   }
   ```
 
-
 ## Theme selection
 
 The theme is integrated into the mod, and can be simply selected from the mod's
@@ -42,7 +41,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```json
-{ 
+{
   "controlStyles[0].target": "Taskbar.ExperienceToggleButton",
   "controlStyles[0].styles[0]": "CornerRadius=2",
   "controlStyles[1].target": "Taskbar.SearchBoxButton",
@@ -56,11 +55,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[3].styles[3]": "Fill@ActiveRunningIndicator=#00BEE0",
   "controlStyles[3].styles[4]": "Fill@InactiveRunningIndicator=#DDDDDD",
   "controlStyles[4].target": "Rectangle#BackgroundFill",
-  "controlStyles[4].styles[0]": "Fill:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.7\"><GradientStop Color=\"#B5B9BC\" Offset=\"0.0\" /><GradientStop Color=\"#B5B9BC\" Offset=\"0.03125\"  /><GradientStop Color=\"#909296\" Offset=\"0.03125\" /><GradientStop Color=\"#464B51\" Offset=\"0.5\" /><GradientStop Color=\"#060F15\" Offset=\"0.5\" /><GradientStop Color=\"#040C11\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"1.0\" /></LinearGradientBrush>",
+  "controlStyles[4].styles[0]": "Fill:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.7\"><GradientStop Color=\"#B5B9BC\" Offset=\"0.0\" /><GradientStop Color=\"#B5B9BC\" Offset=\"0.03125\" /><GradientStop Color=\"#909296\" Offset=\"0.03125\" /><GradientStop Color=\"#464B51\" Offset=\"0.5\" /><GradientStop Color=\"#060F15\" Offset=\"0.5\" /><GradientStop Color=\"#040C11\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"1.0\" /></LinearGradientBrush>",
   "controlStyles[5].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border",
-  "controlStyles[5].styles[0]": "Background@ActiveRunningIndicator:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.2\">     <GradientStop Color=\"#111111\" Offset=\"0.0\" />     <GradientStop Color=\"#111111\" Offset=\"1.0\" /> </LinearGradientBrush>",
+  "controlStyles[5].styles[0]": "Background@ActiveRunningIndicator:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.2\"><GradientStop Color=\"#111111\" Offset=\"0.0\" /><GradientStop Color=\"#111111\" Offset=\"1.0\" /></LinearGradientBrush>",
   "controlStyles[5].styles[1]": "CornerRadius=2",
-  "controlStyles[5].styles[2]": "Background@RequestingAttentionRunningIndicator:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.2\">     <GradientStop Color=\"#D53300\" Offset=\"0.0\" />     <GradientStop Color=\"#111111\" Offset=\"1.0\" /> </LinearGradientBrush>",
+  "controlStyles[5].styles[2]": "Background@RequestingAttentionRunningIndicator:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.2\"><GradientStop Color=\"#D53300\" Offset=\"0.0\" /><GradientStop Color=\"#111111\" Offset=\"1.0\" /></LinearGradientBrush>",
   "controlStyles[5].styles[3]": "BorderBrush=#33101010",
   "controlStyles[5].styles[4]": "BorderThickness=1",
   "controlStyles[5].styles[5]": "BorderBrush@NoRunningIndicator=Transparent",
@@ -91,9 +90,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[12].styles[1]": "BorderThickness=0",
   "controlStyles[12].styles[2]": "Margin=0,2,1,4",
   "controlStyles[13].target": "Grid#OverflowRootGrid > Border",
-  "controlStyles[13].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.7\"><GradientStop Color=\"#B5B9BC\" Offset=\"0.0\" /><GradientStop Color=\"#B5B9BC\" Offset=\"0.03125\"  /><GradientStop Color=\"#909296\" Offset=\"0.03125\" /><GradientStop Color=\"#464B51\" Offset=\"0.5\" /><GradientStop Color=\"#060F15\" Offset=\"0.5\" /><GradientStop Color=\"#040C11\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"1.0\" /></LinearGradientBrush>",
-  "controlStyles[14].styles[0]": "Background:=<AcrylicBrush TintColor=\"Transparent\" TintOpacity=\"0\" TintLuminosityOpacity=\"0.1\" Opacity=\"1\" />",
+  "controlStyles[13].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.7\"><GradientStop Color=\"#B5B9BC\" Offset=\"0.0\" /><GradientStop Color=\"#B5B9BC\" Offset=\"0.03125\" /><GradientStop Color=\"#909296\" Offset=\"0.03125\" /><GradientStop Color=\"#464B51\" Offset=\"0.5\" /><GradientStop Color=\"#060F15\" Offset=\"0.5\" /><GradientStop Color=\"#040C11\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"1.0\" /></LinearGradientBrush>",
   "controlStyles[14].target": "Grid#OverflowRootGrid",
+  "controlStyles[14].styles[0]": "Background:=<AcrylicBrush TintColor=\"Transparent\" TintOpacity=\"0\" TintLuminosityOpacity=\"0.1\" Opacity=\"1\" />",
   "controlStyles[14].styles[1]": "Padding=-1",
   "controlStyles[14].styles[2]": "Margin=0,6,0,6",
   "controlStyles[14].styles[3]": "CornerRadius=8"

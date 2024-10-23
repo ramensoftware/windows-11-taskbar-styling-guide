@@ -45,8 +45,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[0].styles[1]": "VerticalAlignment=Stretch",
   "controlStyles[0].styles[2]": "Height=Auto",
   "controlStyles[1].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]",
-  "controlStyles[1].styles[1]": "Margin=-4,0,4,0",
   "controlStyles[1].styles[0]": "CornerRadius=0",
+  "controlStyles[1].styles[1]": "Margin=-4,0,4,0",
   "controlStyles[1].styles[2]": "MaxWidth=48",
   "controlStyles[2].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel",
   "controlStyles[2].styles[0]": "Padding=0",
@@ -86,7 +86,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[14].target": "Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Image#Icon",
   "controlStyles[14].styles[0]": "Height@NoRunningIndicator=16",
   "controlStyles[15].target": "Grid#OverflowRootGrid > Border",
-  "controlStyles[15].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0.5,0\" EndPoint=\"0.5,1\"> <GradientStop Color=\"#3168d5\" Offset=\"0.0\" /> <GradientStop Color=\"#4993E6\" Offset=\"0.1\" /> <GradientStop Color=\"#2157D7\" Offset=\"0.35\" /> <GradientStop Color=\"#2663E0\" Offset=\"0.8\" /> <GradientStop Color=\"#1941A5\" Offset=\"1.0\" /></LinearGradientBrush>" 
+  "controlStyles[15].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0.5,0\" EndPoint=\"0.5,1\"> <GradientStop Color=\"#3168d5\" Offset=\"0.0\" /> <GradientStop Color=\"#4993E6\" Offset=\"0.1\" /> <GradientStop Color=\"#2157D7\" Offset=\"0.35\" /> <GradientStop Color=\"#2663E0\" Offset=\"0.8\" /> <GradientStop Color=\"#1941A5\" Offset=\"1.0\" /></LinearGradientBrush>"
 }
 ```
 </details>

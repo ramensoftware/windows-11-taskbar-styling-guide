@@ -47,7 +47,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```json
-{  
+{
   "controlStyles[0].target": "Taskbar.TaskListButton",
   "controlStyles[0].styles[0]": "CornerRadius=3",
   "controlStyles[1].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
@@ -101,7 +101,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[16].target": "Rectangle#BackgroundStroke",
   "controlStyles[16].styles[0]": "Fill=Transparent",
   "controlStyles[17].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement",
-  "controlStyles[17].styles[0]": "Background=#302d47",  
+  "controlStyles[17].styles[0]": "Background=#302d47",
   "controlStyles[18].target": "TextBlock#DateInnerTextBlock",
   "controlStyles[18].styles[0]": "Margin=0,0,0,-2",
   "controlStyles[19].target": "Grid#OverflowRootGrid > Border",

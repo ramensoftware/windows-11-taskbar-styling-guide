@@ -5,7 +5,7 @@
 * [Introduction](#introduction)
   * [Finding targets](#finding-targets)
   * [Missing customizations](#missing-customizations)
-  * [Contributing](#contributing) 
+  * [Contributing](#contributing)
 * [Themes](#themes)
 * [General](#general)
   * [Taskbar size](#taskbar-size)
@@ -65,7 +65,8 @@ guide](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/blob
 guide](https://github.com/ramensoftware/windows-11-notification-center-styling-guide/blob/main/README.md).
 
 ### Finding Targets
-[How to find targets using UWPspy](https://github.com/bbmaster123/FWFU/blob/main/uwpspy.md)
+
+[How to find targets using UWPSpy](https://github.com/bbmaster123/FWFU/blob/main/uwpspy.md).
 
 ### Missing customizations
 

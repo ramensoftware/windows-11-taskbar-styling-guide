@@ -17,17 +17,21 @@ A nice clean theme that works nicely with dynamic windows themes using accent co
 
 ## Theme selection
 
-> [!NOTE]
-> The theme is not integrated into the mod, please see manual installation below
+The theme is integrated into the mod, and can be simply selected from the mod's
+settings:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
 
 ## Manual installation
 
 The theme styles can also be imported manually. To do that, follow these steps:
 
-- Open the Windows 11 Taskbar Styler mod in Windhawk.
-- Go to the "Advanced" tab.
-- Copy the content for theme below to the text box under "Mod settings" and click "Save".
-- Do the same for "Taskbar Labels for Windows 11"
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Advanced" tab.
+* Copy the content below to the text box under "Mod settings" and click "Save".
+* Do the same for "Taskbar Labels for Windows 11".
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -92,17 +96,17 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[16].styles[0]": "BorderThickness=0",
   "controlStyles[17].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator",
   "controlStyles[17].styles[0]": "StrokeThickness=1",
-  "controlStyles[17].styles[1]": "Stroke@InactivePointerOver:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColor}\"  />",
-  "controlStyles[17].styles[2]": "Stroke@InactivePressed:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorDark2}\"  />",
-  "controlStyles[17].styles[3]": "Stroke@ActiveNormal:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight2}\"  />",
+  "controlStyles[17].styles[1]": "Stroke@InactivePointerOver:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColor}\" />",
+  "controlStyles[17].styles[2]": "Stroke@InactivePressed:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorDark2}\" />",
+  "controlStyles[17].styles[3]": "Stroke@ActiveNormal:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight2}\" />",
   "controlStyles[17].styles[4]": "Stroke@ActivePointerOver:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
-  "controlStyles[17].styles[5]": "Stroke@ActivePressed:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight3}\"  />",
-  "controlStyles[18].styles[0]": "Background@InactiveRunningIndicator:=<SolidColorBrush Color=\"Black\" Opacity=\"0.4\"  />",
+  "controlStyles[17].styles[5]": "Stroke@ActivePressed:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight3}\" />",
+  "controlStyles[18].styles[0]": "Background@InactiveRunningIndicator:=<SolidColorBrush Color=\"Black\" Opacity=\"0.4\" />",
   "controlStyles[18].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement",
-  "controlStyles[18].styles[1]": "Background@InactiveRunningIndicator:=<SolidColorBrush Color=\"Black\" Opacity=\"0.4\"  />",
-  "controlStyles[18].styles[2]": "Background@ActiveRunningIndicator:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorDark2}\" Opacity=\"0.4\"  />",
+  "controlStyles[18].styles[1]": "Background@InactiveRunningIndicator:=<SolidColorBrush Color=\"Black\" Opacity=\"0.4\" />",
+  "controlStyles[18].styles[2]": "Background@ActiveRunningIndicator:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorDark2}\" Opacity=\"0.4\" />",
   "controlStyles[18].styles[3]": "Background@NoRunningIndicator:=Transparent",
-  "controlStyles[18].styles[4]": "Background@RequestingAttentionRunningIndicator:=<SolidColorBrush Color=\"#ffdf5e\" Opacity=\"0.4\"  />",
+  "controlStyles[18].styles[4]": "Background@RequestingAttentionRunningIndicator:=<SolidColorBrush Color=\"#ffdf5e\" Opacity=\"0.4\" />",
   "controlStyles[18].styles[5]": "Margin=1",
   "controlStyles[19].target": "Rectangle#ShowDesktopPipe",
   "controlStyles[19].styles[0]": "Width=12",
@@ -133,5 +137,4 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "labelForMultipleItems": "[%amount%] %name%"
 }
 ```
-
 </details>
