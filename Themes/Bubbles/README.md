@@ -86,7 +86,19 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[12].target": "Grid#OverflowRootGrid > Border",
   "controlStyles[12].styles[0]": "Background=#EE080810",
   "controlStyles[12].styles[1]": "BorderBrush=#303030",
-  "controlStyles[12].styles[2]": "BorderThickness=2.5"
+  "controlStyles[12].styles[2]": "BorderThickness=2.5",
+  "controlStyles[13].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
+  "controlStyles[13].styles[0]": "Margin=1,0,0,0",
+  "controlStyles[14].target": "SystemTray.Stack#ShowDesktopStack",
+  "controlStyles[14].styles[0]": "Padding=5,0,5,0",
+  "controlStyles[14].styles[1]": "Margin=2,0,10,0",
+  "controlStyles[15].target": "Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe",
+  "controlStyles[15].styles[0]": "MinWidth=4",
+  "controlStyles[15].styles[1]": "RadiusX=2",
+  "controlStyles[15].styles[2]": "RadiusY=2",
+  "controlStyles[16].target": "SystemTray.Stack#NotifyIconStack > Windows.UI.Xaml.Controls.Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.ChevronIconView > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[16].styles[0]": "CornerRadius=16,5,5,16",
+  "controlStyles[16].styles[1]": "Margin=-3,4,0,4"
 }
 ```
 </details>
