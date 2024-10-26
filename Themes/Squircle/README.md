@@ -169,7 +169,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[11].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates",
   "controlStyles[11].styles[0]": "Background@InactivePointerOver:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0\" />",
   "controlStyles[11].styles[1]": "Background:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.8\" FallbackColor=\"#BB222222\"/>",
-  "controlStyles[11].styles[2]": "Width=125%",
+  "controlStyles[11].styles[2]": "Width=125",
   "controlStyles[12].target": "Border#MultiWindowElement",
   "controlStyles[12].styles[0]": "Background:=<AcrylicBrush TintColor=\"Black\" TintOpacity=\"0.8\" FallbackColor=\"#BB222222\" />",
   "controlStyles[13].target": "TextBlock#TimeInnerTextBlock",
