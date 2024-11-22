@@ -117,6 +117,16 @@ Fill=<color>
 Replace `<color>` with the desired color. See [colors section](#colors) for all
 options (e.g. if you want blurred background effect).
 
+> [!NOTE]  
+> For some themes, a different target has to be used to customize the taskbar
+> background:
+> * The [WinXP](Themes/WinXP/README.md) theme spans the taskbar border over the
+>   full taskbar height. To customize the background, use the
+>   `Rectangle#BackgroundStroke` target.
+> * The [DockLike](Themes/DockLike/README.md) theme hides the standard taskbar
+>   background element. To customize the background, use the `Grid#RootGrid`
+>   target and the `Background=<color>` style.
+
 ### Taskbar border
 
 Target:
@@ -462,7 +472,7 @@ Fill:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpaci
 
 ### Mica effect as color
 
-> [!NOTE]  
+> [!NOTE]
 > Unfortunately I haven't figured this out yet. If you have any info please
 > contribute by making a pull request.
 
