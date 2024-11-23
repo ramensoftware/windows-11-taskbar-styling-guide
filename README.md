@@ -127,6 +127,14 @@ options (e.g. if you want blurred background effect).
 >   background element. To customize the background, use the `Grid#RootGrid`
 >   target and the `Background=<color>` style.
 
+> [!NOTE]  
+> There's [a known
+> limitation](https://github.com/ramensoftware/windhawk-mods/issues/742) which
+> makes some styles, such as an acrylic background, only work if there's a
+> single taskbar. The [Taskbar Background
+> Helper](https://windhawk.net/mods/taskbar-background-helper) mod can be used
+> as a workaround.
+
 ### Taskbar border
 
 Target:
@@ -463,7 +471,7 @@ color needs to be applied.
 Fill:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" />
 ```
 
-You can also mix Acrylic with a variation of an accent color for a more dynamic
+You can also mix acrylic with a variation of an accent color for a more dynamic
 look that fits current theme.
 
 ```
