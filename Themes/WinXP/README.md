@@ -75,7 +75,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[10].styles[5]": "BorderBrush@ActiveRunningIndicator=#1B67D7",
   "controlStyles[10].styles[6]": "BorderBrush=#3358B5",
   "controlStyles[11].target": "Taskbar.TaskListButton",
-  "controlStyles[11].styles[0]": "Margin=-1",
+  "controlStyles[11].styles[0]": "Margin=-1.5",
   "controlStyles[12].target": "Grid#SystemTrayFrameGrid",
   "controlStyles[12].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0.5,0\" EndPoint=\"0.5,1\"> <GradientStop Color=\"#16ADF0\" Offset=\"0.0\" /> <GradientStop Color=\"#19B9F3\" Offset=\"0.1\" /> <GradientStop Color=\"#118FE9\" Offset=\"0.35\" /> <GradientStop Color=\"#0E9EF0\" Offset=\"0.8\" /> <GradientStop Color=\"#1580D9\" Offset=\"1.0\" /></LinearGradientBrush>",
   "controlStyles[12].styles[1]": "BorderThickness=1,1,0,1",
