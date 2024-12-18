@@ -16,16 +16,6 @@ Alternate Light Bar Style: \
 * Combine taskbar buttons set to "When taskbar is full".
 * Dark wallpaper with matching accent color.
 
-## Modifications
-
-**Adjust Running Apps Button Width** - If the text of an app's button is very long, it can result in an unnecessarily wide button: \
-![Wide button](wide_button.png)
-
-To remedy this behavior:
-- Adjust the `MaxWidth` value to restrict the button's width to a preferred maximum value
-- Remove `MaxWidth` to use Windows' default behavior
-- Remove `MaxWidth` and set `Width` to set an identical static width to every running app
-
 ## Theme selection
 
 The theme is integrated into the mod, and can be simply selected from the mod's
@@ -69,12 +59,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[4].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl",
   "controlStyles[4].styles[0]": "Foreground@ActiveNormal=Black",
   "controlStyles[4].styles[1]": "Foreground@ActivePointerOver=Black",
-  "controlStyles[4].styles[2]": "MaxWidth=450",
   "controlStyles[4].styles[3]": "Margin=0,0,3,0",
   "controlStyles[5].styles[1]": "Margin=0,0,0,2",
   "controlStyles[5].styles[2]": "CornerRadius=0",
   "controlStyles[5].target": "SystemTray.SystemTrayFrame > Grid",
-  "controlStyles[5].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50000000\" Offset=\"0.3\" /><GradientStop Color=\"#EE000000\" Offset=\"0.9\" /></LinearGradientBrush>",
+  "controlStyles[5].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#95000000\" Offset=\"0.3\" /><GradientStop Color=\"#EE000000\" Offset=\"0.9\" /></LinearGradientBrush>",
   "controlStyles[6].target": "SystemTray.ChevronIconView",
   "controlStyles[6].styles[0]": "Padding=20",
   "controlStyles[7].target": "SystemTray.NotifyIconView#NotifyItemIcon",
@@ -118,12 +107,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[4].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl",
   "controlStyles[4].styles[0]": "Foreground@ActiveNormal=Black",
   "controlStyles[4].styles[1]": "Foreground@ActivePointerOver=Black",
-  "controlStyles[4].styles[2]": "MaxWidth=450",
   "controlStyles[4].styles[3]": "Margin=0,0,3,0",
   "controlStyles[5].styles[1]": "Margin=0,0,0,2",
   "controlStyles[5].styles[2]": "CornerRadius=0",
   "controlStyles[5].target": "SystemTray.SystemTrayFrame > Grid",
-  "controlStyles[5].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50000000\" Offset=\"0.3\" /><GradientStop Color=\"#EE000000\" Offset=\"0.9\" /></LinearGradientBrush>",
+  "controlStyles[5].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#95000000\" Offset=\"0.3\" /><GradientStop Color=\"#EE000000\" Offset=\"0.9\" /></LinearGradientBrush>",
   "controlStyles[6].target": "SystemTray.ChevronIconView",
   "controlStyles[6].styles[0]": "Padding=20",
   "controlStyles[7].target": "SystemTray.NotifyIconView#NotifyItemIcon",
