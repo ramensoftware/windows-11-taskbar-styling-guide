@@ -170,6 +170,10 @@ Replace `<image>` with your own image, a local file path or a URL, for example:
 * Windows 10: `https://i.imgur.com/lEvZStx.png`.
 * Windows XP: `https://i.imgur.com/RX5DqT3.png` (use with `Stretch="None"`).
 
+To set a different image for each Start button state - normal, hovered, pressed -
+refer to [this
+comment](https://github.com/ramensoftware/windows-11-taskbar-styling-guide/issues/153#issuecomment-2569892017).
+
 ### Hide the start button
 
 Target:
