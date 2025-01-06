@@ -1,7 +1,7 @@
 # 21996 Taskbar theme for Windows 11 Taskbar Styler
 **Author**: [Tails](https://github.com/milesprower2293)
 
-![Screenshot](screenshot.png)
+![Screenshot](Screenshot.png)
 
 ## Theme selection
 
