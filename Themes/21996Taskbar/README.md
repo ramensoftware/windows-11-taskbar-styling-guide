@@ -1,4 +1,9 @@
 # 21996 Taskbar theme for Windows 11 Taskbar Styler
+
+This theme tries to recreate earlier versions of the Windows 11 Taskbar, which includes:
+* The Windows 10 style system tray
+* 21H2 search icon and early version of the taskbar searchbox
+
 **Author**: [Tails](https://github.com/milesprower2293)
 
 ![Screenshot](Screenshot.png)
