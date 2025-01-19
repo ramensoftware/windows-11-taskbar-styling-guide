@@ -41,6 +41,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 "controlStyles[2].styles[3]":"FontFamily=Segoe MDL2 Assets",
 "controlStyles[2].styles[4]":"Width=30",
 "controlStyles[2].styles[5]":"FontWeight=ExtraLight",
+"controlStyles[2].styles[6]":"Foreground:=<SolidColorBrush Color=\"{ThemeResource SystemBaseHighColor}\" />",
 "controlStyles[3].target":"Windows.UI.Xaml.Controls.FontIcon#SearchBoxFontIcon",
 "controlStyles[3].styles[0]":"FontFamily=Segoe Fluent Icons",
 "controlStyles[3].styles[1]":"Transform3D:=<CompositeTransform3D RotationY=\"180\" TranslateX=\"16\" />",
@@ -78,8 +79,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
 "controlStyles[12].styles[0]":"Width=9",
 "controlStyles[12].styles[1]":"Margin=0,0,-10,0",
 "controlStyles[12].styles[2]":"Height=500",
-"controlStyles[12].styles[3]":"Fill@Active:=<AcrylicBrush TintOpacity=\"0.5\" Opacity=\"0.5\"/>",
-"controlStyles[12].styles[4]":"Stroke:=<SolidColorBrush Color=\"Gray\" Opacity=\"1\"/>",
+"controlStyles[12].styles[3]":"Fill@Active:=<AcrylicBrush TintColor=\"{ThemeResource SystemBaseLowColor}\" TintOpacity=\"0.5\" Opacity=\"0\"/>",
+"controlStyles[12].styles[4]":"Stroke:=<SolidColorBrush Color=\"{ThemeResource SystemBaseHighColor}\" Opacity=\"0.5\"/>",
 "controlStyles[13].target":"SystemTray.OmniButton#ControlCenterButton",
 "controlStyles[13].styles[0]":"Padding=0,0,0,0",
 "controlStyles[13].styles[1]":"CornerRadius=0",
@@ -147,9 +148,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
 "controlStyles[35].target":"SystemTray.OmniButton#ControlCenterButton",
 "controlStyles[35].styles[0]":"Visibility=Visible",
 "controlStyles[36].target":"Windows.UI.Xaml.Controls.Grid#RootGrid",
-"controlStyles[36].styles[0]":"Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0\" TintLuminosityOpacity=\"0.7\"  />",
+"controlStyles[36].styles[0]":"Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeMediumHighColor}\" TintOpacity=\"0\" TintLuminosityOpacity=\"0.8\" FallbackColor=\"{ThemeResource SystemChromeMediumColor}\" />",
 "controlStyles[37].target":"Taskbar.TaskbarBackground#BackgroundControl > Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill",
-"controlStyles[37].styles[0]":"Opacity=0.5"
+"controlStyles[37].styles[0]":"Opacity=0.5",
+"controlStyles[38].target":"Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
+"controlStyles[38].styles[0]":"Visibility=Collapsed"
 }
 ```
 </details>
