@@ -6,7 +6,7 @@ This theme tries to recreate earlier versions of the Windows 11 Taskbar, which i
 
 **Author**: [Tails](https://github.com/milesprower2293)
 
-![Screenshot](Screenshot.png)
+![Screenshot](screenshot.png)
 
 ## Theme selection
 
