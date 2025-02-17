@@ -140,7 +140,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[1].styles[2]": "CornerRadius=8,8,0,0",
   "controlStyles[1].styles[3]": "BorderBrush:=<SolidColorBrush Color=\"{ThemeResource SurfaceStrokeColorDefault}\" />",
 
-  "controlStyles[2].target": "Rectangle#BackgroundFill",
+  "controlStyles[2].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
   "controlStyles[2].styles[0]": "Visibility=Collapsed",
 
   "controlStyles[3].target": "Rectangle#BackgroundStroke",
