@@ -107,7 +107,7 @@ size](https://windhawk.net/mods/taskbar-icon-size) mod.
 
 Target:
 ```
-Rectangle#BackgroundFill
+Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
 ```
 
 To set a solid color background, use the following style:
