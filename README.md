@@ -257,7 +257,7 @@ Fill@ActiveRunningIndicator=Red
 Width@ActiveRunningIndicator=20
 ```
 
-The following visual states can be used:
+The following visual states[^1] can be used:
 * `ActiveRunningIndicator`
 * `InactiveRunningIndicator`
 * `RequestingAttentionRunningIndicator`
@@ -507,3 +507,5 @@ Fill:=<ImageBrush Stretch="UniformToFill" ImageSource="<image>" />
 ```
 
 Replace `<image>` with your own image, a URL or a local file path.
+
+[^1]: See [Finding Targets](#finding-targets) on how to use UWPSpy to find all of the available visual states for an element
