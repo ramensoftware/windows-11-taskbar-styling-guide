@@ -5,32 +5,36 @@
 ![Screenshot of taskbar with the bottom of a browser](BottomDensy+Browser.png)
 
 Or an even more dense variant by removing the inactive app indicator (useful if you only have a couple of pinned icons, so it's easier to indicate the few non-running apps):
+
 ![Screenshot of taskbar with BottomDensyNoInd](BottomDensyNoInd.png)
 
 ## Notes
 
 A dense theme eliminating some of the excessive/useless taskbar UI elements for better visibility at a smaller screen area "cost":
   - **Icons**
-    - align to the bottom of the screen: padding below icons serves no useful purpose
-    - (via another mod) make icons bigger @`32` to match their "natural"/not downscaled size
-  - Running app **indicators**: move above the icon to make the icons "merge" with/"extend" into the fullscreen borderless apps like a bottom tab (but only if the background color match) ![Screenshot of taskbar extending into an app](BottomDensyExtend.png)
-    - active: full icon width for the better "merging" effect. Tip:change active running indicator color to match your borderless app background to make an icon "extend" into the app
-      - target: `Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator`
-      - style: `Fill@ActiveRunningIndicator=#fef9f0`
-    - inactive: make them tiny since usually you only have a few icons "pinned", so not that much need to separate running from pinned to begin with, and most of the icons will have a running indicator, so if it's big as in default style, that's just extra noise.
-  - **Start button**: removed since the ↙ corner already has ∞ dimensions across both horizontal and vertical axes, so it's more convenient to simply move your mouse until the very end to the corner (will never miss) instead of trying to precisely stop at the Start button. Downside: on hover at the ↙ corner you see a popup for the left-most icon
-  - **Taskbar**: make transparent and (via another mod) reduce height to leave no useless space above icons (except for the space used for indicators)
+    - Align to the bottom of the screen: padding below icons serves no useful purpose
+    - (Via another mod) make icons bigger @`32` to match their "natural"/not downscaled size
+  - Running app **indicators**: move above the icon to make the icons "merge" with/"extend" into the fullscreen borderless apps like a bottom tab (but only if the background color matches) 
+
+![Screenshot of taskbar extending into an app](BottomDensyExtend.png)
+   
+ - Active: Full icon width for a better "merging" effect. Tip: Change active running indicator color to match your borderless app background, to make an icon "extend" into the app
+      - Target: `Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator`
+      - Style: `Fill@ActiveRunningIndicator=#fef9f0`
+    - Inactive: Make them tiny, since usually you only have a few icons "pinned", so not that much need to separate running apps from pinned apps to begin with. Most of the icons will have a running indicator, so if it's big as in default style, that's just extra noise.
+  - **Start Button**: removed since the ↙ corner already has ∞ dimensions across both horizontal and vertical axes, so it's more convenient to simply move your mouse until the very end to the corner (will never miss) instead of trying to precisely stop at the Start button. Downside: on hover at the ↙ corner you see a popup for the left-most icon
+  - **Taskbar**: Make transparent and (via another mod) reduce height to leave no useless space above icons (except for the space used for indicators)
 
 `BottomDensyNoInd` is based on `BottomDensy`, but 2px smaller!
-  - top padding used for indicators removed
-    - active running indicator remains, but eats into the icon size instead
-    - inactive running indicator removed since almost all icons in the taskbar are running
-    - non running apps are indicated via a smaller icon instead
+    - Top padding used for indicators removed
+    - Active running indicator remains, but eats into the icon size instead
+    - Inactive running indicator removed since almost all icons in the taskbar are running
+    - Non running apps are indicated via a smaller icon instead
 
 ### Suggested Windows settings
 
 - Set taskbar alignment to left
-- Use bigger icons and smaller taskbar settings for `Taskbar height and icon size` (see config below)
+- Use bigger icons and smaller taskbar settings for `Taskbar Height and Icon Size` (see config below)
 - Change active running indicator color to match the background of your most commonly used apps to make the icon "merge" with the window.
 
 ## Manual installation
