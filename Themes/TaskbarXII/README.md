@@ -7,7 +7,36 @@
 
 # ✦ Notes
 
-Currently, this theme is in a fixed position. If you have many pinned apps, it is better to use the `search pill` or `search icon`.
+- Currently, this theme is in a fixed position. If you have many pinned apps, it is recommended to use the `Search pill` or `Search icon`.
+
+- If your monitor resolution differs from **1920x1080 at 100% scale**, you may need to adjust the value of **`TranslateX`** in the following lines:
+
+  ```
+  ThemeTargetStyles{L"Taskbar.TaskbarFrame#TaskbarFrame", { L"HorizontalAlignment=Right", L"Transform3D:=<CompositeTransform3D TranslateX=\"-820\"/>", L"Width=Auto", L"Height=56" }},
+  ```
+  ![Main](preview5.png)
+
+  ```
+  ThemeTargetStyles{L"SystemTray.SystemTrayFrame", { L"HorizontalAlignment=Left", L"Transform3D:=<CompositeTransform3D TranslateX=\"1104.5\"/>", L"Width=Auto", L"Height=56" }},
+  ```
+  ![System Tray](preview6.png)
+
+- If you notice the background is missing under the window button, it means the `Widget` feature is disabled.
+
+  ![Before](preview3_widget_disabled.png)
+
+  To fix this, either enable the `Widget` feature or replace the following line:
+
+  ```
+  ThemeTargetStyles{L"Taskbar.TaskbarBackground#BackgroundControl", { L"Height=48", L"Transform3D:=<CompositeTransform3D TranslateX=\"156.5\"/>", L"Opacity=0.7" }},
+  ```
+
+  With this one:
+
+  ```
+  ThemeTargetStyles{L"Taskbar.TaskbarBackground#BackgroundControl", { L"Height=48", L"Opacity=0.7" }},
+  ```
+  ![After](preview4_widget_enabled.png)
 
 # ✦ Suggested Windows settings
 
@@ -15,7 +44,6 @@ Currently, this theme is in a fixed position. If you have many pinned apps, it i
 - The widget should be enabled.
 - The display scale should be at 100 percent.
 - You can hide the bell icon via Notifications in Settings.
-
 
 # ✦ Theme selection
 
