@@ -2,8 +2,8 @@
 
 **Author**: [ryokr](https://github.com/ryokr)
 
-![Demontration](preview1.png)
-![Demontration](preview2.png)
+![Demontration](screenshot.png)
+![Demontration](screenshot_another.png)
 
 # ✦ Notes
 
@@ -14,16 +14,16 @@
   ```
   ThemeTargetStyles{L"Taskbar.TaskbarFrame#TaskbarFrame", { L"HorizontalAlignment=Right", L"Transform3D:=<CompositeTransform3D TranslateX=\"-820\"/>", L"Width=Auto", L"Height=56" }},
   ```
-  ![Main](preview5.png)
+  ![Main](screenshot_section_main.png)
 
   ```
   ThemeTargetStyles{L"SystemTray.SystemTrayFrame", { L"HorizontalAlignment=Left", L"Transform3D:=<CompositeTransform3D TranslateX=\"1104.5\"/>", L"Width=Auto", L"Height=56" }},
   ```
-  ![System Tray](preview6.png)
+  ![System Tray](screenshot_section_systray.png)
 
 - If you notice the background is missing under the window button, it means the `Widget` feature is disabled.
 
-  ![Before](preview3_widget_disabled.png)
+  ![Before](screenshot_widget_disabled.png)
 
   To fix this, either enable the `Widget` feature or replace the following line:
 
@@ -36,7 +36,7 @@
   ```
   ThemeTargetStyles{L"Taskbar.TaskbarBackground#BackgroundControl", { L"Height=48", L"Opacity=0.7" }},
   ```
-  ![After](preview4_widget_enabled.png)
+  ![After](screenshot_widget_enabled.png)
 
 # ✦ Suggested Windows settings
 
