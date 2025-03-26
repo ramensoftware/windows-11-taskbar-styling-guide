@@ -97,7 +97,7 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
 `BottomDensyNoInd`
 ```json
 {
-"controlStyles[0].target"   :"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFil",
+"controlStyles[0].target"   :"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
 "controlStyles[0].styles[0]":"Fill=Transparent",
 "controlStyles[1].target"   :"Rectangle#BackgroundStroke",
 "controlStyles[1].styles[0]":"Fill=Transparent",
