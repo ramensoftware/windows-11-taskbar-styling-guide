@@ -2,11 +2,11 @@
 
 **Author**: [es](https://github.com/eugenesvk)
 
-![Screenshot of taskbar with the bottom of a browser](BottomDensy+Browser.png)
+![Screenshot of the taskbar with the bottom of a browser](screenshot_ind_browser.png)
 
 Or an even more dense variant by removing the inactive app indicator (useful if you only have a couple of pinned icons, so it's easier to indicate the few non-running apps):
 
-![Screenshot of taskbar with BottomDensyNoInd](BottomDensyNoInd.png)
+![Screenshot of the taskbar with BottomDensyNoInd](screenshot.png)
 
 ## Notes
 
@@ -17,7 +17,7 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
     - Make **Notification icons** bigger @`20` (set width to `@21` via another mod to have a small gap)
   - Running app **indicators**: move above the icon to make the icons "merge" with/"extend" into the fullscreen borderless apps like a bottom tab (but only if the background color matches) 
 
-![Screenshot of taskbar extending into an app](BottomDensyExtend.png)
+![Screenshot of taskbar extending into an app](screenshot_ind_extend.png)
    
  - Active: Full icon width for a better "merging" effect. Tip: Change active running indicator color to match your borderless app background, to make an icon "extend" into the app
       - Target: `Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator`
