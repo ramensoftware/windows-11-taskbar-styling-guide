@@ -14,6 +14,7 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
   - **Icons**
     - Align to the bottom of the screen: padding below icons serves no useful purpose
     - (Via another mod) make icons bigger @`32` to match their "natural"/not downscaled size
+    - Make **Notification icons** bigger @`20` (set width to `@21` via another mod to have a small gap)
   - Running app **indicators**: move above the icon to make the icons "merge" with/"extend" into the fullscreen borderless apps like a bottom tab (but only if the background color matches) 
 
 ![Screenshot of taskbar extending into an app](BottomDensyExtend.png)
@@ -23,6 +24,7 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
       - Style: `Fill@ActiveRunningIndicator=#fef9f0`
     - Inactive: Make them tiny, since usually you only have a few icons "pinned", so not that much need to separate running apps from pinned apps to begin with. Most of the icons will have a running indicator, so if it's big as in default style, that's just extra noise.
   - **Start Button**: removed since the ↙ corner already has ∞ dimensions across both horizontal and vertical axes, so it's more convenient to simply move your mouse until the very end to the corner (will never miss) instead of trying to precisely stop at the Start button. Downside: on hover at the ↙ corner you see a popup for the left-most icon
+  - **Show Desktop indicator**: minimized to 1px for the same reason: ↘ corner has ∞ dimensions
   - **Taskbar**: Make transparent and (via another mod) reduce height to leave no useless space above icons (except for the space used for indicators)
 
 `BottomDensyNoInd` is based on `BottomDensy`, but 2px smaller!
@@ -78,7 +80,17 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
 "controlStyles[8].styles[0]":"Padding=2,0,2,0",
 "controlStyles[8].styles[1]":"VerticalAlignment=2",
 "controlStyles[9].target"   :"Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]",
-"controlStyles[9].styles[0]":"Visibility=Collapsed"
+"controlStyles[9].styles[0]":"Visibility=Collapsed",
+"controlStyles[10].target"   :"SystemTray.Stack#ShowDesktopStack",
+"controlStyles[10].styles[0]":"Width=1",
+"controlStyles[11].target"   :"Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe",
+"controlStyles[11].styles[0]":"HorizontalAlignment=0",
+"controlStyles[12].target"   :"SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
+"controlStyles[12].styles[0]":"Width=20",
+"controlStyles[12].styles[1]":"Height=20",
+"controlStyles[13].target"   :"WrapGrid > ContentPresenter > SystemTray.NotifyIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
+"controlStyles[13].styles[0]":"Width=20",
+"controlStyles[13].styles[1]":"Height=20"
 }
 ```
 
@@ -113,12 +125,22 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
 "controlStyles[8].styles[1]":"VerticalAlignment=2",
 "controlStyles[9].target"   :"Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]",
 "controlStyles[9].styles[0]":"Visibility=Collapsed",
-"controlStyles[10].target"   :"Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Image#Icon",
-"controlStyles[10].styles[0]":"Width@ActiveRunningIndicator=30",
-"controlStyles[10].styles[1]":"Height@ActiveRunningIndicator=30",
-"controlStyles[10].styles[2]":"Width@NoRunningIndicator=26",
-"controlStyles[10].styles[3]":"Height@NoRunningIndicator=26",
-"controlStyles[10].styles[4]":"Margin@NoRunningIndicator=0,6,0,0"
+"controlStyles[10].target"   :"SystemTray.Stack#ShowDesktopStack",
+"controlStyles[10].styles[0]":"Width=1",
+"controlStyles[11].target"   :"Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe",
+"controlStyles[11].styles[0]":"HorizontalAlignment=0",
+"controlStyles[12].target"   :"SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
+"controlStyles[12].styles[0]":"Width=20",
+"controlStyles[12].styles[1]":"Height=20",
+"controlStyles[13].target"   :"WrapGrid > ContentPresenter > SystemTray.NotifyIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
+"controlStyles[13].styles[0]":"Width=20",
+"controlStyles[13].styles[1]":"Height=20",
+"controlStyles[14].target"   :"Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Image#Icon",
+"controlStyles[14].styles[0]":"Width@ActiveRunningIndicator=30",
+"controlStyles[14].styles[1]":"Height@ActiveRunningIndicator=30",
+"controlStyles[14].styles[2]":"Width@NoRunningIndicator=26",
+"controlStyles[14].styles[3]":"Height@NoRunningIndicator=26",
+"controlStyles[14].styles[4]":"Margin@NoRunningIndicator=0,6,0,0"
 }
 ```
 ## Taskbar height and icon size
@@ -127,8 +149,8 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
 `BottomDensy`
 ```json
 {
-"IconSize": 32,
-"TaskbarHeight": 34,
+"IconSize"          : 32,
+"TaskbarHeight"     : 34,
 "TaskbarButtonWidth": 36
 }
 ```
@@ -136,9 +158,18 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
 `BottomDensyNoInd`
 ```json
 {
-"IconSize": 32,
-"TaskbarHeight": 32,
+"IconSize"          : 32,
+"TaskbarHeight"     : 32,
 "TaskbarButtonWidth": 36
 }
+```
+## Notification item width
+[mod taskbar-notification-icon-spacing](https://windhawk.net/mods/taskbar-notification-icon-spacing)
+`notificationIconWidth` and `overflowIconWidth` should be at least `21` to add space between `20` icon size, but otherwise use whatever values that look best for you. `overflowIconsPerRow` depends on the number of icons and might be best to have the smallest packed square to minimize the distance of each icon to the mouse pointer
+```json
+{
+"notificationIconWidth":21,
+"overflowIconWidth"    :34,
+"overflowIconsPerRow"  : 5}
 ```
 </details>
