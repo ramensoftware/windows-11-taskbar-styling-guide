@@ -3,11 +3,22 @@
 This theme tries to recreate earlier versions of the Windows 11 Taskbar, which includes:
 * The Windows 10 style system tray
 * 21H2 search icon and early version of the taskbar searchbox
-
+* Windows 10 Window thumbnails (For newer 11 builds which contain the new Window Thumbnails)
+#
 **Author**: [Tails](https://github.com/milesprower2293)
+#
+**Taskbar**
 
-![Screenshot](screenshot.png)
+[![Taskbar](screenshot-taskbar.png)](screenshot-taskbar.png)
 
+**Tray Overflow**
+
+[![Taskbar](screenshot-overflow.png)](screenshot-overflow.png)
+
+**Window Thumbnails**
+
+[![Taskbar](screenshot-thumbnails.png)](screenshot-thumbnails.png)
+#
 ## Theme selection
 
 The theme is integrated into the mod, and can be simply selected from the mod's
