@@ -4,6 +4,7 @@ This theme tries to recreate earlier versions of the Windows 11 Taskbar, which i
 * Windows 10 style system tray and tray overflow
 * 21H2 search icon and early version of the taskbar searchbox
 * Windows 10 Window thumbnails (For newer 11 builds which contain the new Window Thumbnails)
+* 21370-22000.9-like acrylic with accent color support
 #
 **Author**: [Tails](https://github.com/milesprower2293)
 #
