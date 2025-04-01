@@ -95,7 +95,7 @@ Taskbar Styler mod. The following themes are available:
 | [CleanSlate](Themes/CleanSlate/README.md) | [![CleanSlate](Themes/CleanSlate/screenshot.png)](Themes/CleanSlate/screenshot.png)
 | [BottomDensy](Themes/BottomDensy/README.md) | [![BottomDensy](Themes/BottomDensy/screenshot.png)](Themes/BottomDensy/screenshot.png)
 | [Lucent](Themes/Lucent/README.md) | [![Lucent](Themes/Lucent/screenshot.png)](Themes/Lucent/screenshot.png)
-| [21996Taskbar](Themes/21996Taskbar/README.md) | [![21996Taskbar](Themes/21996Taskbar/taskbar-screenshot.png)](Themes/21996Taskbar/taskbar-screenshot.png)
+| [21996Taskbar](Themes/21996Taskbar/README.md) | [![21996Taskbar](Themes/21996Taskbar/screenshot-taskbar.png)](Themes/21996Taskbar/screenshot-taskbar.png)
 | [TaskbarXII](Themes/TaskbarXII/README.md) | [![TaskbarXII](Themes/TaskbarXII/screenshot.png)](Themes/TaskbarXII/screenshot.png)
 
 ## General
