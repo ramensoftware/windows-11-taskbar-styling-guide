@@ -29,7 +29,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-  "controlStyles[0].target": "Rectangle#BackgroundFill",
+  "controlStyles[0].target": "Taskbar.TaskbarBackground#BackgroundControl > Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill",
   "controlStyles[0].styles[0]": "Fill=#EE080810",
   "controlStyles[1].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement",
   "controlStyles[1].styles[0]": "Background=#303030",
