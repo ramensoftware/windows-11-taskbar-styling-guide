@@ -9,33 +9,50 @@
 
 - Currently, this theme is in a fixed position. If you have many pinned apps, it is recommended to use the `Search pill` or `Search icon`.
 
-- If your monitor resolution differs from **1920x1080 at 100% scale**, you may need to adjust the value of **`TranslateX`** in the following lines:
+- If your monitor resolution differs from **1920x1080 at 100% scale**, you may need to adjust the value of **`TranslateX`** by adding the following styles to the mod's settings:
 
-  ```
-  ThemeTargetStyles{L"Taskbar.TaskbarFrame#TaskbarFrame", { L"HorizontalAlignment=Right", L"Transform3D:=<CompositeTransform3D TranslateX=\"-820\"/>", L"Width=Auto", L"Height=56" }},
-  ```
+```
+Target:
+Taskbar.TaskbarFrame#TaskbarFrame
+
+Styles:
+HorizontalAlignment=Right
+Transform3D:=<CompositeTransform3D TranslateX="-820"/>
+Width=Auto
+Height=56
+```
+
   ![Main](screenshot_section_main.png)
 
-  ```
-  ThemeTargetStyles{L"SystemTray.SystemTrayFrame", { L"HorizontalAlignment=Left", L"Transform3D:=<CompositeTransform3D TranslateX=\"1104.5\"/>", L"Width=Auto", L"Height=56" }},
-  ```
+```
+Target:
+SystemTray.SystemTrayFrame
+
+Styles:
+HorizontalAlignment=Left
+Transform3D:=<CompositeTransform3D TranslateX="1104.5"/>
+Width=Auto
+Height=56
+```
   ![System Tray](screenshot_section_systray.png)
 
 - If you notice the background is missing under the window button, it means the `Widget` feature is disabled.
 
   ![Before](screenshot_widget_disabled.png)
 
-  To fix this, either enable the `Widget` feature or replace the following line:
+  To fix this, either enable the `Widget` feature, or add the following styles to the mod's settings:
 
-  ```
-  ThemeTargetStyles{L"Taskbar.TaskbarBackground#BackgroundControl", { L"Height=48", L"Transform3D:=<CompositeTransform3D TranslateX=\"156.5\"/>", L"Opacity=0.7" }},
-  ```
+```
+Target:
+Taskbar.TaskbarBackground#BackgroundControl
 
-  With this one:
+Styles:
+Height=48
+Transform3D:=<CompositeTransform3D TranslateX="0"/>
+Opacity=0.7
+```
+This will override the default value of TranslateX="156.5"
 
-  ```
-  ThemeTargetStyles{L"Taskbar.TaskbarBackground#BackgroundControl", { L"Height=48", L"Opacity=0.7" }},
-  ```
   ![After](screenshot_widget_enabled.png)
 
 # ✦ Suggested Windows settings
