@@ -10,7 +10,7 @@ This theme tries to recreate earlier versions of the Windows 11 Taskbar, which i
 #
 **Taskbar**
 
-[![Taskbar](screenshot-taskbar.png)](screenshot-taskbar.png)
+[![Taskbar](screenshot.png)](screenshot.png)
 
 **Tray Overflow**
 
