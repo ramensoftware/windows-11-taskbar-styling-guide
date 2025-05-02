@@ -2,7 +2,7 @@
 
 **Author**: [xscriptorcode](https://github.com/xscriptorcode)
 
-![Demonstration](xdark.png)
+![Demonstration](screenshot.png)
 
 # ✦ Notes
 
