@@ -61,7 +61,7 @@ So, "Margin=1,0,0,0" sets 1 pixel of space between the icon and the text.
 ```json
 
 {
-  "theme": "",
+  "theme": "xdark",
   "controlStyles[0].target": "Taskbar.TaskListButton",
   "controlStyles[0].styles[0]": "CornerRadius=13",
   "controlStyles[0].styles[1]": "Padding=6,0,6,0",
