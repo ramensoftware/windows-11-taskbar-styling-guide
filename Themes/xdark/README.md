@@ -1,4 +1,4 @@
-# ✦ xdark theme for Windows 11 Taskbar Styler :3
+# ✦ xdark theme for Windows 11 Taskbar Styler
 
 **Author**: [xscriptorcode](https://github.com/xscriptorcode)
 
@@ -42,6 +42,19 @@ You can manually import the styles like this:
 * Go to the **Advanced** tab.
 * Paste the following JSON content in the "Mod settings" section and click **Save**.
 
+### ✦ Customize Icon-to-Text Spacing
+
+If you'd like to adjust the distance between the app icon and its label (usually the app name), you can modify the following JSON property:
+
+```json
+"controlStyles[12].styles[2]": "Margin=1,0,0,0"
+```
+
+This Margin follows the format:
+Margin=left,top,right,bottom
+
+So, "Margin=1,0,0,0" sets 1 pixel of space between the icon and the text.
+
 <details>
 <summary>Click to expand JSON content</summary>
 
@@ -51,6 +64,8 @@ You can manually import the styles like this:
   "theme": "",
   "controlStyles[0].target": "Taskbar.TaskListButton",
   "controlStyles[0].styles[0]": "CornerRadius=13",
+  "controlStyles[0].styles[1]": "Padding=6,0,6,0",
+  "controlStyles[0].styles[2]": "HorizontalContentAlignment=Left",
   "resourceVariables[0].variableKey": "",
   "resourceVariables[0].value": "",
   "controlStyles[1].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
@@ -93,6 +108,9 @@ You can manually import the styles like this:
   "controlStyles[12].target": "TextBlock#LabelControl",
   "controlStyles[12].styles[0]": "FontFamily=Segoe UI Medium",
   "controlStyles[12].styles[1]": "Foreground=#facc15",
+  "controlStyles[12].styles[2]": "Margin=1,0,0,0",
+  "controlStyles[12].styles[3]": "VerticalAlignment=Center",
+  "controlStyles[12].styles[4]": "TextWrapping=NoWrap",
   "controlStyles[13].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]",
   "controlStyles[13].styles[0]": "Visibility=Visible",
   "controlStyles[14].target": "Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock[Text=]",
@@ -102,8 +120,6 @@ You can manually import the styles like this:
   "controlStyles[15].styles[0]": "Fill=Transparent",
   "controlStyles[16].target": "Rectangle#BackgroundStroke",
   "controlStyles[16].styles[0]": "Fill=Transparent",
-  "controlStyles[17].target": "TextBlock#LabelControl",
-  "controlStyles[17].styles[0]": "Foreground=#facc15",
   "controlStyles[18].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
   "controlStyles[18].styles[0]": "Foreground=#facc15"
 }
