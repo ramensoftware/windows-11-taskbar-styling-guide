@@ -4,6 +4,17 @@
 
 ![Demonstration](screenshot.png)
 
+# ✦ Required Windhawk Mods for Full Effect
+To achieve the full implementation of the xdark theme, make sure to install and configure the following Windhawk mods in addition to Taskbar Styler:
+
+- Taskbar Clock Customization – for styling the system clock.
+
+- Taskbar Height and Icon Size – to adjust the proportions and padding of taskbar items.
+
+- Taskbar Labels for Windows 11 – to enable visible labels next to app icons.
+
+
+
 # ✦ Notes
 
 - This theme is designed for dark, minimalistic desktop setups.
@@ -61,7 +72,6 @@ So, "Margin=1,0,0,0" sets 1 pixel of space between the icon and the text.
 ```json
 
 {
-  "theme": "xdark",
   "controlStyles[0].target": "Taskbar.TaskListButton",
   "controlStyles[0].styles[0]": "CornerRadius=13",
   "controlStyles[0].styles[1]": "Padding=6,0,6,0",
