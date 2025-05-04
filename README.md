@@ -103,6 +103,7 @@ Taskbar Styler mod. The following themes are available:
 | [21996Taskbar](Themes/21996Taskbar/README.md) | [![21996Taskbar](Themes/21996Taskbar/screenshot.png)](Themes/21996Taskbar/screenshot.png)
 | [BottomDensy](Themes/BottomDensy/README.md) | [![BottomDensy](Themes/BottomDensy/screenshot.png)](Themes/BottomDensy/screenshot.png)
 | [TaskbarXII](Themes/TaskbarXII/README.md) | [![TaskbarXII](Themes/TaskbarXII/screenshot.png)](Themes/TaskbarXII/screenshot.png)
+| [Sinistra](Themes/Sinistra/README.md) | [![Sinistra](Themes/Sinistra/screenshot.png)](Themes/Sinistra/screenshot.png)
 
 ## General
 
