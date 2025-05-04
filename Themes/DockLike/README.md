@@ -20,7 +20,7 @@ Do not use the Windows taskbar setting to left align. Instead, add the following
 
 Target:
 ```
-Taskbar.TaskbarFrame#TaskbarFrame
+Taskbar.TaskbarFrame
 ```
 Styles:
 ```
@@ -30,7 +30,7 @@ Margin=0,0,250,0
 
 Target:
 ```
-Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid
+Taskbar.TaskbarFrame > Grid#RootGrid
 ```
 Style:
 ```
@@ -49,7 +49,7 @@ This gives it an appearance closer to the MacOS dock.
 
 Target:
 ```
-Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid
+Taskbar.TaskbarFrame > Grid#RootGrid
 ```
 Styles:
 ```
@@ -74,7 +74,7 @@ Margin=8,1,8,3
 
 Target:
 ```
-Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid
+Taskbar.TaskbarFrame > Grid#RootGrid
 ```
 Styles:
 ```
@@ -100,7 +100,7 @@ BorderBrush:=<SolidColorBrush Color="{ThemeResource SurfaceStrokeColorDefault}" 
 
 Target:
 ```
-Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid
+Taskbar.TaskbarFrame > Grid#RootGrid
 ```
 Style:
 ```
@@ -129,12 +129,12 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-  "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
+  "controlStyles[0].target": "Taskbar.TaskbarFrame",
   "controlStyles[0].styles[0]": "Width=Auto",
   "controlStyles[0].styles[1]": "HorizontalAlignment=Center",
   "controlStyles[0].styles[2]": "Margin=250,0,250,0",
 
-  "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
+  "controlStyles[1].target": "Taskbar.TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.8\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
   "controlStyles[1].styles[1]": "Padding=6,0,6,0",
   "controlStyles[1].styles[2]": "CornerRadius=8,8,0,0",
