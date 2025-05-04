@@ -104,27 +104,7 @@ To achieve the full implementation of the xdark theme, make sure to have your wi
 
 </details>
 
-# ✦ Notes
-
-- This theme is designed for dark, minimalistic desktop setups.
-- Uses rounded corners (`CornerRadius=13`) for taskbar buttons and system tray.
-- Accent color is golden yellow `#facc15`, used for text and icons.
-- Running indicators are invisible, making the interface cleaner.
-- Some tray icons are intentionally hidden for a sleeker look.
-
-# ✦ Highlighted Features
-
-- Fully black background on taskbar buttons and system tray.
-- Clean layout with hidden elements and padding adjustments.
-- Gold-accented icons for enhanced visibility on dark backgrounds.
-- Custom Start icon glyph (``).
-- Compact and rounded system tray.
-
-# ✦ Suggested Windows Settings
-
-- Use default (centered) taskbar alignment.
-- Set display scale to 100% for best results.
-- Hide unnecessary tray icons via Windows settings.
+---
 
 # ✦ Manual Installation
 
@@ -133,19 +113,6 @@ You can manually import the styles like this:
 * Open the **Windows 11 Taskbar Styler** mod in Windhawk.
 * Go to the **Advanced** tab.
 * Paste the following JSON content in the "Mod settings" section and click **Save**.
-
-### ✦ Customize Icon-to-Text Spacing
-
-If you'd like to adjust the distance between the app icon and its label (usually the app name), you can modify the following JSON property:
-
-```json
-"controlStyles[12].styles[2]": "Margin=1,0,0,0"
-```
-
-This Margin follows the format:
-Margin=left,top,right,bottom
-
-So, "Margin=1,0,0,0" sets 1 pixel of space between the icon and the text.
 
 <details>
 <summary>Click to expand JSON content</summary>
@@ -215,3 +182,40 @@ So, "Margin=1,0,0,0" sets 1 pixel of space between the icon and the text.
 ```
 
 </details>
+
+# ✦ Notes
+
+- This theme is designed for dark, minimalistic desktop setups.
+- Uses rounded corners (`CornerRadius=13`) for taskbar buttons and system tray.
+- Accent color is golden yellow `#facc15`, used for text and icons.
+- Running indicators are invisible, making the interface cleaner.
+- Some tray icons are intentionally hidden for a sleeker look.
+
+# ✦ Highlighted Features
+
+- Fully black background on taskbar buttons and system tray.
+- Clean layout with hidden elements and padding adjustments.
+- Gold-accented icons for enhanced visibility on dark backgrounds.
+- Custom Start icon glyph (``).
+- Compact and rounded system tray.
+
+# ✦ Suggested Windows Settings
+
+- Use default (centered) taskbar alignment.
+- Set display scale to 100% for best results.
+- Hide unnecessary tray icons via Windows settings.
+
+### ✦ Customize Icon-to-Text Spacing
+
+If you'd like to adjust the distance between the app icon and its label (usually the app name), you can modify the following JSON property:
+
+```json
+"controlStyles[12].styles[2]": "Margin=1,0,0,0"
+```
+
+This Margin follows the format:
+Margin=left,top,right,bottom
+
+So, "Margin=1,0,0,0" sets 1 pixel of space between the icon and the text.
+
+
