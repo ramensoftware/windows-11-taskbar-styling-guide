@@ -37,7 +37,7 @@
   * [Rotate](#rotate)
   * [Scale](#scale)
   * [Skew](#skew)
-  * [Other Properties](#other-properties)
+  * [Other properties](#other-properties)
 * [Colors](#colors)
   * [Solid color](#solid-color)
   * [Accent colors](#accent-colors)
@@ -70,7 +70,7 @@ guide](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/blob
 [The Windows 11 notification center styling
 guide](https://github.com/ramensoftware/windows-11-notification-center-styling-guide/blob/main/README.md).
 
-### Finding Targets
+### Finding targets
 
 [How to find targets using UWPSpy](https://github.com/bbmaster123/FWFU/blob/main/uwpspy.md).
 
@@ -99,9 +99,9 @@ Taskbar Styler mod. The following themes are available:
 | [DockLike](Themes/DockLike/README.md) | [![DockLike](Themes/DockLike/screenshot.png)](Themes/DockLike/screenshot.png)
 | [WinVista](Themes/WinVista/README.md) | [![WinVista](Themes/WinVista/screenshot.png)](Themes/WinVista/screenshot.png)
 | [CleanSlate](Themes/CleanSlate/README.md) | [![CleanSlate](Themes/CleanSlate/screenshot.png)](Themes/CleanSlate/screenshot.png)
-| [BottomDensy](Themes/BottomDensy/README.md) | [![BottomDensy](Themes/BottomDensy/screenshot.png)](Themes/BottomDensy/screenshot.png)
 | [Lucent](Themes/Lucent/README.md) | [![Lucent](Themes/Lucent/screenshot.png)](Themes/Lucent/screenshot.png)
 | [21996Taskbar](Themes/21996Taskbar/README.md) | [![21996Taskbar](Themes/21996Taskbar/screenshot.png)](Themes/21996Taskbar/screenshot.png)
+| [BottomDensy](Themes/BottomDensy/README.md) | [![BottomDensy](Themes/BottomDensy/screenshot.png)](Themes/BottomDensy/screenshot.png)
 | [TaskbarXII](Themes/TaskbarXII/README.md) | [![TaskbarXII](Themes/TaskbarXII/screenshot.png)](Themes/TaskbarXII/screenshot.png)
 
 ## General
@@ -433,6 +433,7 @@ Visibility=Collapsed
 
 You can use transformation styles to translate, rotate, scale, or skew elements.
 
+> [!TIP]
 > **Should I use `RenderTransform` or `Transform3D`?**
 >
 > For 2D transformations, it is best to stick to `RenderTransform` in most cases. Using `Transform3D` for 2D transformations can cause elements to become blurry. For 3D transformations, you must use `Transform3D`.
@@ -458,12 +459,9 @@ You can use transformation styles to translate, rotate, scale, or skew elements.
 
   `Transform3D:=<CompositeTransform3D RotationX="-15" RotationY="15" RotationZ="-15" />`
 
-  > X: 3D vertical rotation.
-  >
-  > Y: 3D horizontal rotation.
-  >
-  > Z: 2D rotation.
-
+  - `X`: 3D vertical rotation.
+  - `Y`: 3D horizontal rotation.
+  - `Z`: 2D rotation.
 
 ### Scale
 
@@ -477,7 +475,7 @@ You can use transformation styles to translate, rotate, scale, or skew elements.
 
   `RenderTransform:=<SkewTransform AngleX="-15" AngleY="15" />`
 
-### Other Properties
+### Other properties
 - Rotate, Scale and Skew:
   - `CenterX`: Offsets the transform's origin on the X axis.
   - `CenterY`: Offsets the transform's origin on the Y axis.
@@ -570,4 +568,4 @@ Fill:=<ImageBrush Stretch="UniformToFill" ImageSource="<image>" />
 
 Replace `<image>` with your own image, a URL or a local file path.
 
-[^1]: See [Finding Targets](#finding-targets) on how to use UWPSpy to find all of the available visual states for an element
+[^1]: See [Finding targets](#finding-targets) on how to use UWPSpy to find all of the available visual states for an element
