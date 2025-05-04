@@ -3,7 +3,6 @@
 **Author**: [xscriptorcode](https://github.com/xscriptorcode)
 
 ![Demonstration](screenshot.png)
-![Demonstration](screenshotfocustaskbar.png) ![Demonstration](screenshotclock.png)
 
 # ✦ Required Windhawk Mods for Full Effect
 To achieve the full implementation of the xdark theme, make sure to have your windows on dark theme and install and configure the following Windhawk mods in addition to Taskbar Styler:
@@ -171,7 +170,7 @@ You can manually import the styles like this:
   "controlStyles[14].target": "Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock[Text=]",
   "controlStyles[14].styles[0]": "Text=",
   "controlStyles[14].styles[1]": "Foreground=#facc15",
-  "controlStyles[15].target": "Rectangle#BackgroundFill",
+  "controlStyles[15].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
   "controlStyles[15].styles[0]": "Fill=Transparent",
   "controlStyles[16].target": "Rectangle#BackgroundStroke",
   "controlStyles[16].styles[0]": "Fill=Transparent",
