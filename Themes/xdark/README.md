@@ -3,17 +3,106 @@
 **Author**: [xscriptorcode](https://github.com/xscriptorcode)
 
 ![Demonstration](screenshot.png)
+![Demonstration](screenshotfocustaskbar.png) ![Demonstration](screenshotclock.png)
 
 # ✦ Required Windhawk Mods for Full Effect
-To achieve the full implementation of the xdark theme, make sure to install and configure the following Windhawk mods in addition to Taskbar Styler:
+To achieve the full implementation of the xdark theme, make sure to have your windows on dark theme and install and configure the following Windhawk mods in addition to Taskbar Styler:
 
 - Taskbar Clock Customization – for styling the system clock.
 
+<details>
+<summary>Click to expand JSON content</summary>
+
+```json
+{
+  "ShowSeconds": 1,
+  "TimeFormat": "HH':'mm",
+  "DateFormat": "dd'/'MM'/'yyyy",
+  "WeekdayFormat": "",
+  "TopLine": "",
+  "MiddleLine": "",
+  "BottomLine": "║▌║%date% X %time% ▌│",
+  "TooltipLine": "%web1_full%",
+  "Width": 180,
+  "Height": 60,
+  "TextSpacing": 0,
+  "TimeStyle.Visible": 1,
+  "TimeStyle.TextColor": "#facc15",
+  "TimeStyle.TextAlignment": "Center",
+  "TimeStyle.FontSize": 12,
+  "TimeStyle.FontFamily": "JetBrainsMono NF",
+  "TimeStyle.FontWeight": "ExtraLight",
+  "TimeStyle.FontStyle": "",
+  "TimeStyle.FontStretch": "",
+  "TimeStyle.CharacterSpacing": 0,
+  "DateStyle.TextColor": "#facc15",
+  "DateStyle.TextAlignment": "Center",
+  "DateStyle.FontSize": 12,
+  "DateStyle.FontFamily": "Times New Roman",
+  "DateStyle.FontWeight": "Light",
+  "DateStyle.FontStyle": "Normal",
+  "DateStyle.FontStretch": "SemiCondensed",
+  "DateStyle.CharacterSpacing": 1,
+  "oldTaskbarOnWin11": 0,
+  "MaxWidth": 0,
+  "TimeStyle.Hidden": 1,
+  "DateStyle.Hidden": 0
+}
+
+```
+
+</details>
+
+---
+
 - Taskbar Height and Icon Size – to adjust the proportions and padding of taskbar items.
+
+<details>
+<summary>Click to expand JSON content</summary>
+
+```json
+
+{
+  "IconSize": 15,
+  "TaskbarHeight": 35,
+  "TaskbarButtonWidth": 30
+}
+
+```
+
+</details>
+
+---
 
 - Taskbar Labels for Windows 11 – to enable visible labels next to app icons.
 
+<details>
+<summary>Click to expand JSON content</summary>
 
+```json
+
+{
+  "taskbarItemWidth": 60,
+  "minimumTaskbarItemWidth": 50,
+  "maximumTaskbarItemWidth": 120,
+  "runningIndicatorStyle": "centerFixed",
+  "progressIndicatorStyle": "sameAsRunningIndicatorStyle",
+  "fontSize": 12,
+  "leftAndRightPaddingSize": 8,
+  "spaceBetweenIconAndLabel": 8,
+  "labelForSingleItem": "%name%",
+  "labelForMultipleItems": "[%amount%] %name%",
+  "mode": "labelsWithCombining",
+  "excludedPrograms[0]": "excluded1.exe",
+  "alwaysShowThumbnailLabels": 0,
+  "fontFamily": "",
+  "runningIndicatorHeight": 0,
+  "runningIndicatorVerticalOffset": 0
+}
+
+```
+
+</details>
 
 # ✦ Notes
 
@@ -36,14 +125,6 @@ To achieve the full implementation of the xdark theme, make sure to install and 
 - Use default (centered) taskbar alignment.
 - Set display scale to 100% for best results.
 - Hide unnecessary tray icons via Windows settings.
-
-# ✦ Theme Selection
-
-To enable this theme via Windhawk:
-
-* Open the **Windows 11 Taskbar Styler** mod in Windhawk.
-* Go to the **Settings** tab.
-* Select `xdark` and click **Save**.
 
 # ✦ Manual Installation
 
@@ -99,17 +180,14 @@ So, "Margin=1,0,0,0" sets 1 pixel of space between the icon and the text.
   "controlStyles[8].styles[1]": "CornerRadius=13",
   "controlStyles[8].styles[2]": "Margin=0,5,4,5",
   "controlStyles[8].styles[3]": "Padding=2,0,-18,0",
-  "controlStyles[9].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator",
-  "controlStyles[9].styles[0]": "Height=27",
-  "controlStyles[9].styles[1]": "RadiusX=13",
-  "controlStyles[9].styles[2]": "RadiusY=13",
-  "controlStyles[9].styles[3]": "StrokeThickness=0",
-  "controlStyles[9].styles[4]": "Stroke@InactivePointerOver=Transparent",
-  "controlStyles[9].styles[5]": "Stroke@InactivePressed=Transparent",
-  "controlStyles[9].styles[6]": "Stroke@ActiveNormal=Transparent",
-  "controlStyles[9].styles[7]": "Stroke@ActivePointerOver=Transparent",
-  "controlStyles[9].styles[8]": "Stroke@ActivePressed=Transparent",
-  "controlStyles[9].styles[9]": "Fill=Transparent",
+  "controlStyles[9].target": "Taskbar.TaskListButton > Grid > Rectangle#RunningIndicator",
+  "controlStyles[9].styles[0]": "Height=3",
+  "controlStyles[9].styles[1]": "RadiusX=1.5",
+  "controlStyles[9].styles[2]": "RadiusY=1.5",
+  "controlStyles[9].styles[3]": "Fill@ActiveNormal=#facc15",
+  "controlStyles[9].styles[4]": "VerticalAlignment=Bottom",
+  "controlStyles[9].styles[5]": "Margin=16,0,16,4",
+  "controlStyles[9].styles[6]": "StrokeThickness=0",
   "controlStyles[10].target": "SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
   "controlStyles[10].styles[0]": "Width=13",
   "controlStyles[11].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
