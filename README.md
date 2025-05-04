@@ -32,12 +32,6 @@
   * [Hide the notification bell icon](#hide-the-notification-bell-icon)
   * [Copilot button image](#copilot-button-image)
   * [Hide the "Show Desktop" button](#hide-the-show-desktop-button)
-* [Transforms](#transforms)
-  * [Translate](#translate)
-  * [Rotate](#rotate)
-  * [Scale](#scale)
-  * [Skew](#skew)
-  * [Other Properties](#other-properties)
 * [Colors](#colors)
   * [Solid color](#solid-color)
   * [Accent colors](#accent-colors)
@@ -103,7 +97,7 @@ Taskbar Styler mod. The following themes are available:
 | [Lucent](Themes/Lucent/README.md) | [![Lucent](Themes/Lucent/screenshot.png)](Themes/Lucent/screenshot.png)
 | [21996Taskbar](Themes/21996Taskbar/README.md) | [![21996Taskbar](Themes/21996Taskbar/screenshot.png)](Themes/21996Taskbar/screenshot.png)
 | [TaskbarXII](Themes/TaskbarXII/README.md) | [![TaskbarXII](Themes/TaskbarXII/screenshot.png)](Themes/TaskbarXII/screenshot.png)
-
+| [xdark](Themes/xdark/README.md) | [![xdark](Themes/xdark/screenshot.png)](Themes/xdark/screenshot.png)
 ## General
 
 ### Taskbar size
@@ -429,61 +423,7 @@ Style:
 Visibility=Collapsed
 ```
 
-## Transforms
-
-You can use transformation styles to translate, rotate, scale, or skew elements.
-
-> **Should I use `RenderTransform` or `Transform3D`?**
->
-> For 2D transformations, it is best to stick to `RenderTransform` in most cases. Using `Transform3D` for 2D transformations can cause elements to become blurry. For 3D transformations, you must use `Transform3D`.
-
-> [!TIP]
-> You can mix and match transformations when using `Transform3D`! You can also use `RenderTransform` and `Transform3D` together.
->
-> For example: `Transform3D:=<CompositeTransform3D TranslateY="-15" RotationZ="15" ScaleX="1.5" />`
-
-### Translate
-
-  `RenderTransform:=<TranslateTransform Y="-15" X="15" />`
-
-  -- or --
-
-  `Transform3D:=<CompositeTransform3D TranslateY="-15" TranslateX="15" TranslateZ="-15" />`
-
-### Rotate
-
-  `RenderTransform:=<RotateTransform Angle="15" />`
-
-  -- or --
-
-  `Transform3D:=<CompositeTransform3D RotationX="-15" RotationY="15" RotationZ="-15" />`
-
-  > X: 3D vertical rotation.
-  >
-  > Y: 3D horizontal rotation.
-  >
-  > Z: 2D rotation.
-
-
-### Scale
-
-  `RenderTransform:=<ScaleTransform ScaleX="1.5" ScaleY="-1.5" />`
-
-  -- or --
-
-  `Transform3D:=<CompositeTransform3D ScaleX="-1.5" ScaleY="1.5" ScaleZ="-1.5" />`
-
-### Skew
-
-  `RenderTransform:=<SkewTransform AngleX="-15" AngleY="15" />`
-
-### Other Properties
-- Rotate, Scale and Skew:
-  - `CenterX`: Offsets the transform's origin on the X axis.
-  - `CenterY`: Offsets the transform's origin on the Y axis.
-  - `CenterZ`: Offsets the transform's origin on the Z axis. (Only for `Transform3D`)
-
-## Colors
+# Colors
 
 In the following examples we're gonna use `Fill` as an example, but this also
 works for other properties that accept colors like `Background`.
