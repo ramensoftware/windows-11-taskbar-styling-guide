@@ -2,14 +2,14 @@
 
 **Author**: [ryokr](https://github.com/ryokr)
 
-![Demontration](screenshot.png)
-![Demontration](screenshot_another.png)
+![Demonstration](screenshot.png) \
+![Demonstration](screenshot_another.png)
 
-# ✦ Notes
+## Notes
 
 - Currently, this theme is in a fixed position. If you have many pinned apps, it is recommended to use the `Search pill` or `Search icon`.
 
-- If your monitor resolution differs from **1920x1080 at 100% scale**, you may need to adjust the value of **`TranslateX`** by adding the following styles to the mod's settings:
+- If your monitor resolution differs from **1920x1080 at 100% scale**, you may need to adjust the value of `TranslateX` by adding the following styles to the mod's settings:
 
 ```
 Target:
@@ -55,22 +55,23 @@ This will override the default value of TranslateX="156.5"
 
   ![After](screenshot_widget_enabled.png)
 
-# ✦ Suggested Windows settings
+## Suggested Windows settings
 
 - Use default taskbar alignment (center).
 - The widget should be enabled.
 - The display scale should be at 100 percent.
 - You can hide the bell icon via Notifications in Settings.
+<!-- Uncomment once the theme is integrated into the mod.
+## Theme selection
 
-# ✦ Theme selection
-
-The theme is integrated into the mod, and can be simply selected from the mod's settings:
+The theme is integrated into the mod, and can be simply selected from the mod's
+settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
-* Select TaskbarXII and save the settings.
-
-# ✦ Manual installation
+* Select the theme and save the settings.
+-->
+## Manual installation
 
 The theme styles can also be imported manually. To do that, follow these steps:
 
@@ -153,6 +154,5 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[23].styles[2]": "FontWeight=SemiBold",
   "controlStyles[23].styles[3]": "HorizontalAlignment=Left"
 }
-
 ```
 </details>
