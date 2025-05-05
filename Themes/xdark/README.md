@@ -5,7 +5,7 @@
 ![Demonstration](screenshot.png)
 
 # ✦ Required Windhawk Mods for Full Effect
-To achieve the full implementation of the xdark theme, make sure to have your windows on dark theme and install and configure the following Windhawk mods in addition to Taskbar Styler:
+To achieve the full implementation of the xdark theme, make sure your Windows is set to dark theme and the accent color is set to gold, and install and configure the following Windhawk mods in addition to Taskbar Styler:
 
 - Taskbar Clock Customization – for styling the system clock.
 
@@ -187,20 +187,19 @@ You can manually import the styles like this:
 - This theme is designed for dark, minimalistic desktop setups.
 - Uses rounded corners (`CornerRadius=13`) for taskbar buttons and system tray.
 - Accent color is golden yellow `#facc15`, used for text and icons.
-- Running indicators are invisible, making the interface cleaner.
 - Some tray icons are intentionally hidden for a sleeker look.
 
 # ✦ Highlighted Features
 
 - Fully black background on taskbar buttons and system tray.
 - Clean layout with hidden elements and padding adjustments.
-- Gold-accented icons for enhanced visibility on dark backgrounds.
-- Custom Start icon glyph (``).
 - Compact and rounded system tray.
 
 # ✦ Suggested Windows Settings
 
 - Use default (centered) taskbar alignment.
+- Set the dark theme.
+- Set the gold accent color.
 - Set display scale to 100% for best results.
 - Hide unnecessary tray icons via Windows settings.
 
