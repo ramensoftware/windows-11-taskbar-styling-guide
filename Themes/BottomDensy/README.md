@@ -39,6 +39,46 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
 - Use bigger icons and smaller taskbar settings for `Taskbar Height and Icon Size` (see config below)
 - Change active running indicator color to match the background of your most commonly used apps to make the icon "merge" with the window.
 
+### Suggested additional mods and settings
+
+[**Taskbar height and icon size**](https://windhawk.net/mods/taskbar-icon-size)
+
+<details>
+<summary>Content to import (click to expand)</summary>
+
+`BottomDensy`
+```json
+{
+"IconSize"          : 32,
+"TaskbarHeight"     : 34,
+"TaskbarButtonWidth": 36
+}
+```
+
+`BottomDensyNoInd`
+```json
+{
+"IconSize"          : 32,
+"TaskbarHeight"     : 32,
+"TaskbarButtonWidth": 36
+}
+```
+</details>
+
+[**Taskbar tray icon spacing**](https://windhawk.net/mods/taskbar-notification-icon-spacing)
+
+<details>
+<summary>Content to import (click to expand)</summary>
+
+`notificationIconWidth` and `overflowIconWidth` should be at least `21` to add space between `20` icon size, but otherwise use whatever values that look best for you. `overflowIconsPerRow` depends on the number of icons and might be best to have the smallest packed square to minimize the distance of each icon to the mouse pointer
+```json
+{
+"notificationIconWidth":21,
+"overflowIconWidth"    :34,
+"overflowIconsPerRow"  : 5}
+```
+</details>
+
 ## Manual installation
 
 * Open Windhawk
@@ -49,8 +89,6 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
 
 <details>
 <summary>Content to import (click to expand)</summary>
-
-## Theme
 
 `BottomDensy`
 ```json
@@ -142,34 +180,5 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
 "controlStyles[14].styles[3]":"Height@NoRunningIndicator=26",
 "controlStyles[14].styles[4]":"Margin@NoRunningIndicator=0,6,0,0"
 }
-```
-## Taskbar height and icon size
-
-[mod taskbar-icon-size](https://windhawk.net/mods/taskbar-icon-size)
-`BottomDensy`
-```json
-{
-"IconSize"          : 32,
-"TaskbarHeight"     : 34,
-"TaskbarButtonWidth": 36
-}
-```
-
-`BottomDensyNoInd`
-```json
-{
-"IconSize"          : 32,
-"TaskbarHeight"     : 32,
-"TaskbarButtonWidth": 36
-}
-```
-## Notification item width
-[mod taskbar-notification-icon-spacing](https://windhawk.net/mods/taskbar-notification-icon-spacing)
-`notificationIconWidth` and `overflowIconWidth` should be at least `21` to add space between `20` icon size, but otherwise use whatever values that look best for you. `overflowIconsPerRow` depends on the number of icons and might be best to have the smallest packed square to minimize the distance of each icon to the mouse pointer
-```json
-{
-"notificationIconWidth":21,
-"overflowIconWidth"    :34,
-"overflowIconsPerRow"  : 5}
 ```
 </details>
