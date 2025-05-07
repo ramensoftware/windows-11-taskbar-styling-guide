@@ -54,7 +54,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[3].styles[2]": "Width@InactiveRunningIndicator=8",
   "controlStyles[3].styles[3]": "Fill@ActiveRunningIndicator=#00BEE0",
   "controlStyles[3].styles[4]": "Fill@InactiveRunningIndicator=#DDDDDD",
-  "controlStyles[4].target": "Taskbar.TaskbarBackground#BackgroundControl > Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill",
+  "controlStyles[4].target": "Rectangle#BackgroundFill",
   "controlStyles[4].styles[0]": "Fill:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.7\"><GradientStop Color=\"#B5B9BC\" Offset=\"0.0\" /><GradientStop Color=\"#B5B9BC\" Offset=\"0.03125\" /><GradientStop Color=\"#909296\" Offset=\"0.03125\" /><GradientStop Color=\"#464B51\" Offset=\"0.5\" /><GradientStop Color=\"#060F15\" Offset=\"0.5\" /><GradientStop Color=\"#040C11\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"1.0\" /></LinearGradientBrush>",
   "controlStyles[5].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border",
   "controlStyles[5].styles[0]": "Background@ActiveRunningIndicator:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.2\"><GradientStop Color=\"#111111\" Offset=\"0.0\" /><GradientStop Color=\"#111111\" Offset=\"1.0\" /></LinearGradientBrush>",
