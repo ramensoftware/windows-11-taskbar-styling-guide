@@ -140,7 +140,6 @@ You can manually import the styles like this:
   "controlStyles[6].styles[0]": "Visibility=Collapsed",
   "controlStyles[7].target": "Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement",
   "controlStyles[7].styles[0]": "Background=#000000",
-  "controlStyles[7].styles[1]": "CornerRadius=13",
   "controlStyles[8].target": "Grid#SystemTrayFrameGrid",
   "controlStyles[8].styles[0]": "Background=#000000",
   "controlStyles[8].styles[1]": "CornerRadius=13",
