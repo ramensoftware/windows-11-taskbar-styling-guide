@@ -32,7 +32,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[1].styles[0]": "Fill=$CommonBgBrush",
   "controlStyles[2].target": "Rectangle#BackgroundStroke",
   "controlStyles[2].styles[0]": "Visibility=Collapsed",
-  "controlStyles[3].target": "MenuFlyoutPresenter",
+  "controlStyles[3].target": "MenuFlyoutPresenter > Border",
   "controlStyles[3].styles[0]": "Background=$CommonBgBrush",
   "controlStyles[3].styles[1]": "BorderThickness=0,0,0,0",
   "controlStyles[3].styles[2]": "CornerRadius=14",
