@@ -128,7 +128,7 @@ This Margin follows the format:
 Margin=left,top,right,bottom
 
 So, "Margin=1,0,0,0" sets 1 pixel of space between the icon and the text.
-<!-- Uncomment once the theme is integrated into the mod.
+
 ## Theme selection
 
 The theme is integrated into the mod, and can be simply selected from the mod's
@@ -137,10 +137,10 @@ settings:
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
 * Select the theme and save the settings.
--->
+
 ## Manual installation
 
-You can manually import the styles like this:
+The theme styles can also be imported manually. To do that, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Advanced" tab.
