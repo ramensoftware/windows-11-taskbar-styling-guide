@@ -3,22 +3,23 @@
 **Author**: [ZoraizLajwer](https://github.com/ZoraizLajwer)
 
 ![Center](Center.png)
-
 ![Left](Left.png)
 
 ![Search](Search.png)
 ![Button](Button.png)
 
+## Note
+Small Icon next to weather icon in centered taskbar is not part of theme, its a separate **Rainmeter skin**, you can download it from 
+[Spotibar](https://github.com/ZoraizLajwer/spotibar)
 
 ## Windows Settings
-
 - Dark Mode
+- Install Tektur font from Google font (required for clock customization)
 
 ## Required Windhawk Mods for similar results
-To achieve similar results of the Matter theme,  Install and configure the following Windhawk mods in addition to Taskbar Styler:
+To achieve similar results,  Install and configure the following Windhawk mods in addition to Taskbar Styler:
 
 - Taskbar Clock Customization – for styling the clock.
-	- Install Tektur font from Google font
 
 <details>
 <summary>Click to expand JSON content</summary>
@@ -55,7 +56,7 @@ To achieve similar results of the Matter theme,  Install and configure the follo
 
 ---
 
-- Taskbar Height and Icon Size 
+- Taskbar Height and Icon Size
 	- to make button square set `Taskbar Button Width`  = 45
 
 
