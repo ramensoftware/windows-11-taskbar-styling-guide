@@ -79,13 +79,22 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
 ```
 </details>
 
+## Theme selection
+
+The theme is integrated into the mod, and can be simply selected from the mod's
+settings:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
+
 ## Manual installation
 
-* Open Windhawk
-* Open the `Windows 11 Taskbar Styler` mod by clicking on the `Details` button
-* Go to the `Advanced` tab
-* Copy the content below to the text box under `Mod settings` and click `Save`
-* Do the same for `Taskbar height and icon size`
+The theme styles can also be imported manually. To do that, follow these steps:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Advanced" tab.
+* Copy the content below to the text box under "Mod settings" and click "Save".
 
 <details>
 <summary>Content to import (click to expand)</summary>

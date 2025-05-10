@@ -61,7 +61,7 @@ This will override the default value of TranslateX="156.5"
 - The widget should be enabled.
 - The display scale should be at 100 percent.
 - You can hide the bell icon via Notifications in Settings.
-<!-- Uncomment once the theme is integrated into the mod.
+
 ## Theme selection
 
 The theme is integrated into the mod, and can be simply selected from the mod's
@@ -70,7 +70,7 @@ settings:
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
 * Select the theme and save the settings.
--->
+
 ## Manual installation
 
 The theme styles can also be imported manually. To do that, follow these steps:
