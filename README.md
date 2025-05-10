@@ -557,6 +557,7 @@ _This example sets a blur that is tinted with red at 50% opacity._
 
 - `BlurAmount`: Radius of blur effect. (Set to 30 to mimic Acrylic).
 - `TintColor`: Hex color in __#AARRGGBB__ format that is applied to the blur.
+  - ThemeResources and color names (eg. Red) are currently not supported. 
 
 ### Mica effect as color
 
