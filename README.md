@@ -545,6 +545,18 @@ look that fits current theme.
 Fill:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.3" />
 ```
 
+### WindhawkBlur effect as color
+
+An alternative to Acrylic is the mod's own blur implementation called `WindhawkBlur`. It differs from Acrylic because it has a customizable blur radius and has fewer bugs (eg. https://github.com/ramensoftware/windhawk-mods/issues/742).
+
+```
+Fill:=<WindhawkBlur BlurAmount="10" TintColor="#80ff0000" />
+```
+_This example sets a blur that is tinted with red at 50% opacity._
+
+- `BlurAmount`: Radius of blur effect. (Set to 30 to mimic Acrylic).
+- `TintColor`: Hex color in __#AARRGGBB__ format that is applied to the blur.
+
 ### Mica effect as color
 
 > [!NOTE]
