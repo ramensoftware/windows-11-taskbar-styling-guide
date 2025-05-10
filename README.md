@@ -104,6 +104,7 @@ Taskbar Styler mod. The following themes are available:
 | [BottomDensy](Themes/BottomDensy/README.md) | [![BottomDensy](Themes/BottomDensy/screenshot.png)](Themes/BottomDensy/screenshot.png)
 | [TaskbarXII](Themes/TaskbarXII/README.md) | [![TaskbarXII](Themes/TaskbarXII/screenshot.png)](Themes/TaskbarXII/screenshot.png)
 | [xdark](Themes/xdark/README.md) | [![xdark](Themes/xdark/screenshot.png)](Themes/xdark/screenshot.png)
+| [Matter](Themes/Matter/README.md) | [![Matter](Themes/Matter/screenshot.png)](Themes/Matter/screenshot.png)
 
 ## General
 

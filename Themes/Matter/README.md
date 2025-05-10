@@ -2,22 +2,22 @@
 
 **Author**: [ZoraizLajwer](https://github.com/ZoraizLajwer)
 
-![Center](Center.png)
+![Center](screenshot.png) \
 ![Left](Left.png)
 
-![Search](Search.png)
+![Search](Search.png) \
 ![Button](Button.png)
 
 ## Note
 Small Icon next to weather icon in centered taskbar is not part of theme, its a separate **Rainmeter skin**, you can download it from 
-[Spotibar](https://github.com/ZoraizLajwer/spotibar)
+[Spotibar](https://github.com/ZoraizLajwer/spotibar).
 
 ## Windows Settings
 - Dark Mode
 - Install Tektur font from Google font (required for clock customization)
 
 ## Required Windhawk Mods for similar results
-To achieve similar results,  Install and configure the following Windhawk mods in addition to Taskbar Styler:
+To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler:
 
 - Taskbar Clock Customization – for styling the clock.
 
@@ -57,9 +57,8 @@ To achieve similar results,  Install and configure the following Windhawk mods i
 ---
 
 - Taskbar Height and Icon Size
-	- to make button square set `Taskbar Button Width`  = 45
-
-
+  - To make button square set `Taskbar Button Width`  = 45
+<!-- Uncomment once the theme is integrated into the mod.
 ## Theme selection
 
 The theme is integrated into the mod, and can be simply selected from the mod's
@@ -72,6 +71,10 @@ settings:
 ## Manual installation
 
 The theme styles can also be imported manually. To do that, follow these steps:
+-->
+## Manual installation
+
+The theme styles can be imported manually. To do that, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Advanced" tab.
