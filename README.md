@@ -43,6 +43,7 @@
   * [Accent colors](#accent-colors)
   * [Transparent color](#transparent-color)
   * [Acrylic effect as color](#acrylic-effect-as-color)
+  * [WindhawkBlur effect as color](#windhawkblur-effect-as-color)
   * [Mica effect as color](#mica-effect-as-color)
   * [Gradient as color](#gradient-as-color)
   * [Image as color](#image-as-color)
