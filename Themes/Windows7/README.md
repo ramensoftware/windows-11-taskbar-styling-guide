@@ -22,7 +22,8 @@ Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
 ```
 </details>
 
-## 
+> ![Note]
+> An internet connection is required to use this theme, as the relevent images are downloaded from this repository. This is also the reason why images may be slow to load on first use.
 
 
 <!-- ## Theme selection
