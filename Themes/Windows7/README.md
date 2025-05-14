@@ -6,14 +6,33 @@ This theme is mostly a proof of concept, and due to the limitations of the XAML 
 
 ![Screenshot](screenshot.png)
 
-## Theme selection
+## Required additional mod configuration
+
+Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
+
+<details>
+<summary>Content to import (click to expand)</summary>
+
+```json
+{
+    "IconSize":32,
+    "TaskbarHeight":39,
+    "TaskbarButtonWidth":58
+}
+```
+</details>
+
+## 
+
+
+<!-- ## Theme selection
 
 The theme is integrated into the mod, and can be simply selected from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
-* Select the theme and save the settings.
+* Select the theme and save the settings. -->
 
 ## Manual installation
 
@@ -28,18 +47,18 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-    "controlStyles[0].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement",
+	"controlStyles[0].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement",
 	"controlStyles[0].styles[0]": "Background@InactiveNormal:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandInactiveNormal\" />",
 	"controlStyles[0].styles[1]": "Background@InactivePointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandInactivePointerOver\" />",
 	"controlStyles[0].styles[2]": "Background@ActiveNormal:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActiveNormal\" />",
 	"controlStyles[0].styles[3]": "Background@ActivePressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActivePressed\" />",
 	"controlStyles[0].styles[4]": "Background@ActivePointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActivePointerOver\" />",
 	"controlStyles[0].styles[5]": "Background@InactivePressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandInactivePressed\" />",
-    "controlStyles[0].styles[6]": "BorderThickness=0",
-    "controlStyles[0].styles[7]": "Background@MultiWindowNormal:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandInactiveNormal\" />",
-    "controlStyles[0].styles[8]": "Background@MultiWindowActive:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActiveNormal\" />",
-    "controlStyles[0].styles[9]": "Background@MultiWindowPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActivePressed\" />",
-    "controlStyles[0].styles[10]": "Background@MultiWindowPointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActivePointerOver\" />",
+	"controlStyles[0].styles[6]": "BorderThickness=0",
+	"controlStyles[0].styles[7]": "Background@MultiWindowNormal:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandInactiveNormal\" />",
+	"controlStyles[0].styles[8]": "Background@MultiWindowActive:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActiveNormal\" />",
+	"controlStyles[0].styles[9]": "Background@MultiWindowPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActivePressed\" />",
+	"controlStyles[0].styles[10]": "Background@MultiWindowPointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActivePointerOver\" />",
 	"controlStyles[0].styles[11]": "Background@RequestingAttention:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandRequestingAttention\" />",
 	"controlStyles[0].styles[12]": "Background@RequestingAttentionPointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandRequestingAttention\" />",
 	"controlStyles[0].styles[13]": "Background@RequestingAttentionPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandRequestingAttention\" />",
@@ -168,7 +187,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
 	"controlStyles[29].styles[7]": "Background@CheckedPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$trayPressed\" />",
 	"controlStyles[29].styles[8]": "Width=24",
 	"controlStyles[30].target": "Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon",
-	"controlStyles[30].styles[0]": "Visibility@NoRunningIndicator=Visible",
+	"controlStyles[30].styles[0]": "Visibility=Collapsed",
+	"controlStyles[30].styles[1]": "Visibility@NoRunningIndicator=Visible",
 	"controlStyles[31].target": "Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon",
 	"controlStyles[31].styles[0]": "Fill=Transparent",
 	"controlStyles[31].styles[1]": "Width=54",
