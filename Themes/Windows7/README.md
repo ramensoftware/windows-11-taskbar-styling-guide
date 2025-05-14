@@ -6,6 +6,9 @@ This theme is mostly a proof of concept, and due to the limitations of the XAML 
 
 ![Screenshot](screenshot.png)
 
+> [!NOTE]  
+> An internet connection is required to use this theme, as the relevent images are downloaded from this repository. This is also the reason why images may be slow to load on first use.
+
 ## Required additional mod configuration
 
 Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
@@ -21,10 +24,6 @@ Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
 }
 ```
 </details>
-
-> [!NOTE]  
-> An internet connection is required to use this theme, as the relevent images are downloaded from this repository. This is also the reason why images may be slow to load on first use.
-
 
 <!-- ## Theme selection
 
