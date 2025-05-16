@@ -4,7 +4,7 @@
 
 Makes the taskbar background transparent. For users who want that and no other customizations.
 
-![SimplyTransparent](https://github.com/user-attachments/assets/a6542998-fff9-48c6-8fbb-b0fd6cc22609)
+![SimplyTransparent](screenshot.png)
 
 ## Manual installation
 
