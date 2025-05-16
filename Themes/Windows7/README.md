@@ -8,6 +8,8 @@ This theme is mostly a proof of concept, and due to the limitations of the XAML 
 
 > [!NOTE]  
 > An internet connection is required to use this theme, as the relevent images are downloaded from this repository. This is also the reason why images may be slow to load on first use.
+>
+> This theme was designed for 100% display scaling.
 
 ## Required additional mod configuration
 
