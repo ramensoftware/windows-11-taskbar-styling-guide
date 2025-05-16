@@ -2,6 +2,8 @@
 
 **Author**: [Osprey00](https://github.com/Osprey00)
 
+Makes the taskbar background transparent. For users who want that and no other customizations.
+
 ![SimplyTransparent](https://github.com/user-attachments/assets/a6542998-fff9-48c6-8fbb-b0fd6cc22609)
 
 ## Manual installation
@@ -17,7 +19,6 @@ To manualy import this style, follow these steps:
 
 ```json
 {
-  "theme":"SimplyTransparent",
   "controlStyles[0].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
   "controlStyles[0].styles[0]":"Fill=Transparent",
   "controlStyles[1].target":"Rectangle#BackgroundStroke",
