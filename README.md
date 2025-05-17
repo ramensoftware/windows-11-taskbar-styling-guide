@@ -107,8 +107,7 @@ Taskbar Styler mod. The following themes are available:
 | [xdark](Themes/xdark/README.md) | [![xdark](Themes/xdark/screenshot.png)](Themes/xdark/screenshot.png)
 | [Matter](Themes/Matter/README.md) | [![Matter](Themes/Matter/screenshot.png)](Themes/Matter/screenshot.png)
 | [SimplyTransparent](Themes/SimplyTransparent/README.md) | [![SimplyTransparent](Themes/SimplyTransparent/screenshot.png)](Themes/SimplyTransparent/screenshot.png)
-| [Windows7](Themes/Windows7/README.md) | [![Matter](Themes/Windows7/screenshot.png)](Themes/Windows7/screenshot.png)
-
+| [Windows7](Themes/Windows7/README.md) | [![Windows7](Themes/Windows7/screenshot.png)](Themes/Windows7/screenshot.png)
 
 ## General
 
