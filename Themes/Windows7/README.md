@@ -237,6 +237,14 @@ The theme styles can also be imported manually. To do that, follow these steps:
 	"controlStyles[39].styles[7]": "Margin=0",
 	"controlStyles[40].target": "SystemTray.Stack#NonActivatableStack",
 	"controlStyles[40].styles[0]": "Margin=4,0,0,0",
+	"controlStyles[41].target": "Taskbar.AugmentedEntryPointButton[AutomationProperties.AutomationId=WidgetsButton] > Taskbar.TaskListButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement",
+	"controlStyles[41].styles[0]": "Background@InactivePointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$widgetsPointerOver\" />",
+	"controlStyles[41].styles[1]": "Background@InactivePressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$widgetsPressed\" />",
+	"controlStyles[41].styles[2]": "Background@ActivePointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$widgetsPointerOver\" />",
+	"controlStyles[41].styles[3]": "Background@ActivePressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$widgetsPressed\" />",
+	"controlStyles[41].styles[4]": "Background@ActiveNormal:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$widgetsPointerOver\" />",
+	"controlStyles[41].styles[5]": "BorderThickness=0",
+	"controlStyles[41].styles[6]": "Margin=0",
 	"styleConstants[0]": "orbNormal=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbNormal.png",
 	"styleConstants[1]": "orbPointerOver=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbHover.png",
 	"styleConstants[2]": "orbPressed=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbPressed.png",
@@ -265,7 +273,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
 	"styleConstants[25]": "taskbandNotRunningPressed=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/notRunningPressed.png",
 	"styleConstants[26]": "taskbarBackground=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/taskbarBackground.png",
 	"styleConstants[27]": "taskviewIcon=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/taskview.png",
-	"styleConstants[28]": "searchIcon=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/search.png"
+	"styleConstants[28]": "searchIcon=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/search.png",
+	"styleConstants[29]": "widgetsPointerOver=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/widgetsPointerOver.png",
+	"styleConstants[30]": "widgetsPressed=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/widgetsPressed.png"
 }
 ```
 </details>
