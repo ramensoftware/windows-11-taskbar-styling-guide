@@ -445,7 +445,7 @@ You can use transformation styles to translate, rotate, scale, or skew elements.
 > [!TIP]
 > You can mix and match transformations when using `Transform3D`! You can also use `RenderTransform` and `Transform3D` together.
 >
-> For example: `Transform3D:=<CompositeTransform3D TranslateY="-15" RotationZ="15" ScaleX="1.5" />`
+> For example: `Transform3D:=<CompositeTransform3D ScaleX="1.5" TranslateY="-15" RotationZ="15" />`
 
 ### Translate
 
