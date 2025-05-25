@@ -449,19 +449,27 @@ You can use transformation styles to translate, rotate, scale, or skew elements.
 
 ### Translate
 
-  `RenderTransform:=<TranslateTransform Y="-15" X="15" />`
+  ```
+  RenderTransform:=<TranslateTransform Y="-15" X="15" />
+  ```
 
   -- or --
 
-  `Transform3D:=<CompositeTransform3D TranslateY="-15" TranslateX="15" TranslateZ="-15" />`
+  ```
+  Transform3D:=<CompositeTransform3D TranslateY="-15" TranslateX="15" TranslateZ="-15" />
+  ```
 
 ### Rotate
 
-  `RenderTransform:=<RotateTransform Angle="15" />`
+  ```
+  RenderTransform:=<RotateTransform Angle="15" />
+  ```
 
   -- or --
 
-  `Transform3D:=<CompositeTransform3D RotationX="-15" RotationY="15" RotationZ="-15" />`
+  ```
+  Transform3D:=<CompositeTransform3D RotationX="-15" RotationY="15" RotationZ="-15" />
+  ```
 
   - `X`: 3D vertical rotation.
   - `Y`: 3D horizontal rotation.
@@ -469,15 +477,21 @@ You can use transformation styles to translate, rotate, scale, or skew elements.
 
 ### Scale
 
-  `RenderTransform:=<ScaleTransform ScaleX="1.5" ScaleY="-1.5" />`
+  ```
+  RenderTransform:=<ScaleTransform ScaleX="1.5" ScaleY="-1.5" />
+  ```
 
   -- or --
 
-  `Transform3D:=<CompositeTransform3D ScaleX="-1.5" ScaleY="1.5" ScaleZ="-1.5" />`
+  ```
+  Transform3D:=<CompositeTransform3D ScaleX="-1.5" ScaleY="1.5" ScaleZ="-1.5" />
+  ```
 
 ### Skew
 
-  `RenderTransform:=<SkewTransform AngleX="-15" AngleY="15" />`
+  ```
+  RenderTransform:=<SkewTransform AngleX="-15" AngleY="15" />
+  ```
 
 ### Other properties
 - Rotate, Scale and Skew:
