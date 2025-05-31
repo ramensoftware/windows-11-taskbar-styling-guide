@@ -4,11 +4,11 @@
 
 Makes the taskbar background transparent. For users who want that and no other customizations.
 
-![SimplyTransparent](screenshot.png)
+![Screenshot](screenshot.png)
 
 ## Manual installation
 
-To manualy import this style, follow these steps:
+To manually import this style, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Advanced" tab.
