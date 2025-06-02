@@ -504,7 +504,7 @@ RenderTransform:=<SkewTransform AngleX="-15" AngleY="15" />
   RenderTransform:=<RotateTransform Angle="15" CenterX="10" CenterY="20" />
   ```
 - `RenderTransformOrigin`
-  - Applies to `RenderTransform` only, `Transform3D` does not support this attribute. It is a seperate attribute and is not set inside of the `RenderTransform` like `CenterX/Y/Z`.
+  - Applies to `RenderTransform` only, `Transform3D` does not support this attribute. It is a separate attribute and is not set inside of the `RenderTransform` like `CenterX/Y/Z`.
   - Sets the transform origin relative to its target's width and height. Format is `X,Y` and both numbers range from 0-1.
 
   Example:
@@ -514,7 +514,7 @@ RenderTransform:=<SkewTransform AngleX="-15" AngleY="15" />
   ```
   This centers the transform's origin.
 - `TransformGroup`
-  - Applies to `RenderTransform` only, `Transform3D` does not support this attribute. It is a seperate attribute and is not set inside of the `RenderTransform` like `CenterX/Y/Z`.
+  - Applies to `RenderTransform` only, `Transform3D` does not support this attribute. It is a separate attribute and is not set inside of the `RenderTransform` like `CenterX/Y/Z`.
   - Allows you to combine RenderTransforms together into one style, mimicking Transform3D's functionality.
 
   Example:
