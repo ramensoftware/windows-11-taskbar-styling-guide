@@ -37,7 +37,7 @@
   * [Rotate](#rotate)
   * [Scale](#scale)
   * [Skew](#skew)
-  * [Other properties](#other-properties)
+  * [Other properties and attributes](#other-properties-and-attributes)
 * [Colors](#colors)
   * [Solid color](#solid-color)
   * [Accent colors](#accent-colors)
