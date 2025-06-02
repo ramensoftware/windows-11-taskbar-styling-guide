@@ -493,12 +493,34 @@ Transform3D:=<CompositeTransform3D ScaleX="-1.5" ScaleY="1.5" ScaleZ="-1.5" />
 RenderTransform:=<SkewTransform AngleX="-15" AngleY="15" />
 ```
 
-### Other properties
-- Rotate, Scale and Skew:
+### Other properties and attributes
+- Applies to Rotate, Scale and Skew:
   - `CenterX`: Offsets the transform's origin on the X axis.
   - `CenterY`: Offsets the transform's origin on the Y axis.
   - `CenterZ`: Offsets the transform's origin on the Z axis. (Only for `Transform3D`)
 
+  Example:
+  ```
+  RenderTransform:=<RotateTransform Angle="15" CenterX="10" CenterY="20" />
+  ```
+- `RenderTransformOrigin`
+  - Applies to `RenderTransform` only, `Transform3D` does not support this attribute. It is a seperate attribute and is not set inside of the `RenderTransform` like `CenterX/Y/Z`.
+  - Sets the transform origin relative to its target's width and height. Format is `X,Y` and both numbers range from 0-1.
+
+  Example:
+  
+  ```
+  RenderTransformOrigin=0.5,0.5
+  ```
+  This centers the transform's origin.
+- `TransformGroup`
+  - Applies to `RenderTransform` only, `Transform3D` does not support this attribute. It is a seperate attribute and is not set inside of the `RenderTransform` like `CenterX/Y/Z`.
+  - Allows you to combine RenderTransforms together into one style, mimicking Transform3D's functionality.
+
+  Example:
+  ```
+  RenderTransform:=<TransformGroup><RotateTransform Angle="15" /><TranslateTransform X="15" Y="-15" /></TransformGroup>
+  ```
 ## Colors
 
 In the following examples we're gonna use `Fill` as an example, but this also
