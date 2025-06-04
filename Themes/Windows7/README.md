@@ -7,7 +7,7 @@ This theme is mostly a proof of concept, and due to the limitations of the XAML 
 ![Screenshot](screenshot.png)
 
 > [!NOTE]  
-> An internet connection is required to use this theme, as the relevent images are downloaded from this repository. This is also the reason why images may be slow to load on first use.
+> An internet connection is required to use this theme, as the relevant images are downloaded from this repository. This is also the reason why images may be slow to load on first use.
 >
 > This theme was designed for 100% display scaling.
 
@@ -267,37 +267,37 @@ The theme styles can also be imported manually. To do that, follow these steps:
 	"controlStyles[41].styles[6]": "Margin=0",
 	"controlStyles[42].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
 	"controlStyles[42].styles[0]": "Width=54",
-	"styleConstants[0]": "orbNormal=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbNormal.png",
-	"styleConstants[1]": "orbPointerOver=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbHover.png",
-	"styleConstants[2]": "orbPressed=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbPressed.png",
+	"styleConstants[0]": "orbNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbNormal.png",
+	"styleConstants[1]": "orbPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbHover.png",
+	"styleConstants[2]": "orbPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbPressed.png",
 	"styleConstants[3]": "aeroColor=74b8fc",
 	"styleConstants[4]": "aeroOpacity=4D",
-	"styleConstants[5]": "reflection=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/AeroPeek.png",
-	"styleConstants[6]": "taskbandInactiveNormal=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/InactiveNormal.png",
-	"styleConstants[7]": "taskbandInactivePointerOver=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/InactivePointerOver.png",
-	"styleConstants[8]": "taskbandInactivePressed=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png",
-	"styleConstants[9]": "taskbandActiveNormal=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png",
-	"styleConstants[10]": "taskbandActivePointerOver=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png",
-	"styleConstants[11]": "taskbandActivePressed=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png",
-	"styleConstants[12]": "overflowNormal=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/overflowNormal.png",
-	"styleConstants[13]": "overflowPointerOver=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/overflowPointerOver.png",
-	"styleConstants[14]": "overflowPressed=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/overflowPressed.png",
-	"styleConstants[15]": "clockPointerOver=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/clockPointerOver.png",
-	"styleConstants[16]": "clockPressed=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/clockPressed.png",
-	"styleConstants[17]": "trayPointerOver=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/trayPointerOver.png",
-	"styleConstants[18]": "trayPressed=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/trayPressed.png",
-	"styleConstants[19]": "desktopNormal=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/desktopNormal.png",
-	"styleConstants[20]": "desktopPointerOver=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/desktopPointerOver.png",
-	"styleConstants[21]": "desktopPressed=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/desktopPressed.png",
+	"styleConstants[5]": "reflection=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/AeroPeek.png",
+	"styleConstants[6]": "taskbandInactiveNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/InactiveNormal.png",
+	"styleConstants[7]": "taskbandInactivePointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/InactivePointerOver.png",
+	"styleConstants[8]": "taskbandInactivePressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png",
+	"styleConstants[9]": "taskbandActiveNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png",
+	"styleConstants[10]": "taskbandActivePointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png",
+	"styleConstants[11]": "taskbandActivePressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png",
+	"styleConstants[12]": "overflowNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/overflowNormal.png",
+	"styleConstants[13]": "overflowPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/overflowPointerOver.png",
+	"styleConstants[14]": "overflowPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/overflowPressed.png",
+	"styleConstants[15]": "clockPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/clockPointerOver.png",
+	"styleConstants[16]": "clockPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/clockPressed.png",
+	"styleConstants[17]": "trayPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/trayPointerOver.png",
+	"styleConstants[18]": "trayPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/trayPressed.png",
+	"styleConstants[19]": "desktopNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/desktopNormal.png",
+	"styleConstants[20]": "desktopPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/desktopPointerOver.png",
+	"styleConstants[21]": "desktopPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/desktopPressed.png",
 	"styleConstants[22]": "desktopWidth=15",
-	"styleConstants[23]": "taskbandRequestingAttention=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/requestingAttention.png",
-	"styleConstants[24]": "taskbandNotRunningPointerOver=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/notRunningPointerOver.png",
-	"styleConstants[25]": "taskbandNotRunningPressed=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/notRunningPressed.png",
-	"styleConstants[26]": "taskbarBackground=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/taskbarBackground.png",
-	"styleConstants[27]": "taskviewIcon=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/taskview.png",
-	"styleConstants[28]": "searchIcon=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/search.png",
-	"styleConstants[29]": "widgetsPointerOver=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/widgetsPointerOver.png",
-	"styleConstants[30]": "widgetsPressed=https://raw.githubusercontent.com/SandTechStuff/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/widgetsPressed.png"
+	"styleConstants[23]": "taskbandRequestingAttention=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/requestingAttention.png",
+	"styleConstants[24]": "taskbandNotRunningPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/notRunningPointerOver.png",
+	"styleConstants[25]": "taskbandNotRunningPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/notRunningPressed.png",
+	"styleConstants[26]": "taskbarBackground=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/taskbarBackground.png",
+	"styleConstants[27]": "taskviewIcon=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/taskview.png",
+	"styleConstants[28]": "searchIcon=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/search.png",
+	"styleConstants[29]": "widgetsPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/widgetsPointerOver.png",
+	"styleConstants[30]": "widgetsPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/widgetsPressed.png"
 }
 ```
 </details>
