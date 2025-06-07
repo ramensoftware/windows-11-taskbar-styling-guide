@@ -96,7 +96,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[14].styles[1]": "Margin=-2,-4,-2,-4",
   "controlStyles[14].styles[2]": "CornerRadius=0"
 }
-
 ```
 </details>
 

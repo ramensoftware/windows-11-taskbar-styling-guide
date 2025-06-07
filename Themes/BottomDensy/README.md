@@ -15,10 +15,10 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
     - Align to the bottom of the screen: padding below icons serves no useful purpose
     - (Via another mod) make icons bigger @`32` to match their "natural"/not downscaled size
     - Make **Notification icons** bigger @`20` (set width to `@21` via another mod to have a small gap)
-  - Running app **indicators**: move above the icon to make the icons "merge" with/"extend" into the fullscreen borderless apps like a bottom tab (but only if the background color matches) 
+  - Running app **indicators**: move above the icon to make the icons "merge" with/"extend" into the fullscreen borderless apps like a bottom tab (but only if the background color matches)
 
 ![Screenshot of taskbar extending into an app](screenshot_ind_extend.png)
-   
+
  - Active: Full icon width for a better "merging" effect. Tip: Change active running indicator color to match your borderless app background, to make an icon "extend" into the app
       - Target: `Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator`
       - Style: `Fill@ActiveRunningIndicator=#fef9f0`

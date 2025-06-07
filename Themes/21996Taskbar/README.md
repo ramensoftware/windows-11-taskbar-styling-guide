@@ -48,7 +48,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 "controlStyles[1].styles[0]":"Height=48",
 "controlStyles[2].target":"SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent > Windows.UI.Xaml.Controls.Grid > SystemTray.AdaptiveTextBlock > Windows.UI.Xaml.Controls.TextBlock",
 "controlStyles[2].styles[0]":"Visibility=Visible",
-"controlStyles[2].styles[1]":"Text=‎ ‎‎‎ ",
+"controlStyles[2].styles[1]":"Text=‎ ‎‎‎",
 "controlStyles[2].styles[2]":"FontSize=16.4",
 "controlStyles[2].styles[3]":"FontFamily=Segoe MDL2 Assets",
 "controlStyles[2].styles[4]":"Width=30",

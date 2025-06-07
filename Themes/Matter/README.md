@@ -9,7 +9,7 @@
 ![Button](Button.png)
 
 ## Note
-Small Icon next to weather icon in centered taskbar is not part of theme, its a separate **Rainmeter skin**, you can download it from 
+Small Icon next to weather icon in centered taskbar is not part of theme, its a separate **Rainmeter skin**, you can download it from
 [Spotibar](https://github.com/ZoraizLajwer/spotibar).
 
 ## Windows Settings
@@ -57,7 +57,7 @@ To achieve similar results, install and configure the following Windhawk mods in
 ---
 
 - Taskbar Height and Icon Size
-  - To make button square set `Taskbar Button Width`  = 45
+  - To make button square set `Taskbar Button Width` = 45
 <!-- Uncomment once the theme is integrated into the mod.
 ## Theme selection
 
@@ -91,14 +91,14 @@ The theme styles can be imported manually. To do that, follow these steps:
   "controlStyles[1].styles[0]": "Fill = Transparent",
   "controlStyles[2].target": "Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill",
   "controlStyles[2].styles[0]": "Fill:=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.4\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
-  "controlStyles[3].target": " Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton",
+  "controlStyles[3].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton",
   "controlStyles[3].styles[0]": "Margin=-1,1,1,1",
   "controlStyles[4].target": "Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement",
   "controlStyles[4].styles[0]": "CornerRadius=9",
-  "controlStyles[4].styles[1]": "Background :=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.4\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
-  "controlStyles[4].styles[2]": "Background@InactivePointerOver :=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.6\" Opacity=\"1\" FallbackColor=\"#0d0d0d\"/>",
-  "controlStyles[4].styles[3]": "Background@ActivePointerOver :=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.4\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
-  "controlStyles[4].styles[4]": "Background@ActiveNormal :=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.6\" Opacity=\"1\" FallbackColor=\"#0d0d0d\"/>",
+  "controlStyles[4].styles[1]": "Background:=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.4\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
+  "controlStyles[4].styles[2]": "Background@InactivePointerOver:=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.6\" Opacity=\"1\" FallbackColor=\"#0d0d0d\"/>",
+  "controlStyles[4].styles[3]": "Background@ActivePointerOver:=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.4\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
+  "controlStyles[4].styles[4]": "Background@ActiveNormal:=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.6\" Opacity=\"1\" FallbackColor=\"#0d0d0d\"/>",
   "controlStyles[5].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]",
   "controlStyles[5].styles[0]": "Margin=0,0,0,0",
   "controlStyles[6].target": "Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement",
@@ -108,9 +108,9 @@ The theme styles can be imported manually. To do that, follow these steps:
   "controlStyles[8].target": "Border#BackgroundElement",
   "controlStyles[8].styles[0]": "BorderThickness=0",
   "controlStyles[9].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement",
-  "controlStyles[9].styles[0]": "Background@InactiveNormal :=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.4\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
-  "controlStyles[9].styles[1]": "Background@ActiveNormal :=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.9\" Opacity=\"1\" FallbackColor=\"#0d0d0d\"/>",
-  "controlStyles[9].styles[2]": "Background@InactivePointerOver :=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.6\" Opacity=\"1\" FallbackColor=\"#0d0d0d\"/>",
+  "controlStyles[9].styles[0]": "Background@InactiveNormal:=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.4\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
+  "controlStyles[9].styles[1]": "Background@ActiveNormal:=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.9\" Opacity=\"1\" FallbackColor=\"#0d0d0d\"/>",
+  "controlStyles[9].styles[2]": "Background@InactivePointerOver:=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.6\" Opacity=\"1\" FallbackColor=\"#0d0d0d\"/>",
   "controlStyles[9].styles[3]": "Background@ActivePointerOver:=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.5\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
   "controlStyles[9].styles[4]": "CornerRadius=9",
   "controlStyles[9].styles[5]": "Margin =1,0,1,0",
@@ -121,16 +121,16 @@ The theme styles can be imported manually. To do that, follow these steps:
   "controlStyles[10].target": "Border#MultiWindowElement",
   "controlStyles[10].styles[0]": "CornerRadius = 8",
   "controlStyles[10].styles[1]": "Padding = 7,0,8,0",
-  "controlStyles[10].styles[2]": "Background :=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
+  "controlStyles[10].styles[2]": "Background:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
   "controlStyles[11].target": "Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl",
   "controlStyles[11].styles[0]": "Margin=0,0,2,0",
   "controlStyles[12].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator",
-  "controlStyles[12].styles[0]": "Fill =  White",
+  "controlStyles[12].styles[0]": "Fill=White",
   "controlStyles[12].styles[1]": "RadiusX=2",
   "controlStyles[12].styles[2]": "RadiusY=2",
   "controlStyles[12].styles[3]": "Height=4",
   "controlStyles[12].styles[4]": "Width=10",
-  "controlStyles[12].styles[5]": "Fill@ActiveRunningIndicator :=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
+  "controlStyles[12].styles[5]": "Fill@ActiveRunningIndicator:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
   "controlStyles[12].styles[6]": "Width@ActiveRunningIndicator=20",
   "controlStyles[13].target": "Grid#SystemTrayFrameGrid",
   "controlStyles[13].styles[0]": "Background:=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.4\" Opacity=\"1\" FallbackColor=\"#262626\"/>",

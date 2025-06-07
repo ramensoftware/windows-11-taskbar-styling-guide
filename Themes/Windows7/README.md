@@ -6,7 +6,7 @@ This theme is mostly a proof of concept, and due to the limitations of the XAML 
 
 ![Screenshot](screenshot.png)
 
-> [!NOTE]  
+> [!NOTE]
 > An internet connection is required to use this theme, as the relevant images are downloaded from this repository. This is also the reason why images may be slow to load on first use.
 >
 > This theme was designed for 100% display scaling.
@@ -95,7 +95,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 	"controlStyles[9].target": "Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
 	"controlStyles[9].styles[0]": "Fill:=<ImageBrush Stretch=\"UniformtoFill\" ImageSource=\"$reflection\" />",
 	"controlStyles[9].styles[1]": "Height=39",
-	"controlStyles[10].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill ",
+	"controlStyles[10].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
 	"controlStyles[10].styles[0]": "Fill:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbarBackground\" />",
 	"controlStyles[11].target": "Taskbar.TaskListButton",
 	"controlStyles[11].styles[0]": "Margin=1,0,1,0",
@@ -204,7 +204,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 	"controlStyles[33].target": "Border#SearchPillBackgroundElement",
 	"controlStyles[33].styles[0]": "BorderBrush=#4F222222",
 	"controlStyles[33].styles[1]": "BorderThickness=1",
-	"controlStyles[34].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] ",
+	"controlStyles[34].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton]",
 	"controlStyles[34].styles[0]": "//Margin=-8,0,-14,0",
 	"controlStyles[35].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement",
 	"controlStyles[35].styles[0]": "BorderBrush@InactivePointerOver:=<ImageBrush Stretch=\"Uniform\" ImageSource=\"$taskbandNotRunningPointerOver\" />",

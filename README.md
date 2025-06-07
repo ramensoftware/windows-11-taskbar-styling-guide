@@ -131,7 +131,7 @@ Fill=<color>
 Replace `<color>` with the desired color. See [colors section](#colors) for all
 options (e.g. if you want blurred background effect).
 
-> [!NOTE]  
+> [!NOTE]
 > For some themes, a different target has to be used to customize the taskbar
 > background:
 > * The [WinXP](Themes/WinXP/README.md) theme spans the taskbar border over the
@@ -141,7 +141,7 @@ options (e.g. if you want blurred background effect).
 >   background element. To customize the background, use the `Grid#RootGrid`
 >   target and the `Background=<color>` style.
 
-> [!NOTE]  
+> [!NOTE]
 > There's [a known
 > limitation](https://github.com/ramensoftware/windhawk-mods/issues/742) which
 > makes some styles, such as an acrylic background, only work if there's a
@@ -509,7 +509,7 @@ RenderTransform:=<SkewTransform AngleX="-15" AngleY="15" />
   - Sets the transform origin relative to its target's width and height. Format is `X,Y` and both numbers range from 0-1.
 
   Example:
-  
+
   ```
   RenderTransformOrigin=0.5,0.5
   ```
@@ -595,7 +595,7 @@ _This example sets a blur that is tinted with red at 50% opacity._
 
 - `BlurAmount`: Radius of blur effect (set to 30 to mimic Acrylic).
 - `TintColor`: Hex color in `#AARRGGBB` format that is applied to the blur.
-  - `ThemeResource` colors and color names (e.g. `Red`) are currently not supported. 
+  - `ThemeResource` colors and color names (e.g. `Red`) are currently not supported.
 
 ### Mica effect as color
 
