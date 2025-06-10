@@ -112,10 +112,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[14].styles[0]": "Foreground:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
   "controlStyles[15].target": "TextBlock#TimeInnerTextBlock",
   "controlStyles[15].styles[0]": "Foreground:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
-  "controlStyles[15].styles[1]": "Margin=3,2,0,0",
+  "controlStyles[15].styles[1]": "Margin=3,4,0,-2",
   "controlStyles[16].target": "TextBlock#DateInnerTextBlock",
   "controlStyles[16].styles[0]": "Foreground:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
-  "controlStyles[16].styles[1]": "Margin=0,0,2,2",
+  "controlStyles[16].styles[1]": "Margin=-5,0,5,2",
   "controlStyles[17].target": "Grid#ContainerGrid@ > Border#BackgroundBorder ",
   "controlStyles[17].styles[0]": "Background@PointerOver:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Opacity=\"0.2\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
   "controlStyles[17].styles[1]": "CornerRadius=20",
@@ -130,8 +130,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[18].styles[3]": "Width=34",
   "controlStyles[19].target": "SystemTray.OmniButton#NotificationCenterButton > Grid@CommonStates > Border#BackgroundBorder",
   "controlStyles[19].styles[0]": "CornerRadius=20",
-  "controlStyles[19].styles[1]": "Width=80",
-  "controlStyles[19].styles[2]": "Margin=4,1,-6,1",
+  "controlStyles[19].styles[1]": "Width=85",
+  "controlStyles[19].styles[2]": "Margin=-1,1,-1,1",
   "controlStyles[19].styles[3]": "Background@PointerOver:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Opacity=\"0.15\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
   "controlStyles[20].target": "SystemTray.OmniButton#ControlCenterButton > Grid@CommonStates > Border#BackgroundBorder",
   "controlStyles[20].styles[0]": "CornerRadius=20",
@@ -153,7 +153,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[23].target": "Rectangle#LeftDropInsertionMarker",
   "controlStyles[23].styles[0]": "Fill:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
   "controlStyles[24].target": "Rectangle#RightDropInsertionMarker",
-  "controlStyles[24].styles[0]": "Fill:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />"
+  "controlStyles[24].styles[0]": "Fill:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
+  "controlStyles[11].styles[3]": "Margin=-5,0,5,0"
 }
 ```
 </details>
