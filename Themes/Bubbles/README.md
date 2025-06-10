@@ -103,6 +103,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[11].styles[0]": "MinWidth=4",
   "controlStyles[11].styles[1]": "RadiusX=2",
   "controlStyles[11].styles[2]": "RadiusY=2",
+  "controlStyles[11].styles[3]": "Margin=-5,0,5,0",
   "controlStyles[12].target": "SystemTray.Stack#NotifyIconStack > Windows.UI.Xaml.Controls.Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.ChevronIconView > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
   "controlStyles[12].styles[0]": "CornerRadius=16,5,5,16",
   "controlStyles[12].styles[1]": "Margin=-3,4,0,4",
@@ -153,8 +154,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[23].target": "Rectangle#LeftDropInsertionMarker",
   "controlStyles[23].styles[0]": "Fill:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
   "controlStyles[24].target": "Rectangle#RightDropInsertionMarker",
-  "controlStyles[24].styles[0]": "Fill:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
-  "controlStyles[11].styles[3]": "Margin=-5,0,5,0"
+  "controlStyles[24].styles[0]": "Fill:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />"
 }
 ```
 </details>
