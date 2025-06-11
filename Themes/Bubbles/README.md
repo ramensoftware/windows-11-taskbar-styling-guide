@@ -33,7 +33,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[0].styles[0]": "Fill:=<SolidColorBrush x:Name=\"SystemChromeLow\" Color=\"{ThemeResource SystemChromeLowColor}\" />",
   "controlStyles[1].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement",
   "controlStyles[1].styles[0]": "CornerRadius=20",
-  "controlStyles[1].styles[1]": "Background@NoRunningIndicator:=<SolidColorBrush x:Name=\"SystemChromeHigh\" Opacity=\"0.3\" Color=\"{ThemeResource SystemChromeHighColor}\" />",
+  "controlStyles[1].styles[1]": "Background@NoRunningIndicator:=<SolidColorBrush x:Name=\"SystemChromeHigh\" Opacity=\"0.18\" Color=\"{ThemeResource SystemChromeHighColor}\" />",
   "controlStyles[1].styles[2]": "Background:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Opacity=\"0.15\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
   "controlStyles[1].styles[3]": "BorderThickness=1.5",
   "controlStyles[1].styles[4]": "BorderBrush:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Opacity=\"0.25\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
@@ -113,10 +113,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[14].styles[0]": "Foreground:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
   "controlStyles[15].target": "TextBlock#TimeInnerTextBlock",
   "controlStyles[15].styles[0]": "Foreground:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
-  "controlStyles[15].styles[1]": "Margin=3,4,0,-2",
+  "controlStyles[15].styles[1]": "Margin=0,2.5,0,-2.5",
   "controlStyles[16].target": "TextBlock#DateInnerTextBlock",
   "controlStyles[16].styles[0]": "Foreground:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
-  "controlStyles[16].styles[1]": "Margin=-5,0,5,2",
+  "controlStyles[16].styles[1]": "Margin=0,-1,2,2",
   "controlStyles[17].target": "Grid#ContainerGrid@ > Border#BackgroundBorder ",
   "controlStyles[17].styles[0]": "Background@PointerOver:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Opacity=\"0.2\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
   "controlStyles[17].styles[1]": "CornerRadius=20",
@@ -131,8 +131,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[18].styles[3]": "Width=34",
   "controlStyles[19].target": "SystemTray.OmniButton#NotificationCenterButton > Grid@CommonStates > Border#BackgroundBorder",
   "controlStyles[19].styles[0]": "CornerRadius=20",
-  "controlStyles[19].styles[1]": "Width=85",
-  "controlStyles[19].styles[2]": "Margin=-1,1,-1,1",
+  "controlStyles[19].styles[1]": "Width=75",
+  "controlStyles[19].styles[2]": "Margin=-2,1,-2,1",
   "controlStyles[19].styles[3]": "Background@PointerOver:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Opacity=\"0.15\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
   "controlStyles[20].target": "SystemTray.OmniButton#ControlCenterButton > Grid@CommonStates > Border#BackgroundBorder",
   "controlStyles[20].styles[0]": "CornerRadius=20",
@@ -154,7 +154,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[23].target": "Rectangle#LeftDropInsertionMarker",
   "controlStyles[23].styles[0]": "Fill:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
   "controlStyles[24].target": "Rectangle#RightDropInsertionMarker",
-  "controlStyles[24].styles[0]": "Fill:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />"
+  "controlStyles[24].styles[0]": "Fill:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
+  "controlStyles[25].target": "Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border",
+  "controlStyles[25].styles[0]": "CornerRadius=20",
+  "controlStyles[25].styles[1]": "Background:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Opacity=\"0.15\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
+  "controlStyles[25].styles[2]": "BorderBrush:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Opacity=\"0.25\" Color=\"{ThemeResource SearchPillButtonForeground}\" />"
 }
 ```
 </details>
