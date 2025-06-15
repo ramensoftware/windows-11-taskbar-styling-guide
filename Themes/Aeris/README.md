@@ -14,7 +14,7 @@
 * Taskbar height and icon size
 
 <details>
-<summary>Taskbar height and icon size Example(click to expand)</summary>
+<summary>Taskbar height and icon size example (click to expand)</summary>
 
 ```json
 {
@@ -24,8 +24,6 @@
 }
 ```
 </details>
-
----
 
 ## Vertical Taskbar
 * If you use a vertical taskbar, recommend fine-tuning the icon position.
