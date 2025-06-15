@@ -2,18 +2,18 @@
 
 **Author**: [ZoraizLajwer](https://github.com/ZoraizLajwer)
 
-![Center](screenshot.png) \
-![Left](Left.png)
+![Left](screenshot.png) 
+![Center](Center.png)
 
-![Search](Search.png) \
-![Button](Button.png)
+![Volume Pane](Volume.png) 
+![Brightness Pane](Brightness.png)
 
 ## Note
 Small Icon next to weather icon in centered taskbar is not part of theme, its a separate **Rainmeter skin**, you can download it from
 [Spotibar](https://github.com/ZoraizLajwer/spotibar).
 
 ## Windows Settings
-- Dark Mode
+- Compatible with both Light/ Dark mode
 - Install Tektur font from Google font (required for clock customization)
 
 ## Required Windhawk Mods for similar results
