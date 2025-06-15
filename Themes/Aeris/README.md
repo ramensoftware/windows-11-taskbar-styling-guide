@@ -10,11 +10,11 @@
 * The search button and search bar are not styled. It is recommended to disable them.
 
 ## Optional Windhawk Mods
-- Taskbar Clock Customization
-- Taskbar height and icon size
+* Taskbar Clock Customization
+* Taskbar height and icon size
 
 <details>
-<summary>Taskbar height and icon size Example(Click to expand JSON content)</summary>
+<summary>Taskbar height and icon size Example(click to expand)</summary>
 
 ```json
 {
@@ -26,6 +26,17 @@
 </details>
 
 ---
+
+## Vertical Taskbar
+* If you use a vertical taskbar, recommend fine-tuning the icon position.
+
+```
+Target:
+Taskbar.TaskListLabeledButtonPanel > Image
+
+Styles:
+Transform3D:=<CompositeTransform3D TranslateX=\"0\" TranslateY=\"2\" />
+```
 
 ## Manual installation
 
@@ -126,11 +137,11 @@ The theme styles can be imported manually. To do that, follow these steps:
     "controlStyles[13].styles[2]":"Fill:=<SolidColorBrush Color=\"$progressColor\" Opacity=\"0.4\"/>",
     "controlStyles[13].styles[3]":"Fill@Paused:=<SolidColorBrush Color=\"$progressPausedColor\" Opacity=\"0.4\"/>",
     "controlStyles[14].target":"Taskbar.TaskListLabeledButtonPanel > Image",
-    "controlStyles[14].styles[0]":"RenderTransform:=<TranslateTransform X=\"2\" Y=\"1\" />",
+    "controlStyles[14].styles[0]":"Transform3D:=<CompositeTransform3D TranslateX=\"2\" TranslateY=\"1\" />",
     "controlStyles[15].target":"Taskbar.TaskListLabeledButtonPanel > Rectangle#DefaultIcon",
     "controlStyles[15].styles[0]":"Visibility=Collapsed",
     "controlStyles[16].target":"Taskbar.TaskListButtonPanel > AnimatedVisualPlayer",
-    "controlStyles[16].styles[0]":"RenderTransform:=<TranslateTransform X=\"0\" Y=\"1\" />",
+    "controlStyles[16].styles[0]":"Transform3D:=<CompositeTransform3D TranslateX=\"0\" TranslateY=\"1\" />",
     "controlStyles[17].target":"Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel",
     "controlStyles[17].styles[0]":"MinWidth=60",
     "controlStyles[17].styles[1]":"Margin=0,0,$taskListMargin,0",
