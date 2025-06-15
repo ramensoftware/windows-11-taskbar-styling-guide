@@ -33,7 +33,7 @@ Target:
 Taskbar.TaskListLabeledButtonPanel > Image
 
 Styles:
-Transform3D:=<CompositeTransform3D TranslateX=\"0\" TranslateY=\"2\" />
+Transform3D:=<CompositeTransform3D TranslateX="0" TranslateY="2" />
 ```
 
 ## Manual installation
