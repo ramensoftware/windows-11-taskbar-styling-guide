@@ -6,7 +6,8 @@
 ![Light](Light.png)
 
 ## Notes
-* This theme is designed to allow flexible resizing using the "Taskbar height and icon size" mod. With a few adjustments, it can also support a vertical taskbar. Additionally, the theme automatically switches colors in sync with Windows' dark and light themes.
+* This theme is designed to allow flexible resizing using the "Taskbar height and icon size" mod. With a few adjustments, it can also support a vertical taskbar.
+* This theme automatically switches colors in sync with Windows' dark and light themes.
 * The search button and search bar are not styled. It is recommended to disable them.
 
 ## Optional Windhawk Mods
@@ -79,7 +80,7 @@ The theme styles can be imported manually. To do that, follow these steps:
     "controlStyles[6].styles[2]":"Background@NoRunningIndicator:=<SolidColorBrush Color=\"$primaryColor\" Opacity=\"0\"/>",
     "controlStyles[6].styles[3]":"Background@InactiveRunningIndicator:=<SolidColorBrush Color=\"$primaryColor\" Opacity=\"0.1\"/>",
     "controlStyles[6].styles[4]":"Background@ActiveRunningIndicator:=<SolidColorBrush Color=\"$activeColor\" Opacity=\"0.5\"/>",
-    "controlStyles[6].styles[5]":"Background@RequestAttentionRunningIndicator:=<SolidColorBrush Color=\"$requestAttentionColor\" Opacity=\"0.5\"/>",
+    "controlStyles[6].styles[5]":"Background:=<SolidColorBrush Color=\"$requestAttentionColor\" Opacity=\"0.5\"/>",
     "controlStyles[7].target":"Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement",
     "controlStyles[7].styles[0]":"Background:=<SolidColorBrush Color=\"$primaryColor\" Opacity=\"0\"/>",
     "controlStyles[7].styles[1]":"Background@InactivePointerOver:=$PointerOver",
@@ -99,7 +100,7 @@ The theme styles can be imported manually. To do that, follow these steps:
     "controlStyles[8].styles[0]":"Visibility=Collapsed",
     "controlStyles[9].target":"Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator",
     "controlStyles[9].styles[0]":"Visibility=Collapsed",
-    "controlStyles[9].styles[1]":"Fill:=<SolidColorBrush Color=\"$primaryColor\" Opacity=\"0.25\"/>",
+    "controlStyles[9].styles[1]":"Fill:=<SolidColorBrush Color=\"$primaryColor\" Opacity=\"0.2\"/>",
     "controlStyles[9].styles[2]":"VerticalAlignment=0",
     "controlStyles[9].styles[3]":"HorizontalAlignment=Stretch",
     "controlStyles[9].styles[4]":"Margin=0,0,-4,0",
@@ -152,8 +153,8 @@ The theme styles can be imported manually. To do that, follow these steps:
     "styleConstants[1]":"themeColorOpacity=0",
     "styleConstants[2]":"primaryColor={ThemeResource TextFillColorPrimary}",
     "styleConstants[3]":"activeColor=#33AAFF",
-    "styleConstants[4]":"requestAttentionColor=#FFAA44",
-    "styleConstants[5]":"progressColor=#44DD77",
+    "styleConstants[4]":"requestAttentionColor=#FF7788",
+    "styleConstants[5]":"progressColor=#44CC66",
     "styleConstants[6]":"progressPausedColor=#FFFF44",
     "styleConstants[7]":"taskbarBackground=<AcrylicBrush TintColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" TintOpacity=\"0\" TintLuminosityOpacity=\"0.8\" Opacity=\"1\"/>",
     "styleConstants[8]":"taskbarBlurIncreace=0",
