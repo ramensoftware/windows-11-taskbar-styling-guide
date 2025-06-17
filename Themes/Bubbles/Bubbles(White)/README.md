@@ -22,7 +22,7 @@ I have made a few changes, with the main focus of changing the accents to white.
 <summary>Content to import (click to expand)</summary>
 
 ```json
-{
+  {
   "controlStyles[0].target": "Rectangle#BackgroundFill",
   "controlStyles[0].styles[0]": "Fill=#1b1b19",
   "controlStyles[1].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement",
@@ -57,7 +57,7 @@ I have made a few changes, with the main focus of changing the accents to white.
   "controlStyles[4].styles[12]": "Stroke@MultiWindowPointerOver=#CCCCCC",
   "controlStyles[4].styles[13]": "Stroke@MultiWindowPressed=#F0F0F0",
   "controlStyles[4].styles[14]": "Stroke@MultiWindowActive=#B0B0B0",
-  "controlStyles[4].styles[11]": "Fill@MultiWindowNormal=#88AAAAAA",
+  "controlStyles[4].styles[15]": "Fill@MultiWindowNormal=#88AAAAAA",
   "controlStyles[4].styles[16]": "Fill@MultiWindowPointerOver=#88AAAAAA",
   "controlStyles[4].styles[17]": "Fill@MultiWindowActive=#88AAAAAA",
   "controlStyles[4].styles[18]": "Fill@MultiWindowPressed=#88AAAAAA",
@@ -81,7 +81,7 @@ I have made a few changes, with the main focus of changing the accents to white.
   "controlStyles[11].styles[1]": "RadiusX=2",
   "controlStyles[11].styles[2]": "RadiusY=2",
   "controlStyles[12].target": "SystemTray.Stack#NotifyIconStack > Windows.UI.Xaml.Controls.Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.ChevronIconView > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
-  "controlStyles[12].styles[0]": "CornerRadius=16,5,5,16",
+  "controlStyles[12].styles[0]": "CornerRadius=12,5,5,12",
   "controlStyles[12].styles[1]": "Margin=-3,4,0,4"
 }
 ```
