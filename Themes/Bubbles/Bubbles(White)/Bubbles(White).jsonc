@@ -43,10 +43,10 @@
   "controlStyles[6].styles[0]": "Foreground=White",
   "controlStyles[7].target": "SystemTray.TextIconContent > Grid > SystemTray.AdaptiveTextBlock#Base > TextBlock", // Color for the system tray icons
   "controlStyles[7].styles[0]": "Foreground=White",
-  "controlStyles[8].target": "Grid#OverflowRootGrid > Border",
-  "controlStyles[8].styles[0]": "Background=#EE080810",
-  "controlStyles[8].styles[1]": "BorderBrush=#303030",
-  "controlStyles[8].styles[2]": "BorderThickness=2.5",
+  "controlStyles[8].target": "Grid#OverflowRootGrid > Border", // Changes how the extra system tray looks when it is open
+  "controlStyles[8].styles[0]": "Background=#EE080810", // Background color of the extra system tray
+  "controlStyles[8].styles[1]": "BorderBrush=#303030", // Border color of the extra system tray
+  "controlStyles[8].styles[2]": "BorderThickness=2.5", // Thickness of the border of the extra system tray
   "controlStyles[9].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
   "controlStyles[9].styles[0]": "Margin=1,0,0,0",
   "controlStyles[10].target": "SystemTray.Stack#ShowDesktopStack",
