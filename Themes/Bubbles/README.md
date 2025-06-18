@@ -116,7 +116,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[15].styles[1]": "Margin=0,2.5,0,-2.5",
   "controlStyles[16].target": "TextBlock#DateInnerTextBlock",
   "controlStyles[16].styles[0]": "Foreground:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
-  "controlStyles[16].styles[1]": "Margin=0,-1,2,2",
+  "controlStyles[16].styles[1]": "Margin=0,-1,0,2",
   "controlStyles[17].target": "Grid#ContainerGrid@ > Border#BackgroundBorder ",
   "controlStyles[17].styles[0]": "Background@PointerOver:=<SolidColorBrush x:Name=\"SearchBoxTextBlock\" Opacity=\"0.2\" Color=\"{ThemeResource SearchPillButtonForeground}\" />",
   "controlStyles[17].styles[1]": "CornerRadius=20",
