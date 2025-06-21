@@ -1,7 +1,11 @@
 # Matter theme for Windows 11 Taskbar Styler
 
-**Author**: [ZoraizLajwer](https://github.com/ZoraizLajwer)
+**Author**: [ZoraizLajwer](https://github.com/ZoraizLajwer
 
+## Light Mode
+![Light](TB_Light.png)
+
+## Dark Mode
 ![Preview](screenshot.png)
 ![Left](Left.png)
 ![Center](Center.png)
