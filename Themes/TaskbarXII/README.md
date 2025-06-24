@@ -105,7 +105,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[5].styles[0]": "Margin=0,0,3,0",
   "controlStyles[6].target": "Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel",
   "controlStyles[6].styles[0]": "Margin=2,0,6,0",
-  "controlStyles[7].target": "Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel > TextBlock",
+  "controlStyles[7].target": "TextBlock#SearchBoxTextBlock",
   "controlStyles[7].styles[0]": "Text=✦ Meow",
   "controlStyles[8].target": "Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
   "controlStyles[8].styles[0]": "Visibility=Collapsed",
