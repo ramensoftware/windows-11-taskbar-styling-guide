@@ -2,8 +2,8 @@
 
 **Author**: [Giyuu12](https://github.com/Giyuu12)
 
-![Dark](Dark.png) \
-![Light](Light.png)
+![Light/Dark](screenshot.png)
+
 
 ## Notes
 * This theme is designed to allow flexible resizing using the "Taskbar height and icon size" mod. With a few adjustments, it can also support a vertical taskbar.
