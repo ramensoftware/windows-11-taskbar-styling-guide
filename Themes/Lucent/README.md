@@ -270,7 +270,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[24].styles[3]": "Stroke@MultiWindowPressed=#EBEBEB",
   "controlStyles[24].styles[5]": "Width=Auto",
   "controlStyles[24].styles[6]": "RadiusX=0",
-  "controlStyles[24].styles[7]": "Margin=-2,0,0,-3",
+  "controlStyles[24].styles[7]": "Margin=-2,0,-2,-3",
   "controlStyles[24].styles[4]": "Stroke@MultiWindowActive=#EBEBEB",
   "controlStyles[25].target": "SystemTray.ChevronIconView > Grid > Border",
   "controlStyles[25].styles[0]": "BorderThickness=0",
