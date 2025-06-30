@@ -129,7 +129,7 @@ The theme styles can be imported manually. To do that, follow these steps:
   "controlStyles[9].styles[2]": "Background@InactivePointerOver :=$overlay2",
   "controlStyles[9].styles[3]": "Background@ActivePointerOver:=$overlay",
   "controlStyles[9].styles[4]": "CornerRadius = $mainRadius",
-  "controlStyles[9].styles[5]": "Margin =1,0,1,0",
+  "controlStyles[9].styles[5]": "Margin = 1,0,1,0",
   "controlStyles[9].styles[6]": "Background@MultiWindowNormal:=$base",
   "controlStyles[9].styles[7]": "Background@MultiWindowPointerOver:=$overlay2",
   "controlStyles[9].styles[8]": "Background@MultiWindowActive:=$active",
@@ -162,11 +162,11 @@ The theme styles can be imported manually. To do that, follow these steps:
   "controlStyles[15].styles[1]": "Shadow :=",
   "controlStyles[15].styles[2]": "CornerRadius = 14",
   "controlStyles[16].target": "Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect",
-  "controlStyles[16].styles[0]": "Height  = 8",
+  "controlStyles[16].styles[0]": "Height = 8",
   "controlStyles[16].styles[1]": "Margin = 0",
   "controlStyles[16].styles[2]": "Fill := $overlay",
   "controlStyles[17].target": "Windows.UI.Xaml.Shapes.Rectangle#HorizontalDecreaseRect",
-  "controlStyles[17].styles[0]": "Height  =8",
+  "controlStyles[17].styles[0]": "Height = 8",
   "controlStyles[18].target": "Windows.UI.Xaml.Controls.TextBlock#volumeLevelText",
   "controlStyles[18].styles[0]": "FontFamily = Tektur",
   "controlStyles[18].styles[1]": "Margin = 0,-2,0,0",
@@ -213,12 +213,12 @@ The theme styles can be imported manually. To do that, follow these steps:
   "controlStyles[31].styles[2]": "CornerRadius = 8",
   "styleConstants[0]": "mainRadius = 8",
   "styleConstants[1]": "transparent = <SolidColorBrush Color=\"Transparent\"/>",
-  "styleConstants[2]": "base = <AcrylicBrush TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"1\" TintLuminosityOpacity=\"0.7`\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
-  "styleConstants[3]": "overlay = <AcrylicBrush TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"1\" TintLuminosityOpacity=\"0.8`\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" />",
-  "styleConstants[4]": "overlay2 = <AcrylicBrush TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"1\" TintLuminosityOpacity=\"0.5`\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" />",
+  "styleConstants[2]": "base = <AcrylicBrush TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"1\" TintLuminosityOpacity=\"0.7\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
+  "styleConstants[3]": "overlay = <AcrylicBrush TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"1\" TintLuminosityOpacity=\"0.8\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" />",
+  "styleConstants[4]": "overlay2 = <AcrylicBrush TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"1\" TintLuminosityOpacity=\"0.5\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" />",
   "styleConstants[5]": "accentColor = <SolidColorBrush Color=\"{ThemeResource SystemAccentColor}\" Opacity = \"1\" />",
   "styleConstants[6]": "inverseBW = <SolidColorBrush Color=\"{ThemeResource SystemBaseHighColor}\" Opacity = \"1\" />",
-  "styleConstants[7]": "active = <AcrylicBrush TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"1\" TintLuminosityOpacity=\"1`\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" />"
+  "styleConstants[7]": "active = <AcrylicBrush TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"1\" TintLuminosityOpacity=\"1\" FallbackColor=\"{ThemeResource CardStrokeColorDefaultSolid}\" />"
 }
 ```
 </details>
