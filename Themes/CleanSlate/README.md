@@ -155,7 +155,18 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[30].styles[0]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemAccentColorDark2}\" TintOpacity=\"0.4\" FallbackColor=\"{ThemeResource SystemAccentColorDark2}\" />",
   "controlStyles[30].styles[1]": "Background@InactivePointerOver:=<AcrylicBrush TintColor=\"{ThemeResource SystemAccentColorDark1}\" TintOpacity=\"0.4\" FallbackColor=\"{ThemeResource SystemAccentColorDark1}\" />",
   "controlStyles[31].target": "Taskbar.TaskListLabeledButtonPanel",
-  "controlStyles[31].styles[0]": "Margin=0"
+  "controlStyles[31].styles[0]": "Margin=0",
+  "controlStyles[32].target": "SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement",
+  "controlStyles[32].styles[0]": "CornerRadius=100",
+  "controlStyles[32].styles[1]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemAccentColorDark2}\" TintOpacity=\"0.4\" FallbackColor=\"{ThemeResource SystemAccentColorDark2}\" />",
+  "controlStyles[33].target": "SearchUx.SearchUI.SearchButtonRootGrid",
+  "controlStyles[33].styles[0]": "Margin=0,0,3,0",
+  "controlStyles[34].target": "SearchUx.SearchUI.SearchButtonRootGrid > Border#BackgroundElement",
+  "controlStyles[34].styles[0]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemAccentColorDark2}\" TintOpacity=\"0.4\" FallbackColor=\"{ThemeResource SystemAccentColorDark2}\" />",
+  "controlStyles[35].target": "Border#SearchPillBackgroundElement",
+  "controlStyles[35].styles[0]": "BorderBrush:=<AcrylicBrush TintColor=\"{ThemeResource SystemAccentColorDark2}\" TintOpacity=\"0.4\" FallbackColor=\"{ThemeResource SystemAccentColorDark2}\" />",
+  "controlStyles[35].styles[1]": "BorderThickness=16",
+  "controlStyles[35].styles[2]": "CornerRadius=8"
 }
 ```
 
