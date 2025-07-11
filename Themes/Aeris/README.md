@@ -37,9 +37,18 @@ Styles:
 Transform3D:=<CompositeTransform3D TranslateX="0" TranslateY="2" />
 ```
 
+## Theme selection
+
+The theme is integrated into the mod, and can be simply selected from the mod's
+settings:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
+
 ## Manual installation
 
-The theme styles can be imported manually. To do that, follow these steps:
+The theme styles can also be imported manually. To do that, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Advanced" tab.

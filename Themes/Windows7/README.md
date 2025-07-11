@@ -27,14 +27,14 @@ Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
 ```
 </details>
 
-<!-- ## Theme selection
+## Theme selection
 
 The theme is integrated into the mod, and can be simply selected from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
-* Select the theme and save the settings. -->
+* Select the theme and save the settings.
 
 ## Manual installation
 

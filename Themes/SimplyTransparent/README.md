@@ -6,9 +6,18 @@ Makes the taskbar background transparent. For users who want that and no other c
 
 ![Screenshot](screenshot.png)
 
+## Theme selection
+
+The theme is integrated into the mod, and can be simply selected from the mod's
+settings:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
+
 ## Manual installation
 
-To manually import this style, follow these steps:
+The theme styles can also be imported manually. To do that, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Advanced" tab.

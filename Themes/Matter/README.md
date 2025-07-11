@@ -73,7 +73,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   - To make button square set `Taskbar Button Width` = 45
   - `Icon Size` = 23
   - `Taskbar Height` = 48 
-<!-- Uncomment once the theme is integrated into the mod.
+
 ## Theme selection
 
 The theme is integrated into the mod, and can be simply selected from the mod's
@@ -86,10 +86,6 @@ settings:
 ## Manual installation
 
 The theme styles can also be imported manually. To do that, follow these steps:
--->
-## Manual installation
-
-The theme styles can be imported manually. To do that, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Advanced" tab.
