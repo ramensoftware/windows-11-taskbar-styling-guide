@@ -3,6 +3,7 @@
 ## Table of contents
 
 * [Introduction](#introduction)
+  * [Supported Processes](#supported-processes)
   * [Finding targets](#finding-targets)
   * [Missing customizations](#missing-customizations)
   * [Contributing](#contributing)
@@ -32,6 +33,13 @@
   * [Hide the notification bell icon](#hide-the-notification-bell-icon)
   * [Copilot button image](#copilot-button-image)
   * [Hide the "Show Desktop" button](#hide-the-show-desktop-button)
+* [Alt+Tab](#alt-tab)
+  * [Alt+Tab background](#alt-tab-background)
+* [Task view](#task-view)
+  * [Task view background](#task-view-background)
+  * [Hide virtual desktops](#hide-virtual-desktops)
+* [Volume Popup](#volume-popup)
+  * [Slider thickness](#slider-thickness)
 * [Transforms](#transforms)
   * [Translate](#translate)
   * [Rotate](#rotate)
@@ -70,6 +78,15 @@ those mods are provided where applicable.
 guide](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/blob/main/README.md),
 [The Windows 11 notification center styling
 guide](https://github.com/ramensoftware/windows-11-notification-center-styling-guide/blob/main/README.md).
+
+### Supported Processes
+
+As of version 1.5 of the Taskbar Styler, all Explorer threads are handled. This means that the following processes can be styled along with the taskbar:
+* Alt+Tab
+* Task view (Win+Tab)
+* Volume popup
+* Language popup
+* Snap layout popups
 
 ### Finding targets
 
@@ -433,6 +450,55 @@ SystemTray.Stack#ShowDesktopStack
 Style:
 ```
 Visibility=Collapsed
+```
+
+## Alt+Tab
+
+### Alt+Tab background
+
+Target:
+```
+Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+```
+Style:
+```
+Background=<color>
+```
+
+## Task view
+
+### Task view background
+
+Target:
+```
+Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
+```
+Style:
+```
+Background=<color>
+```
+### Hide virtual desktops
+
+Target:
+```
+WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
+```
+Style:
+```
+Visibility=Collapsed
+```
+
+## Volume Popup
+
+### Slider thickness
+
+Target:
+```
+Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect
+```
+Style:
+```
+Height=<value>
 ```
 
 ## Transforms
