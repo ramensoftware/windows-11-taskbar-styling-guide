@@ -38,7 +38,7 @@
 * [Task view](#task-view)
   * [Task view background](#task-view-background)
   * [Hide virtual desktops](#hide-virtual-desktops)
-* [Volume Popup](#volume-popup)
+* [Volume popup](#volume-popup)
   * [Slider thickness](#slider-thickness)
 * [Transforms](#transforms)
   * [Translate](#translate)
@@ -488,7 +488,7 @@ Style:
 Visibility=Collapsed
 ```
 
-## Volume Popup
+## Volume popup
 
 ### Slider thickness
 
