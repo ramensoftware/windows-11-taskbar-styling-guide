@@ -3,7 +3,7 @@
 ## Table of contents
 
 * [Introduction](#introduction)
-  * [Supported Processes](#supported-processes)
+  * [Supported components](#supported-components)
   * [Finding targets](#finding-targets)
   * [Missing customizations](#missing-customizations)
   * [Contributing](#contributing)
@@ -79,9 +79,9 @@ guide](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/blob
 [The Windows 11 notification center styling
 guide](https://github.com/ramensoftware/windows-11-notification-center-styling-guide/blob/main/README.md).
 
-### Supported Processes
+### Supported components
 
-As of version 1.5 of the Taskbar Styler, all Explorer threads are handled. This means that the following processes can be styled along with the taskbar:
+As of version 1.5 of Windows 11 Taskbar Styler, the following components can be styled along with the taskbar:
 * Alt+Tab
 * Task view (Win+Tab)
 * Volume popup
