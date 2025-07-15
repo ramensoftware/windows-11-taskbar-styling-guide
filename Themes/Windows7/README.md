@@ -135,6 +135,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 	"controlStyles[16].styles[0]": "TextAlignment=0",
 	"controlStyles[16].styles[1]": "Foreground=White",
 	"controlStyles[16].styles[2]": "FontFamily=Segoe UI",
+	"controlStyles[16].styles[3]": "FlowDirection=0",
 	"controlStyles[17].target": "SystemTray.OmniButton#ControlCenterButton > Windows.UI.Xaml.Controls.Grid@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
 	"controlStyles[17].styles[0]": "Background@Normal=Transparent",
 	"controlStyles[17].styles[1]": "Background@PointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPointerOver\" />",
