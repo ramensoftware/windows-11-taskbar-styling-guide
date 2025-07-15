@@ -33,6 +33,7 @@
   * [Hide the notification bell icon](#hide-the-notification-bell-icon)
   * [Copilot button image](#copilot-button-image)
   * [Hide the "Show Desktop" button](#hide-the-show-desktop-button)
+  * [Hide the entire system tray](#hide-the-entire-system-tray)
 * [Alt+Tab](#alttab)
   * [Alt+Tab background](#alttab-background)
 * [Task view](#task-view)
@@ -446,6 +447,17 @@ Background:=<ImageBrush Stretch="None" ImageSource="<image>" />
 Target:
 ```
 SystemTray.Stack#ShowDesktopStack
+```
+Style:
+```
+Visibility=Collapsed
+```
+
+### Hide the entire system tray
+
+Target:
+```
+Grid#SystemTrayFrameGrid
 ```
 Style:
 ```
