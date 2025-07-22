@@ -42,6 +42,14 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[4].styles[1]": "BorderThickness=0,0,0,0",
   "controlStyles[4].styles[2]": "CornerRadius=15",
   "controlStyles[4].styles[3]": "Margin=-2,-2,-2,-2",
+  "controlStyles[5].target": "Grid#ConfirmatorMainGrid",
+  "controlStyles[5].styles[0]": "Background=$CommonBgBrush",
+  "controlStyles[5].styles[1]": "BorderThickness=0",
+  "controlStyles[6].target": "WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid",
+  "controlStyles[6].styles[0]": "Background:=<WindhawkBlur BlurAmount=\"25\" TintColor=\"#25323232\"/>",
+  "controlStyles[6].styles[1]": "BorderThickness=0",
+  "controlStyles[7].target": "WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid",
+  "controlStyles[7].styles[0]": "Background:=<SolidColorBrush Color=\"Transparent\"/>",
   "styleConstants[0]": "CommonBgBrush=<WindhawkBlur BlurAmount=\"18\" TintColor=\"#25323232\"/>"
 }
 ```
