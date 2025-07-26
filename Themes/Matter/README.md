@@ -57,7 +57,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   "DateStyle.TextColor": "",
   "DateStyle.TextAlignment": "Center",
   "DateStyle.FontSize": 0,
-  "DateStyle.FontFamily": "tektur",
+  "DateStyle.FontFamily": "Tektur",
   "DateStyle.FontWeight": "Medium",
   "DateStyle.FontStyle": "",
   "DateStyle.FontStretch": "",
