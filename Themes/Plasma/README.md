@@ -27,7 +27,7 @@ Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
 {
 	"IconSize": 30,
 	"TaskbarHeight": 44,
-	"TaskbarButtonWidth": 52,
+	"TaskbarButtonWidth": 52
 }
 ```
 
