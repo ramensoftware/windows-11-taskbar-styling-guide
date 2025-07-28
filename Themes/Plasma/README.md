@@ -11,6 +11,11 @@ This theme aims to recreate the default Panel from KDE Plasma.
 >
 > This theme was designed for 100% display scaling.
 
+> [!TIP]
+> This theme will use the Noto Sans font if it is installed. It can be downloaded from here: https://fonts.google.com/noto/specimen/Noto+Sans. 
+> 
+> Install the `NotoSans-Regular.ttf` version included in the archive.
+
 ## Required additional mod configuration
 
 Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
