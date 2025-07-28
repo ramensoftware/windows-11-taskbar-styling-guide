@@ -33,6 +33,15 @@ Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
 
 </details>
 
+## Customization options
+
+This theme has two available start button images. You can choose between them by adding a Style Constant in the Windhawk GUI.
+
+* `StartButton=default`
+    * The default start button from the Breeze theme.
+* `StartButton=kubuntu`
+    * The start button available in the Kubuntu Linux distro.
+
 <!-- ## Theme selection
 
 The theme is integrated into the mod, and can be simply selected from the mod's
