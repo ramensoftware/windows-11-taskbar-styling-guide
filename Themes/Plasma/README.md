@@ -42,6 +42,21 @@ This theme has two available start button images. You can choose between them by
 * `StartButton=kubuntu`
     * The start button available in the Kubuntu Linux distro.
 
+This theme has two available blur options. WindhawkBlur works properly on multiple monitors, while Acrylic is transparency mode aware (e.g. blur is disabled in Battery Saver). You can choose between them by adding a style in the Windhawk GUI.
+
+Target:
+```
+Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+```
+Style:
+```
+Fill:=$WindhawkBlur
+```
+-- or --
+```
+Fill:=$Acrylic
+```
+
 <!-- ## Theme selection
 
 The theme is integrated into the mod, and can be simply selected from the mod's
