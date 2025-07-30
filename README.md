@@ -127,6 +127,7 @@ Taskbar Styler mod. The following themes are available:
 | [SimplyTransparent](Themes/SimplyTransparent/README.md) | [![SimplyTransparent](Themes/SimplyTransparent/screenshot.png)](Themes/SimplyTransparent/screenshot.png)
 | [Windows7](Themes/Windows7/README.md) | [![Windows7](Themes/Windows7/screenshot.png)](Themes/Windows7/screenshot.png)
 | [Aeris](Themes/Aeris/README.md) | [![Aeris](Themes/Aeris/screenshot.png)](Themes/Aeris/screenshot.png)
+| [Plasma](Themes/Plasma/README.md) | [![Plasma](Themes/Plasma/screenshot.png)](Themes/Plasma/screenshot.png)
 
 ## General
 
