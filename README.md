@@ -163,11 +163,12 @@ options (e.g. if you want blurred background effect).
 
 > [!NOTE]
 > There's [a known
-> limitation](https://github.com/ramensoftware/windhawk-mods/issues/742) which
-> makes some styles, such as an acrylic background, only work if there's a
-> single taskbar. The [Taskbar Background
-> Helper](https://windhawk.net/mods/taskbar-background-helper) mod can be used
-> as a workaround.
+> limitation](https://github.com/ramensoftware/windhawk-mods/issues/742) with
+> `AcrylicBrush` which only works if there's a single taskbar. The following
+> workarounds are available for multiple taskbars:
+> * Use `WindhawkBlur` instead of `AcrylicBrush`.
+> * Use a transparent background together with the [Taskbar Background
+>   Helper](https://windhawk.net/mods/taskbar-background-helper) mod.
 
 ### Taskbar border
 
