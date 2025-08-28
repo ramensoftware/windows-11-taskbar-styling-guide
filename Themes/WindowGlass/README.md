@@ -31,10 +31,11 @@ In order to make the taskbar look better, it is advised to install the 'Taskbar 
   "TaskbarButtonWidth": 44,
   "IconSizeSmall": 20,
   "TaskbarButtonWidthSmall": 30
-}```
+}
+
+```
 </details>
 
-```json
 
 ## Better to Know
 - Theme is designed on Windows 11 - 24H2
