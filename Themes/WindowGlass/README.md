@@ -37,7 +37,7 @@ In order to make the taskbar look better, it is advised to install the 'Taskbar 
 ## Better to Know
 - Theme is designed on Windows 11 - 24H2
 - Compatible with both Light/ Dark mode
-- Install [vivo Sans En VF](https://fonts.google.com/specimen/Tektur) font from Google font (required for clock customization)
+- Install [vivo Sans En VF](Link will soon be uploaded)
 
 ## For a complete GlassUI themed UI, download the following mods:
 - Windows 11 Start Menu Styler – for styling the Start Menu.
