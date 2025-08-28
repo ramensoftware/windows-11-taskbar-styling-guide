@@ -221,5 +221,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[8]": "ElementBorderThickness=0.3,0.3,0.3,1",
   "styleConstants[9]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
   "styleConstants[10]": "ElementCornerRadius=12"
-}```
+}
+```
 </details>
