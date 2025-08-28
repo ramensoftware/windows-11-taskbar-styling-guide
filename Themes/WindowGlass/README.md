@@ -34,6 +34,8 @@ In order to make the taskbar look better, it is advised to install the 'Taskbar 
 }```
 </details>
 
+```json
+
 ## Better to Know
 - Theme is designed on Windows 11 - 24H2
 - Compatible with both Light/ Dark mode
@@ -67,6 +69,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```json
+
 {
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
   "controlStyles[0].styles[1]": "HorizontalAlignment=Auto",
