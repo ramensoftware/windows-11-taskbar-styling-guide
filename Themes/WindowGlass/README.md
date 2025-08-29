@@ -8,19 +8,9 @@
 ## Center Aligned
 ![Center](TB_Centered.png)
 
-## Volume and Brightness HUD
-![Volume HUD](HUD_Volume.png) 
-![Brightness HUD](HUD_Brightness.png)
-
-## Window Snap Layout HUD
-![Snap Layout Picker 1](Snap_Layout.png) 
-![Snap Layout Picker 2](Snap_Layout_2.png) 
-![Snap Layout Picker 3](Snap_Layout_1.png) 
-
 
 ## Note
-In order to make the taskbar look better, it is advised to install the 'Taskbar height and icon size' mod (Link) and use the following setting for the mod:
-
+In order to make the taskbar look better, it's best that you install the 'Taskbar height and icon size' mod (Link) and use the following setting for the mod:
 <details>
 <summary>Click to expand JSON content</summary>
 
@@ -36,8 +26,20 @@ In order to make the taskbar look better, it is advised to install the 'Taskbar 
 ```
 </details>
 
+## Bonus
+- This Theme also Styles additional parts of Windows 11, including:
 
-## Better to Know
+- **Volume and Brightness HUD**
+![Volume HUD](HUD_Volume.png) 
+![Brightness HUD](HUD_Brightness.png)
+
+- **Window Snap Layout HUD**
+![Snap Layout Picker 1](Snap_Layout.png) 
+![Snap Layout Picker 2](Snap_Layout_2.png) 
+![Snap Layout Picker 3](Snap_Layout_1.png) 
+
+
+## More Details about this theme
 - Theme is designed on Windows 11 - 24H2
 - Compatible with both Light/ Dark mode
 - Install [vivo Sans En VF](Link will soon be uploaded)
