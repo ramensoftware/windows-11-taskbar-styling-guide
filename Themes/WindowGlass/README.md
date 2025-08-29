@@ -44,7 +44,7 @@ In order to make the taskbar look better, it's best that you install the 'Taskba
 - Compatible with both Light/ Dark mode
 - Install [vivo Sans En VF](Link will soon be uploaded)
 
-## For a complete GlassUI themed UI, download the following mods:
+## For a complete WindowGlass themed UI, download the following mods and use the 'WindowGlass' theme:
 - Windows 11 Start Menu Styler – for styling the Start Menu.
 - Windows 11 Notification Center Styler - for styling the Notification Center and Action Center
 - Windows 11 File Explorer Styler - for styling Windows Explorer windows
