@@ -1,5 +1,7 @@
 # WindowGlass theme for Windows 11 Taskbar Styler
 
+A theme that adds a modern, glassy aesthetic with a compact, floating layout to the windows 11 Taskbar.
+
 **Author**: [Nathaniel4JC](https://github.com/Nathaniel4JC)
 
 ## Left Aligned
