@@ -110,12 +110,14 @@ Taskbar Styler mod. The following themes are available:
 
 | Link  | Screenshot
 | ----- | ----------
+| [TranslucentTaskbar](Themes/TranslucentTaskbar/README.md) | [![TranslucentTaskbar](Themes/TranslucentTaskbar/screenshot.png)](Themes/TranslucentTaskbar/screenshot.png)
+| [DockLike](Themes/DockLike/README.md) | [![DockLike](Themes/DockLike/screenshot.png)](Themes/DockLike/screenshot.png)
+| [SimplyTransparent](Themes/SimplyTransparent/README.md) | [![SimplyTransparent](Themes/SimplyTransparent/screenshot.png)](Themes/SimplyTransparent/screenshot.png)
+| [Squircle](Themes/Squircle/README.md) | [![Squircle](Themes/Squircle/screenshot.png)](Themes/Squircle/screenshot.png)
+| [Matter](Themes/Matter/README.md) | [![Matter](Themes/Matter/screenshot.png)](Themes/Matter/screenshot.png)
 | [WinXP](Themes/WinXP/README.md) | [![WinXP](Themes/WinXP/screenshot-small.png)](Themes/WinXP/screenshot.png)
 | [Bubbles](Themes/Bubbles/README.md) | [![Bubbles](Themes/Bubbles/screenshot.png)](Themes/Bubbles/screenshot.png)
-| [TranslucentTaskbar](Themes/TranslucentTaskbar/README.md) | [![TranslucentTaskbar](Themes/TranslucentTaskbar/screenshot.png)](Themes/TranslucentTaskbar/screenshot.png)
-| [Squircle](Themes/Squircle/README.md) | [![Squircle](Themes/Squircle/screenshot.png)](Themes/Squircle/screenshot.png)
 | [RosePine](Themes/RosePine/README.md) | [![RosePine](Themes/RosePine/screenshot.png)](Themes/RosePine/screenshot.png)
-| [DockLike](Themes/DockLike/README.md) | [![DockLike](Themes/DockLike/screenshot.png)](Themes/DockLike/screenshot.png)
 | [WinVista](Themes/WinVista/README.md) | [![WinVista](Themes/WinVista/screenshot.png)](Themes/WinVista/screenshot.png)
 | [CleanSlate](Themes/CleanSlate/README.md) | [![CleanSlate](Themes/CleanSlate/screenshot.png)](Themes/CleanSlate/screenshot.png)
 | [Lucent](Themes/Lucent/README.md) | [![Lucent](Themes/Lucent/screenshot.png)](Themes/Lucent/screenshot.png)
@@ -123,8 +125,6 @@ Taskbar Styler mod. The following themes are available:
 | [BottomDensy](Themes/BottomDensy/README.md) | [![BottomDensy](Themes/BottomDensy/screenshot.png)](Themes/BottomDensy/screenshot.png)
 | [TaskbarXII](Themes/TaskbarXII/README.md) | [![TaskbarXII](Themes/TaskbarXII/screenshot.png)](Themes/TaskbarXII/screenshot.png)
 | [xdark](Themes/xdark/README.md) | [![xdark](Themes/xdark/screenshot.png)](Themes/xdark/screenshot.png)
-| [Matter](Themes/Matter/README.md) | [![Matter](Themes/Matter/screenshot.png)](Themes/Matter/screenshot.png)
-| [SimplyTransparent](Themes/SimplyTransparent/README.md) | [![SimplyTransparent](Themes/SimplyTransparent/screenshot.png)](Themes/SimplyTransparent/screenshot.png)
 | [Windows7](Themes/Windows7/README.md) | [![Windows7](Themes/Windows7/screenshot.png)](Themes/Windows7/screenshot.png)
 | [Aeris](Themes/Aeris/README.md) | [![Aeris](Themes/Aeris/screenshot.png)](Themes/Aeris/screenshot.png)
 | [Plasma](Themes/Plasma/README.md) | [![Plasma](Themes/Plasma/screenshot.png)](Themes/Plasma/screenshot.png)
