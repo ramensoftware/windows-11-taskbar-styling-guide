@@ -44,7 +44,7 @@ In order to make the taskbar look better, it's best that you install the 'Taskba
 ## More Details about this theme
 - Theme is designed on Windows 11 - 24H2
 - Compatible with both Light/ Dark mode
-- Install [vivo Sans En VF](Link will soon be uploaded)
+- Install [vivo Sans En VF](https://github.com/Nathaniel4JC/Fonts/releases/download/Fonts/Vivo_Fonts.zip)
 
 ## For a complete WindowGlass themed UI, download the following mods and use the 'WindowGlass' theme:
 - Windows 11 Start Menu Styler – for styling the Start Menu.
