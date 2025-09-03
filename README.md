@@ -11,6 +11,8 @@
 * [General](#general)
   * [Taskbar size](#taskbar-size)
   * [Taskbar background](#taskbar-background)
+  * [Tray overflow background](#tray-overflow-background)
+  * [Thumbnail preview background](#thumbnail-preview-background)
   * [Taskbar border](#taskbar-border)
 * [Task list](#task-list)
   * [Start button image](#start-button-image)
@@ -162,14 +164,33 @@ options (e.g. if you want blurred background effect).
 >   background element. To customize the background, use the `Grid#RootGrid`
 >   target and the `Background=<color>` style.
 
-> [!NOTE]
-> There's [a known
-> limitation](https://github.com/ramensoftware/windhawk-mods/issues/742) with
-> `AcrylicBrush` which only works if there's a single taskbar. The following
-> workarounds are available for multiple taskbars:
-> * Use `WindhawkBlur` instead of `AcrylicBrush`.
-> * Use a transparent background together with the [Taskbar Background
->   Helper](https://windhawk.net/mods/taskbar-background-helper) mod.
+
+
+### Tray overflow background
+
+Target:
+```
+Border#OverflowFlyoutBackgroundBorder
+```
+
+To set a solid color background, use the following style:
+```
+Background=<color>
+```
+
+### Thumbnail preview background
+
+Target:
+```
+Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
+```
+
+To set a solid color background, use the following style:
+```
+Fill=<color>
+```
+
+
 
 ### Taskbar border
 
@@ -650,6 +671,15 @@ Fill=Transparent
 ```
 
 ### Acrylic effect as color
+
+> [!NOTE]
+> There's [a known
+> limitation](https://github.com/ramensoftware/windhawk-mods/issues/742) with
+> `AcrylicBrush` which only works if there's a single taskbar. The following
+> workarounds are available for multiple taskbars:
+> * Use `WindhawkBlur` instead of `AcrylicBrush`.
+> * Use a transparent background together with the [Taskbar Background
+Helper](https://windhawk.net/mods/taskbar-background-helper) mod.
 
 In order to have an acrylic effect (a blurred background) you can use
 `AcrylicBrush`, this comes with `TintOpacity` which defines how much of the
