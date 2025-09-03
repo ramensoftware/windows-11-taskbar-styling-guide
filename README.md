@@ -11,7 +11,6 @@
 * [General](#general)
   * [Taskbar size](#taskbar-size)
   * [Taskbar background](#taskbar-background)
-  * [Tray overflow background](#tray-overflow-background)
   * [Thumbnail preview background](#thumbnail-preview-background)
   * [Taskbar border](#taskbar-border)
 * [Task list](#task-list)
@@ -23,6 +22,7 @@
   * [Task list labels font](#task-list-labels-font)
   * [Task list running indicator](#task-list-running-indicator)
 * [Notification area (system tray)](#notification-area-system-tray)
+  * [Tray overflow background](#tray-overflow-background)
   * [Tray icons size](#tray-icons-size)
   * [Tray icons size (system icons)](#tray-icons-size-system-icons)
   * [Tray icons spacing](#tray-icons-spacing)
@@ -164,20 +164,6 @@ options (e.g. if you want blurred background effect).
 >   background element. To customize the background, use the `Grid#RootGrid`
 >   target and the `Background=<color>` style.
 
-
-
-### Tray overflow background
-
-Target:
-```
-Border#OverflowFlyoutBackgroundBorder
-```
-
-To set a solid color background, use the following style:
-```
-Background=<color>
-```
-
 ### Thumbnail preview background
 
 Target:
@@ -189,8 +175,6 @@ To set a solid color background, use the following style:
 ```
 Fill=<color>
 ```
-
-
 
 ### Taskbar border
 
@@ -322,6 +306,18 @@ Some customizations for the running indicator are available in the [Taskbar
 Labels for Windows 11](https://windhawk.net/mods/taskbar-labels) mod.
 
 ## Notification area (system tray)
+
+### Tray overflow background
+
+Target:
+```
+Border#OverflowFlyoutBackgroundBorder
+```
+
+To set a solid color background, use the following style:
+```
+Background=<color>
+```
 
 ### Tray icons size
 
