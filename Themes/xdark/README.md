@@ -155,8 +155,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[0].styles[0]": "CornerRadius=13",
   "controlStyles[0].styles[1]": "Padding=6,0,6,0",
   "controlStyles[0].styles[2]": "HorizontalContentAlignment=Left",
-  "resourceVariables[0].variableKey": "",
-  "resourceVariables[0].value": "",
   "controlStyles[1].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
   "controlStyles[1].styles[0]": "FontSize=16",
   "controlStyles[1].styles[1]": "Foreground=#facc15",
@@ -205,8 +203,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[15].styles[0]": "Fill=Transparent",
   "controlStyles[16].target": "Rectangle#BackgroundStroke",
   "controlStyles[16].styles[0]": "Fill=Transparent",
-  "controlStyles[18].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
-  "controlStyles[18].styles[0]": "Foreground=#facc15"
+  "controlStyles[17].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
+  "controlStyles[17].styles[0]": "Foreground=#facc15"
 }
 ```
 </details>
