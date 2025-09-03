@@ -215,8 +215,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[37].styles[3]": "CornerRadius=$CornerRadius",
   "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"15\" TintColor=\"#10808080\"/>",
   "styleConstants[1]": "BorderBrush2=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"{ThemeResource SystemChromeHighColor}\" Offset=\"0.0\" /><GradientStop Color=\"{ThemeResource SystemChromeLowColor}\" Offset=\"0.25\" /><GradientStop Color=\"{ThemeResource SystemChromeHighColor}\" Offset=\"1\" /></LinearGradientBrush>",
-  "resourceVariables[0].variableKey": "",
-  "resourceVariables[0].value": "",
   "styleConstants[2]": "BorderThickness=0.3,1,0.3,0.3",
   "styleConstants[3]": "CornerRadius=15",
   "styleConstants[4]": "BorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"0.0\" /><GradientStop Color=\"#50404040\" Offset=\"0.25\" /><GradientStop Color=\"#50808080\" Offset=\"1\" /></LinearGradientBrush>",
@@ -225,7 +223,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[7]": "ElementBG=<SolidColorBrush Color=\"{ThemeResource SystemChromeAltHighColor}\" Opacity=\"0.3\" />",
   "styleConstants[8]": "ElementBorderThickness=0.3,0.3,0.3,1",
   "styleConstants[9]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
-  "styleConstants[10]": "ElementCornerRadius=12"
+  "styleConstants[10]": "ElementCornerRadius=12",
+  "resourceVariables[0].variableKey": "",
+  "resourceVariables[0].value": "",
 }
 ```
 </details>
