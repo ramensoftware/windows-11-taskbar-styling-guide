@@ -12,6 +12,7 @@
   * [Taskbar size](#taskbar-size)
   * [Taskbar background](#taskbar-background)
   * [Thumbnail preview background](#thumbnail-preview-background)
+  * [Tray overflow background](#tray-overflow-background)
   * [Taskbar border](#taskbar-border)
 * [Task list](#task-list)
   * [Start button image](#start-button-image)
@@ -22,7 +23,6 @@
   * [Task list labels font](#task-list-labels-font)
   * [Task list running indicator](#task-list-running-indicator)
 * [Notification area (system tray)](#notification-area-system-tray)
-  * [Tray overflow background](#tray-overflow-background)
   * [Tray icons size](#tray-icons-size)
   * [Tray icons size (system icons)](#tray-icons-size-system-icons)
   * [Tray icons spacing](#tray-icons-spacing)
@@ -146,7 +146,7 @@ Target:
 Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
 ```
 
-To set a solid color background, use the following style:
+Style:
 ```
 Fill=<color>
 ```
@@ -171,9 +171,21 @@ Target:
 Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
 ```
 
-To set a solid color background, use the following style:
+Style:
 ```
 Fill=<color>
+```
+
+### Tray overflow background
+
+Target:
+```
+Border#OverflowFlyoutBackgroundBorder
+```
+
+Style:
+```
+Background=<color>
 ```
 
 ### Taskbar border
@@ -307,17 +319,6 @@ Labels for Windows 11](https://windhawk.net/mods/taskbar-labels) mod.
 
 ## Notification area (system tray)
 
-### Tray overflow background
-
-Target:
-```
-Border#OverflowFlyoutBackgroundBorder
-```
-
-To set a solid color background, use the following style:
-```
-Background=<color>
-```
 
 ### Tray icons size
 
