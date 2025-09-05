@@ -12,6 +12,7 @@
   * [Taskbar size](#taskbar-size)
   * [Taskbar background](#taskbar-background)
   * [Taskbar border](#taskbar-border)
+  * [Thumbnail preview background](#thumbnail-preview-background)
 * [Task list](#task-list)
   * [Start button image](#start-button-image)
   * [Hide the start button](#hide-the-start-button)
@@ -21,6 +22,7 @@
   * [Task list labels font](#task-list-labels-font)
   * [Task list running indicator](#task-list-running-indicator)
 * [Notification area (system tray)](#notification-area-system-tray)
+  * [Tray overflow background](#tray-overflow-background)
   * [Tray icons size](#tray-icons-size)
   * [Tray icons size (system icons)](#tray-icons-size-system-icons)
   * [Tray icons spacing](#tray-icons-spacing)
@@ -144,13 +146,18 @@ Target:
 Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
 ```
 
-To set a solid color background, use the following style:
+Style:
 ```
 Fill=<color>
 ```
 
 Replace `<color>` with the desired color. See [colors section](#colors) for all
 options (e.g. if you want blurred background effect).
+
+> [!NOTE]
+> There's a known limitation with `AcrylicBrush` which only works if there's a
+> single taskbar. For details, refer to [Acrylic effect as
+> color](#acrylic-effect-as-color).
 
 > [!NOTE]
 > For some themes, a different target has to be used to customize the taskbar
@@ -162,15 +169,6 @@ options (e.g. if you want blurred background effect).
 >   background element. To customize the background, use the `Grid#RootGrid`
 >   target and the `Background=<color>` style.
 
-> [!NOTE]
-> There's [a known
-> limitation](https://github.com/ramensoftware/windhawk-mods/issues/742) with
-> `AcrylicBrush` which only works if there's a single taskbar. The following
-> workarounds are available for multiple taskbars:
-> * Use `WindhawkBlur` instead of `AcrylicBrush`.
-> * Use a transparent background together with the [Taskbar Background
->   Helper](https://windhawk.net/mods/taskbar-background-helper) mod.
-
 ### Taskbar border
 
 Target:
@@ -180,6 +178,18 @@ Rectangle#BackgroundStroke
 
 It can be customized in the same way as the background, see [Taskbar
 background](#taskbar-background).
+
+### Thumbnail preview background
+
+Target:
+```
+Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
+```
+
+Style:
+```
+Fill=<color>
+```
 
 ## Task list
 
@@ -301,6 +311,18 @@ Some customizations for the running indicator are available in the [Taskbar
 Labels for Windows 11](https://windhawk.net/mods/taskbar-labels) mod.
 
 ## Notification area (system tray)
+
+### Tray overflow background
+
+Target:
+```
+Border#OverflowFlyoutBackgroundBorder
+```
+
+Style:
+```
+Background=<color>
+```
 
 ### Tray icons size
 
@@ -650,6 +672,15 @@ Fill=Transparent
 ```
 
 ### Acrylic effect as color
+
+> [!NOTE]
+> There's [a known
+> limitation](https://github.com/ramensoftware/windhawk-mods/issues/742) with
+> `AcrylicBrush` which only works if there's a single taskbar. The following
+> workarounds are available for multiple taskbars:
+> * Use `WindhawkBlur` instead of `AcrylicBrush`.
+> * Use a transparent background together with the [Taskbar Background
+Helper](https://windhawk.net/mods/taskbar-background-helper) mod.
 
 In order to have an acrylic effect (a blurred background) you can use
 `AcrylicBrush`, this comes with `TintOpacity` which defines how much of the
