@@ -74,8 +74,8 @@ If you're not familiar with Windhawk, here are the steps for installing the mod:
 After installing the mod, open its Settings tab and adjust the styles according
 to your preferences.
 
-Some customizations are best to be adjusted with other Windhawk mods. Links to
-those mods are provided where applicable.
+Some customizations are best adjusted with other Windhawk mods. Links to those
+mods are provided where applicable.
 
 **See also**: [The Windows 11 start menu styling
 guide](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/blob/main/README.md),
@@ -713,7 +713,7 @@ _This example sets a blur that is tinted with red at 50% opacity._
 ### Mica effect as color
 
 > [!NOTE]
-> Unfortunately, I haven't figured this out yet. If you have any info please
+> Unfortunately, I haven't figured this out yet. If you have any info, please
 > contribute by making a pull request.
 
 ### Gradient as color
