@@ -11,9 +11,8 @@
 * [General](#general)
   * [Taskbar size](#taskbar-size)
   * [Taskbar background](#taskbar-background)
-  * [Thumbnail preview background](#thumbnail-preview-background)
-  * [Tray overflow background](#tray-overflow-background)
   * [Taskbar border](#taskbar-border)
+  * [Thumbnail preview background](#thumbnail-preview-background)
 * [Task list](#task-list)
   * [Start button image](#start-button-image)
   * [Hide the start button](#hide-the-start-button)
@@ -23,6 +22,7 @@
   * [Task list labels font](#task-list-labels-font)
   * [Task list running indicator](#task-list-running-indicator)
 * [Notification area (system tray)](#notification-area-system-tray)
+  * [Tray overflow background](#tray-overflow-background)
   * [Tray icons size](#tray-icons-size)
   * [Tray icons size (system icons)](#tray-icons-size-system-icons)
   * [Tray icons spacing](#tray-icons-spacing)
@@ -155,6 +155,11 @@ Replace `<color>` with the desired color. See [colors section](#colors) for all
 options (e.g. if you want blurred background effect).
 
 > [!NOTE]
+> There's a known limitation with `AcrylicBrush` which only works if there's a
+> single taskbar. For details, refer to [Acrylic effect as
+> color](#acrylic-effect-as-color).
+
+> [!NOTE]
 > For some themes, a different target has to be used to customize the taskbar
 > background:
 > * The [WinXP](Themes/WinXP/README.md) theme spans the taskbar border over the
@@ -163,6 +168,16 @@ options (e.g. if you want blurred background effect).
 > * The [DockLike](Themes/DockLike/README.md) theme hides the standard taskbar
 >   background element. To customize the background, use the `Grid#RootGrid`
 >   target and the `Background=<color>` style.
+
+### Taskbar border
+
+Target:
+```
+Rectangle#BackgroundStroke
+```
+
+It can be customized in the same way as the background, see [Taskbar
+background](#taskbar-background).
 
 ### Thumbnail preview background
 
@@ -175,28 +190,6 @@ Style:
 ```
 Fill=<color>
 ```
-
-### Tray overflow background
-
-Target:
-```
-Border#OverflowFlyoutBackgroundBorder
-```
-
-Style:
-```
-Background=<color>
-```
-
-### Taskbar border
-
-Target:
-```
-Rectangle#BackgroundStroke
-```
-
-It can be customized in the same way as the background, see [Taskbar
-background](#taskbar-background).
 
 ## Task list
 
@@ -319,6 +312,17 @@ Labels for Windows 11](https://windhawk.net/mods/taskbar-labels) mod.
 
 ## Notification area (system tray)
 
+### Tray overflow background
+
+Target:
+```
+Border#OverflowFlyoutBackgroundBorder
+```
+
+Style:
+```
+Background=<color>
+```
 
 ### Tray icons size
 
