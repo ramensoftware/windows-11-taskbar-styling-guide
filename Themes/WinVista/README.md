@@ -6,7 +6,7 @@
 
 ## Notes
 
-This theme was intended to be used with a slim taskbar, you may achieve a slim taskbar with this mod:
+This theme was intended to be used with a slim taskbar. You may achieve a slim taskbar with this mod:
 
 * [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size)
 

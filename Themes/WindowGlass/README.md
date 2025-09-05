@@ -1,6 +1,6 @@
 # WindowGlass theme for Windows 11 Taskbar Styler
 
-A theme that adds a modern, glassy aesthetic with a compact, floating layout to the windows 11 Taskbar.
+A theme that adds a modern, glassy aesthetic with a compact, floating layout to the Windows 11 taskbar.
 
 **Author**: [Nathaniel4JC](https://github.com/Nathaniel4JC)
 
@@ -43,10 +43,10 @@ This theme also styles additional parts of Windows 11, including:
 
 ## More Details about this theme
 - Theme is designed for Windows 11 - 24H2
-- Compatible with both Light/ Dark mode
-- Install [vivo Sans En VF](https://1drv.ms/u/c/67fedd4420ed716d/EXRoW1f5dABJrO2dPj0tbM0Bm1uYiGeoKyAYA7X7er2Zww?e=cLsiJJ) font
+- Compatible with both light and dark mode
+- Install the [vivo Sans En VF](https://1drv.ms/u/c/67fedd4420ed716d/EXRoW1f5dABJrO2dPj0tbM0Bm1uYiGeoKyAYA7X7er2Zww?e=cLsiJJ) font
 
-## For a complete WindowGlass themed UI, download the following mods and use the 'WindowGlass' theme:
+## For a complete WindowGlass-themed UI, download the following mods and use the 'WindowGlass' theme:
 - Windows 11 Start Menu Styler – for styling the Start Menu.
 - Windows 11 Notification Center Styler - for styling the Notification Center and Action Center
 - Windows 11 File Explorer Styler - for styling Windows Explorer windows

@@ -27,7 +27,7 @@
 </details>
 
 ## Vertical Taskbar
-* If you use a vertical taskbar, recommend fine-tuning the icon position.
+* If you use a vertical taskbar, it's recommended to fine-tune the icon position.
 
 ```
 Target:

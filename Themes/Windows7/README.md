@@ -1,13 +1,13 @@
 # Windows7 theme for Windows 11 Taskbar Styler
 
-This theme is mostly a proof of concept, and due to the limitations of the XAML taskbar it is not accurate to Windows 7. If you want an accurate Windows 7 taskbar, check out Explorer7 or ep_taskbar.
+This theme is mostly a proof of concept, and due to the limitations of the XAML taskbar, it is not accurate to Windows 7. If you want an accurate Windows 7 taskbar, check out Explorer7 or ep_taskbar.
 
 **Author**: [SandTechStuff](https://github.com/SandTechStuff)
 
 ![Screenshot](screenshot.png)
 
 > [!NOTE]
-> An internet connection is required to use this theme, as the relevant images are downloaded from this repository. This is also the reason why images may be slow to load on first use.
+> An internet connection is required to use this theme, as the relevant images are downloaded from this repository. This is also the reason images may be slow to load on first use.
 >
 > This theme was designed for 100% display scaling.
 

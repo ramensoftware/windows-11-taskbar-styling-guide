@@ -7,7 +7,7 @@
 
 ## Notes
 
-A nice clean theme that works nicely with dynamic windows themes using accent colors, mostly tuned for dark.
+A nice clean theme that works nicely with dynamic Windows themes using accent colors, mostly tuned for dark.
 
 ### Suggested Windows settings
 

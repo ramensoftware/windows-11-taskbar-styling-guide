@@ -10,12 +10,12 @@ various customizations that can be done with it.
 
 ## Notes
 
-The following mods are recommended to use with this theme:
+The following mods are recommended for use with this theme:
 
 * [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size):
-  Can be used to reduce the height and the icon size of the taskbar.
+  Can be used to reduce the height and icon size of the taskbar.
 * [Taskbar Labels for Windows 11](https://windhawk.net/mods/taskbar-labels): Can
-  be used to show labels for the taskbar buttons, and to make sure all buttons
+  be used to show labels for the taskbar buttons and to make sure all buttons
   have an equal width.
 
 ## Theme selection

@@ -13,10 +13,10 @@ Reddit](https://www.reddit.com/r/desktops/comments/1dna90y/comment/la4vxw1/).
 * This theme is intended and has been designed to be used with the search box
   set to either "Icon only" or "Hidden". If you choose one of the other search
   box styles, you may need to adjust the margins slightly due to all search
-  styles sharing the same ID's in Windows. This note will be edited should this
+  styles sharing the same IDs in Windows. This note will be edited should this
   change.
 * Available in 2 variants. Please choose the style that matches the location of
-  your weather widget, regardless of if you have it enabled or not.
+  your weather widget, regardless of whether you have it enabled or not.
 
 ## Theme selection
 
