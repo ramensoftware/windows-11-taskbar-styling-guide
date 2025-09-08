@@ -131,6 +131,7 @@ Taskbar Styler mod. The following themes are available:
 | [Aeris](Themes/Aeris/README.md) | [![Aeris](Themes/Aeris/screenshot.png)](Themes/Aeris/screenshot.png)
 | [Plasma](Themes/Plasma/README.md) | [![Plasma](Themes/Plasma/screenshot.png)](Themes/Plasma/screenshot.png)
 | [WindowGlass](Themes/WindowGlass/README.md) | [![WindowGlass](Themes/WindowGlass/screenshot.png)](Themes/WindowGlass/screenshot.png)
+| [Surface](Themes/Surface/README.md) | [![Surface](Themes/Surface/screenshot.png)](Themes/Surface/screenshot.png)
 
 ## General
 
