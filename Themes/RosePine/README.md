@@ -28,7 +28,7 @@ Reddit](https://www.reddit.com/r/desktops/comments/1e0o08e/windows_11_rose_pine_
 
 ## Theme selection
 
-The theme is integrated into the mod, and can be simply selected from the mod's
+The theme is integrated into the mod and can simply be selected from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.

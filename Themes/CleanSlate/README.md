@@ -7,7 +7,7 @@
 
 ## Notes
 
-A nice clean theme that works nicely with dynamic windows themes using accent colors, mostly tuned for dark.
+A nice clean theme that works nicely with dynamic Windows themes using accent colors, mostly tuned for dark.
 
 ### Suggested Windows settings
 
@@ -17,7 +17,7 @@ A nice clean theme that works nicely with dynamic windows themes using accent co
 
 ## Theme selection
 
-The theme is integrated into the mod, and can be simply selected from the mod's
+The theme is integrated into the mod and can simply be selected from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.

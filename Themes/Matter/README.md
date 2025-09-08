@@ -14,13 +14,13 @@
 ![Brightness Pane](Brightness.png)
 
 ## Note
-Small Icon next to weather icon is not part of theme, its a separate **Rainmeter skin**; my another project, you can download it from
+Small icon next to the weather icon is not part of the theme; it's a separate **Rainmeter skin**, another project of mine. You can download it from
 [Spotibar](https://github.com/ZoraizLajwer/spotibar).
 
 ## Better to Know
 - Theme is designed on Windows 11 - 23H2
-- Compatible with both Light/ Dark mode
-- Install [Tektur](https://fonts.google.com/specimen/Tektur) font from Google font (required for clock customization)
+- Compatible with both light and dark mode
+- Install the [Tektur](https://fonts.google.com/specimen/Tektur) font from Google Fonts (required for clock customization)
 
 ## Required Windhawk Mods for similar results
 To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler:
@@ -76,7 +76,7 @@ To achieve similar results, install and configure the following Windhawk mods in
 
 ## Theme selection
 
-The theme is integrated into the mod, and can be simply selected from the mod's
+The theme is integrated into the mod and can simply be selected from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.

@@ -10,17 +10,17 @@ various customizations that can be done with it.
 
 ## Notes
 
-The following mods are recommended to use with this theme:
+The following mods are recommended for use with this theme:
 
 * [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size):
-  Can be used to reduce the height and the icon size of the taskbar.
+  Can be used to reduce the height and icon size of the taskbar.
 * [Taskbar Labels for Windows 11](https://windhawk.net/mods/taskbar-labels): Can
-  be used to show labels for the taskbar buttons, and to make sure all buttons
+  be used to show labels for the taskbar buttons and to make sure all buttons
   have an equal width.
 
 ## Theme selection
 
-The theme is integrated into the mod, and can be simply selected from the mod's
+The theme is integrated into the mod and can simply be selected from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
@@ -128,14 +128,17 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[10].styles[3]": "BorderBrush@NoRunningIndicator=Transparent",
   "controlStyles[10].styles[4]": "CornerRadius=3",
   "controlStyles[11].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border",
+  "controlStyles[11].styles[0]": "BorderThickness=1",
+  "controlStyles[11].styles[1]": "CornerRadius=2",
+  "controlStyles[11].styles[2]": "BorderBrush@NoRunningIndicator=Transparent",
+  "controlStyles[11].styles[3]": "Margin=-2,-1,-2,-1",
   "controlStyles[12].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement",
   "controlStyles[12].styles[0]": "BorderBrush=#BB4B4B4B",
   "controlStyles[12].styles[1]": "Margin=1",
-  "controlStyles[11].styles[0]": "BorderThickness=1",
   "controlStyles[12].styles[2]": "BorderThickness=1",
-  "controlStyles[11].styles[1]": "CornerRadius=2",
-  "controlStyles[11].styles[3]": "Margin=-2,-1,-2,-1",
   "controlStyles[12].styles[3]": "Background:=<LinearGradientBrush StartPoint=\"0.5,0.42\" EndPoint=\"0.5,0.75\"> <GradientStop Color=\"#6B6B6B\" Offset=\"0.0\" /> <GradientStop Color=\"#363636\" Offset=\"0.5\" /> <GradientStop Color=\"#363636\" Offset=\"0.35\" /> <GradientStop Color=\"#363636\" Offset=\"0.8\" /> <GradientStop Color=\"#363636\" Offset=\"1.0\" /></LinearGradientBrush>",
+  "controlStyles[12].styles[4]": "BorderBrush@NoRunningIndicator=Transparent",
+  "controlStyles[12].styles[5]": "Background@NoRunningIndicator=Transparent",
   "controlStyles[13].target": "Rectangle#BackgroundStroke",
   "controlStyles[13].styles[0]": "Fill=#858585",
   "controlStyles[14].target": "Grid#SystemTrayFrameGrid",
@@ -145,9 +148,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[14].styles[3]": "Padding=4,0,0,0",
   "controlStyles[15].target": "Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Image#Icon",
   "controlStyles[15].styles[0]": "Height@NoRunningIndicator=16",
-  "controlStyles[11].styles[2]": "BorderBrush@NoRunningIndicator=Transparent",
-  "controlStyles[12].styles[4]": "BorderBrush@NoRunningIndicator=Transparent",
-  "controlStyles[12].styles[5]": "Background@NoRunningIndicator=Transparent",
   "controlStyles[16].styles[0]": "Margin@NoRunningIndicator=-7,0,-7,0",
   "controlStyles[16].target": "Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates",
   "controlStyles[16].styles[1]": "Padding@NoRunningIndicator=0",
