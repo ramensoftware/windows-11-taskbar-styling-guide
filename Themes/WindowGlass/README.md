@@ -209,7 +209,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[37].styles[0]": "BorderBrush:=$BorderBrush",
   "controlStyles[37].styles[1]": "BorderThickness=$BorderThickness",
   "controlStyles[37].styles[2]": "CornerRadius=$CornerRadius",
-  "controlStyles[37].styles[3]": "Background=Transparent"
+  "controlStyles[37].styles[3]": "Background=Transparent",
   "controlStyles[38].target": "WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid > Border",
   "controlStyles[38].styles[0]": "Background:=<AcrylicBrush TintColor=\"#10000020\"/>",
   "controlStyles[39].styles[0]": "Background:=<AcrylicBrush TintColor=\"#10000020\"/>",
