@@ -7,7 +7,7 @@ This theme aims to recreate the default Panel from KDE Plasma.
 ![Screenshot](screenshot.png)
 
 > [!NOTE]
-> An internet connection is required to use this theme, as the relevant images are downloaded from this repository. This is also the reason why images may be slow to load on first use.
+> An internet connection is required to use this theme, as the relevant images are downloaded from this repository. This is also the reason images may be slow to load on first use.
 >
 > This theme was designed for 100% display scaling.
 
@@ -35,14 +35,14 @@ Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
 
 ## Customization options
 
-This theme has two available start button images. You can choose between them by adding a Style Constant in the Windhawk GUI.
+This theme has two available Start button images. You can choose between them by adding a Style Constant in the Windhawk GUI.
 
 * `StartButton=default`
     * The default start button from the Breeze theme.
 * `StartButton=kubuntu`
     * The start button available in the Kubuntu Linux distro.
 
-This theme has two available blur options. WindhawkBlur works properly on multiple monitors, while Acrylic is transparency mode aware (e.g. blur is disabled in Battery Saver). You can choose between them by adding a style in the Windhawk GUI.
+This theme has two available blur options. WindhawkBlur works properly on multiple monitors, while Acrylic is transparency mode aware (e.g., blur is disabled in Battery Saver). You can choose between them by adding a style in the Windhawk GUI.
 
 Target:
 ```
@@ -57,22 +57,22 @@ Fill:=$WindhawkBlur
 Fill:=$Acrylic
 ```
 
-<!-- ## Theme selection
+## Theme selection
 
-The theme is integrated into the mod, and can be simply selected from the mod's
+The theme is integrated into the mod and can simply be selected from the mod's
 settings:
 
--   Open the Windows 11 Taskbar Styler mod in Windhawk.
--   Go to the "Settings" tab.
--   Select the theme and save the settings. -->
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
 
 ## Manual installation
 
 The theme styles can also be imported manually. To do that, follow these steps:
 
--   Open the Windows 11 Taskbar Styler mod in Windhawk.
--   Go to the "Advanced" tab.
--   Copy the content below to the text box under "Mod settings" and click "Save".
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Advanced" tab.
+* Copy the content below to the text box under "Mod settings" and click "Save".
 
 <details>
 <summary>Content to import (click to expand)</summary>

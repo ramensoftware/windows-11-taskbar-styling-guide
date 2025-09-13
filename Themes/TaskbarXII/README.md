@@ -40,7 +40,7 @@ Height=56
 
   ![Before](screenshot_widget_disabled.png)
 
-  To fix this, either enable the `Widget` feature, or add the following styles to the mod's settings:
+  To fix this, either enable the `Widget` feature or add the following styles to the mod's settings:
 
 ```
 Target:
@@ -51,20 +51,20 @@ Height=48
 Transform3D:=<CompositeTransform3D TranslateX="0"/>
 Opacity=0.7
 ```
-This will override the default value of TranslateX="156.5"
+This will override the default value of TranslateX="156.5".
 
   ![After](screenshot_widget_enabled.png)
 
 ## Suggested Windows settings
 
-- Use default taskbar alignment (center).
+- Use the default taskbar alignment (center).
 - The widget should be enabled.
 - The display scale should be at 100 percent.
 - You can hide the bell icon via Notifications in Settings.
 
 ## Theme selection
 
-The theme is integrated into the mod, and can be simply selected from the mod's
+The theme is integrated into the mod and can simply be selected from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.

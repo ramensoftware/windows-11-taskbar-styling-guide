@@ -10,6 +10,24 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
 ## Center Aligned
 ![Center](TB_Centered.png)
 
+
+## Note
+In order to make the taskbar look better, it's best that you install the 'Taskbar height and icon size' mod (Link) and use the following setting for the mod:
+<details>
+<summary>Click to expand JSON content</summary>
+
+```json
+{
+  "IconSize": 30,
+  "TaskbarHeight": 70,
+  "TaskbarButtonWidth": 44,
+  "IconSizeSmall": 20,
+  "TaskbarButtonWidthSmall": 30
+}
+
+```
+</details>
+
 ## Bonus
 - This Theme also Styles additional parts of Windows 11, including:
 

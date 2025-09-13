@@ -5,7 +5,7 @@
 ![Demonstration](screenshot.png)
 
 ## Required Windhawk Mods for Full Effect
-To achieve the full implementation of the xdark theme, make sure your Windows is set to dark theme and the accent color is set to gold, and install and configure the following Windhawk mods in addition to Taskbar Styler:
+To achieve the full implementation of the xdark theme, make sure Windows is set to the dark theme and the accent color is set to gold, then install and configure the following Windhawk mods in addition to Taskbar Styler:
 
 - Taskbar Clock Customization – for styling the system clock.
 
@@ -99,7 +99,7 @@ To achieve the full implementation of the xdark theme, make sure your Windows is
 
 - This theme is designed for dark, minimalistic desktop setups.
 - Uses rounded corners (`CornerRadius=13`) for taskbar buttons and system tray.
-- Accent color is golden yellow `#facc15`, used for text and icons.
+- The accent color is golden yellow `#facc15` (used for text and icons).
 - Some tray icons are intentionally hidden for a sleeker look.
 
 ## Highlighted Features
@@ -131,7 +131,7 @@ So, "Margin=1,0,0,0" sets 1 pixel of space between the icon and the text.
 
 ## Theme selection
 
-The theme is integrated into the mod, and can be simply selected from the mod's
+The theme is integrated into the mod and can simply be selected from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
@@ -155,8 +155,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[0].styles[0]": "CornerRadius=13",
   "controlStyles[0].styles[1]": "Padding=6,0,6,0",
   "controlStyles[0].styles[2]": "HorizontalContentAlignment=Left",
-  "resourceVariables[0].variableKey": "",
-  "resourceVariables[0].value": "",
   "controlStyles[1].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
   "controlStyles[1].styles[0]": "FontSize=16",
   "controlStyles[1].styles[1]": "Foreground=#facc15",
@@ -205,8 +203,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[15].styles[0]": "Fill=Transparent",
   "controlStyles[16].target": "Rectangle#BackgroundStroke",
   "controlStyles[16].styles[0]": "Fill=Transparent",
-  "controlStyles[18].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
-  "controlStyles[18].styles[0]": "Foreground=#facc15"
+  "controlStyles[17].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
+  "controlStyles[17].styles[0]": "Foreground=#facc15"
 }
 ```
 </details>

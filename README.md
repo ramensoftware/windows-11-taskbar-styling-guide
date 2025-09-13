@@ -12,6 +12,7 @@
   * [Taskbar size](#taskbar-size)
   * [Taskbar background](#taskbar-background)
   * [Taskbar border](#taskbar-border)
+  * [Thumbnail preview background](#thumbnail-preview-background)
 * [Task list](#task-list)
   * [Start button image](#start-button-image)
   * [Hide the start button](#hide-the-start-button)
@@ -21,6 +22,7 @@
   * [Task list labels font](#task-list-labels-font)
   * [Task list running indicator](#task-list-running-indicator)
 * [Notification area (system tray)](#notification-area-system-tray)
+  * [Tray overflow background](#tray-overflow-background)
   * [Tray icons size](#tray-icons-size)
   * [Tray icons size (system icons)](#tray-icons-size-system-icons)
   * [Tray icons spacing](#tray-icons-spacing)
@@ -72,8 +74,8 @@ If you're not familiar with Windhawk, here are the steps for installing the mod:
 After installing the mod, open its Settings tab and adjust the styles according
 to your preferences.
 
-Some customizations are best to be adjusted with other Windhawk mods. Links to
-those mods are provided where applicable.
+Some customizations are best adjusted with other Windhawk mods. Links to those
+mods are provided where applicable.
 
 **See also**: [The Windows 11 start menu styling
 guide](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/blob/main/README.md),
@@ -110,12 +112,14 @@ Taskbar Styler mod. The following themes are available:
 
 | Link  | Screenshot
 | ----- | ----------
+| [TranslucentTaskbar](Themes/TranslucentTaskbar/README.md) | [![TranslucentTaskbar](Themes/TranslucentTaskbar/screenshot.png)](Themes/TranslucentTaskbar/screenshot.png)
+| [DockLike](Themes/DockLike/README.md) | [![DockLike](Themes/DockLike/screenshot.png)](Themes/DockLike/screenshot.png)
+| [SimplyTransparent](Themes/SimplyTransparent/README.md) | [![SimplyTransparent](Themes/SimplyTransparent/screenshot.png)](Themes/SimplyTransparent/screenshot.png)
+| [Squircle](Themes/Squircle/README.md) | [![Squircle](Themes/Squircle/screenshot.png)](Themes/Squircle/screenshot.png)
+| [Matter](Themes/Matter/README.md) | [![Matter](Themes/Matter/screenshot.png)](Themes/Matter/screenshot.png)
 | [WinXP](Themes/WinXP/README.md) | [![WinXP](Themes/WinXP/screenshot-small.png)](Themes/WinXP/screenshot.png)
 | [Bubbles](Themes/Bubbles/README.md) | [![Bubbles](Themes/Bubbles/screenshot.png)](Themes/Bubbles/screenshot.png)
-| [TranslucentTaskbar](Themes/TranslucentTaskbar/README.md) | [![TranslucentTaskbar](Themes/TranslucentTaskbar/screenshot.png)](Themes/TranslucentTaskbar/screenshot.png)
-| [Squircle](Themes/Squircle/README.md) | [![Squircle](Themes/Squircle/screenshot.png)](Themes/Squircle/screenshot.png)
 | [RosePine](Themes/RosePine/README.md) | [![RosePine](Themes/RosePine/screenshot.png)](Themes/RosePine/screenshot.png)
-| [DockLike](Themes/DockLike/README.md) | [![DockLike](Themes/DockLike/screenshot.png)](Themes/DockLike/screenshot.png)
 | [WinVista](Themes/WinVista/README.md) | [![WinVista](Themes/WinVista/screenshot.png)](Themes/WinVista/screenshot.png)
 | [CleanSlate](Themes/CleanSlate/README.md) | [![CleanSlate](Themes/CleanSlate/screenshot.png)](Themes/CleanSlate/screenshot.png)
 | [Lucent](Themes/Lucent/README.md) | [![Lucent](Themes/Lucent/screenshot.png)](Themes/Lucent/screenshot.png)
@@ -123,12 +127,10 @@ Taskbar Styler mod. The following themes are available:
 | [BottomDensy](Themes/BottomDensy/README.md) | [![BottomDensy](Themes/BottomDensy/screenshot.png)](Themes/BottomDensy/screenshot.png)
 | [TaskbarXII](Themes/TaskbarXII/README.md) | [![TaskbarXII](Themes/TaskbarXII/screenshot.png)](Themes/TaskbarXII/screenshot.png)
 | [xdark](Themes/xdark/README.md) | [![xdark](Themes/xdark/screenshot.png)](Themes/xdark/screenshot.png)
-| [Matter](Themes/Matter/README.md) | [![Matter](Themes/Matter/screenshot.png)](Themes/Matter/screenshot.png)
-| [SimplyTransparent](Themes/SimplyTransparent/README.md) | [![SimplyTransparent](Themes/SimplyTransparent/screenshot.png)](Themes/SimplyTransparent/screenshot.png)
 | [Windows7](Themes/Windows7/README.md) | [![Windows7](Themes/Windows7/screenshot.png)](Themes/Windows7/screenshot.png)
-| [WindowGlass](Themes/WindowGlass/README.md) | [![WindowGlass](Themes/WindowGlass/TB_Centered.png)](Themes/WindowGlass/TB_Centered.png)
 | [Aeris](Themes/Aeris/README.md) | [![Aeris](Themes/Aeris/screenshot.png)](Themes/Aeris/screenshot.png)
 | [Plasma](Themes/Plasma/README.md) | [![Plasma](Themes/Plasma/screenshot.png)](Themes/Plasma/screenshot.png)
+| [WindowGlass](Themes/WindowGlass/README.md) | [![WindowGlass](Themes/WindowGlass/screenshot.png)](Themes/WindowGlass/screenshot.png)
 
 ## General
 
@@ -144,13 +146,18 @@ Target:
 Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
 ```
 
-To set a solid color background, use the following style:
+Style:
 ```
 Fill=<color>
 ```
 
 Replace `<color>` with the desired color. See [colors section](#colors) for all
 options (e.g. if you want blurred background effect).
+
+> [!NOTE]
+> There's a known limitation with `AcrylicBrush` which only works if there's a
+> single taskbar. For details, refer to [Acrylic effect as
+> color](#acrylic-effect-as-color).
 
 > [!NOTE]
 > For some themes, a different target has to be used to customize the taskbar
@@ -162,15 +169,6 @@ options (e.g. if you want blurred background effect).
 >   background element. To customize the background, use the `Grid#RootGrid`
 >   target and the `Background=<color>` style.
 
-> [!NOTE]
-> There's [a known
-> limitation](https://github.com/ramensoftware/windhawk-mods/issues/742) with
-> `AcrylicBrush` which only works if there's a single taskbar. The following
-> workarounds are available for multiple taskbars:
-> * Use `WindhawkBlur` instead of `AcrylicBrush`.
-> * Use a transparent background together with the [Taskbar Background
->   Helper](https://windhawk.net/mods/taskbar-background-helper) mod.
-
 ### Taskbar border
 
 Target:
@@ -180,6 +178,18 @@ Rectangle#BackgroundStroke
 
 It can be customized in the same way as the background, see [Taskbar
 background](#taskbar-background).
+
+### Thumbnail preview background
+
+Target:
+```
+Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
+```
+
+Style:
+```
+Fill=<color>
+```
 
 ## Task list
 
@@ -301,6 +311,18 @@ Some customizations for the running indicator are available in the [Taskbar
 Labels for Windows 11](https://windhawk.net/mods/taskbar-labels) mod.
 
 ## Notification area (system tray)
+
+### Tray overflow background
+
+Target:
+```
+Border#OverflowFlyoutBackgroundBorder
+```
+
+Style:
+```
+Background=<color>
+```
 
 ### Tray icons size
 
@@ -606,8 +628,8 @@ RenderTransform:=<SkewTransform AngleX="-15" AngleY="15" />
   ```
 ## Colors
 
-In the following examples we're gonna use `Fill` as an example, but this also
-works for other properties that accept colors like `Background`.
+In the following examples, we're going to use `Fill` as an example, but this
+also works for other properties that accept colors, like `Background`.
 
 ### Solid color
 
@@ -624,7 +646,7 @@ transparent background, use `Transparent`.
 
 ### Accent colors
 
-A Color can also be a `ThemeResource` or `StaticResource`. There are many such
+A color can also be a `ThemeResource` or `StaticResource`. There are many such
 styles built into Windows.
 
 ```
@@ -632,8 +654,8 @@ Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.8" /
 ```
 
 Accent colors have different lightness available, like `SystemAccentColorLight2`
-or `SystemAccentColorDark1`. The word `Light` or `Dark` is appended at end with
-a number ranging from 1-3. Check out [the official Microsoft
+or `SystemAccentColorDark1`. The word `Light` or `Dark` is appended at the end
+with a number ranging from 1 to 3. Check out [the official Microsoft
 docs](https://learn.microsoft.com/en-us/windows/apps/design/style/color#accent-color-palette)
 for all variations.
 
@@ -651,16 +673,25 @@ Fill=Transparent
 
 ### Acrylic effect as color
 
-In order to have an acrylic effect (a blurred background) you can use
-`AcrylicBrush`, this comes with `TintOpacity` which defines how much of the
-color needs to be applied.
+> [!NOTE]
+> There's [a known
+> limitation](https://github.com/ramensoftware/windhawk-mods/issues/742) with
+> `AcrylicBrush` which only works if there's a single taskbar. The following
+> workarounds are available for multiple taskbars:
+> * Use `WindhawkBlur` instead of `AcrylicBrush`.
+> * Use a transparent background together with the [Taskbar Background
+Helper](https://windhawk.net/mods/taskbar-background-helper) mod.
+
+In order to have an acrylic effect (a blurred background), you can use
+`AcrylicBrush`. It comes with `TintOpacity`, which defines how much of the color
+needs to be applied.
 
 ```
 Fill:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" />
 ```
 
 You can also mix acrylic with a variation of an accent color for a more dynamic
-look that fits current theme.
+look that fits the current theme.
 
 ```
 Fill:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.3" />
@@ -682,7 +713,7 @@ _This example sets a blur that is tinted with red at 50% opacity._
 ### Mica effect as color
 
 > [!NOTE]
-> Unfortunately I haven't figured this out yet. If you have any info please
+> Unfortunately, I haven't figured this out yet. If you have any info, please
 > contribute by making a pull request.
 
 ### Gradient as color
