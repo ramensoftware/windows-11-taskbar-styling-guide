@@ -15,12 +15,12 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
 - This Theme also Styles additional parts of Windows 11, including:
 
 - **Volume and Brightness HUD**
-![Volume HUD](HUD_Volume.png) 
+![Volume HUD](HUD_Volume.png) \
 ![Brightness HUD](HUD_Brightness.png)
 
 - **Window Snap Layout HUD**
-![Snap Layout Picker 1](Snap_Layout.png) 
-![Snap Layout Picker 2](Snap_Layout_2.png) 
+![Snap Layout Picker 1](Snap_Layout.png) \
+![Snap Layout Picker 2](Snap_Layout_2.png) \ 
 ![Snap Layout Picker 3](Snap_Layout_1.png) 
 
 
