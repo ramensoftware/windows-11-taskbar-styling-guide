@@ -10,24 +10,6 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
 ## Center Aligned
 ![Center](TB_Centered.png)
 
-
-## Note
-In order to make the taskbar look better, it's best that you install the 'Taskbar height and icon size' mod (Link) and use the following setting for the mod:
-<details>
-<summary>Click to expand JSON content</summary>
-
-```json
-{
-  "IconSize": 30,
-  "TaskbarHeight": 70,
-  "TaskbarButtonWidth": 44,
-  "IconSizeSmall": 20,
-  "TaskbarButtonWidthSmall": 30
-}
-
-```
-</details>
-
 ## Bonus
 - This Theme also Styles additional parts of Windows 11, including:
 
@@ -77,10 +59,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 {
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
-  "controlStyles[0].styles[1]": "HorizontalAlignment=Auto",
-  "controlStyles[0].styles[2]": "Width=Auto",
+  "controlStyles[0].styles[1]": "Width=Auto",
   "controlStyles[0].styles[0]": "MaxWidth:=900",
-  "controlStyles[0].styles[3]": "MinWidth:=500",
+  "controlStyles[0].styles[2]": "MinWidth:=500",
+  "controlStyles[0].styles[3]": "Height=70",
   "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "Margin=30,0,30,5",
   "controlStyles[1].styles[1]": "BorderThickness=$BorderThickness",
@@ -98,9 +80,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[5].target": "Grid#SystemTrayFrameGrid",
   "controlStyles[5].styles[0]": "Margin=0,7,20,7",
   "controlStyles[5].styles[1]": "RenderTransform:=<TranslateTransform X=\"-85\" Y=\"-2\"/>",
-  "controlStyles[5].styles[2]": "Padding=0",
-  "controlStyles[5].styles[3]": "Background:=$ElementBG",
-  "controlStyles[5].styles[4]": "CornerRadius=12",
+  "controlStyles[5].styles[2]": "Background:=$ElementBG",
+  "controlStyles[5].styles[3]": "BorderBrush:=$ElementBorderBrush",
+  "controlStyles[5].styles[4]": "BorderThickness=$ElementBorderThickness",
   "controlStyles[6].target": "SystemTray.ChevronIconView",
   "controlStyles[6].styles[0]": "Padding=$TrayPadding",
   "controlStyles[6].styles[1]": "CornerRadius=10",
@@ -173,7 +155,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[26].styles[2]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"60\" />",
   "controlStyles[26].styles[3]": "CornerRadius=$CornerRadius",
   "controlStyles[27].target": "Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer",
-  "controlStyles[27].styles[0]": "Background:=$Background",
+  "controlStyles[27].styles[0]": "Background:=<WindhawkBlur BlurAmount=\"15\" TintColor=\"#10808080\"/>",
   "controlStyles[28].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement",
   "controlStyles[28].styles[0]": "CornerRadius=10",
   "controlStyles[29].target": "Taskbar.TaskListButton#TaskListButton",
@@ -214,19 +196,46 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[37].styles[3]": "CornerRadius=$CornerRadius",
   "controlStyles[38].target": "Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill",
   "controlStyles[38].styles[0]": "Fill:=$Background",
-  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"15\" TintColor=\"#10808080\"/>",
-  "styleConstants[1]": "BorderBrush2=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"{ThemeResource SystemChromeHighColor}\" Offset=\"0.0\" /><GradientStop Color=\"{ThemeResource SystemChromeLowColor}\" Offset=\"0.25\" /><GradientStop Color=\"{ThemeResource SystemChromeHighColor}\" Offset=\"1\" /></LinearGradientBrush>",
+  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"2\" TintColor=\"#808080\" TintOpacity=\"0.1\" />",
+  "styleConstants[1]": "BorderBrush2=<WindhawkBlur BlurAmount=\"10\" TintColor=\"#909090\" TintOpacity=\"0.2\"/>",
   "resourceVariables[0].variableKey": "",
   "resourceVariables[0].value": "",
-  "styleConstants[2]": "BorderThickness=0.3,1,0.3,0.3",
+  "styleConstants[2]": "BorderThickness=0.5,1,0.5,1",
   "styleConstants[3]": "CornerRadius=15",
-  "styleConstants[4]": "BorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"0.0\" /><GradientStop Color=\"#50404040\" Offset=\"0.25\" /><GradientStop Color=\"#50808080\" Offset=\"1\" /></LinearGradientBrush>",
-  "styleConstants[5]": "Background2=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.3\" FallbackColor=\"{ThemeResource SystemChromeAltHighColor}\" />",
+  "styleConstants[4]": "BorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#60808080\" Offset=\"0.0\" /><GradientStop Color=\"#50404040\" Offset=\"0.25\" /><GradientStop Color=\"#40808080\" Offset=\"1\" /></LinearGradientBrush>",
+  "styleConstants[5]": "Background2=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.4\" FallbackColor=\"{ThemeResource SystemChromeMediumColor}\" />",
   "styleConstants[6]": "TrayPadding=2",
   "styleConstants[7]": "ElementBG=<SolidColorBrush Color=\"{ThemeResource SystemChromeAltHighColor}\" Opacity=\"0.3\" />",
   "styleConstants[8]": "ElementBorderThickness=0.3,0.3,0.3,1",
   "styleConstants[9]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
-  "styleConstants[10]": "ElementCornerRadius=12"
+  "styleConstants[10]": "ElementCornerRadius=12",
+  "controlStyles[39].target": "SystemTray.SystemTrayFrame",
+  "controlStyles[39].styles[0]": "Width=Auto",
+  "controlStyles[39].styles[1]": "MaxWidth:=400",
+  "controlStyles[39].styles[2]": "MinWidth:=150",
+  "controlStyles[39].styles[3]": "Margin=10,0,20,0",
+  "controlStyles[5].styles[5]": "CornerRadius=12",
+  "controlStyles[39].styles[4]": "Height=70",
+  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Image#Icon",
+  "controlStyles[40].styles[0]": "MaxHeight:=30",
+  "controlStyles[40].styles[1]": "MinHeight:=20",
+  "controlStyles[41].target": "Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
+  "controlStyles[40].styles[2]": "MaxWidth:=30",
+  "controlStyles[40].styles[3]": "MinWidth:=20",
+  "controlStyles[40].styles[4]": "Width=Auto",
+  "controlStyles[40].styles[5]": "Height=Auto",
+  "controlStyles[40].styles[6]": "Margin=2",
+  "controlStyles[41].styles[0]": "MaxHeight:=30",
+  "controlStyles[41].styles[1]": "MinHeight:=20",
+  "controlStyles[41].styles[2]": "MaxWidth:=30",
+  "controlStyles[41].styles[3]": "MinWidth:=20",
+  "controlStyles[41].styles[4]": "Width=Auto",
+  "controlStyles[41].styles[5]": "Height=Auto",
+  "controlStyles[41].styles[6]": "Margin=2",
+  "styleConstants[11]": "ElementSysColor=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" Opacity=\"1\" />",
+  "styleConstants[12]": "ElementSysColor2=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight2}\" Opacity=\"1\" />",
+  "styleConstants[13]": "ElementSysColor3=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight3}\" Opacity=\"1\" />",
+  "styleConstants[14]": "ElementSysColor4=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorDark1}\" Opacity=\"1\" />"
 }
 ```
 </details>
