@@ -65,7 +65,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[0].styles[1]": "Width=Auto",
   "controlStyles[0].styles[0]": "MaxWidth:=900",
   "controlStyles[0].styles[2]": "MinWidth:=500",
-  "controlStyles[0].styles[3]": "Height=70",
+  "controlStyles[0].styles[3]": "Height=$Height",
   "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "Margin=30,0,30,5",
   "controlStyles[1].styles[1]": "BorderThickness=$BorderThickness",
@@ -206,7 +206,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[39].styles[2]": "MinWidth:=150",
   "controlStyles[39].styles[3]": "Margin=0,0,10,0",
   "controlStyles[5].styles[5]": "CornerRadius=12",
-  "controlStyles[39].styles[4]": "Height=70",
+  "controlStyles[39].styles[4]": "Height=$Height",
   "controlStyles[40].target": "Windows.UI.Xaml.Controls.Image#Icon",
   "controlStyles[41].target": "Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
   "controlStyles[40].styles[0]": "MaxHeight:=30",
@@ -237,7 +237,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[11]": "ElementSysColor=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" Opacity=\"1\" />",
   "styleConstants[12]": "ElementSysColor2=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight2}\" Opacity=\"1\" />",
   "styleConstants[13]": "ElementSysColor3=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight3}\" Opacity=\"1\" />",
-  "styleConstants[14]": "ElementSysColor4=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorDark1}\" Opacity=\"1\" />"
+  "styleConstants[14]": "ElementSysColor4=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorDark1}\" Opacity=\"1\" />",
+  "styleConstants[15]": "Height=70"
 }
 ```
 </details>
