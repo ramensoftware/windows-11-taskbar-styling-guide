@@ -11,7 +11,7 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
 ![Center](screenshot.png)
 
 ## Note
-If the taskbar is too big, try adjusting the height for "Taskbar.TaskbarFrame#TaskbarFrame" and "SystemTray.SystemTrayFrame"
+If the taskbar is too big, try adjusting the value for "Height" in Style Constants to your liking.
 
 ## Bonus
 This theme also styles additional parts of Windows 11, including:
