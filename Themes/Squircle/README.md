@@ -235,12 +235,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[33].styles[1]": "Background@InactiveRunningIndicator:=<AcrylicBrush TintOpacity=\"0.8\" TintColor=\"Black\" />",
   "controlStyles[33].styles[2]": "Background@InactiveRunningIndicatorPointerOver:=<AcrylicBrush TintOpacity=\"0.8\" TintColor=\"Black\" />",
   "controlStyles[33].styles[3]": "Background@ActiveRunningIndicator:=<AcrylicBrush TintOpacity=\"0.8\" TintColor=\"Black\" />",
-  "controlStyles[33].styles[4]": "Background@ActiveRunningIndicatorPointerOver:=<AcrylicBrush TintOpacity=\"0.8\" TintColor=\"Black\" />",
-  "controlStyles[34].target": "taskbar:TaskListLabeledButtonPanel@CommonStates > Border[1]",
-  "controlStyles[34].styles[0]": "BorderBrush@RequestingAttentionPointerOver=DarkOrange",
-  "controlStyles[34].styles[1]": "BorderBrush@RequestingAttention=Orange",
-  "controlStyles[34].styles[2]": "BorderThickness@RequestingAttention=2",
-  "controlStyles[34].styles[3]": "BorderThickness@RequestingAttentionPointerOver=2"
+  "controlStyles[33].styles[4]": "Background@ActiveRunningIndicatorPointerOver:=<AcrylicBrush TintOpacity=\"0.8\" TintColor=\"Black\" />"
 }
 ```
 </details>
