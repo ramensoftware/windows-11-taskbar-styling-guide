@@ -257,7 +257,6 @@ This theme contains an alternate style.
 This version has two styles:
 
 ![Alternate Version 1](Alternate_Version_1.png)
-![Alternate Version 2](Alternate_Version_2.png)
 
 <details>
 <summary>Content to import (click to expand)</summary>
