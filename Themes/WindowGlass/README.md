@@ -251,7 +251,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ## Alternate Version
 
-This theme contains an alternate style.
+This theme contains an alternate style which seperates the System tray from the Taskbar. \
+- this version automatically resizes itself based on how many apps are open. \
 **Note:** This variant is still being tested so it may contains bugs/ cause unexpected behavior. Use with caution...
 
 This version has two styles:
