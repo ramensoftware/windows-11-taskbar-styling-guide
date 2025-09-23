@@ -256,6 +256,7 @@ This theme contains an alternate style.
 
 This version has two styles:
 
+**Version 1**
 ![Alternate Version 1](Alternate_Version_1.png)
 
 <details>
@@ -458,6 +459,7 @@ This version has two styles:
 ```
 </details>
 
+**Version 2**
 ![Alternate Version 2](Alternate_Version_2.png)
 
 <details>
