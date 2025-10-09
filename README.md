@@ -8,6 +8,7 @@ A cleaner, more refined Windows taskbar theme - removing unnecessary elements an
 - Removed unnecessary text and lines
 - Enlarged icons  
 - Enhanced Accent Color Presence (Automatically Updates with Windows Accent Color)  
+- Improved Transparency Effects
 - Added Subtle, Neat Border Reveal Effects
 - Took Fallback Colors (Colors in Battery Mode) into consideration
 
