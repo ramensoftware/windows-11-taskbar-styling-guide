@@ -7,7 +7,7 @@ A cleaner, more refined Windows taskbar theme - removing unnecessary elements an
 ### ✨ Features
 - Removed unnecessary text and lines
 - Enlarged icons  
-- Enhanced accent color Presence (Automatically Updates with Windows Accent Color)  
+- Enhanced Accent Color Presence (Automatically Updates with Windows Accent Color)  
 - Added Subtle, Neat Border Reveal Effects
 - Took Fallback Colors (Colors in Battery Mode) into consideration
 
