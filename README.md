@@ -4,6 +4,8 @@ A cleaner, more refined Windows taskbar theme - removing unnecessary elements an
 
 > ⚠️ **Note:** This theme is optimized for Windows in **Dark Mode** and may not display correctly in **Light Mode**.
 
+> ⚠️ **Note:** This theme was created and tested with **Windows 11 24H2**, compatability with **Windows 11 25H2** is not guranteed.
+
 ### ✨ Features
 - Removed unnecessary text and lines
 - Enlarged icons  
