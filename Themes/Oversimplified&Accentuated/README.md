@@ -106,7 +106,8 @@ The aim is to make it easier to modify or debug the theme in the future.
 
 "controlStyles[9].target": "Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground",
 "controlStyles[9].styles[0]": "BorderBrush=Transparent",
-"controlStyles[9].styles[1]": "//Target= Taskbar > Taskbar App  > HoverFlyout Background Container",
+"controlStyles[9].styles[1]": "Shadow:=",
+"controlStyles[9].styles[2]": "//Target= Taskbar > Taskbar App  > HoverFlyout Background Container",
 
 "controlStyles[10].target": "Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill",
 "controlStyles[10].styles[0]": "Fill:=$DarkAccent",
