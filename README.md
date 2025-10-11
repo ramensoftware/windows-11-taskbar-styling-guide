@@ -68,7 +68,7 @@ The aim is to make it easier to modify or debug the theme in the future.
 "controlStyles[1].styles[2]": "Shadow:=",
 "controlStyles[1].styles[3]": "//Target= Tooltip Popup",
 
-"controlStyles[2].target": "Rectangle#BackgroundFill",
+"controlStyles[2].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
 "controlStyles[2].styles[0]": "Fill:=$Alt",
 "controlStyles[2].styles[1]": "//Target= Taskbar",
 
