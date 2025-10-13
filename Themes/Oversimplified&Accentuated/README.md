@@ -174,7 +174,8 @@ The aim is to make it easier to modify or debug the theme in the future.
 
 "controlStyles[22].target": "Rectangle#HorizontalDecreaseRect",
 "controlStyles[22].styles[0]": "Height=6",
-"controlStyles[22].styles[1]": "//Target= Volume & Brightness Popups > Track Container",
+"controlStyles[22].styles[1]": "Margin= 0,2,0,0",
+"controlStyles[22].styles[2]": "//Target= Volume & Brightness Popups > Track Container",
 
 "controlStyles[23].target": "Rectangle#HorizontalTrackRect",
 "controlStyles[23].styles[0]": "Fill=Transparent",
