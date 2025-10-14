@@ -11,7 +11,7 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
 ![Center](screenshot.png)
 
 ## Note
-In order to make the taskbar look better, it's best that you install the 'Taskbar height and icon size' mod and use the following setting for the mod:
+In order to make the taskbar look better, it's best that you install the 'Taskbar height and icon size' mod and use the following settings for the mod:
 
 <details>
 <summary>Click to expand JSON content</summary>
