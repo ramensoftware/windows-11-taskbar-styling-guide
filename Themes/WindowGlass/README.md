@@ -263,6 +263,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 This theme contains an alternate style which seperates the System tray from the Taskbar. \
 - This version automatically resizes itself based on how many apps are open. \
+- If the taskbar or system tray appears in the wrong place, try adjusting the margin for "Taskbar.TaskbarFrame#TaskbarFrame", and "SystemTray.SystemTrayFrame"
 - **Note:** This variant is still being tested so it may contains bugs/ cause unexpected behavior. Use with caution...
 
 This version has two styles:
