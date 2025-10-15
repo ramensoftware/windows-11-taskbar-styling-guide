@@ -63,7 +63,7 @@ The aim is to make it easier to modify or debug the theme in the future.
 
 "controlStyles[1].target": "ToolTip > ContentPresenter#LayoutRoot",
 "controlStyles[1].styles[0]": "Background:=$DarkAccent",
-"controlStyles[1].styles[1]": "BorderBrush:=$Reveal",
+"controlStyles[1].styles[1]": "BorderBrush=Transparent",
 "controlStyles[1].styles[2]": "Shadow:=",
 "controlStyles[1].styles[3]": "//Target= Tooltip Popup",
 
