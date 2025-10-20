@@ -14,7 +14,6 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
 If the taskbar is too big, try adjusting the value for "Height" in Style Constants to your liking.
 
 
-
 ## Bonus
 This theme also styles additional parts of Windows 11, including:
 
@@ -239,7 +238,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[44].styles[2]": "BorderThickness=$BorderThickness",
   "controlStyles[44].styles[3]": "CornerRadius=$CornerRadius",
   "theme": "",
-  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.3\" />",
+  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
   "styleConstants[1]": "BorderBrush2=<WindhawkBlur BlurAmount=\"10\" TintColor=\"#909090\" TintOpacity=\"0.2\"/>",
   "resourceVariables[0].variableKey": "",
   "resourceVariables[0].value": "",
@@ -465,7 +464,7 @@ This version has two styles:
   "controlStyles[44].styles[2]": "BorderThickness=$BorderThickness",
   "controlStyles[44].styles[3]": "CornerRadius=$CornerRadius",
   "theme": "",
-  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.4\" />",
+  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
   "styleConstants[1]": "BorderBrush2=<WindhawkBlur BlurAmount=\"10\" TintColor=\"#909090\" TintOpacity=\"0.2\"/>",
   "resourceVariables[0].variableKey": "",
   "resourceVariables[0].value": "",
@@ -689,7 +688,7 @@ This version has two styles:
   "controlStyles[44].styles[2]": "BorderThickness=$BorderThickness",
   "controlStyles[44].styles[3]": "CornerRadius=$CornerRadius",
   "theme": "",
-  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.3\" />",
+  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
   "styleConstants[1]": "BorderBrush2=<WindhawkBlur BlurAmount=\"10\" TintColor=\"#909090\" TintOpacity=\"0.2\"/>",
   "resourceVariables[0].variableKey": "",
   "resourceVariables[0].value": "",
@@ -904,7 +903,7 @@ This version has two styles:
   "controlStyles[44].styles[2]": "BorderThickness=$BorderThickness",
   "controlStyles[44].styles[3]": "CornerRadius=$CornerRadius",
   "theme": "",
-  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.3\" />",
+  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
   "styleConstants[1]": "BorderBrush2=<WindhawkBlur BlurAmount=\"10\" TintColor=\"#909090\" TintOpacity=\"0.2\"/>",
   "resourceVariables[0].variableKey": "",
   "resourceVariables[0].value": "",
