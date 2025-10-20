@@ -1,4 +1,4 @@
-# Surface Theme for Windows 11 Taskbar Styler
+# Surface theme for Windows 11 Taskbar Styler
 
 **Author**: [Jimmy](https://github.com/JimmyLlancaMelo)
 
@@ -10,7 +10,7 @@
 
 ## Notes
 
-* This theme is intended to be used with a status bar program such as "MyDockFinder", but can also be used without it.
+* This theme is intended to be used with a status bar program such as "MyDockFinder", but it can also be used without it.
 * "MyDockFinder" has a dock built in, but it has certain limitations. This theme acts as an alternative to its dock.
 
 ## Required additional mod configuration
@@ -31,14 +31,14 @@ Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
 
 ## Removing system tray
 
-If you are using "MyDockFinder" you can hide the system tray with this style:
+If you are using "MyDockFinder", you can hide the system tray with this style:
 
 Target: `Grid#SystemTrayFrameGrid`
 Style: `Visibility=Collapsed`
 
 <!-- ## Theme selection
 
-The theme is integrated into the mod, and can be simply selected from the mod's
+The theme is integrated into the mod and can simply be selected from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
