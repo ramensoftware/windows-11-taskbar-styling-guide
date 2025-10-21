@@ -11,8 +11,10 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
 ![Center](screenshot.png)
 
 ## Note
-If the taskbar is too big, try adjusting the value for "Height" in Style Constants to your liking.
-This theme consists of **three** backgrounds:
+-  Works best on devices running windows 11 24H2 and above.
+- Works best on devices with a screen resolution of 1930x1200 and above.
+- If the taskbar is too big, try adjusting the value for "Height" in Style Constants to your liking.
+- This theme consists of **three** backgrounds:
     - Glass
     - Frosted
     - Acrylic
