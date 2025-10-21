@@ -18,7 +18,7 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
     - Glass
     - Frosted
     - Acrylic
-  In order to switch between these backgrounds, replace the value for "Background" with "$Glass", "$Frosted" or "$Acrylic".
+  - In order to switch between these backgrounds, replace the value for "Background" with "$Glass", "$Frosted" or "$Acrylic".
 
 
 ## Bonus
