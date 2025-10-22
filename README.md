@@ -132,6 +132,7 @@ Taskbar Styler mod. The following themes are available:
 | [Plasma](Themes/Plasma/README.md) | [![Plasma](Themes/Plasma/screenshot.png)](Themes/Plasma/screenshot.png)
 | [WindowGlass](Themes/WindowGlass/README.md) | [![WindowGlass](Themes/WindowGlass/screenshot.png)](Themes/WindowGlass/screenshot.png)
 | [Surface](Themes/Surface/README.md) | [![Surface](Themes/Surface/screenshot.png)](Themes/Surface/screenshot.png)
+| [Oversimplified&Accentuated](Themes/Oversimplified&Accentuated/README.md) | [![Oversimplified&Accentuated](Themes/Oversimplified&Accentuated/screenshot.png)](Themes/Oversimplified&Accentuated/screenshot.png)
 
 ## General
 
