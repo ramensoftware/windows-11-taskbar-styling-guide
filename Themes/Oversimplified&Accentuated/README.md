@@ -2,7 +2,8 @@
 
 A cleaner, more refined Windows taskbar theme - removing unnecessary elements and offering better **Accent Color** integration.
 
-> ⚠️ **Note:** This theme is optimized for Windows in **Dark Mode** and may not display correctly in **Light Mode**.
+> [!NOTE]
+> This theme is optimized for Windows in **Dark Mode** and may not display correctly in **Light Mode**.
 
 ### ✨ Features
 - Removed unnecessary text and lines
