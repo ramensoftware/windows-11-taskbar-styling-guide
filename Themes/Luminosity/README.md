@@ -2,7 +2,7 @@
 
 **Author**: [mendes.image](https://github.com/mendesimage)
 
-![Demonstration](screenshot.png)
+![Demonstration](dock.png)
 
 ## Intro
 **Luminosity** is based on native Acrylic, using the maximum **TintLuminosityOpacity** value as its backdrop.
@@ -566,3 +566,4 @@ The theme styles can also be imported manually. To do that, follow these steps:
 }
 ```
 </details>
+
