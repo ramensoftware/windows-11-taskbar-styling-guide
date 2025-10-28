@@ -20,7 +20,25 @@ It's meant to be used with **Mica** or **MicaAlt** backdrops, with or without th
 <summary>Click to expand JSON content</summary>
 
 ```json
-{"mode":"labelsWithoutCombining","taskbarItemWidth":0,"runningIndicatorStyle":"centerDynamic","progressIndicatorStyle":"centerDynamic","excludedPrograms[0]":"excluded1.exe","minimumTaskbarItemWidth":50,"maximumTaskbarItemWidth":176,"fontSize":12,"fontFamily":"","textTrimming":"characterEllipsis","leftAndRightPaddingSize":8,"spaceBetweenIconAndLabel":8,"runningIndicatorHeight":0,"runningIndicatorVerticalOffset":0,"alwaysShowThumbnailLabels":0,"labelForSingleItem":"%name%","labelForMultipleItems":"[%amount%] %name%"}
+{
+  "mode":"labelsWithoutCombining",
+  "taskbarItemWidth":0,
+  "runningIndicatorStyle":"centerDynamic",
+  "progressIndicatorStyle":"centerDynamic",
+  "excludedPrograms[0]":"excluded1.exe",
+  "minimumTaskbarItemWidth":50,
+  "maximumTaskbarItemWidth":176,
+  "fontSize":12,
+  "fontFamily":"",
+  "textTrimming":"characterEllipsis",
+  "leftAndRightPaddingSize":8,
+  "spaceBetweenIconAndLabel":8,
+  "runningIndicatorHeight":0,
+  "runningIndicatorVerticalOffset":0,
+  "alwaysShowThumbnailLabels":0,
+  "labelForSingleItem":"%name%",
+  "labelForMultipleItems":"[%amount%] %name%"
+}
 ```
 
 </details>
@@ -32,7 +50,38 @@ Also since the Taskbar is smaller, I recommend using **Taskbar Clock Customizati
 <summary>Click to expand JSON content</summary>
 
 ```json
-{"ShowSeconds":1,"TimeFormat":"","DateFormat":"","WeekdayFormat":"dddd","WeekdayFormatCustom":"Sun, Mon, Tue, Wed, Thu, Fri, Sat","TopLine":"%date%   %time%","BottomLine":"","MiddleLine":"%weekday%","TooltipLine":"","Width":180,"Height":60,"MaxWidth":0,"TextSpacing":0,"WebContentsItems[0].Url":"https://rss.nytimes.com/services/xml/rss/nyt/World.xml","WebContentsItems[0].BlockStart":"<item>","WebContentsItems[0].Start":"<title>","WebContentsItems[0].End":"</title>","WebContentsItems[0].MaxLength":28,"WebContentsUpdateInterval":10,"TimeZones[0]":"Eastern Standard Time","TimeStyle.Hidden":0,"TimeStyle.TextColor":"","TimeStyle.TextAlignment":"","TimeStyle.FontSize":0,"TimeStyle.FontFamily":"","TimeStyle.FontWeight":"","TimeStyle.FontStyle":"","TimeStyle.FontStretch":"","TimeStyle.CharacterSpacing":0,"DateStyle.Hidden":1,"DateStyle.TextColor":"","DateStyle.TextAlignment":"","DateStyle.FontSize":0,"DateStyle.FontFamily":"","DateStyle.FontWeight":"","DateStyle.FontStyle":"","DateStyle.FontStretch":"","DateStyle.CharacterSpacing":0,"oldTaskbarOnWin11":0,"DataCollectionUpdateInterval":1,"WebContentWeatherLocation":"","WebContentWeatherFormat":"%c 🌡️%t 🌬️%w","DataCollection.NetworkMetricsFormat":"mbs","DataCollection.NetworkMetricsFixedDecimals":-1,"DataCollection.PercentageFormat":"spacePaddingAndSymbol","DataCollection.UpdateInterval":1,"WebContentWeatherUnits":"autoDetect"}
+{
+  "ShowSeconds":1,
+  "TimeFormat":"",
+  "DateFormat":"",
+  "WeekdayFormat":"dddd",
+  "WeekdayFormatCustom":"Sun, Mon, Tue, Wed, Thu, Fri, Sat",
+  "TopLine":"%date%   %time%","BottomLine":"",
+  "MiddleLine":"%weekday%",
+  "TooltipLine":"",
+  "Width":180,"Height":60,"MaxWidth":0,"TextSpacing":0,"WebContentsItems[0].Url":"https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+  "WebContentsItems[0].BlockStart":"<item>",
+  "WebContentsItems[0].Start":"<title>",
+  "WebContentsItems[0].End":"</title>",
+  "WebContentsItems[0].MaxLength":28,"WebContentsUpdateInterval":10,"TimeZones[0]":"Eastern Standard Time",
+  "TimeStyle.Hidden":0,"TimeStyle.TextColor":"",
+  "TimeStyle.TextAlignment":"",
+  "TimeStyle.FontSize":0,"TimeStyle.FontFamily":"",
+  "TimeStyle.FontWeight":"",
+  "TimeStyle.FontStyle":"",
+  "TimeStyle.FontStretch":"",
+  "TimeStyle.CharacterSpacing":0,"DateStyle.Hidden":1,"DateStyle.TextColor":"",
+  "DateStyle.TextAlignment":"",
+  "DateStyle.FontSize":0,"DateStyle.FontFamily":"",
+  "DateStyle.FontWeight":"",
+  "DateStyle.FontStyle":"",
+  "DateStyle.FontStretch":"",
+  "DateStyle.CharacterSpacing":0,"oldTaskbarOnWin11":0,"DataCollectionUpdateInterval":1,"WebContentWeatherLocation":"",
+  "WebContentWeatherFormat":"%c 🌡️%t 🌬️%w",
+  "DataCollection.NetworkMetricsFormat":"mbs",
+  "DataCollection.NetworkMetricsFixedDecimals":-1,"DataCollection.PercentageFormat":"spacePaddingAndSymbol",
+  "DataCollection.UpdateInterval":1,"WebContentWeatherUnits":"autoDetect"
+}
 ```
 
 </details>
@@ -566,4 +615,3 @@ The theme styles can also be imported manually. To do that, follow these steps:
 }
 ```
 </details>
-
