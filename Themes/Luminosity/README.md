@@ -148,7 +148,7 @@ For that, download the listed mods and select "**Luminosity**" on each.
 - Windows 11 Notification Center Styler
 - Windows 11 File Explorer Styler
 
-I also highly recommend **Translucent Windows** with **Mica** or **MicaAlt**.
+I also highly recommend **Translucent Windows** with **Mica** or **MicaAlt** selected as backdrop.
 
 ---
 
@@ -615,4 +615,5 @@ The theme styles can also be imported manually. To do that, follow these steps:
 }
 ```
 </details>
+
 
