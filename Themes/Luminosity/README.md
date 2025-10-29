@@ -130,6 +130,8 @@ The theme changes the following elements:
 
 ## Known Issues
 
+- There's [a known limitation](https://github.com/ramensoftware/windhawk-mods/issues/742) with ```AcrylicBrush``` which only works if there's a single taskbar. Taskbar in other monitors may appear transparent.
+
 I didn't know how to fix these. I couldn't find the correct target names, or I'm not sure if they can even be changed.
 
 - The Taskbar icon overflow flyout (when the taskbar is full) doesn't have a matching border brush and may not have Acrylic.
@@ -615,5 +617,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 }
 ```
 </details>
+
 
 
