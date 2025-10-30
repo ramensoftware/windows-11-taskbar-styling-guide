@@ -324,6 +324,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[1].target": "SearchUx.SearchUI.SearchButtonControl",
   "controlStyles[1].styles[0]": "Margin=0,-4,0,-4",
   
+  
   "controlStyles[2].target": "Grid#SystemTrayFrameGrid",
   "controlStyles[2].styles[0]": "Margin=0,0,0,0",
 
@@ -355,17 +356,17 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[9].styles[0]": "CornerRadius=$bcr",
   "controlStyles[9].styles[1]": "Padding=2",
   "controlStyles[9].styles[2]": "Margin=0,2,0,2",
-
+  
   "controlStyles[10].target": "SystemTray.ChevronIconView",
   "controlStyles[10].styles[0]": "CornerRadius=$bcr",
   "controlStyles[10].styles[1]": "Padding=2",
   "controlStyles[10].styles[2]": "Margin=0,2,0,2",
-
+  
   "controlStyles[11].target": "SystemTray.OmniButton",
   "controlStyles[11].styles[0]": "Padding=2",
   "controlStyles[11].styles[1]": "CornerRadius=$bcr",
   "controlStyles[11].styles[2]": "Margin=0,2,0,2",
-
+  
   "controlStyles[12].target": "Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement",
   "controlStyles[12].styles[0]": "Background:=$mbg",
   "controlStyles[12]styles[1]": "CornerRadius=$wcr",
@@ -416,7 +417,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[21].styles[3]": "BorderBrush=$bb",
 
   "controlStyles[22].target": "Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer",
-  "controlStyles[22].styles[0]": "Background=<WindhawkBlur BlurAmount=\"30\" TintColor=\"#00000000\" />",
+  "controlStyles[22].styles[0]": "Background:=<WindhawkBlur BlurAmount=\"30\" TintColor=\"#00000000\" />",
 
   "controlStyles[23].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement",
   "controlStyles[23].styles[0]": "CornerRadius=$bcr",
@@ -474,7 +475,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   
   "controlStyles[5].target": "Taskbar.ExperienceToggleButton",
   "controlStyles[5].styles[0]": "CornerRadius=$bcr",
-
+  
   "controlStyles[6].target": "Taskbar.TaskListButton",
   "controlStyles[6].styles[0]": "CornerRadius=$bcr",
   
@@ -504,7 +505,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[11].styles[0]": "Padding=2",
   "controlStyles[11].styles[1]": "CornerRadius=$bcr",
   "controlStyles[11].styles[2]": "Margin=0,2,0,2",
-  
   
   "controlStyles[12].target": "Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement",
   "controlStyles[12].styles[0]": "Background:=$mbg",
@@ -556,7 +556,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[21].styles[3]": "BorderBrush=$bb",
 
   "controlStyles[22].target": "Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer",
-  "controlStyles[22].styles[0]": "Background=<WindhawkBlur BlurAmount=\"30\" TintColor=\"#00000000\" />",
+  "controlStyles[22].styles[0]": "Background:=<WindhawkBlur BlurAmount=\"30\" TintColor=\"#00000000\" />",
 
   "controlStyles[23].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement",
   "controlStyles[23].styles[0]": "CornerRadius=$bcr",
