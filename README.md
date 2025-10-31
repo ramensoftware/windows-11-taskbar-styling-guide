@@ -715,8 +715,7 @@ _This example sets a blur that is tinted with red at 50% opacity._
 ### Mica effect as color
 
 > [!NOTE]
-> Unfortunately, I haven't figured this out yet. If you have any info, please
-> contribute by making a pull request.
+> Unfortunately, it is not possible to set a Mica effect at this time with any of Windhawk's styler mods.
 
 ### Gradient as color
 
