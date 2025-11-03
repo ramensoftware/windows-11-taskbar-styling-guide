@@ -1,4 +1,4 @@
-# Sun Valley Taskbar theme for Windows 11 Taskbar Styler
+# SunValley theme for Windows 11 Taskbar Styler
 
 This theme tries to recreate earlier versions of the Windows 11 Taskbar, which includes:
 * Windows 10 style system tray and tray overflow
