@@ -133,11 +133,9 @@ The theme changes the following elements:
 I didn't know how to fix these. I couldn't find the correct target names, or I'm not sure if they can even be changed.
 
 - The Taskbar icon overflow flyout (when the taskbar is full) doesn't have a matching border brush and may not have Acrylic.
-- The window preview doesn’t have a matching border brush, drop shadow corner radius, or "overlay layer." In the Start Menu, this layer is called **AcrylicOverlay**, which would be removed if I could.
 - Some context menus doesn't have matching drop shadow corner radius.
 - The search box has incorrect sizing in the Dock and Classic versions.
 - The search box has incorrect everything in Compact mode.
-- The Widget/Weather button icon and text have incorrect size and placement in Compact mode.
 
 ---
 
@@ -535,3 +533,4 @@ The theme styles can also be imported manually. To do that, follow these steps:
 }
 ```
 </details>
+
