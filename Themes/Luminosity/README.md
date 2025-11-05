@@ -136,6 +136,7 @@ I didn't know how to fix these. I couldn't find the correct target names, or I'm
 - Some context menus doesn't have matching drop shadow corner radius.
 - The search box has incorrect sizing in the Dock and Classic versions.
 - The search box has incorrect everything in Compact mode.
+- The Widget/Weather bottom text line have incorrect placement in Compact mode.
 
 ---
 
@@ -270,9 +271,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[28].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement",
   "controlStyles[28].styles[0]": "CornerRadius=$bcr",
   "controlStyles[29].target": "Taskbar.TaskItemThumbnailView > Grid@CommonStates > Border#BackgroundBorder",
-  "controlStyles[29].styles[0]": "CornerRadius=$mcr",
-  "controlStyles[29].styles[1]": "BorderThickness=$bt",
-  "controlStyles[29].styles[2]": "BorderBrush=$bb",
+  "controlStyles[29].styles[0]": "Background=$t",
+  "controlStyles[29].styles[1]": "CornerRadius=$mcr",
+  "controlStyles[29].styles[2]": "BorderThickness=$bt",
+  "controlStyles[29].styles[3]": "BorderBrush=$bb",
   "controlStyles[30].target": "Windows.UI.Xaml.Controls.Border#LargeTicker1",
   "controlStyles[30].styles[0]": "Margin=1,-7,0,0",
   "controlStyles[30].styles[1]": "RenderTransform:=<ScaleTransform ScaleX=\"0.75\" ScaleY=\"0.75\" />",
@@ -384,9 +386,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[23].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement",
   "controlStyles[23].styles[0]": "CornerRadius=$bcr",
   "controlStyles[24].target": "Taskbar.TaskItemThumbnailView > Grid@CommonStates > Border#BackgroundBorder",
-  "controlStyles[24].styles[0]": "CornerRadius=$mcr",
-  "controlStyles[24].styles[1]": "BorderThickness=$bt",
-  "controlStyles[24].styles[2]": "BorderBrush=$bb",
+  "controlStyles[24].styles[0]": "Background=$t",
+  "controlStyles[24].styles[1]": "CornerRadius=$mcr",
+  "controlStyles[24].styles[2]": "BorderThickness=$bt",
+  "controlStyles[24].styles[3]": "BorderBrush=$bb",
   "controlStyles[25].target": "Windows.UI.Xaml.Controls.Border#MultiWindowElement",
   "controlStyles[25].styles[0]": "CornerRadius=$bcr",
   "controlStyles[25].styles[1]": "Margin=0,1,0,1",
@@ -509,9 +512,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[23].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement",
   "controlStyles[23].styles[0]": "CornerRadius=$bcr",
   "controlStyles[24].target": "Taskbar.TaskItemThumbnailView > Grid@CommonStates > Border#BackgroundBorder",
-  "controlStyles[24].styles[0]": "CornerRadius=$mcr",
-  "controlStyles[24].styles[1]": "BorderThickness=$bt",
-  "controlStyles[24].styles[2]": "BorderBrush=$bb",
+  "controlStyles[24].styles[0]": "Background=$t",
+  "controlStyles[24].styles[1]": "CornerRadius=$mcr",
+  "controlStyles[24].styles[2]": "BorderThickness=$bt",
+  "controlStyles[24].styles[3]": "BorderBrush=$bb",
   "controlStyles[25].target": "Windows.UI.Xaml.Controls.Border#MultiWindowElement",
   "controlStyles[25].styles[0]": "CornerRadius=$bcr",
   "controlStyles[25].styles[1]": "Margin=0,1,0,1",
@@ -533,4 +537,3 @@ The theme styles can also be imported manually. To do that, follow these steps:
 }
 ```
 </details>
-
