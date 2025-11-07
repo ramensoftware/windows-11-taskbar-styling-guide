@@ -20,7 +20,7 @@ It's meant to be used with **Mica** or **MicaAlt** backdrops, with or without th
 
 To apply the same settings as mine, follow these steps:
 
-* Open the *Taskbar Labels for Windows 11** and **Taskbar Clock Customization** mods in Windhawk.
+* Open the **Taskbar Labels for Windows 11** and **Taskbar Clock Customization** mods in Windhawk.
 * Go to the "Advanced" tab.
 * Copy the content below to the text box under "Mod settings" and click "Save".
 
@@ -599,4 +599,5 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[6]": "bt=1"
 }
 ```
+
 </details>
