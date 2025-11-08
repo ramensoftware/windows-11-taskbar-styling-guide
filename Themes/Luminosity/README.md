@@ -473,7 +473,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[34].target": "Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
   "controlStyles[34].styles[0]": "Visibility=Collapsed",
   "controlStyles[35].target": "Grid#SystemTrayFrameGrid",
-  "controlStyles[35].styles[0]": "Margin=0,-2,6,5"
+  "controlStyles[35].styles[0]": "Margin=0,-2,6,4"
 }
 ```
 </details>
