@@ -470,10 +470,12 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[33].styles[1]": "BorderThickness=$bt",
   "controlStyles[33].styles[2]": "BorderBrush:=$bb",
   "controlStyles[33].styles[3]": "CornerRadius=$mcr",
-  "controlStyles[34].target": "Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
-  "controlStyles[34].styles[0]": "Visibility=Collapsed",
-  "controlStyles[35].target": "Grid#SystemTrayFrameGrid",
-  "controlStyles[35].styles[0]": "Margin=0,-2,6,4"
+  "controlStyles[34].target": "SearchUx.SearchUI.SearchButtonControl",
+  "controlStyles[34].styles[0]": "Margin=0,-1,0,-1",
+  "controlStyles[35].target": "Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
+  "controlStyles[35].styles[0]": "Visibility=Collapsed",
+  "controlStyles[36].target": "Grid#SystemTrayFrameGrid",
+  "controlStyles[36].styles[0]": "Margin=0,-2,6,4"
 }
 ```
 </details>
@@ -605,16 +607,18 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[6]": "bt=1",
   "controlStyles[32].target": "Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater",
   "controlStyles[32].styles[0]": "Margin=0,1,0,0",
-  "controlStyles[33].target": "SystemTray.ChevronIconView",
-  "controlStyles[33].styles[0]": "Margin=0,1,2,0",
-  "controlStyles[34].target": "SystemTray.NotifyIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
-  "controlStyles[34].styles[0]": "Margin=2,5,2,4",
-  "controlStyles[35].target": "SystemTray.IconView#SystemTrayIcon > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[33].target": "SearchUx.SearchUI.SearchButtonControl",
+  "controlStyles[33].styles[0]": "Margin=0,0,0,-1",
+  "controlStyles[34].target": "SystemTray.ChevronIconView",
+  "controlStyles[34].styles[0]": "Margin=0,1,2,0",
+  "controlStyles[35].target": "SystemTray.NotifyIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
   "controlStyles[35].styles[0]": "Margin=2,5,2,4",
-  "controlStyles[36].target": "SystemTray.OmniButton#ControlCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[36].target": "SystemTray.IconView#SystemTrayIcon > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
   "controlStyles[36].styles[0]": "Margin=2,5,2,4",
-  "controlStyles[37].target": "SystemTray.OmniButton#NotificationCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
-  "controlStyles[37].styles[0]": "Margin=2,5,2,4"
+  "controlStyles[37].target": "SystemTray.OmniButton#ControlCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[37].styles[0]": "Margin=2,5,2,4",
+  "controlStyles[38].target": "SystemTray.OmniButton#NotificationCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
+  "controlStyles[38].styles[0]": "Margin=2,5,2,4"
 }
 ```
 </details>
