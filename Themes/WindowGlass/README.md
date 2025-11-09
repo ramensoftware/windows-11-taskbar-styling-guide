@@ -8,12 +8,25 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
 ![Left](TB_Left.png)
 
 ## Center Aligned
-![Center](screenshot.png)
+![Center](TB_Center.png)
 
 ## Note
 -  Works best on devices running windows 11 24H2 and above.
 - Works best on devices with a screen resolution of 1930x1200 and above.
-- If the taskbar is too big, try adjusting the value for "Height" in Style Constants to your liking.
+- In order to make the taskbar look better, it's best that you install the 'Taskbar height and icon size' mod and use the following settings for the mod:
+<details>
+<summary>Content to import (click to expand)</summary>
+
+```json
+{
+  "IconSize": 30,
+  "TaskbarButtonWidth": 44,
+  "IconSizeSmall": 20,
+  "TaskbarButtonWidthSmall": 30
+}
+```
+</details>
+
 - This theme consists of **three** backgrounds:
     - Glass
     - Frosted
@@ -215,35 +228,21 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[39].styles[3]": "Margin=0,0,10,0",
   "controlStyles[5].styles[5]": "CornerRadius=12",
   "controlStyles[39].styles[4]": "Height=$Height",
-  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Image#Icon",
-  "controlStyles[41].target": "Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
-  "controlStyles[40].styles[0]": "MaxHeight:=30",
-  "controlStyles[41].styles[0]": "MaxHeight:=30",
-  "controlStyles[40].styles[1]": "MinHeight=20",
-  "controlStyles[41].styles[1]": "MinHeight=20",
-  "controlStyles[41].styles[2]": "MaxWidth:=30",
-  "controlStyles[40].styles[2]": "MaxWidth:=30",
-  "controlStyles[40].styles[3]": "MinWidth=20",
-  "controlStyles[41].styles[3]": "MinWidth=20",
-  "controlStyles[40].styles[4]": "Width=Auto",
-  "controlStyles[41].styles[4]": "Width=Auto",
-  "controlStyles[40].styles[5]": "Height=Auto",
-  "controlStyles[41].styles[5]": "Height=Auto",
-  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[40].styles[0]": "Background:=$Glass",
+  "controlStyles[40].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[40].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[40].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[41].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
+  "controlStyles[41].styles[0]": "Background:=$Glass",
+  "controlStyles[41].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[41].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[41].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
   "controlStyles[42].styles[0]": "Background:=$Glass",
   "controlStyles[42].styles[1]": "BorderBrush:=$BorderBrush",
   "controlStyles[42].styles[2]": "BorderThickness=$BorderThickness",
   "controlStyles[42].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[43].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
-  "controlStyles[43].styles[0]": "Background:=$Glass",
-  "controlStyles[43].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[43].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[43].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[44].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
-  "controlStyles[44].styles[0]": "Background:=$Glass",
-  "controlStyles[44].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[44].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[44].styles[3]": "CornerRadius=$CornerRadius",
   "theme": "",
   "styleConstants[0]": "Glass=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
   "styleConstants[1]": "Frosted=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
@@ -441,35 +440,21 @@ This version has two styles:
   "controlStyles[39].styles[3]": "Margin=743,0,0,0",
   "controlStyles[39].styles[5]": "HorizontalAlignment=0",
   "controlStyles[39].styles[4]": "Height=$Height",
-  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Image#Icon",
-  "controlStyles[41].target": "Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
-  "controlStyles[40].styles[0]": "MaxHeight:=30",
-  "controlStyles[41].styles[0]": "MaxHeight:=30",
-  "controlStyles[40].styles[1]": "MinHeight=20",
-  "controlStyles[41].styles[1]": "MinHeight=20",
-  "controlStyles[41].styles[2]": "MaxWidth:=30",
-  "controlStyles[40].styles[2]": "MaxWidth:=30",
-  "controlStyles[40].styles[3]": "MinWidth=20",
-  "controlStyles[41].styles[3]": "MinWidth=20",
-  "controlStyles[40].styles[4]": "Width=Auto",
-  "controlStyles[41].styles[4]": "Width=Auto",
-  "controlStyles[40].styles[5]": "Height=Auto",
-  "controlStyles[41].styles[5]": "Height=Auto",
-  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[40].styles[0]": "Background:=$Glass",
+  "controlStyles[40].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[40].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[40].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[41].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
+  "controlStyles[41].styles[0]": "Background:=$Glass",
+  "controlStyles[41].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[41].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[41].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
   "controlStyles[42].styles[0]": "Background:=$Glass",
   "controlStyles[42].styles[1]": "BorderBrush:=$BorderBrush",
   "controlStyles[42].styles[2]": "BorderThickness=$BorderThickness",
   "controlStyles[42].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[43].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
-  "controlStyles[43].styles[0]": "Background:=$Glass",
-  "controlStyles[43].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[43].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[43].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[44].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
-  "controlStyles[44].styles[0]": "Background:=$Glass",
-  "controlStyles[44].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[44].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[44].styles[3]": "CornerRadius=$CornerRadius",
   "theme": "",
   "styleConstants[0]": "Glass=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
   "styleConstants[1]": "Frosted=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
@@ -502,7 +487,7 @@ This theme contains four split styles which seperates the System tray from the T
 - **Note:** This variant is still being tested so it may contains bugs/ cause unexpected behavior. Use with caution...
 
 **Version 1** \
-![Alternate Version 1](Alternate_Version_1.png)
+![Alternate Version 1](Split_Version_1.png)
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -664,35 +649,21 @@ This theme contains four split styles which seperates the System tray from the T
   "controlStyles[39].styles[3]": "Margin=750,0,0,0",
   "controlStyles[39].styles[5]": "HorizontalAlignment=0",
   "controlStyles[39].styles[4]": "Height=$Height",
-  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Image#Icon",
-  "controlStyles[41].target": "Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
-  "controlStyles[40].styles[0]": "MaxHeight:=30",
-  "controlStyles[41].styles[0]": "MaxHeight:=30",
-  "controlStyles[40].styles[1]": "MinHeight=20",
-  "controlStyles[41].styles[1]": "MinHeight=20",
-  "controlStyles[41].styles[2]": "MaxWidth:=30",
-  "controlStyles[40].styles[2]": "MaxWidth:=30",
-  "controlStyles[40].styles[3]": "MinWidth=20",
-  "controlStyles[41].styles[3]": "MinWidth=20",
-  "controlStyles[40].styles[4]": "Width=Auto",
-  "controlStyles[41].styles[4]": "Width=Auto",
-  "controlStyles[40].styles[5]": "Height=Auto",
-  "controlStyles[41].styles[5]": "Height=Auto",
-  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[40].styles[0]": "Background:=$Glass",
+  "controlStyles[40].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[40].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[40].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[41].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
+  "controlStyles[41].styles[0]": "Background:=$Glass",
+  "controlStyles[41].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[41].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[41].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
   "controlStyles[42].styles[0]": "Background:=$Glass",
   "controlStyles[42].styles[1]": "BorderBrush:=$BorderBrush",
   "controlStyles[42].styles[2]": "BorderThickness=$BorderThickness",
   "controlStyles[42].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[43].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
-  "controlStyles[43].styles[0]": "Background:=$Glass",
-  "controlStyles[43].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[43].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[43].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[44].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
-  "controlStyles[44].styles[0]": "Background:=$Glass",
-  "controlStyles[44].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[44].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[44].styles[3]": "CornerRadius=$CornerRadius",
   "theme": "",
   "styleConstants[0]": "Glass=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
   "styleConstants[1]": "Frosted=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
@@ -718,7 +689,7 @@ This theme contains four split styles which seperates the System tray from the T
 </details>
 
 **Version 2** \
-![Alternate Version 2](Alternate_Version_2.png)
+![Alternate Version 2](Split_Version_2.png)
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -880,35 +851,21 @@ This theme contains four split styles which seperates the System tray from the T
   "controlStyles[39].styles[3]": "Margin=580,0,0,0",
   "controlStyles[39].styles[5]": "HorizontalAlignment=0",
   "controlStyles[39].styles[4]": "Height=$Height",
-  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Image#Icon",
-  "controlStyles[41].target": "Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
-  "controlStyles[40].styles[0]": "MaxHeight:=30",
-  "controlStyles[41].styles[0]": "MaxHeight:=30",
-  "controlStyles[40].styles[1]": "MinHeight=20",
-  "controlStyles[41].styles[1]": "MinHeight=20",
-  "controlStyles[41].styles[2]": "MaxWidth:=30",
-  "controlStyles[40].styles[2]": "MaxWidth:=30",
-  "controlStyles[40].styles[3]": "MinWidth=20",
-  "controlStyles[41].styles[3]": "MinWidth=20",
-  "controlStyles[40].styles[4]": "Width=Auto",
-  "controlStyles[41].styles[4]": "Width=Auto",
-  "controlStyles[40].styles[5]": "Height=Auto",
-  "controlStyles[41].styles[5]": "Height=Auto",
-  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[40].styles[0]": "Background:=$Glass",
+  "controlStyles[40].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[40].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[40].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[41].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
+  "controlStyles[41].styles[0]": "Background:=$Glass",
+  "controlStyles[41].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[41].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[41].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
   "controlStyles[42].styles[0]": "Background:=$Glass",
   "controlStyles[42].styles[1]": "BorderBrush:=$BorderBrush",
   "controlStyles[42].styles[2]": "BorderThickness=$BorderThickness",
   "controlStyles[42].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[43].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
-  "controlStyles[43].styles[0]": "Background:=$Glass",
-  "controlStyles[43].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[43].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[43].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[44].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
-  "controlStyles[44].styles[0]": "Background:=$Glass",
-  "controlStyles[44].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[44].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[44].styles[3]": "CornerRadius=$CornerRadius",
   "theme": "",
   "styleConstants[0]": "Glass=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
   "styleConstants[1]": "Frosted=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
@@ -934,7 +891,7 @@ This theme contains four split styles which seperates the System tray from the T
 </details>
 
 **Version 3** \
-![Alternate Version 3](Alternate_Version_3.png)
+![Alternate Version 1](Split_Version_3.png)
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -1095,34 +1052,21 @@ This theme contains four split styles which seperates the System tray from the T
   "controlStyles[38].styles[5]": "HorizontalAlignment=0",
   "controlStyles[38].styles[4]": "Height=$Height",
   "controlStyles[39].target": "Windows.UI.Xaml.Controls.Image#Icon",
-  "controlStyles[40].target": "Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
-  "controlStyles[39].styles[0]": "MaxHeight:=30",
-  "controlStyles[40].styles[0]": "MaxHeight:=30",
-  "controlStyles[39].styles[1]": "MinHeight=20",
-  "controlStyles[40].styles[1]": "MinHeight=20",
-  "controlStyles[40].styles[2]": "MaxWidth:=30",
-  "controlStyles[39].styles[2]": "MaxWidth:=30",
-  "controlStyles[39].styles[3]": "MinWidth=20",
-  "controlStyles[40].styles[3]": "MinWidth=20",
-  "controlStyles[39].styles[4]": "Width=Auto",
-  "controlStyles[40].styles[4]": "Width=Auto",
-  "controlStyles[39].styles[5]": "Height=Auto",
-  "controlStyles[40].styles[5]": "Height=Auto",
-  "controlStyles[41].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[40].styles[0]": "Background:=$Glass",
+  "controlStyles[40].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[40].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[40].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[41].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
   "controlStyles[41].styles[0]": "Background:=$Glass",
   "controlStyles[41].styles[1]": "BorderBrush:=$BorderBrush",
   "controlStyles[41].styles[2]": "BorderThickness=$BorderThickness",
   "controlStyles[41].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[42].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
+  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
   "controlStyles[42].styles[0]": "Background:=$Glass",
   "controlStyles[42].styles[1]": "BorderBrush:=$BorderBrush",
   "controlStyles[42].styles[2]": "BorderThickness=$BorderThickness",
   "controlStyles[42].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[43].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
-  "controlStyles[43].styles[0]": "Background:=$Glass",
-  "controlStyles[43].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[43].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[43].styles[3]": "CornerRadius=$CornerRadius",
   "theme": "",
   "styleConstants[0]": "Glass=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
   "styleConstants[1]": "Frosted=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
@@ -1147,8 +1091,8 @@ This theme contains four split styles which seperates the System tray from the T
 ```
 </details>
 
-**Version 1** \
-![Alternate Version 4](Alternate_Version_4.png)
+**Version 4** \
+![Alternate Version 4](Split_Version_4.png)
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -1310,35 +1254,21 @@ This theme contains four split styles which seperates the System tray from the T
   "controlStyles[39].styles[3]": "Margin=577,0,0,0",
   "controlStyles[39].styles[5]": "HorizontalAlignment=0",
   "controlStyles[39].styles[4]": "Height=$Height",
-  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Image#Icon",
-  "controlStyles[41].target": "Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
-  "controlStyles[40].styles[0]": "MaxHeight:=30",
-  "controlStyles[41].styles[0]": "MaxHeight:=30",
-  "controlStyles[40].styles[1]": "MinHeight=20",
-  "controlStyles[41].styles[1]": "MinHeight=20",
-  "controlStyles[41].styles[2]": "MaxWidth:=30",
-  "controlStyles[40].styles[2]": "MaxWidth:=30",
-  "controlStyles[40].styles[3]": "MinWidth=20",
-  "controlStyles[41].styles[3]": "MinWidth=20",
-  "controlStyles[40].styles[4]": "Width=Auto",
-  "controlStyles[41].styles[4]": "Width=Auto",
-  "controlStyles[40].styles[5]": "Height=Auto",
-  "controlStyles[41].styles[5]": "Height=Auto",
-  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[40].styles[0]": "Background:=$Glass",
+  "controlStyles[40].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[40].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[40].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[41].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
+  "controlStyles[41].styles[0]": "Background:=$Glass",
+  "controlStyles[41].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[41].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[41].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
   "controlStyles[42].styles[0]": "Background:=$Glass",
   "controlStyles[42].styles[1]": "BorderBrush:=$BorderBrush",
   "controlStyles[42].styles[2]": "BorderThickness=$BorderThickness",
   "controlStyles[42].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[43].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
-  "controlStyles[43].styles[0]": "Background:=$Glass",
-  "controlStyles[43].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[43].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[43].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[44].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
-  "controlStyles[44].styles[0]": "Background:=$Glass",
-  "controlStyles[44].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[44].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[44].styles[3]": "CornerRadius=$CornerRadius",
   "theme": "",
   "styleConstants[0]": "Glass=<WindhawkBlur BlurAmount=\"3\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
   "styleConstants[1]": "Frosted=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
