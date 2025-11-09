@@ -275,10 +275,7 @@ This theme contains an alternate style which seperates the System tray from the 
 - If the taskbar or system tray appears in the wrong place, try adjusting the margin for "Taskbar.TaskbarFrame#TaskbarFrame", and "SystemTray.SystemTrayFrame"
 - **Note:** This variant is still being tested so it may contains bugs/ cause unexpected behavior. Use with caution...
 
-This version has two styles:
-
-**Version 1** \
-![Alternate Version 1](Alternate_Version_1.png)
+![Alternate Version](Alternate_Version_1.png)
 
 <details>
 <summary>Content to import (click to expand)</summary>
