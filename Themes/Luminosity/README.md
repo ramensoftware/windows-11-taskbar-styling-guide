@@ -346,17 +346,18 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[37].styles[0]": "Visibility=Collapsed",
   "controlStyles[38].target": "Taskbar.TaskbarFrame#TaskbarFrame",
   "controlStyles[38].styles[0]": "Height=53",
-  "controlStyles[38].styles[1]": "Width=1200",
+  "controlStyles[38].styles[1]": "Margin=250,0,250,0",
   "controlStyles[39].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
   "controlStyles[39].styles[0]": "Background:=$mbg",
   "controlStyles[39].styles[1]": "BorderThickness=$bt",
   "controlStyles[39].styles[2]": "BorderBrush:=$bb",
   "controlStyles[39].styles[3]": "CornerRadius=$mcr",
-  "controlStyles[39].styles[4]": "Margin=0,0,0,5",
+  "controlStyles[39].styles[4]": "Margin=0,0,500,5",
   "controlStyles[40].target": "Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
   "controlStyles[40].styles[0]": "Visibility=Collapsed",
   "controlStyles[41].target": "Grid#SystemTrayFrameGrid",
-  "controlStyles[41].styles[0]": "Margin=-417,-2,363,4",
+  "controlStyles[41].styles[0]": "Margin=-307,-2,250,4",
+  "controlStyles[41].styles[1]": "HorizontalAlignment=Right",
   "styleConstants[7]": "AnimationSettings=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled=\"True\" FromHorizontalOffset=\"-50\" FromVerticalOffset=\"50\" /></TransitionCollection>"
 }
 ```
