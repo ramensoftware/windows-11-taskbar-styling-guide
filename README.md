@@ -215,8 +215,11 @@ Visibility=Collapsed
 ```
 
 Replace `<image>` with your own image, a local file path or a URL, for example:
-* Windows 10: `https://i.imgur.com/lEvZStx.png`.
-* Windows XP: `https://i.imgur.com/RX5DqT3.png` (use with `Stretch="None"`).
+* Windows 10:
+  `https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Assets/OrbWin10.png`.
+* Windows XP:
+  `https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Assets/OrbWinXP.png`
+  (use with `Stretch="None"`).
 
 To set a different image for each Start button state - normal, hovered, pressed -
 refer to [this
@@ -466,8 +469,10 @@ Style:
 Background:=<ImageBrush Stretch="None" ImageSource="<image>" />
 ```
 
-* Copilot icon without preview label: `https://i.imgur.com/lfwEWzI.png`.
-* Old Copilot icon: `https://i.imgur.com/Z6eCNH3.png`.
+* Copilot icon without preview label:
+  `https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Assets/CopilotWithoutPreview.png`.
+* Old Copilot icon:
+  `https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Assets/CopilotOld.png`.
 
 ### Hide the "Show Desktop" button
 
