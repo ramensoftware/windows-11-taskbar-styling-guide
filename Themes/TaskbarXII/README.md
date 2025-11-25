@@ -2,8 +2,7 @@
 
 **Author**: [ryokr](https://github.com/ryokr)
 
-![Demonstration](screenshot.png) \
-![Demonstration](screenshot_another.png)
+![Demonstration](screenshot.png)
 
 ## Suggested Windows settings
 
