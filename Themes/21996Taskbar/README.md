@@ -20,11 +20,11 @@ This theme tries to recreate earlier versions of the Windows 11 Taskbar, which i
 
 **Tray Overflow**
 
-[![Taskbar](screenshot-overflow.png)](screenshot-overflow.png)
+[![Overflow](screenshot-overflow.png)](screenshot-overflow.png)
 
 **Window Thumbnails**
 
-[![Taskbar](screenshot-thumbnails.png)](screenshot-thumbnails.png)
+[![Thumbnails](screenshot-thumbnails.png)](screenshot-thumbnails.png)
 #
 ## Theme selection
 
