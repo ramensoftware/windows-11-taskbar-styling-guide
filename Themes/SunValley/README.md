@@ -6,6 +6,7 @@ This theme tries to replicate how the Windows 10 Taskbar would've looked with th
 * Windows 10-like Searchbox
 * Windows 10-like taskbar icon spacing/open indicators
 * Custom Task View icon based on the Windows 10 1507-1709 design but with the same design as the 11 one
+* New entrance animations for context menus and tooltips
   
 #
 **Author**: [Tails](https://github.com/milestprower92)
