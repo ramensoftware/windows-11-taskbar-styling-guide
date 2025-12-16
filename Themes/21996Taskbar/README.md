@@ -1,10 +1,10 @@
-# The old 21996Taskbar (SunValley (Legacy)) theme for Windows 11 Taskbar Styler
+# SunValley (Legacy, formerly 21996Taskbar) theme for Windows 11 Taskbar Styler
 
 > [!NOTE]
 > This theme was superseded by the new [SunValley theme](https://github.com/ramensoftware/windows-11-taskbar-styling-guide/blob/main/Themes/SunValley/README.md)
-> 
-> this theme will not be updated to support newer versions of Windows 11, and the reason why I decided to keep it here is for archival purposes.
-> 
+>
+> This theme will not be updated to support newer versions of Windows 11, and the reason why I decided to keep it here is for archival purposes.
+
 This theme tries to recreate earlier versions of the Windows 11 Taskbar, which includes:
 * Windows 10 style system tray and tray overflow
 * Windows 10 Window thumbnails (For newer 11 builds which contain the new Window Thumbnails)

@@ -19,21 +19,20 @@ It's meant to be used with **Mica** or **MicaAlt** backdrops, with or without th
 
 - Docks are cool.
 
-
 ### Classic
 
 ![Classic](classic.png)
 
 - Meant to cause minimal disruption for users who prefer the classic Taskbar placement.
 
-
 ### Compact
+
 ![Compact](compact.png)
 
-- It's meant to be used with **Taskbar Labels for Windows 11**, using the **Centered Running Indicator** style, and **Taskbar Clock Customization**. Otherwise you will experience visual issues.
+- Meant to be used with **Taskbar Labels for Windows 11**, using the **Centered Running Indicator** style, and **Taskbar Clock Customization**. Otherwise, you will experience visual issues.
 
+### Mods Guide
 
-**Mods Guide**
 To apply the same settings as mine, follow these steps:
 
 * Open the **Taskbar Labels for Windows 11** and **Taskbar Clock Customization** mods in Windhawk.
@@ -65,9 +64,7 @@ To apply the same settings as mine, follow these steps:
   "labelForMultipleItems":"[%amount%] %name%"
 }
 ```
-
 </details>
-
 
 **Taskbar Clock Customization**
 <details>
@@ -107,9 +104,7 @@ To apply the same settings as mine, follow these steps:
   "DataCollection.UpdateInterval":1,"WebContentWeatherUnits":"autoDetect"
 }
 ```
-
 </details>
-
 
 ---
 
@@ -118,10 +113,8 @@ To apply the same settings as mine, follow these steps:
 The theme changes the following elements:
 
 - Taskbar Frame
-- Taskbar Widget (compact version)
-
-![Widget](widget.png)
-
+- Taskbar Widget (compact version) \
+  ![Widget](widget.png)
 - Icon borders
 - Taskbar icon sizes (compact version)
 - Search icon with label
@@ -133,21 +126,15 @@ The theme changes the following elements:
     - Microphone icon border
     - Spacing between element groups
     - Tray Overflow Flyout
-- Alt+Tab
-
-![Alt+Tab](alttab.png)
-
+- Alt+Tab \
+  ![Alt+Tab](alttab.png)
 - Win+Tab background and Virtual Desktops bar
 - Snap Bar and Picker
 - Volume bar
-- Window Preview Flyout
-
-![Window Preview Flyout](wpf.png)
-
-- Context menus (with animations)
-
-![Menus](menu.png)
-
+- Window Preview Flyout \
+  ![Window Preview Flyout](wpf.png)
+- Context menus (with animations) \
+  ![Menus](menu.png)
 - Tooltips
 - Removed drop shadows
 
@@ -167,16 +154,16 @@ To customize the animations, look for the last line `"styleConstants[7]": "Anima
 
 I didn't know how to fix these. I couldn't find the correct target names, or I'm not sure if they can even be changed/fixed.
 
-- **Widget/Weather:** The bottom text line have incorrect placement in **Compact version** (renders off-screen).
-- **Icon Hitboxes (Dock):** The Taskbar's rounded corners slightly limits the icon hitbox on the **top and bottom**, which makes it **impossible to minimize windows by clicking in those areas**.
-- **SearchBox (Dock/Classic):** Have **unmatching look and position** when typing in.
-- **SearchBox (Compact):** Have incorrect everything in the Compact version.
+- **Widget/Weather:** The bottom text line has incorrect placement in **Compact version** (renders off-screen).
+- **Icon Hitboxes (Dock):** The Taskbar's rounded corners slightly limit the icon hitbox on the **top and bottom**, which makes it **impossible to minimize windows by clicking in those areas**.
+- **SearchBox (Dock/Classic):** Has **mismatched look and position** when typing.
+- **SearchBox (Compact):** Has incorrect styling and positioning in the Compact version.
 - **Missing Acrylic Backdrop:** The **Virtual Desktop Bar** and **Taskbar Overflow Flyout** (when taskbar is full) may not have Acrylic.
 
 ---
 
 ## Full Luminosity Theme
-For that, download the listed mods and select "**Luminosity**" on each.
+To achieve a complete Luminosity experience, download the listed mods and select "**Luminosity**" on each.
 - Windows 11 Taskbar Styler
 - Windows 11 Start Menu Styler
 - Windows 11 Notification Center Styler

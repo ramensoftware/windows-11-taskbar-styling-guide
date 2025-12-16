@@ -208,7 +208,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[31].styles[1]": "Shadow :=",
   "controlStyles[31].styles[2]": "CornerRadius = 8",
   "controlStyles[32].target": "SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement",
-  "controlStyles[32].styles[0]": "Background@InactiveNormal :=$base", 
+  "controlStyles[32].styles[0]": "Background@InactiveNormal :=$base",
   "controlStyles[32].styles[1]": "CornerRadius = 8",
   "styleConstants[0]": "mainRadius = 8",
   "styleConstants[1]": "transparent = <SolidColorBrush Color=\"Transparent\"/>",

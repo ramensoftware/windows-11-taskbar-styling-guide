@@ -31,7 +31,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Advanced" tab.
 * Copy the content below to the text box under "Mod settings" and click "Save".
-* Do the same for "Taskbar Labels for Windows 11".
 
 <details>
 <summary>Content to import (click to expand)</summary>

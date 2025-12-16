@@ -1,13 +1,13 @@
 # SunValley theme for Windows 11 Taskbar Styler
 
-This theme tries to replicate how the Windows 10 Taskbar would've looked with the Windows 11 design, which includes:
+This theme tries to replicate how the Windows 10 taskbar would've looked with the Windows 11 design, which includes:
 * Windows 10-like system tray
-* redesigned acrylic with accent color support
-* Windows 10-like Searchbox
+* Redesigned acrylic with accent color support
+* Windows 10-like search box
 * Windows 10-like taskbar icon spacing/open indicators
 * Custom Task View icon based on the Windows 10 1507-1709 design but with the same design as the 11 one
 * New entrance animations for context menus and tooltips
-  
+
 #
 **Author**: [Tails](https://github.com/milestprower92)
 #
@@ -342,7 +342,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 "controlStyles[85].styles[1]":"BorderThickness=1", 
 "controlStyles[85].styles[2]":"BorderBrush:=<SolidColorBrush Color=\"{ThemeResource SystemChromeHighColor}\" Opacity=\"0.7\" />", 
 "controlStyles[86].target":"Grid#SearchBoxContentGrid", 
-"controlStyles[86].styles[0]":"Visibility=Visble", 
+"controlStyles[86].styles[0]":"Visibility=Visible", 
 "controlStyles[87].target":"Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel", 
 "controlStyles[87].styles[0]":"Padding=2", 
 "controlStyles[87].styles[1]":"Margin=2,0,2,0", 

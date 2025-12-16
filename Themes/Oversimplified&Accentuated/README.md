@@ -1,6 +1,6 @@
-# "Oversimplified & Accentuated" Theme for "Windows 11 Taskbar Styler"
+# Oversimplified&Accentuated Theme for Windows 11 Taskbar Styler
 
-A cleaner, more refined Windows taskbar theme - removing unnecessary elements and offering better **Accent Color** integration.
+A cleaner, more refined Windows taskbar theme that removes unnecessary elements and offers better **Accent Color** integration.
 
 > [!NOTE]
 > This theme is optimized for Windows in **Dark Mode** and may not display correctly in **Light Mode**.
@@ -8,9 +8,9 @@ A cleaner, more refined Windows taskbar theme - removing unnecessary elements an
 ### ✨ Features
 - Removed unnecessary text and lines
 - Enlarged icons  
-- Enhanced Accent Color Presence (Automatically Updates with Windows Accent Color)  
-- Improved Transparency Effects
-- Took Fallback Colors (Colors in Battery Mode) into consideration
+- Enhanced Accent Color presence (automatically updates with Windows Accent Color)  
+- Improved transparency effects
+- Takes fallback colors (colors in battery mode) into consideration
 
 **Author:** [OsamaJT](https://github.com/OsamaHJT)
 
@@ -20,38 +20,36 @@ A cleaner, more refined Windows taskbar theme - removing unnecessary elements an
 
 ## 🎨 Elements Modified
 - Taskbar
-- Control Center icons in Taskbar
-- Hover Flyout For Running Applications
-- Tray Menu
-- Tray Menu icons
-- Language Popup
-- Context Menu
-- ToolTip Popup
-- Active App Indicators & Progress Bar  in Taskbar
-- Volume & Brightness Popups  
-- Task Switcher (Alt + Tab)  
-- Task View (Windows + Tab)
+- Control Center icons in taskbar
+- Hover Flyout for running applications
+- Tray menu
+- Tray menu icons
+- Language popup
+- Context menu
+- Tooltip popup
+- Active app indicators & progress bar in taskbar
+- Volume & brightness popups
+- Task switcher (Alt + Tab)  
+- Task view (Windows + Tab)
   
 ---
 
-## 🧩 Installation
+## Theme selection
 
-1. Download **[Windhawk](https://windhawk.net/)**.  
-2. Install the **“[Windows 11 Taskbar Styler](https://windhawk.net/mods/windows-11-taskbar-styler)”** plugin.  
-3. Choose the **“Oversimplified & Accentuated”** theme from the integrated themes list.  
-   **OR**  
-   Copy the JSON code below and go to:  
-   **Windows 11 Taskbar Styler → Details → Advanced → Mod Settings**  
-   Paste the code into the "**Mod settings**" box and click **Save**.
+The theme is integrated into the mod and can simply be selected from the mod's
+settings:
 
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
 
----
+## Manual installation
 
-## 🛠️ Modification Notes
+The theme styles can also be imported manually. To do that, follow these steps:
 
-I added an extra comment line at the end of each style group to indicate the target object with common language.  
-The aim is to make it easier to modify or debug the theme in the future.
-
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Advanced" tab.
+* Copy the content below to the text box under "Mod settings" and click "Save".
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -209,3 +207,9 @@ The aim is to make it easier to modify or debug the theme in the future.
   "styleConstants[4]": "Reveal= <RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"1\" />"
 }
 ```
+</details>
+
+### Modification notes
+
+I added an extra comment line at the end of each style group to indicate the target object with common language.  
+The aim is to make it easier to modify or debug the theme in the future.
