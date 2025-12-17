@@ -17,7 +17,7 @@ Designed to work with both Light Mode and Dark Mode.
 ## Additional Configuration
 In order to make the taskbar look exactly as in image, use the following mods with specified settings:
 
-**Taskbar height and icon size**
+- **Taskbar height and icon size**
 <details>
 <summary>Click to expand JSON content</summary>
 
@@ -32,7 +32,9 @@ In order to make the taskbar look exactly as in image, use the following mods wi
 ```
 </details>
 
-**Taskbar Clock Customisation**
+
+
+- **Taskbar Clock Customisation**
 <details>
 <summary>Click to expand JSON content</summary>
 
@@ -72,7 +74,9 @@ In order to make the taskbar look exactly as in image, use the following mods wi
 ```
 </details>
 
-**Taskbar Labels for Windows 11**
+
+
+- **Taskbar Labels for Windows 11**
 <details>
 <summary>Click to expand JSON content</summary>
 
@@ -128,7 +132,7 @@ This theme also styles additional parts of Windows 11 for both Light and Dark Mo
 
 
 **For the complete LayerMicaUI themeing, download the following mods and use the 'LayerMicaUI' theme:**
- Windows 11 Start Menu Styler - for styling the Start menu.
+- Windows 11 Start Menu Styler - for styling the Start menu.
 
 ---
 
