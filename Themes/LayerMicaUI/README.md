@@ -9,13 +9,13 @@ LayerMicaUI is a modern Windows 11 taskbar theme with clean visuals and dual-mod
 Designed to work with both Light Mode and Dark Mode.
 
 ## Note
-- Theme is designed for left Aligned Taskbar Only.
-- Widgets on taskbar have to be disabled.
+- Theme is designed for a left-aligned taskbar only.
+- Widgets on the taskbar have to be disabled.
 
 ---
 
 ## Additional Configuration
-In order to make the taskbar look exactly as in image, use the following mods with specified settings:
+To make the taskbar look exactly as in the image, use the following mods with specified settings:
 
 - **Taskbar height and icon size**
 <details>
@@ -128,17 +128,17 @@ This theme also styles additional parts of Windows 11 for both Light and Dark Mo
 ## More details about this theme
 - Designed for Windows 11 25H2.
 - Compatible with both light and dark modes.
-- Install Font: ![Nunito](https://fonts.google.com/specimen/Nunito)
+- Install Font: [Nunito](https://fonts.google.com/specimen/Nunito)
 
 
-**For the complete LayerMicaUI themeing, download the following mods and use the 'LayerMicaUI' theme:**
+**For the complete LayerMicaUI theming, download the following mods and use the 'LayerMicaUI' theme:**
 - Windows 11 Start Menu Styler - for styling the Start menu.
 
 ---
 
 ## Theme selection
 
-The theme is integrated into the mod and can simply be selected from the mod's
+The theme is integrated into the mod and can be selected from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
