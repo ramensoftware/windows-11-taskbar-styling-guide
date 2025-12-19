@@ -4,7 +4,7 @@ LayerMicaUI is a modern Windows 11 taskbar theme with clean visuals and dual-mod
 
 **Author**: [Nimai-HK](https://github.com/Nimai-HK)
 
-![TaskbarTheme](Taskbar-Preview.png)
+![TaskbarTheme](screenshot.png)
 
 Designed to work with both Light Mode and Dark Mode.
 
@@ -34,7 +34,7 @@ To make the taskbar look exactly as in the image, use the following mods with sp
 
 
 
-- **Taskbar Clock Customisation**
+- **Taskbar Clock Customisation** -With extras
 <details>
 <summary>Click to expand JSON content</summary>
 
@@ -72,6 +72,8 @@ To make the taskbar look exactly as in the image, use the following mods with sp
   "DataCollection.UpdateInterval":1,"WebContentWeatherUnits":"autoDetect"
 }
 ```
+  ![Clock Customisation](Clock-Preview.png)
+
 </details>
 
 
