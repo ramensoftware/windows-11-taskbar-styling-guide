@@ -308,8 +308,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[3]":"InnerRad=6",
   "styleConstants[4]":"Border=<SolidColorBrush Color=\"{ThemeResource SurfaceStrokeColorDefault}\" Opacity=\"0.6\" />",
   "theme":"",
-  "resourceVariables[0]":"AutoAccent@Dark={ThemeResource SystemAccentColorLight3}",
-  "resourceVariables[1]":"AutoAccent@Light={ThemeResource SystemAccentColorDark2}"
+  "themeResourceVariables[0]":"AutoAccent@Dark={ThemeResource SystemAccentColorLight3}",
+  "themeResourceVariables[1]":"AutoAccent@Light={ThemeResource SystemAccentColorDark2}"
 }
 ```
 </details>
