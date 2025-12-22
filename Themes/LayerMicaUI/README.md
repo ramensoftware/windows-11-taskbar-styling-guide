@@ -95,7 +95,7 @@ To make the taskbar look exactly as in the image, use the following mods with sp
   "textTrimming":"characterEllipsis",
   "leftAndRightPaddingSize":6,
   "spaceBetweenIconAndLabel":10,
-  "runningIndicatorHeight":4,
+  "runningIndicatorHeight":3,
   "runningIndicatorVerticalOffset":3,
   "alwaysShowThumbnailLabels":0,
   "labelForSingleItem":"",
