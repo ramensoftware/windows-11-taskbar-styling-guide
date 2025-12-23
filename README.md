@@ -123,7 +123,8 @@ Taskbar Styler mod. The following themes are available:
 | [WinVista](Themes/WinVista/README.md) | [![WinVista](Themes/WinVista/screenshot.png)](Themes/WinVista/screenshot.png)
 | [CleanSlate](Themes/CleanSlate/README.md) | [![CleanSlate](Themes/CleanSlate/screenshot.png)](Themes/CleanSlate/screenshot.png)
 | [Lucent](Themes/Lucent/README.md) | [![Lucent](Themes/Lucent/screenshot.png)](Themes/Lucent/screenshot.png)
-| [21996Taskbar](Themes/21996Taskbar/README.md) | [![21996Taskbar](Themes/21996Taskbar/screenshot.png)](Themes/21996Taskbar/screenshot.png)
+| [SunValley](Themes/SunValley/README.md) | [![SunValley](Themes/SunValley/screenshot.png)](Themes/SunValley/screenshot.png)
+| [SunValley (Legacy)](Themes/21996Taskbar/README.md) | [![21996Taskbar](Themes/21996Taskbar/screenshot.png)](Themes/21996Taskbar/screenshot.png)
 | [BottomDensy](Themes/BottomDensy/README.md) | [![BottomDensy](Themes/BottomDensy/screenshot.png)](Themes/BottomDensy/screenshot.png)
 | [TaskbarXII](Themes/TaskbarXII/README.md) | [![TaskbarXII](Themes/TaskbarXII/screenshot.png)](Themes/TaskbarXII/screenshot.png)
 | [xdark](Themes/xdark/README.md) | [![xdark](Themes/xdark/screenshot.png)](Themes/xdark/screenshot.png)
@@ -132,6 +133,8 @@ Taskbar Styler mod. The following themes are available:
 | [Plasma](Themes/Plasma/README.md) | [![Plasma](Themes/Plasma/screenshot.png)](Themes/Plasma/screenshot.png)
 | [WindowGlass](Themes/WindowGlass/README.md) | [![WindowGlass](Themes/WindowGlass/screenshot.png)](Themes/WindowGlass/screenshot.png)
 | [Surface](Themes/Surface/README.md) | [![Surface](Themes/Surface/screenshot.png)](Themes/Surface/screenshot.png)
+| [Oversimplified&Accentuated](Themes/Oversimplified&Accentuated/README.md) | [![Oversimplified&Accentuated](Themes/Oversimplified&Accentuated/screenshot.png)](Themes/Oversimplified&Accentuated/screenshot.png)
+| [Luminosity](Themes/Luminosity/README.md) | [![Luminosity](Themes/Luminosity/screenshot.png)](Themes/Luminosity/screenshot.png)
 
 ## General
 
@@ -214,8 +217,11 @@ Visibility=Collapsed
 ```
 
 Replace `<image>` with your own image, a local file path or a URL, for example:
-* Windows 10: `https://i.imgur.com/lEvZStx.png`.
-* Windows XP: `https://i.imgur.com/RX5DqT3.png` (use with `Stretch="None"`).
+* Windows 10:
+  `https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Assets/OrbWin10.png`.
+* Windows XP:
+  `https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Assets/OrbWinXP.png`
+  (use with `Stretch="None"`).
 
 To set a different image for each Start button state - normal, hovered, pressed -
 refer to [this
@@ -465,8 +471,10 @@ Style:
 Background:=<ImageBrush Stretch="None" ImageSource="<image>" />
 ```
 
-* Copilot icon without preview label: `https://i.imgur.com/lfwEWzI.png`.
-* Old Copilot icon: `https://i.imgur.com/Z6eCNH3.png`.
+* Copilot icon without preview label:
+  `https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Assets/CopilotWithoutPreview.png`.
+* Old Copilot icon:
+  `https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Assets/CopilotOld.png`.
 
 ### Hide the "Show Desktop" button
 
@@ -714,8 +722,7 @@ _This example sets a blur that is tinted with red at 50% opacity._
 ### Mica effect as color
 
 > [!NOTE]
-> Unfortunately, I haven't figured this out yet. If you have any info, please
-> contribute by making a pull request.
+> Unfortunately, it is not possible to set a Mica effect at this time with any of Windhawk's styler mods.
 
 ### Gradient as color
 
