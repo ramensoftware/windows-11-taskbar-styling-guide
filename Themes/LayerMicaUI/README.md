@@ -152,7 +152,7 @@ settings:
 > [!NOTE]
 > As of Windows 11 Taskbar Styler v1.5.2, this theme requires a pre-release
 > version of the mod. A supported version can be found
-> [here](https://github.com/m417z/my-windhawk-mods/blob/ffd59fbed31bd9b84f3082eb8c8a6ce0b25b8a03/mods/windows-11-file-explorer-styler.wh.cpp)
+> [here](https://github.com/m417z/my-windhawk-mods/blob/ffd59fbed31bd9b84f3082eb8c8a6ce0b25b8a03/mods/windows-11-file-explorer-styler.wh.cpp).
 >
 > To try it, disable the existing version of the mod (if already installed),
 > then click the bottom right button in Windhawk to create a new mod, replace
