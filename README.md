@@ -135,6 +135,7 @@ Taskbar Styler mod. The following themes are available:
 | [Surface](Themes/Surface/README.md) | [![Surface](Themes/Surface/screenshot.png)](Themes/Surface/screenshot.png)
 | [Oversimplified&Accentuated](Themes/Oversimplified&Accentuated/README.md) | [![Oversimplified&Accentuated](Themes/Oversimplified&Accentuated/screenshot.png)](Themes/Oversimplified&Accentuated/screenshot.png)
 | [Luminosity](Themes/Luminosity/README.md) | [![Luminosity](Themes/Luminosity/screenshot.png)](Themes/Luminosity/screenshot.png)
+| [LayerMicaUI](Themes/LayerMicaUI/README.md) | [![LayerMicaUI](Themes/LayerMicaUI/screenshot.png)](Themes/LayerMicaUI/screenshot.png)
 
 ## General
 
