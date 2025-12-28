@@ -137,7 +137,7 @@ This theme also styles additional parts of Windows 11 for both Light and Dark Mo
 - Windows 11 Start Menu Styler - for styling the Start menu.
 
 ---
-
+<!--
 ## Theme selection
 
 The theme is integrated into the mod and can be selected from the mod's
@@ -146,10 +146,20 @@ settings:
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
 * Select the theme and save the settings.
-
+-->
 ## Manual installation
 
-The theme styles can also be imported manually. To do that, follow these steps:
+> [!NOTE]
+> As of Windows 11 Taskbar Styler v1.5.2, this theme requires a pre-release
+> version of the mod. A supported version can be found
+> [here](https://github.com/m417z/my-windhawk-mods/blob/ffd59fbed31bd9b84f3082eb8c8a6ce0b25b8a03/mods/windows-11-file-explorer-styler.wh.cpp)
+>
+> To try it, disable the existing version of the mod (if already installed),
+> then click the bottom right button in Windhawk to create a new mod, replace
+> the code with the pre-release mod code, click "Compile Mod", then "Exit
+> Editing Mode".
+
+The theme styles have to be imported manually. To do that, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Advanced" tab.
