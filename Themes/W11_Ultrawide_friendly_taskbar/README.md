@@ -2,7 +2,7 @@
 
 A minimal, floating dual-island taskbar inspired by macOS dock aesthetics. Separates the app icons and system tray into two distinct rounded islands with a semi-transparent ghost bar behind them.
 
-![Screenshot](https://i.imgur.com/PLACEHOLDER.png)
+![Screenshot](<img width="2467" height="482" alt="image" src="https://github.com/user-attachments/assets/46129402-fb97-4d20-85ba-194ccb331ddd" />)
 
 ## Features
 
