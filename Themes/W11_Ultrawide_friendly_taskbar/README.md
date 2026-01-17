@@ -2,7 +2,7 @@
 
 A minimal, floating dual-island taskbar inspired by macOS dock aesthetics. Separates the app icons and system tray into two distinct rounded islands with a semi-transparent ghost bar behind them.
 
-![Screenshot](https://photos.app.goo.gl/YmkXPSeTtJg88NuSA)
+![Screenshot](https://github.com/user-attachments/assets/dc157c27-6aab-47a0-ba0c-0956550d50da)
 
 ## Features
 
