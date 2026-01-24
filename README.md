@@ -93,7 +93,7 @@ As of version 1.5 of Windows 11 Taskbar Styler, the following components can be 
 
 ### Finding targets
 
-[How to find targets using UWPSpy](https://github.com/bbmaster123/FWFU/blob/main/uwpspy.md).
+[How to find targets using UWPSpy](https://github.com/bbmaster123/FWFU/blob/main/Guides/uwpspy.md).
 
 ### Missing customizations
 
