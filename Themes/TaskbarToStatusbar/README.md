@@ -20,7 +20,6 @@ This theme turns the taskbar into a true single-line statusbar. Get an experienc
 * I tested the theme for 3 months on Windows 11 25H2 (24H2). There are no known issues. All pop-ups and keyboard shortcuts work.
 * Compatible with both light and dark mode.
 * Compatible with both left and center alignment of the start menu.
-* The recommended height of the statusbar is 23px.
 
 ![Screenshot](Screenshot2.png) \
 ![Screenshot](Screenshot3.png) \
@@ -98,25 +97,29 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 	"controlStyles[15].target":"SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock",
 	"controlStyles[15].styles[0]":"TextTrimming=1",
-	"controlStyles[15].styles[1]":"Height=16",
-	"controlStyles[15].styles[2]":"Margin=0,-1,0,1",
+	"controlStyles[15].styles[1]":"Height=20",
+	"controlStyles[15].styles[2]":"FontSize=14",
+	"controlStyles[16].target":"TextBlock#BatteryTextBlock",
+	"controlStyles[16].styles[0]":"FontSize=14",
+	"controlStyles[17].target":"TextBlock#TimeInnerTextBlock",
+	"controlStyles[17].styles[0]":"FontSize=14",
 
-	"controlStyles[16].target":"Windows.UI.Xaml.Controls.TextBlock#DateInnerTextBlock",
-	"controlStyles[16].styles[0]":"Visibility=Collapsed",
-
-
-
-	"controlStyles[17].target":"Grid#SystemTrayFrameGrid",
-	"controlStyles[17].styles[0]":"Margin=0,-4,0,-4",
-	"controlStyles[17].styles[1]":"Opacity=0.75",
-	
-	"controlStyles[18].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke",
+	"controlStyles[18].target":"TextBlock#DateInnerTextBlock",
 	"controlStyles[18].styles[0]":"Visibility=Collapsed",
 
-	"controlStyles[19].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
-	"controlStyles[19].styles[0]":"Fill:=<SolidColorBrush Color=\"{ThemeResource TextFillColorInverse}\"  Opacity=\"1.0\" />",
-	"controlStyles[20].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid",
-	"controlStyles[20].styles[0]":"Background=Black",
+
+
+	"controlStyles[19].target":"Grid#SystemTrayFrameGrid",
+	"controlStyles[19].styles[0]":"Margin=0,-4,0,-4",
+	"controlStyles[19].styles[1]":"Opacity=0.75",
+	
+	"controlStyles[20].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke",
+	"controlStyles[20].styles[0]":"Visibility=Collapsed",
+
+	"controlStyles[21].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
+	"controlStyles[21].styles[0]":"Fill:=<SolidColorBrush Color=\"{ThemeResource TextFillColorInverse}\"  Opacity=\"1.0\" />",
+	"controlStyles[22].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid",
+	"controlStyles[22].styles[0]":"Background=Black",
 
 
 
