@@ -31,9 +31,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[0].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
   "controlStyles[0].styles[0]":"Fill=Transparent",
   "controlStyles[1].target":"Rectangle#BackgroundStroke",
-  "controlStyles[1].styles[0]":"Fill=Transparent",
-  "controlStyles[2].target":"Border#OverflowFlyoutBackgroundBorder",
-  "controlStyles[2].styles[0]":"Background=Transparent"
+  "controlStyles[1].styles[0]":"Fill=Transparent"
 }
 ```
 </details>
