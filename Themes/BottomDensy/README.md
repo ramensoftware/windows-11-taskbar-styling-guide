@@ -28,10 +28,10 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
   - **Taskbar**: Make transparent and (via another mod) reduce height to leave no useless space above icons (except for the space used for indicators)
 
 `BottomDensyNoInd` is based on `BottomDensy`, but 2px smaller!
-    - Top padding used for indicators removed
-    - Active running indicator remains, but eats into the icon size instead
-    - Inactive running indicator removed since almost all icons in the taskbar are running
-    - Non running apps are indicated via a smaller icon instead
+  - Top padding used for indicators removed
+  - Active running indicator remains, but eats into the icon size instead
+  - Inactive running indicator removed since almost all icons in the taskbar are running
+  - Non running apps are indicated via a smaller icon instead
 
 ### Suggested Windows settings
 
