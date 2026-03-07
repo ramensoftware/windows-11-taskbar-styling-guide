@@ -1,10 +1,5 @@
 # Liquid Glass
 
-## Installation
-Follow the instructions listed below to install and setup the Windows Glass Taskbar theme on your system.
-
----
-
 ### Requirements
 
 * **Windhawk Mods**:
@@ -16,7 +11,7 @@ Follow the instructions listed below to install and setup the Windows Glass Task
 ---
 
 
-### LiquidGlass (Centered)
+# LiquidGlass (Centered)
 
 <img src="Default-Preview.png" width="100%" height="auto" />
 
@@ -250,7 +245,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ---
 
-### LiquidGlass (Centered High DPI)
+# LiquidGlass (Centered High DPI)
 This theme also includes a high dpi variant of the taskbar. *(Tested on 1920x1080 and 1920x1200 resolutions at 125% DPI)*
 
 <img src="High-DPI-Preview.png" width="100%" height="auto" />
@@ -485,7 +480,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ---
 
-### Liquid Glass (Full Width)
+# Liquid Glass (Full Width)
 This theme also includes a full width variant.
 
 <img src="Full-Width-Preview.png" width="100%" height="auto" />
@@ -709,10 +704,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ---
 
-### Taskbar Clock Customization (Optional)
+# Taskbar Clock Customization (Optional)
 
-* Open the `Taskbar Clock Customization` mod in Windhawk.
-* Go to the `Advanced` tab and copy the code below into the `Mod settings` box and click `save`.
+* Open the Taskbar Clock Customization mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -784,8 +780,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ### Taskbar tray system icon tweaks (Optional)
 
-* Open the `Taskbar tray system icon tweaks` mod in Windhawk.
-* Go to the `Advanced` tab and copy the code below into the `Mod settings` box and click `save`.
+* Open the Taskbar tray system icon tweaks mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -811,22 +808,16 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ### Taskbar Music Lounge (Optional)
 Optional feature to add a native music player widget to the taskbar. Replaces the taskbar widgets pane.  
-Uses the upstream version of the Taskbar Music Lounge with various tweaks and improvements in place of the official. 
 
 <img src="Taskbar-Music-Lounge-Preview.png" width="100%" height="auto" />
 
-#### Installation
 
-- Got to `Windhawk > Settings` and enable `Developer mode`.
-- Go back to `Windhawk > Home` and click the `Create a New Mod` button.
-- Copy and paste the contents of the [Hashah2311/windhawk-mods/taskbar-music-lounge.wh.cpp](https://github.com/Hashah2311/windhawk-mods/blob/main/mods/taskbar-music-lounge.wh.cpp) file into the `mod.wh.cpp` file that opens. *Make sure to replace the default contents.*
-- Click `Compile Mod` and wait for it to finish. Then click `Exit Editing Mode` and enable the mod if it isn't already enabled.
+## Centered Taskbar
 
-#### Default Taskbar
-
-* Disable Widgets in your system Taskbar settings and set your Taskbar alignment to `Center`.
-* Open the `Taskbar Music Lounge` mod in Windhawk.
-* Go to the `Advanced` tab and copy the code below into the `Mod settings` box and click `save`.
+* Disable Widgets in your system Taskbar settings and set your Taskbar alignment to Center.
+* Open the Taskbar Music Lounge mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -849,11 +840,12 @@ Uses the upstream version of the Taskbar Music Lounge with various tweaks and im
 
 </details>
 
-#### High DPI Taskbar
+## Centered High DPI Taskbar
 
-* Disable Widgets in your system Taskbar settings and set your Taskbar alignment to `Center`.
-* Open the `Taskbar Music Lounge` mod in Windhawk.
-* Go to the `Advanced` tab and copy the code below into the `Mod settings` box and click `save`.
+* Disable Widgets in your system Taskbar settings and set your Taskbar alignment to Center.
+* Open the Taskbar Music Lounge mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -877,11 +869,12 @@ Uses the upstream version of the Taskbar Music Lounge with various tweaks and im
 </details>
 
 
-#### Full Width Taskbar
+## Full Width Taskbar
 
-* Disable Widgets in your system Taskbar settings and set your Taskbar alignment to `Center`.
-* Open the `Taskbar Music Lounge` mod in Windhawk.
-* Go to the `Advanced` tab and copy the code below into the `Mod settings` box and click `save`.
+* Disable Widgets in your system Taskbar settings and set your Taskbar alignment to Center.
+* Open the Taskbar Music Lounge mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
 
 <details>
 <summary>Content to import (click to expand)</summary>
