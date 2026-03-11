@@ -15,6 +15,9 @@
 
 <img src="Default-Preview.png" width="100%" height="auto" />
 
+>[!NOTE]
+> Version 4 or higher of the Taskbar Music Lounge mod for Windhawk to enable all features.  
+
 ## Theme selection
 
 The theme is integrated into the mod and can simply be selected from the mod's
