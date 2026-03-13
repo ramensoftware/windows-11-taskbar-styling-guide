@@ -1,17 +1,16 @@
-
-# Taskbar to Statusbar theme for Windows 11 Taskbar Styler
+# TaskbarToStatusbar theme for Windows 11 Taskbar Styler
 
 **Author**: [HTImen](https://github.com/HTImen)
 
-![Screenshot](Screenshot0.png)
+![Screenshot](screenshot.png)
 
-## Notes
 This theme turns the taskbar into a true single-line statusbar. Get an experience similar to Windows Phone or Android (Holo UI).
 
-* Click the left corner of the statusbar to show the start menu.
+* Click the left corner of the statusbar to show the Start menu.
 * Click the area to the left of the tray to show the task view.
 * Click the area to the right of the tray to show the desktop.
 
+> [!NOTE]
 > You can enable or disable activation areas in the standard Windows taskbar settings if you need access to the taskbar context menu with the task manager.
 ![Screenshot](Screenshot1.png)
 
@@ -19,7 +18,7 @@ This theme turns the taskbar into a true single-line statusbar. Get an experienc
 
 * I tested the theme for 3 months on Windows 11 25H2 (24H2). There are no known issues. All pop-ups and keyboard shortcuts work.
 * Compatible with both light and dark mode.
-* Compatible with both left and center alignment of the start menu.
+* Compatible with both left and center alignment of the Start menu.
 
 ![Screenshot](Screenshot2.png) \
 ![Screenshot](Screenshot3.png) \
@@ -27,12 +26,12 @@ This theme turns the taskbar into a true single-line statusbar. Get an experienc
 
 ## Suggested additional mods
 
-Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size) \
-Mod: [Taskbar on top for Windows 11](https://windhawk.net/mods/taskbar-on-top)
+* [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size) - to customize the height of the statusbar.
+* [Taskbar on top for Windows 11](https://windhawk.net/mods/taskbar-on-top) - to move the statusbar to the top of the screen.
 
 ## Theme selection
 
-> The theme is not integrated into the mod, please see manual installation below.
+The theme is not integrated into the mod, please see manual installation below.
 
 ## Manual installation
 
@@ -47,10 +46,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-	"theme":"",
-
-
-	
 	"controlStyles[0].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater",
 	"controlStyles[0].styles[0]":"Width=Auto",
 	"controlStyles[0].styles[1]":"HorizontalAlignment=Left",
@@ -119,13 +114,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 	"controlStyles[21].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
 	"controlStyles[21].styles[0]":"Fill:=<SolidColorBrush Color=\"{ThemeResource TextFillColorInverse}\"  Opacity=\"1.0\" />",
 	"controlStyles[22].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid",
-	"controlStyles[22].styles[0]":"Background=Black",
-
-
-
-	"styleConstants[0]":"",
-	"resourceVariables[0].variableKey":"",
-	"resourceVariables[0].value":""
+	"controlStyles[22].styles[0]":"Background=Black"
 }
 ```
 </details>
