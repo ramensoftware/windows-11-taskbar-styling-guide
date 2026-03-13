@@ -26,7 +26,7 @@ This theme turns the taskbar into a true single-line statusbar. Get an experienc
 
 ## Suggested additional mods
 
-* [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size) - to customize the height of the statusbar.
+* [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size) - to customize the height of the statusbar.
 * [Taskbar on top for Windows 11](https://windhawk.net/mods/taskbar-on-top) - to move the statusbar to the top of the screen.
 
 ## Theme selection
