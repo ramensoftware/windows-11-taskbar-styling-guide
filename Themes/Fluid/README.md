@@ -1,4 +1,4 @@
-# Fluid Extended theme for Windows 11 Taskbar Styler
+# Fluid theme for Windows 11 Taskbar Styler
 Taskbar theme designed to match the Fluid Start Menu theme by [SandTechStuff](https://github.com/SandTechStuff)
 
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
