@@ -1,5 +1,6 @@
 # Fluid theme for Windows 11 Taskbar Styler
-Taskbar theme designed to match the Fluid Start Menu theme by [SandTechStuff](https://github.com/SandTechStuff)
+
+A taskbar theme designed to match [the Fluid Start Menu theme](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/blob/main/Themes/Fluid/README.md) by [SandTechStuff](https://github.com/SandTechStuff).
 
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
 
@@ -10,6 +11,79 @@ Taskbar theme designed to match the Fluid Start Menu theme by [SandTechStuff](ht
 > ```ini
 > BorderBrush=<LinearGradientBrush x:Key="ShellTaskbarItemGradientStrokeColorSecondaryBrush" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,3"><LinearGradientBrush.RelativeTransform><ScaleTransform ScaleY="-1" CenterY="0.5" /></LinearGradientBrush.RelativeTransform><LinearGradientBrush.GradientStops><GradientStop Offset="0.33" Color="#0F000000" /><GradientStop Offset="1" Color="#05000000" /></LinearGradientBrush.GradientStops></LinearGradientBrush>
 > ```
+
+## Taskbar Clock Customization (Optional)
+
+The get the clock to show up like it does in the screenshot, follow these steps:
+
+* Open the Taskbar Clock Customization mod in Windhawk.
+* Go to the "Advanced" tab.
+* Copy the content below to the text box under "Mod settings" and click "Save".
+
+<details>
+<summary>Content to import (click to expand)</summary>
+
+```json
+{
+"ShowSeconds": 0,
+"TimeFormat": "hh':'mm tt",
+"DateFormat": "MMM dd",
+"WeekdayFormat": "dddd",
+"WeekdayFormatCustom": "Sun, Mon, Tue, Wed, Thu, Fri, Sat",
+"TopLine": "📅 %date% 🕒 %time%",
+"BottomLine": "%web1%",
+"MiddleLine": "%weekday%",
+"TooltipLine": "%web1_full%%n%%n%%media_status% %media_artist% - %media_title%",
+"TooltipLineMode": "append",
+"Width": 180,
+"Height": 60,
+"MaxWidth": 0,
+"TextSpacing": 0,
+"DataCollection.NetworkMetricsFormat": "mbsDynamic",
+"DataCollection.NetworkMetricsFixedDecimals": -1,
+"DataCollection.PercentageFormat": "spacePaddingAndSymbol",
+"DataCollection.UpdateInterval": 1,
+"DataCollection.NetworkAdapterName": "",
+"DataCollection.GpuAdapterName": "",
+"MediaPlayer.IgnoredPlayers[0]": "",
+"MediaPlayer.MaxLength": 28,
+"MediaPlayer.NoMediaText": "No media",
+"MediaPlayer.RemoveBrackets": 1,
+"WebContentWeatherLocation": "",
+"WebContentWeatherFormat": "%c 🌡️%t 🌬️%w",
+"WebContentWeatherUnits": "autoDetect",
+"WebContentsItems[0].Url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+"WebContentsItems[0].BlockStart": "<item>",
+"WebContentsItems[0].Start": "<title>",
+"WebContentsItems[0].End": "</title>",
+"WebContentsItems[0].ContentMode": "xmlHtml",
+"WebContentsItems[0].SearchReplace[0].Search": "",
+"WebContentsItems[0].SearchReplace[0].Replace": "",
+"WebContentsItems[0].MaxLength": 28,
+"WebContentsUpdateInterval": 10,
+"TimeZones[0]": "",
+"TimeStyle.Hidden": 0,
+"TimeStyle.TextColor": "",
+"TimeStyle.TextAlignment": "Center",
+"TimeStyle.FontSize": 0,
+"TimeStyle.FontFamily": "",
+"TimeStyle.FontWeight": "",
+"TimeStyle.FontStyle": "",
+"TimeStyle.FontStretch": "",
+"TimeStyle.CharacterSpacing": 0,
+"DateStyle.Hidden": 0,
+"DateStyle.TextColor": "",
+"DateStyle.TextAlignment": "Center",
+"DateStyle.FontSize": 0,
+"DateStyle.FontFamily": "",
+"DateStyle.FontWeight": "",
+"DateStyle.FontStyle": "",
+"DateStyle.FontStretch": "",
+"DateStyle.CharacterSpacing": 0,
+"oldTaskbarOnWin11": 0
+}
+```
+</details>
 
 ## Theme selection
 
@@ -33,7 +107,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-  "theme": "",
   "controlStyles[0].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid",
   "controlStyles[0].styles[0]": "Background:=<SolidColorBrush Color=\"{ThemeResource ControlFillColorDefault}\" />",
   "controlStyles[1].target": "Rectangle#BackgroundStroke",
@@ -139,85 +212,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[2]": "BackgroundHover=<SolidColorBrush Color=\"{ThemeResource ControlFillColorSecondary}\" />",
   "styleConstants[3]": "BackgroundPressed=<SolidColorBrush Color=\"{ThemeResource ControlFillColorTertiary}\" />",
   "styleConstants[4]": "BorderThickness=2",
-  "styleConstants[5]": "CornerRadius=4",
-  "resourceVariables[0].variableKey": "",
-  "resourceVariables[0].value": ""
+  "styleConstants[5]": "CornerRadius=4"
 }
 ```
-
-</details>
-
-## Taskbar Clock Customization (Optional)
-
-The get the clock to show up like it does in the screenshot, follow these steps:
-
-* Open the Taskbar Clock Customization mod in Windhawk.
-* Go to the "Advanced" tab.
-* Copy the content below to the text box under "Mod settings" and click "Save".
-
-
-<details>
-<summary>Content to import (click to expand)</summary>
-
-```json
-{
-"ShowSeconds": 0,
-"TimeFormat": "hh':'mm tt",
-"DateFormat": "MMM dd",
-"WeekdayFormat": "dddd",
-"WeekdayFormatCustom": "Sun, Mon, Tue, Wed, Thu, Fri, Sat",
-"TopLine": "📅 %date% 🕒 %time%",
-"BottomLine": "%web1%",
-"MiddleLine": "%weekday%",
-"TooltipLine": "%web1_full%%n%%n%%media_status% %media_artist% - %media_title%",
-"TooltipLineMode": "append",
-"Width": 180,
-"Height": 60,
-"MaxWidth": 0,
-"TextSpacing": 0,
-"DataCollection.NetworkMetricsFormat": "mbsDynamic",
-"DataCollection.NetworkMetricsFixedDecimals": -1,
-"DataCollection.PercentageFormat": "spacePaddingAndSymbol",
-"DataCollection.UpdateInterval": 1,
-"DataCollection.NetworkAdapterName": "",
-"DataCollection.GpuAdapterName": "",
-"MediaPlayer.IgnoredPlayers[0]": "",
-"MediaPlayer.MaxLength": 28,
-"MediaPlayer.NoMediaText": "No media",
-"MediaPlayer.RemoveBrackets": 1,
-"WebContentWeatherLocation": "",
-"WebContentWeatherFormat": "%c 🌡️%t 🌬️%w",
-"WebContentWeatherUnits": "autoDetect",
-"WebContentsItems[0].Url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-"WebContentsItems[0].BlockStart": "<item>",
-"WebContentsItems[0].Start": "<title>",
-"WebContentsItems[0].End": "</title>",
-"WebContentsItems[0].ContentMode": "xmlHtml",
-"WebContentsItems[0].SearchReplace[0].Search": "",
-"WebContentsItems[0].SearchReplace[0].Replace": "",
-"WebContentsItems[0].MaxLength": 28,
-"WebContentsUpdateInterval": 10,
-"TimeZones[0]": "",
-"TimeStyle.Hidden": 0,
-"TimeStyle.TextColor": "",
-"TimeStyle.TextAlignment": "Center",
-"TimeStyle.FontSize": 0,
-"TimeStyle.FontFamily": "",
-"TimeStyle.FontWeight": "",
-"TimeStyle.FontStyle": "",
-"TimeStyle.FontStretch": "",
-"TimeStyle.CharacterSpacing": 0,
-"DateStyle.Hidden": 0,
-"DateStyle.TextColor": "",
-"DateStyle.TextAlignment": "Center",
-"DateStyle.FontSize": 0,
-"DateStyle.FontFamily": "",
-"DateStyle.FontWeight": "",
-"DateStyle.FontStyle": "",
-"DateStyle.FontStretch": "",
-"DateStyle.CharacterSpacing": 0,
-"oldTaskbarOnWin11": 0
-}
-```
-
 </details>
