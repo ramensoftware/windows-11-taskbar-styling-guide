@@ -139,6 +139,7 @@ Taskbar Styler mod. The following themes are available:
 | [Fluid](Themes/Fluid/README.md) | [![Fluid](Themes/Fluid/screenshot.png)](Themes/Fluid/screenshot.png)
 | [TintedGlass](Themes/TintedGlass/README.md) | [![TintedGlass](Themes/TintedGlass/screenshot.png)](Themes/TintedGlass/screenshot.png)
 | [TaskbarToStatusbar](Themes/TaskbarToStatusbar/README.md) | [![TaskbarToStatusbar](Themes/TaskbarToStatusbar/screenshot.png)](Themes/TaskbarToStatusbar/screenshot.png)
+| [UltraWideFriendly](Themes/UltrawideFriendly/README.md) | [![UltraWideFriendly](Themes/UltrawideFriendly/screenshot.png)](Themes/UltrawideFriendly/screenshot.png)
 
 ## General
 
