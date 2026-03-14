@@ -8,7 +8,7 @@
 * This taskbar theme is designed to be used in dark mode.
 
 ## Required Windhawk Mods for similar results
-To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler:
+To achieve similar results, install and configure the following Windhawk mods in addition to Windows 11 Taskbar Styler:
 
 - Taskbar Clock Customization – for styling the clock. You will need to add your weather location if you have the desire to use that function and may need to change date formatting if you wish.
 
@@ -116,112 +116,12 @@ To achieve similar results, install and configure the following Windhawk mods in
 
 ---
 
-## Suggested Windhawk Mods for full theme continuity
-To achieve the full look, install and configure the following Windhawk mods in addition to Taskbar Styler:
+## Suggested Windhawk mods for full theme continuity
+To achieve the full look, install and configure the following Windhawk mods in addition to Windows 11 Taskbar Styler:
 
 - Windows 11 Start Menu Styler
 
-<details>
-<summary>Click to expand JSON content</summary>
-
-```json
-{
-  "controlStyles[0].target": "Border#AcrylicBorder",
-  "controlStyles[0].styles[0]": "Background:=$CommonBgBrush",
-  "controlStyles[0].styles[1]": "BorderThickness=0",
-  "controlStyles[0].styles[2]": "CornerRadius=14",
-  "controlStyles[1].target": "Border#AcrylicOverlay",
-  "controlStyles[1].styles[0]": "Visibility=Collapsed",
-  "controlStyles[2].target": "Border#BorderElement",
-  "controlStyles[2].styles[0]": "Background:=<WindhawkBlur BlurAmount=\"18\" TintColor=\"#1AFFFFFF\"/>",
-  "controlStyles[2].styles[1]": "BorderThickness=0",
-  "controlStyles[2].styles[2]": "CornerRadius=14",
-  "controlStyles[3].target": "Grid#ShowMoreSuggestions",
-  "controlStyles[3].styles[0]": "Visibility=Collapsed",
-  "controlStyles[4].target": "Grid#SuggestionsParentContainer",
-  "controlStyles[4].styles[0]": "Visibility=Collapsed",
-  "controlStyles[5].target": "Grid#TopLevelSuggestionsListHeader",
-  "controlStyles[5].styles[0]": "Visibility=Collapsed",
-  "controlStyles[6].target": "StartMenu.PinnedList",
-  "controlStyles[6].styles[0]": "Height=504",
-  "controlStyles[7].target": "MenuFlyoutPresenter > Border",
-  "controlStyles[7].styles[0]": "Background:=<WindhawkBlur BlurAmount=\"25\" TintColor=\"#00000000\"/>",
-  "controlStyles[7].styles[1]": "BorderThickness=0",
-  "controlStyles[8].target": "Border#AppBorder",
-  "controlStyles[8].styles[0]": "Background:=$CommonBgBrush",
-  "controlStyles[8].styles[1]": "BorderThickness=0",
-  "controlStyles[8].styles[2]": "CornerRadius=14",
-  "controlStyles[9].target": "Border#AccentAppBorder",
-  "controlStyles[9].styles[0]": "Background:=$CommonBgBrush",
-  "controlStyles[9].styles[1]": "BorderThickness=0",
-  "controlStyles[9].styles[2]": "CornerRadius=14",
-  "controlStyles[10].target": "Border#TaskbarSearchBackground",
-  "controlStyles[10].styles[0]": "Background:=<WindhawkBlur BlurAmount=\"25\" TintColor=\"#15000000\"/>",
-  "controlStyles[10].styles[1]": "BorderThickness=0",
-  "controlStyles[10].styles[2]": "CornerRadius=14",
-  "controlStyles[11].target": "Border#ContentBorder@CommonStates > Grid#DroppedFlickerWorkaroundWrapper > Border",
-  "controlStyles[11].styles[0]": "Background@Normal:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"0\" Opacity=\"0.2\"/>",
-  "controlStyles[11].styles[1]": "Background@PointerOver:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.3\"/>",
-  "controlStyles[11].styles[2]": "BorderBrush@PointerOver:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"1\"/>",
-  "controlStyles[11].styles[3]": "Margin=1",
-  "controlStyles[11].styles[4]": "Background@Pressed:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.3\"/>",
-  "controlStyles[11].styles[5]": "BorderBrush@Pressed:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"1\"/>",
-  "controlStyles[12].target": "Button#ShowAllAppsButton > ContentPresenter@CommonStates",
-  "controlStyles[12].styles[0]": "Background@Normal:=<WindhawkBlur BlurAmount=\"25\" TintColor=\"#15000000\"/>",
-  "controlStyles[12].styles[1]": "Background@PointerOver:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.5\"/>",
-  "controlStyles[12].styles[2]": "BorderBrush@PointerOver:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"1\"/>",
-  "controlStyles[12].styles[3]": "BorderThickness=1",
-  "controlStyles[13].target": "StartDocked.SearchBoxToggleButton#StartMenuSearchBox > Grid > Border#BorderElement",
-  "controlStyles[13].styles[0]": "BorderBrush:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"1\"/>",
-  "controlStyles[13].styles[1]": "BorderThickness=1",
-  "controlStyles[14].target": "StartDocked.NavigationPaneButton#UserTileButton > Grid@CommonStates > Border",
-  "controlStyles[14].styles[0]": "Background@Normal:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"0\" Opacity=\"0.2\"/>",
-  "controlStyles[14].styles[1]": "Background@PointerOver:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.5\"/>",
-  "controlStyles[14].styles[2]": "BorderBrush@PointerOver:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.8\"/>",
-  "controlStyles[14].styles[3]": "BorderThickness=1",
-  "controlStyles[15].target": "StartDocked.AppListViewItem > Grid@CommonStates > Border",
-  "controlStyles[15].styles[0]": "Background:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.45\"/>",
-  "controlStyles[15].styles[1]": "BorderBrush:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.7\"/>",
-  "controlStyles[15].styles[2]": "BorderThickness=1",
-  "controlStyles[15].styles[3]": "Margin@Normal=4",
-  "controlStyles[16].target": "StartDocked.NavigationPaneButton#PowerButton > Grid@CommonStates > Border",
-  "controlStyles[16].styles[0]": "Background:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.45\"/>",
-  "controlStyles[16].styles[1]": "BorderBrush:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.7\"/>",
-  "controlStyles[16].styles[2]": "BorderThickness=1",
-  "controlStyles[16].styles[3]": "Margin@Normal=4",
-  "controlStyles[17].target": "ToolTip > ContentPresenter#LayoutRoot",
-  "controlStyles[17].styles[0]": "Background:=<WindhawkBlur BlurAmount=\"25\" TintColor=\"#15000000\"/>",
-  "controlStyles[18].target": "StartDocked.AllAppsGridListViewItem > Grid@CommonStates > Border",
-  "controlStyles[18].styles[0]": "BorderBrush@PointerOver:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.8\"/>",
-  "controlStyles[18].styles[1]": "Background@PointerOver:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.55\"/>",
-  "controlStyles[18].styles[2]": "BorderThickness=1",
-  "controlStyles[19].target": "Button#CloseAllAppsButton > ContentPresenter@CommonStates",
-  "controlStyles[19].styles[0]": "Background@Normal:=<WindhawkBlur BlurAmount=\"25\" TintColor=\"#15000000\"/>",
-  "controlStyles[19].styles[1]": "Background@PointerOver:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.5\"/>",
-  "controlStyles[19].styles[2]": "BorderBrush@PointerOver:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"1\"/>",
-  "controlStyles[19].styles[3]": "BorderThickness=1",
-  "controlStyles[20].target": "StartDocked.AllAppsZoomListViewItem > Grid@CommonStates > Border",
-  "controlStyles[20].styles[0]": "Background@Normal:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"0\" Opacity=\"0.2\"/>",
-  "controlStyles[20].styles[1]": "Background@PointerOver:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.3\"/>",
-  "controlStyles[20].styles[2]": "BorderBrush@PointerOver:=<RevealBorderBrush Color=\"Transparent\" TargetTheme=\"1\" Opacity=\"0.6\"/>",
-  "controlStyles[21].target": "Border#dropshadow",
-  "controlStyles[21].styles[0]": "CornerRadius=14",
-  "controlStyles[21].styles[1]": "Margin=-1",
-  "controlStyles[22].target": "Border#DropShadow",
-  "controlStyles[22].styles[0]": "CornerRadius=14",
-  "controlStyles[23].target": "StartDocked.AllAppsGridListViewItem > Grid#ContentBorder@CommonStates",
-  "controlStyles[23].styles[0]": "Background@PointerOver:=<WindhawkBlur BlurAmount=\"25\" TintColor=\"#15C0C0C0\"/>",
-  "controlStyles[23].styles[1]": "CornerRadius=14",
-  "styleConstants[0]": "CommonBgBrush=<WindhawkBlur BlurAmount=\"18\" TintColor=\"#80000000\"/>",
-  "disableNewStartMenuLayout": 0,
-  "webContentStyles[0].target": "",
-  "webContentStyles[0].styles[0]": "",
-  "webContentCustomJs": "",
-  "resourceVariables[0].variableKey": "",
-  "resourceVariables[0].value": ""
-}
-```
-</details>
+[TintedGlass theme for Windows 11 Start Menu Styler](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/blob/main/Themes/TintedGlass/README.md).
 
 ---
 
