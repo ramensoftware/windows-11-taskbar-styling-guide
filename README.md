@@ -124,7 +124,7 @@ Taskbar Styler mod. The following themes are available:
 | [CleanSlate](Themes/CleanSlate/README.md) | [![CleanSlate](Themes/CleanSlate/screenshot.png)](Themes/CleanSlate/screenshot.png)
 | [Lucent](Themes/Lucent/README.md) | [![Lucent](Themes/Lucent/screenshot.png)](Themes/Lucent/screenshot.png)
 | [SunValley](Themes/SunValley/README.md) | [![SunValley](Themes/SunValley/screenshot.png)](Themes/SunValley/screenshot.png)
-| [SunValley (Legacy)](Themes/21996Taskbar/README.md) | [![21996Taskbar](Themes/21996Taskbar/screenshot.png)](Themes/21996Taskbar/screenshot.png)
+| [SunValley (Legacy)](Themes/21996Taskbar/README.md) | [![SunValley (Legacy)](Themes/21996Taskbar/screenshot.png)](Themes/21996Taskbar/screenshot.png)
 | [BottomDensy](Themes/BottomDensy/README.md) | [![BottomDensy](Themes/BottomDensy/screenshot.png)](Themes/BottomDensy/screenshot.png)
 | [TaskbarXII](Themes/TaskbarXII/README.md) | [![TaskbarXII](Themes/TaskbarXII/screenshot.png)](Themes/TaskbarXII/screenshot.png)
 | [xdark](Themes/xdark/README.md) | [![xdark](Themes/xdark/screenshot.png)](Themes/xdark/screenshot.png)
@@ -137,6 +137,10 @@ Taskbar Styler mod. The following themes are available:
 | [Luminosity](Themes/Luminosity/README.md) | [![Luminosity](Themes/Luminosity/screenshot.png)](Themes/Luminosity/screenshot.png)
 | [LayerMicaUI](Themes/LayerMicaUI/README.md) | [![LayerMicaUI](Themes/LayerMicaUI/screenshot.png)](Themes/LayerMicaUI/screenshot.png)
 | [Liquid Glass](Themes/LiquidGlass/README.md) | [![Liquid Glass](Themes/LiquidGlass/Default-Preview.png)](Themes/LiquidGlass/Default-Preview.png)
+| [Fluid](Themes/Fluid/README.md) | [![Fluid](Themes/Fluid/screenshot.png)](Themes/Fluid/screenshot.png)
+| [TintedGlass](Themes/TintedGlass/README.md) | [![TintedGlass](Themes/TintedGlass/screenshot.png)](Themes/TintedGlass/screenshot.png)
+| [TaskbarToStatusbar](Themes/TaskbarToStatusbar/README.md) | [![TaskbarToStatusbar](Themes/TaskbarToStatusbar/screenshot.png)](Themes/TaskbarToStatusbar/screenshot.png)
+| [UltraWideFriendly](Themes/UltraWideFriendly/README.md) | [![UltraWideFriendly](Themes/UltraWideFriendly/screenshot.png)](Themes/UltraWideFriendly/screenshot.png)
 
 ## General
 

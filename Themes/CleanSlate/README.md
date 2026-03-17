@@ -108,7 +108,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[22].target": "Border#ProgressBarRoot > Border > Grid > Rectangle",
   "controlStyles[22].styles[0]": "Fill:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
   "controlStyles[23].target": "Border#ProgressBarRoot > Border > Grid > Rectangle#ProgressBarTrack",
-  "controlStyles[23].styles[0]": "Fill:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorDark3} />",
+  "controlStyles[23].styles[0]": "Fill:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorDark3}\" />",
   "controlStyles[24].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement",
   "controlStyles[24].styles[0]": "BorderBrush@InactivePointerOver:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\"  />",
   "controlStyles[24].styles[1]": "BorderBrush@ActiveNormal:=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight2}\" />",
