@@ -337,12 +337,11 @@ The theme styles have to be imported manually. To do that, follow these steps:
     "controlStyles[11].styles[2]":"// Brightness Popup > Slider Region Grid",
 
   "controlStyles[12].target":"Grid#OverflowRootGrid > Border",
-    "controlStyles[12].styles[0]":"Background:=$ThemeLayer",
-    "controlStyles[12].styles[1]":"CornerRadius:=$OuterRadius",
-    "controlStyles[12].styles[2]":"BorderThicknes=1",
-    "controlStyles[12].styles[3]":"BorderBrush:=$ThemeOutBorder",
-    "controlStyles[12].styles[4]":"Width=70",
-    "controlStyles[12].styles[5]":"// Taskbar Overflow when full > Background",
+    "controlStyles[12].styles[0]":"//Background:=$ThemeLayer",
+    "controlStyles[12].styles[1]":"//CornerRadius:=$OuterRadius",
+    "controlStyles[12].styles[2]":"//BorderThickness=1",
+    "controlStyles[12].styles[3]":"//BorderBrush:=$ThemeOutBorder",
+    "controlStyles[12].styles[4]":"// Taskbar Overflow when full > Background",
 
   "controlStyles[13].target":"Grid#DynamicSearchBoxGleamContainer",
     "controlStyles[13].styles[0]":"Height=30",
