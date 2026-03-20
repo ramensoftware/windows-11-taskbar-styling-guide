@@ -1,6 +1,6 @@
 # LayerMicaUI theme for Windows 11 Taskbar Styler
 
-LayerMicaUI is a modern Windows 11 taskbar theme with clean visuals and comprehensive styling. 
+LayerMicaUI is a modern Windows 11 taskbar theme with clean visuals and comprehensive styling.
 
 **Author**: [Nimai-HK](https://github.com/Nimai-HK)
 
@@ -11,10 +11,10 @@ LayerMicaUI is a modern Windows 11 taskbar theme with clean visuals and comprehe
 - Fully compatible with both Light and Dark modes.
 - Optimized for a left-aligned taskbar only.
 - Requires widgets on the taskbar to be disabled.
-- Note: Clock styles and Taskbar Labels are an additional customisation, please refer [Additional Configuration](#additional-configuration)
+- Note: Clock styles and Taskbar Labels are an additional customisation, please refer to [Additional Configuration](#additional-configuration)
 
 ## Features
-This theme also styles additional parts of Windows 11 for both Light and Dark modes
+This theme also styles additional parts of Windows 11 for both Light and Dark modes.
 
 - **Context Menus, Volume and Brightness HUD, Bluetooth and USB icons, Hover Flyouts, Window Snap Layouts, Taskbar Hidden Icons Tray**
 
@@ -24,14 +24,12 @@ This theme also styles additional parts of Windows 11 for both Light and Dark mo
 
   ![View Grid](views-grid.png)
 
-
-
 ---
 ## Additional Configuration
 To make the taskbar look better, follow these settings:
 
 <details>
-  <summary> Taskbar Layer Border (Click to expand)</summary>
+  <summary>Taskbar Layer Border (Click to expand)</summary>
 
 - This border was originally styled by the theme.
 - It was removed because applying a Border Style interfered with the Windows 11 taskbar’s click‑to‑minimize window behavior.
@@ -50,9 +48,9 @@ To make the taskbar look better, follow these settings:
 </details>
 
 <details>
-  <summary> Taskbar Search Bar Active States(Click to expand)</summary>
+  <summary>Taskbar Search Bar Active States (Click to expand)</summary>
 
-- Currently, the search bar active states are controlled by SearchHost.exe, which can be customized by the "Windows 11 Start Menu Styler" mod. 
+- Currently, the search bar active states are controlled by SearchHost.exe, which can be customized by the "Windows 11 Start Menu Styler" mod.
 - Paste these styles under "Control Styles" Section in the "Windows 11 Start Menu Styler" Mod settings.
 
     ```yaml
@@ -73,7 +71,7 @@ To make the taskbar look better, follow these settings:
 </details>
 
 <details>
-  <summary> Font Customisation (Click to expand)</summary>
+  <summary>Font Customisation (Click to expand)</summary>
 
 - Font to be installed: [Nunito](https://fonts.google.com/specimen/Nunito)
 - Add these items to the "Style Constants" section of the settings page of the "Windows 11 Taskbar Styler" mod
@@ -83,9 +81,9 @@ To make the taskbar look better, follow these settings:
 </details>
 
 <details>
-  <summary> Taskbar height and icon size (Click to expand)</summary>
+  <summary>Taskbar height and icon size (Click to expand)</summary>
 
-- Paste this JSON into the "Mod settings" TextBlock under the Advanced Settings tab of the "Taskbar Height and Icon Size" mod.
+- Paste this JSON into the "Mod settings" text box under the Advanced Settings tab of the "Taskbar Height and Icon Size" mod.
 
   ```json
   {
@@ -101,7 +99,7 @@ To make the taskbar look better, follow these settings:
 <details>
   <summary>Taskbar Clock Customisation (Click to expand)</summary>
 
-- Paste this JSON into the "Mod settings" TextBlock under the Advanced Settings tab of the "Taskbar Clock Customisation" mod.
+- Paste this JSON into the "Mod settings" text box under the Advanced Settings tab of the "Taskbar Clock Customisation" mod.
 
   ```json
   {
@@ -170,7 +168,7 @@ To make the taskbar look better, follow these settings:
 <details>
   <summary>Taskbar Labels for Windows 11 (Click to expand)</summary>
 
-- Paste this JSON into the "Mod settings" TextBlock under the Advanced Settings tab of the "Taskbar Labels for Windows 11" mod.
+- Paste this JSON into the "Mod settings" text box under the Advanced Settings tab of the "Taskbar Labels for Windows 11" mod.
 
   ```json
   {
@@ -217,12 +215,12 @@ settings:
 > [!NOTE]
 > As of Windows 11 Taskbar Styler v1.5.2, this theme requires a pre-release
 > version of the mod. A supported version can be found
-> [here](https://github.com/m417z/my-windhawk-mods/blob/ffd59fbed31bd9b84f3082eb8c8a6ce0b25b8a03/mods/windows-11-file-explorer-styler.wh.cpp).
+> [here](https://github.com/m417z/my-windhawk-mods/blob/7760b125b6651fa8a00ebe4e74ce08e798e9fbbb/mods/windows-11-taskbar-styler.wh.cpp).
 >
 > To try it, disable the existing version of the mod (if already installed),
 > then click the bottom right button in Windhawk to create a new mod, replace
-> the code with the pre-release mod code, click "Compile mod", then "Exit
-> Editing mode".
+> the code with the pre-release mod code, click "Compile Mod", then "Exit
+> Editing Mode".
 
 The theme styles have to be imported manually. To do that, follow these steps:
 
@@ -234,7 +232,7 @@ The theme styles have to be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```json
-{  
+{
   "styleConstants[0]":"ThemeBlur=<WindhawkBlur BlurAmount=\"12\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintSaturation=\"1.25\" NoiseOpacity=\"0.1\" NoiseDensity=\"0.8\" TintOpacity=\"0.2\" TintLuminosityOpacity=\"0.3\" />",
   "styleConstants[1]":"ThemeLayer=<AcrylicBrush BackgroundSource=\"Backdrop\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"{ThemeResource bgOpacity}\" TintLuminosityOpacity=\"{ThemeResource bgLuminosity}\" FallbackColor=\"{ThemeResource SystemChromeMediumColor}\" />",
   "styleConstants[2]":"OuterRadius=10",
@@ -249,7 +247,7 @@ The theme styles have to be imported manually. To do that, follow these steps:
   "styleConstants[11]":"ThemeFlyout=<AcrylicBrush BackgroundSource=\"Backdrop\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.1\" TintLuminosityOpacity=\"0.8\" FallbackColor=\"{ThemeResource SystemChromeMediumColor}\" />",
 
   "theme":"",
-  
+
   "themeResourceVariables[0]":"Accent1@Dark={ThemeResource SystemAccentColorLight3}",
   "themeResourceVariables[1]":"Accent1@Light={ThemeResource SystemAccentColorDark2}",
   "themeResourceVariables[2]":"bgOpacity@Dark=0.3",
@@ -345,7 +343,7 @@ The theme styles have to be imported manually. To do that, follow these steps:
 
   "controlStyles[13].target":"Grid#DynamicSearchBoxGleamContainer",
     "controlStyles[13].styles[0]":"Height=30",
-    "controlStyles[13].styles[1]":"// Taskbar Searh Box > Art container beside search",
+    "controlStyles[13].styles[1]":"// Taskbar Search Box > Art container beside search",
 
   "controlStyles[14].target":"Grid > HyperlinkButton#Footer",
     "controlStyles[14].styles[0]":"HorizontalContentAlignment=1",
@@ -389,7 +387,7 @@ The theme styles have to be imported manually. To do that, follow these steps:
   "controlStyles[22].target":"SystemTray.OmniButton#NotificationCenterButton",
     "controlStyles[22].styles[0]":"Grid.Column=5",
     "controlStyles[22].styles[1]":"CornerRadius=$InnerRadius",
-    "controlStyles[22].styles[2]":"// System Tray > Notifcation Center Button",
+    "controlStyles[22].styles[2]":"// System Tray > Notification Center Button",
 
   "controlStyles[23].target":"SystemTray.Stack#MainStack",
     "controlStyles[23].styles[0]":"Grid.Column=6",
@@ -529,12 +527,12 @@ The theme styles have to be imported manually. To do that, follow these steps:
     "controlStyles[48].styles[1]":"BorderBrush:=$ThemeOutBorder",
     "controlStyles[48].styles[2]":"Shadow:=",
     "controlStyles[48].styles[3]":"CornerRadius=$OuterRadius",
-    "controlStyles[48].styles[4]":"// Win + Space Input Langauge Switcher Bar Background ",
+    "controlStyles[48].styles[4]":"// Win + Space Input Language Switcher Bar Background ",
 
   "controlStyles[49].target":"WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid#OverlayPanel",
     "controlStyles[49].styles[0]":"Background=Transparent",
     "controlStyles[49].styles[1]":"BorderBrush=Transparent",
-    "controlStyles[49].styles[2]":"// Win + Space Input Langauge Switcher Bar Background ( Overlaid Background )",
+    "controlStyles[49].styles[2]":"// Win + Space Input Language Switcher Bar Background ( Overlaid Background )",
 
   "controlStyles[50].target":"Button#GleamEntryPointButton > Border",
     "controlStyles[50].styles[0]":"Height=30",
