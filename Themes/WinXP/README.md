@@ -84,7 +84,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[14].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0.5,0\" EndPoint=\"0.5,1\"> <GradientStop Color=\"#16ADF0\" Offset=\"0.0\" /> <GradientStop Color=\"#19B9F3\" Offset=\"0.1\" /> <GradientStop Color=\"#118FE9\" Offset=\"0.35\" /> <GradientStop Color=\"#0E9EF0\" Offset=\"0.8\" /> <GradientStop Color=\"#1580D9\" Offset=\"1.0\" /></LinearGradientBrush>",
   "controlStyles[14].styles[1]": "BorderThickness=1,1,0,1",
   "controlStyles[14].styles[2]": "BorderBrush=#095BC9",
-  "controlStyles[14].styles[3]": "Padding=4,0,0,0",
+  "controlStyles[14].styles[3]": "Padding=4,-1,0,-1",
   "controlStyles[15].target": "Grid#OverflowRootGrid > Border",
   "controlStyles[15].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0.5,0\" EndPoint=\"0.5,1\"> <GradientStop Color=\"#3168d5\" Offset=\"0.0\" /> <GradientStop Color=\"#4993E6\" Offset=\"0.1\" /> <GradientStop Color=\"#2157D7\" Offset=\"0.35\" /> <GradientStop Color=\"#2663E0\" Offset=\"0.8\" /> <GradientStop Color=\"#1941A5\" Offset=\"1.0\" /></LinearGradientBrush>"
 }
