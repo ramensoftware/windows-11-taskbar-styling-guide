@@ -36,7 +36,7 @@ To make the taskbar look better, follow these settings:
 - This border was originally styled by the theme.
 - It was removed because applying a Border Style interfered with the Windows 11 taskbar’s click‑to‑minimize window behavior.
 - Does not affect the focusing or maximizing window behaviour.
-- If you don’t use that action or aren’t affected, you can re‑enable it by placing these styles under "Control Styles" Section in the Windows‑11‑Taskbar‑Styler‑Mod settings.
+- If you don’t use that action or aren’t affected, you can re‑enable it by placing these styles under "Control Styles" Section in the "Windows 11 Taskbar Styler" mod settings.
 
   ```yaml
   - target: Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid
