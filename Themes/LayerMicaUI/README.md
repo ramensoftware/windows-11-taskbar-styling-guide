@@ -14,7 +14,7 @@ LayerMicaUI is a modern Windows 11 taskbar theme with clean visuals and comprehe
 - Note: Clock styles and Taskbar Labels are an additional customisation, please refer [Additional Configuration](#additional-configuration)
 
 ## Features
-This theme also styles additional parts of Windows 11 for both Light and Dark Modes
+This theme also styles additional parts of Windows 11 for both Light and Dark modes
 
 - **Context Menus, Volume and Brightness HUD, Bluetooth and USB icons, Hover Flyouts, Window Snap Layouts, Taskbar Hidden Icons Tray**
 
@@ -23,6 +23,183 @@ This theme also styles additional parts of Windows 11 for both Light and Dark Mo
 - **Task View and Alt Tab Window Switcher**
 
   ![View Grid](views-grid.png)
+
+
+
+---
+## Additional Configuration
+To make the taskbar look better, follow these settings:
+
+<details>
+  <summary> Taskbar Layer Border (Click to expand)</summary>
+
+- This border was originally styled by the theme.
+- It was removed because applying a Border Style interfered with the Windows 11 taskbar’s click‑to‑minimize window behavior.
+- Does not affect the focusing or maximizing window behaviour.
+- If you don’t use that action or aren’t affected, you can re‑enable it by placing these styles under "Control Styles" Section in the Windows‑11‑Taskbar‑Styler‑Mod settings.
+
+  ```yaml
+  - target: Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid
+    styles:
+      - BorderBrush:=$ThemeOutBorder
+
+  - target: Grid#SystemTrayFrameGrid
+    styles:
+      - BorderBrush:=$ThemeOutBorder
+  ```
+</details>
+
+<details>
+  <summary> Taskbar Search Bar Active States(Click to expand)</summary>
+
+- Currently, the search bar active states are controlled by SearchHost.exe, which can be customized by the "Windows 11 Start Menu Styler" mod. 
+- Paste these styles under "Control Styles" Section in the "Windows 11 Start Menu Styler" Mod settings.
+
+    ```yaml
+    - target: Border#TaskbarSearchBackground
+      styles:
+        - CornerRadius=$InnerRadius
+        - Background:=$ThemeOverlay
+        - BorderThickness=0
+        - Height=32
+        - Transform3D:=<CompositeTransform3D TranslateY="-2" TranslateX="1"/>
+
+    - target: Cortana.UI.Views.RichSearchBoxControl#SearchBoxControl > Grid#RootGrid
+      styles:
+        - CornerRadius=$InnerRadius
+        - Transform3D:=<CompositeTransform3D TranslateY="-2" TranslateX="1"/>
+    ```
+
+</details>
+
+<details>
+  <summary> Font Customisation (Click to expand)</summary>
+
+- Font to be installed: [Nunito](https://fonts.google.com/specimen/Nunito)
+- Add these items to the "Style Constants" section of the settings page of the "Windows 11 Taskbar Styler" mod
+    ```
+  ThFntWt=Semibold
+    ```
+</details>
+
+<details>
+  <summary> Taskbar height and icon size (Click to expand)</summary>
+
+- Paste this JSON into the "Mod settings" TextBlock under the Advanced Settings tab of the "Taskbar Height and Icon Size" mod.
+
+  ```json
+  {
+    "TaskbarHeight":52,
+    "IconSize":24,
+    "TaskbarButtonWidth":42,
+    "IconSizeSmall":0,
+    "TaskbarButtonWidthSmall":30
+  }
+  ```
+</details>
+
+<details>
+  <summary>Taskbar Clock Customisation (Click to expand)</summary>
+
+- Paste this JSON into the "Mod settings" TextBlock under the Advanced Settings tab of the "Taskbar Clock Customisation" mod.
+
+  ```json
+  {
+    "ShowSeconds":0,
+    "TimeFormat":"HH' : 'mm;HH' : 'mm",
+    "DateFormat":"' | ' ddd • MMM dd • yyyy;MMMM dd ' | ' yyyy;dddd",
+    "WeekdayFormat":"dddd",
+    "WeekdayFormatCustom":"Sun, Mon, Tue, Wed, Thu, Fri, Sat",
+    "TopLine":"%time% %date%",
+    "BottomLine":"%date%",
+    "MiddleLine":"%weekday%",
+    "TooltipLine":"%time2%  |  %date3%%n%%date2%%n%%n%%media_info%%n%%n%CPU:    %cpu%      |      GPU:  %gpu%%n%RAM:   %ram%      |      BAT:   %battery%%n%NET:    %upload_speed%  △   %download_speed%  ▼%n%DISK:   %disk_read%  ○   %disk_write%  ◉",
+    "TooltipLineMode":"replace",
+    "Width":180,
+    "Height":60,
+    "MaxWidth":0,
+    "TextSpacing":-1,
+    "DataCollection.NetworkMetricsFormat":"mbits",
+    "DataCollection.NetworkMetricsFixedDecimals":1,
+    "DataCollection.PercentageFormat":"spacePaddingAndSymbol",
+    "DataCollection.UpdateInterval":1,
+    "DataCollection.NetworkAdapterName":"",
+    "DataCollection.GpuAdapterName":"",
+    "MediaPlayer.IgnoredPlayers[0]":"",
+    "MediaPlayer.MaxLength":38,
+    "MediaPlayer.NoMediaText":"- no media playing -",
+    "MediaPlayer.RemoveBrackets":0,
+    "WebContentWeatherLocation":"",
+    "WebContentWeatherFormat":"%c 🌡️%t 🌬️%w",
+    "WebContentWeatherUnits":"autoDetect",
+    "WebContentsItems[0].Url":"",
+    "WebContentsItems[0].BlockStart":"<item>",
+    "WebContentsItems[0].Start":"<title>",
+    "WebContentsItems[0].End":"</title>",
+    "WebContentsItems[0].ContentMode":"xmlHtml",
+    "WebContentsItems[0].SearchReplace[0].Search":"",
+    "WebContentsItems[0].SearchReplace[0].Replace":"",
+    "WebContentsItems[0].MaxLength":28,
+    "WebContentsUpdateInterval":10,
+    "TimeStyle.Hidden":0,
+    "TimeStyle.TextColor":"",
+    "TimeStyle.TextAlignment":"Center",
+    "TimeStyle.FontSize":14,
+    "TimeStyle.FontFamily":"Nunito",
+    "TimeStyle.FontWeight":"Bold",
+    "TimeStyle.FontStyle":"",
+    "TimeStyle.FontStretch":"",
+    "TimeStyle.CharacterSpacing":0,
+    "DateStyle.Hidden":1,
+    "DateStyle.TextColor":"",
+    "DateStyle.TextAlignment":"Center",
+    "DateStyle.FontSize":0,
+    "DateStyle.FontFamily":"",
+    "DateStyle.FontWeight":"",
+    "DateStyle.FontStyle":"",
+    "DateStyle.FontStretch":"",
+    "DateStyle.CharacterSpacing":30,
+    "oldTaskbarOnWin11":0
+  }
+  ```
+
+  ![Clock Customisation](clock-customisation.png)
+
+</details>
+
+<details>
+  <summary>Taskbar Labels for Windows 11 (Click to expand)</summary>
+
+- Paste this JSON into the "Mod settings" TextBlock under the Advanced Settings tab of the "Taskbar Labels for Windows 11" mod.
+
+  ```json
+  {
+    "mode":"labelsWithCombining",
+    "taskbarItemWidth":0,
+    "runningIndicatorStyle":"centerDynamic",
+    "progressIndicatorStyle":"fullWidth",
+    "minimumTaskbarItemWidth":100,
+    "maximumTaskbarItemWidth":180,
+    "fontSize":12,
+    "fontFamily":"Nunito Bold",
+    "textTrimming":"clip",
+    "leftAndRightPaddingSize":5,
+    "spaceBetweenIconAndLabel":8,
+    "runningIndicatorHeight":3,
+    "runningIndicatorVerticalOffset":3,
+    "alwaysShowThumbnailLabels":0,
+    "labelForSingleItem":"",
+    "labelForMultipleItems":""
+  }
+  ```
+</details>
+
+## Other LayerMicaUI Themes
+- [LayerMicaUI Start Menu Theme](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/tree/main/Themes/LayerMicaUI)
+
+<!--
+- [LayerMicaUI Notification And Control Center Theme](https://github.com/ramensoftware/windows-11-notification-center-styling-guide/tree/main/Themes/LayerMicaUI)
+-->
 
 ---
 <!--
@@ -44,8 +221,8 @@ settings:
 >
 > To try it, disable the existing version of the mod (if already installed),
 > then click the bottom right button in Windhawk to create a new mod, replace
-> the code with the pre-release mod code, click "Compile Mod", then "Exit
-> Editing Mode".
+> the code with the pre-release mod code, click "Compile mod", then "Exit
+> Editing mode".
 
 The theme styles have to be imported manually. To do that, follow these steps:
 
@@ -432,180 +609,3 @@ The theme styles have to be imported manually. To do that, follow these steps:
 }
 ```
 </details>
-
----
-## Additional Configuration
-To make the taskbar look better, follow these settings:
-
-<details>
-  <summary> Taskbar Layer Border (Click to expand)</summary>
-
-- This border was originally styled by the theme.
-- It was removed because applying a Border Style interfered with the Windows 11 taskbar’s click‑to‑minimize window behavior.
-- Does not affect the focusing or maximizing window behaviour.
-- If you don’t use that action or aren’t affected, you can re‑enable it by placing these styles under Control Styles Section in the Windows‑11‑Taskbar‑Styler‑Mod settings.
-
-  ```yaml
-  - target: Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid
-    styles:
-      - BorderBrush:=$ThemeOutBorder
-
-  - target: Grid#SystemTrayFrameGrid
-    styles:
-      - BorderBrush:=$ThemeOutBorder
-  ```
-</details>
-
-<details>
-  <summary> Taskbar Search Bar Active States(Click to expand)</summary>
-
-- Currently, the search bar active states are controlled by SearchHost.exe, which can be customized by the Windows-11-Start-Menu-Styler mod. 
-- Paste these styles under Control Styles Section in the Windows‑11‑Start-Menu‑Styler‑Mod settings.
-
-    ```yaml
-    - target: Border#TaskbarSearchBackground
-      styles:
-        - CornerRadius=$InnerRadius
-        - Background:=$ThemeOverlay
-        - BorderThickness=0
-        - Height=32
-        - Transform3D:=<CompositeTransform3D TranslateY="-2" TranslateX="1"/>
-
-    - target: Cortana.UI.Views.RichSearchBoxControl#SearchBoxControl > Grid#RootGrid
-      styles:
-        - CornerRadius=$InnerRadius
-        - Transform3D:=<CompositeTransform3D TranslateY="-2" TranslateX="1"/>
-    ```
-
-</details>
-
-<details>
-  <summary> Font Customisation (Click to expand)</summary>
-
-- Font to be installed: [Nunito](https://fonts.google.com/specimen/Nunito)
-- Add these items to the `Style Constants` section of the settings page of the Windows 11 Taskbar Styler Mod
-    ```
-  ThFntWt=Semibold
-    ```
-</details>
-
-<details>
-  <summary> Taskbar height and icon size (Click to expand)</summary>
-
-- Paste this JSON into the Mod Settings TextBlock under the Advanced Settings tab of the `Taskbar Height and Icon Size` Mod.
-
-  ```json
-  {
-    "TaskbarHeight":52,
-    "IconSize":24,
-    "TaskbarButtonWidth":42,
-    "IconSizeSmall":0,
-    "TaskbarButtonWidthSmall":30
-  }
-  ```
-</details>
-
-<details>
-  <summary>Taskbar Clock Customisation (Click to expand)</summary>
-
-- Paste this JSON into the Mod Settings TextBlock under the Advanced Settings tab of the `Taskbar Clock Customisation` Mod.
-
-  ```json
-  {
-    "ShowSeconds":0,
-    "TimeFormat":"HH' : 'mm;HH' : 'mm",
-    "DateFormat":"' | ' ddd • MMM dd • yyyy;MMMM dd ' | ' yyyy;dddd",
-    "WeekdayFormat":"dddd",
-    "WeekdayFormatCustom":"Sun, Mon, Tue, Wed, Thu, Fri, Sat",
-    "TopLine":"%time% %date%",
-    "BottomLine":"%date%",
-    "MiddleLine":"%weekday%",
-    "TooltipLine":"%time2%  |  %date3%%n%%date2%%n%%n%%media_info%%n%%n%CPU:    %cpu%      |      GPU:  %gpu%%n%RAM:   %ram%      |      BAT:   %battery%%n%NET:    %upload_speed%  △   %download_speed%  ▼%n%DISK:   %disk_read%  ○   %disk_write%  ◉",
-    "TooltipLineMode":"replace",
-    "Width":180,
-    "Height":60,
-    "MaxWidth":0,
-    "TextSpacing":-1,
-    "DataCollection.NetworkMetricsFormat":"mbits",
-    "DataCollection.NetworkMetricsFixedDecimals":1,
-    "DataCollection.PercentageFormat":"spacePaddingAndSymbol",
-    "DataCollection.UpdateInterval":1,
-    "DataCollection.NetworkAdapterName":"",
-    "DataCollection.GpuAdapterName":"",
-    "MediaPlayer.IgnoredPlayers[0]":"",
-    "MediaPlayer.MaxLength":38,
-    "MediaPlayer.NoMediaText":"- no media playing -",
-    "MediaPlayer.RemoveBrackets":0,
-    "WebContentWeatherLocation":"",
-    "WebContentWeatherFormat":"%c 🌡️%t 🌬️%w",
-    "WebContentWeatherUnits":"autoDetect",
-    "WebContentsItems[0].Url":"",
-    "WebContentsItems[0].BlockStart":"<item>",
-    "WebContentsItems[0].Start":"<title>",
-    "WebContentsItems[0].End":"</title>",
-    "WebContentsItems[0].ContentMode":"xmlHtml",
-    "WebContentsItems[0].SearchReplace[0].Search":"",
-    "WebContentsItems[0].SearchReplace[0].Replace":"",
-    "WebContentsItems[0].MaxLength":28,
-    "WebContentsUpdateInterval":10,
-    "TimeStyle.Hidden":0,
-    "TimeStyle.TextColor":"",
-    "TimeStyle.TextAlignment":"Center",
-    "TimeStyle.FontSize":14,
-    "TimeStyle.FontFamily":"Nunito",
-    "TimeStyle.FontWeight":"Bold",
-    "TimeStyle.FontStyle":"",
-    "TimeStyle.FontStretch":"",
-    "TimeStyle.CharacterSpacing":0,
-    "DateStyle.Hidden":1,
-    "DateStyle.TextColor":"",
-    "DateStyle.TextAlignment":"Center",
-    "DateStyle.FontSize":0,
-    "DateStyle.FontFamily":"",
-    "DateStyle.FontWeight":"",
-    "DateStyle.FontStyle":"",
-    "DateStyle.FontStretch":"",
-    "DateStyle.CharacterSpacing":30,
-    "oldTaskbarOnWin11":0
-  }
-  ```
-
-  ![Clock Customisation](clock-customisation.png)
-
-</details>
-
-<details>
-  <summary>Taskbar Labels for Windows 11 (Click to expand)</summary>
-
-- Paste this JSON into the Mod Settings TextBlock under the Advanced Settings tab of the `Taskbar Labels for Windows 11` Mod.
-
-  ```json
-  {
-    "mode":"labelsWithCombining",
-    "taskbarItemWidth":0,
-    "runningIndicatorStyle":"centerDynamic",
-    "progressIndicatorStyle":"fullWidth",
-    "minimumTaskbarItemWidth":100,
-    "maximumTaskbarItemWidth":180,
-    "fontSize":12,
-    "fontFamily":"Nunito Bold",
-    "textTrimming":"clip",
-    "leftAndRightPaddingSize":5,
-    "spaceBetweenIconAndLabel":8,
-    "runningIndicatorHeight":3,
-    "runningIndicatorVerticalOffset":3,
-    "alwaysShowThumbnailLabels":0,
-    "labelForSingleItem":"",
-    "labelForMultipleItems":""
-  }
-  ```
-</details>
-
----
-
-## Other LayerMicaUI Themes
-- [LayerMicaUI Start Menu Theme](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/tree/main/Themes/LayerMicaUI)
-
-<!--
-- [LayerMicaUI Notification And Control Center Theme](https://github.com/ramensoftware/windows-11-notification-center-styling-guide/tree/main/Themes/LayerMicaUI)
--->
