@@ -4,7 +4,7 @@ A taskbar theme designed to match [the Fluid Start Menu theme](https://github.co
 
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
 
-![Demonstration](screenshot.png)
+![Demonstration](https://i.imgur.com/qFOSx1Y.png)
 
 > [!NOTE]
 > To use with Light mode, change the `BorderBrush` styleConstant to:
@@ -212,7 +212,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[2]": "BackgroundHover=<SolidColorBrush Color=\"{ThemeResource ControlFillColorSecondary}\" />",
   "styleConstants[3]": "BackgroundPressed=<SolidColorBrush Color=\"{ThemeResource ControlFillColorTertiary}\" />",
   "styleConstants[4]": "BorderThickness=2",
-  "styleConstants[5]": "CornerRadius=4"
+  "styleConstants[5]": "CornerRadius=4",
+  "controlStyles[0].styles[1]": "CornerRadius=$CornerRadius",
+  "controlStyles[0].styles[2]": "Margin=2"
 }
 ```
 </details>
