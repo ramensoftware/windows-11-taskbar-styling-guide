@@ -4,7 +4,7 @@ A taskbar theme designed to match [the Fluid Start Menu theme](https://github.co
 
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
 
-![Demonstration](https://i.imgur.com/qFOSx1Y.png)
+![Demonstration](screenshot.png)
 
 > [!NOTE]
 > To use with Light mode, change the `BorderBrush` styleConstant to:
