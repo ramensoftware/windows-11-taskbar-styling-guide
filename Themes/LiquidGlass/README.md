@@ -64,11 +64,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[6].target": "SystemTray.ChevronIconView",
   "controlStyles[6].styles[0]": "CornerRadius=$CornerRadius",
   "controlStyles[7].target": "SystemTray.NotifyIconView#NotifyItemIcon",
-  "controlStyles[7].styles[0]": "CornerRadius=$ElementCornerRadius",
+  "controlStyles[7].styles[0]": "CornerRadius=$CornerRadius",
   "controlStyles[8].target": "SystemTray.OmniButton",
-  "controlStyles[8].styles[0]": "CornerRadius=$ElementCornerRadius",
+  "controlStyles[8].styles[0]": "CornerRadius=$CornerRadius",
   "controlStyles[9].target": "SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid",
-  "controlStyles[9].styles[0]": "CornerRadius=$ElementCornerRadius",
+  "controlStyles[9].styles[0]": "CornerRadius=$CornerRadius",
   "controlStyles[10].target": "Taskbar.Gripper#GripperControl",
   "controlStyles[10].styles[0]": "Width=Auto",
   "controlStyles[10].styles[1]": "MinWidth=24",
@@ -210,18 +210,16 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[41].styles[0]": "HorizontalAlignment=Left",
   "styleConstants[0]": "BorderThickness=0.3,1,0.3,0.3",
   "styleConstants[1]": "ElementBorderThickness=0.3,0.3,0.3,1",
-  "styleConstants[2]": "Background=<WindhawkBlur BlurAmount=\"15\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
-  "styleConstants[3]": "BorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"0.0\" /><GradientStop Color=\"#50404040\" Offset=\"0.25\" /><GradientStop Color=\"#50808080\" Offset=\"1\" /></LinearGradientBrush>",
-  "styleConstants[4]": "GlassBG=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.3\" FallbackColor=\"{ThemeResource SystemChromeAltHighColor}\" />",
-  "styleConstants[5]": "GlassBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"{ThemeResource SystemChromeHighColor}\" Offset=\"0.0\" /><GradientStop Color=\"{ThemeResource SystemChromeLowColor}\" Offset=\"0.25\" /><GradientStop Color=\"{ThemeResource SystemChromeHighColor}\" Offset=\"1\" /></LinearGradientBrush>",
-  "styleConstants[6]": "ElementBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"#202020\" TintOpacity=\"0.2\" />",
-  "styleConstants[7]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
+  "styleConstants[2]": "BorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"0.0\" /><GradientStop Color=\"#50404040\" Offset=\"0.25\" /><GradientStop Color=\"#50808080\" Offset=\"1\" /></LinearGradientBrush>",
+  "styleConstants[3]": "Background=<WindhawkBlur BlurAmount=\"15\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
+  "styleConstants[4]": "ElementBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"#202020\" TintOpacity=\"0.2\" />",
+  "styleConstants[5]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
   "resourceVariables[0].variableKey": "",
   "resourceVariables[0].value": "",
-  "styleConstants[8]": "HoverBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeHighColor}\" TintOpacity=\"0.2\" />",
-  "styleConstants[9]": "PressedBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
-  "styleConstants[10]": "ActiveBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
-  "styleConstants[11]": "CornerRadius=4"
+  "styleConstants[6]": "HoverBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeHighColor}\" TintOpacity=\"0.2\" />",
+  "styleConstants[7]": "PressedBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
+  "styleConstants[8]": "ActiveBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
+  "styleConstants[9]": "CornerRadius=4"
 }
 ```
 
@@ -301,128 +299,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 </details>
 
----
 
-### Taskbar tray system icon tweaks (Optional)
-
-* Open the Taskbar tray system icon tweaks mod in Windhawk.
-* Go to the "Settings" tab.
-* Select the theme and save the settings.
-
-<details>
-<summary>Content to import (click to expand)</summary>
-
-```json
-{
-"hideVolumeIcon": 0,
-"hideNetworkIcon": 0,
-"hideBatteryIcon": 0,
-"hideMicrophoneIcon": 0,
-"hideGeolocationIcon": 1,
-"hideStudioEffectsIcon": 1,
-"hideLanguageBar": 1,
-"hideLanguageSupplementaryIcons": 1,
-"hideBellIcon": "whenInactiveAndNoDnd",
-"showDesktopButtonWidth": 12
-}
-```
-
-</details>
-
----
-
-### Taskbar Music Lounge (Optional)
-Optional feature to add a native music player widget to the taskbar. Replaces the taskbar widgets pane.  
-
->[!NOTE]
-> Version 4 or higher of the Taskbar Music Lounge mod for Windhawk to enable all features.  
-
-<img src="Taskbar-Music-Lounge-Preview.png" width="100%" height="auto" />
-
-
-## Centered Taskbar
-
-* Disable Widgets in your system Taskbar settings and set your Taskbar alignment to Center.
-* Open the Taskbar Music Lounge mod in Windhawk.
-* Go to the "Settings" tab.
-* Select the theme and save the settings.
-
-<details>
-<summary>Content to import (click to expand)</summary>
-
-```json
-{
-  "PanelWidth": 300,
-  "PanelHeight": 38,
-  "FontSize": 14,
-  "ButtonScale": 1,
-  "HideFullscreen": 1,
-  "IdleTimeout": 0,
-  "OffsetX": 302,
-  "OffsetY": 0,
-  "AutoTheme": 1,
-  "TextColor": 16777215,
-  "BgOpacity": 0
-}
-```
-
-</details>
-
-## Centered High DPI Taskbar
-
-* Disable Widgets in your system Taskbar settings and set your Taskbar alignment to Center.
-* Open the Taskbar Music Lounge mod in Windhawk.
-* Go to the "Settings" tab.
-* Select the theme and save the settings.
-
-<details>
-<summary>Content to import (click to expand)</summary>
-
-```json
-{
-  "PanelWidth": 300,
-  "PanelHeight": 48,
-  "FontSize": 14,
-  "ButtonScale": 1,
-  "HideFullscreen": 1,
-  "IdleTimeout": 0,
-  "OffsetX": 138,
-  "OffsetY": 0,
-  "AutoTheme": 1,
-  "TextColor": 16777215,
-  "BgOpacity": 0
-}
-```
-
-</details>
-
-
-## Full Width Taskbar
-
-* Disable Widgets in your system Taskbar settings and set your Taskbar alignment to Center.
-* Open the Taskbar Music Lounge mod in Windhawk.
-* Go to the "Settings" tab.
-* Select the theme and save the settings.
-
-<details>
-<summary>Content to import (click to expand)</summary>
-
-```json
-{
-  "PanelWidth": 300,
-  "PanelHeight": 38,
-  "FontSize": 14,
-  "ButtonScale": 1,
-  "HideFullscreen": 1,
-  "IdleTimeout": 0,
-  "OffsetX": 5,
-  "OffsetY": 0,
-  "AutoTheme": 1,
-  "TextColor": 16777215,
-  "BgOpacity": 0
-}
-```
-
-</details>
 
 
