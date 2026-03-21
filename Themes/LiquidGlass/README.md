@@ -1,19 +1,6 @@
 # Liquid Glass
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
 
-### Requirements
-
-* **Windhawk Mods**:
-  * [Windows 11 Taskbar Styler](https://windhawk.net/mods/windows-11-taskbar-styler)
-  * [Taskbar tray system icon tweaks](https://windhawk.net/mods/taskbar-tray-system-icon-tweaks) *(Optional)*
-  * [Taskbar Clock Customization](https://windhawk.net/mods/taskbar-clock-customization) *(Optional)*
-  * [Taskbar Music Lounge](https://github.com/Hashah2311/windhawk-mods/blob/main/mods/taskbar-music-lounge.wh.cpp) *(Optional)*
-
----
-
-
-# LiquidGlass
-
 <img src="Preview.png" width="100%" height="auto" />
 
 ## Theme selection
@@ -224,81 +211,3 @@ The theme styles can also be imported manually. To do that, follow these steps:
 ```
 
 </details>
-
----
-
-# Taskbar Clock Customization (Optional)
-
-* Open the Taskbar Clock Customization mod in Windhawk.
-* Go to the "Settings" tab.
-* Select the theme and save the settings.
-
-<details>
-<summary>Content to import (click to expand)</summary>
-
-```json
-{
-"ShowSeconds": 0,
-"TimeFormat": "hh':'mm tt",
-"DateFormat": "MMM dd",
-"WeekdayFormat": "dddd",
-"WeekdayFormatCustom": "Sun, Mon, Tue, Wed, Thu, Fri, Sat",
-"TopLine": "📅 %date% 🕒 %time%",
-"BottomLine": "%web1%",
-"MiddleLine": "%weekday%",
-"TooltipLine": "%web1_full%%n%%n%%media_status% %media_artist% - %media_title%",
-"TooltipLineMode": "append",
-"Width": 180,
-"Height": 60,
-"MaxWidth": 0,
-"TextSpacing": 0,
-"DataCollection.NetworkMetricsFormat": "mbsDynamic",
-"DataCollection.NetworkMetricsFixedDecimals": -1,
-"DataCollection.PercentageFormat": "spacePaddingAndSymbol",
-"DataCollection.UpdateInterval": 1,
-"DataCollection.NetworkAdapterName": "",
-"DataCollection.GpuAdapterName": "",
-"MediaPlayer.IgnoredPlayers[0]": "",
-"MediaPlayer.MaxLength": 28,
-"MediaPlayer.NoMediaText": "No media",
-"MediaPlayer.RemoveBrackets": 1,
-"WebContentWeatherLocation": "",
-"WebContentWeatherFormat": "%c 🌡️%t 🌬️%w",
-"WebContentWeatherUnits": "autoDetect",
-"WebContentsItems[0].Url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-"WebContentsItems[0].BlockStart": "<item>",
-"WebContentsItems[0].Start": "<title>",
-"WebContentsItems[0].End": "</title>",
-"WebContentsItems[0].ContentMode": "xmlHtml",
-"WebContentsItems[0].SearchReplace[0].Search": "",
-"WebContentsItems[0].SearchReplace[0].Replace": "",
-"WebContentsItems[0].MaxLength": 28,
-"WebContentsUpdateInterval": 10,
-"TimeZones[0]": "",
-"TimeStyle.Hidden": 0,
-"TimeStyle.TextColor": "",
-"TimeStyle.TextAlignment": "Center",
-"TimeStyle.FontSize": 0,
-"TimeStyle.FontFamily": "",
-"TimeStyle.FontWeight": "",
-"TimeStyle.FontStyle": "",
-"TimeStyle.FontStretch": "",
-"TimeStyle.CharacterSpacing": 0,
-"DateStyle.Hidden": 0,
-"DateStyle.TextColor": "",
-"DateStyle.TextAlignment": "Center",
-"DateStyle.FontSize": 0,
-"DateStyle.FontFamily": "",
-"DateStyle.FontWeight": "",
-"DateStyle.FontStyle": "",
-"DateStyle.FontStretch": "",
-"DateStyle.CharacterSpacing": 0,
-"oldTaskbarOnWin11": 0
-}
-```
-
-</details>
-
-
-
-
