@@ -14,7 +14,7 @@
 
 # LiquidGlass
 
-<img src="Default-Preview.png" width="100%" height="auto" />
+<img src="Preview.png" width="100%" height="auto" />
 
 ## Theme selection
 
