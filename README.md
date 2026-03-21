@@ -136,7 +136,7 @@ Taskbar Styler mod. The following themes are available:
 | [Oversimplified&Accentuated](Themes/Oversimplified&Accentuated/README.md) | [![Oversimplified&Accentuated](Themes/Oversimplified&Accentuated/screenshot.png)](Themes/Oversimplified&Accentuated/screenshot.png)
 | [Luminosity](Themes/Luminosity/README.md) | [![Luminosity](Themes/Luminosity/screenshot.png)](Themes/Luminosity/screenshot.png)
 | [LayerMicaUI](Themes/LayerMicaUI/README.md) | [![LayerMicaUI](Themes/LayerMicaUI/screenshot.png)](Themes/LayerMicaUI/screenshot.png)
-| [Liquid Glass](Themes/LiquidGlass/README.md) | [![Liquid Glass](Themes/LiquidGlass/Default-Preview.png)](Themes/LiquidGlass/Default-Preview.png)
+| [Liquid Glass](Themes/LiquidGlass/README.md) | [![Liquid Glass](Themes/LiquidGlass/Preview.png)](Themes/LiquidGlass/Preview.png)
 | [Fluid](Themes/Fluid/README.md) | [![Fluid](Themes/Fluid/screenshot.png)](Themes/Fluid/screenshot.png)
 | [TintedGlass](Themes/TintedGlass/README.md) | [![TintedGlass](Themes/TintedGlass/screenshot.png)](Themes/TintedGlass/screenshot.png)
 | [TaskbarToStatusbar](Themes/TaskbarToStatusbar/README.md) | [![TaskbarToStatusbar](Themes/TaskbarToStatusbar/screenshot.png)](Themes/TaskbarToStatusbar/screenshot.png)
