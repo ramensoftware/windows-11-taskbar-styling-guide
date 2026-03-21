@@ -29,8 +29,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
   "controlStyles[0].styles[0]": "CornerRadius=$CornerRadius",
   "controlStyles[0].styles[1]": "HorizontalAlignment=Stretch",
-  "controlStyles[0].styles[2]": "CornerRadius=$CornerRadius",
-  "controlStyles[0].styles[3]": "Margin=3",
   "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "BorderThickness=$BorderThickness",
   "controlStyles[1].styles[1]": "BorderBrush:=$BorderBrush",
