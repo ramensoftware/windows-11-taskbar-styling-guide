@@ -14,7 +14,8 @@ The theme styles can be imported manually. To do that, follow these steps:
 - Go to the "Advanced" tab.
 - Copy the content below to the text box under "Mod settings" and click "Save".
 
-Content to import :
+<details>
+<summary>Content to import (click to expand)</summary>
 ```json
 {
 "controlStyles[0].target":"ScrollViewer > ScrollContentPresenter > Border > Grid",
@@ -63,3 +64,4 @@ Content to import :
   "controlStyles[15].styles[1]":"BorderThickness:="
 }
 ```
+  </details>
