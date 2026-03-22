@@ -1,7 +1,7 @@
 # Borderless Dock/Taskbar for Windhawk
 Taskbar Dock-Like Theme with removal of shadows from Hover Flyouts, Tray Flyout, Volume/Brightness Flyouts and Taskbar Overflow.
 
-<img width="1919" height="93" alt="image" src="https://github.com/user-attachments/assets/96ed45a2-7551-4bd4-a689-cd3995fd9093" />
+<img width="1919" height="93" alt="image" src="https://github.com/user-attachments/assets/aeb65e4d-66a5-465f-b063-97218e86d86e" />
 
 ## Important Note :
 The Theme Might Look Weird on Default Taskbar Height, to Solve this, install the "Taskbar Height and Icon Size" Mod and Set The Taskbar Height to a Minimum of 60.
