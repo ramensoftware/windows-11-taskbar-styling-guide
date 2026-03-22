@@ -15,7 +15,7 @@ The theme styles can be imported manually. To do that, follow these steps:
 - Copy the content below to the text box under "Mod settings" and click "Save".
 
 Content to import :
-```
+```json
 {
 "controlStyles[0].target":"ScrollViewer > ScrollContentPresenter > Border > Grid",
   "controlStyles[0].styles[0]":"ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width=\"*\"/><ColumnDefinition Width=\"Auto\"/><ColumnDefinition Width=\"Auto\"/><ColumnDefinition Width=\"*\"/></ColumnDefinitionCollection>",
