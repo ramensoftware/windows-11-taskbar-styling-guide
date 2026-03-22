@@ -6,7 +6,7 @@ Taskbar Dock-Like Theme with removal of shadows from Hover Flyouts, Tray Flyout,
 ## Important Note :
 The Theme Might Look Weird on Default Taskbar Height, to Solve this, install the "Taskbar Height and Icon Size" Mod and Set The Taskbar Height to a Minimum of 60.
 
-<img width="1919" height="80" alt="image" src="https://github.com/user-attachments/assets/42794ba9-03b4-4f7b-b6c4-8ac8d97028b1" />
+<img width="1919" height="80" alt="image" src="https://github.com/user-attachments/assets/3c5448f0-00ea-4a53-828c-b1d7a11a14ec" />
 
 # Manual Installation :
 The theme styles can be imported manually. To do that, follow these steps:
