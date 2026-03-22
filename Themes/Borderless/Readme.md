@@ -16,6 +16,7 @@ The theme styles can be imported manually. To do that, follow these steps:
 
 <details>
 <summary>Content to import (click to expand)</summary>
+  
 ```json
 {
 "controlStyles[0].target":"ScrollViewer > ScrollContentPresenter > Border > Grid",
