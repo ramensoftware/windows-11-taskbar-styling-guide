@@ -61,7 +61,7 @@ The theme styles can be imported manually. To do that, follow these steps:
 "controlStyles[14].target":"WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid",
   "controlStyles[14].styles[0]":"Margin=400,0,570,0",
   "controlStyles[14].styles[1]":"Shadow:=",
-  "controlStyles[14].styles[2]":"BorderThickness:=",
+  "controlStyles[14].styles[2]":"BorderThickness:="
 }
 ```
   </details>
