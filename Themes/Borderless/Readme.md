@@ -42,7 +42,7 @@ The theme styles can be imported manually. To do that, follow these steps:
 "controlStyles[6].target":"Grid#ConfirmatorMainGrid",
   "controlStyles[6].styles[0]":"Shadow:=",
   "controlStyles[6].styles[1]":"BorderThickness:=",
-"controlStyles[7].target":"Border#OverflowFlyoutBackgroundBorder",
+"controlStyles[7].target":"Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid",
   "controlStyles[7].styles[0]":"Shadow:=",
   "controlStyles[7].styles[1]":"BorderThickness:=",
 "controlStyles[8].target":"Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.FontIcon#FontIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock",
@@ -62,9 +62,6 @@ The theme styles can be imported manually. To do that, follow these steps:
   "controlStyles[14].styles[0]":"Margin=400,0,570,0",
   "controlStyles[14].styles[1]":"Shadow:=",
   "controlStyles[14].styles[2]":"BorderThickness:=",
-"controlStyles[15].target":"Windows.UI.Xaml.Controls.ContentPresenter",
-  "controlStyles[15].styles[0]":"Shadow:=",
-  "controlStyles[15].styles[1]":"BorderThickness:="
 }
 ```
   </details>
