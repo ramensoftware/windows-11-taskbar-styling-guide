@@ -39,7 +39,7 @@ The theme styles can be imported manually. To do that, follow these steps:
   "controlStyles[4].styles[0]":"Visibility=Collapsed",
 "controlStyles[5].target":"Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater",
   "controlStyles[5].styles[0]":"Margin=0,6,0,6",
-"controlStyles[6].target":"Grid#ConfirmatorMainGrid",
+"controlStyles[6].target":"Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
   "controlStyles[6].styles[0]":"Shadow:=",
   "controlStyles[6].styles[1]":"BorderThickness:=",
 "controlStyles[7].target":"Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid",
