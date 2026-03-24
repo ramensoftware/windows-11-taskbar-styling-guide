@@ -6,12 +6,6 @@ A taskbar theme designed to match [the Fluid Start Menu theme](https://github.co
 
 ![Demonstration](screenshot.png)
 
-> [!NOTE]
-> To use with Light mode, change the `BorderBrush` styleConstant to:
-> ```ini
-> BorderBrush=<LinearGradientBrush x:Key="ShellTaskbarItemGradientStrokeColorSecondaryBrush" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,3"><LinearGradientBrush.RelativeTransform><ScaleTransform ScaleY="-1" CenterY="0.5" /></LinearGradientBrush.RelativeTransform><LinearGradientBrush.GradientStops><GradientStop Offset="0.33" Color="#0F000000" /><GradientStop Offset="1" Color="#05000000" /></LinearGradientBrush.GradientStops></LinearGradientBrush>
-> ```
-
 ## Taskbar Clock Customization (Optional)
 
 The get the clock to show up like it does in the screenshot, follow these steps:
@@ -196,11 +190,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[15].styles[0]": "Visibility=1",
   "controlStyles[16].target": "SystemTray.CopilotIcon#CopilotIcon > Grid#ContainerGrid > Border#BackgroundBorder",
   "controlStyles[16].styles[0]": "Visibility=1",
-  "styleConstants[0]": "BorderBrush=<LinearGradientBrush x:Key=\"ShellTaskbarItemGradientStrokeColorSecondaryBrush\" MappingMode=\"Absolute\" StartPoint=\"0,0\" EndPoint=\"0,3\"><LinearGradientBrush.GradientStops><GradientStop Offset=\"0.33\" Color=\"#1AFFFFFF\" /><GradientStop Offset=\"1\" Color=\"#0FFFFFFF\" /></LinearGradientBrush.GradientStops></LinearGradientBrush>",
+  "styleConstants[0]": "BorderBrush=<LinearGradientBrush x:Key=\"ShellTaskbarItemGradientStrokeColorSecondaryBrush\" MappingMode=\"Absolute\" StartPoint=\"0,0\" EndPoint=\"0,3\"><LinearGradientBrush.GradientStops><GradientStop Offset=\"0.33\" Color=\"{ThemeResource ControlFillColorSecondary}\" /><GradientStop Offset=\"1\" Color=\"{ThemeResource ControlFillColorTertiary}\" /></LinearGradientBrush.GradientStops></LinearGradientBrush>",
   "styleConstants[1]": "NormalBG=<SolidColorBrush Color=\"{ThemeResource ControlFillColorDefault}\" />",
   "styleConstants[2]": "HoverBG=<SolidColorBrush Color=\"{ThemeResource ControlFillColorSecondary}\" />",
   "styleConstants[3]": "PressedBG=<SolidColorBrush Color=\"{ThemeResource ControlFillColorTertiary}\" />",
-  "styleConstants[4]": "BorderThickness=2",
+  "styleConstants[4]": "BorderThickness=1",
   "styleConstants[5]": "CornerRadius=4",
   "resourceVariables[0].variableKey": "",
   "resourceVariables[0].value": "",
