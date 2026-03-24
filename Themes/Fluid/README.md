@@ -101,7 +101,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-  "theme": "",
   "controlStyles[0].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid",
   "controlStyles[0].styles[0]": "Background:=$NormalBG",
   "controlStyles[0].styles[1]": "CornerRadius=$CornerRadius",
@@ -196,8 +195,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[3]": "PressedBG=<SolidColorBrush Color=\"{ThemeResource ControlFillColorTertiary}\" />",
   "styleConstants[4]": "BorderThickness=1",
   "styleConstants[5]": "CornerRadius=4",
-  "resourceVariables[0].variableKey": "",
-  "resourceVariables[0].value": "",
   "controlStyles[13].styles[5]": "CornerRadius=$CornerRadius",
   "controlStyles[13].styles[6]": "Margin=2",
   "controlStyles[14].styles[14]": "Margin=2"
