@@ -25,7 +25,7 @@ The theme styles can be imported manually. To do that, follow these steps:
 "controlStyles[1].target":"Taskbar.TaskbarFrame#TaskbarFrame",
   "controlStyles[1].styles[0]":"Grid.Column=1",
   "controlStyles[1].styles[1]":"Width=800",
-  "controlStyles[1].styles[2]":"Margin=0,0,$IslandHorizontalMargin,0",
+  "controlStyles[1].styles[2]":"Margin=0",
   "controlStyles[1].styles[3]":"MaxWidth=800",
 "controlStyles[2].target":"SystemTray.SystemTrayFrame",
   "controlStyles[2].styles[0]":"Grid.Column=1",
