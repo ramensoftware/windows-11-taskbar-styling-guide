@@ -9,6 +9,14 @@ The theme might look different with the default taskbar height. To solve this, i
 
 ![Screenshot with default height](screenshot-default-height.png)
 
+## Customization
+
+To apply the customizations below, set the corresponding style constants in the mod settings under "Style constants".
+
+### Taskbar frame width
+
+By default, the taskbar frame is set to 800px. Set `TaskbarFrameWidth` to adjust the width. For example, use `TaskbarFrameWidth=1000` for a wider 1000px taskbar.
+
 ## Theme selection
 
 The theme is integrated into the mod and can be selected directly from the mod's
@@ -36,9 +44,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[0].styles[1]":"HorizontalAlignment=Stretch",
 "controlStyles[1].target":"Taskbar.TaskbarFrame#TaskbarFrame",
   "controlStyles[1].styles[0]":"Grid.Column=1",
-  "controlStyles[1].styles[1]":"Width=800",
+  "controlStyles[1].styles[1]":"Width=$TaskbarFrameWidth",
   "controlStyles[1].styles[2]":"Margin=0",
-  "controlStyles[1].styles[3]":"MaxWidth=800",
+  "controlStyles[1].styles[3]":"MaxWidth=$TaskbarFrameWidth",
 "controlStyles[2].target":"SystemTray.SystemTrayFrame",
   "controlStyles[2].styles[0]":"Grid.Column=1",
   "controlStyles[2].styles[1]":"Width=Auto",
@@ -76,7 +84,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[14].styles[1]":"Shadow:=",
   "controlStyles[14].styles[2]":"BorderThickness:=",
 "controlStyles[15].target":"Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
-  "controlStyles[15].styles[0]":"Shadow:="
+  "controlStyles[15].styles[0]":"Shadow:=",
+"styleConstants[0]":"TaskbarFrameWidth=800"
 }
 ```
 </details>
