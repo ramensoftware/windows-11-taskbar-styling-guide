@@ -2,6 +2,8 @@
 
 Taskbar dock-like theme with removal of shadows from hover flyouts, tray flyout, volume/brightness flyouts, and taskbar overflow.
 
+**Author**: [Ali Cool](https://github.com/AliCool412)
+
 ![Screenshot](screenshot.png)
 
 ## Important note
