@@ -474,7 +474,7 @@ This theme also has a Full-Length variant, which stretches to the corners of the
 ```json
 {
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
-  "controlStyles[0].styles[0]": "MaxWidth:=1895",
+  "controlStyles[0].styles[0]": "//MaxWidth:=1895",
   "controlStyles[0].styles[1]": "Width=Auto",
   "controlStyles[0].styles[2]": "MinWidth:=100",
   "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
