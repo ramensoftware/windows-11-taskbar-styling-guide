@@ -23,7 +23,7 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
 ```
 </details>
 
-The music widget seen on the taskbar is **not** part of the theme. It is from another project called [Fluent Flyouts] (https://github.com/unchihugo/FluentFlyout)
+The music widget seen on the taskbar is **not** part of the theme. It is from another project called [Fluent Flyouts](https://github.com/unchihugo/FluentFlyout).
 
 ## Bonus
 This theme also styles additional parts of Windows 11, including:
@@ -43,7 +43,10 @@ This theme also styles additional parts of Windows 11, including:
 - Designed for Windows 11 24H2.
 - Compatible with both light and dark modes.
 
-## For a complete WindowGlass-themed UI, download the following mods and use the 'WindowGlass' theme:
+## Complete WindowGlass-themed UI
+
+For a complete WindowGlass-themed UI, download the following mods and use the 'WindowGlass' theme:
+
 - Windows 11 Start Menu Styler - for styling the Start menu.
 - Windows 11 Notification Center Styler - for styling the Notification Center and Action Center.
 - Windows 11 File Explorer Styler - for styling Windows Explorer windows.
@@ -263,9 +266,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
 ```
 </details>
 
-**Alternate (Split) Version**
-This theme consists of an alternate, split version, with a speperated taskbar and system tray
-![Split Version](screenshot_split.png)
+### Split variant
+This theme includes an alternate split variant with a separated taskbar and system tray.
+
+![Split variant](screenshot_split.png)
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -464,9 +468,11 @@ This theme consists of an alternate, split version, with a speperated taskbar an
 
 </details>
 
-- **Full- Length version**
-This theme also has a Full- Length variant, which stretches to the corners of the screen.
-  ![Full- Length](screenshot_full.png)
+### Full-Length variant
+
+This theme also has a Full-Length variant, which stretches to the corners of the screen.
+
+![Full-Length variant](screenshot_full.png)
 
 <details>
 <summary>Content to import (click to expand)</summary>
