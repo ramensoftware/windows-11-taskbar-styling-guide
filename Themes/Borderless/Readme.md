@@ -1,22 +1,34 @@
-# Borderless Dock/Taskbar for Windhawk
-Taskbar Dock-Like Theme with removal of shadows from Hover Flyouts, Tray Flyout, Volume/Brightness Flyouts and Taskbar Overflow.
+# Borderless theme for Windows 11 Taskbar Styler
 
-<img width="1920" height="94" alt="image" src="https://github.com/user-attachments/assets/98fbe7a9-09af-45c9-948c-152474f68498" />
+Taskbar dock-like theme with removal of shadows from hover flyouts, tray flyout, volume/brightness flyouts, and taskbar overflow.
 
-## Important Note :
-The Theme Might Look different on Default Taskbar Height, to Solve this, install the "Taskbar Height and Icon Size" Mod and Set The Taskbar Height to a Minimum of 56 (as opposed to the default height being 48).
+![Screenshot](screenshot.png)
 
-<img width="1920" height="94" alt="image" src="https://github.com/user-attachments/assets/a13e7e0a-6ade-4068-9335-6d05f7dc9ab2" />
+## Important note
+The theme might look different with the default taskbar height. To solve this, install the "Taskbar height and icon size" mod and set the taskbar height to a minimum of 56 (as opposed to the default height being 48).
 
-# Manual Installation :
-The theme styles can be imported manually. To do that, follow these steps:
-- Open the Windows 11 Taskbar Styler mod in Windhawk.
-- Go to the "Advanced" tab.
-- Copy the content below to the text box under "Mod settings" and click "Save".
+![Screenshot with default height](screenshot-default-height.png)
+
+## Theme selection
+
+The theme is integrated into the mod and can be selected directly from the mod's
+settings:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
+
+## Manual installation
+
+The theme styles can also be imported manually. To do that, follow these steps:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Advanced" tab.
+* Copy the content below to the text box under "Mod settings" and click "Save".
 
 <details>
 <summary>Content to import (click to expand)</summary>
-  
+
 ```json
 {
 "controlStyles[0].target":"ScrollViewer > ScrollContentPresenter > Border > Grid",
@@ -67,4 +79,4 @@ The theme styles can be imported manually. To do that, follow these steps:
   "controlStyles[15].styles[0]":"Shadow:="
 }
 ```
-  </details>
+</details>
