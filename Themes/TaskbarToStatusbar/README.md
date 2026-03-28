@@ -31,7 +31,12 @@ This theme turns the taskbar into a true single-line statusbar. Get an experienc
 
 ## Theme selection
 
-The theme is not integrated into the mod, please see manual installation below.
+The theme is integrated into the mod and can be selected directly from the mod's
+settings:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
 
 ## Manual installation
 
