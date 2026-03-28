@@ -17,21 +17,19 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
 - The taskbar frame maximum width is limited to 1895px by default. To adjust this, set `TaskbarFrameMaxWidth` to your preferred value in the "Style constants" section of the mod's settings. For example: `TaskbarFrameMaxWidth=800` will cap the taskbar frame at 800px.
 - In order to make the taskbar look better, it's best that you install the 'Taskbar height and icon size' mod and use the following settings for the mod:
 
-<details>
-<summary>Click to expand JSON content</summary>
+  <details>
+  <summary>Click to expand JSON content</summary>
 
-```json
-{
-  "IconSize": 30,
-  "TaskbarHeight": 70,
-  "TaskbarButtonWidth": 44,
-  "IconSizeSmall": 20,
-  "TaskbarButtonWidthSmall": 30
-}
-```
-</details>
-
-The music widget seen on the taskbar is **not** part of the theme. It is from another project called [Fluent Flyouts](https://github.com/unchihugo/FluentFlyout).
+  ```json
+  {
+    "IconSize": 30,
+    "TaskbarHeight": 70,
+    "TaskbarButtonWidth": 44,
+    "IconSizeSmall": 20,
+    "TaskbarButtonWidthSmall": 30
+  }
+  ```
+  </details>
 
 ## Bonus
 This theme also styles additional parts of Windows 11, including:
@@ -473,7 +471,6 @@ This theme includes an alternate split variant with a separated taskbar and syst
   "styleConstants[19]": "TaskbarFrameMaxWidth=1895"
 }
 ```
-
 </details>
 
 ### Full-Length variant
