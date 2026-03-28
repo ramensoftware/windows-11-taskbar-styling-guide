@@ -14,6 +14,7 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
   - Acrylic
 
   In order to switch between these backgrounds, set the value `Background=$Translucent`, `Background=$Glass`, `Background=$Frosted` or `Background=$Acrylic` in the "Style constants" section of the mod's settings.
+- The taskbar frame maximum width is limited to 1895px by default. To adjust this, set `TaskbarFrameMaxWidth` to your preferred value in the "Style constants" section of the mod's settings. For example: `TaskbarFrameMaxWidth=800` will cap the taskbar frame at 800px.
 - In order to make the taskbar look better, it's best that you install the 'Taskbar height and icon size' mod and use the following settings for the mod:
 
 <details>
@@ -83,7 +84,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 ```json
 {
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
-  "controlStyles[0].styles[0]": "MaxWidth:=1895",
+  "controlStyles[0].styles[0]": "MaxWidth:=$TaskbarFrameMaxWidth",
   "controlStyles[0].styles[1]": "Width=Auto",
   "controlStyles[0].styles[2]": "MinWidth:=100",
   "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
@@ -248,7 +249,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[44].target": "Taskbar.TaskbarFrame",
   "controlStyles[44].styles[0]": "Grid.Column=1",
   "controlStyles[44].styles[1]": "Width=Auto",
-  "controlStyles[44].styles[2]": "MaxWidth=1895",
+  "controlStyles[44].styles[2]": "MaxWidth=$TaskbarFrameMaxWidth",
   "styleConstants[0]": "Translucent=<WindhawkBlur BlurAmount=\"15\" TintColor=\"#10808080\"/>",
   "styleConstants[1]": "Glass=<WindhawkBlur BlurAmount=\"5\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
   "styleConstants[2]": "Frosted=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
@@ -267,7 +268,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[15]": "BorderThickness=0.5,1,0.5,1",
   "styleConstants[16]": "CornerRadius=25",
   "styleConstants[17]": "TrayPadding=2,4,2,4",
-  "styleConstants[18]": "Height=70"
+  "styleConstants[18]": "Height=70",
+  "styleConstants[19]": "TaskbarFrameMaxWidth=1895"
 }
 ```
 </details>
@@ -283,7 +285,7 @@ This theme includes an alternate split variant with a separated taskbar and syst
 ```json
 {
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
-  "controlStyles[0].styles[0]": "MaxWidth:=1895",
+  "controlStyles[0].styles[0]": "MaxWidth:=$TaskbarFrameMaxWidth",
   "controlStyles[0].styles[1]": "Width=Auto",
   "controlStyles[0].styles[2]": "MinWidth:=100",
   "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
@@ -448,7 +450,7 @@ This theme includes an alternate split variant with a separated taskbar and syst
   "controlStyles[44].target": "Taskbar.TaskbarFrame",
   "controlStyles[44].styles[0]": "Grid.Column=1",
   "controlStyles[44].styles[1]": "Width=Auto",
-  "controlStyles[44].styles[2]": "MaxWidth=1895",
+  "controlStyles[44].styles[2]": "MaxWidth=$TaskbarFrameMaxWidth",
   "styleConstants[0]": "Translucent=<WindhawkBlur BlurAmount=\"15\" TintColor=\"#10808080\"/>",
   "styleConstants[1]": "Glass=<WindhawkBlur BlurAmount=\"5\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
   "styleConstants[2]": "Frosted=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
@@ -467,7 +469,8 @@ This theme includes an alternate split variant with a separated taskbar and syst
   "styleConstants[15]": "BorderThickness=0.5,1,0.5,1",
   "styleConstants[16]": "CornerRadius=25",
   "styleConstants[17]": "TrayPadding=2,4,2,4",
-  "styleConstants[18]": "Height=70"
+  "styleConstants[18]": "Height=70",
+  "styleConstants[19]": "TaskbarFrameMaxWidth=1895"
 }
 ```
 
