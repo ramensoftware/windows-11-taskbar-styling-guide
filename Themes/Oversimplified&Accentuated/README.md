@@ -12,7 +12,7 @@ A cleaner, more refined Windows taskbar theme that removes unnecessary elements 
 - Improved transparency effects
 - Takes fallback colors (colors in battery mode) into consideration
 
-**Author:** [OsamaJT](https://github.com/OsamaHJT)
+**Author**: [OsamaJT](https://github.com/OsamaHJT)
 
 ![Screenshot](Taskbar.png)
 
