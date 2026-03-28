@@ -75,7 +75,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-  "theme": "",
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
   "controlStyles[0].styles[0]": "MaxWidth:=1895",
   "controlStyles[0].styles[1]": "Width=Auto",
@@ -259,9 +258,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[13]": "BorderThickness=0.5,1,0.5,1",
   "styleConstants[14]": "CornerRadius=25",
   "styleConstants[15]": "TrayPadding=2,4,2,4",
-  "styleConstants[16]": "Height=70",
-  "resourceVariables[0].variableKey": "",
-  "resourceVariables[0].value": ""
+  "styleConstants[16]": "Height=70"
 }
 ```
 </details>
@@ -276,7 +273,6 @@ This theme includes an alternate split variant with a separated taskbar and syst
 
 ```json
 {
-  "theme": "",
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
   "controlStyles[0].styles[0]": "MaxWidth:=1895",
   "controlStyles[0].styles[1]": "Width=Auto",
@@ -460,9 +456,7 @@ This theme includes an alternate split variant with a separated taskbar and syst
   "styleConstants[13]": "BorderThickness=0.5,1,0.5,1",
   "styleConstants[14]": "CornerRadius=25",
   "styleConstants[15]": "TrayPadding=2,4,2,4",
-  "styleConstants[16]": "Height=70",
-  "resourceVariables[0].variableKey": "",
-  "resourceVariables[0].value": ""
+  "styleConstants[16]": "Height=70"
 }
 ```
 
@@ -479,7 +473,6 @@ This theme also has a Full-Length variant, which stretches to the corners of the
 
 ```json
 {
-  "theme": "",
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
   "controlStyles[0].styles[0]": "MaxWidth:=1895",
   "controlStyles[0].styles[1]": "Width=Auto",
@@ -659,9 +652,7 @@ This theme also has a Full-Length variant, which stretches to the corners of the
   "styleConstants[13]": "BorderThickness=0.5,1,0.5,1",
   "styleConstants[14]": "CornerRadius=20",
   "styleConstants[15]": "TrayPadding=2,4,2,4",
-  "styleConstants[16]": "Height=70",
-  "resourceVariables[0].variableKey": "",
-  "resourceVariables[0].value": ""
+  "styleConstants[16]": "Height=70"
 }
 ```
 </details>
