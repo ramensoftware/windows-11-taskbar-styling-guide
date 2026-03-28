@@ -36,6 +36,26 @@ If you are using "MyDockFinder", you can hide the system tray with this style:
 Target: `Grid#SystemTrayFrameGrid`
 Style: `Visibility=Collapsed`
 
+## Customization
+
+To apply the customizations below, set the corresponding style constants in the mod settings under "Style constants".
+
+### Task item background
+
+The background and border of pinned and running task items. Set `TaskItemBackground` and `TaskItemBorder` to change them. Example values:
+* `TaskItemBackground=#E6202020` → Dark gray, mostly opaque
+* `TaskItemBackground=#B31A1A2E` → Dark navy, 70% opacity
+* `TaskItemBorder=#33000000`    → Subtle dark border
+* `TaskItemBorder=#40FFFFFF`    → Subtle light border
+
+### System item background
+
+The background and border of system items such as the Start button and Task View button. Set `SystemItemBackground` and `SystemItemBorder` to change them. Example values:
+* `SystemItemBackground=#CC202020` → Dark gray, 80% opacity
+* `SystemItemBackground=#B31A1A2E` → Dark navy, 70% opacity
+* `SystemItemBorder=#33000000`     → Subtle dark border
+* `SystemItemBorder=#40FFFFFF`     → Subtle light border
+
 ## Theme selection
 
 The theme is integrated into the mod and can be selected directly from the mod's
@@ -84,21 +104,25 @@ The theme styles can also be imported manually. To do that, follow these steps:
     "controlStyles[5].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
     "controlStyles[5].styles[0]": "Fill:=<WindhawkBlur BlurAmount=\"5\" TintColor=\"#12FFFFFF\"/>",
     "controlStyles[6].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement",
-    "controlStyles[6].styles[0]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.9\" FallbackColor=\"{ThemeResource SystemChromeMediumColor}\" />",
+    "controlStyles[6].styles[0]": "Background:=$TaskItemBackground",
     "controlStyles[6].styles[1]": "Margin=-1,5.5,1,4",
     "controlStyles[6].styles[2]": "CornerRadius=12",
     "controlStyles[6].styles[3]": "BorderThickness=2,1,0.5,2",
-    "controlStyles[6].styles[4]": "BorderBrush:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0.5,1\"><GradientStop Color=\"#00000000\" Offset=\"0\" /><GradientStop Color=\"#33000000\" Offset=\"1.5\" /></LinearGradientBrush>",
+    "controlStyles[6].styles[4]": "BorderBrush:=$TaskItemBorder",
     "controlStyles[7].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement",
-    "controlStyles[7].styles[0]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.8\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
+    "controlStyles[7].styles[0]": "Background:=$SystemItemBackground",
     "controlStyles[7].styles[1]": "CornerRadius=12",
     "controlStyles[7].styles[2]": "Margin=-1,5.5,2.5,4",
     "controlStyles[7].styles[3]": "BorderThickness=2,1,0.5,2",
-    "controlStyles[7].styles[4]": "BorderBrush:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0.5,1\"><GradientStop Color=\"#00000000\" Offset=\"0\" /><GradientStop Color=\"#33000000\" Offset=\"1.5\" /></LinearGradientBrush>",
+    "controlStyles[7].styles[4]": "BorderBrush:=$SystemItemBorder",
     "controlStyles[8].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator",
     "controlStyles[8].styles[0]": "Margin=0,0,0,8",
     "controlStyles[9].target": "Border#MultiWindowElement",
-    "controlStyles[9].styles[0]": "Height=0"
+    "controlStyles[9].styles[0]": "Height=0",
+    "styleConstants[0]": "TaskItemBackground=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.9\" FallbackColor=\"{ThemeResource SystemChromeMediumColor}\" />",
+    "styleConstants[1]": "TaskItemBorder=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0.5,1\"><GradientStop Color=\"#00000000\" Offset=\"0\" /><GradientStop Color=\"#33000000\" Offset=\"1.5\" /></LinearGradientBrush>",
+    "styleConstants[2]": "SystemItemBackground=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.8\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
+    "styleConstants[3]": "SystemItemBorder=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0.5,1\"><GradientStop Color=\"#00000000\" Offset=\"0\" /><GradientStop Color=\"#33000000\" Offset=\"1.5\" /></LinearGradientBrush>"
 }
 ```
 </details>
