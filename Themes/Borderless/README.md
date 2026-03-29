@@ -56,7 +56,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[2].styles[3]":"Height=40",
   "controlStyles[2].styles[4]":"VerticalAlignment=Center",
 "controlStyles[3].target":"Taskbar.TaskbarFrame > Windows.UI.Xaml.Controls.Grid#RootGrid > Taskbar.TaskbarBackground#BackgroundControl",
-  "controlStyles[3].styles[0]":"CornerRadius=4",
+  "controlStyles[3].styles[0]":"CornerRadius=6",
   "controlStyles[3].styles[1]":"Margin=0,2,0,2",
 "controlStyles[4].target":"Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
   "controlStyles[4].styles[0]":"Visibility=Collapsed",
