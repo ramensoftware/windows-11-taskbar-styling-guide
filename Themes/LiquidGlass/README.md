@@ -1,7 +1,8 @@
-# Liquid Glass
+# LiquidGlass theme for Windows 11 Taskbar Styler
+
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
 
-<img src="Preview.png" width="100%" height="auto" />
+![Screenshot](screenshot.png)
 
 
 ## Theme selection
@@ -201,7 +202,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 }
 ```
 
-
 </details>
 
 
@@ -211,7 +211,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ## Theme selection
 
-The theme is integrated into the mod and can simply be selected from the mod's
+The theme is integrated into the mod and can be selected directly from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
@@ -231,7 +231,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-  "theme": "",
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
   "controlStyles[0].styles[0]": "CornerRadius=$CornerRadius",
   "controlStyles[0].styles[1]": "MaxWidth=1400",
@@ -400,8 +399,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[3]": "Background=<WindhawkBlur BlurAmount=\"15\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
   "styleConstants[4]": "ElementBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"#202020\" TintOpacity=\"0.2\" />",
   "styleConstants[5]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
-  "resourceVariables[0].variableKey": "",
-  "resourceVariables[0].value": "",
   "styleConstants[6]": "HoverBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeHighColor}\" TintOpacity=\"0.2\" />",
   "styleConstants[7]": "PressedBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
   "styleConstants[8]": "ActiveBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
@@ -412,5 +409,5 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[5].styles[5]": "RenderTransform:=<TranslateTransform X=\"563\" />"
 }
 ```
-
+ 
 </details>
