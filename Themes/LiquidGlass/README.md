@@ -4,6 +4,211 @@
 
 ![Screenshot](screenshot.png)
 
+
+## Theme selection
+
+The theme is integrated into the mod and can simply be selected from the mod's
+settings:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
+
+## Manual installation
+
+The theme styles can also be imported manually. To do that, follow these steps:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Advanced" tab.
+* Copy the content below to the text box under "Mod settings" and click "Save".
+
+<details>
+<summary>Content to import (click to expand)</summary>
+
+```json
+{
+  "theme": "",
+  "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
+  "controlStyles[0].styles[0]": "BorderThickness=$BorderThickness",
+  "controlStyles[0].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[0].styles[2]": "Background:=$Background",
+  "controlStyles[1].target": "Rectangle#BackgroundFill",
+  "controlStyles[1].styles[0]": "Visibility=1",
+  "controlStyles[2].target": "Rectangle#BackgroundStroke",
+  "controlStyles[2].styles[0]": "Visibility=1",
+  "controlStyles[3].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
+  "controlStyles[3].styles[0]": "Margin=-3,0",
+  "controlStyles[4].target": "Grid#SystemTrayFrameGrid",
+  "controlStyles[4].styles[0]": "Background:=$ElementBG",
+  "controlStyles[4].styles[1]": "BorderBrush:=$ElementBorderBrush",
+  "controlStyles[4].styles[2]": "BorderThickness=$ElementBorderThickness",
+  "controlStyles[4].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[4].styles[4]": "Margin=6",
+  "controlStyles[5].target": "SystemTray.ChevronIconView",
+  "controlStyles[5].styles[0]": "CornerRadius=$CornerRadius",
+  "controlStyles[6].target": "SystemTray.NotifyIconView#NotifyItemIcon",
+  "controlStyles[6].styles[0]": "CornerRadius=$CornerRadius",
+  "controlStyles[7].target": "SystemTray.OmniButton",
+  "controlStyles[7].styles[0]": "CornerRadius=$CornerRadius",
+  "controlStyles[8].target": "SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid",
+  "controlStyles[8].styles[0]": "CornerRadius=$CornerRadius",
+  "controlStyles[9].target": "Taskbar.Gripper#GripperControl",
+  "controlStyles[9].styles[0]": "Width=Auto",
+  "controlStyles[9].styles[1]": "MinWidth=24",
+  "controlStyles[9].styles[2]": "HorizontalAlignment=Left",
+  "controlStyles[10].target": "TextBlock#TimeInnerTextBlock",
+  "controlStyles[10].styles[0]": "FontSize=13",
+  "controlStyles[10].styles[1]": "FontFamily=vivo Sans EN VF",
+  "controlStyles[10].styles[2]": "Margin=0",
+  "controlStyles[10].styles[3]": "Padding=0",
+  "controlStyles[10].styles[4]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"0\" />",
+  "controlStyles[11].target": "TextBlock#DateInnerTextBlock",
+  "controlStyles[11].styles[0]": "Visibility=1",
+  "controlStyles[12].target": "TextBlock#InnerTextBlock[Text=]",
+  "controlStyles[12].styles[0]": "Text=",
+  "controlStyles[13].target": "TextBlock#SearchBoxTextBlock",
+  "controlStyles[13].styles[0]": "Text=Search This PC",
+  "controlStyles[13].styles[1]": "FontSize=10",
+  "controlStyles[13].styles[2]": "FontFamily=vivo Sans EN VF",
+  "controlStyles[14].target": "SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent",
+  "controlStyles[14].styles[0]": "Visibility=1",
+  "controlStyles[15].target": "Border#OverflowFlyoutBackgroundBorder",
+  "controlStyles[15].styles[0]": "BorderThickness=$BorderThickness",
+  "controlStyles[15].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[15].styles[2]": "Background:=$Background",
+  "controlStyles[15].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[16].target": "WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border",
+  "controlStyles[16].styles[0]": "BorderThickness=$BorderThickness",
+  "controlStyles[16].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[16].styles[2]": "Background:=$Background",
+  "controlStyles[16].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[17].target": "WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar",
+  "controlStyles[17].styles[0]": "CornerRadius=$CornerRadius",
+  "controlStyles[17].styles[1]": "Background:=$Background",
+  "controlStyles[18].target": "Border#BackgroundDimmingLayer",
+  "controlStyles[18].styles[0]": "Background:=$Background",
+  "controlStyles[18].styles[1]": "CornerRadius=$CornerRadius",
+  "controlStyles[19].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement",
+  "controlStyles[19].styles[0]": "CornerRadius=$CornerRadius",
+  "controlStyles[19].styles[1]": "BorderThickness=$ElementBorderThickness",
+  "controlStyles[20].target": "Taskbar.TaskListButton#TaskListButton",
+  "controlStyles[20].styles[0]": "CornerRadius=$CornerRadius",
+  "controlStyles[20].styles[1]": "BorderThickness=$ElementBorderThickness",
+  "controlStyles[21].target": "Border#SnapBarBorder",
+  "controlStyles[21].styles[0]": "Background:=$Background",
+  "controlStyles[21].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[21].styles[2]": "CornerRadius=$CornerRadius",
+  "controlStyles[21].styles[3]": "BorderThickness=$BorderThickness",
+  "controlStyles[21].styles[4]": "Margin=2",
+  "controlStyles[22].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement",
+  "controlStyles[22].styles[0]": "CornerRadius=$CornerRadius",
+  "controlStyles[22].styles[1]": "BorderThickness=$ElementBorderThickness",
+  "controlStyles[22].styles[2]": "Background@ActiveNormal:=$ActiveBG",
+  "controlStyles[22].styles[3]": "Background@ActivePointerOver:=$HoverBG",
+  "controlStyles[22].styles[4]": "Background@ActivePressed:=$PressedBG",
+  "controlStyles[22].styles[5]": "Background@InactivePointerOver:=$HoverBG",
+  "controlStyles[22].styles[6]": "Background@InactivePressed:=$PressedBG",
+  "controlStyles[22].styles[7]": "BorderBrush@ActiveNormal:=$ElementBorderBrush",
+  "controlStyles[22].styles[8]": "BorderBrush@ActivePointerOver:=$ElementBorderBrush",
+  "controlStyles[22].styles[9]": "BorderBrush@ActivePressed:=$ElementBorderBrush",
+  "controlStyles[22].styles[10]": "BorderBrush@InactivePointerOver:=$ElementBorderBrush",
+  "controlStyles[22].styles[11]": "BorderBrush@InactivePressed:=$ElementBorderBrush",
+  "controlStyles[22].styles[12]": "Margin=1",
+  "controlStyles[23].target": "ContentPresenter#ContentPresenter@CommonStates",
+  "controlStyles[23].styles[0]": "CornerRadius=$CornerRadius",
+  "controlStyles[23].styles[1]": "BorderThickness=$ElementBorderThickness",
+  "controlStyles[23].styles[2]": "Background@ActiveNormal:=$ActiveBG",
+  "controlStyles[23].styles[3]": "Background@ActivePointerOver:=$HoverBG",
+  "controlStyles[23].styles[4]": "Background@ActivePressed:=$PressedBG",
+  "controlStyles[23].styles[5]": "Background@InactivePointerOver:=$HoverBG",
+  "controlStyles[23].styles[6]": "Background@InactivePressed:=$PressedBG",
+  "controlStyles[23].styles[7]": "BorderBrush@ActiveNormal:=$ElementBorderBrush",
+  "controlStyles[23].styles[8]": "BorderBrush@ActivePointerOver:=$ElementBorderBrush",
+  "controlStyles[23].styles[9]": "BorderBrush@ActivePressed:=$ElementBorderBrush",
+  "controlStyles[23].styles[10]": "BorderBrush@InactivePointerOver:=$ElementBorderBrush",
+  "controlStyles[23].styles[11]": "BorderBrush@InactivePressed:=$ElementBorderBrush",
+  "controlStyles[23].styles[12]": "Margin=1",
+  "controlStyles[24].target": "Border#SnapPickerBorder",
+  "controlStyles[24].styles[0]": "Background:=$Background",
+  "controlStyles[24].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[24].styles[2]": "CornerRadius=$CornerRadius",
+  "controlStyles[24].styles[3]": "BorderThickness=$BorderThickness",
+  "controlStyles[24].styles[4]": "Margin=2",
+  "controlStyles[25].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
+  "controlStyles[25].styles[0]": "Background:=Transparent",
+  "controlStyles[26].target": "ToolTip > ContentPresenter#LayoutRoot",
+  "controlStyles[26].styles[0]": "Background:=$Background",
+  "controlStyles[26].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[26].styles[2]": "BorderThickness:=$BorderThickness",
+  "controlStyles[26].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[27].target": "WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid#GridElement > Border#VirtualDesktopSwitcherBackground",
+  "controlStyles[27].styles[0]": "BorderBrush:=$BorderBrush",
+  "controlStyles[27].styles[1]": "BorderThickness=$BorderThickness",
+  "controlStyles[27].styles[2]": "CornerRadius=$CornerRadius",
+  "controlStyles[27].styles[3]": "Background=$Background",
+  "controlStyles[28].target": "WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid > Border",
+  "controlStyles[28].styles[0]": "CornerRadius=$CornerRadius",
+  "controlStyles[29].target": "Border#VirtualDesktopBarBackground",
+  "controlStyles[29].styles[0]": "Background:=$Background",
+  "controlStyles[29].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[29].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[29].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[30].target": "Rectangle#RunningIndicator",
+  "controlStyles[30].styles[0]": "Fill:=<AcrylicBrush TintColor=\"{ThemeResource SystemAccentColor}\" TintOpacity=\"0.4\" />",
+  "controlStyles[31].target": "Rectangle#ShowDesktopPipe",
+  "controlStyles[31].styles[0]": "Visibility=1",
+  "controlStyles[32].target": "Rectangle#RightOverflowButtonDivider",
+  "controlStyles[32].styles[0]": "Visibility=1",
+  "controlStyles[33].target": "SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement",
+  "controlStyles[33].styles[0]": "Background:=Transparent",
+  "controlStyles[33].styles[1]": "BorderBrush:=Transparent",
+  "controlStyles[34].target": "SearchUx.SearchUI.SearchButtonRootGrid",
+  "controlStyles[34].styles[0]": "Background:=Transparent",
+  "controlStyles[34].styles[1]": "BorderBrush:=Transparent",
+  "controlStyles[35].target": "Border#SearchPillBackgroundElement",
+  "controlStyles[35].styles[0]": "BorderBrush:=$ElementBorderBrush",
+  "controlStyles[35].styles[1]": "BorderThickness=$ElementBorderThickness",
+  "controlStyles[35].styles[2]": "CornerRadius=$CornerRadius",
+  "controlStyles[35].styles[3]": "Margin=0,1",
+  "controlStyles[36].target": "SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement",
+  "controlStyles[36].styles[0]": "CornerRadius=$CornerRadius",
+  "controlStyles[36].styles[1]": "BorderThickness=$ElementBorderThickness",
+  "controlStyles[36].styles[2]": "BorderBrush:=$ElementBorderBrush",
+  "controlStyles[36].styles[3]": "Background:=$ElementBG",
+  "controlStyles[36].styles[4]": "Margin=0,-4",
+  "controlStyles[37].target": "Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground",
+  "controlStyles[37].styles[0]": "Shadow:=",
+  "controlStyles[37].styles[1]": "Background:=$Background",
+  "controlStyles[37].styles[2]": "BorderBrush:=$BorderBrush",
+  "controlStyles[37].styles[3]": "BorderThickness=$BorderThickness",
+  "controlStyles[37].styles[4]": "CornerRadius=$CornerRadius",
+  "controlStyles[38].target": "SystemTray.SystemTrayFrame",
+  "controlStyles[38].styles[0]": "HorizontalAlignment=Right",
+  "controlStyles[39].target": "Grid#AugmentedEntryPointContentGrid",
+  "controlStyles[39].styles[0]": "HorizontalAlignment=Left",
+  "styleConstants[0]": "BorderThickness=0.3,1,0.3,0.3",
+  "styleConstants[1]": "ElementBorderThickness=0.3,0.3,0.3,1",
+  "styleConstants[2]": "BorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"0.0\" /><GradientStop Color=\"#50404040\" Offset=\"0.25\" /><GradientStop Color=\"#50808080\" Offset=\"1\" /></LinearGradientBrush>",
+  "styleConstants[3]": "Background=<WindhawkBlur BlurAmount=\"15\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
+  "styleConstants[4]": "ElementBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"#202020\" TintOpacity=\"0.2\" />",
+  "styleConstants[5]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
+  "resourceVariables[0].variableKey": "",
+  "resourceVariables[0].value": "",
+  "styleConstants[6]": "HoverBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeHighColor}\" TintOpacity=\"0.2\" />",
+  "styleConstants[7]": "PressedBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
+  "styleConstants[8]": "ActiveBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
+  "styleConstants[9]": "CornerRadius=4",
+  "controlStyles[30].styles[1]": "Width=14"
+}
+```
+
+</details>
+
+
+# Alternate Version
+
+![Alt Preview](Alt-Preview.png)
+
 ## Theme selection
 
 The theme is integrated into the mod and can be selected directly from the mod's
@@ -26,9 +231,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
+  "theme": "",
   "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
   "controlStyles[0].styles[0]": "CornerRadius=$CornerRadius",
-  "controlStyles[0].styles[1]": "HorizontalAlignment=Stretch",
+  "controlStyles[0].styles[1]": "MaxWidth=1400",
   "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "BorderThickness=$BorderThickness",
   "controlStyles[1].styles[1]": "BorderBrush:=$BorderBrush",
@@ -185,7 +391,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[38].styles[3]": "BorderThickness=$BorderThickness",
   "controlStyles[38].styles[4]": "CornerRadius=$CornerRadius",
   "controlStyles[39].target": "SystemTray.SystemTrayFrame",
-  "controlStyles[39].styles[0]": "HorizontalAlignment=Right",
+  "controlStyles[39].styles[0]": "HorizontalAlignment=Center",
   "controlStyles[40].target": "Grid#AugmentedEntryPointContentGrid",
   "controlStyles[40].styles[0]": "HorizontalAlignment=Left",
   "styleConstants[0]": "BorderThickness=0.3,1,0.3,0.3",
@@ -194,11 +400,17 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[3]": "Background=<WindhawkBlur BlurAmount=\"15\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
   "styleConstants[4]": "ElementBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"#202020\" TintOpacity=\"0.2\" />",
   "styleConstants[5]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
+  "resourceVariables[0].variableKey": "",
+  "resourceVariables[0].value": "",
   "styleConstants[6]": "HoverBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeHighColor}\" TintOpacity=\"0.2\" />",
   "styleConstants[7]": "PressedBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
   "styleConstants[8]": "ActiveBG=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
   "styleConstants[9]": "CornerRadius=4",
-  "controlStyles[31].styles[1]": "Width=14"
+  "controlStyles[31].styles[1]": "Width=14",
+  "controlStyles[1].styles[4]": "Margin=0,0,0,2",
+  "controlStyles[0].styles[2]": "HorizontalAlignment=Center",
+  "controlStyles[5].styles[5]": "RenderTransform:=<TranslateTransform X=\"563\" />"
 }
 ```
+ 
 </details>
