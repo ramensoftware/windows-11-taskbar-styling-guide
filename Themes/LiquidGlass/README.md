@@ -207,7 +207,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 # Alternate Version
 
-<img src="Alt-Preview.png" width="100%" height="auto" />
+![Alt Preview](Alt-Preview.png)
 
 ## Theme selection
 
