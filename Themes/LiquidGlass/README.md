@@ -409,7 +409,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[31].styles[1]": "Width=14",
   "controlStyles[1].styles[4]": "Margin=0,0,0,2",
   "controlStyles[0].styles[2]": "HorizontalAlignment=Center",
-  "controlStyles[5].styles[5]": "RenderTransform:=<TranslateTransform X=\"545\" />"
+  "controlStyles[5].styles[5]": "RenderTransform:=<TranslateTransform X=\"563\" />"
 }
 ```
 
