@@ -37,7 +37,7 @@ To make the taskbar look better, follow these settings:
 - If you don’t use that action or aren’t affected, you can re‑enable it by placing these styles under "Control Styles" Section in the "Windows 11 Taskbar Styler" mod settings.
 
   ```yaml
-  - target: Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - BorderBrush:=$ThemeOutBorder
 
@@ -430,11 +430,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
     "controlStyles[32].styles[0]":"FontFamily=$ThFnt",
     "controlStyles[32].styles[1]":"// Taskbar Task list > Hover Over Window Thumbnails Region > Thumbnail Window Names Textblock",
 
-  "controlStyles[33].target":"Taskbar.TaskbarFrame#TaskbarFrame",
+  "controlStyles[33].target":"Taskbar.TaskbarFrame",
     "controlStyles[33].styles[0]":"Width=Auto",
     "controlStyles[33].styles[1]":"// Taskbar Task Region Frame(Task list + search area + Start button Region grid)",
 
-  "controlStyles[34].target":"Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
+  "controlStyles[34].target":"Taskbar.TaskbarFrame > Grid#RootGrid",
     "controlStyles[34].styles[0]":"Margin=8,3,0,3",
     "controlStyles[34].styles[1]":"CornerRadius=$OuterRadius",
     "controlStyles[34].styles[2]":"Padding=-8,0,0,0",

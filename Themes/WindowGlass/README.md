@@ -81,11 +81,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-  "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
+  "controlStyles[0].target": "Taskbar.TaskbarFrame",
   "controlStyles[0].styles[0]": "MaxWidth:=$TaskbarFrameMaxWidth",
   "controlStyles[0].styles[1]": "Width=Auto",
   "controlStyles[0].styles[2]": "MinWidth:=100",
-  "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
+  "controlStyles[1].target": "Taskbar.TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "Margin=10,2,10,2",
   "controlStyles[1].styles[1]": "BorderThickness=$BorderThickness",
   "controlStyles[1].styles[2]": "BorderBrush:=$BorderBrush",
@@ -282,11 +282,11 @@ This theme includes an alternate split variant with a separated taskbar and syst
 
 ```json
 {
-  "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
+  "controlStyles[0].target": "Taskbar.TaskbarFrame",
   "controlStyles[0].styles[0]": "MaxWidth:=$TaskbarFrameMaxWidth",
   "controlStyles[0].styles[1]": "Width=Auto",
   "controlStyles[0].styles[2]": "MinWidth:=100",
-  "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
+  "controlStyles[1].target": "Taskbar.TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "Margin=10,2,3,2",
   "controlStyles[1].styles[1]": "BorderThickness=$BorderThickness",
   "controlStyles[1].styles[2]": "BorderBrush:=$BorderBrush",
@@ -484,11 +484,11 @@ This theme also has a Full-Length variant, which stretches to the corners of the
 
 ```json
 {
-  "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
+  "controlStyles[0].target": "Taskbar.TaskbarFrame",
   "controlStyles[0].styles[0]": "//MaxWidth:=1895",
   "controlStyles[0].styles[1]": "Width=Auto",
   "controlStyles[0].styles[2]": "MinWidth:=100",
-  "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
+  "controlStyles[1].target": "Taskbar.TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "Margin=10,2,10,2",
   "controlStyles[1].styles[1]": "BorderThickness=$BorderThickness",
   "controlStyles[1].styles[2]": "BorderBrush:=$BorderBrush",

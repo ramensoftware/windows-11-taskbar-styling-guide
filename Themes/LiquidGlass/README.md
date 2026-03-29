@@ -26,7 +26,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-  "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
+  "controlStyles[0].target": "Taskbar.TaskbarFrame > Grid#RootGrid",
   "controlStyles[0].styles[0]": "BorderThickness=$BorderThickness",
   "controlStyles[0].styles[1]": "BorderBrush:=$BorderBrush",
   "controlStyles[0].styles[2]": "Background:=$Background",
@@ -208,10 +208,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-  "controlStyles[0].target": "Taskbar.TaskbarFrame#TaskbarFrame",
+  "controlStyles[0].target": "Taskbar.TaskbarFrame",
   "controlStyles[0].styles[0]": "CornerRadius=$CornerRadius",
   "controlStyles[0].styles[1]": "MaxWidth=1400",
-  "controlStyles[1].target": "Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid",
+  "controlStyles[1].target": "Taskbar.TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "BorderThickness=$BorderThickness",
   "controlStyles[1].styles[1]": "BorderBrush:=$BorderBrush",
   "controlStyles[1].styles[2]": "CornerRadius=$CornerRadius",
