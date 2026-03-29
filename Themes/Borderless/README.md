@@ -7,7 +7,7 @@ Taskbar dock-like theme with removal of borders and drop shadows from hover flyo
 ![Screenshot](screenshot.png)
 
 ## Important note
-The theme might look different with the default taskbar height. To solve this, install the "Taskbar height and icon size" mod and set the taskbar height to a minimum of 52 (as opposed to the default height being 48).
+The theme might look different with the default taskbar height. To solve this, install the "Taskbar height and icon size" mod and set the taskbar height to a minimum of 56 (as opposed to the default height being 48).
 
 ![Screenshot with default height](screenshot-default-height.png)
 
