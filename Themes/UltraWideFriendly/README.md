@@ -58,7 +58,7 @@ Set `IslandHorizontalMargin` to change the horizontal margins between islands:
 
 ## Theme selection
 
-The theme is integrated into the mod and can simply be selected from the mod's
+The theme is integrated into the mod and can be selected directly from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.

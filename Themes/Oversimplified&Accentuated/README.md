@@ -12,7 +12,7 @@ A cleaner, more refined Windows taskbar theme that removes unnecessary elements 
 - Improved transparency effects
 - Takes fallback colors (colors in battery mode) into consideration
 
-**Author:** [OsamaJT](https://github.com/OsamaHJT)
+**Author**: [OsamaJT](https://github.com/OsamaHJT)
 
 ![Screenshot](Taskbar.png)
 
@@ -36,7 +36,7 @@ A cleaner, more refined Windows taskbar theme that removes unnecessary elements 
 
 ## Theme selection
 
-The theme is integrated into the mod and can simply be selected from the mod's
+The theme is integrated into the mod and can be selected directly from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.

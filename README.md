@@ -136,11 +136,12 @@ Taskbar Styler mod. The following themes are available:
 | [Oversimplified&Accentuated](Themes/Oversimplified&Accentuated/README.md) | [![Oversimplified&Accentuated](Themes/Oversimplified&Accentuated/screenshot.png)](Themes/Oversimplified&Accentuated/screenshot.png)
 | [Luminosity](Themes/Luminosity/README.md) | [![Luminosity](Themes/Luminosity/screenshot.png)](Themes/Luminosity/screenshot.png)
 | [LayerMicaUI](Themes/LayerMicaUI/README.md) | [![LayerMicaUI](Themes/LayerMicaUI/screenshot.png)](Themes/LayerMicaUI/screenshot.png)
-| [Liquid Glass](Themes/LiquidGlass/README.md) | [![Liquid Glass](Themes/LiquidGlass/Preview.png)](Themes/LiquidGlass/Preview.png)
 | [Fluid](Themes/Fluid/README.md) | [![Fluid](Themes/Fluid/screenshot.png)](Themes/Fluid/screenshot.png)
 | [TintedGlass](Themes/TintedGlass/README.md) | [![TintedGlass](Themes/TintedGlass/screenshot.png)](Themes/TintedGlass/screenshot.png)
 | [TaskbarToStatusbar](Themes/TaskbarToStatusbar/README.md) | [![TaskbarToStatusbar](Themes/TaskbarToStatusbar/screenshot.png)](Themes/TaskbarToStatusbar/screenshot.png)
 | [UltraWideFriendly](Themes/UltraWideFriendly/README.md) | [![UltraWideFriendly](Themes/UltraWideFriendly/screenshot.png)](Themes/UltraWideFriendly/screenshot.png)
+| [LiquidGlass](Themes/LiquidGlass/README.md) | [![LiquidGlass](Themes/LiquidGlass/screenshot.png)](Themes/LiquidGlass/screenshot.png)
+| [Borderless](Themes/Borderless/README.md) | [![Borderless](Themes/Borderless/screenshot.png)](Themes/Borderless/screenshot.png)
 
 ## General
 
@@ -716,14 +717,39 @@ Fill:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpaci
 
 An alternative to Acrylic is the mod's own blur implementation called `WindhawkBlur`. It differs from Acrylic because it has a customizable blur radius and has fewer bugs (e.g. https://github.com/ramensoftware/windhawk-mods/issues/742).
 
+> [!NOTE]
+> WindhawkBlur does not currently support color names (e.g. `Red`) or the `FallbackColor` property.
+
+- `BlurAmount`: Radius of blur effect (set to 30 to mimic Acrylic).
+- `TintLuminosityOpacity`: Shifts pixel luminance towards the tint color's luminance. Range: 0.0 to 1.0.
+- `TintSaturation`: Controls the saturation of the blurred content. 1.0 is unchanged, 0.0 is fully desaturated (grayscale).
+- `NoiseOpacity`: Adds a procedural noise texture overlay. Controls how visible the noise is (0.0 to 1.0).
+- `NoiseDensity`: Controls the granularity of the noise texture (defaults to 1.0).
+
+#### Hex color
+
 ```
 Fill:=<WindhawkBlur BlurAmount="10" TintColor="#80ff0000" />
 ```
-_This example sets a blur that is tinted with red at 50% opacity._
+```
+Fill:=<WindhawkBlur BlurAmount="10" TintColor="#ff0000" TintOpacity="0.5" />
+```
+_These examples set a blur that is tinted with red at 50% opacity. Both versions have the same effect._
 
-- `BlurAmount`: Radius of blur effect (set to 30 to mimic Acrylic).
-- `TintColor`: Hex color in `#AARRGGBB` format that is applied to the blur.
-  - `ThemeResource` colors and color names (e.g. `Red`) are currently not supported.
+- `TintColor`: Hex color in `#AARRGGBB` or `#RRGGBB` format that is applied to the blur.
+- `TintOpacity`: Opacity of the color that overrides the alpha of `TintColor`.
+
+> [!TIP]
+> There is no need to specify a `TintOpacity` value if your `TintColor` has an alpha value.
+
+#### ThemeResource color
+
+```
+<WindhawkBlur BlurAmount="10" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.5"/>
+```
+
+- `TintColor`: ThemeResource color, such as `SystemAccentColor`.
+- `TintOpacity`: Overrides the opacity of the ThemeResource color.
 
 ### Mica effect as color
 
