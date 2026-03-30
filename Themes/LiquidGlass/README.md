@@ -224,11 +224,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[3].styles[0]": "Visibility=1",
   "controlStyles[4].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
   "controlStyles[4].styles[0]": "Margin=4",
-  "controlStyles[4].styles[1]": "Background:=$Background",
+  "controlStyles[4].styles[1]": "Background:=Transparent",
   "controlStyles[4].styles[2]": "CornerRadius=$CornerRadius",
   "controlStyles[4].styles[3]": "BorderThickness=$ElementBorderThickness",
-  "controlStyles[4].styles[4]": "BorderBrush:=$ElementBorderBrush",
-  "controlStyles[4].styles[5]": "Padding=0,-6,0,0",
+  "controlStyles[4].styles[4]": "BorderBrush:=Transparent",
+  "controlStyles[4].styles[5]": "Padding=0,-6",
   "controlStyles[4].styles[6]": "MaxWidth:=200",
   "controlStyles[5].target": "Grid#SystemTrayFrameGrid",
   "controlStyles[5].styles[0]": "Margin=8,2",
@@ -262,8 +262,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[14].styles[0]": "Width=Auto",
   "controlStyles[14].styles[1]": "MinWidth=24",
   "controlStyles[15].target": "Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid",
-  "controlStyles[15].styles[0]": "Margin=4,0,0,0",
-  "controlStyles[15].styles[1]": "HorizontalAlignment=Left",
+  "controlStyles[15].styles[0]": "HorizontalAlignment=Left",
   "controlStyles[16].target": "TextBlock#TimeInnerTextBlock",
   "controlStyles[16].styles[0]": "FontSize=13",
   "controlStyles[16].styles[1]": "FontFamily=vivo Sans EN VF",
@@ -380,7 +379,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[0].styles[2]": "MaxWidth:=1200",
   "controlStyles[0].styles[3]": "HorizontalAlignment=Center",
   "controlStyles[5].styles[5]": "Width=Auto",
-  "controlStyles[5].styles[6]": "MaxWidth=300",
+  "controlStyles[5].styles[6]": "MaxWidth=500",
   "controlStyles[5].styles[7]": "MinWidth=100",
   "controlStyles[27].styles[1]": "CornerRadius=$CornerRadius",
   "controlStyles[27].styles[2]": "BorderBrush:=$BorderBrush",
@@ -389,7 +388,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[42].styles[1]": "BorderBrush:=$ElementBorderBrush",
   "controlStyles[42].styles[2]": "BorderThickness=$ElementBorderThickness",
   "controlStyles[42].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[15].styles[2]": "Padding=1"
+  "controlStyles[5].styles[8]": "HorizontalAlignment=Right",
+  "controlStyles[4].styles[7]": "MaxHeight=46"
 }
 ```
 </details>
