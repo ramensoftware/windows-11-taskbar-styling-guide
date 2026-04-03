@@ -26,6 +26,17 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
+  "theme": "",
+  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"15\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
+  "styleConstants[1]": "ElementBackground=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.4\" />",
+  "styleConstants[2]": "ElementBackground2=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
+  "styleConstants[3]": "AccentBackground=<WindhawkBlur BlurAmount=\"15\" TintColor=\"{ThemeResource SystemAccentColor}\" TintOpacity=\"0.4\" />",
+  "styleConstants[4]": "BorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"0.0\" /><GradientStop Color=\"#50404040\" Offset=\"0.25\" /><GradientStop Color=\"#50808080\" Offset=\"1\" /></LinearGradientBrush>",
+  "styleConstants[5]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
+  "styleConstants[6]": "BorderThickness=0.3,1,0.3,0.3",
+  "styleConstants[7]": "ElementBorderThickness=0.3,0.3,0.3,1",
+  "styleConstants[8]": "CornerRadius=12",
+  "styleConstants[9]": "ElementCornerRadius=8",
   "controlStyles[0].target": "Taskbar.TaskbarFrame > Grid#RootGrid",
   "controlStyles[0].styles[0]": "BorderThickness=$BorderThickness",
   "controlStyles[0].styles[1]": "BorderBrush:=$BorderBrush",
@@ -151,6 +162,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[29].styles[3]": "CornerRadius=$CornerRadius",
   "controlStyles[30].target": "Rectangle#RunningIndicator",
   "controlStyles[30].styles[0]": "Fill:=$AccentBackground",
+  "controlStyles[30].styles[1]": "Width=14",
   "controlStyles[31].target": "Rectangle#ShowDesktopPipe",
   "controlStyles[31].styles[0]": "Visibility=1",
   "controlStyles[32].target": "Rectangle#RightOverflowButtonDivider",
@@ -182,20 +194,17 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[38].styles[0]": "HorizontalAlignment=Right",
   "controlStyles[39].target": "Grid#AugmentedEntryPointContentGrid",
   "controlStyles[39].styles[0]": "HorizontalAlignment=Left",
-  "controlStyles[30].styles[1]": "Width=14",
-  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"15\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.4\" />",
-  "styleConstants[1]": "ElementBackground=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.4\" />",
-  "styleConstants[2]": "ElementBackground2=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.2\" />",
-  "styleConstants[3]": "AccentBackground=<WindhawkBlur BlurAmount=\"15\" TintColor=\"{ThemeResource SystemAccentColor}\" TintOpacity=\"0.4\" />",
-  "styleConstants[4]": "BorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"0.0\" /><GradientStop Color=\"#50404040\" Offset=\"0.25\" /><GradientStop Color=\"#50808080\" Offset=\"1\" /></LinearGradientBrush>",
-  "styleConstants[5]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
-  "styleConstants[6]": "BorderThickness=0.3,1,0.3,0.3",
-  "styleConstants[7]": "ElementBorderThickness=0.3,0.3,0.3,1",
-  "styleConstants[8]": "CornerRadius=12",
-  "styleConstants[9]": "ElementCornerRadius=8"
+  "controlStyles[40].target": "Grid#ModelRootGrid > Border#BackgroundElement",
+  "controlStyles[40].styles[0]": "Background:=$Background",
+  "controlStyles[40].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[40].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[40].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[41].target": "Grid#ModelRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList",
+  "controlStyles[41].styles[0]": "Background:=$Background",
+  "themeResourceVariables[0]": "",
+  "xamlDiagnosticsHandling": ""
 }
 ```
-
 </details>
 
 ### Alternate variant
@@ -383,7 +392,14 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[7]": "CornerRadius=12",
   "styleConstants[8]": "ElementCornerRadius=8",
   "styleConstants[9]": "TrayPadding=2,4,2,4",
-  "styleConstants[10]": "Height=70"
+  "styleConstants[10]": "Height=70",
+  "controlStyles[43].target": "Grid#ModelRootGrid > Border#BackgroundElement",
+  "controlStyles[43].styles[0]": "Background:=$Background",
+  "controlStyles[43].styles[1]": "BorderBrush:=$BorderBrush",
+  "controlStyles[43].styles[2]": "BorderThickness=$BorderThickness",
+  "controlStyles[43].styles[3]": "CornerRadius=$CornerRadius",
+  "controlStyles[44].target": "Grid#ModelRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList",
+  "controlStyles[44].styles[0]": "Background:=$Background"
 }
 ```
 </details>
