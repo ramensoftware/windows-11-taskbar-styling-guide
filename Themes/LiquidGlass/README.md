@@ -386,5 +386,4 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "styleConstants[10]": "Height=70"
 }
 ```
-
 </details>
