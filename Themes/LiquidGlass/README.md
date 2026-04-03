@@ -382,7 +382,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[42].styles[3]": "CornerRadius=$ElementCornerRadius",
   "controlStyles[5].styles[8]": "HorizontalAlignment=Right",
   "controlStyles[4].styles[7]": "MaxHeight=46",
-  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"15\" TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"0.4\" />",
+  "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"15\" TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"0.2\" />",
   "styleConstants[1]": "ElementBackground=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"0.4\" />",
   "styleConstants[2]": "ElementBackground2=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"0.2\" />",
   "styleConstants[3]": "BorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"0.0\" /><GradientStop Color=\"#30404040\" Offset=\"0.25\" /><GradientStop Color=\"#40808080\" Offset=\"1\" /></LinearGradientBrush>",
