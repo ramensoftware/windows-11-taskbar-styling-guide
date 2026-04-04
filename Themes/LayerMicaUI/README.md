@@ -195,9 +195,7 @@ To make the taskbar look better, follow these settings:
 ## Other LayerMicaUI Themes
 - [LayerMicaUI Start Menu Theme](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/tree/main/Themes/LayerMicaUI)
 
-<!--
 - [LayerMicaUI Notification And Control Center Theme](https://github.com/ramensoftware/windows-11-notification-center-styling-guide/tree/main/Themes/LayerMicaUI)
--->
 
 ---
 

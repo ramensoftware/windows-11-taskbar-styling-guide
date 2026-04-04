@@ -1,12 +1,12 @@
 # Borderless theme for Windows 11 Taskbar Styler
 
-Taskbar dock-like theme with removal of shadows from hover flyouts, tray flyout, volume/brightness flyouts, and taskbar overflow.
+Taskbar dock-like theme with removal of borders and drop shadows from hover flyouts (thus the name), tray flyout, volume/brightness flyouts, and taskbar overflow.
 
 **Author**: [Ali Cool](https://github.com/AliCool412)
 
 ![Screenshot](screenshot.png)
 
-## Important note
+## Notice
 The theme might look different with the default taskbar height. To solve this, install the "Taskbar height and icon size" mod and set the taskbar height to a minimum of 56 (as opposed to the default height being 48).
 
 ![Screenshot with default height](screenshot-default-height.png)
@@ -53,15 +53,15 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[2].styles[0]":"Grid.Column=1",
   "controlStyles[2].styles[1]":"Width=Auto",
   "controlStyles[2].styles[2]":"HorizontalAlignment=Right",
-  "controlStyles[2].styles[3]":"Height=42",
+  "controlStyles[2].styles[3]":"Height=40",
   "controlStyles[2].styles[4]":"VerticalAlignment=Center",
 "controlStyles[3].target":"Taskbar.TaskbarFrame > Windows.UI.Xaml.Controls.Grid#RootGrid > Taskbar.TaskbarBackground#BackgroundControl",
-  "controlStyles[3].styles[0]":"CornerRadius=8",
+  "controlStyles[3].styles[0]":"CornerRadius=6",
   "controlStyles[3].styles[1]":"Margin=0,2,0,2",
 "controlStyles[4].target":"Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
   "controlStyles[4].styles[0]":"Visibility=Collapsed",
 "controlStyles[5].target":"Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater",
-  "controlStyles[5].styles[0]":"Margin=0,2,0,2",
+  "controlStyles[5].styles[0]":"Margin=0,4,0,4",
 "controlStyles[6].target":"Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
   "controlStyles[6].styles[0]":"Shadow:=",
   "controlStyles[6].styles[1]":"BorderThickness:=",
@@ -82,7 +82,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 "controlStyles[13].target":"WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid",
   "controlStyles[13].styles[0]":"Background:=",
 "controlStyles[14].target":"WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid",
-  "controlStyles[14].styles[0]":"Margin=400,0,570,0",
+  "controlStyles[14].styles[0]":"Margin=390,0,574,12",
   "controlStyles[14].styles[1]":"Shadow:=",
   "controlStyles[14].styles[2]":"BorderThickness:=",
 "controlStyles[15].target":"Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
