@@ -200,9 +200,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[40].styles[2]": "BorderThickness=$BorderThickness",
   "controlStyles[40].styles[3]": "CornerRadius=$CornerRadius",
   "controlStyles[41].target": "Grid#ModelRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList",
-  "controlStyles[41].styles[0]": "Background:=$Background",
-  "themeResourceVariables[0]": "",
-  "xamlDiagnosticsHandling": ""
+  "controlStyles[41].styles[0]": "Background:=$Background"
 }
 ```
 </details>
