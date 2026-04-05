@@ -26,7 +26,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```json
 {
-  "theme": "",
   "styleConstants[0]": "Background=<WindhawkBlur BlurAmount=\"15\" TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"0.2\" />",
   "styleConstants[1]": "ElementBackground=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"0.4\" />",
   "styleConstants[2]": "ElementBackground2=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemAltLowColor}\" TintOpacity=\"0.2\" />",
