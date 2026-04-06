@@ -132,7 +132,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
   "controlStyles[0].target": "Taskbar.TaskbarFrame",
   "controlStyles[0].styles[0]": "Width=Auto",
   "controlStyles[0].styles[1]": "HorizontalAlignment=Center",
-  "controlStyles[0].styles[2]": "Margin=250,0,250,0",
+  "controlStyles[0].styles[2]":"Margin=10,0,10,0",
+  "controlStyles[0].styles[3]": "MaxWidth=1600",
 
   "controlStyles[1].target": "Taskbar.TaskbarFrame > Grid#RootGrid",
   "controlStyles[1].styles[0]": "Background:=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.8\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
