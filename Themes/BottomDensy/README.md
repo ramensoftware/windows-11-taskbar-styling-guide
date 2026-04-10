@@ -47,21 +47,21 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
 <summary>Content to import (click to expand)</summary>
 
 `BottomDensy`
-```json
-{
-"IconSize"          : 32,
-"TaskbarHeight"     : 34,
-"TaskbarButtonWidth": 36
-}
+```yaml
+TaskbarHeight: 34
+IconSize: 32
+TaskbarButtonWidth: 36
+IconSizeSmall: 16
+TaskbarButtonWidthSmall: 32
 ```
 
 `BottomDensyNoInd`
-```json
-{
-"IconSize"          : 32,
-"TaskbarHeight"     : 32,
-"TaskbarButtonWidth": 36
-}
+```yaml
+TaskbarHeight: 32
+IconSize: 32
+TaskbarButtonWidth: 36
+IconSizeSmall: 16
+TaskbarButtonWidthSmall: 32
 ```
 </details>
 
@@ -71,11 +71,12 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
 <summary>Content to import (click to expand)</summary>
 
 `notificationIconWidth` and `overflowIconWidth` should be at least `21` to add space between `20` icon size, but otherwise use whatever values that look best for you. `overflowIconsPerRow` depends on the number of icons and might be best to have the smallest packed square to minimize the distance of each icon to the mouse pointer
-```json
-{
-"notificationIconWidth":21,
-"overflowIconWidth"    :34,
-"overflowIconsPerRow"  : 5}
+```yaml
+notificationIconWidth: 21
+notificationIconRows: 1
+gridArrangement: rowFirstLeftToRight
+overflowIconWidth: 34
+overflowIconsPerRow: 5
 ```
 </details>
 
@@ -100,94 +101,121 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 `BottomDensy`
-```json
-{
-"controlStyles[0].target"   :"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
-"controlStyles[0].styles[0]":"Fill=Transparent",
-"controlStyles[1].target"   :"Rectangle#BackgroundStroke",
-"controlStyles[1].styles[0]":"Fill=Transparent",
-"controlStyles[2].target"   :"Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator",
-"controlStyles[2].styles[0]":"Fill=#8f8f8f",
-"controlStyles[2].styles[1]":"Fill@ActiveRunningIndicator=#fef9f0",
-"controlStyles[2].styles[2]":"Width=2",
-"controlStyles[2].styles[3]":"Height=2",
-"controlStyles[2].styles[4]":"Margin=0,-2,0,0",
-"controlStyles[2].styles[5]":"Width@ActiveRunningIndicator=32",
-"controlStyles[3].target"   :"Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator",
-"controlStyles[3].styles[0]":"VerticalAlignment=0",
-"controlStyles[4].target"   :"Rectangle#RunningIndicator",
-"controlStyles[4].styles[0]":"VerticalAlignment=0",
-"controlStyles[5].target"   :"Border#ProgressBarRoot",
-"controlStyles[5].styles[0]":"VerticalAlignment=0",
-"controlStyles[6].target"   :"Rectangle#IndeterminateProgressBarIndicator",
-"controlStyles[6].styles[0]":"VerticalAlignment=0",
-"controlStyles[7].target"   :"Rectangle#IndeterminateProgressBarIndicator2",
-"controlStyles[7].styles[0]":"VerticalAlignment=0",
-"controlStyles[8].target"   :"Taskbar.TaskListLabeledButtonPanel",
-"controlStyles[8].styles[0]":"Padding=2,0,2,0",
-"controlStyles[8].styles[1]":"VerticalAlignment=2",
-"controlStyles[9].target"   :"Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]",
-"controlStyles[9].styles[0]":"Visibility=Collapsed",
-"controlStyles[10].target"   :"SystemTray.Stack#ShowDesktopStack",
-"controlStyles[10].styles[0]":"Width=1",
-"controlStyles[11].target"   :"Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe",
-"controlStyles[11].styles[0]":"HorizontalAlignment=0",
-"controlStyles[12].target"   :"SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
-"controlStyles[12].styles[0]":"Width=20",
-"controlStyles[12].styles[1]":"Height=20",
-"controlStyles[13].target"   :"WrapGrid > ContentPresenter > SystemTray.NotifyIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
-"controlStyles[13].styles[0]":"Width=20",
-"controlStyles[13].styles[1]":"Height=20"
-}
+```yaml
+controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill=Transparent
+  - target: Rectangle#BackgroundStroke
+    styles:
+      - Fill=Transparent
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+    styles:
+      - Fill=#8f8f8f
+      - Fill@ActiveRunningIndicator=#fef9f0
+      - Width=2
+      - Height=2
+      - Margin=0,-2,0,0
+      - Width@ActiveRunningIndicator=32
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator
+    styles:
+      - VerticalAlignment=0
+  - target: Rectangle#RunningIndicator
+    styles:
+      - VerticalAlignment=0
+  - target: Border#ProgressBarRoot
+    styles:
+      - VerticalAlignment=0
+  - target: Rectangle#IndeterminateProgressBarIndicator
+    styles:
+      - VerticalAlignment=0
+  - target: Rectangle#IndeterminateProgressBarIndicator2
+    styles:
+      - VerticalAlignment=0
+  - target: Taskbar.TaskListLabeledButtonPanel
+    styles:
+      - Padding=2,0,2,0
+      - VerticalAlignment=2
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
+    styles:
+      - Visibility=Collapsed
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Width=1
+  - target: Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe
+    styles:
+      - HorizontalAlignment=0
+  - target: SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image
+    styles:
+      - Width=20
+      - Height=20
+  - target: WrapGrid > ContentPresenter > SystemTray.NotifyIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image
+    styles:
+      - Width=20
+      - Height=20
 ```
 
 `BottomDensyNoInd`
-```json
-{
-"controlStyles[0].target"   :"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
-"controlStyles[0].styles[0]":"Fill=Transparent",
-"controlStyles[1].target"   :"Rectangle#BackgroundStroke",
-"controlStyles[1].styles[0]":"Fill=Transparent",
-"controlStyles[2].target"   :"Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator",
-"controlStyles[2].styles[0]":"Fill=#8f8f8f",
-"controlStyles[2].styles[1]":"Fill@ActiveRunningIndicator=#fef9f0",
-"controlStyles[2].styles[2]":"Width=0",
-"controlStyles[2].styles[3]":"Height=0",
-"controlStyles[2].styles[4]":"Margin=0,0,0,0",
-"controlStyles[2].styles[5]":"Width@ActiveRunningIndicator=32",
-"controlStyles[2].styles[6]":"Height@ActiveRunningIndicator=2",
-"controlStyles[2].styles[7]":"Margin@ActiveRunningIndicator=0,-2,0,0",
-"controlStyles[3].target"   :"Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator",
-"controlStyles[3].styles[0]":"VerticalAlignment=0",
-"controlStyles[4].target"   :"Rectangle#RunningIndicator",
-"controlStyles[4].styles[0]":"VerticalAlignment=0",
-"controlStyles[5].target"   :"Border#ProgressBarRoot",
-"controlStyles[5].styles[0]":"VerticalAlignment=0",
-"controlStyles[6].target"   :"Rectangle#IndeterminateProgressBarIndicator",
-"controlStyles[6].styles[0]":"VerticalAlignment=0",
-"controlStyles[7].target"   :"Rectangle#IndeterminateProgressBarIndicator2",
-"controlStyles[7].styles[0]":"VerticalAlignment=0",
-"controlStyles[8].target"   :"Taskbar.TaskListLabeledButtonPanel",
-"controlStyles[8].styles[0]":"Padding=2,0,2,0",
-"controlStyles[8].styles[1]":"VerticalAlignment=2",
-"controlStyles[9].target"   :"Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]",
-"controlStyles[9].styles[0]":"Visibility=Collapsed",
-"controlStyles[10].target"   :"SystemTray.Stack#ShowDesktopStack",
-"controlStyles[10].styles[0]":"Width=1",
-"controlStyles[11].target"   :"Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe",
-"controlStyles[11].styles[0]":"HorizontalAlignment=0",
-"controlStyles[12].target"   :"SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
-"controlStyles[12].styles[0]":"Width=20",
-"controlStyles[12].styles[1]":"Height=20",
-"controlStyles[13].target"   :"WrapGrid > ContentPresenter > SystemTray.NotifyIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
-"controlStyles[13].styles[0]":"Width=20",
-"controlStyles[13].styles[1]":"Height=20",
-"controlStyles[14].target"   :"Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Image#Icon",
-"controlStyles[14].styles[0]":"Width@ActiveRunningIndicator=30",
-"controlStyles[14].styles[1]":"Height@ActiveRunningIndicator=30",
-"controlStyles[14].styles[2]":"Width@NoRunningIndicator=26",
-"controlStyles[14].styles[3]":"Height@NoRunningIndicator=26",
-"controlStyles[14].styles[4]":"Margin@NoRunningIndicator=0,6,0,0"
-}
+```yaml
+controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill=Transparent
+  - target: Rectangle#BackgroundStroke
+    styles:
+      - Fill=Transparent
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+    styles:
+      - Fill=#8f8f8f
+      - Fill@ActiveRunningIndicator=#fef9f0
+      - Width=0
+      - Height=0
+      - Margin=0,0,0,0
+      - Width@ActiveRunningIndicator=32
+      - Height@ActiveRunningIndicator=2
+      - Margin@ActiveRunningIndicator=0,-2,0,0
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator
+    styles:
+      - VerticalAlignment=0
+  - target: Rectangle#RunningIndicator
+    styles:
+      - VerticalAlignment=0
+  - target: Border#ProgressBarRoot
+    styles:
+      - VerticalAlignment=0
+  - target: Rectangle#IndeterminateProgressBarIndicator
+    styles:
+      - VerticalAlignment=0
+  - target: Rectangle#IndeterminateProgressBarIndicator2
+    styles:
+      - VerticalAlignment=0
+  - target: Taskbar.TaskListLabeledButtonPanel
+    styles:
+      - Padding=2,0,2,0
+      - VerticalAlignment=2
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
+    styles:
+      - Visibility=Collapsed
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Width=1
+  - target: Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe
+    styles:
+      - HorizontalAlignment=0
+  - target: SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image
+    styles:
+      - Width=20
+      - Height=20
+  - target: WrapGrid > ContentPresenter > SystemTray.NotifyIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image
+    styles:
+      - Width=20
+      - Height=20
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Image#Icon
+    styles:
+      - Width@ActiveRunningIndicator=30
+      - Height@ActiveRunningIndicator=30
+      - Width@NoRunningIndicator=26
+      - Height@NoRunningIndicator=26
+      - Margin@NoRunningIndicator=0,6,0,0
 ```
 </details>

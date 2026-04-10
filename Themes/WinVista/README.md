@@ -12,12 +12,12 @@ This theme was intended to be used with a slim taskbar. You may achieve a slim t
 
   With these settings:
 
-  ```json
-  {
-    "IconSize": 16,
-    "TaskbarHeight": 32,
-    "TaskbarButtonWidth": 38
-  }
+  ```yaml
+  TaskbarHeight: 32
+  IconSize: 16
+  TaskbarButtonWidth: 38
+  IconSizeSmall: 16
+  TaskbarButtonWidthSmall: 32
   ```
 
 ## Theme selection
@@ -40,62 +40,76 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-  "controlStyles[0].target": "Taskbar.ExperienceToggleButton",
-  "controlStyles[0].styles[0]": "CornerRadius=2",
-  "controlStyles[1].target": "Taskbar.SearchBoxButton",
-  "controlStyles[1].styles[0]": "CornerRadius=2",
-  "controlStyles[2].target": "Taskbar.TaskListButton",
-  "controlStyles[2].styles[0]": "CornerRadius=2",
-  "controlStyles[3].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator",
-  "controlStyles[3].styles[0]": "Height=2",
-  "controlStyles[3].styles[1]": "Width@ActiveRunningIndicator=30",
-  "controlStyles[3].styles[2]": "Width@InactiveRunningIndicator=8",
-  "controlStyles[3].styles[3]": "Fill@ActiveRunningIndicator=#00BEE0",
-  "controlStyles[3].styles[4]": "Fill@InactiveRunningIndicator=#DDDDDD",
-  "controlStyles[4].target": "Rectangle#BackgroundFill",
-  "controlStyles[4].styles[0]": "Fill:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.7\"><GradientStop Color=\"#B5B9BC\" Offset=\"0.0\" /><GradientStop Color=\"#B5B9BC\" Offset=\"0.03125\" /><GradientStop Color=\"#909296\" Offset=\"0.03125\" /><GradientStop Color=\"#464B51\" Offset=\"0.5\" /><GradientStop Color=\"#060F15\" Offset=\"0.5\" /><GradientStop Color=\"#040C11\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"1.0\" /></LinearGradientBrush>",
-  "controlStyles[5].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border",
-  "controlStyles[5].styles[0]": "Background@ActiveRunningIndicator:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.2\"><GradientStop Color=\"#111111\" Offset=\"0.0\" /><GradientStop Color=\"#111111\" Offset=\"1.0\" /></LinearGradientBrush>",
-  "controlStyles[5].styles[1]": "CornerRadius=2",
-  "controlStyles[5].styles[2]": "Background@RequestingAttentionRunningIndicator:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.2\"><GradientStop Color=\"#D53300\" Offset=\"0.0\" /><GradientStop Color=\"#111111\" Offset=\"1.0\" /></LinearGradientBrush>",
-  "controlStyles[5].styles[3]": "BorderBrush=#33101010",
-  "controlStyles[5].styles[4]": "BorderThickness=1",
-  "controlStyles[5].styles[5]": "BorderBrush@NoRunningIndicator=Transparent",
-  "controlStyles[5].styles[6]": "Background@NoRunningIndicator=Transparent",
-  "controlStyles[5].styles[7]": "Background@ActiveRunningIndicator=#55BBBBBB",
-  "controlStyles[5].styles[8]": "BorderBrush@ActiveRunningIndicator=#55212121",
-  "controlStyles[6].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement",
-  "controlStyles[6].styles[0]": "Margin=0,0,0,2",
-  "controlStyles[6].styles[1]": "BorderThickness=1",
-  "controlStyles[6].styles[2]": "Background@ActivePointerOver=#88DDDDDD",
-  "controlStyles[6].styles[3]": "Background@ActiveNormal=#33BBBBBB",
-  "controlStyles[6].styles[4]": "Background@InactivePointerOver=#33BBBBBB",
-  "controlStyles[6].styles[5]": "BorderBrush@ActiveNormal=#44AAAAAA",
-  "controlStyles[6].styles[6]": "BorderBrush@ActivePointerOver=#FF888888",
-  "controlStyles[6].styles[7]": "BorderBrush@InactiveNormal=Transparent",
-  "controlStyles[7].target": "Taskbar.TaskListLabeledButtonPanel > TextBlock",
-  "controlStyles[7].styles[0]": "FontFamily=Segoe UI",
-  "controlStyles[8].target": "SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock",
-  "controlStyles[8].styles[0]": "FontFamily=Segoe UI",
-  "controlStyles[9].target": "TextBlock#TimeInnerTextBlock",
-  "controlStyles[9].styles[0]": "FontFamily=Segoe UI",
-  "controlStyles[10].target": "Grid",
-  "controlStyles[10].styles[0]": "RequestedTheme=2",
-  "controlStyles[11].target": "Taskbar.TaskbarBackground#BackgroundControl > Grid",
-  "controlStyles[11].styles[0]": "Background:=<AcrylicBrush TintColor=\"Transparent\" TintOpacity=\"0\" TintLuminosityOpacity=\"0.1\" Opacity=\"1\" />",
-  "controlStyles[12].target": "Border#MultiWindowElement",
-  "controlStyles[12].styles[0]": "Background=#BB212121",
-  "controlStyles[12].styles[1]": "BorderThickness=0",
-  "controlStyles[12].styles[2]": "Margin=0,2,1,4",
-  "controlStyles[13].target": "Grid#OverflowRootGrid > Border",
-  "controlStyles[13].styles[0]": "Background:=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\" Opacity=\"0.7\"><GradientStop Color=\"#B5B9BC\" Offset=\"0.0\" /><GradientStop Color=\"#B5B9BC\" Offset=\"0.03125\" /><GradientStop Color=\"#909296\" Offset=\"0.03125\" /><GradientStop Color=\"#464B51\" Offset=\"0.5\" /><GradientStop Color=\"#060F15\" Offset=\"0.5\" /><GradientStop Color=\"#040C11\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"0.96875\" /><GradientStop Color=\"#000000\" Offset=\"1.0\" /></LinearGradientBrush>",
-  "controlStyles[14].target": "Grid#OverflowRootGrid",
-  "controlStyles[14].styles[0]": "Background:=<AcrylicBrush TintColor=\"Transparent\" TintOpacity=\"0\" TintLuminosityOpacity=\"0.1\" Opacity=\"1\" />",
-  "controlStyles[14].styles[1]": "Padding=-1",
-  "controlStyles[14].styles[2]": "Margin=0,6,0,6",
-  "controlStyles[14].styles[3]": "CornerRadius=8"
-}
+```yaml
+controlStyles:
+  - target: Taskbar.ExperienceToggleButton
+    styles:
+      - CornerRadius=2
+  - target: Taskbar.SearchBoxButton
+    styles:
+      - CornerRadius=2
+  - target: Taskbar.TaskListButton
+    styles:
+      - CornerRadius=2
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+    styles:
+      - Height=2
+      - Width@ActiveRunningIndicator=30
+      - Width@InactiveRunningIndicator=8
+      - Fill@ActiveRunningIndicator=#00BEE0
+      - Fill@InactiveRunningIndicator=#DDDDDD
+  - target: Rectangle#BackgroundFill
+    styles:
+      - Fill:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="0.7"><GradientStop Color="#B5B9BC" Offset="0.0" /><GradientStop Color="#B5B9BC" Offset="0.03125" /><GradientStop Color="#909296" Offset="0.03125" /><GradientStop Color="#464B51" Offset="0.5" /><GradientStop Color="#060F15" Offset="0.5" /><GradientStop Color="#040C11" Offset="0.96875" /><GradientStop Color="#000000" Offset="0.96875" /><GradientStop Color="#000000" Offset="1.0" /></LinearGradientBrush>
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
+    styles:
+      - Background@ActiveRunningIndicator:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="0.2"><GradientStop Color="#111111" Offset="0.0" /><GradientStop Color="#111111" Offset="1.0" /></LinearGradientBrush>
+      - CornerRadius=2
+      - Background@RequestingAttentionRunningIndicator:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="0.2"><GradientStop Color="#D53300" Offset="0.0" /><GradientStop Color="#111111" Offset="1.0" /></LinearGradientBrush>
+      - BorderBrush=#33101010
+      - BorderThickness=1
+      - BorderBrush@NoRunningIndicator=Transparent
+      - Background@NoRunningIndicator=Transparent
+      - Background@ActiveRunningIndicator=#55BBBBBB
+      - BorderBrush@ActiveRunningIndicator=#55212121
+  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+    styles:
+      - Margin=0,0,0,2
+      - BorderThickness=1
+      - Background@ActivePointerOver=#88DDDDDD
+      - Background@ActiveNormal=#33BBBBBB
+      - Background@InactivePointerOver=#33BBBBBB
+      - BorderBrush@ActiveNormal=#44AAAAAA
+      - BorderBrush@ActivePointerOver=#FF888888
+      - BorderBrush@InactiveNormal=Transparent
+  - target: Taskbar.TaskListLabeledButtonPanel > TextBlock
+    styles:
+      - FontFamily=Segoe UI
+  - target: SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
+    styles:
+      - FontFamily=Segoe UI
+  - target: TextBlock#TimeInnerTextBlock
+    styles:
+      - FontFamily=Segoe UI
+  - target: Grid
+    styles:
+      - RequestedTheme=2
+  - target: Taskbar.TaskbarBackground#BackgroundControl > Grid
+    styles:
+      - Background:=<AcrylicBrush TintColor="Transparent" TintOpacity="0" TintLuminosityOpacity="0.1" Opacity="1" />
+  - target: Border#MultiWindowElement
+    styles:
+      - Background=#BB212121
+      - BorderThickness=0
+      - Margin=0,2,1,4
+  - target: Grid#OverflowRootGrid > Border
+    styles:
+      - Background:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="0.7"><GradientStop Color="#B5B9BC" Offset="0.0" /><GradientStop Color="#B5B9BC" Offset="0.03125" /><GradientStop Color="#909296" Offset="0.03125" /><GradientStop Color="#464B51" Offset="0.5" /><GradientStop Color="#060F15" Offset="0.5" /><GradientStop Color="#040C11" Offset="0.96875" /><GradientStop Color="#000000" Offset="0.96875" /><GradientStop Color="#000000" Offset="1.0" /></LinearGradientBrush>
+  - target: Grid#OverflowRootGrid
+    styles:
+      - Background:=<AcrylicBrush TintColor="Transparent" TintOpacity="0" TintLuminosityOpacity="0.1" Opacity="1" />
+      - Padding=-1
+      - Margin=0,6,0,6
+      - CornerRadius=8
 ```
 </details>

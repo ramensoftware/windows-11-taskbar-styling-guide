@@ -76,42 +76,49 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-  "controlStyles[0].target": "ScrollViewer > ScrollContentPresenter > Border > Grid",
-  "controlStyles[0].styles[0]": "ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width=\"*\"/><ColumnDefinition Width=\"Auto\"/><ColumnDefinition Width=\"Auto\"/><ColumnDefinition Width=\"*\"/></ColumnDefinitionCollection>",
-  "controlStyles[0].styles[1]": "HorizontalAlignment=Stretch",
-  "controlStyles[0].styles[2]": "Background:=<SolidColorBrush Color=\"$GhostBarBackgroundColor\"/>",
-  "controlStyles[1].target": "Taskbar.TaskbarFrame",
-  "controlStyles[1].styles[0]": "Grid.Column=1",
-  "controlStyles[1].styles[1]": "Width=Auto",
-  "controlStyles[1].styles[2]": "HorizontalAlignment=Right",
-  "controlStyles[1].styles[3]": "Margin=0,0,$IslandHorizontalMargin,0",
-  "controlStyles[1].styles[4]": "MaxWidth=$TaskbarFrameMaxWidth",
-  "controlStyles[2].target": "Taskbar.TaskbarFrame > Grid",
-  "controlStyles[2].styles[0]": "Background:=<SolidColorBrush Color=\"$IslandBackgroundColor\"/>",
-  "controlStyles[2].styles[1]": "CornerRadius=10",
-  "controlStyles[2].styles[2]": "Padding=25,0,25,0",
-  "controlStyles[2].styles[3]": "Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin",
-  "controlStyles[3].target": "SystemTray.SystemTrayFrame",
-  "controlStyles[3].styles[0]": "Grid.Column=2",
-  "controlStyles[3].styles[1]": "Width=Auto",
-  "controlStyles[3].styles[2]": "HorizontalAlignment=Left",
-  "controlStyles[3].styles[3]": "Margin=$IslandHorizontalMargin,0,0,0",
-  "controlStyles[4].target": "Grid#SystemTrayFrameGrid",
-  "controlStyles[4].styles[0]": "Background:=<SolidColorBrush Color=\"$IslandBackgroundColor\"/>",
-  "controlStyles[4].styles[1]": "CornerRadius=10",
-  "controlStyles[4].styles[2]": "Padding=5,0,5,0",
-  "controlStyles[4].styles[3]": "Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin",
-  "controlStyles[5].target": "Taskbar.TaskbarBackground#BackgroundControl",
-  "controlStyles[5].styles[0]": "Visibility=Collapsed",
-  "controlStyles[6].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
-  "controlStyles[6].styles[0]": "Fill=Transparent",
-  "styleConstants[0]": "GhostBarBackgroundColor=#66000000",
-  "styleConstants[1]": "IslandBackgroundColor={ThemeResource ControlFillColorDefault}",
-  "styleConstants[2]": "IslandVerticalMargin=3",
-  "styleConstants[3]": "IslandHorizontalMargin=5",
-  "styleConstants[4]": "TaskbarFrameMaxWidth=Infinity"
-}
+```yaml
+styleConstants:
+  - GhostBarBackgroundColor=#66000000
+  - IslandBackgroundColor={ThemeResource ControlFillColorDefault}
+  - IslandVerticalMargin=3
+  - IslandHorizontalMargin=5
+  - TaskbarFrameMaxWidth=Infinity
+controlStyles:
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+      - HorizontalAlignment=Stretch
+      - Background:=<SolidColorBrush Color="$GhostBarBackgroundColor"/>
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Grid.Column=1
+      - Width=Auto
+      - HorizontalAlignment=Right
+      - Margin=0,0,$IslandHorizontalMargin,0
+      - MaxWidth=$TaskbarFrameMaxWidth
+  - target: Taskbar.TaskbarFrame > Grid
+    styles:
+      - Background:=<SolidColorBrush Color="$IslandBackgroundColor"/>
+      - CornerRadius=10
+      - Padding=25,0,25,0
+      - Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Grid.Column=2
+      - Width=Auto
+      - HorizontalAlignment=Left
+      - Margin=$IslandHorizontalMargin,0,0,0
+  - target: Grid#SystemTrayFrameGrid
+    styles:
+      - Background:=<SolidColorBrush Color="$IslandBackgroundColor"/>
+      - CornerRadius=10
+      - Padding=5,0,5,0
+      - Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin
+  - target: Taskbar.TaskbarBackground#BackgroundControl
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill=Transparent
 ```
 </details>

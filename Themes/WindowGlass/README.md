@@ -20,14 +20,12 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
   <details>
   <summary>Click to expand JSON content</summary>
 
-  ```json
-  {
-    "IconSize": 30,
-    "TaskbarHeight": 70,
-    "TaskbarButtonWidth": 44,
-    "IconSizeSmall": 20,
-    "TaskbarButtonWidthSmall": 30
-  }
+  ```yaml
+  TaskbarHeight: 70
+  IconSize: 30
+  TaskbarButtonWidth: 44
+  IconSizeSmall: 20
+  TaskbarButtonWidthSmall: 30
   ```
   </details>
 
@@ -79,196 +77,241 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-  "controlStyles[0].target": "Taskbar.TaskbarFrame",
-  "controlStyles[0].styles[0]": "MaxWidth:=$TaskbarFrameMaxWidth",
-  "controlStyles[0].styles[1]": "Width=Auto",
-  "controlStyles[0].styles[2]": "MinWidth:=100",
-  "controlStyles[1].target": "Taskbar.TaskbarFrame > Grid#RootGrid",
-  "controlStyles[1].styles[0]": "Margin=10,2,10,2",
-  "controlStyles[1].styles[1]": "BorderThickness=$BorderThickness",
-  "controlStyles[1].styles[2]": "//BorderBrush:=$BorderBrush",
-  "controlStyles[1].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[1].styles[4]": "Background:=$Background",
-  "controlStyles[1].styles[5]": "Padding=10,0,235,0",
-  "controlStyles[2].target": "Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill",
-  "controlStyles[2].styles[0]": "Visibility=Collapsed",
-  "controlStyles[3].target": "Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
-  "controlStyles[3].styles[0]": "Visibility=Collapsed",
-  "controlStyles[4].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
-  "controlStyles[4].styles[0]": "Margin=0,8,0,8",
-  "controlStyles[4].styles[1]": "Background:=Transparent",
-  "controlStyles[4].styles[2]": "CornerRadius=0",
-  "controlStyles[4].styles[3]": "BorderThickness=0,0,1,0",
-  "controlStyles[4].styles[4]": "BorderBrush:=#20808080",
-  "controlStyles[4].styles[5]": "Padding=2,0,5,0",
-  "controlStyles[4].styles[6]": "MaxWidth:=200",
-  "controlStyles[5].target": "Grid#SystemTrayFrameGrid",
-  "controlStyles[5].styles[0]": "Margin=-240,10,0,10",
-  "controlStyles[5].styles[1]": "Background:=Transparent",
-  "controlStyles[5].styles[2]": "BorderBrush:=#20808080",
-  "controlStyles[5].styles[3]": "BorderThickness=1,0,0,0",
-  "controlStyles[5].styles[4]": "CornerRadius=0",
-  "controlStyles[5].styles[5]": "Padding=0,0,10,0",
-  "controlStyles[6].target": "SystemTray.ChevronIconView",
-  "controlStyles[6].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[6].styles[1]": "CornerRadius=10",
-  "controlStyles[6].styles[2]": "Margin=5,0,0,0",
-  "controlStyles[7].target": "SystemTray.NotifyIconView#NotifyItemIcon",
-  "controlStyles[7].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[7].styles[1]": "CornerRadius=10",
-  "controlStyles[7].styles[2]": "Margin=5,0,0,0",
-  "controlStyles[8].target": "SystemTray.OmniButton",
-  "controlStyles[8].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[8].styles[1]": "CornerRadius=10",
-  "controlStyles[9].target": "SystemTray.CopilotIcon",
-  "controlStyles[9].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[10].target": "SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid",
-  "controlStyles[10].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[11].target": "SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid",
-  "controlStyles[11].styles[0]": "Padding=10",
-  "controlStyles[11].styles[1]": "CornerRadius=10",
-  "controlStyles[12].target": "SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon",
-  "controlStyles[12].styles[0]": "Padding=0",
-  "controlStyles[13].target": "SystemTray.Stack#ShowDesktopStack",
-  "controlStyles[13].styles[0]": "Visibility=Visible",
-  "controlStyles[14].target": "Taskbar.Gripper#GripperControl",
-  "controlStyles[14].styles[0]": "Width=Auto",
-  "controlStyles[14].styles[1]": "MinWidth=24",
-  "controlStyles[15].target": "Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid",
-  "controlStyles[15].styles[0]": "Margin=4,0,0,0",
-  "controlStyles[16].target": "TextBlock#TimeInnerTextBlock",
-  "controlStyles[16].styles[0]": "FontSize=13",
-  "controlStyles[16].styles[1]": "FontFamily=vivo Sans EN VF",
-  "controlStyles[16].styles[2]": "Margin=0",
-  "controlStyles[16].styles[3]": "Padding=0",
-  "controlStyles[16].styles[4]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"0\" />",
-  "controlStyles[17].target": "TextBlock#DateInnerTextBlock",
-  "controlStyles[17].styles[0]": "Visibility=Collapsed",
-  "controlStyles[17].styles[1]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"-9\" />",
-  "controlStyles[17].styles[2]": "FontSize=11",
-  "controlStyles[17].styles[3]": "FontFamily=vivo Sans EN VF",
-  "controlStyles[18].target": "TextBlock#InnerTextBlock[Text=]",
-  "controlStyles[18].styles[0]": "Text=",
-  "controlStyles[19].target": "Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid",
-  "controlStyles[19].styles[0]": "CornerRadius=22",
-  "controlStyles[19].styles[1]": "BorderThickness=$BorderThickness",
-  "controlStyles[19].styles[2]": "BorderBrush:=$BorderBrush",
-  "controlStyles[19].styles[3]": "Background:=$Background",
-  "controlStyles[20].target": "TextBlock#SearchBoxTextBlock",
-  "controlStyles[20].styles[0]": "Text=Search",
-  "controlStyles[20].styles[1]": "FontSize=10",
-  "controlStyles[20].styles[2]": "FontFamily=vivo Sans EN VF",
-  "controlStyles[21].target": "SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent",
-  "controlStyles[21].styles[0]": "Visibility=Collapsed",
-  "controlStyles[22].target": "Windows.UI.Xaml.Controls.Button",
-  "controlStyles[22].styles[0]": "BorderThickness=$BorderThickness",
-  "controlStyles[23].target": "Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement",
-  "controlStyles[23].styles[0]": "BorderThickness=$BorderThickness",
-  "controlStyles[23].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[23].styles[2]": "Background:=Transparent",
-  "controlStyles[23].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[24].target": "Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList",
-  "controlStyles[24].styles[0]": "Background:=$Background",
-  "controlStyles[25].target": "WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border",
-  "controlStyles[25].styles[0]": "BorderThickness=$BorderThickness",
-  "controlStyles[25].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[25].styles[2]": "Background:=$Background",
-  "controlStyles[25].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[26].target": "WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar",
-  "controlStyles[26].styles[0]": "Width=Auto",
-  "controlStyles[26].styles[1]": "Visibility=Visible",
-  "controlStyles[26].styles[2]": "HorizontalAlignment=1",
-  "controlStyles[27].target": "Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer",
-  "controlStyles[27].styles[0]": "Background:=Transparent",
-  "controlStyles[28].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement",
-  "controlStyles[28].styles[0]": "CornerRadius=10",
-  "controlStyles[29].target": "Taskbar.TaskListButton#TaskListButton",
-  "controlStyles[29].styles[0]": "CornerRadius=10",
-  "controlStyles[30].target": "Windows.UI.Xaml.Controls.Border#SnapBarBorder",
-  "controlStyles[30].styles[0]": "Background:=$Background",
-  "controlStyles[30].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[30].styles[2]": "CornerRadius=$CornerRadius",
-  "controlStyles[30].styles[3]": "BorderThickness=$BorderThickness",
-  "controlStyles[30].styles[4]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"10\" />",
-  "controlStyles[30].styles[5]": "Margin=0,0,0,-10",
-  "controlStyles[31].target": "Windows.UI.Xaml.Controls.Border#SnapPickerBorder",
-  "controlStyles[31].styles[0]": "Background:=$Background",
-  "controlStyles[31].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[31].styles[2]": "CornerRadius=$CornerRadius",
-  "controlStyles[31].styles[3]": "BorderThickness=$BorderThickness",
-  "controlStyles[32].target": "Windows.UI.Xaml.Controls.Border#SearchPillBackgroundElement",
-  "controlStyles[32].styles[0]": "BorderBrush:=$ElementBorderBrush",
-  "controlStyles[32].styles[1]": "CornerRadius=$ElementCornerRadius",
-  "controlStyles[32].styles[2]": "BorderThickness=$ElementBorderThickness",
-  "controlStyles[32].styles[3]": "MaxWidth:=100",
-  "controlStyles[32].styles[4]": "Width=Auto",
-  "controlStyles[33].target": "Taskbar.TaskbarExtensionElement",
-  "controlStyles[33].styles[0]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"0\" />",
-  "controlStyles[34].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
-  "controlStyles[34].styles[0]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"0\" />",
-  "controlStyles[35].target": "Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot",
-  "controlStyles[35].styles[0]": "Background:=$Background",
-  "controlStyles[35].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[35].styles[2]": "BorderThickness:=$BorderThickness",
-  "controlStyles[35].styles[3]": "CornerRadius=12",
-  "controlStyles[36].target": "SearchUx.SearchUI.SearchButtonControl",
-  "controlStyles[36].styles[0]": "MaxWidth:=300",
-  "controlStyles[36].styles[1]": "MinWidth:=10",
-  "controlStyles[36].styles[2]": "Width=Auto",
-  "controlStyles[36].styles[3]": "Margin=0",
-  "controlStyles[37].target": "WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Windows.UI.Xaml.Controls.Grid#GridElement > Windows.UI.Xaml.Controls.Border#VirtualDesktopSwitcherBackground",
-  "controlStyles[37].styles[0]": "Background:=$Background",
-  "controlStyles[37].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[37].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[37].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[38].target": "Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill",
-  "controlStyles[38].styles[0]": "Fill:=$Background",
-  "controlStyles[39].target": "SystemTray.SystemTrayFrame",
-  "controlStyles[39].styles[0]": "Grid.Column=2",
-  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
-  "controlStyles[40].styles[0]": "Background:=$Background",
-  "controlStyles[40].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[40].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[40].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[41].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
-  "controlStyles[41].styles[0]": "Background:=$Background",
-  "controlStyles[41].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[41].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[41].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
-  "controlStyles[42].styles[0]": "Background:=Transparent",
-  "controlStyles[42].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[42].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[42].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[43].target": "Windows.UI.Xaml.Controls.ScrollContentPresenter > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.Grid",
-  "controlStyles[43].styles[0]": "ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width=\"*\"/><ColumnDefinition Width=\"Auto\"/><ColumnDefinition Width=\"Auto\"/><ColumnDefinition Width=\"*\"/></ColumnDefinitionCollection>",
-  "controlStyles[44].target": "Taskbar.TaskbarFrame",
-  "controlStyles[44].styles[0]": "Grid.Column=1",
-  "controlStyles[44].styles[1]": "Width=Auto",
-  "controlStyles[44].styles[2]": "MaxWidth=$TaskbarFrameMaxWidth",
-  "styleConstants[0]": "Translucent=<WindhawkBlur BlurAmount=\"15\" TintColor=\"#10808080\"/>",
-  "styleConstants[1]": "Glass=<WindhawkBlur BlurAmount=\"5\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
-  "styleConstants[2]": "Frosted=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
-  "styleConstants[3]": "Acrylic=<WindhawkBlur BlurAmount=\"30\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.8\" />",
-  "styleConstants[4]": "Background=$Glass",
-  "styleConstants[5]": "BorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"0.0\" /><GradientStop Color=\"#30404040\" Offset=\"0.25\" /><GradientStop Color=\"#40808080\" Offset=\"1\" /></LinearGradientBrush>",
-  "styleConstants[6]": "BorderBrush2=<WindhawkBlur BlurAmount=\"10\" TintColor=\"#909090\" TintOpacity=\"0.2\"/>",
-  "styleConstants[7]": "ElementBG=<SolidColorBrush Color=\"{ThemeResource SystemChromeLowColor}\" Opacity=\"0.3\" />",
-  "styleConstants[8]": "ElementBorderThickness=0.3,0.3,0.3,1",
-  "styleConstants[9]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
-  "styleConstants[10]": "ElementCornerRadius=12",
-  "styleConstants[11]": "ElementSysColor=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" Opacity=\"1\" />",
-  "styleConstants[12]": "ElementSysColor2=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight2}\" Opacity=\"1\" />",
-  "styleConstants[13]": "ElementSysColor3=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight3}\" Opacity=\"1\" />",
-  "styleConstants[14]": "ElementSysColor4=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorDark1}\" Opacity=\"1\" />",
-  "styleConstants[15]": "BorderThickness=0.5,1,0.5,1",
-  "styleConstants[16]": "CornerRadius=25",
-  "styleConstants[17]": "TrayPadding=2,4,2,4",
-  "styleConstants[18]": "Height=70",
-  "styleConstants[19]": "TaskbarFrameMaxWidth=1895"
-}
+```yaml
+styleConstants:
+  - Translucent=<WindhawkBlur BlurAmount="15" TintColor="#10808080"/>
+  - Glass=<WindhawkBlur BlurAmount="5" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.7" />
+  - Frosted=<WindhawkBlur BlurAmount="20" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.7" />
+  - Acrylic=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.8" />
+  - Background=$Glass
+  - BorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="0.0" /><GradientStop Color="#30404040" Offset="0.25" /><GradientStop Color="#40808080" Offset="1" /></LinearGradientBrush>
+  - BorderBrush2=<WindhawkBlur BlurAmount="10" TintColor="#909090" TintOpacity="0.2"/>
+  - ElementBG=<SolidColorBrush Color="{ThemeResource SystemChromeLowColor}" Opacity="0.3" />
+  - ElementBorderThickness=0.3,0.3,0.3,1
+  - ElementBorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="1" /><GradientStop Color="#50606060" Offset="0.15" /></LinearGradientBrush>
+  - ElementCornerRadius=12
+  - ElementSysColor=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight1}" Opacity="1" />
+  - ElementSysColor2=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}" Opacity="1" />
+  - ElementSysColor3=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight3}" Opacity="1" />
+  - ElementSysColor4=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark1}" Opacity="1" />
+  - BorderThickness=0.5,1,0.5,1
+  - CornerRadius=25
+  - TrayPadding=2,4,2,4
+  - Height=70
+  - TaskbarFrameMaxWidth=1895
+controlStyles:
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - MaxWidth:=$TaskbarFrameMaxWidth
+      - Width=Auto
+      - MinWidth:=100
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid
+    styles:
+      - Margin=10,2,10,2
+      - BorderThickness=$BorderThickness
+      - //BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
+      - Background:=$Background
+      - Padding=10,0,235,0
+  - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Margin=0,8,0,8
+      - Background:=Transparent
+      - CornerRadius=0
+      - BorderThickness=0,0,1,0
+      - BorderBrush:=#20808080
+      - Padding=2,0,5,0
+      - MaxWidth:=200
+  - target: Grid#SystemTrayFrameGrid
+    styles:
+      - Margin=-240,10,0,10
+      - Background:=Transparent
+      - BorderBrush:=#20808080
+      - BorderThickness=1,0,0,0
+      - CornerRadius=0
+      - Padding=0,0,10,0
+  - target: SystemTray.ChevronIconView
+    styles:
+      - Padding=$TrayPadding
+      - CornerRadius=10
+      - Margin=5,0,0,0
+  - target: SystemTray.NotifyIconView#NotifyItemIcon
+    styles:
+      - Padding=$TrayPadding
+      - CornerRadius=10
+      - Margin=5,0,0,0
+  - target: SystemTray.OmniButton
+    styles:
+      - Padding=$TrayPadding
+      - CornerRadius=10
+  - target: SystemTray.CopilotIcon
+    styles:
+      - Padding=$TrayPadding
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid
+    styles:
+      - Padding=$TrayPadding
+  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Padding=10
+      - CornerRadius=10
+  - target: SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon
+    styles:
+      - Padding=0
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Visibility=Visible
+  - target: Taskbar.Gripper#GripperControl
+    styles:
+      - Width=Auto
+      - MinWidth=24
+  - target: Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid
+    styles:
+      - Margin=4,0,0,0
+  - target: TextBlock#TimeInnerTextBlock
+    styles:
+      - FontSize=13
+      - FontFamily=vivo Sans EN VF
+      - Margin=0
+      - Padding=0
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: TextBlock#DateInnerTextBlock
+    styles:
+      - Visibility=Collapsed
+      - RenderTransform:=<TranslateTransform X="0" Y="-9" />
+      - FontSize=11
+      - FontFamily=vivo Sans EN VF
+  - target: TextBlock#InnerTextBlock[Text=]
+    styles:
+      - Text=
+  - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
+    styles:
+      - CornerRadius=22
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - Background:=$Background
+  - target: TextBlock#SearchBoxTextBlock
+    styles:
+      - Text=Search
+      - FontSize=10
+      - FontFamily=vivo Sans EN VF
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Controls.Button
+    styles:
+      - BorderThickness=$BorderThickness
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - Background:=Transparent
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$Background
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
+    styles:
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - Background:=$Background
+      - CornerRadius=$CornerRadius
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
+    styles:
+      - Width=Auto
+      - Visibility=Visible
+      - HorizontalAlignment=1
+  - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
+    styles:
+      - Background:=Transparent
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - CornerRadius=10
+  - target: Taskbar.TaskListButton#TaskListButton
+    styles:
+      - CornerRadius=10
+  - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
+      - BorderThickness=$BorderThickness
+      - RenderTransform:=<TranslateTransform X="0" Y="10" />
+      - Margin=0,0,0,-10
+  - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
+      - BorderThickness=$BorderThickness
+  - target: Windows.UI.Xaml.Controls.Border#SearchPillBackgroundElement
+    styles:
+      - BorderBrush:=$ElementBorderBrush
+      - CornerRadius=$ElementCornerRadius
+      - BorderThickness=$ElementBorderThickness
+      - MaxWidth:=100
+      - Width=Auto
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness:=$BorderThickness
+      - CornerRadius=12
+  - target: SearchUx.SearchUI.SearchButtonControl
+    styles:
+      - MaxWidth:=300
+      - MinWidth:=10
+      - Width=Auto
+      - Margin=0
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Windows.UI.Xaml.Controls.Grid#GridElement > Windows.UI.Xaml.Controls.Border#VirtualDesktopSwitcherBackground
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
+    styles:
+      - Fill:=$Background
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Grid.Column=2
+  - target: Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground
+    styles:
+      - Background:=Transparent
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.ScrollContentPresenter > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.Grid
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Grid.Column=1
+      - Width=Auto
+      - MaxWidth=$TaskbarFrameMaxWidth
 ```
 </details>
 
@@ -280,196 +323,241 @@ This theme includes an alternate split variant with a separated taskbar and syst
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-  "controlStyles[0].target": "Taskbar.TaskbarFrame",
-  "controlStyles[0].styles[0]": "MaxWidth:=$TaskbarFrameMaxWidth",
-  "controlStyles[0].styles[1]": "Width=Auto",
-  "controlStyles[0].styles[2]": "MinWidth:=100",
-  "controlStyles[1].target": "Taskbar.TaskbarFrame > Grid#RootGrid",
-  "controlStyles[1].styles[0]": "Margin=10,2,3,2",
-  "controlStyles[1].styles[1]": "BorderThickness=$BorderThickness",
-  "controlStyles[1].styles[2]": "//BorderBrush:=$BorderBrush",
-  "controlStyles[1].styles[3]": "CornerRadius=25,5,5,25",
-  "controlStyles[1].styles[4]": "Background:=$Background",
-  "controlStyles[1].styles[5]": "Padding=10,0,0,0",
-  "controlStyles[2].target": "Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill",
-  "controlStyles[2].styles[0]": "Visibility=Collapsed",
-  "controlStyles[3].target": "Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
-  "controlStyles[3].styles[0]": "Visibility=Collapsed",
-  "controlStyles[4].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
-  "controlStyles[4].styles[0]": "Margin=0,8,0,8",
-  "controlStyles[4].styles[1]": "Background:=Transparent",
-  "controlStyles[4].styles[2]": "CornerRadius=0",
-  "controlStyles[4].styles[3]": "BorderThickness=0,0,1,0",
-  "controlStyles[4].styles[4]": "BorderBrush:=#20808080",
-  "controlStyles[4].styles[5]": "Padding=2,0,5,0",
-  "controlStyles[4].styles[6]": "MaxWidth:=200",
-  "controlStyles[5].target": "Grid#SystemTrayFrameGrid",
-  "controlStyles[5].styles[0]": "Margin=0,2,3,2",
-  "controlStyles[5].styles[1]": "Background:=$Background",
-  "controlStyles[5].styles[2]": "BorderBrush:=$BorderBrush",
-  "controlStyles[5].styles[3]": "BorderThickness=$BorderThickness",
-  "controlStyles[5].styles[4]": "CornerRadius=5,25,25,5",
-  "controlStyles[5].styles[5]": "Padding=0,0,10,0",
-  "controlStyles[6].target": "SystemTray.ChevronIconView",
-  "controlStyles[6].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[6].styles[1]": "CornerRadius=10",
-  "controlStyles[6].styles[2]": "Margin=5,0,0,0",
-  "controlStyles[7].target": "SystemTray.NotifyIconView#NotifyItemIcon",
-  "controlStyles[7].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[7].styles[1]": "CornerRadius=10",
-  "controlStyles[7].styles[2]": "Margin=5,0,0,0",
-  "controlStyles[8].target": "SystemTray.OmniButton",
-  "controlStyles[8].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[8].styles[1]": "CornerRadius=10",
-  "controlStyles[9].target": "SystemTray.CopilotIcon",
-  "controlStyles[9].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[10].target": "SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid",
-  "controlStyles[10].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[11].target": "SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid",
-  "controlStyles[11].styles[0]": "Padding=10",
-  "controlStyles[11].styles[1]": "CornerRadius=10",
-  "controlStyles[12].target": "SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon",
-  "controlStyles[12].styles[0]": "Padding=0",
-  "controlStyles[13].target": "SystemTray.Stack#ShowDesktopStack",
-  "controlStyles[13].styles[0]": "Visibility=Visible",
-  "controlStyles[14].target": "Taskbar.Gripper#GripperControl",
-  "controlStyles[14].styles[0]": "Width=Auto",
-  "controlStyles[14].styles[1]": "MinWidth=24",
-  "controlStyles[15].target": "Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid",
-  "controlStyles[15].styles[0]": "Margin=4,0,0,0",
-  "controlStyles[16].target": "TextBlock#TimeInnerTextBlock",
-  "controlStyles[16].styles[0]": "FontSize=13",
-  "controlStyles[16].styles[1]": "FontFamily=vivo Sans EN VF",
-  "controlStyles[16].styles[2]": "Margin=0",
-  "controlStyles[16].styles[3]": "Padding=0",
-  "controlStyles[16].styles[4]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"0\" />",
-  "controlStyles[17].target": "TextBlock#DateInnerTextBlock",
-  "controlStyles[17].styles[0]": "Visibility=Collapsed",
-  "controlStyles[17].styles[1]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"-9\" />",
-  "controlStyles[17].styles[2]": "FontSize=11",
-  "controlStyles[17].styles[3]": "FontFamily=vivo Sans EN VF",
-  "controlStyles[18].target": "TextBlock#InnerTextBlock[Text=]",
-  "controlStyles[18].styles[0]": "Text=",
-  "controlStyles[19].target": "Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid",
-  "controlStyles[19].styles[0]": "CornerRadius=22",
-  "controlStyles[19].styles[1]": "BorderThickness=$BorderThickness",
-  "controlStyles[19].styles[2]": "BorderBrush:=$BorderBrush",
-  "controlStyles[19].styles[3]": "Background:=$Background",
-  "controlStyles[20].target": "TextBlock#SearchBoxTextBlock",
-  "controlStyles[20].styles[0]": "Text=Search",
-  "controlStyles[20].styles[1]": "FontSize=10",
-  "controlStyles[20].styles[2]": "FontFamily=vivo Sans EN VF",
-  "controlStyles[21].target": "SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent",
-  "controlStyles[21].styles[0]": "Visibility=Collapsed",
-  "controlStyles[22].target": "Windows.UI.Xaml.Controls.Button",
-  "controlStyles[22].styles[0]": "BorderThickness=$BorderThickness",
-  "controlStyles[23].target": "Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement",
-  "controlStyles[23].styles[0]": "BorderThickness=$BorderThickness",
-  "controlStyles[23].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[23].styles[2]": "Background:=Transparent",
-  "controlStyles[23].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[24].target": "Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList",
-  "controlStyles[24].styles[0]": "Background:=$Background",
-  "controlStyles[25].target": "WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border",
-  "controlStyles[25].styles[0]": "BorderThickness=$BorderThickness",
-  "controlStyles[25].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[25].styles[2]": "Background:=$Background",
-  "controlStyles[25].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[26].target": "WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar",
-  "controlStyles[26].styles[0]": "Width=Auto",
-  "controlStyles[26].styles[1]": "Visibility=Visible",
-  "controlStyles[26].styles[2]": "HorizontalAlignment=1",
-  "controlStyles[27].target": "Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer",
-  "controlStyles[27].styles[0]": "Background:=Transparent",
-  "controlStyles[28].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement",
-  "controlStyles[28].styles[0]": "CornerRadius=10",
-  "controlStyles[29].target": "Taskbar.TaskListButton#TaskListButton",
-  "controlStyles[29].styles[0]": "CornerRadius=10",
-  "controlStyles[30].target": "Windows.UI.Xaml.Controls.Border#SnapBarBorder",
-  "controlStyles[30].styles[0]": "Background:=$Background",
-  "controlStyles[30].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[30].styles[2]": "CornerRadius=$CornerRadius",
-  "controlStyles[30].styles[3]": "BorderThickness=$BorderThickness",
-  "controlStyles[30].styles[4]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"10\" />",
-  "controlStyles[30].styles[5]": "Margin=0,0,0,-10",
-  "controlStyles[31].target": "Windows.UI.Xaml.Controls.Border#SnapPickerBorder",
-  "controlStyles[31].styles[0]": "Background:=$Background",
-  "controlStyles[31].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[31].styles[2]": "CornerRadius=$CornerRadius",
-  "controlStyles[31].styles[3]": "BorderThickness=$BorderThickness",
-  "controlStyles[32].target": "Windows.UI.Xaml.Controls.Border#SearchPillBackgroundElement",
-  "controlStyles[32].styles[0]": "BorderBrush:=$ElementBorderBrush",
-  "controlStyles[32].styles[1]": "CornerRadius=$ElementCornerRadius",
-  "controlStyles[32].styles[2]": "BorderThickness=$ElementBorderThickness",
-  "controlStyles[32].styles[3]": "MaxWidth:=100",
-  "controlStyles[32].styles[4]": "Width=Auto",
-  "controlStyles[33].target": "Taskbar.TaskbarExtensionElement",
-  "controlStyles[33].styles[0]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"0\" />",
-  "controlStyles[34].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
-  "controlStyles[34].styles[0]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"0\" />",
-  "controlStyles[35].target": "Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot",
-  "controlStyles[35].styles[0]": "Background:=$Background",
-  "controlStyles[35].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[35].styles[2]": "BorderThickness:=$BorderThickness",
-  "controlStyles[35].styles[3]": "CornerRadius=12",
-  "controlStyles[36].target": "SearchUx.SearchUI.SearchButtonControl",
-  "controlStyles[36].styles[0]": "MaxWidth:=300",
-  "controlStyles[36].styles[1]": "MinWidth:=10",
-  "controlStyles[36].styles[2]": "Width=Auto",
-  "controlStyles[36].styles[3]": "Margin=0",
-  "controlStyles[37].target": "WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Windows.UI.Xaml.Controls.Grid#GridElement > Windows.UI.Xaml.Controls.Border#VirtualDesktopSwitcherBackground",
-  "controlStyles[37].styles[0]": "Background:=$Background",
-  "controlStyles[37].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[37].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[37].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[38].target": "Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill",
-  "controlStyles[38].styles[0]": "Fill:=$Background",
-  "controlStyles[39].target": "SystemTray.SystemTrayFrame",
-  "controlStyles[39].styles[0]": "Grid.Column=2",
-  "controlStyles[40].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
-  "controlStyles[40].styles[0]": "Background:=$Background",
-  "controlStyles[40].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[40].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[40].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[41].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
-  "controlStyles[41].styles[0]": "Background:=$Background",
-  "controlStyles[41].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[41].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[41].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[42].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
-  "controlStyles[42].styles[0]": "Background:=Transparent",
-  "controlStyles[42].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[42].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[42].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[43].target": "Windows.UI.Xaml.Controls.ScrollContentPresenter > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.Grid",
-  "controlStyles[43].styles[0]": "ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width=\"*\"/><ColumnDefinition Width=\"Auto\"/><ColumnDefinition Width=\"Auto\"/><ColumnDefinition Width=\"*\"/></ColumnDefinitionCollection>",
-  "controlStyles[44].target": "Taskbar.TaskbarFrame",
-  "controlStyles[44].styles[0]": "Grid.Column=1",
-  "controlStyles[44].styles[1]": "Width=Auto",
-  "controlStyles[44].styles[2]": "MaxWidth=$TaskbarFrameMaxWidth",
-  "styleConstants[0]": "Translucent=<WindhawkBlur BlurAmount=\"15\" TintColor=\"#10808080\"/>",
-  "styleConstants[1]": "Glass=<WindhawkBlur BlurAmount=\"5\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
-  "styleConstants[2]": "Frosted=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
-  "styleConstants[3]": "Acrylic=<WindhawkBlur BlurAmount=\"30\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.8\" />",
-  "styleConstants[4]": "Background=$Glass",
-  "styleConstants[5]": "BorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"0.0\" /><GradientStop Color=\"#30404040\" Offset=\"0.25\" /><GradientStop Color=\"#40808080\" Offset=\"1\" /></LinearGradientBrush>",
-  "styleConstants[6]": "BorderBrush2=<WindhawkBlur BlurAmount=\"10\" TintColor=\"#909090\" TintOpacity=\"0.2\"/>",
-  "styleConstants[7]": "ElementBG=<SolidColorBrush Color=\"{ThemeResource SystemChromeLowColor}\" Opacity=\"0.3\" />",
-  "styleConstants[8]": "ElementBorderThickness=0.3,0.3,0.3,1",
-  "styleConstants[9]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
-  "styleConstants[10]": "ElementCornerRadius=12",
-  "styleConstants[11]": "ElementSysColor=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" Opacity=\"1\" />",
-  "styleConstants[12]": "ElementSysColor2=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight2}\" Opacity=\"1\" />",
-  "styleConstants[13]": "ElementSysColor3=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight3}\" Opacity=\"1\" />",
-  "styleConstants[14]": "ElementSysColor4=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorDark1}\" Opacity=\"1\" />",
-  "styleConstants[15]": "BorderThickness=0.5,1,0.5,1",
-  "styleConstants[16]": "CornerRadius=25",
-  "styleConstants[17]": "TrayPadding=2,4,2,4",
-  "styleConstants[18]": "Height=70",
-  "styleConstants[19]": "TaskbarFrameMaxWidth=1895"
-}
+```yaml
+styleConstants:
+  - Translucent=<WindhawkBlur BlurAmount="15" TintColor="#10808080"/>
+  - Glass=<WindhawkBlur BlurAmount="5" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.7" />
+  - Frosted=<WindhawkBlur BlurAmount="20" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.7" />
+  - Acrylic=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.8" />
+  - Background=$Glass
+  - BorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="0.0" /><GradientStop Color="#30404040" Offset="0.25" /><GradientStop Color="#40808080" Offset="1" /></LinearGradientBrush>
+  - BorderBrush2=<WindhawkBlur BlurAmount="10" TintColor="#909090" TintOpacity="0.2"/>
+  - ElementBG=<SolidColorBrush Color="{ThemeResource SystemChromeLowColor}" Opacity="0.3" />
+  - ElementBorderThickness=0.3,0.3,0.3,1
+  - ElementBorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="1" /><GradientStop Color="#50606060" Offset="0.15" /></LinearGradientBrush>
+  - ElementCornerRadius=12
+  - ElementSysColor=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight1}" Opacity="1" />
+  - ElementSysColor2=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}" Opacity="1" />
+  - ElementSysColor3=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight3}" Opacity="1" />
+  - ElementSysColor4=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark1}" Opacity="1" />
+  - BorderThickness=0.5,1,0.5,1
+  - CornerRadius=25
+  - TrayPadding=2,4,2,4
+  - Height=70
+  - TaskbarFrameMaxWidth=1895
+controlStyles:
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - MaxWidth:=$TaskbarFrameMaxWidth
+      - Width=Auto
+      - MinWidth:=100
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid
+    styles:
+      - Margin=10,2,3,2
+      - BorderThickness=$BorderThickness
+      - //BorderBrush:=$BorderBrush
+      - CornerRadius=25,5,5,25
+      - Background:=$Background
+      - Padding=10,0,0,0
+  - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Margin=0,8,0,8
+      - Background:=Transparent
+      - CornerRadius=0
+      - BorderThickness=0,0,1,0
+      - BorderBrush:=#20808080
+      - Padding=2,0,5,0
+      - MaxWidth:=200
+  - target: Grid#SystemTrayFrameGrid
+    styles:
+      - Margin=0,2,3,2
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=5,25,25,5
+      - Padding=0,0,10,0
+  - target: SystemTray.ChevronIconView
+    styles:
+      - Padding=$TrayPadding
+      - CornerRadius=10
+      - Margin=5,0,0,0
+  - target: SystemTray.NotifyIconView#NotifyItemIcon
+    styles:
+      - Padding=$TrayPadding
+      - CornerRadius=10
+      - Margin=5,0,0,0
+  - target: SystemTray.OmniButton
+    styles:
+      - Padding=$TrayPadding
+      - CornerRadius=10
+  - target: SystemTray.CopilotIcon
+    styles:
+      - Padding=$TrayPadding
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid
+    styles:
+      - Padding=$TrayPadding
+  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Padding=10
+      - CornerRadius=10
+  - target: SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon
+    styles:
+      - Padding=0
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Visibility=Visible
+  - target: Taskbar.Gripper#GripperControl
+    styles:
+      - Width=Auto
+      - MinWidth=24
+  - target: Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid
+    styles:
+      - Margin=4,0,0,0
+  - target: TextBlock#TimeInnerTextBlock
+    styles:
+      - FontSize=13
+      - FontFamily=vivo Sans EN VF
+      - Margin=0
+      - Padding=0
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: TextBlock#DateInnerTextBlock
+    styles:
+      - Visibility=Collapsed
+      - RenderTransform:=<TranslateTransform X="0" Y="-9" />
+      - FontSize=11
+      - FontFamily=vivo Sans EN VF
+  - target: TextBlock#InnerTextBlock[Text=]
+    styles:
+      - Text=
+  - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
+    styles:
+      - CornerRadius=22
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - Background:=$Background
+  - target: TextBlock#SearchBoxTextBlock
+    styles:
+      - Text=Search
+      - FontSize=10
+      - FontFamily=vivo Sans EN VF
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Controls.Button
+    styles:
+      - BorderThickness=$BorderThickness
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - Background:=Transparent
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$Background
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
+    styles:
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - Background:=$Background
+      - CornerRadius=$CornerRadius
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
+    styles:
+      - Width=Auto
+      - Visibility=Visible
+      - HorizontalAlignment=1
+  - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
+    styles:
+      - Background:=Transparent
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - CornerRadius=10
+  - target: Taskbar.TaskListButton#TaskListButton
+    styles:
+      - CornerRadius=10
+  - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
+      - BorderThickness=$BorderThickness
+      - RenderTransform:=<TranslateTransform X="0" Y="10" />
+      - Margin=0,0,0,-10
+  - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
+      - BorderThickness=$BorderThickness
+  - target: Windows.UI.Xaml.Controls.Border#SearchPillBackgroundElement
+    styles:
+      - BorderBrush:=$ElementBorderBrush
+      - CornerRadius=$ElementCornerRadius
+      - BorderThickness=$ElementBorderThickness
+      - MaxWidth:=100
+      - Width=Auto
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness:=$BorderThickness
+      - CornerRadius=12
+  - target: SearchUx.SearchUI.SearchButtonControl
+    styles:
+      - MaxWidth:=300
+      - MinWidth:=10
+      - Width=Auto
+      - Margin=0
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Windows.UI.Xaml.Controls.Grid#GridElement > Windows.UI.Xaml.Controls.Border#VirtualDesktopSwitcherBackground
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
+    styles:
+      - Fill:=$Background
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Grid.Column=2
+  - target: Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground
+    styles:
+      - Background:=Transparent
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.ScrollContentPresenter > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.Grid
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Grid.Column=1
+      - Width=Auto
+      - MaxWidth=$TaskbarFrameMaxWidth
 ```
 </details>
 
@@ -482,186 +570,228 @@ This theme also has a Full-Length variant, which stretches to the corners of the
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-  "controlStyles[0].target": "Taskbar.TaskbarFrame",
-  "controlStyles[0].styles[0]": "//MaxWidth:=1895",
-  "controlStyles[0].styles[1]": "Width=Auto",
-  "controlStyles[0].styles[2]": "MinWidth:=100",
-  "controlStyles[1].target": "Taskbar.TaskbarFrame > Grid#RootGrid",
-  "controlStyles[1].styles[0]": "Margin=10,2,10,2",
-  "controlStyles[1].styles[1]": "BorderThickness=$BorderThickness",
-  "controlStyles[1].styles[2]": "//BorderBrush:=$BorderBrush",
-  "controlStyles[1].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[1].styles[4]": "Background:=$Background",
-  "controlStyles[1].styles[5]": "Padding=0",
-  "controlStyles[2].target": "Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill",
-  "controlStyles[2].styles[0]": "Visibility=Collapsed",
-  "controlStyles[3].target": "Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
-  "controlStyles[3].styles[0]": "Visibility=Collapsed",
-  "controlStyles[4].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
-  "controlStyles[4].styles[0]": "Margin=0,10,0,10",
-  "controlStyles[4].styles[1]": "Background:=Transparent",
-  "controlStyles[4].styles[2]": "CornerRadius=0",
-  "controlStyles[4].styles[3]": "BorderThickness=1,0,1,0",
-  "controlStyles[4].styles[4]": "BorderBrush:=#20808080",
-  "controlStyles[4].styles[5]": "Padding=2,0,5,0",
-  "controlStyles[4].styles[6]": "MaxWidth:=200",
-  "controlStyles[5].target": "Grid#SystemTrayFrameGrid",
-  "controlStyles[5].styles[0]": "Margin=0,8,8,7",
-  "controlStyles[5].styles[1]": "Background:=Transparent",
-  "controlStyles[5].styles[2]": "BorderBrush:=Transparent",
-  "controlStyles[5].styles[3]": "BorderThickness=$ElementBorderThickness",
-  "controlStyles[5].styles[4]": "CornerRadius=$ElementCornerRadius",
-  "controlStyles[6].target": "SystemTray.ChevronIconView",
-  "controlStyles[6].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[6].styles[1]": "CornerRadius=10",
-  "controlStyles[6].styles[2]": "Margin=5,0,0,0",
-  "controlStyles[7].target": "SystemTray.NotifyIconView#NotifyItemIcon",
-  "controlStyles[7].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[7].styles[1]": "CornerRadius=10",
-  "controlStyles[7].styles[2]": "Margin=5,0,0,0",
-  "controlStyles[8].target": "SystemTray.OmniButton",
-  "controlStyles[8].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[8].styles[1]": "CornerRadius=10",
-  "controlStyles[9].target": "SystemTray.CopilotIcon",
-  "controlStyles[9].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[10].target": "SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid",
-  "controlStyles[10].styles[0]": "Padding=$TrayPadding",
-  "controlStyles[11].target": "SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid",
-  "controlStyles[11].styles[0]": "Padding=10",
-  "controlStyles[11].styles[1]": "CornerRadius=10",
-  "controlStyles[12].target": "SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon",
-  "controlStyles[12].styles[0]": "Padding=0",
-  "controlStyles[13].target": "SystemTray.Stack#ShowDesktopStack",
-  "controlStyles[13].styles[0]": "Visibility=Visible",
-  "controlStyles[14].target": "Taskbar.Gripper#GripperControl",
-  "controlStyles[14].styles[0]": "Width=Auto",
-  "controlStyles[14].styles[1]": "MinWidth=24",
-  "controlStyles[15].target": "Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid",
-  "controlStyles[15].styles[0]": "Margin=4,0,0,0",
-  "controlStyles[15].styles[1]": "HorizontalAlignment=Left",
-  "controlStyles[16].target": "TextBlock#TimeInnerTextBlock",
-  "controlStyles[16].styles[0]": "FontSize=13",
-  "controlStyles[16].styles[1]": "FontFamily=vivo Sans EN VF",
-  "controlStyles[16].styles[2]": "Margin=0",
-  "controlStyles[16].styles[3]": "Padding=0",
-  "controlStyles[16].styles[4]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"0\" />",
-  "controlStyles[17].target": "TextBlock#DateInnerTextBlock",
-  "controlStyles[17].styles[0]": "Visibility=Collapsed",
-  "controlStyles[17].styles[1]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"-9\" />",
-  "controlStyles[17].styles[2]": "FontSize=11",
-  "controlStyles[17].styles[3]": "FontFamily=vivo Sans EN VF",
-  "controlStyles[18].target": "TextBlock#InnerTextBlock[Text=]",
-  "controlStyles[18].styles[0]": "Text=",
-  "controlStyles[19].target": "Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid",
-  "controlStyles[19].styles[0]": "CornerRadius=22",
-  "controlStyles[19].styles[1]": "BorderThickness=$BorderThickness",
-  "controlStyles[19].styles[2]": "BorderBrush:=$BorderBrush",
-  "controlStyles[19].styles[3]": "Background:=$Background",
-  "controlStyles[20].target": "TextBlock#SearchBoxTextBlock",
-  "controlStyles[20].styles[0]": "Text=Search",
-  "controlStyles[20].styles[1]": "FontSize=10",
-  "controlStyles[20].styles[2]": "FontFamily=vivo Sans EN VF",
-  "controlStyles[21].target": "SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent",
-  "controlStyles[21].styles[0]": "Visibility=Collapsed",
-  "controlStyles[22].target": "Windows.UI.Xaml.Controls.Button",
-  "controlStyles[22].styles[0]": "BorderThickness=$BorderThickness",
-  "controlStyles[23].target": "Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement",
-  "controlStyles[23].styles[0]": "BorderThickness=$BorderThickness",
-  "controlStyles[23].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[23].styles[2]": "Background:=Transparent",
-  "controlStyles[23].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[24].target": "Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList",
-  "controlStyles[24].styles[0]": "Background:=$Background",
-  "controlStyles[25].target": "WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border",
-  "controlStyles[25].styles[0]": "BorderThickness=$BorderThickness",
-  "controlStyles[25].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[25].styles[2]": "Background:=$Background",
-  "controlStyles[25].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[26].target": "WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar",
-  "controlStyles[26].styles[0]": "Width=Auto",
-  "controlStyles[26].styles[1]": "Visibility=Visible",
-  "controlStyles[26].styles[2]": "HorizontalAlignment=1",
-  "controlStyles[27].target": "Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer",
-  "controlStyles[27].styles[0]": "Background:=Transparent",
-  "controlStyles[28].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement",
-  "controlStyles[28].styles[0]": "CornerRadius=10",
-  "controlStyles[29].target": "Taskbar.TaskListButton#TaskListButton",
-  "controlStyles[29].styles[0]": "CornerRadius=10",
-  "controlStyles[30].target": "Windows.UI.Xaml.Controls.Border#SnapBarBorder",
-  "controlStyles[30].styles[0]": "Background:=$Background",
-  "controlStyles[30].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[30].styles[2]": "CornerRadius=$CornerRadius",
-  "controlStyles[30].styles[3]": "BorderThickness=$BorderThickness",
-  "controlStyles[30].styles[4]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"10\" />",
-  "controlStyles[30].styles[5]": "Margin=0,0,0,-10",
-  "controlStyles[31].target": "Windows.UI.Xaml.Controls.Border#SnapPickerBorder",
-  "controlStyles[31].styles[0]": "Background:=$Background",
-  "controlStyles[31].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[31].styles[2]": "CornerRadius=$CornerRadius",
-  "controlStyles[31].styles[3]": "BorderThickness=$BorderThickness",
-  "controlStyles[32].target": "Windows.UI.Xaml.Controls.Border#SearchPillBackgroundElement",
-  "controlStyles[32].styles[0]": "BorderBrush:=$ElementBorderBrush",
-  "controlStyles[32].styles[1]": "CornerRadius=$ElementCornerRadius",
-  "controlStyles[32].styles[2]": "BorderThickness=$ElementBorderThickness",
-  "controlStyles[32].styles[3]": "MaxWidth:=100",
-  "controlStyles[32].styles[4]": "Width=Auto",
-  "controlStyles[33].target": "Taskbar.TaskbarExtensionElement",
-  "controlStyles[33].styles[0]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"0\" />",
-  "controlStyles[34].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
-  "controlStyles[34].styles[0]": "RenderTransform:=<TranslateTransform X=\"0\" Y=\"0\" />",
-  "controlStyles[35].target": "Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot",
-  "controlStyles[35].styles[0]": "Background:=$Background",
-  "controlStyles[35].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[35].styles[2]": "BorderThickness:=$BorderThickness",
-  "controlStyles[35].styles[3]": "CornerRadius=12",
-  "controlStyles[36].target": "SearchUx.SearchUI.SearchButtonControl",
-  "controlStyles[36].styles[0]": "MaxWidth:=300",
-  "controlStyles[36].styles[1]": "MinWidth:=10",
-  "controlStyles[36].styles[2]": "Width=Auto",
-  "controlStyles[36].styles[3]": "Margin=0",
-  "controlStyles[37].target": "WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Windows.UI.Xaml.Controls.Grid#GridElement > Windows.UI.Xaml.Controls.Border#VirtualDesktopSwitcherBackground",
-  "controlStyles[37].styles[0]": "Background:=$Background",
-  "controlStyles[37].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[37].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[37].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[38].target": "Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill",
-  "controlStyles[38].styles[0]": "Fill:=$Background",
-  "controlStyles[39].target": "Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
-  "controlStyles[39].styles[0]": "Background:=$Background",
-  "controlStyles[39].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[39].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[39].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[40].target": "Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border",
-  "controlStyles[40].styles[0]": "Background:=$Background",
-  "controlStyles[40].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[40].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[40].styles[3]": "CornerRadius=$CornerRadius",
-  "controlStyles[41].target": "Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
-  "controlStyles[41].styles[0]": "Background:=Transparent",
-  "controlStyles[41].styles[1]": "BorderBrush:=$BorderBrush",
-  "controlStyles[41].styles[2]": "BorderThickness=$BorderThickness",
-  "controlStyles[41].styles[3]": "CornerRadius=$CornerRadius",
-  "styleConstants[0]": "Translucent=<WindhawkBlur BlurAmount=\"15\" TintColor=\"#10808080\"/>",
-  "styleConstants[1]": "Glass=<WindhawkBlur BlurAmount=\"5\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
-  "styleConstants[2]": "Frosted=<WindhawkBlur BlurAmount=\"20\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.7\" />",
-  "styleConstants[3]": "Acrylic=<WindhawkBlur BlurAmount=\"30\" TintColor=\"{ThemeResource SystemChromeMediumColor}\" TintOpacity=\"0.8\" />",
-  "styleConstants[4]": "Background=$Glass",
-  "styleConstants[5]": "BorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"0.0\" /><GradientStop Color=\"#30404040\" Offset=\"0.25\" /><GradientStop Color=\"#40808080\" Offset=\"1\" /></LinearGradientBrush>",
-  "styleConstants[6]": "BorderBrush2=<WindhawkBlur BlurAmount=\"10\" TintColor=\"#909090\" TintOpacity=\"0.2\"/>",
-  "styleConstants[7]": "ElementBG=<SolidColorBrush Color=\"{ThemeResource SystemChromeLowColor}\" Opacity=\"0.3\" />",
-  "styleConstants[8]": "ElementBorderThickness=0.3,0.3,0.3,1",
-  "styleConstants[9]": "ElementBorderBrush=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0,1\"><GradientStop Color=\"#50808080\" Offset=\"1\" /><GradientStop Color=\"#50606060\" Offset=\"0.15\" /></LinearGradientBrush>",
-  "styleConstants[10]": "ElementCornerRadius=12",
-  "styleConstants[11]": "ElementSysColor=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" Opacity=\"1\" />",
-  "styleConstants[12]": "ElementSysColor2=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight2}\" Opacity=\"1\" />",
-  "styleConstants[13]": "ElementSysColor3=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight3}\" Opacity=\"1\" />",
-  "styleConstants[14]": "ElementSysColor4=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorDark1}\" Opacity=\"1\" />",
-  "styleConstants[15]": "BorderThickness=0.5,1,0.5,1",
-  "styleConstants[16]": "CornerRadius=20",
-  "styleConstants[17]": "TrayPadding=2,4,2,4",
-  "styleConstants[18]": "Height=70"
-}
+```yaml
+styleConstants:
+  - Translucent=<WindhawkBlur BlurAmount="15" TintColor="#10808080"/>
+  - Glass=<WindhawkBlur BlurAmount="5" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.7" />
+  - Frosted=<WindhawkBlur BlurAmount="20" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.7" />
+  - Acrylic=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.8" />
+  - Background=$Glass
+  - BorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="0.0" /><GradientStop Color="#30404040" Offset="0.25" /><GradientStop Color="#40808080" Offset="1" /></LinearGradientBrush>
+  - BorderBrush2=<WindhawkBlur BlurAmount="10" TintColor="#909090" TintOpacity="0.2"/>
+  - ElementBG=<SolidColorBrush Color="{ThemeResource SystemChromeLowColor}" Opacity="0.3" />
+  - ElementBorderThickness=0.3,0.3,0.3,1
+  - ElementBorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="1" /><GradientStop Color="#50606060" Offset="0.15" /></LinearGradientBrush>
+  - ElementCornerRadius=12
+  - ElementSysColor=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight1}" Opacity="1" />
+  - ElementSysColor2=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}" Opacity="1" />
+  - ElementSysColor3=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight3}" Opacity="1" />
+  - ElementSysColor4=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark1}" Opacity="1" />
+  - BorderThickness=0.5,1,0.5,1
+  - CornerRadius=20
+  - TrayPadding=2,4,2,4
+  - Height=70
+controlStyles:
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - //MaxWidth:=1895
+      - Width=Auto
+      - MinWidth:=100
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid
+    styles:
+      - Margin=10,2,10,2
+      - BorderThickness=$BorderThickness
+      - //BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
+      - Background:=$Background
+      - Padding=0
+  - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Margin=0,10,0,10
+      - Background:=Transparent
+      - CornerRadius=0
+      - BorderThickness=1,0,1,0
+      - BorderBrush:=#20808080
+      - Padding=2,0,5,0
+      - MaxWidth:=200
+  - target: Grid#SystemTrayFrameGrid
+    styles:
+      - Margin=0,8,8,7
+      - Background:=Transparent
+      - BorderBrush:=Transparent
+      - BorderThickness=$ElementBorderThickness
+      - CornerRadius=$ElementCornerRadius
+  - target: SystemTray.ChevronIconView
+    styles:
+      - Padding=$TrayPadding
+      - CornerRadius=10
+      - Margin=5,0,0,0
+  - target: SystemTray.NotifyIconView#NotifyItemIcon
+    styles:
+      - Padding=$TrayPadding
+      - CornerRadius=10
+      - Margin=5,0,0,0
+  - target: SystemTray.OmniButton
+    styles:
+      - Padding=$TrayPadding
+      - CornerRadius=10
+  - target: SystemTray.CopilotIcon
+    styles:
+      - Padding=$TrayPadding
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid
+    styles:
+      - Padding=$TrayPadding
+  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Padding=10
+      - CornerRadius=10
+  - target: SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon
+    styles:
+      - Padding=0
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Visibility=Visible
+  - target: Taskbar.Gripper#GripperControl
+    styles:
+      - Width=Auto
+      - MinWidth=24
+  - target: Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid
+    styles:
+      - Margin=4,0,0,0
+      - HorizontalAlignment=Left
+  - target: TextBlock#TimeInnerTextBlock
+    styles:
+      - FontSize=13
+      - FontFamily=vivo Sans EN VF
+      - Margin=0
+      - Padding=0
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: TextBlock#DateInnerTextBlock
+    styles:
+      - Visibility=Collapsed
+      - RenderTransform:=<TranslateTransform X="0" Y="-9" />
+      - FontSize=11
+      - FontFamily=vivo Sans EN VF
+  - target: TextBlock#InnerTextBlock[Text=]
+    styles:
+      - Text=
+  - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
+    styles:
+      - CornerRadius=22
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - Background:=$Background
+  - target: TextBlock#SearchBoxTextBlock
+    styles:
+      - Text=Search
+      - FontSize=10
+      - FontFamily=vivo Sans EN VF
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Controls.Button
+    styles:
+      - BorderThickness=$BorderThickness
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - Background:=Transparent
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$Background
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
+    styles:
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - Background:=$Background
+      - CornerRadius=$CornerRadius
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
+    styles:
+      - Width=Auto
+      - Visibility=Visible
+      - HorizontalAlignment=1
+  - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
+    styles:
+      - Background:=Transparent
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - CornerRadius=10
+  - target: Taskbar.TaskListButton#TaskListButton
+    styles:
+      - CornerRadius=10
+  - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
+      - BorderThickness=$BorderThickness
+      - RenderTransform:=<TranslateTransform X="0" Y="10" />
+      - Margin=0,0,0,-10
+  - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
+      - BorderThickness=$BorderThickness
+  - target: Windows.UI.Xaml.Controls.Border#SearchPillBackgroundElement
+    styles:
+      - BorderBrush:=$ElementBorderBrush
+      - CornerRadius=$ElementCornerRadius
+      - BorderThickness=$ElementBorderThickness
+      - MaxWidth:=100
+      - Width=Auto
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness:=$BorderThickness
+      - CornerRadius=12
+  - target: SearchUx.SearchUI.SearchButtonControl
+    styles:
+      - MaxWidth:=300
+      - MinWidth:=10
+      - Width=Auto
+      - Margin=0
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Windows.UI.Xaml.Controls.Grid#GridElement > Windows.UI.Xaml.Controls.Border#VirtualDesktopSwitcherBackground
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
+    styles:
+      - Fill:=$Background
+  - target: Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.MenuFlyoutPresenter > Windows.UI.Xaml.Controls.Border
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground
+    styles:
+      - Background:=Transparent
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
 ```
 </details>

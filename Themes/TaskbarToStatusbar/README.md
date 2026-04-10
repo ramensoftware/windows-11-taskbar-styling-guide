@@ -49,77 +49,82 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-	"controlStyles[0].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater",
-	"controlStyles[0].styles[0]":"Width=Auto",
-	"controlStyles[0].styles[1]":"HorizontalAlignment=Left",
-	
-	"controlStyles[1].target":"Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
-	"controlStyles[1].styles[0]":"Width=3840",
-	"controlStyles[1].styles[1]":"Margin=0,0,-3840,0",
-
-	"controlStyles[2].target":"Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
-	"controlStyles[2].styles[0]":"Visibility=Collapsed",
-	"controlStyles[3].target":"Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement",
-	"controlStyles[3].styles[0]":"Visibility=Collapsed",
-
-	"controlStyles[4].target":"Taskbar.SearchBoxButton#SearchBoxButton[AutomationProperties.AutomationId=SearchButton] > Taskbar.TaskListButtonPanel",
-	"controlStyles[4].styles[0]":"Visibility=Collapsed",
-	"controlStyles[5].target":"Taskbar.TaskbarExtensionElement",
-	"controlStyles[5].styles[0]":"Visibility=Collapsed",
-	"controlStyles[6].target":"Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton",
-	"controlStyles[6].styles[0]":"Visibility=Collapsed",
-
-	"controlStyles[7].target":"Taskbar.TaskListLabeledButtonPanel#IconPanel",
-	"controlStyles[7].styles[0]":"Visibility=Collapsed",
-	"controlStyles[8].target":"Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel",
-	"controlStyles[8].styles[0]":"Visibility=Collapsed",
-
-
-
-	"controlStyles[9].target":"SystemTray.SystemTrayFrame",
-	"controlStyles[9].styles[0]":"HorizontalAlignment=Center",
-
-	"controlStyles[10].target":"SystemTray.Stack#ShowDesktopStack",
-	"controlStyles[10].styles[0]":"Width=1920",
-	"controlStyles[10].styles[1]":"Margin=0,0,-1920,0",
-	"controlStyles[11].target":"SystemTray.StackListView#IconStack[AutomationProperties.AutomationId=ShowDesktop] > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon",
-	"controlStyles[11].styles[0]":"Width=1920",
-	
-	"controlStyles[12].target":"SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid@ > Rectangle#ShowDesktopPipe",
-	"controlStyles[12].styles[0]":"Fill=Transparent",
-
-	"controlStyles[13].target":"SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid",
-	"controlStyles[13].styles[0]":"Padding=4,0,4,0",
-	"controlStyles[14].target":"SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid",
-	"controlStyles[14].styles[0]":"Padding=4,0,4,0",
-
-	"controlStyles[15].target":"SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock",
-	"controlStyles[15].styles[0]":"TextTrimming=1",
-	"controlStyles[15].styles[1]":"Height=20",
-	"controlStyles[15].styles[2]":"FontSize=14",
-	"controlStyles[16].target":"TextBlock#BatteryTextBlock",
-	"controlStyles[16].styles[0]":"FontSize=14",
-	"controlStyles[17].target":"TextBlock#TimeInnerTextBlock",
-	"controlStyles[17].styles[0]":"FontSize=14",
-
-	"controlStyles[18].target":"TextBlock#DateInnerTextBlock",
-	"controlStyles[18].styles[0]":"Visibility=Collapsed",
-
-
-
-	"controlStyles[19].target":"Grid#SystemTrayFrameGrid",
-	"controlStyles[19].styles[0]":"Margin=0,-4,0,-4",
-	"controlStyles[19].styles[1]":"Opacity=0.75",
-	
-	"controlStyles[20].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke",
-	"controlStyles[20].styles[0]":"Visibility=Collapsed",
-
-	"controlStyles[21].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
-	"controlStyles[21].styles[0]":"Fill:=<SolidColorBrush Color=\"{ThemeResource TextFillColorInverse}\"  Opacity=\"1.0\" />",
-	"controlStyles[22].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid",
-	"controlStyles[22].styles[0]":"Background=Black"
-}
+```yaml
+controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
+    styles:
+      - Width=Auto
+      - HorizontalAlignment=Left
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Width=3840
+      - Margin=0,0,-3840,0
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.SearchBoxButton#SearchBoxButton[AutomationProperties.AutomationId=SearchButton] > Taskbar.TaskListButtonPanel
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel
+    styles:
+      - Visibility=Collapsed
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - HorizontalAlignment=Center
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Width=1920
+      - Margin=0,0,-1920,0
+  - target: SystemTray.StackListView#IconStack[AutomationProperties.AutomationId=ShowDesktop] > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon
+    styles:
+      - Width=1920
+  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid@ > Rectangle#ShowDesktopPipe
+    styles:
+      - Fill=Transparent
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid
+    styles:
+      - Padding=4,0,4,0
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid
+    styles:
+      - Padding=4,0,4,0
+  - target: SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock
+    styles:
+      - TextTrimming=1
+      - Height=20
+      - FontSize=14
+  - target: TextBlock#BatteryTextBlock
+    styles:
+      - FontSize=14
+  - target: TextBlock#TimeInnerTextBlock
+    styles:
+      - FontSize=14
+  - target: TextBlock#DateInnerTextBlock
+    styles:
+      - Visibility=Collapsed
+  - target: Grid#SystemTrayFrameGrid
+    styles:
+      - Margin=0,-4,0,-4
+      - Opacity=0.75
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill:=<SolidColorBrush Color="{ThemeResource TextFillColorInverse}"  Opacity="1.0" />
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
+    styles:
+      - Background=Black
 ```
 </details>

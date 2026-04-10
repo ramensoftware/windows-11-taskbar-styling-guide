@@ -39,55 +39,71 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-"controlStyles[0].target":"ScrollViewer > ScrollContentPresenter > Border > Grid",
-  "controlStyles[0].styles[0]":"ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width=\"*\"/><ColumnDefinition Width=\"Auto\"/><ColumnDefinition Width=\"Auto\"/><ColumnDefinition Width=\"*\"/></ColumnDefinitionCollection>",
-  "controlStyles[0].styles[1]":"HorizontalAlignment=Stretch",
-"controlStyles[1].target":"Taskbar.TaskbarFrame",
-  "controlStyles[1].styles[0]":"Grid.Column=1",
-  "controlStyles[1].styles[1]":"Width=$TaskbarFrameWidth",
-  "controlStyles[1].styles[2]":"Margin=0",
-  "controlStyles[1].styles[3]":"MaxWidth=$TaskbarFrameWidth",
-"controlStyles[2].target":"SystemTray.SystemTrayFrame",
-  "controlStyles[2].styles[0]":"Grid.Column=1",
-  "controlStyles[2].styles[1]":"Width=Auto",
-  "controlStyles[2].styles[2]":"HorizontalAlignment=Right",
-  "controlStyles[2].styles[3]":"Height=40",
-  "controlStyles[2].styles[4]":"VerticalAlignment=Center",
-"controlStyles[3].target":"Taskbar.TaskbarFrame > Windows.UI.Xaml.Controls.Grid#RootGrid > Taskbar.TaskbarBackground#BackgroundControl",
-  "controlStyles[3].styles[0]":"CornerRadius=6",
-  "controlStyles[3].styles[1]":"Margin=0,2,0,2",
-"controlStyles[4].target":"Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
-  "controlStyles[4].styles[0]":"Visibility=Collapsed",
-"controlStyles[5].target":"Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater",
-  "controlStyles[5].styles[0]":"Margin=0,4,0,4",
-"controlStyles[6].target":"Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder",
-  "controlStyles[6].styles[0]":"Shadow:=",
-  "controlStyles[6].styles[1]":"BorderThickness:=",
-"controlStyles[7].target":"Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid",
-  "controlStyles[7].styles[0]":"Shadow:=",
-  "controlStyles[7].styles[1]":"BorderThickness:=",
-"controlStyles[8].target":"Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.FontIcon#FontIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock",
-  "controlStyles[8].styles[0]":"Text=",
-"controlStyles[9].target":"Windows.UI.Xaml.Shapes.Rectangle#MostRecentlyUsedDivider",
-  "controlStyles[9].styles[0]":"Height=32",
-  "controlStyles[9].styles[1]":"Width=2",
-"controlStyles[10].target":"Windows.UI.Xaml.Shapes.Rectangle#LeftOverflowButtonDivider",
-  "controlStyles[10].styles[0]":"Visibility=Collapsed",
-"controlStyles[11].target":"Windows.UI.Xaml.Shapes.Rectangle#RightOverflowButtonDivider",
-  "controlStyles[11].styles[0]":"Visibility=Collapsed",
-"controlStyles[12].target":"Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater",
-  "controlStyles[12].styles[0]":"Height=48",
-"controlStyles[13].target":"WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid",
-  "controlStyles[13].styles[0]":"Background:=",
-"controlStyles[14].target":"WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid",
-  "controlStyles[14].styles[0]":"Margin=390,0,574,12",
-  "controlStyles[14].styles[1]":"Shadow:=",
-  "controlStyles[14].styles[2]":"BorderThickness:=",
-"controlStyles[15].target":"Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground",
-  "controlStyles[15].styles[0]":"Shadow:=",
-"styleConstants[0]":"TaskbarFrameWidth=800"
-}
+```yaml
+styleConstants:
+  - TaskbarFrameWidth=800
+controlStyles:
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+      - HorizontalAlignment=Stretch
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Grid.Column=1
+      - Width=$TaskbarFrameWidth
+      - Margin=0
+      - MaxWidth=$TaskbarFrameWidth
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Grid.Column=1
+      - Width=Auto
+      - HorizontalAlignment=Right
+      - Height=40
+      - VerticalAlignment=Center
+  - target: Taskbar.TaskbarFrame > Windows.UI.Xaml.Controls.Grid#RootGrid > Taskbar.TaskbarBackground#BackgroundControl
+    styles:
+      - CornerRadius=6
+      - Margin=0,2,0,2
+  - target: Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
+    styles:
+      - Visibility=Collapsed
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
+    styles:
+      - Margin=0,4,0,4
+  - target: Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Shadow:=
+      - BorderThickness:=
+  - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
+    styles:
+      - Shadow:=
+      - BorderThickness:=
+  - target: Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.FontIcon#FontIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock
+    styles:
+      - Text=
+  - target: Windows.UI.Xaml.Shapes.Rectangle#MostRecentlyUsedDivider
+    styles:
+      - Height=32
+      - Width=2
+  - target: Windows.UI.Xaml.Shapes.Rectangle#LeftOverflowButtonDivider
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Shapes.Rectangle#RightOverflowButtonDivider
+    styles:
+      - Visibility=Collapsed
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater
+    styles:
+      - Height=48
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
+    styles:
+      - Background:=
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
+    styles:
+      - Margin=390,0,574,12
+      - Shadow:=
+      - BorderThickness:=
+  - target: Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground
+    styles:
+      - Shadow:=
 ```
 </details>

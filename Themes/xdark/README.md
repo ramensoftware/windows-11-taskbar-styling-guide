@@ -12,41 +12,72 @@ To achieve the full implementation of the xdark theme, make sure Windows is set 
 <details>
 <summary>Click to expand JSON content</summary>
 
-```json
-{
-  "ShowSeconds": 1,
-  "TimeFormat": "HH':'mm",
-  "DateFormat": "dd'/'MM'/'yyyy",
-  "WeekdayFormat": "",
-  "TopLine": "",
-  "MiddleLine": "",
-  "BottomLine": "║▌║%date% X %time% ▌│",
-  "TooltipLine": "%web1_full%",
-  "Width": 180,
-  "Height": 60,
-  "TextSpacing": 0,
-  "TimeStyle.Visible": 1,
-  "TimeStyle.TextColor": "#facc15",
-  "TimeStyle.TextAlignment": "Center",
-  "TimeStyle.FontSize": 12,
-  "TimeStyle.FontFamily": "JetBrainsMono NF",
-  "TimeStyle.FontWeight": "ExtraLight",
-  "TimeStyle.FontStyle": "",
-  "TimeStyle.FontStretch": "",
-  "TimeStyle.CharacterSpacing": 0,
-  "DateStyle.TextColor": "#facc15",
-  "DateStyle.TextAlignment": "Center",
-  "DateStyle.FontSize": 12,
-  "DateStyle.FontFamily": "Times New Roman",
-  "DateStyle.FontWeight": "Light",
-  "DateStyle.FontStyle": "Normal",
-  "DateStyle.FontStretch": "SemiCondensed",
-  "DateStyle.CharacterSpacing": 1,
-  "oldTaskbarOnWin11": 0,
-  "MaxWidth": 0,
-  "TimeStyle.Hidden": 1,
-  "DateStyle.Hidden": 0
-}
+```yaml
+ShowSeconds: 1
+TimeFormat: HH':'mm
+DateFormat: dd'/'MM'/'yyyy
+WeekdayFormat: ''
+WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
+TopLine: ''
+BottomLine: ║▌║%date% X %time% ▌│
+MiddleLine: ''
+TooltipLine: '%web1_full%'
+TooltipLineMode: append
+Width: 180
+Height: 60
+MaxWidth: 0
+TextSpacing: 0
+DataCollection:
+  NetworkMetricsFormat: mbs
+  NetworkMetricsFixedDecimals: -1
+  PercentageFormat: spacePaddingAndSymbol
+  UpdateInterval: 1
+  NetworkAdapterName: ''
+  GpuAdapterName: ''
+MediaPlayer:
+  IgnoredPlayers:
+    - ''
+  MaxLength: 28
+  NoMediaText: No media
+  RemoveBrackets: 0
+WebContentWeatherLocation: ''
+WebContentWeatherFormat: '%c 🌡️%t 🌬️%w'
+WebContentWeatherUnits: autoDetect
+WebContentsItems:
+  - Url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+    BlockStart: <item>
+    Start: <title>
+    End: </title>
+    ContentMode: xmlHtml
+    SearchReplace:
+      - Search: ''
+        Replace: ''
+    MaxLength: 28
+WebContentsUpdateInterval: 10
+TimeZones:
+  - ''
+TimeStyle:
+  Hidden: 1
+  TextColor: '#facc15'
+  TextAlignment: Center
+  FontSize: 12
+  FontFamily: JetBrainsMono NF
+  FontWeight: ExtraLight
+  FontStyle: ''
+  FontStretch: ''
+  CharacterSpacing: 0
+  Visible: 1
+DateStyle:
+  Hidden: 0
+  TextColor: '#facc15'
+  TextAlignment: Center
+  FontSize: 12
+  FontFamily: Times New Roman
+  FontWeight: Light
+  FontStyle: Normal
+  FontStretch: SemiCondensed
+  CharacterSpacing: 1
+oldTaskbarOnWin11: 0
 ```
 </details>
 
@@ -57,12 +88,12 @@ To achieve the full implementation of the xdark theme, make sure Windows is set 
 <details>
 <summary>Click to expand JSON content</summary>
 
-```json
-{
-  "IconSize": 15,
-  "TaskbarHeight": 35,
-  "TaskbarButtonWidth": 30
-}
+```yaml
+TaskbarHeight: 35
+IconSize: 15
+TaskbarButtonWidth: 30
+IconSizeSmall: 16
+TaskbarButtonWidthSmall: 32
 ```
 </details>
 
@@ -73,25 +104,25 @@ To achieve the full implementation of the xdark theme, make sure Windows is set 
 <details>
 <summary>Click to expand JSON content</summary>
 
-```json
-{
-  "taskbarItemWidth": 60,
-  "minimumTaskbarItemWidth": 50,
-  "maximumTaskbarItemWidth": 120,
-  "runningIndicatorStyle": "centerFixed",
-  "progressIndicatorStyle": "sameAsRunningIndicatorStyle",
-  "fontSize": 12,
-  "leftAndRightPaddingSize": 8,
-  "spaceBetweenIconAndLabel": 8,
-  "labelForSingleItem": "%name%",
-  "labelForMultipleItems": "[%amount%] %name%",
-  "mode": "labelsWithCombining",
-  "excludedPrograms[0]": "excluded1.exe",
-  "alwaysShowThumbnailLabels": 0,
-  "fontFamily": "",
-  "runningIndicatorHeight": 0,
-  "runningIndicatorVerticalOffset": 0
-}
+```yaml
+mode: labelsWithCombining
+taskbarItemWidth: 60
+runningIndicatorStyle: centerFixed
+progressIndicatorStyle: sameAsRunningIndicatorStyle
+excludedPrograms:
+  - excluded1.exe
+minimumTaskbarItemWidth: 50
+maximumTaskbarItemWidth: 120
+fontSize: 12
+fontFamily: ''
+textTrimming: characterEllipsis
+leftAndRightPaddingSize: 8
+spaceBetweenIconAndLabel: 8
+runningIndicatorHeight: 0
+runningIndicatorVerticalOffset: 0
+alwaysShowThumbnailLabels: 0
+labelForSingleItem: '%name%'
+labelForMultipleItems: '[%amount%] %name%'
 ```
 </details>
 
@@ -149,62 +180,79 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-  "controlStyles[0].target": "Taskbar.TaskListButton",
-  "controlStyles[0].styles[0]": "CornerRadius=13",
-  "controlStyles[0].styles[1]": "Padding=6,0,6,0",
-  "controlStyles[0].styles[2]": "HorizontalContentAlignment=Left",
-  "controlStyles[1].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
-  "controlStyles[1].styles[0]": "FontSize=16",
-  "controlStyles[1].styles[1]": "Foreground=#facc15",
-  "controlStyles[2].target": "SystemTray.NotifyIconView#NotifyItemIcon",
-  "controlStyles[2].styles[0]": "MinWidth=25",
-  "controlStyles[3].target": "SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid",
-  "controlStyles[3].styles[0]": "Visibility=Collapsed",
-  "controlStyles[4].target": "SystemTray.TextIconContent > Grid#ContainerGrid",
-  "controlStyles[4].styles[0]": "Padding=2",
-  "controlStyles[5].target": "SystemTray.ChevronIconView",
-  "controlStyles[5].styles[0]": "MinWidth=27",
-  "controlStyles[6].target": "SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent",
-  "controlStyles[6].styles[0]": "Visibility=Collapsed",
-  "controlStyles[7].target": "Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement",
-  "controlStyles[7].styles[0]": "Background=#000000",
-  "controlStyles[8].target": "Grid#SystemTrayFrameGrid",
-  "controlStyles[8].styles[0]": "Background=#000000",
-  "controlStyles[8].styles[1]": "CornerRadius=13",
-  "controlStyles[8].styles[2]": "Margin=0,5,4,5",
-  "controlStyles[8].styles[3]": "Padding=2,0,-18,0",
-  "controlStyles[9].target": "Taskbar.TaskListButton > Grid > Rectangle#RunningIndicator",
-  "controlStyles[9].styles[0]": "Height=3",
-  "controlStyles[9].styles[1]": "RadiusX=1.5",
-  "controlStyles[9].styles[2]": "RadiusY=1.5",
-  "controlStyles[9].styles[3]": "Fill@ActiveNormal=#facc15",
-  "controlStyles[9].styles[4]": "VerticalAlignment=Bottom",
-  "controlStyles[9].styles[5]": "Margin=16,0,16,4",
-  "controlStyles[9].styles[6]": "StrokeThickness=0",
-  "controlStyles[10].target": "SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
-  "controlStyles[10].styles[0]": "Width=13",
-  "controlStyles[11].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
-  "controlStyles[11].styles[0]": "FontSize=13",
-  "controlStyles[11].styles[1]": "Foreground=#facc15",
-  "controlStyles[12].target": "TextBlock#LabelControl",
-  "controlStyles[12].styles[0]": "FontFamily=Segoe UI Medium",
-  "controlStyles[12].styles[1]": "Foreground=#facc15",
-  "controlStyles[12].styles[2]": "Margin=1,0,0,0",
-  "controlStyles[12].styles[3]": "VerticalAlignment=Center",
-  "controlStyles[12].styles[4]": "TextWrapping=NoWrap",
-  "controlStyles[13].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]",
-  "controlStyles[13].styles[0]": "Visibility=Visible",
-  "controlStyles[14].target": "Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock[Text=]",
-  "controlStyles[14].styles[0]": "Text=",
-  "controlStyles[14].styles[1]": "Foreground=#facc15",
-  "controlStyles[15].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
-  "controlStyles[15].styles[0]": "Fill=Transparent",
-  "controlStyles[16].target": "Rectangle#BackgroundStroke",
-  "controlStyles[16].styles[0]": "Fill=Transparent",
-  "controlStyles[17].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
-  "controlStyles[17].styles[0]": "Foreground=#facc15"
-}
+```yaml
+controlStyles:
+  - target: Taskbar.TaskListButton
+    styles:
+      - CornerRadius=13
+      - Padding=6,0,6,0
+      - HorizontalContentAlignment=Left
+  - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+    styles:
+      - FontSize=16
+      - Foreground=#facc15
+  - target: SystemTray.NotifyIconView#NotifyItemIcon
+    styles:
+      - MinWidth=25
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
+    styles:
+      - Visibility=Collapsed
+  - target: SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Padding=2
+  - target: SystemTray.ChevronIconView
+    styles:
+      - MinWidth=27
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
+    styles:
+      - Background=#000000
+  - target: Grid#SystemTrayFrameGrid
+    styles:
+      - Background=#000000
+      - CornerRadius=13
+      - Margin=0,5,4,5
+      - Padding=2,0,-18,0
+  - target: Taskbar.TaskListButton > Grid > Rectangle#RunningIndicator
+    styles:
+      - Height=3
+      - RadiusX=1.5
+      - RadiusY=1.5
+      - Fill@ActiveNormal=#facc15
+      - VerticalAlignment=Bottom
+      - Margin=16,0,16,4
+      - StrokeThickness=0
+  - target: SystemTray.ImageIconContent > Grid#ContainerGrid > Image
+    styles:
+      - Width=13
+  - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+    styles:
+      - FontSize=13
+      - Foreground=#facc15
+  - target: TextBlock#LabelControl
+    styles:
+      - FontFamily=Segoe UI Medium
+      - Foreground=#facc15
+      - Margin=1,0,0,0
+      - VerticalAlignment=Center
+      - TextWrapping=NoWrap
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
+    styles:
+      - Visibility=Visible
+  - target: Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock[Text=]
+    styles:
+      - Text=
+      - Foreground=#facc15
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill=Transparent
+  - target: Rectangle#BackgroundStroke
+    styles:
+      - Fill=Transparent
+  - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+    styles:
+      - Foreground=#facc15
 ```
 </details>

@@ -46,68 +46,88 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-  "controlStyles[0].target": "Taskbar.TaskListButton",
-  "controlStyles[0].styles[0]": "CornerRadius=3",
-  "controlStyles[1].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
-  "controlStyles[1].styles[0]": "FontSize=16",
-  "controlStyles[2].target": "SystemTray.NotifyIconView#NotifyItemIcon",
-  "controlStyles[2].styles[0]": "MinWidth=25",
-  "controlStyles[3].target": "SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid",
-  "controlStyles[3].styles[0]": "Visibility=Collapsed",
-  "controlStyles[4].target": "SystemTray.TextIconContent > Grid#ContainerGrid",
-  "controlStyles[4].styles[0]": "Padding=2",
-  "controlStyles[5].target": "SystemTray.ChevronIconView",
-  "controlStyles[5].styles[0]": "MinWidth=27",
-  "controlStyles[6].target": "SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent",
-  "controlStyles[6].styles[0]": "Visibility=Collapsed",
-  "controlStyles[7].target": "Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement",
-  "controlStyles[7].styles[0]": "Background:=#302d47",
-  "controlStyles[8].target": "Grid#SystemTrayFrameGrid",
-  "controlStyles[8].styles[0]": "Background:=#302d47",
-  "controlStyles[8].styles[1]": "CornerRadius=6",
-  "controlStyles[8].styles[2]": "Margin=0,5,4,4",
-  "controlStyles[8].styles[3]": "Padding=3,0,-8,0",
-  "controlStyles[7].styles[1]": "CornerRadius=6",
-  "controlStyles[9].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator",
-  "controlStyles[9].styles[0]": "Height=27",
-  "controlStyles[9].styles[1]": "RadiusX=5",
-  "controlStyles[9].styles[2]": "RadiusY=5",
-  "controlStyles[9].styles[3]": "StrokeThickness=2",
-  "controlStyles[9].styles[4]": "Stroke@InactivePointerOver=#ebbcba",
-  "controlStyles[9].styles[5]": "Stroke@InactivePressed=#ebbcba",
-  "controlStyles[9].styles[6]": "Stroke@ActiveNormal=#ebbcba",
-  "controlStyles[9].styles[7]": "Stroke@ActivePointerOver=#ebbcba",
-  "controlStyles[9].styles[8]": "Stroke@ActivePressed=#ebbcba",
-  "controlStyles[9].styles[9]": "Fill=Transparent",
-  "controlStyles[9].styles[10]": "Width=37",
-  "controlStyles[9].styles[11]": "VerticalAlignment=1",
-  "controlStyles[9].styles[12]": "Canvas.ZIndex=1",
-  "controlStyles[10].target": "SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
-  "controlStyles[10].styles[0]": "Width=13",
-  "controlStyles[11].target": "SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
-  "controlStyles[11].styles[0]": "FontSize=14",
-  "controlStyles[12].target": "TextBlock#LabelControl",
-  "controlStyles[12].styles[0]": "FontFamily=JetBrainsMono NF",
-  "controlStyles[12].styles[2]": "Padding=2,0,8,0",
-  "controlStyles[13].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]",
-  "controlStyles[13].styles[0]": "Visibility=Collapsed",
-  "controlStyles[12].styles[1]": "Foreground=#e0def4",
-  "controlStyles[14].target": "Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock[Text=]",
-  "controlStyles[14].styles[0]": "Text=",
-  "controlStyles[15].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
-  "controlStyles[15].styles[0]": "Fill=Transparent",
-  "controlStyles[16].target": "Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill",
-  "controlStyles[16].styles[0]": "Fill=#302d47",
-  "controlStyles[17].target": "Rectangle#BackgroundStroke",
-  "controlStyles[17].styles[0]": "Fill=Transparent",
-  "controlStyles[18].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement",
-  "controlStyles[18].styles[0]": "Background=#302d47",
-  "controlStyles[19].target": "TextBlock#DateInnerTextBlock",
-  "controlStyles[19].styles[0]": "Margin=0,0,0,-2",
-  "controlStyles[20].target": "Grid#OverflowRootGrid > Border",
-  "controlStyles[20].styles[0]": "Background=#302d47"
-}
+```yaml
+controlStyles:
+  - target: Taskbar.TaskListButton
+    styles:
+      - CornerRadius=3
+  - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+    styles:
+      - FontSize=16
+  - target: SystemTray.NotifyIconView#NotifyItemIcon
+    styles:
+      - MinWidth=25
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
+    styles:
+      - Visibility=Collapsed
+  - target: SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Padding=2
+  - target: SystemTray.ChevronIconView
+    styles:
+      - MinWidth=27
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
+    styles:
+      - Background:=#302d47
+      - CornerRadius=6
+  - target: Grid#SystemTrayFrameGrid
+    styles:
+      - Background:=#302d47
+      - CornerRadius=6
+      - Margin=0,5,4,4
+      - Padding=3,0,-8,0
+  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
+    styles:
+      - Height=27
+      - RadiusX=5
+      - RadiusY=5
+      - StrokeThickness=2
+      - Stroke@InactivePointerOver=#ebbcba
+      - Stroke@InactivePressed=#ebbcba
+      - Stroke@ActiveNormal=#ebbcba
+      - Stroke@ActivePointerOver=#ebbcba
+      - Stroke@ActivePressed=#ebbcba
+      - Fill=Transparent
+      - Width=37
+      - VerticalAlignment=1
+      - Canvas.ZIndex=1
+  - target: SystemTray.ImageIconContent > Grid#ContainerGrid > Image
+    styles:
+      - Width=13
+  - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+    styles:
+      - FontSize=14
+  - target: TextBlock#LabelControl
+    styles:
+      - FontFamily=JetBrainsMono NF
+      - Foreground=#e0def4
+      - Padding=2,0,8,0
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock[Text=]
+    styles:
+      - Text=
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill=Transparent
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill=#302d47
+  - target: Rectangle#BackgroundStroke
+    styles:
+      - Fill=Transparent
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+    styles:
+      - Background=#302d47
+  - target: TextBlock#DateInnerTextBlock
+    styles:
+      - Margin=0,0,0,-2
+  - target: Grid#OverflowRootGrid > Border
+    styles:
+      - Background=#302d47
 ```
 </details>

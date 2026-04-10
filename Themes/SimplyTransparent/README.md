@@ -26,12 +26,13 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-  "controlStyles[0].target":"Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
-  "controlStyles[0].styles[0]":"Fill=Transparent",
-  "controlStyles[1].target":"Rectangle#BackgroundStroke",
-  "controlStyles[1].styles[0]":"Fill=Transparent"
-}
+```yaml
+controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill=Transparent
+  - target: Rectangle#BackgroundStroke
+    styles:
+      - Fill=Transparent
 ```
 </details>

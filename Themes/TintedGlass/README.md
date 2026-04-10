@@ -15,54 +15,72 @@ To achieve similar results, install and configure the following Windhawk mods in
 <details>
 <summary>Click to expand JSON content</summary>
 
-```json
-{
-  "ShowSeconds": 1,
-  "TimeFormat": "HH':'mm':'ss",
-  "DateFormat": "ddd',' dd MMM yyyy",
-  "WeekdayFormat": "custom",
-  "WeekdayFormatCustom": "Mon, Tue, Wed, Thu, Fri, Sat, Sun",
-  "TopLine": "%time%",
-  "BottomLine": "%date%",
-  "MiddleLine": "%weekday%",
-  "TooltipLine": "%weather%",
-  "Width": 180,
-  "Height": 60,
-  "MaxWidth": 0,
-  "TextSpacing": -4,
-  "WebContentsUpdateInterval": 10,
-  "TimeStyle.Hidden": 0,
-  "TimeStyle.TextColor": "",
-  "TimeStyle.TextAlignment": "Right",
-  "TimeStyle.FontSize": 16,
-  "TimeStyle.FontFamily": "",
-  "TimeStyle.FontWeight": "Medium",
-  "TimeStyle.FontStyle": "",
-  "TimeStyle.FontStretch": "",
-  "TimeStyle.CharacterSpacing": 70,
-  "DateStyle.Hidden": 0,
-  "DateStyle.TextColor": "",
-  "DateStyle.TextAlignment": "Right",
-  "DateStyle.FontSize": 12,
-  "DateStyle.FontFamily": "",
-  "DateStyle.FontWeight": "",
-  "DateStyle.FontStyle": "",
-  "DateStyle.FontStretch": "",
-  "DateStyle.CharacterSpacing": 0,
-  "oldTaskbarOnWin11": 0,
-  "DataCollectionUpdateInterval": 1,
-  "WebContentsItems[0].Url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-  "WebContentsItems[0].BlockStart": "<item>",
-  "WebContentsItems[0].Start": "<title>",
-  "WebContentsItems[0].End": "</title>",
-  "WebContentsItems[0].ContentMode": "xmlHtml",
-  "WebContentsItems[0].SearchReplace[0].Search": "",
-  "WebContentsItems[0].SearchReplace[0].Replace": "",
-  "WebContentsItems[0].MaxLength": 28,
-  "WebContentWeatherLocation": "",
-  "WebContentWeatherFormat": "%c 🌡️%t 🌬️%w",
-  "TimeZones[0]": "GMT Standard Time"
-}
+```yaml
+ShowSeconds: 1
+TimeFormat: HH':'mm':'ss
+DateFormat: ddd',' dd MMM yyyy
+WeekdayFormat: custom
+WeekdayFormatCustom: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+TopLine: '%time%'
+BottomLine: '%date%'
+MiddleLine: '%weekday%'
+TooltipLine: '%weather%'
+TooltipLineMode: append
+Width: 180
+Height: 60
+MaxWidth: 0
+TextSpacing: -4
+DataCollection:
+  NetworkMetricsFormat: mbs
+  NetworkMetricsFixedDecimals: -1
+  PercentageFormat: spacePaddingAndSymbol
+  UpdateInterval: 1
+  NetworkAdapterName: ''
+  GpuAdapterName: ''
+MediaPlayer:
+  IgnoredPlayers:
+    - ''
+  MaxLength: 28
+  NoMediaText: No media
+  RemoveBrackets: 0
+WebContentWeatherLocation: ''
+WebContentWeatherFormat: '%c 🌡️%t 🌬️%w'
+WebContentWeatherUnits: autoDetect
+WebContentsItems:
+  - Url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+    BlockStart: <item>
+    Start: <title>
+    End: </title>
+    ContentMode: xmlHtml
+    SearchReplace:
+      - Search: ''
+        Replace: ''
+    MaxLength: 28
+WebContentsUpdateInterval: 10
+TimeZones:
+  - GMT Standard Time
+TimeStyle:
+  Hidden: 0
+  TextColor: ''
+  TextAlignment: Right
+  FontSize: 16
+  FontFamily: ''
+  FontWeight: Medium
+  FontStyle: ''
+  FontStretch: ''
+  CharacterSpacing: 70
+DateStyle:
+  Hidden: 0
+  TextColor: ''
+  TextAlignment: Right
+  FontSize: 12
+  FontFamily: ''
+  FontWeight: ''
+  FontStyle: ''
+  FontStretch: ''
+  CharacterSpacing: 0
+oldTaskbarOnWin11: 0
+DataCollectionUpdateInterval: 1
 ```
 </details>
 
@@ -73,14 +91,12 @@ To achieve similar results, install and configure the following Windhawk mods in
 <details>
 <summary>Click to expand JSON content</summary>
 
-```json
-{
-  "IconSize": 32,
-  "TaskbarHeight": 40,
-  "TaskbarButtonWidth": 40,
-  "IconSizeSmall": 16,
-  "TaskbarButtonWidthSmall": 32
-}
+```yaml
+TaskbarHeight: 40
+IconSize: 32
+TaskbarButtonWidth: 40
+IconSizeSmall: 16
+TaskbarButtonWidthSmall: 32
 ```
 </details>
 
@@ -91,26 +107,25 @@ To achieve similar results, install and configure the following Windhawk mods in
 <details>
 <summary>Click to expand JSON content</summary>
 
-```json
-{
-  "mode": "labelsWithoutCombining",
-  "taskbarItemWidth": 0,
-  "runningIndicatorStyle": "centerFixed",
-  "progressIndicatorStyle": "sameAsRunningIndicatorStyle",
-  "excludedPrograms[0]": "excluded1.exe",
-  "minimumTaskbarItemWidth": 43,
-  "maximumTaskbarItemWidth": 300,
-  "fontSize": 13,
-  "fontFamily": "",
-  "textTrimming": "clip",
-  "leftAndRightPaddingSize": 6,
-  "spaceBetweenIconAndLabel": 6,
-  "runningIndicatorHeight": 0,
-  "runningIndicatorVerticalOffset": 0,
-  "alwaysShowThumbnailLabels": 0,
-  "labelForSingleItem": "%name%",
-  "labelForMultipleItems": "[%amount%] %name%"
-}
+```yaml
+mode: labelsWithoutCombining
+taskbarItemWidth: 0
+runningIndicatorStyle: centerFixed
+progressIndicatorStyle: sameAsRunningIndicatorStyle
+excludedPrograms:
+  - excluded1.exe
+minimumTaskbarItemWidth: 43
+maximumTaskbarItemWidth: 300
+fontSize: 13
+fontFamily: ''
+textTrimming: clip
+leftAndRightPaddingSize: 6
+spaceBetweenIconAndLabel: 6
+runningIndicatorHeight: 0
+runningIndicatorVerticalOffset: 0
+alwaysShowThumbnailLabels: 0
+labelForSingleItem: '%name%'
+labelForMultipleItems: '[%amount%] %name%'
 ```
 </details>
 
@@ -142,55 +157,86 @@ To achieve the full look, install and configure the following Windhawk mods in a
 <details>
 <summary>Click to expand JSON content</summary>
 
-```json
-{
-  "RenderingMod.ThemeBackground": 1,
-  "RenderingMod.AccentColorControls": 1,
-  "type": "acrylicblur",
-  "AccentBlurBehind": "80000000",
-  "ImmersiveDarkTitle": 1,
-  "ExtendFrame": 1,
-  "CornerOption": "smallround",
-  "RainbowSpeed": 1,
-  "TitlebarColor.ColorTitlebar": 0,
-  "TitlebarColor.RainbowTitlebar": 0,
-  "TitlebarColor.titlerbarstyles_active": "0",
-  "TitlebarColor.titlerbarstyles_inactive": "0",
-  "TitlebarTextColor.ColorTitlebarText": 0,
-  "TitlebarTextColor.RainbowTextColor": 0,
-  "TitlebarTextColor.titlerbarcolorstyles_active": "FFFFFF",
-  "TitlebarTextColor.titlerbarcolorstyles_inactive": "FFFFFF",
-  "BorderColor.ColorBorder": 1,
-  "BorderColor.RainbowBorder": 0,
-  "BorderColor.borderstyles_active": "0",
-  "BorderColor.borderstyles_inactive": "0",
-  "BorderColor.MenuBorderColor": 1,
-  "RenderingMod.TextAlphaBlend": 1,
-  "RuledPrograms[0].target": "notepad.exe",
-  "RuledPrograms[0].type": "acrylicsystem",
-  "RuledPrograms[0].ImmersiveDarkTitle": 1,
-  "RuledPrograms[0].ExtendFrame": 0,
-  "RuledPrograms[0].BorderColor.ColorBorder": 1,
-  "RuledPrograms[0].BorderColor.borderstyles_active": "0",
-  "RuledPrograms[0].BorderColor.borderstyles_inactive": "0",
-  "RuledPrograms[0].TitlebarTextColor.ColorTitlebarText": 0,
-  "RuledPrograms[0].TitlebarTextColor.titlerbarcolorstyles_active": "FFFFFF",
-  "RuledPrograms[0].TitlebarTextColor.titlerbarcolorstyles_inactive": "FFFFFF",
-  "RuledPrograms[0].AccentBlurBehind": "80000000",
-  "RuledPrograms[0].CornerOption": "smallround",
-  "RuledPrograms[1].target": "notepad++.exe",
-  "RuledPrograms[1].type": "acrylicsystem",
-  "RuledPrograms[1].ImmersiveDarkTitle": 1,
-  "RuledPrograms[1].ExtendFrame": 0,
-  "RuledPrograms[1].BorderColor.ColorBorder": 1,
-  "RuledPrograms[1].BorderColor.borderstyles_active": "0",
-  "RuledPrograms[1].BorderColor.borderstyles_inactive": "0",
-  "RuledPrograms[1].TitlebarTextColor.ColorTitlebarText": 0,
-  "RuledPrograms[1].TitlebarTextColor.titlerbarcolorstyles_active": "FFFFFF",
-  "RuledPrograms[1].TitlebarTextColor.titlerbarcolorstyles_inactive": "FFFFFF",
-  "RuledPrograms[1].AccentBlurBehind": "80000000",
-  "RuledPrograms[1].CornerOption": "smallround"
-}
+```yaml
+RenderingMod:
+  ThemeBackground: 1
+  SysColors: 1
+  AccentColorControls: 1
+  TextAlphaBlend: 1
+type: acrylicblur
+AccentBlurBehind: '80000000'
+FlyoutsEffects: 1
+ImmersiveDarkTitle: 1
+ExtendFrame: 1
+CornerOption: smallround
+RainbowSpeed: 1
+TitlebarColor:
+  ColorTitlebar: 0
+  RainbowTitlebar: 0
+  titlerbarstyles_active: '0'
+  titlerbarstyles_inactive: '0'
+TitlebarTextColor:
+  ColorTitlebarText: 0
+  RainbowTextColor: 0
+  titlerbarcolorstyles_active: FFFFFF
+  titlerbarcolorstyles_inactive: FFFFFF
+BorderColor:
+  ColorBorder: 1
+  RainbowBorder: 0
+  borderstyles_active: '0'
+  borderstyles_inactive: '0'
+  MenuBorderColor: 1
+RuledPrograms:
+  - target: notepad.exe
+    RenderingMod:
+      ThemeBackground: 0
+      AccentColorControls: 0
+    type: acrylicsystem
+    AccentBlurBehind: '80000000'
+    ImmersiveDarkTitle: 1
+    ExtendFrame: 0
+    CornerOption: smallround
+    RainbowSpeed: 1
+    TitlebarColor:
+      ColorTitlebar: 0
+      RainbowTitlebar: 0
+      titlerbarstyles_active: FF0000
+      titlerbarstyles_inactive: 00FFFF
+    TitlebarTextColor:
+      ColorTitlebarText: 0
+      RainbowTextColor: 0
+      titlerbarcolorstyles_active: FFFFFF
+      titlerbarcolorstyles_inactive: FFFFFF
+    BorderColor:
+      ColorBorder: 1
+      RainbowBorder: 0
+      borderstyles_active: '0'
+      borderstyles_inactive: '0'
+  - target: notepad++.exe
+    RenderingMod:
+      ThemeBackground: 0
+      AccentColorControls: 0
+    type: acrylicsystem
+    AccentBlurBehind: '80000000'
+    ImmersiveDarkTitle: 1
+    ExtendFrame: 0
+    CornerOption: smallround
+    RainbowSpeed: 1
+    TitlebarColor:
+      ColorTitlebar: 0
+      RainbowTitlebar: 0
+      titlerbarstyles_active: FF0000
+      titlerbarstyles_inactive: 00FFFF
+    TitlebarTextColor:
+      ColorTitlebarText: 0
+      RainbowTextColor: 0
+      titlerbarcolorstyles_active: FFFFFF
+      titlerbarcolorstyles_inactive: FFFFFF
+    BorderColor:
+      ColorBorder: 1
+      RainbowBorder: 0
+      borderstyles_active: '0'
+      borderstyles_inactive: '0'
 ```
 </details>
 
@@ -201,24 +247,26 @@ To achieve the full look, install and configure the following Windhawk mods in a
 <details>
 <summary>Click to expand JSON content</summary>
 
-```json
-{
-  "backgroundStyle": "blur",
-  "color.red": 255,
-  "color.green": 127,
-  "color.blue": 39,
-  "color.accentColor": 0,
-  "color.transparency": 128,
-  "onlyWhenMaximized": 1,
-  "excludedPrograms[0]": "",
-  "styleForDarkMode.use": 0,
-  "styleForDarkMode.backgroundStyle": "blur",
-  "styleForDarkMode.color.red": 255,
-  "styleForDarkMode.color.green": 127,
-  "styleForDarkMode.color.blue": 39,
-  "styleForDarkMode.color.accentColor": 0,
-  "styleForDarkMode.color.transparency": 128
-}
+```yaml
+backgroundStyle: blur
+color:
+  red: 255
+  green: 127
+  blue: 39
+  accentColor: 0
+  transparency: 128
+onlyWhenMaximized: 1
+excludedPrograms:
+  - ''
+styleForDarkMode:
+  use: 0
+  backgroundStyle: blur
+  color:
+    red: 255
+    green: 127
+    blue: 39
+    accentColor: 0
+    transparency: 128
 ```
 </details>
 
@@ -244,61 +292,82 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-  "styleConstants[0]": "CommonBgBrush=<WindhawkBlur BlurAmount=\"18\" TintColor=\"#80000000\"/>",
-  "controlStyles[0].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
-  "controlStyles[0].styles[0]": "Fill=$CommonBgBrush",
-  "controlStyles[1].target": "Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill",
-  "controlStyles[1].styles[0]": "Fill=$CommonBgBrush",
-  "controlStyles[2].target": "Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement",
-  "controlStyles[2].styles[0]": "Background=Transparent",
-  "controlStyles[3].target": "Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList",
-  "controlStyles[3].styles[0]": "Background:=$CommonBgBrush",
-  "controlStyles[4].target": "Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer",
-  "controlStyles[4].styles[0]": "Background=$CommonBgBrush",
-  "controlStyles[5].target": "MenuFlyoutPresenter > Border",
-  "controlStyles[5].styles[0]": "Fill=$CommonBgBrush",
-  "controlStyles[5].styles[1]": "BorderThickness=0,0,0,0",
-  "controlStyles[5].styles[2]": "CornerRadius=14",
-  "controlStyles[5].styles[3]": "Padding=2,2,2,2",
-  "controlStyles[6].target": "Border#OverflowFlyoutBackgroundBorder",
-  "controlStyles[6].styles[0]": "Fill=$CommonBgBrush",
-  "controlStyles[6].styles[1]": "BorderThickness=0,0,0,0",
-  "controlStyles[6].styles[2]": "CornerRadius=14",
-  "controlStyles[6].styles[3]": "Margin=-2,-2,-2,-2",
-  "controlStyles[7].target": "SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock",
-  "controlStyles[7].styles[0]": "FontSize=18",
-  "controlStyles[8].target": "SystemTray.ImageIconContent > Grid#ContainerGrid > Image",
-  "controlStyles[8].styles[0]": "Width=18",
-  "controlStyles[8].styles[1]": "Height=18",
-  "controlStyles[9].target": "SystemTray.Stack#ShowDesktopStack",
-  "controlStyles[9].styles[0]": "Visibility=Collapsed",
-  "controlStyles[10].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
-  "controlStyles[10].styles[0]": "Height=32",
-  "controlStyles[10].styles[1]": "Width=32",
-  "controlStyles[11].target": "Taskbar.TaskListLabeledButtonPanel#IconPanel",
-  "controlStyles[11].styles[0]": "Padding=2,2,2,2",
-  "controlStyles[12].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
-  "controlStyles[12].styles[0]": "Padding=2,2,2,2",
-  "controlStyles[13].target": "Grid#ContainerGrid",
-  "controlStyles[13].styles[0]": "Padding=2,2,2,2",
-  "controlStyles[14].target": "Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid",
-  "controlStyles[14].styles[0]": "Padding=2,2,2,2",
-  "controlStyles[15].target": "Image#Icon",
-  "controlStyles[15].styles[0]": "Margin=2,2,2,2",
-  "controlStyles[16].target": "Rectangle#BackgroundStroke",
-  "controlStyles[16].styles[0]": "Fill:=<WindhawkBlur BlurAmount=\"18\" TintColor=\"#1AFFFFFF\"/>",
-  "controlStyles[17].target": "Grid#OverflowRootGrid > Border",
-  "controlStyles[17].styles[0]": "Background=$CommonBgBrush",
-  "controlStyles[18].target": "Grid#ConfirmatorMainGrid",
-  "controlStyles[18].styles[0]": "Background=$CommonBgBrush",
-  "controlStyles[18].styles[1]": "BorderThickness=0",
-  "controlStyles[19].target": "WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid",
-  "controlStyles[19].styles[0]": "Background=$CommonBgBrush",
-  "controlStyles[19].styles[1]": "BorderThickness=0",
-  "controlStyles[20].target": "WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid",
-  "controlStyles[20].styles[0]": "Fill:=<WindhawkBlur BlurAmount=\"18\" TintColor=\"#1AFFFFFF\"/>"
-}
+```yaml
+styleConstants:
+  - CommonBgBrush=<WindhawkBlur BlurAmount="18" TintColor="#80000000"/>
+controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill=$CommonBgBrush
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill=$CommonBgBrush
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - Background=Transparent
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$CommonBgBrush
+  - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
+    styles:
+      - Background=$CommonBgBrush
+  - target: MenuFlyoutPresenter > Border
+    styles:
+      - Fill=$CommonBgBrush
+      - BorderThickness=0,0,0,0
+      - CornerRadius=14
+      - Padding=2,2,2,2
+  - target: Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Fill=$CommonBgBrush
+      - BorderThickness=0,0,0,0
+      - CornerRadius=14
+      - Margin=-2,-2,-2,-2
+  - target: SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+    styles:
+      - FontSize=18
+  - target: SystemTray.ImageIconContent > Grid#ContainerGrid > Image
+    styles:
+      - Width=18
+      - Height=18
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+    styles:
+      - Height=32
+      - Width=32
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - Padding=2,2,2,2
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Padding=2,2,2,2
+  - target: Grid#ContainerGrid
+    styles:
+      - Padding=2,2,2,2
+  - target: Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid
+    styles:
+      - Padding=2,2,2,2
+  - target: Image#Icon
+    styles:
+      - Margin=2,2,2,2
+  - target: Rectangle#BackgroundStroke
+    styles:
+      - Fill:=<WindhawkBlur BlurAmount="18" TintColor="#1AFFFFFF"/>
+  - target: Grid#OverflowRootGrid > Border
+    styles:
+      - Background=$CommonBgBrush
+  - target: Grid#ConfirmatorMainGrid
+    styles:
+      - Background=$CommonBgBrush
+      - BorderThickness=0
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
+    styles:
+      - Background=$CommonBgBrush
+      - BorderThickness=0
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
+    styles:
+      - Fill:=<WindhawkBlur BlurAmount="18" TintColor="#1AFFFFFF"/>
 ```
 </details>

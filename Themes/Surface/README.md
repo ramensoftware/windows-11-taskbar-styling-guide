@@ -20,12 +20,12 @@ Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-    "IconSize":24,
-    "TaskbarHeight":70,
-    "TaskbarButtonWidth":47
-}
+```yaml
+TaskbarHeight: 70
+IconSize: 24
+TaskbarButtonWidth: 47
+IconSizeSmall: 16
+TaskbarButtonWidthSmall: 32
 ```
 </details>
 
@@ -76,53 +76,63 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-    "controlStyles[0].target": "Grid#RootGrid > Taskbar.TaskbarBackground > Grid",
-    "controlStyles[0].styles[0]": "CornerRadius=20",
-    "controlStyles[0].styles[1]": "BorderThickness=1",
-    "controlStyles[0].styles[2]": "Margin=-20,0,-20,0",
-    "controlStyles[0].styles[3]": "BorderBrush=#40FFFFFF",
-    "controlStyles[0].styles[4]": "Padding=-1",
-    "controlStyles[1].target": "Rectangle#BackgroundStroke",
-    "controlStyles[1].styles[0]": "Fill=Transparent",
-    "controlStyles[2].target": "Taskbar.TaskbarFrame",
-    "controlStyles[2].styles[0]": "Width=Auto",
-    "controlStyles[2].styles[1]": "HorizontalAlignment=Center",
-    "controlStyles[3].target": "Taskbar.TaskbarFrame > Grid#RootGrid",
-    "controlStyles[3].styles[0]": "Visibility=Visible",
-    "controlStyles[3].styles[1]": "Margin=0,0,0,10",
-    "controlStyles[3].styles[2]": "Padding=20,0,20,0",
-    "controlStyles[4].target": "Grid#SystemTrayFrameGrid",
-    "controlStyles[4].styles[0]": "Margin=0,0,0,10",
-    "controlStyles[4].styles[1]": "CornerRadius=20,0,0,20",
-    "controlStyles[4].styles[2]": "BorderThickness=1,1,0,1",
-    "controlStyles[4].styles[3]": "BorderBrush=#66FFFFFF",
-    "controlStyles[4].styles[4]": "Padding=10,5,0,5",
-    "controlStyles[4].styles[5]": "Background:=<WindhawkBlur BlurAmount=\"5\" TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.5\" />",
-    "controlStyles[4].styles[6]": "Visibility=Visible",
-    "controlStyles[5].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
-    "controlStyles[5].styles[0]": "Fill:=<WindhawkBlur BlurAmount=\"5\" TintColor=\"#12FFFFFF\"/>",
-    "controlStyles[6].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement",
-    "controlStyles[6].styles[0]": "Background:=$TaskItemBackground",
-    "controlStyles[6].styles[1]": "Margin=-1,5.5,1,4",
-    "controlStyles[6].styles[2]": "CornerRadius=12",
-    "controlStyles[6].styles[3]": "BorderThickness=2,1,0.5,2",
-    "controlStyles[6].styles[4]": "BorderBrush:=$TaskItemBorder",
-    "controlStyles[7].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement",
-    "controlStyles[7].styles[0]": "Background:=$SystemItemBackground",
-    "controlStyles[7].styles[1]": "CornerRadius=12",
-    "controlStyles[7].styles[2]": "Margin=-1,5.5,2.5,4",
-    "controlStyles[7].styles[3]": "BorderThickness=2,1,0.5,2",
-    "controlStyles[7].styles[4]": "BorderBrush:=$SystemItemBorder",
-    "controlStyles[8].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator",
-    "controlStyles[8].styles[0]": "Margin=0,0,0,8",
-    "controlStyles[9].target": "Border#MultiWindowElement",
-    "controlStyles[9].styles[0]": "Height=0",
-    "styleConstants[0]": "TaskItemBackground=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.9\" FallbackColor=\"{ThemeResource SystemChromeMediumColor}\" />",
-    "styleConstants[1]": "TaskItemBorder=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0.5,1\"><GradientStop Color=\"#00000000\" Offset=\"0\" /><GradientStop Color=\"#33000000\" Offset=\"1.5\" /></LinearGradientBrush>",
-    "styleConstants[2]": "SystemItemBackground=<AcrylicBrush TintColor=\"{ThemeResource SystemChromeAltHighColor}\" TintOpacity=\"0.8\" FallbackColor=\"{ThemeResource SystemChromeLowColor}\" />",
-    "styleConstants[3]": "SystemItemBorder=<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"0.5,1\"><GradientStop Color=\"#00000000\" Offset=\"0\" /><GradientStop Color=\"#33000000\" Offset=\"1.5\" /></LinearGradientBrush>"
-}
+```yaml
+styleConstants:
+  - TaskItemBackground=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.9" FallbackColor="{ThemeResource SystemChromeMediumColor}" />
+  - TaskItemBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="0.5,1"><GradientStop Color="#00000000" Offset="0" /><GradientStop Color="#33000000" Offset="1.5" /></LinearGradientBrush>
+  - SystemItemBackground=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.8" FallbackColor="{ThemeResource SystemChromeLowColor}" />
+  - SystemItemBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="0.5,1"><GradientStop Color="#00000000" Offset="0" /><GradientStop Color="#33000000" Offset="1.5" /></LinearGradientBrush>
+controlStyles:
+  - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
+    styles:
+      - CornerRadius=20
+      - BorderThickness=1
+      - Margin=-20,0,-20,0
+      - BorderBrush=#40FFFFFF
+      - Padding=-1
+  - target: Rectangle#BackgroundStroke
+    styles:
+      - Fill=Transparent
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Width=Auto
+      - HorizontalAlignment=Center
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid
+    styles:
+      - Visibility=Visible
+      - Margin=0,0,0,10
+      - Padding=20,0,20,0
+  - target: Grid#SystemTrayFrameGrid
+    styles:
+      - Margin=0,0,0,10
+      - CornerRadius=20,0,0,20
+      - BorderThickness=1,1,0,1
+      - BorderBrush=#66FFFFFF
+      - Padding=10,5,0,5
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.5" />
+      - Visibility=Visible
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill:=<WindhawkBlur BlurAmount="5" TintColor="#12FFFFFF"/>
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
+    styles:
+      - Background:=$TaskItemBackground
+      - Margin=-1,5.5,1,4
+      - CornerRadius=12
+      - BorderThickness=2,1,0.5,2
+      - BorderBrush:=$TaskItemBorder
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+    styles:
+      - Background:=$SystemItemBackground
+      - CornerRadius=12
+      - Margin=-1,5.5,2.5,4
+      - BorderThickness=2,1,0.5,2
+      - BorderBrush:=$SystemItemBorder
+  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
+    styles:
+      - Margin=0,0,0,8
+  - target: Border#MultiWindowElement
+    styles:
+      - Height=0
 ```
 </details>

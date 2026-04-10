@@ -18,12 +18,12 @@ Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-    "IconSize":32,
-    "TaskbarHeight":39,
-    "TaskbarButtonWidth":58
-}
+```yaml
+TaskbarHeight: 39
+IconSize: 32
+TaskbarButtonWidth: 58
+IconSizeSmall: 16
+TaskbarButtonWidthSmall: 32
 ```
 </details>
 
@@ -47,267 +47,312 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```json
-{
-	"controlStyles[0].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement",
-	"controlStyles[0].styles[0]": "Background@InactiveNormal:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandInactiveNormal\" />",
-	"controlStyles[0].styles[1]": "Background@InactivePointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandInactivePointerOver\" />",
-	"controlStyles[0].styles[2]": "Background@ActiveNormal:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActiveNormal\" />",
-	"controlStyles[0].styles[3]": "Background@ActivePressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActivePressed\" />",
-	"controlStyles[0].styles[4]": "Background@ActivePointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActivePointerOver\" />",
-	"controlStyles[0].styles[5]": "Background@InactivePressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandInactivePressed\" />",
-	"controlStyles[0].styles[6]": "BorderThickness=0",
-	"controlStyles[0].styles[7]": "Background@MultiWindowNormal:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandInactiveNormal\" />",
-	"controlStyles[0].styles[8]": "Background@MultiWindowActive:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActiveNormal\" />",
-	"controlStyles[0].styles[9]": "Background@MultiWindowPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActivePressed\" />",
-	"controlStyles[0].styles[10]": "Background@MultiWindowPointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActivePointerOver\" />",
-	"controlStyles[0].styles[11]": "Background@RequestingAttention:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandRequestingAttention\" />",
-	"controlStyles[0].styles[12]": "Background@RequestingAttentionPointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandRequestingAttention\" />",
-	"controlStyles[0].styles[13]": "Background@RequestingAttentionPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandRequestingAttention\" />",
-	"controlStyles[0].styles[14]": "Background@RequestingAttentionMulti:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandRequestingAttention\" />",
-	"controlStyles[0].styles[15]": "Background@RequestingAttentionMultiPointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandRequestingAttention\" />",
-	"controlStyles[0].styles[16]": "Background@RequestingAttentionMultiPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandRequestingAttention\" />",
-	"controlStyles[1].target": "Taskbar.TaskListLabeledButtonPanel",
-	"controlStyles[1].styles[0]": "Padding=0,0,0,0",
-	"controlStyles[2].target": "Windows.UI.Xaml.Shapes.Rectangle#RunningIndicator",
-	"controlStyles[2].styles[0]": "Visibility=Collapsed",
-	"controlStyles[3].target": "Taskbar.TaskListLabeledButtonPanel > Image",
-	"controlStyles[3].styles[0]": "RenderTransform:=<TranslateTransform X=\"2\" />",
-	"controlStyles[4].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Border#BackgroundElement",
-	"controlStyles[4].styles[0]": "Opacity@NoRunningIndicator=0",
-	"controlStyles[5].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement",
-	"controlStyles[5].styles[0]": "Background@InactiveNormal:=<ImageBrush Stretch=\"None\" ImageSource=\"$orbNormal\" />",
-	"controlStyles[5].styles[1]": "Background@InactivePointerOver:=<ImageBrush Stretch=\"None\" ImageSource=\"$orbPointerOver\" />",
-	"controlStyles[5].styles[2]": "Background@InactivePressed:=<ImageBrush Stretch=\"None\" ImageSource=\"$orbPressed\" />",
-	"controlStyles[5].styles[3]": "Background@ActiveNormal:=<ImageBrush Stretch=\"None\" ImageSource=\"$orbPressed\" />",
-	"controlStyles[5].styles[4]": "Background@ActivePointerOver:=<ImageBrush Stretch=\"None\" ImageSource=\"$orbPointerOver\" />",
-	"controlStyles[5].styles[5]": "Background@ActivePressed:=<ImageBrush Stretch=\"None\" ImageSource=\"$orbPressed\" />",
-	"controlStyles[5].styles[6]": "BorderThickness=0",
-	"controlStyles[5].styles[7]": "Width=54",
-	"controlStyles[6].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
-	"controlStyles[6].styles[0]": "Visibility=Collapsed",
-	"controlStyles[7].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
-	"controlStyles[7].styles[0]": "Padding=0,0,0,0",
-	"controlStyles[7].styles[1]": "MinWidth=55",
-	"controlStyles[7].styles[2]": "Margin=0,0,5,0",
-	"controlStyles[8].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid",
-	"controlStyles[8].styles[0]": "Background:=<WindhawkBlur BlurAmount=\"3\" TintOpacity=\"$aeroOpacity\" TintColor=\"$aeroColor\" />",
-	"controlStyles[9].target": "Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke",
-	"controlStyles[9].styles[0]": "Fill:=<ImageBrush Stretch=\"UniformToFill\" ImageSource=\"$reflection\" />",
-	"controlStyles[9].styles[1]": "Height=100",
-	"controlStyles[10].target": "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill",
-	"controlStyles[10].styles[0]": "Fill:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbarBackground\" />",
-	"controlStyles[11].target": "Taskbar.TaskListButton",
-	"controlStyles[11].styles[0]": "Margin=1,0,1,0",
-	"controlStyles[12].target": "Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#MultiWindowElement",
-	"controlStyles[12].styles[0]": "Background@MultiWindowNormal:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandInactiveNormal\" />",
-	"controlStyles[12].styles[1]": "Background@MultiWindowActive:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActiveNormal\" />",
-	"controlStyles[12].styles[2]": "Background@MultiWindowPointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActiveNormal\" />",
-	"controlStyles[12].styles[3]": "BorderThickness=0",
-	"controlStyles[12].styles[4]": "RenderTransform:=<TranslateTransform X=\"2\" />",
-	"controlStyles[12].styles[5]": "Background@MultiWindowPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandActiveNormal\" />",
-	"controlStyles[12].styles[6]": "Background@RequestingAttentionMulti:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandRequestingAttention\" />",
-	"controlStyles[12].styles[7]": "Background@RequestingAttentionMultiPointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandRequestingAttention\" />",
-	"controlStyles[12].styles[8]": "Background@RequestingAttentionMultiPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$taskbandRequestingAttention\" />",
-	"controlStyles[13].target": "SystemTray.ChevronIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.ContentPresenter",
-	"controlStyles[13].styles[0]": "Visibility=Collapsed",
-	"controlStyles[14].target": "SystemTray.ChevronIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid@ > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
-	"controlStyles[14].styles[0]": "Background@Normal:=<ImageBrush Stretch=\"None\" ImageSource=\"$overflowNormal\" />",
-	"controlStyles[14].styles[1]": "Background@PointerOver:=<ImageBrush Stretch=\"None\" ImageSource=\"$overflowPointerOver\" />",
-	"controlStyles[14].styles[2]": "Background@Pressed:=<ImageBrush Stretch=\"None\" ImageSource=\"$overflowPressed\" />",
-	"controlStyles[14].styles[3]": "Background@CheckedNormal:=<ImageBrush Stretch=\"None\" ImageSource=\"$overflowPressed\" />",
-	"controlStyles[14].styles[4]": "Background@CheckedPointerOver:=<ImageBrush Stretch=\"None\" ImageSource=\"$overflowPressed\" />",
-	"controlStyles[14].styles[5]": "Background@CheckedPressed:=<ImageBrush Stretch=\"None\" ImageSource=\"$overflowPressed\" />",
-	"controlStyles[14].styles[6]": "BorderThickness=0",
-	"controlStyles[14].styles[7]": "Width=21",
-	"controlStyles[14].styles[8]": "Height=20",
-	"controlStyles[15].target": "SystemTray.OmniButton#NotificationCenterButton > Windows.UI.Xaml.Controls.Grid@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
-	"controlStyles[15].styles[0]": "Background@Normal=Transparent",
-	"controlStyles[15].styles[1]": "Background@PointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPointerOver\" />",
-	"controlStyles[15].styles[2]": "Background@Pressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPressed\" />",
-	"controlStyles[15].styles[3]": "BorderThickness=0",
-	"controlStyles[15].styles[4]": "Margin=0",
-	"controlStyles[15].styles[5]": "MinWidth=68",
-	"controlStyles[15].styles[6]": "Background@Checked:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPointerOver\" />",
-	"controlStyles[15].styles[7]": "Background@CheckedPointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPointerOver\" />",
-	"controlStyles[15].styles[8]": "Background@CheckedPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPressed\" />",
-	"controlStyles[16].target": "SystemTray.DateTimeIconContent > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.TextBlock",
-	"controlStyles[16].styles[0]": "TextAlignment=0",
-	"controlStyles[16].styles[1]": "Foreground=White",
-	"controlStyles[16].styles[2]": "FontFamily=Segoe UI",
-	"controlStyles[16].styles[3]": "FlowDirection=0",
-	"controlStyles[16].styles[4]": "Typography.StylisticSet1=true",
-	"controlStyles[17].target": "SystemTray.OmniButton#ControlCenterButton > Windows.UI.Xaml.Controls.Grid@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
-	"controlStyles[17].styles[0]": "Background@Normal=Transparent",
-	"controlStyles[17].styles[1]": "Background@PointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPointerOver\" />",
-	"controlStyles[17].styles[2]": "Background@Pressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPressed\" />",
-	"controlStyles[17].styles[3]": "BorderThickness=0",
-	"controlStyles[17].styles[4]": "Margin=0",
-	"controlStyles[17].styles[5]": "Background@Checked:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPointerOver\" />",
-	"controlStyles[17].styles[6]": "Background@CheckedPointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPointerOver\" />",
-	"controlStyles[17].styles[7]": "Background@CheckedPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPressed\" />",
-	"controlStyles[18].target": "SystemTray.AdaptiveTextBlock > Windows.UI.Xaml.Controls.TextBlock",
-	"controlStyles[18].styles[0]": "//FontFamily=Segoe MDL2 Assets",
-	"controlStyles[18].styles[1]": "Foreground=White",
-	"controlStyles[19].target": "SystemTray.NotifyIconView#NotifyItemIcon > Windows.UI.Xaml.Controls.Grid#ContainerGrid@ > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
-	"controlStyles[19].styles[0]": "Background@Normal=Transparent",
-	"controlStyles[19].styles[1]": "Background@PointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$trayPointerOver\" />",
-	"controlStyles[19].styles[2]": "BorderThickness=0",
-	"controlStyles[19].styles[3]": "Margin=0",
-	"controlStyles[19].styles[4]": "Width=24",
-	"controlStyles[20].target": "SystemTray.NotificationAreaIcons > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter",
-	"controlStyles[20].styles[0]": "Width=24",
-	"controlStyles[20].styles[1]": "Padding=-2,0,-2,0",
-	"controlStyles[21].target": "SystemTray.OmniButton#NotificationCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.ContentPresenter > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Grid#ContentGrid > SystemTray.TextIconContent > Windows.UI.Xaml.Controls.Grid#ContainerGrid > SystemTray.AdaptiveTextBlock[2] > Windows.UI.Xaml.Controls.TextBlock",
-	"controlStyles[21].styles[0]": "FontFamily=Segoe MDL2 Assets",
-	"controlStyles[21].styles[1]": "Text=",
-	"controlStyles[22].target": "SystemTray.OmniButton#NotificationCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.ContentPresenter > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel",
-	"controlStyles[22].styles[0]": "FlowDirection=1",
-	"controlStyles[23].target": "Windows.UI.Xaml.Controls.Grid#ContainerGrid@ > Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe",
-	"controlStyles[23].styles[0]": "Fill@Normal:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$desktopNormal\" />",
-	"controlStyles[23].styles[1]": "Height=39",
-	"controlStyles[23].styles[2]": "Width=$desktopWidth",
-	"controlStyles[23].styles[3]": "RadiusX=0",
-	"controlStyles[23].styles[4]": "RadiusY=0",
-	"controlStyles[23].styles[5]": "Fill@PointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$desktopPointerOver\" />",
-	"controlStyles[23].styles[6]": "Fill@Pressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$desktopPressed\" />",
-	"controlStyles[24].target": "SystemTray.Stack#ShowDesktopStack",
-	"controlStyles[24].styles[0]": "Width=$desktopWidth",
-	"controlStyles[25].target": "SystemTray.Stack#ShowDesktopStack > Windows.UI.Xaml.Controls.Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter",
-	"controlStyles[25].styles[0]": "Width=$desktopWidth",
-	"controlStyles[26].target": "SystemTray.Stack#ShowDesktopStack > Windows.UI.Xaml.Controls.Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView",
-	"controlStyles[26].styles[0]": "Width=$desktopWidth",
-	"controlStyles[27].target": "SystemTray.OmniButton#ControlCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.ContentPresenter > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView#SystemTrayIcon > Windows.UI.Xaml.Controls.Grid#ContainerGrid",
-	"controlStyles[27].styles[0]": "Padding=0",
-	"controlStyles[28].target": "SystemTray.OmniButton#ControlCenterButton",
-	"controlStyles[28].styles[0]": "Margin=3,0,0,0",
-	"controlStyles[29].target": "SystemTray.Stack#MainStack > Windows.UI.Xaml.Controls.Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid@ > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
-	"controlStyles[29].styles[0]": "Background@Normal=Transparent",
-	"controlStyles[29].styles[1]": "Background@PointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$trayPointerOver\" />",
-	"controlStyles[29].styles[2]": "Background@Pressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$trayPressed\" />",
-	"controlStyles[29].styles[3]": "BorderThickness=0",
-	"controlStyles[29].styles[4]": "Margin=0",
-	"controlStyles[29].styles[5]": "Background@Checked:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$trayPointerOver\" />",
-	"controlStyles[29].styles[6]": "Background@CheckedPointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$trayPointerOver\" />",
-	"controlStyles[29].styles[7]": "Background@CheckedPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$trayPressed\" />",
-	"controlStyles[29].styles[8]": "Width=24",
-	"controlStyles[30].target": "Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon",
-	"controlStyles[30].styles[0]": "Visibility=Collapsed",
-	"controlStyles[30].styles[1]": "Visibility@NoRunningIndicator=Visible",
-	"controlStyles[31].target": "Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon",
-	"controlStyles[31].styles[0]": "Fill=Transparent",
-	"controlStyles[31].styles[1]": "Width=54",
-	"controlStyles[31].styles[2]": "Height=54",
-	"controlStyles[31].styles[3]": "Fill@InactivePointerOver:=<ImageBrush Stretch=\"Uniform\" ImageSource=\"$taskbandNotRunningPointerOver\" />",
-	"controlStyles[31].styles[4]": "Fill@InactivePressed:=<ImageBrush Stretch=\"Uniform\" ImageSource=\"$taskbandNotRunningPressed\" />",
-	"controlStyles[31].styles[5]": "Transform3D:=<CompositeTransform3D ScaleY=\"1.1\" ScaleX=\"1.04\" TranslateY=\"1\" CenterY=\"27\" />",
-	"controlStyles[32].target": "SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock",
-	"controlStyles[32].styles[0]": "FontFamily=Segoe UI",
-	"controlStyles[32].styles[1]": "Typography.StylisticSet1=true",
-	"controlStyles[33].target": "Border#SearchPillBackgroundElement",
-	"controlStyles[33].styles[0]": "BorderBrush=#4F222222",
-	"controlStyles[33].styles[1]": "BorderThickness=1",
-	"controlStyles[34].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton]",
-	"controlStyles[34].styles[0]": "//Margin=-8,0,-14,0",
-	"controlStyles[35].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement",
-	"controlStyles[35].styles[0]": "BorderBrush@InactivePointerOver:=<ImageBrush Stretch=\"Uniform\" ImageSource=\"$taskbandNotRunningPointerOver\" />",
-	"controlStyles[35].styles[1]": "BorderThickness=2",
-	"controlStyles[35].styles[2]": "Background:=<ImageBrush Stretch=\"None\" ImageSource=\"$taskviewIcon\" />",
-	"controlStyles[35].styles[3]": "BorderBrush@InactivePressed:=<ImageBrush Stretch=\"Uniform\" ImageSource=\"$taskbandNotRunningPressed\" />",
-	"controlStyles[35].styles[4]": "BorderBrush@ActivePressed:=<ImageBrush Stretch=\"Uniform\" ImageSource=\"$taskbandNotRunningPressed\" />",
-	"controlStyles[35].styles[5]": "BorderBrush@ActivePointerOver:=<ImageBrush Stretch=\"Uniform\" ImageSource=\"$taskbandNotRunningPointerOver\" />",
-	"controlStyles[35].styles[6]": "BorderBrush@ActiveNormal=Transparent",
-	"controlStyles[36].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer",
-	"controlStyles[36].styles[0]": "Visibility=Collapsed",
-	"controlStyles[37].target": "Taskbar.SearchBoxButton#SearchBoxButton[AutomationProperties.AutomationId=SearchButton] > Taskbar.TaskListButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement",
-	"controlStyles[37].styles[0]": "BorderBrush@InactivePointerOver_SearchIcon:=<ImageBrush Stretch=\"Uniform\" ImageSource=\"$taskbandNotRunningPointerOver\" />",
-	"controlStyles[37].styles[1]": "BorderBrush@InactivePressed_SearchIcon:=<ImageBrush Stretch=\"Uniform\" ImageSource=\"$taskbandNotRunningPressed\" />",
-	"controlStyles[37].styles[2]": "BorderBrush@ActivePressed_SearchIcon:=<ImageBrush Stretch=\"Uniform\" ImageSource=\"$taskbandNotRunningPressed\" />",
-	"controlStyles[37].styles[3]": "BorderBrush@ActivePointerOver_SearchIcon:=<ImageBrush Stretch=\"Uniform\" ImageSource=\"$taskbandNotRunningPointerOver\" />",
-	"controlStyles[37].styles[4]": "BorderBrush@ActiveNormal_SearchIcon=Transparent",
-	"controlStyles[37].styles[5]": "BorderThickness@InactivePointerOver_SearchIcon=2",
-	"controlStyles[37].styles[6]": "BorderThickness@InactivePressed_SearchIcon=2",
-	"controlStyles[37].styles[7]": "BorderThickness@ActivePressed_SearchIcon=2",
-	"controlStyles[37].styles[8]": "BorderThickness@ActivePointerOver_SearchIcon=2",
-	"controlStyles[37].styles[9]": "Background@ActiveNormal_SearchIcon:=<ImageBrush Stretch=\"None\" ImageSource=\"$searchIcon\" />",
-	"controlStyles[37].styles[10]": "Background@InactivePointerOver_SearchIcon:=<ImageBrush Stretch=\"None\" ImageSource=\"$searchIcon\" />",
-	"controlStyles[37].styles[11]": "Background@InactivePressed_SearchIcon:=<ImageBrush Stretch=\"None\" ImageSource=\"$searchIcon\" />",
-	"controlStyles[37].styles[12]": "Background@ActivePressed_SearchIcon:=<ImageBrush Stretch=\"None\" ImageSource=\"$searchIcon\" />",
-	"controlStyles[37].styles[13]": "Background@ActivePointerOver_SearchIcon:=<ImageBrush Stretch=\"None\" ImageSource=\"$searchIcon\" />",
-	"controlStyles[37].styles[14]": "Background@InactiveNormal_SearchIcon:=<ImageBrush Stretch=\"None\" ImageSource=\"$searchIcon\" />",
-	"controlStyles[37].styles[15]": "Height=30",
-	"controlStyles[37].styles[16]": "Height@ActiveNormal_SearchIcon=Auto",
-	"controlStyles[37].styles[17]": "Height@InactivePointerOver_SearchIcon=Auto",
-	"controlStyles[37].styles[18]": "Height@InactivePressed_SearchIcon=Auto",
-	"controlStyles[37].styles[19]": "Height@ActivePressed_SearchIcon=Auto",
-	"controlStyles[37].styles[20]": "Height@ActivePointerOver_SearchIcon=Auto",
-	"controlStyles[37].styles[21]": "Height@InactiveNormal_SearchIcon=Auto",
-	"controlStyles[38].target": "Taskbar.SearchBoxButton#SearchBoxButton[AutomationProperties.AutomationId=SearchButton] > Taskbar.TaskListButtonPanel@CommonStates > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer",
-	"controlStyles[38].styles[0]": "Visibility@ActiveNormal_SearchIcon=Collapsed",
-	"controlStyles[38].styles[1]": "Visibility@InactivePointerOver_SearchIcon=Collapsed",
-	"controlStyles[38].styles[2]": "Visibility@InactivePressed_SearchIcon=Collapsed",
-	"controlStyles[38].styles[3]": "Visibility@ActivePressed_SearchIcon=Collapsed",
-	"controlStyles[38].styles[4]": "Visibility@ActivePointerOver_SearchIcon=Collapsed",
-	"controlStyles[38].styles[5]": "Visibility@InactiveNormal_SearchIcon=Collapsed",
-	"controlStyles[39].target": "Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView > Windows.UI.Xaml.Controls.Grid@ > Windows.UI.Xaml.Controls.Border#BackgroundBorder",
-	"controlStyles[39].styles[0]": "Background@CheckedPressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPressed\" />",
-	"controlStyles[39].styles[1]": "Background@CheckedPointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPointerOver\" />",
-	"controlStyles[39].styles[2]": "Background@CheckedNormal:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPointerOver\" />",
-	"controlStyles[39].styles[3]": "BorderThickness=0",
-	"controlStyles[39].styles[4]": "Background@Pressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPressed\" />",
-	"controlStyles[39].styles[5]": "Background@PointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$clockPointerOver\" />",
-	"controlStyles[39].styles[6]": "Background@Normal=Transparent",
-	"controlStyles[39].styles[7]": "Margin=0",
-	"controlStyles[40].target": "SystemTray.Stack#NonActivatableStack",
-	"controlStyles[40].styles[0]": "Margin=4,0,0,0",
-	"controlStyles[41].target": "Taskbar.AugmentedEntryPointButton[AutomationProperties.AutomationId=WidgetsButton] > Taskbar.TaskListButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement",
-	"controlStyles[41].styles[0]": "Background@InactivePointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$widgetsPointerOver\" />",
-	"controlStyles[41].styles[1]": "Background@InactivePressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$widgetsPressed\" />",
-	"controlStyles[41].styles[2]": "Background@ActivePointerOver:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$widgetsPointerOver\" />",
-	"controlStyles[41].styles[3]": "Background@ActivePressed:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$widgetsPressed\" />",
-	"controlStyles[41].styles[4]": "Background@ActiveNormal:=<ImageBrush Stretch=\"Fill\" ImageSource=\"$widgetsPointerOver\" />",
-	"controlStyles[41].styles[5]": "BorderThickness=0",
-	"controlStyles[41].styles[6]": "Margin=0",
-	"controlStyles[42].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
-	"controlStyles[42].styles[0]": "Width=54",
-	"controlStyles[43].target": "Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.TextBlock",
-	"controlStyles[43].styles[0]": "FontFamily=Segoe UI",
-	"controlStyles[43].styles[1]": "Typography.StylisticSet1=true",
-	"controlStyles[44].target": "Windows.UI.Xaml.Controls.TextBlock#LabelControl",
-	"controlStyles[44].styles[0]": "FontFamily=Segoe UI",
-	"controlStyles[44].styles[1]": "Typography.StylisticSet1=true",
-	"controlStyles[44].styles[2]": "Foreground=White",
-	"styleConstants[0]": "orbNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbNormal.png",
-	"styleConstants[1]": "orbPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbHover.png",
-	"styleConstants[2]": "orbPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbPressed.png",
-	"styleConstants[3]": "aeroColor={ThemeResource SystemAccentColor}",
-	"styleConstants[4]": "aeroOpacity=0.3",
-	"styleConstants[5]": "reflection=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/AeroPeek.png",
-	"styleConstants[6]": "taskbandInactiveNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/InactiveNormal.png",
-	"styleConstants[7]": "taskbandInactivePointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/InactivePointerOver.png",
-	"styleConstants[8]": "taskbandInactivePressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png",
-	"styleConstants[9]": "taskbandActiveNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png",
-	"styleConstants[10]": "taskbandActivePointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png",
-	"styleConstants[11]": "taskbandActivePressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png",
-	"styleConstants[12]": "overflowNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/overflowNormal.png",
-	"styleConstants[13]": "overflowPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/overflowPointerOver.png",
-	"styleConstants[14]": "overflowPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/overflowPressed.png",
-	"styleConstants[15]": "clockPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/clockPointerOver.png",
-	"styleConstants[16]": "clockPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/clockPressed.png",
-	"styleConstants[17]": "trayPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/trayPointerOver.png",
-	"styleConstants[18]": "trayPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/trayPressed.png",
-	"styleConstants[19]": "desktopNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/desktopNormal.png",
-	"styleConstants[20]": "desktopPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/desktopPointerOver.png",
-	"styleConstants[21]": "desktopPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/desktopPressed.png",
-	"styleConstants[22]": "desktopWidth=15",
-	"styleConstants[23]": "taskbandRequestingAttention=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/requestingAttention.png",
-	"styleConstants[24]": "taskbandNotRunningPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/notRunningPointerOver.png",
-	"styleConstants[25]": "taskbandNotRunningPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/notRunningPressed.png",
-	"styleConstants[26]": "taskbarBackground=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/taskbarBackground.png",
-	"styleConstants[27]": "taskviewIcon=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/taskview.png",
-	"styleConstants[28]": "searchIcon=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/search.png",
-	"styleConstants[29]": "widgetsPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/widgetsPointerOver.png",
-	"styleConstants[30]": "widgetsPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/widgetsPressed.png"
-}
+```yaml
+styleConstants:
+  - orbNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbNormal.png
+  - orbPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbHover.png
+  - orbPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/orbPressed.png
+  - aeroColor={ThemeResource SystemAccentColor}
+  - aeroOpacity=0.3
+  - reflection=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/AeroPeek.png
+  - taskbandInactiveNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/InactiveNormal.png
+  - taskbandInactivePointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/InactivePointerOver.png
+  - taskbandInactivePressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png
+  - taskbandActiveNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png
+  - taskbandActivePointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png
+  - taskbandActivePressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png
+  - overflowNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/overflowNormal.png
+  - overflowPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/overflowPointerOver.png
+  - overflowPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/overflowPressed.png
+  - clockPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/clockPointerOver.png
+  - clockPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/clockPressed.png
+  - trayPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/trayPointerOver.png
+  - trayPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/trayPressed.png
+  - desktopNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/desktopNormal.png
+  - desktopPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/desktopPointerOver.png
+  - desktopPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/desktopPressed.png
+  - desktopWidth=15
+  - taskbandRequestingAttention=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/requestingAttention.png
+  - taskbandNotRunningPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/notRunningPointerOver.png
+  - taskbandNotRunningPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/notRunningPressed.png
+  - taskbarBackground=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/taskbarBackground.png
+  - taskviewIcon=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/taskview.png
+  - searchIcon=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/search.png
+  - widgetsPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/widgetsPointerOver.png
+  - widgetsPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/widgetsPressed.png
+controlStyles:
+  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - Background@InactiveNormal:=<ImageBrush Stretch="Fill" ImageSource="$taskbandInactiveNormal" />
+      - Background@InactivePointerOver:=<ImageBrush Stretch="Fill" ImageSource="$taskbandInactivePointerOver" />
+      - Background@ActiveNormal:=<ImageBrush Stretch="Fill" ImageSource="$taskbandActiveNormal" />
+      - Background@ActivePressed:=<ImageBrush Stretch="Fill" ImageSource="$taskbandActivePressed" />
+      - Background@ActivePointerOver:=<ImageBrush Stretch="Fill" ImageSource="$taskbandActivePointerOver" />
+      - Background@InactivePressed:=<ImageBrush Stretch="Fill" ImageSource="$taskbandInactivePressed" />
+      - BorderThickness=0
+      - Background@MultiWindowNormal:=<ImageBrush Stretch="Fill" ImageSource="$taskbandInactiveNormal" />
+      - Background@MultiWindowActive:=<ImageBrush Stretch="Fill" ImageSource="$taskbandActiveNormal" />
+      - Background@MultiWindowPressed:=<ImageBrush Stretch="Fill" ImageSource="$taskbandActivePressed" />
+      - Background@MultiWindowPointerOver:=<ImageBrush Stretch="Fill" ImageSource="$taskbandActivePointerOver" />
+      - Background@RequestingAttention:=<ImageBrush Stretch="Fill" ImageSource="$taskbandRequestingAttention" />
+      - Background@RequestingAttentionPointerOver:=<ImageBrush Stretch="Fill" ImageSource="$taskbandRequestingAttention" />
+      - Background@RequestingAttentionPressed:=<ImageBrush Stretch="Fill" ImageSource="$taskbandRequestingAttention" />
+      - Background@RequestingAttentionMulti:=<ImageBrush Stretch="Fill" ImageSource="$taskbandRequestingAttention" />
+      - Background@RequestingAttentionMultiPointerOver:=<ImageBrush Stretch="Fill" ImageSource="$taskbandRequestingAttention" />
+      - Background@RequestingAttentionMultiPressed:=<ImageBrush Stretch="Fill" ImageSource="$taskbandRequestingAttention" />
+  - target: Taskbar.TaskListLabeledButtonPanel
+    styles:
+      - Padding=0,0,0,0
+  - target: Windows.UI.Xaml.Shapes.Rectangle#RunningIndicator
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskListLabeledButtonPanel > Image
+    styles:
+      - RenderTransform:=<TranslateTransform X="2" />
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - Opacity@NoRunningIndicator=0
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+    styles:
+      - Background@InactiveNormal:=<ImageBrush Stretch="None" ImageSource="$orbNormal" />
+      - Background@InactivePointerOver:=<ImageBrush Stretch="None" ImageSource="$orbPointerOver" />
+      - Background@InactivePressed:=<ImageBrush Stretch="None" ImageSource="$orbPressed" />
+      - Background@ActiveNormal:=<ImageBrush Stretch="None" ImageSource="$orbPressed" />
+      - Background@ActivePointerOver:=<ImageBrush Stretch="None" ImageSource="$orbPointerOver" />
+      - Background@ActivePressed:=<ImageBrush Stretch="None" ImageSource="$orbPressed" />
+      - BorderThickness=0
+      - Width=54
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Padding=0,0,0,0
+      - MinWidth=55
+      - Margin=0,0,5,0
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="3" TintOpacity="$aeroOpacity" TintColor="$aeroColor" />
+  - target: Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
+    styles:
+      - Fill:=<ImageBrush Stretch="UniformToFill" ImageSource="$reflection" />
+      - Height=100
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill:=<ImageBrush Stretch="Fill" ImageSource="$taskbarBackground" />
+  - target: Taskbar.TaskListButton
+    styles:
+      - Margin=1,0,1,0
+  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#MultiWindowElement
+    styles:
+      - Background@MultiWindowNormal:=<ImageBrush Stretch="Fill" ImageSource="$taskbandInactiveNormal" />
+      - Background@MultiWindowActive:=<ImageBrush Stretch="Fill" ImageSource="$taskbandActiveNormal" />
+      - Background@MultiWindowPointerOver:=<ImageBrush Stretch="Fill" ImageSource="$taskbandActiveNormal" />
+      - BorderThickness=0
+      - RenderTransform:=<TranslateTransform X="2" />
+      - Background@MultiWindowPressed:=<ImageBrush Stretch="Fill" ImageSource="$taskbandActiveNormal" />
+      - Background@RequestingAttentionMulti:=<ImageBrush Stretch="Fill" ImageSource="$taskbandRequestingAttention" />
+      - Background@RequestingAttentionMultiPointerOver:=<ImageBrush Stretch="Fill" ImageSource="$taskbandRequestingAttention" />
+      - Background@RequestingAttentionMultiPressed:=<ImageBrush Stretch="Fill" ImageSource="$taskbandRequestingAttention" />
+  - target: SystemTray.ChevronIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.ContentPresenter
+    styles:
+      - Visibility=Collapsed
+  - target: SystemTray.ChevronIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid@ > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - Background@Normal:=<ImageBrush Stretch="None" ImageSource="$overflowNormal" />
+      - Background@PointerOver:=<ImageBrush Stretch="None" ImageSource="$overflowPointerOver" />
+      - Background@Pressed:=<ImageBrush Stretch="None" ImageSource="$overflowPressed" />
+      - Background@CheckedNormal:=<ImageBrush Stretch="None" ImageSource="$overflowPressed" />
+      - Background@CheckedPointerOver:=<ImageBrush Stretch="None" ImageSource="$overflowPressed" />
+      - Background@CheckedPressed:=<ImageBrush Stretch="None" ImageSource="$overflowPressed" />
+      - BorderThickness=0
+      - Width=21
+      - Height=20
+  - target: SystemTray.OmniButton#NotificationCenterButton > Windows.UI.Xaml.Controls.Grid@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - Background@Normal=Transparent
+      - Background@PointerOver:=<ImageBrush Stretch="Fill" ImageSource="$clockPointerOver" />
+      - Background@Pressed:=<ImageBrush Stretch="Fill" ImageSource="$clockPressed" />
+      - BorderThickness=0
+      - Margin=0
+      - MinWidth=68
+      - Background@Checked:=<ImageBrush Stretch="Fill" ImageSource="$clockPointerOver" />
+      - Background@CheckedPointerOver:=<ImageBrush Stretch="Fill" ImageSource="$clockPointerOver" />
+      - Background@CheckedPressed:=<ImageBrush Stretch="Fill" ImageSource="$clockPressed" />
+  - target: SystemTray.DateTimeIconContent > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.TextBlock
+    styles:
+      - TextAlignment=0
+      - Foreground=White
+      - FontFamily=Segoe UI
+      - FlowDirection=0
+      - Typography.StylisticSet1=true
+  - target: SystemTray.OmniButton#ControlCenterButton > Windows.UI.Xaml.Controls.Grid@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - Background@Normal=Transparent
+      - Background@PointerOver:=<ImageBrush Stretch="Fill" ImageSource="$clockPointerOver" />
+      - Background@Pressed:=<ImageBrush Stretch="Fill" ImageSource="$clockPressed" />
+      - BorderThickness=0
+      - Margin=0
+      - Background@Checked:=<ImageBrush Stretch="Fill" ImageSource="$clockPointerOver" />
+      - Background@CheckedPointerOver:=<ImageBrush Stretch="Fill" ImageSource="$clockPointerOver" />
+      - Background@CheckedPressed:=<ImageBrush Stretch="Fill" ImageSource="$clockPressed" />
+  - target: SystemTray.AdaptiveTextBlock > Windows.UI.Xaml.Controls.TextBlock
+    styles:
+      - //FontFamily=Segoe MDL2 Assets
+      - Foreground=White
+  - target: SystemTray.NotifyIconView#NotifyItemIcon > Windows.UI.Xaml.Controls.Grid#ContainerGrid@ > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - Background@Normal=Transparent
+      - Background@PointerOver:=<ImageBrush Stretch="Fill" ImageSource="$trayPointerOver" />
+      - BorderThickness=0
+      - Margin=0
+      - Width=24
+  - target: SystemTray.NotificationAreaIcons > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter
+    styles:
+      - Width=24
+      - Padding=-2,0,-2,0
+  - target: SystemTray.OmniButton#NotificationCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.ContentPresenter > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Grid#ContentGrid > SystemTray.TextIconContent > Windows.UI.Xaml.Controls.Grid#ContainerGrid > SystemTray.AdaptiveTextBlock[2] > Windows.UI.Xaml.Controls.TextBlock
+    styles:
+      - FontFamily=Segoe MDL2 Assets
+      - Text=
+  - target: SystemTray.OmniButton#NotificationCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.ContentPresenter > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel
+    styles:
+      - FlowDirection=1
+  - target: Windows.UI.Xaml.Controls.Grid#ContainerGrid@ > Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe
+    styles:
+      - Fill@Normal:=<ImageBrush Stretch="Fill" ImageSource="$desktopNormal" />
+      - Height=39
+      - Width=$desktopWidth
+      - RadiusX=0
+      - RadiusY=0
+      - Fill@PointerOver:=<ImageBrush Stretch="Fill" ImageSource="$desktopPointerOver" />
+      - Fill@Pressed:=<ImageBrush Stretch="Fill" ImageSource="$desktopPressed" />
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Width=$desktopWidth
+  - target: SystemTray.Stack#ShowDesktopStack > Windows.UI.Xaml.Controls.Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter
+    styles:
+      - Width=$desktopWidth
+  - target: SystemTray.Stack#ShowDesktopStack > Windows.UI.Xaml.Controls.Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView
+    styles:
+      - Width=$desktopWidth
+  - target: SystemTray.OmniButton#ControlCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.ContentPresenter > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView#SystemTrayIcon > Windows.UI.Xaml.Controls.Grid#ContainerGrid
+    styles:
+      - Padding=0
+  - target: SystemTray.OmniButton#ControlCenterButton
+    styles:
+      - Margin=3,0,0,0
+  - target: SystemTray.Stack#MainStack > Windows.UI.Xaml.Controls.Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid@ > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - Background@Normal=Transparent
+      - Background@PointerOver:=<ImageBrush Stretch="Fill" ImageSource="$trayPointerOver" />
+      - Background@Pressed:=<ImageBrush Stretch="Fill" ImageSource="$trayPressed" />
+      - BorderThickness=0
+      - Margin=0
+      - Background@Checked:=<ImageBrush Stretch="Fill" ImageSource="$trayPointerOver" />
+      - Background@CheckedPointerOver:=<ImageBrush Stretch="Fill" ImageSource="$trayPointerOver" />
+      - Background@CheckedPressed:=<ImageBrush Stretch="Fill" ImageSource="$trayPressed" />
+      - Width=24
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon
+    styles:
+      - Visibility=Collapsed
+      - Visibility@NoRunningIndicator=Visible
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon
+    styles:
+      - Fill=Transparent
+      - Width=54
+      - Height=54
+      - Fill@InactivePointerOver:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPointerOver" />
+      - Fill@InactivePressed:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPressed" />
+      - Transform3D:=<CompositeTransform3D ScaleY="1.1" ScaleX="1.04" TranslateY="1" CenterY="27" />
+  - target: SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
+    styles:
+      - FontFamily=Segoe UI
+      - Typography.StylisticSet1=true
+  - target: Border#SearchPillBackgroundElement
+    styles:
+      - BorderBrush=#4F222222
+      - BorderThickness=1
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton]
+    styles:
+      - //Margin=-8,0,-14,0
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+    styles:
+      - BorderBrush@InactivePointerOver:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPointerOver" />
+      - BorderThickness=2
+      - Background:=<ImageBrush Stretch="None" ImageSource="$taskviewIcon" />
+      - BorderBrush@InactivePressed:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPressed" />
+      - BorderBrush@ActivePressed:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPressed" />
+      - BorderBrush@ActivePointerOver:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPointerOver" />
+      - BorderBrush@ActiveNormal=Transparent
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.SearchBoxButton#SearchBoxButton[AutomationProperties.AutomationId=SearchButton] > Taskbar.TaskListButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - BorderBrush@InactivePointerOver_SearchIcon:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPointerOver" />
+      - BorderBrush@InactivePressed_SearchIcon:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPressed" />
+      - BorderBrush@ActivePressed_SearchIcon:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPressed" />
+      - BorderBrush@ActivePointerOver_SearchIcon:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPointerOver" />
+      - BorderBrush@ActiveNormal_SearchIcon=Transparent
+      - BorderThickness@InactivePointerOver_SearchIcon=2
+      - BorderThickness@InactivePressed_SearchIcon=2
+      - BorderThickness@ActivePressed_SearchIcon=2
+      - BorderThickness@ActivePointerOver_SearchIcon=2
+      - Background@ActiveNormal_SearchIcon:=<ImageBrush Stretch="None" ImageSource="$searchIcon" />
+      - Background@InactivePointerOver_SearchIcon:=<ImageBrush Stretch="None" ImageSource="$searchIcon" />
+      - Background@InactivePressed_SearchIcon:=<ImageBrush Stretch="None" ImageSource="$searchIcon" />
+      - Background@ActivePressed_SearchIcon:=<ImageBrush Stretch="None" ImageSource="$searchIcon" />
+      - Background@ActivePointerOver_SearchIcon:=<ImageBrush Stretch="None" ImageSource="$searchIcon" />
+      - Background@InactiveNormal_SearchIcon:=<ImageBrush Stretch="None" ImageSource="$searchIcon" />
+      - Height=30
+      - Height@ActiveNormal_SearchIcon=Auto
+      - Height@InactivePointerOver_SearchIcon=Auto
+      - Height@InactivePressed_SearchIcon=Auto
+      - Height@ActivePressed_SearchIcon=Auto
+      - Height@ActivePointerOver_SearchIcon=Auto
+      - Height@InactiveNormal_SearchIcon=Auto
+  - target: Taskbar.SearchBoxButton#SearchBoxButton[AutomationProperties.AutomationId=SearchButton] > Taskbar.TaskListButtonPanel@CommonStates > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer
+    styles:
+      - Visibility@ActiveNormal_SearchIcon=Collapsed
+      - Visibility@InactivePointerOver_SearchIcon=Collapsed
+      - Visibility@InactivePressed_SearchIcon=Collapsed
+      - Visibility@ActivePressed_SearchIcon=Collapsed
+      - Visibility@ActivePointerOver_SearchIcon=Collapsed
+      - Visibility@InactiveNormal_SearchIcon=Collapsed
+  - target: Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView > Windows.UI.Xaml.Controls.Grid@ > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - Background@CheckedPressed:=<ImageBrush Stretch="Fill" ImageSource="$clockPressed" />
+      - Background@CheckedPointerOver:=<ImageBrush Stretch="Fill" ImageSource="$clockPointerOver" />
+      - Background@CheckedNormal:=<ImageBrush Stretch="Fill" ImageSource="$clockPointerOver" />
+      - BorderThickness=0
+      - Background@Pressed:=<ImageBrush Stretch="Fill" ImageSource="$clockPressed" />
+      - Background@PointerOver:=<ImageBrush Stretch="Fill" ImageSource="$clockPointerOver" />
+      - Background@Normal=Transparent
+      - Margin=0
+  - target: SystemTray.Stack#NonActivatableStack
+    styles:
+      - Margin=4,0,0,0
+  - target: Taskbar.AugmentedEntryPointButton[AutomationProperties.AutomationId=WidgetsButton] > Taskbar.TaskListButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - Background@InactivePointerOver:=<ImageBrush Stretch="Fill" ImageSource="$widgetsPointerOver" />
+      - Background@InactivePressed:=<ImageBrush Stretch="Fill" ImageSource="$widgetsPressed" />
+      - Background@ActivePointerOver:=<ImageBrush Stretch="Fill" ImageSource="$widgetsPointerOver" />
+      - Background@ActivePressed:=<ImageBrush Stretch="Fill" ImageSource="$widgetsPressed" />
+      - Background@ActiveNormal:=<ImageBrush Stretch="Fill" ImageSource="$widgetsPointerOver" />
+      - BorderThickness=0
+      - Margin=0
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Width=54
+  - target: Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.TextBlock
+    styles:
+      - FontFamily=Segoe UI
+      - Typography.StylisticSet1=true
+  - target: Windows.UI.Xaml.Controls.TextBlock#LabelControl
+    styles:
+      - FontFamily=Segoe UI
+      - Typography.StylisticSet1=true
+      - Foreground=White
 ```
 </details>
