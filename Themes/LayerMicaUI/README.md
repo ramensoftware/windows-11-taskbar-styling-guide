@@ -83,7 +83,7 @@ To make the taskbar look better, follow these settings:
 <details>
   <summary>Taskbar height and icon size (Click to expand)</summary>
 
-- Paste this JSON into the "Mod settings" text box under the Advanced Settings tab of the "Taskbar Height and Icon Size" mod.
+- Open the "Taskbar Height and Icon Size" mod, go to the "Settings" tab, select "Textual mode" and paste the content below:
 
   ```yaml
   TaskbarHeight: 52
@@ -95,9 +95,9 @@ To make the taskbar look better, follow these settings:
 </details>
 
 <details>
-  <summary>Taskbar Clock Customisation (Click to expand)</summary>
+  <summary>Taskbar Clock Customization (Click to expand)</summary>
 
-- Paste this JSON into the "Mod settings" text box under the Advanced Settings tab of the "Taskbar Clock Customisation" mod.
+- Open the "Taskbar Clock Customization" mod, go to the "Settings" tab, select "Textual mode" and paste the content below:
 
   ```yaml
   ShowSeconds: 0
@@ -173,7 +173,7 @@ To make the taskbar look better, follow these settings:
 <details>
   <summary>Taskbar Labels for Windows 11 (Click to expand)</summary>
 
-- Paste this JSON into the "Mod settings" text box under the Advanced Settings tab of the "Taskbar Labels for Windows 11" mod.
+- Open the "Taskbar Labels for Windows 11" mod, go to the "Settings" tab, select "Textual mode" and paste the content below:
 
   ```yaml
   mode: labelsWithCombining
@@ -218,8 +218,8 @@ settings:
 The theme styles can also be imported manually. To do that, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
-* Go to the "Advanced" tab.
-* Copy the content below to the text box under "Mod settings" and click "Save".
+* Go to the "Settings" tab and select "Textual mode".
+* Copy the content below to the text box and click "Save settings".
 
 <details>
 <summary>Content to import (click to expand)</summary>

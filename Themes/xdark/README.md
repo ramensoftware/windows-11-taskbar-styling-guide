@@ -10,7 +10,7 @@ To achieve the full implementation of the xdark theme, make sure Windows is set 
 - Taskbar Clock Customization – for styling the system clock.
 
 <details>
-<summary>Click to expand JSON content</summary>
+<summary>Click to expand mod settings</summary>
 
 ```yaml
 ShowSeconds: 1
@@ -86,7 +86,7 @@ oldTaskbarOnWin11: 0
 - Taskbar Height and Icon Size – to adjust the proportions and padding of taskbar items.
 
 <details>
-<summary>Click to expand JSON content</summary>
+<summary>Click to expand mod settings</summary>
 
 ```yaml
 TaskbarHeight: 35
@@ -102,7 +102,7 @@ TaskbarButtonWidthSmall: 32
 - Taskbar Labels for Windows 11 – to enable visible labels next to app icons.
 
 <details>
-<summary>Click to expand JSON content</summary>
+<summary>Click to expand mod settings</summary>
 
 ```yaml
 mode: labelsWithCombining
@@ -149,13 +149,18 @@ labelForMultipleItems: '[%amount%] %name%'
 
 ### Customize Icon-to-Text Spacing
 
-If you'd like to adjust the distance between the app icon and its label (usually the app name), you can modify the following JSON property:
+If you'd like to adjust the distance between the app icon and its label (usually the app name), you can modify the following style in the mod settings:
 
-```json
-"controlStyles[12].styles[2]": "Margin=1,0,0,0"
+```
+Margin=1,0,0,0
 ```
 
-This Margin follows the format:
+For this target:
+```
+TextBlock#LabelControl
+```
+
+This margin follows the format:
 Margin=left,top,right,bottom
 
 So, "Margin=1,0,0,0" sets 1 pixel of space between the icon and the text.
@@ -174,8 +179,8 @@ settings:
 The theme styles can also be imported manually. To do that, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
-* Go to the "Advanced" tab.
-* Copy the content below to the text box under "Mod settings" and click "Save".
+* Go to the "Settings" tab and select "Textual mode".
+* Copy the content below to the text box and click "Save settings".
 
 <details>
 <summary>Content to import (click to expand)</summary>

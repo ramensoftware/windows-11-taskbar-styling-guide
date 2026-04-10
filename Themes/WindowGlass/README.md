@@ -18,7 +18,7 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
 - In order to make the taskbar look better, it's best that you install the 'Taskbar height and icon size' mod and use the following settings for the mod:
 
   <details>
-  <summary>Click to expand JSON content</summary>
+  <summary>Click to expand mod settings</summary>
 
   ```yaml
   TaskbarHeight: 70
@@ -71,8 +71,8 @@ settings:
 The theme styles can also be imported manually. To do that, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
-* Go to the "Advanced" tab.
-* Copy the content below to the text box under "Mod settings" and click "Save".
+* Go to the "Settings" tab and select "Textual mode".
+* Copy the content below to the text box and click "Save settings".
 
 <details>
 <summary>Content to import (click to expand)</summary>
