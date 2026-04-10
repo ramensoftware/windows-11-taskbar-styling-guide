@@ -205,7 +205,7 @@ controlStyles:
     styles:
       - Background:= <SolidColorBrush Color="{ThemeResource SystemAccentColorDark1}" Opacity="0.4" />
       - BorderBrush=Transparent
-      - '//Target= Task View (Windows+Tab) > Virtual Desktops Plate '
+      - //Target= Task View (Windows+Tab) > Virtual Desktops Plate
 ```
 </details>
 

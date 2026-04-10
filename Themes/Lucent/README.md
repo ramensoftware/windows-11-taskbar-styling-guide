@@ -143,7 +143,7 @@ controlStyles:
       - Background@PointerOver:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight3}"/>
       - Background@CheckedNormal:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}"/>
       - Background@CheckedPointerOver:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight3}"/>
-  - target: 'SystemTray.Stack#NonActivatableStack > Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView > Grid@ '
+  - target: SystemTray.Stack#NonActivatableStack > Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView > Grid@
     styles:
       - Background@Pressed:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight1}"/>
       - Background@CheckedPressed:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight1}"/>
@@ -297,7 +297,7 @@ controlStyles:
       - Background@PointerOver=#BBBBBB
       - Background@CheckedNormal=#BBBBBB
       - Background@CheckedPointerOver=#EBEBEB
-  - target: 'SystemTray.Stack#NonActivatableStack > Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView > Grid@ '
+  - target: SystemTray.Stack#NonActivatableStack > Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView > Grid@
     styles:
       - Background@Pressed=#EBEBEB
       - Background@CheckedPressed=#EBEBEB

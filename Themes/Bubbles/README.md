@@ -134,7 +134,7 @@ controlStyles:
     styles:
       - Foreground:=<SolidColorBrush x:Name="SearchBoxTextBlock" Color="{ThemeResource SearchPillButtonForeground}" />
       - Margin=0,-1,0,2
-  - target: 'Grid#ContainerGrid@ > Border#BackgroundBorder '
+  - target: Grid#ContainerGrid@ > Border#BackgroundBorder
     styles:
       - Background@PointerOver:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.2" Color="{ThemeResource SearchPillButtonForeground}" />
       - CornerRadius=20
@@ -159,7 +159,7 @@ controlStyles:
       - CornerRadius=20
       - Background@PointerOver:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />
       - Margin=1
-  - target: 'Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel@CommonStates '
+  - target: Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel@CommonStates
     styles:
       - Background:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.6" Color="{ThemeResource SystemChromeHighColor}" />
       - BorderBrush:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.9" Color="{ThemeResource SystemChromeHighColor}" />
@@ -168,7 +168,7 @@ controlStyles:
       - Background@InactivePointerOver:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="1" Color="{ThemeResource SystemChromeHighColor}" />
       - Padding=-1.5,-1,-1.5,-1
       - CornerRadius=20
-  - target: 'Grid#OverflowRootGrid '
+  - target: Grid#OverflowRootGrid
     styles:
       - Background:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.5" Color="{ThemeResource SystemChromeHighColor}" />
       - Padding=0

@@ -255,7 +255,7 @@ controlStyles:
       - Background:=$ThemeLayer
       - CornerRadius=$OuterRadius
       - BorderBrush:=$ThemeOutBorder
-      - '// Win + tab View > Virtual Desktops List Background '
+      - // Win + tab View > Virtual Desktops List Background
   - target: Border#SnapPickerBorder
     styles:
       - Background:=$ThemeBlur
@@ -396,7 +396,7 @@ controlStyles:
     styles:
       - FontFamily=$ThFnt
       - FontWeight=Bold
-      - '// Task View > Hover Over Popup Preview > TextBlocks for Desktop Names '
+      - // Task View > Hover Over Popup Preview > TextBlocks for Desktop Names
   - target: Taskbar.TaskListButton
     styles:
       - CornerRadius=$InnerRadius
@@ -504,7 +504,7 @@ controlStyles:
       - BorderBrush:=$ThemeOutBorder
       - Shadow:=
       - CornerRadius=$OuterRadius
-      - '// Win + Space Input Language Switcher Bar Background '
+      - // Win + Space Input Language Switcher Bar Background
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid#OverlayPanel
     styles:
       - Background=Transparent
@@ -513,7 +513,7 @@ controlStyles:
   - target: Button#GleamEntryPointButton > Border
     styles:
       - Height=30
-      - '// Taskbar Search Bar >  Art container beside search > Button background '
+      - // Taskbar Search Bar >  Art container beside search > Button background
   - target: ContentPresenter > SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchBoxButton#SearchBox > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > TextBlock#SearchBoxTextBlock
     styles:
       - FontFamily=$ThFnt

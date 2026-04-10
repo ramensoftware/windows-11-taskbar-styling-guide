@@ -58,7 +58,7 @@ controlStyles:
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent > Windows.UI.Xaml.Controls.Grid > SystemTray.AdaptiveTextBlock > Windows.UI.Xaml.Controls.TextBlock
     styles:
       - Visibility=Visible
-      - 'Text=‎ ‎‎‎ '
+      - Text=‎ ‎‎‎
       - FontSize=16.4
       - FontFamily=Segoe MDL2 Assets
       - Width=30
@@ -211,7 +211,7 @@ controlStyles:
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[3] > SystemTray.IconView > Grid > Grid
     styles:
       - Margin=2,0,-8,0
-      - 'RenderTransform:=<ScaleTransform ScaleX="0.86" /> '
+      - RenderTransform:=<ScaleTransform ScaleX="0.86" />
   - target: Windows.UI.Xaml.Controls.ContentPresenter#HoverFlyoutContent
     styles:
       - CornerRadius=0
@@ -285,7 +285,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Button#GleamEntryPointButton > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.ContentPresenter
     styles:
       - CornerRadius=3
-  - target: 'SearchUx.SearchUI.SearchButtonRootGrid '
+  - target: SearchUx.SearchUI.SearchButtonRootGrid
     styles:
       - Margin=2,0,0,0
   - target: SystemTray.ChevronIconView > Grid > ContentPresenter

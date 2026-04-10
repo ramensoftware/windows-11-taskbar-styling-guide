@@ -178,7 +178,7 @@ controlStyles:
       - Background:=<AcrylicBrush TintOpacity="0.8" TintColor="Black" FallbackColor="#BB222222" />
       - Width=125
       - BorderBrush=Transparent
-  - target: 'Grid#OverflowRootGrid '
+  - target: Grid#OverflowRootGrid
     styles:
       - Background:=<AcrylicBrush TintOpacity="0.8" TintColor="Black" FallbackColor="#BB222222" />
       - Padding=0

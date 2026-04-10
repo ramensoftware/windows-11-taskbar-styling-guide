@@ -64,7 +64,7 @@ controlStyles:
     styles:
       - Margin=8,0,0,0
       - Foreground=White
-  - target: 'Taskbar.SearchBoxButton '
+  - target: Taskbar.SearchBoxButton
     styles:
       - Padding=8
       - Margin=4,0,4,0

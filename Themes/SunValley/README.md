@@ -54,7 +54,7 @@ controlStyles:
       - Margin=0
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent > Windows.UI.Xaml.Controls.Grid > SystemTray.AdaptiveTextBlock#Base > Windows.UI.Xaml.Controls.TextBlock
     styles:
-      - 'Text=‎ ‎‎‎ '
+      - Text=‎ ‎‎‎
       - FontSize=17.3
       - Width=30
       - FontWeight=ExtraLight
@@ -213,7 +213,7 @@ controlStyles:
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[3] > SystemTray.IconView > Grid > Grid
     styles:
       - Margin=2,0,-4,0
-      - 'RenderTransform:=<ScaleTransform ScaleX="1" /> '
+      - RenderTransform:=<ScaleTransform ScaleX="1" />
   - target: Windows.UI.Xaml.Controls.ContentPresenter#HoverFlyoutContent
     styles:
       - CornerRadius=7
@@ -290,7 +290,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Button#GleamEntryPointButton > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.ContentPresenter
     styles:
       - CornerRadius=3
-  - target: 'SearchUx.SearchUI.SearchButtonRootGrid '
+  - target: SearchUx.SearchUI.SearchButtonRootGrid
     styles:
       - Margin=2,0,2,0
   - target: SystemTray.ChevronIconView > Grid > ContentPresenter
@@ -335,7 +335,7 @@ controlStyles:
     styles:
       - Margin=0,-1,-1,-1
       - Width=80
-      - 'Transitions:=<TransitionCollection>              <ContentThemeTransition/>           </TransitionCollection> '
+      - Transitions:=<TransitionCollection>              <ContentThemeTransition/>           </TransitionCollection>
   - target: SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > Grid > Image
     styles:
       - Width=80
@@ -364,7 +364,7 @@ controlStyles:
       - BorderThickness=1
   - target: ToolTip > ContentPresenter
     styles:
-      - 'Transitions:=<TransitionCollection>              <ContentThemeTransition VerticalOffset="60" />           </TransitionCollection> '
+      - Transitions:=<TransitionCollection>              <ContentThemeTransition VerticalOffset="60" />           </TransitionCollection>
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton[AutomationProperties.AutomationId=WidgetsButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Padding=0,2,0,2
@@ -391,7 +391,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemChromeMediumHighColor}" TintOpacity="0.2" TintLuminosityOpacity="0.9" FallbackColor="{ThemeResource SystemChromeMediumColor}" />
-      - 'Transitions:=<TransitionCollection>              <ContentThemeTransition VerticalOffset="-1000" />           </TransitionCollection> '
+      - Transitions:=<TransitionCollection>              <ContentThemeTransition VerticalOffset="-1000" />           </TransitionCollection>
   - target: SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer
     styles:
       - Height=18
@@ -448,7 +448,7 @@ controlStyles:
   - target: MenuFlyoutPresenter > Border
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemChromeMediumHighColor}" TintOpacity="0.3" TintLuminosityOpacity="0.8" FallbackColor="{ThemeResource SystemChromeMediumColor}" />
-      - 'Transitions:=<TransitionCollection>              <ContentThemeTransition VerticalOffset="100" />           </TransitionCollection> '
+      - Transitions:=<TransitionCollection>              <ContentThemeTransition VerticalOffset="100" />           </TransitionCollection>
       - BorderThickness=1
       - BorderBrush:=<SolidColorBrush Color="{ThemeResource SystemChromeHighColor}" Opacity="0.5" />
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
