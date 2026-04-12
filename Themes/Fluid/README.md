@@ -18,16 +18,16 @@ The get the clock to show up like it does in the screenshot, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-ShowSeconds: 0
-TimeFormat: hh':'mm tt
-DateFormat: MMM dd
+ShowSeconds: 1
+TimeFormat: hh':'mm tt;hh':'mm':'ss tt
+DateFormat: dddd - MMMM dd, yyyy
 WeekdayFormat: dddd
 WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
-TopLine: 📅 %date% 🕒 %time%
-BottomLine: '%web1%'
+TopLine: 🕒 %time%
+BottomLine: 🌐 %web1%
 MiddleLine: '%weekday%'
-TooltipLine: '%web1_full%%n%%n%%media_status% %media_artist% - %media_title%'
-TooltipLineMode: append
+TooltipLine: 📅 %date%%n%🕒 %time2%%n%%n%🌐 %web1_full%%n%%n%📻 %media_info%
+TooltipLineMode: replace
 Width: 180
 Height: 60
 MaxWidth: 0
@@ -72,7 +72,7 @@ TimeStyle:
   FontStretch: ''
   CharacterSpacing: 0
 DateStyle:
-  Hidden: 0
+  Hidden: 1
   TextColor: ''
   TextAlignment: Center
   FontSize: 0
@@ -117,8 +117,6 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=$NormalBG
-      - CornerRadius=$CornerRadius
-      - Margin=2
   - target: Rectangle#BackgroundStroke
     styles:
       - Visibility=1
@@ -222,5 +220,8 @@ controlStyles:
   - target: SystemTray.CopilotIcon#CopilotIcon > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - Visibility=1
+themeResourceVariables:
+  - ''
+xamlDiagnosticsHandling: ''
 ```
 </details>
