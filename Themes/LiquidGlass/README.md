@@ -21,7 +21,7 @@ TimeFormat: hh':'mm tt;hh':'mm':'ss tt
 DateFormat: dddd - MMMM dd, yyyy
 WeekdayFormat: dddd
 WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
-TopLine: 📅 %date% 🕒 %time%
+TopLine: 🕒 %time%
 BottomLine: 🌐 %web1%
 MiddleLine: '%weekday%'
 TooltipLine: 📅 %date%%n%🕒 %time2%%n%%n%🌐 %web1_full%%n%%n%📻 %media_info%
