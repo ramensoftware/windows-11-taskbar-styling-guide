@@ -4,6 +4,85 @@
 
 ![Screenshot](screenshot.png)
 
+## Taskbar Clock Customization (Optional)
+
+The get the clock to show up like it does in the screenshot, follow these steps:
+
+* Open the Taskbar Clock Customization mod in Windhawk.
+* Go to the "Settings" tab and select "Textual mode".
+* Copy the content below to the text box and click "Save settings".
+
+<details>
+<summary>Content to import (click to expand)</summary>
+
+```yaml
+ShowSeconds: 1
+TimeFormat: hh':'mm tt;hh':'mm':'ss tt
+DateFormat: dddd - MMMM dd, yyyy
+WeekdayFormat: dddd
+WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
+TopLine: 🕒 %time%
+BottomLine: 🌐 %web1%
+MiddleLine: '%weekday%'
+TooltipLine: 📅 %date%%n%🕒 %time2%%n%%n%🌐 %web1_full%%n%%n%📻 %media_info%
+TooltipLineMode: replace
+Width: 180
+Height: 60
+MaxWidth: 0
+TextSpacing: 0
+DataCollection:
+  NetworkMetricsFormat: mbsDynamic
+  NetworkMetricsFixedDecimals: -1
+  PercentageFormat: spacePaddingAndSymbol
+  UpdateInterval: 1
+  NetworkAdapterName: ''
+  GpuAdapterName: ''
+MediaPlayer:
+  IgnoredPlayers:
+    - ''
+  MaxLength: 28
+  NoMediaText: No media
+  RemoveBrackets: 1
+WebContentWeatherLocation: ''
+WebContentWeatherFormat: '%c 🌡️%t 🌬️%w'
+WebContentWeatherUnits: autoDetect
+WebContentsItems:
+  - Url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+    BlockStart: <item>
+    Start: <title>
+    End: </title>
+    ContentMode: xmlHtml
+    SearchReplace:
+      - Search: ''
+        Replace: ''
+    MaxLength: 28
+WebContentsUpdateInterval: 10
+TimeZones:
+  - ''
+TimeStyle:
+  Hidden: 0
+  TextColor: ''
+  TextAlignment: Center
+  FontSize: 0
+  FontFamily: ''
+  FontWeight: ''
+  FontStyle: ''
+  FontStretch: ''
+  CharacterSpacing: 0
+DateStyle:
+  Hidden: 1
+  TextColor: ''
+  TextAlignment: Center
+  FontSize: 0
+  FontFamily: ''
+  FontWeight: ''
+  FontStyle: ''
+  FontStretch: ''
+  CharacterSpacing: 0
+oldTaskbarOnWin11: 0
+```
+</details>
+
 ## Theme selection
 
 The theme is integrated into the mod and can simply be selected from the mod's
