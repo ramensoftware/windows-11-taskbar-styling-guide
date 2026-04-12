@@ -237,7 +237,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```yaml
 styleConstants:
-  - mbg=<AcrylicBrush TintColor="{ThemeResource CardStrokeColorDefaultSolid}" FallbackColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" Opacity="1"/>
+  - mbg=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
   - bcr=10
   - wcr=20
   - mcr=15
@@ -357,7 +357,7 @@ controlStyles:
       - Margin=0,0,1,0
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid > Border
     styles:
-      - Background:=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource SystemChromeLowColor}" TintOpacity="0.8" />
+      - Background:=$mbg
       - Shadow:=
   - target: Windows.UI.Xaml.Controls.Grid#MainGrid
     styles:
@@ -454,7 +454,7 @@ controlStyles:
 
 ```yaml
 styleConstants:
-  - mbg=<AcrylicBrush TintColor="{ThemeResource CardStrokeColorDefaultSolid}" FallbackColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" Opacity="1"/>
+  - mbg=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
   - bcr=10
   - wcr=20
   - mcr=15
@@ -574,7 +574,7 @@ controlStyles:
       - Margin=0,0,1,0
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid > Border
     styles:
-      - Background:=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource SystemChromeLowColor}" TintOpacity="0.8" />
+      - Background:=$mbg
       - Shadow:=
   - target: Windows.UI.Xaml.Controls.Grid#MainGrid
     styles:
@@ -662,7 +662,7 @@ controlStyles:
 
 ```yaml
 styleConstants:
-  - mbg=<AcrylicBrush TintColor="{ThemeResource CardStrokeColorDefaultSolid}" FallbackColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" Opacity="1"/>
+  - mbg=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
   - bcr=10
   - wcr=20
   - mcr=15
@@ -782,7 +782,7 @@ controlStyles:
       - Margin=0,0,1,0
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid > Border
     styles:
-      - Background:=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource SystemChromeLowColor}" TintOpacity="0.8" />
+      - Background:=$mbg
       - Shadow:=
   - target: Windows.UI.Xaml.Controls.Grid#MainGrid
     styles:
