@@ -20,13 +20,13 @@ The get the clock to show up like it does in the screenshot, follow these steps:
 ```yaml
 ShowSeconds: 1
 TimeFormat: hh':'mm tt;hh':'mm':'ss tt
-DateFormat: dddd - MMMM dd, yyyy
+DateFormat: MMMM dd;dddd - MMMM dd, yyyy
 WeekdayFormat: dddd
 WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
-TopLine: 🕒 %time%
+TopLine: 📅 %date% 🕒 %time%
 BottomLine: 🌐 %web1%
 MiddleLine: '%weekday%'
-TooltipLine: 📅 %date%%n%🕒 %time2%%n%%n%🌐 %web1_full%%n%%n%📻 %media_info%
+TooltipLine: 📅 %date2%%n%🕒 %time2%%n%%n%🌐 %web1_full%%n%%n%📻 %media_info%
 TooltipLineMode: replace
 Width: 180
 Height: 60
@@ -72,7 +72,7 @@ TimeStyle:
   FontStretch: ''
   CharacterSpacing: 0
 DateStyle:
-  Hidden: 1
+  Hidden: 0
   TextColor: ''
   TextAlignment: Center
   FontSize: 0
@@ -114,9 +114,6 @@ styleConstants:
   - BorderThickness=1
   - CornerRadius=4
 controlStyles:
-  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
-    styles:
-      - Background:=$NormalBG
   - target: Rectangle#BackgroundStroke
     styles:
       - Visibility=1
