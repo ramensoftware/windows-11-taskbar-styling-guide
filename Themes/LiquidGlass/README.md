@@ -179,12 +179,15 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - Background:=$Background
       - CornerRadius=$CornerRadius
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - BorderThickness=$BorderThickness
       - BorderBrush:=$BorderBrush
-      - Background:=$Background
+      - Background=Transparent
       - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$Background
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
     styles:
       - CornerRadius=$CornerRadius
@@ -313,15 +316,6 @@ controlStyles:
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
       - HorizontalAlignment=Left
-  - target: Grid#ModelRootGrid > Border#BackgroundElement
-    styles:
-      - Background:=Transparent
-      - BorderBrush:=$BorderBrush
-      - BorderThickness=$BorderThickness
-      - CornerRadius=$CornerRadius
-  - target: Grid#ModelRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
-    styles:
-      - Background:=$Background
 ```
 </details>
 
@@ -456,7 +450,7 @@ controlStyles:
     styles:
       - BorderThickness=$BorderThickness
       - BorderBrush:=$BorderBrush
-      - Background:=$Background
+      - Background=Transparent
       - CornerRadius=$CornerRadius
   - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
@@ -555,14 +549,5 @@ controlStyles:
       - BorderBrush:=$ElementBorderBrush
       - BorderThickness=$ElementBorderThickness
       - CornerRadius=$ElementCornerRadius
-  - target: Grid#ModelRootGrid > Border#BackgroundElement
-    styles:
-      - Background=Transparent
-      - BorderBrush:=$BorderBrush
-      - BorderThickness=$BorderThickness
-      - CornerRadius=$CornerRadius
-  - target: Grid#ModelRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
-    styles:
-      - Background:=$Background
 ```
 </details>
