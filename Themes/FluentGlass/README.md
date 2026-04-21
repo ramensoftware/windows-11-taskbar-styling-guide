@@ -1,3 +1,4 @@
+<img width="1150" height="74" alt="preview" src="https://github.com/user-attachments/assets/0e638a1c-40ce-4e0b-8191-b7922915cf62" />
 # FluentGlass
 
 A Fluent Design-inspired glass taskbar theme for Windows 11 using Windhawk.
