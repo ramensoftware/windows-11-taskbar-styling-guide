@@ -515,8 +515,20 @@ Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#Ba
 ```
 Style:
 ```
+Background=Transparent
+```
+
+Target:
+```
+Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+```
+Style:
+```
 Background=<color>
 ```
+
+> [!NOTE]
+> The inner element background is customized, and the outer element background is made transparent. Without this, Alt+Tab loses mouse interactivity and becomes unclickable.
 
 ## Task view
 

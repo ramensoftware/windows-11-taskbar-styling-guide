@@ -331,11 +331,14 @@ controlStyles:
       - Margin=-1,-1,-1,-1
   - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
-      - Background:=$mbg
+      - Background=Transparent
       - CornerRadius=$wcr
       - BorderThickness=$bt
       - BorderBrush=$bb
       - Shadow:=
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$mbg
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
       - Background:=<WindhawkBlur BlurAmount="0" TintColor="#00000000" />
@@ -548,11 +551,14 @@ controlStyles:
       - Margin=-1,-1,-1,-1
   - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
-      - Background:=$mbg
+      - Background=Transparent
       - CornerRadius=$wcr
       - BorderThickness=$bt
       - BorderBrush=$bb
       - Shadow:=
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$mbg
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
       - Background:=<WindhawkBlur BlurAmount="0" TintColor="#00000000" />
@@ -756,11 +762,14 @@ controlStyles:
       - Margin=-1,-1,-1,-1
   - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
-      - Background:=$mbg
+      - Background=Transparent
       - CornerRadius=$wcr
       - BorderThickness=$bt
       - BorderBrush=$bb
       - Shadow:=
+  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$mbg
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
       - Background:=<WindhawkBlur BlurAmount="0" TintColor="#00000000" />

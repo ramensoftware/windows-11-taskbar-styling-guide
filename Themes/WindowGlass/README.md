@@ -210,7 +210,7 @@ controlStyles:
     styles:
       - BorderThickness=$BorderThickness
       - BorderBrush:=$BorderBrush
-      - Background:=Transparent
+      - Background=Transparent
       - CornerRadius=$CornerRadius
   - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
@@ -456,7 +456,7 @@ controlStyles:
     styles:
       - BorderThickness=$BorderThickness
       - BorderBrush:=$BorderBrush
-      - Background:=Transparent
+      - Background=Transparent
       - CornerRadius=$CornerRadius
   - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
@@ -702,7 +702,7 @@ controlStyles:
     styles:
       - BorderThickness=$BorderThickness
       - BorderBrush:=$BorderBrush
-      - Background:=Transparent
+      - Background=Transparent
       - CornerRadius=$CornerRadius
   - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
