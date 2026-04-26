@@ -105,14 +105,15 @@ controlStyles:
       - MaxWidth:=$TaskbarFrameMaxWidth
       - Width=Auto
       - MinWidth:=100
+      - Grid.Column=1
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
-      - Margin=10,2,10,2
-      - BorderThickness=$BorderThickness
+      - Margin=10,2,0,2
+      - BorderThickness=0.5,1,0,1
       - //BorderBrush:=$BorderBrush
-      - CornerRadius=$CornerRadius
+      - CornerRadius=25,0,0,25
       - Background:=$Background
-      - Padding=10,0,235,0
+      - Padding=10,0,0,0
   - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
     styles:
       - Visibility=Collapsed
@@ -121,38 +122,49 @@ controlStyles:
       - Visibility=Collapsed
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
-      - Margin=0,8,0,8
+      - Margin=0,4,0,4
       - Background:=Transparent
       - CornerRadius=0
       - BorderThickness=0,0,1,0
       - BorderBrush:=#20808080
       - Padding=2,0,5,0
       - MaxWidth:=200
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Grid.Column=2
+      - Width=Auto
+      - HorizontalAlignment=Left
+      - Margin=0
   - target: Grid#SystemTrayFrameGrid
     styles:
-      - Margin=-240,10,0,10
-      - Background:=Transparent
-      - BorderBrush:=#20808080
-      - BorderThickness=1,0,0,0
-      - CornerRadius=0
-      - Padding=0,0,10,0
+      - Margin=0,2,0,2
+      - Padding=0,0,8,0
+      - Background:=$Background
+      - //BorderBrush:=$BorderBrush
+      - BorderThickness=0,1,0.5,1
+      - CornerRadius=0,25,25,0
+  - target: Windows.UI.Xaml.Controls.ScrollContentPresenter > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.Grid
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
   - target: SystemTray.ChevronIconView
     styles:
-      - Padding=$TrayPadding
-      - CornerRadius=10
-      - Margin=5,0,0,0
+      - Padding=6,0,6,0
+      - CornerRadius=8
+      - Margin=2,0,0,0
   - target: SystemTray.NotifyIconView#NotifyItemIcon
     styles:
-      - Padding=$TrayPadding
-      - CornerRadius=10
-      - Margin=5,0,0,0
+      - Padding=6,0,6,0
+      - CornerRadius=8
+      - Margin=2,0,0,0
   - target: SystemTray.OmniButton
     styles:
-      - Padding=$TrayPadding
-      - CornerRadius=10
+      - Padding=6,0,6,0
+      - CornerRadius=8
+      - Margin=2,0,0,0
   - target: SystemTray.CopilotIcon
     styles:
-      - Padding=$TrayPadding
+      - Padding=6,0,6,0
+      - Margin=2,0,0,0
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid
     styles:
       - Padding=$TrayPadding
@@ -229,9 +241,6 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
       - Background:=Transparent
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
-    styles:
-      - CornerRadius=10
   - target: Taskbar.TaskListButton#TaskListButton
     styles:
       - CornerRadius=10
@@ -283,9 +292,6 @@ controlStyles:
   - target: Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
     styles:
       - Fill:=$Background
-  - target: SystemTray.SystemTrayFrame
-    styles:
-      - Grid.Column=2
   - target: Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder
     styles:
       - Background:=$Background
@@ -304,14 +310,6 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$CornerRadius
-  - target: Windows.UI.Xaml.Controls.ScrollContentPresenter > Windows.UI.Xaml.Controls.Border > Windows.UI.Xaml.Controls.Grid
-    styles:
-      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
-  - target: Taskbar.TaskbarFrame
-    styles:
-      - Grid.Column=1
-      - Width=Auto
-      - MaxWidth=$TaskbarFrameMaxWidth
 ```
 </details>
 
