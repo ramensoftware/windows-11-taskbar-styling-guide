@@ -42,7 +42,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
-      - Fill:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#3168d5" Offset="0.0" /> <GradientStop Color="#4993E6" Offset="0.1" /> <GradientStop Color="#2157D7" Offset="0.35" /> <GradientStop Color="#2663E0" Offset="0.8" /> <GradientStop Color="#1941A5" Offset="1.0" /></LinearGradientBrush>
+      - Fill:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#3168d5" Offset="0.0" /> <GradientStop Color="#4993e6" Offset="0.08" /> <GradientStop Color="#245dd7" Offset="0.18" /> <GradientStop Color="#2561de" Offset="0.9" /> <GradientStop Color="#1941a5" Offset="1.0" /></LinearGradientBrush>
       - VerticalAlignment=Stretch
       - Height=Auto
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
@@ -50,12 +50,16 @@ controlStyles:
       - Fill:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#3168d5" Offset="0.0" /> <GradientStop Color="#4993E6" Offset="0.1" /> <GradientStop Color="#2157D7" Offset="0.35" /> <GradientStop Color="#2663E0" Offset="0.8" /> <GradientStop Color="#1941A5" Offset="1.0" /></LinearGradientBrush>
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
     styles:
-      - Margin=-9,0,10,0
+      - CornerRadius=0,8,8,0
+      - Margin=0,0,4,0
+      - MaxWidth=96
+      - Width=96
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel
     styles:
       - Padding=0
-      - Width=60
-      - CornerRadius=9
+      - MaxWidth=96
+      - Width=96
+      - CornerRadius=0,8,8,0
       - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#2D6B2D" Offset="0.0" /> <GradientStop Color="#7ED57E" Offset="0.08" /> <GradientStop Color="#3DB43D" Offset="0.35" /> <GradientStop Color="#2A752E" Offset="0.85" /> <GradientStop Color="#144818" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=0,0,2,0
       - BorderBrush:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#400D330D" Offset="0.0" /> <GradientStop Color="#800D330D" Offset="0.4" /> <GradientStop Color="#FF0D330D" Offset="1.0" /></LinearGradientBrush>
@@ -80,29 +84,36 @@ controlStyles:
   - target: SystemTray.TextIconContent > Grid > SystemTray.AdaptiveTextBlock#Base > TextBlock
     styles:
       - Foreground=White
-  - target: SystemTray.BatteryIconContent > Grid#ContainerGrid > StackPanel > Grid > TextBlock[1]
-    styles:
-      - Foreground=White
   - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - Background@NoRunningIndicator=Transparent
-      - Background@ActiveRunningIndicator:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#1542A8" Offset="0.0" /> <GradientStop Color="#245DD4" Offset="0.2" /> <GradientStop Color="#1542A8" Offset="1.0" /></LinearGradientBrush>
-      - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#6599E6" Offset="0.0" /> <GradientStop Color="#4A88E0" Offset="0.1" /> <GradientStop Color="#4282D9" Offset="0.9" /> <GradientStop Color="#2A62B5" Offset="1.0" /></LinearGradientBrush>
+      - Background@ActiveRunningIndicator:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#123c92" Offset="0.0" /> <GradientStop Color="#1a50b8" Offset="0.1" /><GradientStop Color="#1a50b8" Offset="0.95" /> <GradientStop Color="#2156b7" Offset="1.0" /></LinearGradientBrush>
+      - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#4892f7" Offset="0.0" /> <GradientStop Color="#3980f4" Offset="0.1" /><GradientStop Color="#56A3FF" Offset="0.85" /> <GradientStop Color="#378DF6" Offset="0.9" /> <GradientStop Color="#163E95" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness=1
       - BorderBrush@NoRunningIndicator=Transparent
-      - BorderBrush@ActiveRunningIndicator=#083192
-      - BorderBrush=#1A4DBF
+      - BorderBrush@ActiveRunningIndicator=#1e64d3
+      - BorderBrush=#3172da
   - target: Taskbar.TaskListButton
     styles:
-      - Margin=-2
+      - Margin=-1.5
   - target: Grid#SystemTrayFrameGrid
     styles:
-      - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#16ADF0" Offset="0.0" /> <GradientStop Color="#19B9F3" Offset="0.1" /> <GradientStop Color="#118FE9" Offset="0.35" /> <GradientStop Color="#0E9EF0" Offset="0.8" /> <GradientStop Color="#1580D9" Offset="1.0" /></LinearGradientBrush>
-      - BorderThickness=1,1,0,1
+      - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#16acf0" Offset="0.0" /> <GradientStop Color="#19b6f2" Offset="0.08" /> <GradientStop Color="#0c8eea" Offset="0.18" /> <GradientStop Color="#0c8eea" Offset="0.9" /> <GradientStop Color="#095bc9" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness=2,1,0,1
       - BorderBrush=#095BC9
-      - Padding=4,-1,0,-1
+      - Padding=-12,0,0,0
   - target: Grid#OverflowRootGrid > Border
     styles:
-      - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#3168d5" Offset="0.0" /> <GradientStop Color="#4993E6" Offset="0.1" /> <GradientStop Color="#2157D7" Offset="0.35" /> <GradientStop Color="#2663E0" Offset="0.8" /> <GradientStop Color="#1941A5" Offset="1.0" /></LinearGradientBrush>
+      - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#16acf0" Offset="0.0" /> <GradientStop Color="#19b6f2" Offset="0.08" /> <GradientStop Color="#0c8eea" Offset="0.18" /> <GradientStop Color="#0c8eea" Offset="0.9" /> <GradientStop Color="#095bc9" Offset="1.0" /></LinearGradientBrush>
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - Background:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#86cbef" Offset="0.0" /><GradientStop Color="#71ccf8" Offset="0.25" /><GradientStop Color="#0983ee" Offset="0.75" /><GradientStop Color="#0872eb" Offset="1" /></LinearGradientBrush>
+      - Width=20
+      - Height=20
+      - MinWidth=20
+      - CornerRadius=10
+      - BorderThickness=1
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#000000" Offset="0.0" /><GradientStop Color="#FFFFFF" Offset="1" /></LinearGradientBrush>
 ```
 </details>
 
