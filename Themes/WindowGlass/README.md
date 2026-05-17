@@ -111,7 +111,7 @@ controlStyles:
       - Margin=10,2,0,2
       - BorderThickness=0.5,1,0,1
       - //BorderBrush:=$BorderBrush
-      - CornerRadius=25,0,0,25
+      - CornerRadius=$CornerRadius,0,0,$CornerRadius
       - Background:=$Background
       - Padding=10,0,0,0
   - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
@@ -142,7 +142,7 @@ controlStyles:
       - Background:=$Background
       - //BorderBrush:=$BorderBrush
       - BorderThickness=0,1,0.5,1
-      - CornerRadius=0,25,25,0
+      - CornerRadius=0,$CornerRadius,$CornerRadius,0
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
