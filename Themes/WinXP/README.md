@@ -50,16 +50,16 @@ controlStyles:
       - Fill:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#3168d5" Offset="0.0" /> <GradientStop Color="#4993E6" Offset="0.1" /> <GradientStop Color="#2157D7" Offset="0.35" /> <GradientStop Color="#2663E0" Offset="0.8" /> <GradientStop Color="#1941A5" Offset="1.0" /></LinearGradientBrush>
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
     styles:
-      - CornerRadius=0,8,8,0
-      - Margin=0,0,4,0
-      - MaxWidth=96
-      - Width=96
+      - CornerRadius=8
+      - Margin=-8,0,4,0
+      - MaxWidth=104
+      - Width=104
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel
     styles:
       - Padding=0
-      - MaxWidth=96
-      - Width=96
-      - CornerRadius=0,8,8,0
+      - MaxWidth=104
+      - Width=104
+      - CornerRadius=8
       - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#2D6B2D" Offset="0.0" /> <GradientStop Color="#7ED57E" Offset="0.08" /> <GradientStop Color="#3DB43D" Offset="0.35" /> <GradientStop Color="#2A752E" Offset="0.85" /> <GradientStop Color="#144818" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=0,0,2,0
       - BorderBrush:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#400D330D" Offset="0.0" /> <GradientStop Color="#800D330D" Offset="0.4" /> <GradientStop Color="#FF0D330D" Offset="1.0" /></LinearGradientBrush>
