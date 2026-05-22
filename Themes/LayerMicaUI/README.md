@@ -275,10 +275,14 @@ controlStyles:
       - // Taskbar System Tray (Right Region) Grid > Background
   - target: Grid#ModalRootGrid > Border#BackgroundElement
     styles:
-      - Background:=$ThemeBlur
+      - Background=Transparent
       - CornerRadius=$OuterRadius
       - BorderBrush:=$ThemeOutBorder
-      - // Alt + Tab View Background
+      - // Alt + Tab View Outer Background
+  - target: Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$ThemeBlur
+      - // Alt + Tab View Inner Background
   - target: Grid#ConfirmatorMainGrid
     styles:
       - Background:=$ThemeLayer

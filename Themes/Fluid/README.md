@@ -217,8 +217,5 @@ controlStyles:
   - target: SystemTray.CopilotIcon#CopilotIcon > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - Visibility=1
-themeResourceVariables:
-  - ''
-xamlDiagnosticsHandling: ''
 ```
 </details>

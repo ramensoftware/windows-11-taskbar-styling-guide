@@ -192,11 +192,15 @@ controlStyles:
       - //Target= Volume & Brightness Popups > Fill Track
   - target: Grid#ModalRootGrid > Border#BackgroundElement
     styles:
-      - Background:=$DarkAccent
+      - Background=Transparent
       - BorderBrush=Transparent
       - CornerRadius=20
       - Shadow:=
-      - //Target= Alt+Tab Window Background
+      - //Target= Alt+Tab Window Outer Background
+  - target: Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$DarkAccent
+      - //Target= Alt+Tab Window Inner Background
   - target: Border#BackgroundDimmingLayer
     styles:
       - Background:= <WindhawkBlur BlurAmount="30" TintColor="#00000080" />

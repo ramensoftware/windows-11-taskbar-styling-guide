@@ -298,10 +298,10 @@ styleConstants:
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
-      - Fill=$CommonBgBrush
+      - Fill:=$CommonBgBrush
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
-      - Fill=$CommonBgBrush
+      - Fill:=$CommonBgBrush
   - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - Background=Transparent
@@ -310,16 +310,16 @@ controlStyles:
       - Background:=$CommonBgBrush
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
-      - Background=$CommonBgBrush
+      - Background:=$CommonBgBrush
   - target: MenuFlyoutPresenter > Border
     styles:
-      - Fill=$CommonBgBrush
+      - Fill:=$CommonBgBrush
       - BorderThickness=0,0,0,0
       - CornerRadius=14
       - Padding=2,2,2,2
   - target: Border#OverflowFlyoutBackgroundBorder
     styles:
-      - Fill=$CommonBgBrush
+      - Fill:=$CommonBgBrush
       - BorderThickness=0,0,0,0
       - CornerRadius=14
       - Margin=-2,-2,-2,-2
@@ -357,14 +357,14 @@ controlStyles:
       - Fill:=<WindhawkBlur BlurAmount="18" TintColor="#1AFFFFFF"/>
   - target: Grid#OverflowRootGrid > Border
     styles:
-      - Background=$CommonBgBrush
+      - Background:=$CommonBgBrush
   - target: Grid#ConfirmatorMainGrid
     styles:
-      - Background=$CommonBgBrush
+      - Background:=$CommonBgBrush
       - BorderThickness=0
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
     styles:
-      - Background=$CommonBgBrush
+      - Background:=$CommonBgBrush
       - BorderThickness=0
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
     styles:

@@ -30,28 +30,28 @@ styleConstants:
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
-      - Fill=$CommonBgBrush
+      - Fill:=$CommonBgBrush
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
-      - Fill=$CommonBgBrush
+      - Fill:=$CommonBgBrush
   - target: Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
   - target: MenuFlyoutPresenter > Border
     styles:
-      - Background=$CommonBgBrush
+      - Background:=$CommonBgBrush
       - BorderThickness=0,0,0,0
       - CornerRadius=14
       - Padding=3,4,3,4
   - target: Border#OverflowFlyoutBackgroundBorder
     styles:
-      - Background=$CommonBgBrush
+      - Background:=$CommonBgBrush
       - BorderThickness=0,0,0,0
       - CornerRadius=15
       - Margin=-2,-2,-2,-2
   - target: Grid#ConfirmatorMainGrid
     styles:
-      - Background=$CommonBgBrush
+      - Background:=$CommonBgBrush
       - BorderThickness=0
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
     styles:

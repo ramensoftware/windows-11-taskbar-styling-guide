@@ -20,7 +20,7 @@ To apply the customizations below, set the corresponding style constants in the 
 
 ### Taskbar frame max width
 
-By default, the app island can grow indefinitely, eventually pushing the system tray outside the screen. To prevent this, set `TaskbarFrameMaxWidth` to limit the maximum width of the app island. For example: `TaskbarFrameMaxWidth=800` will cap the app island at 800px.
+Set `TaskbarFrameMaxWidth` to limit the maximum width of the taskbar. For example: `TaskbarFrameMaxWidth=800` will cap the taskbar at 800px.
 
 ### Island background color
 
@@ -82,20 +82,21 @@ styleConstants:
   - IslandBackgroundColor={ThemeResource ControlFillColorDefault}
   - IslandVerticalMargin=3
   - IslandHorizontalMargin=5
-  - TaskbarFrameMaxWidth=Infinity
+  - TaskbarFrameMaxWidth=8000
 controlStyles:
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid
+  - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
       - HorizontalAlignment=Stretch
       - Background:=<SolidColorBrush Color="$GhostBarBackgroundColor"/>
+      - ActualWidth=>containerGridWidth
   - target: Taskbar.TaskbarFrame
     styles:
       - Grid.Column=1
       - Width=Auto
       - HorizontalAlignment=Right
       - Margin=0,0,$IslandHorizontalMargin,0
-      - MaxWidth=$TaskbarFrameMaxWidth
+      - MaxWidth={{min($TaskbarFrameMaxWidth, containerGridWidth)}}
   - target: Taskbar.TaskbarFrame > Grid
     styles:
       - Background:=<SolidColorBrush Color="$IslandBackgroundColor"/>
