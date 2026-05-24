@@ -1,15 +1,14 @@
 # OS26 Liquid Glass Taskbar
 
-This theme makes the windows 11 taskbar look OS26 inspired "Liquid Glass" dock. It features a glossary dock with liquid glass backgrounds for apps. it also edits the volume indicator to look a bit better.
+This theme makes the windows 11 taskbar look OS26 inspired "Liquid Glass" dock. It features a glossary dock with liquid glass backgrounds for apps. it also edits the Volume and Brightness indicator to look a bit better.
 
 
 ## Taskbar Previews
-Dark
-![Taskbar Preview](dark.png)
-Light
-![Taskbar Preview](light.png)
+![Taskbar Preview](screenshot.png)
+
 ## Volume/Brightness indicator
-![System Tray Preview](system_tray_preview.png)
+<img width="265" height="80" alt="Screenshot 2026-05-25 012123" src="https://github.com/user-attachments/assets/fef054ab-b117-470e-9d56-6a78a61327f0" />
+
 
 ---
 # Requirements
@@ -18,19 +17,19 @@ This mod requires a windhawk mod [Taskbar Hieght and Icon size](https://windhawk
 
 #Taskbar Hieght and Icon size Configurations
 
-Large:(recommended) '{"TaskbarHeight":75,"IconSize":35,"TaskbarButtonWidth":60,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}'
+Large:(recommended) `{"TaskbarHeight":75,"IconSize":35,"TaskbarButtonWidth":60,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 Preview:
 <img width="1919" height="74" alt="Large" src="https://github.com/user-attachments/assets/ece6b1bc-d46b-4a7a-9100-bfc86414fede" />
 
-Medium-Large: '{"TaskbarHeight":70,"IconSize":30,"TaskbarButtonWidth":55,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}'
+Medium-Large: `{"TaskbarHeight":70,"IconSize":30,"TaskbarButtonWidth":55,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 Preview:
 <img width="1919" height="72" alt="medium large" src="https://github.com/user-attachments/assets/1bee566f-df61-4d71-91f3-ab208eb65361" />
 
-Medium: '{"TaskbarHeight":65,"IconSize":30,"TaskbarButtonWidth":50,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}'
+Medium: `{"TaskbarHeight":65,"IconSize":30,"TaskbarButtonWidth":50,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 Preview:
 <img width="1919" height="64" alt="Medium" src="https://github.com/user-attachments/assets/3ad03f90-26fb-49a2-bd97-e4672e9505df" />
 
-Small: '{"TaskbarHeight":60,"IconSize":25,"TaskbarButtonWidth":45,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}'
+Small: `{"TaskbarHeight":60,"IconSize":25,"TaskbarButtonWidth":45,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 Preview: 
 <img width="1914" height="62" alt="Small preview" src="https://github.com/user-attachments/assets/e970b03e-d8b3-4821-ab6d-365998be4ec5" />
 
