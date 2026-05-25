@@ -77,7 +77,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 theme: FluentGlass
 styleConstants:
   - TaskbarFrameWidth=1280
-  - TaskbarHeight=62
+  - TaskbarHeight=Auto
   - GlobalRadius=8
   - LiquidBackground=<WindhawkBlur BlurAmount="22" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.15" />
   - LiquidBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="0.0" /><GradientStop Color="#50404040" Offset="1" /></LinearGradientBrush>
