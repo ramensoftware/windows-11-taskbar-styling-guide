@@ -61,7 +61,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 styleConstants:
   - glassBorder = <LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#50ffffff" Offset="0.0" /><GradientStop Color="#10ffffff" Offset="0.5" /><GradientStop Color="#30ffffff" Offset="1.0" /></LinearGradientBrush>
   - buttonBorder = <LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
-  - notifyBorder = <LinearGradientBrush StartPoint="0,0" EndPoint="1,0"><GradientStop Color="#80ffffff" Offset="0.0" /><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55" /><GradientStop Color="#80ffffff" Offset="1" /></LinearGradientBrush>
+  - notifyBorder = <LinearGradientBrush StartPoint="0,0" EndPoint="1,0"><GradientStop Color="#80ffffff" Offset="0.0" /><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55" /><GradientStop Color="#80ffffff" Offset="1.0" /></LinearGradientBrush>
   - indicatorActive = #60CDFF
   - osdAccent = #ff7060
   - osdTrack = #20ffffff
@@ -88,6 +88,7 @@ controlStyles:
       - Background@ActivePressed := <WindhawkBlur BlurAmount="60" TintColor="#25ffffff" />
       - BorderBrush := $buttonBorder
       - BorderThickness = 1.2
+      - Margin = 0
 
   - target: Grid#SystemTrayFrameGrid
     styles:
@@ -126,10 +127,6 @@ controlStyles:
     styles:
       - FontSize = 12
       - Foreground = White
-
-  - target: Grid
-    styles:
-      - RequestedTheme = 2
 
   - target: Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
@@ -187,19 +184,6 @@ controlStyles:
       - BorderBrush@InactiveRunningIndicatorPointerOver := $notifyBorder
       - BorderThickness@InactiveRunningIndicatorPointerOver = 1
 
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
-    styles:
-      - CornerRadius = 20
-      - Background := <WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
-      - Background@InactivePointerOver := <WindhawkBlur BlurAmount="60" TintColor="#45ffffff" />
-      - Background@ActivePointerOver := <WindhawkBlur BlurAmount="60" TintColor="#45ffffff" />
-      - Background@ActiveNormal := <WindhawkBlur BlurAmount="60" TintColor="#30ffffff" />
-      - Background@InactiveNormal := <WindhawkBlur BlurAmount="60" TintColor="#25ffffff" />
-      - Background@InactivePressed := <WindhawkBlur BlurAmount="60" TintColor="#30ffffff" />
-      - Margin = 0
-      - BorderBrush := $buttonBorder
-      - BorderThickness = 1.2
-
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
     styles:
       - Visibility = Collapsed
@@ -208,7 +192,7 @@ controlStyles:
     styles:
       - Fill = Transparent
 
-  - target: SystemTray.NotifyIconView#NotifyItemIcon
+  - target: SystemTray.NotifyIconView
     styles:
       - Background := <WindhawkBlur BlurAmount="10" TintColor="#40ffffff" />
       - CornerRadius = 12
@@ -219,6 +203,7 @@ controlStyles:
 
   - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
     styles:
+      - RequestedTheme = 2
       - Background := <WindhawkBlur BlurAmount="30" TintColor="#25ffffff" />
       - CornerRadius = 24
       - BorderThickness = 1.2
