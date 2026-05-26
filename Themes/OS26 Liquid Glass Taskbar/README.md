@@ -56,181 +56,188 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
   
 ```yaml
-styleConstants:
-  - glassBorder = <LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#50ffffff" Offset="0.0" /><GradientStop Color="#10ffffff" Offset="0.5" /><GradientStop Color="#30ffffff" Offset="1.0" /></LinearGradientBrush>
-  - buttonBorder = <LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
-  - notifyBorder = <LinearGradientBrush StartPoint="0,0" EndPoint="1,0"><GradientStop Color="#80ffffff" Offset="0.0" /><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55" /><GradientStop Color="#80ffffff" Offset="1.0" /></LinearGradientBrush>
-  - indicatorActive = #60CDFF
-  - osdAccent = #ff7060
-  - osdTrack = #20ffffff
-
 controlStyles:
-  - target: Taskbar.TaskbarFrame > Grid#RootGrid
+  - target: "Taskbar.TaskbarFrame > Grid#RootGrid"
     styles:
-      - Background := <WindhawkBlur BlurAmount="15" TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.2" />
-      - Margin = 150,1,150,4
-      - CornerRadius = 20
-      - BorderBrush := $glassBorder
-      - BorderThickness = 1.2
-      - Padding = 10,0
+      - Background:=<WindhawkBlur BlurAmount="15" TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.2" />
+      - Margin=150,1,150,4
+      - CornerRadius=20
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#50ffffff" Offset="0.0" /><GradientStop Color="#10ffffff" Offset="0.5" /><GradientStop Color="#30ffffff" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness=1.2
+      - Padding=10,0
 
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: "Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement"
     styles:
-      - CornerRadius = 20
-      - Background := <WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
-      - Background@InactivePointerOver := <WindhawkBlur BlurAmount="60" TintColor="#45ffffff" />
-      - Background@ActivePointerOver := <WindhawkBlur BlurAmount="60" TintColor="#45ffffff" />
-      - Background@ActiveNormal := <WindhawkBlur BlurAmount="60" TintColor="#30ffffff" />
-      - Background@InactiveNormal := <WindhawkBlur BlurAmount="60" TintColor="#25ffffff" />
-      - Background@InactivePressed := <WindhawkBlur BlurAmount="60" TintColor="#30ffffff" />
-      - Background@ActivePressed := <WindhawkBlur BlurAmount="60" TintColor="#25ffffff" />
-      - BorderBrush := $buttonBorder
-      - BorderThickness = 1.2
-      - Margin = 0
+      - CornerRadius=20
+      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
+      - Background@InactivePointerOver:=<WindhawkBlur BlurAmount="60" TintColor="#45ffffff" />
+      - Background@ActivePointerOver:=<WindhawkBlur BlurAmount="60" TintColor="#45ffffff" />
+      - Background@ActiveNormal:=<WindhawkBlur BlurAmount="60" TintColor="#30ffffff" />
+      - Background@InactiveNormal:=<WindhawkBlur BlurAmount="60" TintColor="#25ffffff" />
+      - Background@InactivePressed:=<WindhawkBlur BlurAmount="60" TintColor="#30ffffff" />
+      - Background@ActivePressed:=<WindhawkBlur BlurAmount="60" TintColor="#25ffffff" />
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness=1.2
 
-  - target: Grid#SystemTrayFrameGrid
+  - target: "Grid#SystemTrayFrameGrid"
     styles:
-      - Background := <WindhawkBlur BlurAmount="15" TintColor="#25ffffff" />
-      - CornerRadius = 14
-      - Margin = 60,10,-280,10
-      - RenderTransform := <TranslateTransform X="-435" Y="-2"/>
-      - Padding = 10
-      - BorderBrush := $glassBorder
-      - BorderThickness = 1.2
+      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#25ffffff" />
+      - CornerRadius=14
+      - Margin=60,10,-280,10
+      - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
+      - Padding=10
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#50ffffff" Offset="0.0" /><GradientStop Color="#10ffffff" Offset="0.5" /><GradientStop Color="#30ffffff" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness=1.2
 
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+  - target: "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator"
     styles:
-      - Fill := #90ffffff
-      - RadiusX = 4
-      - RadiusY = 4
-      - Height = 3
-      - Width = 10
-      - Width@ActiveRunningIndicator = 20
-      - Fill@ActiveRunningIndicator = $indicatorActive
+      - Fill:=#90ffffff
+      - RadiusX=4
+      - RadiusY=4
+      - Height=3
+      - Width=10
+      - Width@ActiveRunningIndicator=20
+      - Fill@ActiveRunningIndicator=#60CDFF
 
-  - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
+  - target: "Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl"
     styles:
-      - Margin = 4,0,0,0
-      - Foreground = White
+      - Margin=4,0,0,0
+      - Foreground=White
 
-  - target: Taskbar.SearchBoxButton
+  - target: "Taskbar.SearchBoxButton"
     styles:
-      - Background := <WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
-      - CornerRadius = 20
-      - Margin = 2,6,2,6
-      - BorderBrush := $buttonBorder
-      - BorderThickness = 1.2
+      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
+      - CornerRadius=20
+      - Margin=2,6,2,6
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness=1.2
 
-  - target: TextBlock#SearchBoxTextBlock
+  - target: "TextBlock#SearchBoxTextBlock"
     styles:
-      - FontSize = 12
-      - Foreground = White
+      - FontSize=12
+      - Foreground=White
 
-  - target: Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
+  - target: "Grid"
     styles:
-      - Background := <WindhawkBlur BlurAmount="10" TintColor="#10ffffff" />
+      - RequestedTheme=2
 
-  - target: Taskbar.StartButton#StartButton
+  - target: "Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement"
     styles:
-      - Background := <WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
-      - CornerRadius = 20
-      - Margin = 2,6,2,6
-      - BorderBrush := $buttonBorder
-      - BorderThickness = 1.2
+      - Background:=<WindhawkBlur BlurAmount="10" TintColor="#10ffffff" />
 
-  - target: Border#MultiWindowElement
+  - target: "Taskbar.StartButton#StartButton"
     styles:
-      - Visibility = Collapsed
+      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
+      - CornerRadius=20
+      - Margin=2,6,2,6
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness=1.2
 
-  - target: TextBlock#TimeInnerTextBlock
+  - target: "Border#MultiWindowElement"
     styles:
-      - Foreground = White
-      - FontSize = 18
-      - FontFamily = Quantico
-      - Margin = 0
-      - Padding = 0
-      - RenderTransform := <TranslateTransform X="0" Y="1" />
+      - Visibility=Collapsed
 
-  - target: TextBlock#DateInnerTextBlock
+  - target: "TextBlock#TimeInnerTextBlock"
     styles:
-      - Foreground = White
-      - Visibility = Collapsed
-      - RenderTransform := <TranslateTransform X="0" Y="-9" />
-      - FontSize = 11
-      - FontFamily = vivo Sans EN VF
+      - Foreground=White
+      - FontSize=18
+      - FontFamily=Quantico
+      - Margin=0
+      - Padding=0
+      - RenderTransform:=<TranslateTransform X="0" Y="1" />
 
-  - target: SystemTray.TextIconContent > Grid > SystemTray.AdaptiveTextBlock#Base > TextBlock
+  - target: "TextBlock#DateInnerTextBlock"
     styles:
-      - Foreground = White
+      - Foreground=White
+      - Visibility=Collapsed
+      - RenderTransform:=<TranslateTransform X="0" Y="-9" />
+      - FontSize=11
+      - FontFamily=vivo Sans EN VF
 
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
+  - target: "SystemTray.TextIconContent > Grid > SystemTray.AdaptiveTextBlock#Base > TextBlock"
     styles:
-      - Margin = -12,0,0,0
+      - Foreground=White
 
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
+  - target: "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton"
     styles:
-      - Background := <WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
-      - CornerRadius = 20
-      - Margin = 2,6,2,6
-      - BorderBrush := $buttonBorder
-      - BorderThickness = 1.2
+      - Margin=-12,0,0,0
 
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
+  - target: "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]"
     styles:
-      - Background@InactiveRunningIndicatorPointerOver := <WindhawkBlur BlurAmount="40" TintColor="#10ffffff" />
-      - CornerRadius = 12
-      - BorderBrush@InactiveRunningIndicatorPointerOver := $notifyBorder
-      - BorderThickness@InactiveRunningIndicatorPointerOver = 1
+      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
+      - CornerRadius=20
+      - Margin=2,6,2,6
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness=1.2
 
-  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
+  - target: "taskbar:TaskListLabeledButtonPanel@RunningIndicatorStates > Border"
     styles:
-      - Visibility = Collapsed
+      - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff" />
+      - CornerRadius=12
+      - BorderBrush@InactiveRunningIndicatorPointerOver:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,0"><GradientStop Color="#80ffffff" Offset="0.0" /><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55" /><GradientStop Color="#80ffffff" Offset="1" /></LinearGradientBrush>
+      - BorderThickness@InactiveRunningIndicatorPointerOver=1
 
-  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+  - target: "Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement"
     styles:
-      - Fill = Transparent
+      - CornerRadius=20
+      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
+      - Background@InactivePointerOver:=<WindhawkBlur BlurAmount="60" TintColor="#45ffffff" />
+      - Background@ActivePointerOver:=<WindhawkBlur BlurAmount="60" TintColor="#45ffffff" />
+      - Background@ActiveNormal:=<WindhawkBlur BlurAmount="60" TintColor="#30ffffff" />
+      - Background@InactiveNormal:=<WindhawkBlur BlurAmount="60" TintColor="#25ffffff" />
+      - Background@InactivePressed:=<WindhawkBlur BlurAmount="60" TintColor="#30ffffff" />
+      - Margin=0
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness=1.2
 
-  - target: SystemTray.NotifyIconView
+  - target: "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke"
     styles:
-      - Background := <WindhawkBlur BlurAmount="10" TintColor="#40ffffff" />
-      - CornerRadius = 12
-      - Margin = 2
-      - Padding = 2
-      - BorderBrush := $notifyBorder
-      - BorderThickness = 2
+      - Visibility=Collapsed
 
-  - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
+  - target: "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill"
     styles:
-      - RequestedTheme = 2
-      - Background := <WindhawkBlur BlurAmount="30" TintColor="#25ffffff" />
-      - CornerRadius = 24
-      - BorderThickness = 1.2
-      - BorderBrush := $glassBorder
-      - Margin = 0,0,0,10
+      - Fill=Transparent
 
-  - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect
+  - target: "SystemTray.NotifyIconView#NotifyItemIcon"
     styles:
-      - Fill = $osdTrack
-      - RadiusX = 12
-      - RadiusY = 12
-      - Height = 18
-      - Margin = 0
+      - Background:=<WindhawkBlur BlurAmount="10" TintColor="#40ffffff" />
+      - CornerRadius=12
+      - Margin=2
+      - Padding=2
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,0"><GradientStop Color="#80ffffff" Offset="0.0" /><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55" /><GradientStop Color="#80ffffff" Offset="1" /></LinearGradientBrush>
+      - BorderThickness=2
 
-  - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalDecreaseRect
+  - target: "Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid"
     styles:
-      - Fill = $osdAccent
-      - RadiusX = 12
-      - RadiusY = 12
-      - Height = 18
+      - Background:=<WindhawkBlur BlurAmount="30" TintColor="#25ffffff" />
+      - CornerRadius=24
+      - BorderThickness=1.2
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#50ffffff" Offset="0.0" /><GradientStop Color="#10ffffff" Offset="0.5" /><GradientStop Color="#30ffffff" Offset="1.0" /></LinearGradientBrush>
+      - Margin=0,0,0,10
 
-  - target: Windows.UI.Xaml.Controls.Grid#VolumeConfirmator
+  - target: "Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect"
     styles:
-      - Padding = 8,0,8,0
+      - Fill=#20ffffff
+      - RadiusX=12
+      - RadiusY=12
+      - Height=18
+      - Margin=0
 
-  - target: Windows.UI.Xaml.Controls.Grid#BrightnessConfirmator
+  - target: "Windows.UI.Xaml.Shapes.Rectangle#HorizontalDecreaseRect"
     styles:
-      - Padding = 15,0,17,0
+      - Fill=#ff7060
+      - RadiusX=12
+      - RadiusY=12
+      - Height=18
 
-  - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
+  - target: "Windows.UI.Xaml.Controls.Grid#VolumeConfirmator"
     styles:
-      - Foreground = White
+      - Padding=8,0,8,0
+
+  - target: "Windows.UI.Xaml.Controls.Grid#BrightnessConfirmator"
+    styles:
+      - Padding=15,0,17,0
+
+  - target: "Windows.UI.Xaml.Controls.TextBlock#volumeLevelText"
+    styles:
+      - Foreground=White
