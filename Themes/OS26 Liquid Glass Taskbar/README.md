@@ -13,11 +13,11 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 ---
 # Requirements
 
-This mod requires a windhawk mod [Taskbar Hieght and Icon size](https://windhawk.net/mods/taskbar-icon-size) to function properly.
+This mod requires the Windhawk mod [Taskbar Height and Icon size](https://windhawk.net/mods/taskbar-icon-size) to function properly.
 
-# Taskbar Hieght and Icon size Configurations
+# Taskbar Height and Icon size Configurations
 
-Large:(recommended) `{"TaskbarHeight":75,"IconSize":35,"TaskbarButtonWidth":60,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
+Large (recommended): `{"TaskbarHeight":75,"IconSize":35,"TaskbarButtonWidth":60,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview:
 <img width="1919" height="74" alt="Large" src="https://github.com/user-attachments/assets/ece6b1bc-d46b-4a7a-9100-bfc86414fede" />
@@ -180,7 +180,7 @@ controlStyles:
       - BorderBrush := $buttonBorder
       - BorderThickness = 1.2
 
-  - target: taskbar:TaskListLabeledButtonPanel@RunningIndicatorStates > Border
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
     styles:
       - Background@InactiveRunningIndicatorPointerOver := <WindhawkBlur BlurAmount="40" TintColor="#10ffffff" />
       - CornerRadius = 12
