@@ -4,10 +4,10 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 
 
 ## Taskbar Previews
-![Taskbar Preview](screenshot.png)
+![Taskbar-Preview](screenshot.png)
 
 ## Volume/Brightness indicator
-<img width="265" height="80" alt="Screenshot 2026-05-25 012123" src="https://github.com/user-attachments/assets/fef054ab-b117-470e-9d56-6a78a61327f0" />
+![Indicator-Preview](indicator.png)
 
 
 ---
@@ -20,22 +20,22 @@ This mod requires the Windhawk mod [Taskbar Height and Icon size](https://windha
 Large (recommended): `{"TaskbarHeight":75,"IconSize":35,"TaskbarButtonWidth":60,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview:
-<img width="1919" height="74" alt="Large" src="https://github.com/user-attachments/assets/ece6b1bc-d46b-4a7a-9100-bfc86414fede" />
+![Large-Preview](large-preview.png)
 
 Medium-Large: `{"TaskbarHeight":70,"IconSize":30,"TaskbarButtonWidth":55,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview:
-<img width="1919" height="72" alt="medium large" src="https://github.com/user-attachments/assets/1bee566f-df61-4d71-91f3-ab208eb65361" />
+![Medium-Large-Preview](medium-large-preview.png)
 
 Medium: `{"TaskbarHeight":65,"IconSize":30,"TaskbarButtonWidth":50,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview:
-<img width="1919" height="64" alt="Medium" src="https://github.com/user-attachments/assets/3ad03f90-26fb-49a2-bd97-e4672e9505df" />
+![Medium-Preview](medium-preview.png)
 
 Small: `{"TaskbarHeight":60,"IconSize":25,"TaskbarButtonWidth":45,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview: 
-<img width="1914" height="62" alt="Small preview" src="https://github.com/user-attachments/assets/e970b03e-d8b3-4821-ab6d-365998be4ec5" />
+![Small-Preview](small-preview.png)
 
 
 ### Theme selection
