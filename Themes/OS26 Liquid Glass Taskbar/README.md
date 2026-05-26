@@ -2,13 +2,11 @@
 
 This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass" dock. It features a glassy dock with liquid glass backgrounds for apps. It also tweaks the volume and brightness indicator for a cleaner look.
 
-
 ## Taskbar Previews
 ![Taskbar-Preview](screenshot.png)
 
 ## Volume/Brightness indicator
 ![Indicator-Preview](indicator.png)
-
 
 ---
 # Requirements
@@ -209,7 +207,6 @@ controlStyles:
       - BorderThickness = 1.2
       - BorderBrush := $glassBorder
       - Margin = 0,0,0,10
-      - Shadow :=
 
   - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect
     styles:
