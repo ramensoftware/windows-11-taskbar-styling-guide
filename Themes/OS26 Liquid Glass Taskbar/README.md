@@ -11,7 +11,7 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 ---
 # Requirements
 
-This mod requires the Windhawk mod [Taskbar Height and Icon size](https://windhawk.net/mods/taskbar-icon-size) to function properly.
+This theme requires the Windhawk mod [Taskbar Height and Icon size](https://windhawk.net/mods/taskbar-icon-size) to function properly.
 
 # Taskbar Height and Icon size Configurations
 
