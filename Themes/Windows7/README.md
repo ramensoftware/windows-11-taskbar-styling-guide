@@ -2,7 +2,7 @@
 
 This theme is mostly a proof of concept, and due to the limitations of the XAML taskbar, it is not accurate to Windows 7. If you want an accurate Windows 7 taskbar, check out Explorer7 or ep_taskbar.
 
-**Author**: [SandTechStuff](https://github.com/SandTechStuff)
+**Author**: [Sand216](https://github.com/Sand216)
 
 ![Screenshot](screenshot.png)
 
