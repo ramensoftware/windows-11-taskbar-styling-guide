@@ -2,7 +2,7 @@
 
 This theme aims to recreate the default Panel from KDE Plasma.
 
-**Author**: [SandTechStuff](https://github.com/SandTechStuff)
+**Author**: [Sand216](https://github.com/Sand216)
 
 ![Screenshot](screenshot.png)
 
