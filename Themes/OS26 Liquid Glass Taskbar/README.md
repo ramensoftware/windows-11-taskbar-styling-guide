@@ -17,22 +17,22 @@ This theme requires the Windhawk mod [Taskbar Height and Icon size](https://wind
 
 # Taskbar Height and Icon size Configurations
 
-Large: `{"TaskbarHeight":75,"IconSize":35,"TaskbarButtonWidth":64,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
+**Large:** `{"TaskbarHeight":75,"IconSize":35,"TaskbarButtonWidth":64,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview:
 ![Large-Preview](large-preview.png)
 
-Medium-Large(Recommended): `{"TaskbarHeight":70,"IconSize":30,"TaskbarButtonWidth":58,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
+**Medium-Large(Recommended):** `{"TaskbarHeight":70,"IconSize":30,"TaskbarButtonWidth":58,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview:
 ![Medium-Large-Preview](medium-large-preview.png)
 
-Medium: `{"TaskbarHeight":65,"IconSize":30,"TaskbarButtonWidth":55,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
+**Medium:** `{"TaskbarHeight":65,"IconSize":30,"TaskbarButtonWidth":55,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview:
 ![Medium-Preview](medium-preview.png)
 
-Small: `{"TaskbarHeight":60,"IconSize":25,"TaskbarButtonWidth":48,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
+**Small:** `{"TaskbarHeight":60,"IconSize":25,"TaskbarButtonWidth":48,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview: 
 ![Small-Preview](small-preview.png)
