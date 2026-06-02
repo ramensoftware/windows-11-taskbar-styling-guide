@@ -90,6 +90,7 @@ controlStyles:
     styles:
       - Grid.Column=1
       - Width=$TaskbarFrameWidth
+      - MinHeight=48
       - Height=$TaskbarHeight
       - HorizontalAlignment=Center
       - Margin=0,0,0,12
@@ -117,23 +118,23 @@ controlStyles:
       - BorderThickness=0
       - VerticalAlignment=Center
       - CornerRadius=$GlobalRadius
-      - Height=50
+      - Height=40
       - Margin=0
   - target: StackPanel#SystemTrayStack
     styles:
       - VerticalAlignment=Center
   - target: SystemTray.IconView
     styles:
-      - Height=50
+      - Height=40
   - target: SystemTray.NotifyIconView
     styles:
-      - Height=50
+      - Height=40
   - target: SystemTray.StatusIconView
     styles:
-      - Height=50
+      - Height=40
   - target: SystemTray.OmniButton#NotificationCenterButton
     styles:
-      - Height=50
+      - Height=40
   - target: Taskbar.TaskListButton
     styles:
       - Margin=2,2
