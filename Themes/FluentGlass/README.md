@@ -38,6 +38,16 @@ Set `TaskbarFrameWidth` to match your screen real estate or layout preferences:
 * `TaskbarFrameWidth=1280` → Standard wide layout (default)
 * `TaskbarFrameWidth=1000` → Tighter, compact dock layout for smaller screens
 
+### Taskbar Sizing
+Modify `TaskbarHeight` and `IconHeight` to change the vertical sizing:
+* `TaskbarHeight=62` → Custom taller height for the glass bar (default)
+* `IconHeight=54` → Sizing constraint variable for the taskbar icons (default)
+
+### Icon Spacing & Margins
+Adjust the gap and hover target boundaries using the extracted variables:
+* `ItemMargin=4,2,4,2` → Side-by-side gap spacing between individual buttons (default)
+* `ItemPadding=8,6,8,6` → Internal spacing layout inside the icon hover background (default)
+
 ### Glass Blur Strength
 Set `BlurAmount` to change the intensity of the glass blur:
 * `BlurAmount="22"` → Balanced, legible glass effect (default)
@@ -77,8 +87,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
 theme: FluentGlass
 styleConstants:
   - TaskbarFrameWidth=1280
-  - TaskbarHeight=Auto
+  - TaskbarHeight=62
+  - IconHeight=54
   - GlobalRadius=8
+  - ItemMargin=4,2,4,2
+  - ItemPadding=8,6,8,6
   - LiquidBackground=<WindhawkBlur BlurAmount="22" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.15" />
   - LiquidBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="0.0" /><GradientStop Color="#50404040" Offset="1" /></LinearGradientBrush>
 controlStyles:
@@ -90,10 +103,12 @@ controlStyles:
     styles:
       - Grid.Column=1
       - Width=$TaskbarFrameWidth
-      - MinHeight=48
       - Height=$TaskbarHeight
+      - MinHeight=62
       - HorizontalAlignment=Center
+      - VerticalAlignment=Center
       - Margin=0,0,0,12
+      - Padding=0
   - target: Taskbar.TaskbarBackground#BackgroundControl
     styles:
       - Visibility=Collapsed
@@ -111,38 +126,51 @@ controlStyles:
       - VerticalAlignment=Center
       - Height=$TaskbarHeight
       - MinWidth=250
-      - Margin=0,0,0,15
+      - Margin=0,0,0,12
   - target: Grid#SystemTrayFrameGrid
     styles:
       - Background=Transparent
       - BorderThickness=0
       - VerticalAlignment=Center
       - CornerRadius=$GlobalRadius
-      - Height=40
+      - Height=50
       - Margin=0
   - target: StackPanel#SystemTrayStack
     styles:
       - VerticalAlignment=Center
-  - target: SystemTray.IconView
-    styles:
-      - Height=40
-  - target: SystemTray.NotifyIconView
-    styles:
-      - Height=40
-  - target: SystemTray.StatusIconView
-    styles:
-      - Height=40
-  - target: SystemTray.OmniButton#NotificationCenterButton
-    styles:
-      - Height=40
   - target: Taskbar.TaskListButton
     styles:
-      - Margin=2,2
-      - Padding=4,2
+      - Margin=$ItemMargin
+      - Padding=$ItemPadding
+      - VerticalAlignment=Center
+      - Height=$IconHeight
+  - target: Taskbar.StartButton
+    styles:
+      - Margin=$ItemMargin
+      - Padding=$ItemPadding
+      - VerticalAlignment=Center
+      - Height=$IconHeight
+  - target: Taskbar.SearchBoxButton
+    styles:
+      - Margin=$ItemMargin
+      - Padding=$ItemPadding
+      - VerticalAlignment=Center
+      - Height=$IconHeight
+  - target: Taskbar.TaskViewButton
+    styles:
+      - Margin=$ItemMargin
+      - Padding=$ItemPadding
+      - VerticalAlignment=Center
+      - Height=$IconHeight
+  - target: Taskbar.TaskListButtonPanel
+    styles:
+      - VerticalAlignment=Center
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=$GlobalRadius
       - BorderThickness=0
+      - VerticalAlignment=Stretch
+      - HorizontalAlignment=Stretch
       - Background@PointerOver:=<WindhawkBlur BlurAmount="10" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.18" />
       - Background@Pressed:=<WindhawkBlur BlurAmount="15" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.25" />
       - Background@ActiveNormal:=<WindhawkBlur BlurAmount="4" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.32" />
@@ -152,11 +180,10 @@ controlStyles:
       - Visibility=Visible
       - Fill={ThemeResource SystemAccentColor}
       - Height=4
-      - Width=26
+      - Width=30
       - RadiusX=2
       - RadiusY=2
       - VerticalAlignment=Bottom
-      - Margin=0,0,0,1
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
       - VerticalAlignment=Center
@@ -168,4 +195,3 @@ themeResourceVariables:
   - ''
 xamlDiagnosticsHandling: ''
 ```
-</details>
