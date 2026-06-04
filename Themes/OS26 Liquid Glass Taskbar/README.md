@@ -20,22 +20,22 @@ This theme requires the Windhawk mod [Taskbar Height and Icon size](https://wind
 **Large:** `{"TaskbarHeight":75,"IconSize":35,"TaskbarButtonWidth":64,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview:
-![Large-Preview](large-preview.png)
+![Large-Preview](large.png)
 
 **Medium-Large(Recommended):** `{"TaskbarHeight":70,"IconSize":30,"TaskbarButtonWidth":58,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview:
-![Medium-Large-Preview](medium-large-preview.png)
+![Medium-Large-Preview](medium-large.png)
 
 **Medium:** `{"TaskbarHeight":65,"IconSize":30,"TaskbarButtonWidth":55,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview:
-![Medium-Preview](medium-preview.png)
+![Medium-Preview](medium.png)
 
 **Small:** `{"TaskbarHeight":60,"IconSize":25,"TaskbarButtonWidth":48,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview: 
-![Small-Preview](small-preview.png)
+![Small-Preview](small.png)
 
 
 ### Theme selection
