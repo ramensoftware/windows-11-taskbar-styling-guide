@@ -114,6 +114,7 @@ controlStyles:
     styles:
       - Padding=6
       - Margin=2
+      - Height=50
       - Background:=Transparent
       - BorderBrush:=Transparent
       - BorderThickness=0
