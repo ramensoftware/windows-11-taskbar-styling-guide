@@ -196,10 +196,42 @@ controlStyles:
     styles:
       - RadiusX=4
       - RadiusY=4
-  - target: MenuFlyoutPresenter
+  - target: MenuFlyoutPresenter > Border
     styles:
+      - Background:=$Background
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$R1
+  - target: Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground
+    styles:
+      - Background:=Transparent
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$R1
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: Border#SearchPillBackgroundElement
+    styles:
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$R1
+      - BorderThickness=$BorderThickness
+      - MaxWidth:=100
+      - Width=Auto
+  - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$R1
+      - BorderThickness=$BorderThickness
+  - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$R1
+      - BorderThickness=$BorderThickness
 ```
 </details>
