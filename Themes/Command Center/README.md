@@ -204,7 +204,7 @@ controlStyles:
       - CornerRadius=$R1
   - target: Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground
     styles:
-      - Background:=Transparent
+      - Background:=$Background
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$R1
