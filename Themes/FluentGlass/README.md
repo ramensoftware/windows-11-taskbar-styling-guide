@@ -66,7 +66,8 @@ Set `GlobalRadius` to change the roundness of the taskbar and its elements:
 
 ## Theme selection
 
-The theme is integrated into the mod and can be selected directly from the mod's settings:
+The theme is integrated into the mod and can be selected directly from the mod's
+settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
@@ -84,7 +85,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-theme: FluentGlass
 styleConstants:
   - TaskbarFrameWidth=1280
   - TaskbarHeight=62
@@ -191,7 +191,5 @@ controlStyles:
     styles:
       - Margin=5,0,0,0
       - VerticalAlignment=Center
-themeResourceVariables:
-  - ''
-xamlDiagnosticsHandling: ''
 ```
+</details>
