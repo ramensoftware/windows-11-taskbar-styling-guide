@@ -1,4 +1,4 @@
-# OS26 Liquid Glass Taskbar
+# OS26 Liquid Glass theme for Windows 11 Taskbar Styler
 
 Author: [wasiabbas4pk](https://github.com/wasiabbas4pk)
 
@@ -11,11 +11,11 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 ![Indicator-Preview](indicator.png)
 
 ---
-# Requirements
+## Requirements
 
 This theme requires the Windhawk mod [Taskbar Height and Icon size](https://windhawk.net/mods/taskbar-icon-size) to function properly.
 
-# Taskbar Height and Icon size Configurations
+## Taskbar Height and Icon size Configurations
 
 **Large:** `{"TaskbarHeight":75,"IconSize":35,"TaskbarButtonWidth":64,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
@@ -38,15 +38,16 @@ Preview:
 ![Small-Preview](small.png)
 
 
-### Theme selection
+## Theme selection
 
-The theme is integrated into the mod and can be selected directly from the mod's settings:
+The theme is integrated into the mod and can be selected directly from the mod's
+settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
 * Select the theme and save the settings.
 
-### Manual installation
+## Manual installation
 
 The theme styles can also be imported manually. To do that, follow these steps:
 
@@ -56,7 +57,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 <details>
 <summary>Content to import (click to expand)</summary>
-  
+
 ```yaml
 controlStyles:
   - target: "Taskbar.TaskbarFrame > Grid#RootGrid"
@@ -216,3 +217,5 @@ controlStyles:
   - target: "Windows.UI.Xaml.Controls.TextBlock#volumeLevelText"
     styles:
       - Foreground=White
+```
+</details>
