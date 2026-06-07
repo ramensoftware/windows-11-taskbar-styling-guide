@@ -142,7 +142,7 @@ Taskbar Styler mod. The following themes are available:
 | [UltraWideFriendly](Themes/UltraWideFriendly/README.md) | [![UltraWideFriendly](Themes/UltraWideFriendly/screenshot.png)](Themes/UltraWideFriendly/screenshot.png)
 | [LiquidGlass](Themes/LiquidGlass/README.md) | [![LiquidGlass](Themes/LiquidGlass/screenshot.png)](Themes/LiquidGlass/screenshot.png)
 | [Borderless](Themes/Borderless/README.md) | [![Borderless](Themes/Borderless/screenshot.png)](Themes/Borderless/screenshot.png)
-| [Command Center](Themes/Command%20Center/README.md) | [![Command Center](Themes/Command%20Center/preview.png)](Themes/Command%20Center/preview.png) |
+| [Command Center](Themes/Command%20Center/README.md) | [![Command Center](Themes/Command%20Center/screenshot.png)](Themes/Command%20Center/screenshot.png) |
 
 ## General
 

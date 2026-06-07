@@ -4,7 +4,7 @@ Command Center theme inspired by the command centers from various mobile operati
 
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
 
-<img width="100%" src="preview.png" alt="Preview" />
+<img width="100%" src="screenshot.png" alt="Preview" />
 
 ## Notes
 - This theme consists of the following backgrounds:
@@ -78,7 +78,7 @@ controlStyles:
       - Background@MultiWindowActive:=$ActiveColor
       - Background@MultiWindowPressed:=$OverlayColor
       - CornerRadius=$R1
-  - target: Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Padding=6
       - Margin=2
@@ -115,14 +115,6 @@ controlStyles:
       - Padding=6
       - Margin=2
       - Height=50
-      - Background:=Transparent
-      - BorderBrush:=Transparent
-      - BorderThickness=0
-      - Shadow:=
-  - target: Border#BackgroundBorder
-    styles:
-      - Padding=6
-      - Margin=2
       - Background:=Transparent
       - BorderBrush:=Transparent
       - BorderThickness=0
@@ -202,6 +194,24 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$R1
+  - target: MenuFlyoutSubItem
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$R1
+  - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect
+    styles:
+      - Height=15
+      - RadiusX=5
+      - RadiusY=5
+      - Fill:=$Background
+  - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalDecreaseRect
+    styles:
+      - Height=15
+      - RadiusX=5
+      - RadiusY=5
+      - Fill:=$AccentColor
   - target: Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground
     styles:
       - Background:=$Background
@@ -233,5 +243,46 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - CornerRadius=$R1
       - BorderThickness=$BorderThickness
+  - target: SystemTray.DateTimeIconContent
+    styles:
+      - FontSize=9
+  - target: TextBlock#DateInnerTextBlock
+    styles:
+      - Visibility=1
+  - target: Border#VirtualDesktopBarBackground
+    styles:
+      - Background:=$Background
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$R1
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed
+    styles:
+      - CornerRadius=$R1
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed
+    styles:
+      - CornerRadius=$R1
+  
+  - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
+    styles:
+      - Background:=$Background
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$R1
+  - target: SnapLayout.SnapLayoutPickerControl
+    styles:
+      - Background:=$Background
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$R1
+  - target: SnapLayout.SnapLayoutControl
+    styles:
+      - Background:=$Background
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$R1
+  - target: SnapLayout.SnapLayoutControl@CommonStates > Windows.UI.Xaml.Controls.Border#LayoutBorder
+    styles:
+      - Background@PointerOver:=$@AccentColor
+      - Background@Pressed:=$Background
 ```
 </details>
