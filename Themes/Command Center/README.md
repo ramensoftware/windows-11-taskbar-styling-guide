@@ -35,7 +35,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```yml
+```yaml
 styleConstants:
   - Translucent=<WindhawkBlur BlurAmount="15" TintColor="#10808080"/>
   - Glass=<WindhawkBlur BlurAmount="5" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.7" />
@@ -282,7 +282,7 @@ controlStyles:
       - CornerRadius=$R1
   - target: SnapLayout.SnapLayoutControl@CommonStates > Windows.UI.Xaml.Controls.Border#LayoutBorder
     styles:
-      - Background@PointerOver:=$@AccentColor
+      - Background@PointerOver:=$AccentColor
       - Background@Pressed:=$Background
 ```
 </details>
