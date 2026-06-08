@@ -143,7 +143,7 @@ Taskbar Styler mod. The following themes are available:
 | [LiquidGlass](Themes/LiquidGlass/README.md) | [![LiquidGlass](Themes/LiquidGlass/screenshot.png)](Themes/LiquidGlass/screenshot.png)
 | [Borderless](Themes/Borderless/README.md) | [![Borderless](Themes/Borderless/screenshot.png)](Themes/Borderless/screenshot.png)
 | [FluentGlass](Themes/FluentGlass/README.md) | [![FluentGlass](Themes/FluentGlass/screenshot.png)](Themes/FluentGlass/screenshot.png)
-| [OS26 Liquid Glass](Themes/OS26%20Liquid%20Glass/README.md) | [![FrostedGlass](Themes/OS26%20Liquid%20Glass/screenshot-small.png)](Themes/OS26%20Liquid%20Glass/screenshot.png)
+| [OS26 Liquid Glass](Themes/OS26%20Liquid%20Glass/README.md) | [![OS26 Liquid Glass](Themes/OS26%20Liquid%20Glass/screenshot-small.png)](Themes/OS26%20Liquid%20Glass/screenshot.png)
 
 ## General
 
