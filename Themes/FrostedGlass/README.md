@@ -59,15 +59,18 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
+theme: ''
+styleConstants:
+  - ''
 controlStyles:
-  - target: "Taskbar.TaskbarFrame > Grid#RootGrid"
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Background:=<WindhawkBlur BlurAmount="15" TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.2" />
       - Margin=150,1,150,4
       - CornerRadius=20
       - BorderThickness=1.2
       - Padding=10,0
-  - target: "Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement"
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=20
       - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
@@ -79,7 +82,7 @@ controlStyles:
       - Background@ActivePressed:=<WindhawkBlur BlurAmount="60" TintColor="#25ffffff" />
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: "Grid#SystemTrayFrameGrid"
+  - target: Grid#SystemTrayFrameGrid
     styles:
       - Background:=<WindhawkBlur BlurAmount="15" TintColor="#25ffffff" />
       - CornerRadius=14
@@ -88,7 +91,7 @@ controlStyles:
       - Padding=10,2
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#50ffffff" Offset="0.0" /><GradientStop Color="#10ffffff" Offset="0.5" /><GradientStop Color="#30ffffff" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator"
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
       - Fill:=#90ffffff
       - RadiusX=4
@@ -97,38 +100,38 @@ controlStyles:
       - Width=10
       - Width@ActiveRunningIndicator=20
       - Fill@ActiveRunningIndicator=#60CDFF
-  - target: "Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl"
+  - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
       - Margin=4,0,0,0
       - Foreground=White
-  - target: "Taskbar.SearchBoxButton"
+  - target: Taskbar.SearchBoxButton
     styles:
       - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
       - CornerRadius=20
       - Margin=2,6,2,6
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: "TextBlock#SearchBoxTextBlock"
+  - target: TextBlock#SearchBoxTextBlock
     styles:
       - FontSize=12
       - Foreground=White
-  - target: "Grid"
+  - target: Grid
     styles:
       - RequestedTheme=2
-  - target: "Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement"
+  - target: Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - Background:=<WindhawkBlur BlurAmount="10" TintColor="#10ffffff" />
-  - target: "Taskbar.StartButton#StartButton"
+  - target: Taskbar.StartButton#StartButton
     styles:
       - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
       - CornerRadius=20
       - Margin=2,6,2,6
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: "Border#MultiWindowElement"
+  - target: Border#MultiWindowElement
     styles:
       - Visibility=Collapsed
-  - target: "TextBlock#TimeInnerTextBlock"
+  - target: TextBlock#TimeInnerTextBlock
     styles:
       - Foreground=White
       - FontSize=18
@@ -136,33 +139,40 @@ controlStyles:
       - Margin=0
       - Padding=0
       - RenderTransform:=<TranslateTransform X="0" Y="1" />
-  - target: "TextBlock#DateInnerTextBlock"
+  - target: TextBlock#DateInnerTextBlock
     styles:
       - Foreground=White
       - Visibility=Collapsed
       - RenderTransform:=<TranslateTransform X="0" Y="-9" />
       - FontSize=11
       - FontFamily=vivo Sans EN VF
-  - target: "SystemTray.TextIconContent > Grid > SystemTray.AdaptiveTextBlock#Base > TextBlock"
+  - target: SystemTray.TextIconContent > Grid > SystemTray.AdaptiveTextBlock#Base > TextBlock
     styles:
       - Foreground=White
-  - target: "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton"
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
     styles:
       - Margin=-12,0,0,0
-  - target: "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]"
+  - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
       - CornerRadius=20
-      - Margin=2,6,2,6
+      - // Margin=2,6,2,6
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: "taskbar:TaskListLabeledButtonPanel@RunningIndicatorStates > Border"
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
+      - CornerRadius=20
+      - // Margin=2,6,2,6
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness=1.2
+  - target: taskbar:TaskListLabeledButtonPanel@RunningIndicatorStates > Border
     styles:
       - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff" />
       - CornerRadius=12
       - BorderBrush@InactiveRunningIndicatorPointerOver:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,0"><GradientStop Color="#80ffffff" Offset="0.0" /><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55" /><GradientStop Color="#80ffffff" Offset="1" /></LinearGradientBrush>
       - BorderThickness@InactiveRunningIndicatorPointerOver=1
-  - target: "Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement"
+  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=20
       - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
@@ -174,13 +184,13 @@ controlStyles:
       - Margin=0
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#E0ffffff" Offset="0.0" /><GradientStop Color="#20ffffff" Offset="0.5" /><GradientStop Color="#A0ffffff" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke"
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
-  - target: "Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill"
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill=Transparent
-  - target: "SystemTray.NotifyIconView#NotifyItemIcon"
+  - target: SystemTray.NotifyIconView#NotifyItemIcon
     styles:
       - Background:=<WindhawkBlur BlurAmount="10" TintColor="#40ffffff" />
       - CornerRadius=12
@@ -188,34 +198,37 @@ controlStyles:
       - Padding=2
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,0"><GradientStop Color="#80ffffff" Offset="0.0" /><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55" /><GradientStop Color="#80ffffff" Offset="1" /></LinearGradientBrush>
       - BorderThickness=2
-  - target: "Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid"
+  - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
     styles:
       - Background:=<WindhawkBlur BlurAmount="30" TintColor="#25ffffff" />
       - CornerRadius=24
       - BorderThickness=1.2
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#50ffffff" Offset="0.0" /><GradientStop Color="#10ffffff" Offset="0.5" /><GradientStop Color="#30ffffff" Offset="1.0" /></LinearGradientBrush>
       - Margin=0,0,0,10
-  - target: "Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect"
+  - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect
     styles:
       - Fill=#20ffffff
       - RadiusX=12
       - RadiusY=12
       - Height=18
       - Margin=0
-  - target: "Windows.UI.Xaml.Shapes.Rectangle#HorizontalDecreaseRect"
+  - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalDecreaseRect
     styles:
       - Fill=#ff7060
       - RadiusX=12
       - RadiusY=12
       - Height=18
-  - target: "Windows.UI.Xaml.Controls.Grid#VolumeConfirmator"
+  - target: Windows.UI.Xaml.Controls.Grid#VolumeConfirmator
     styles:
       - Padding=8,0,8,0
-  - target: "Windows.UI.Xaml.Controls.Grid#BrightnessConfirmator"
+  - target: Windows.UI.Xaml.Controls.Grid#BrightnessConfirmator
     styles:
       - Padding=15,0,17,0
-  - target: "Windows.UI.Xaml.Controls.TextBlock#volumeLevelText"
+  - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
+themeResourceVariables:
+  - ''
+xamlDiagnosticsHandling: ''
 ```
 </details>
