@@ -1,4 +1,4 @@
-# FrostedGlass theme for Windows 11 Taskbar Styler
+# OS26 Liquid Glass theme for Windows 11 Taskbar Styler
 
 Author: [wasiabbas4pk](https://github.com/wasiabbas4pk)
 
