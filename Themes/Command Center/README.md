@@ -305,6 +305,11 @@ controlStyles:
       - MaxWidth:=100
       - Width=Auto
       - Margin=0,0,0,0
+  - target: Button#GleamEntryPointButton > Border > ContentPresenter#ContentPresenter
+    styles:
+      - Background:=Transparent
+      - BorderBrush:=Transparent
+      - BorderThickness=0
   - target: Grid#DynamicSearchBoxGleamContainer
     styles:
       - Visibility=1
