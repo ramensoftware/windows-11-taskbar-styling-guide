@@ -288,9 +288,9 @@ controlStyles:
       - Margin=0,6
   - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
-      - Background:=$Background
-      - BorderBrush:=$BorderBrush
-      - BorderThickness=$BorderThickness
+      - Background:=Transparent
+      - BorderBrush:=Transparent
+      - BorderThickness=0
       - CornerRadius=$R1
       - Margin=4,-5,6,-5
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
@@ -298,17 +298,23 @@ controlStyles:
       - RenderTransform:=<TranslateTransform X="0" Y="0" />
   - target: SearchUx.SearchUI.SearchPillButton#SearchPill > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
-      - BorderBrush:=$BorderBrush
+      - BorderBrush:=Transparent
+      - BorderThickness=0
       - CornerRadius=$R1
-      - BorderThickness=$BorderThickness
+      - MaxWidth=150
+      - MaxHeight=38
+      - Width=Auto
+      - Height=Auto
   - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#SearchPillBackgroundElement
     styles:
       - BorderBrush:=$BorderBrush
       - CornerRadius=$R1
       - BorderThickness=$BorderThickness
-      - MaxWidth:=100
+      - MaxWidth=150
+      - MaxHeight=38
       - Width=Auto
-      - Margin=0,0,0,0
+      - Height=Auto
+      - Margin=-4,-5,-6,-5
   - target: Button#GleamEntryPointButton > Border > ContentPresenter#ContentPresenter
     styles:
       - Background:=Transparent
