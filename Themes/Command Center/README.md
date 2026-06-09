@@ -7,7 +7,7 @@ Command Center theme inspired by the command centers from various mobile operati
 <img width="100%" src="screenshot.png" alt="Preview" />
 
 > [!IMPORTANT]
-> If for any reason some elements don't load. Simply refresh explorer by restarting the explorer.exe process. There is a bug on Microsoft's side that can cause this. But refreshing explorer fixes it.
+> If for any reason some elements don't load, simply refresh explorer by restarting the explorer.exe process.
 
 
 > [!NOTE]
