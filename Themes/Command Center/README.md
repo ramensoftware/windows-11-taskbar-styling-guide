@@ -322,6 +322,9 @@ controlStyles:
       - BorderThickness=0
   - target: Grid#DynamicSearchBoxGleamContainer
     styles:
-      - Visibility=1
+      - Visibility=12
+  - target: TextBlock#InnerTextBlock[Text=]
+    styles:
+      - Text=
 ```
 </details>
