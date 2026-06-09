@@ -81,17 +81,11 @@ controlStyles:
       - Background@MultiWindowPointerOver:=$OverlayColor2
       - Background@MultiWindowActive:=$ActiveColor
       - Background@MultiWindowPressed:=$OverlayColor
-      - CornerRadius=$R1R1
+      - CornerRadius=$R1
   - target: SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
-      - // Background:=$Background
-      - // BorderBrush:=$BorderBrush
-      - Background@ActiveNormal:=$ActiveColor
-      - Background@ActivePointerOver:=$OverlayColor
-      - Background@ActivePressed:=$OverlayColor
-      - Background@InactiveNormal:=$Background
-      - Background@InactivePointerOver:=$OverlayColor2
-      - Background@InactivePressed:=$OverlayColor
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$R1
       - Width=38
