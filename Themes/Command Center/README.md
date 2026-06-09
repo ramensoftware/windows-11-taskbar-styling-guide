@@ -84,8 +84,14 @@ controlStyles:
       - CornerRadius=$R1R1
   - target: SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
-      - Background:=$Background
-      - BorderBrush:=$BorderBrush
+      - // Background:=$Background
+      - // BorderBrush:=$BorderBrush
+      - Background@ActiveNormal:=$ActiveColor
+      - Background@ActivePointerOver:=$OverlayColor
+      - Background@ActivePressed:=$OverlayColor
+      - Background@InactiveNormal:=$Background
+      - Background@InactivePointerOver:=$OverlayColor2
+      - Background@InactivePressed:=$OverlayColor
       - BorderThickness=$BorderThickness
       - CornerRadius=$R1
       - Width=38
@@ -270,7 +276,7 @@ controlStyles:
       - CornerRadius=$R1
   - target: SnapLayout.SnapLayoutControl@CommonStates > Windows.UI.Xaml.Controls.Border#LayoutBorder
     styles:
-      - Background@PointerOver:=$@AccentColor
+      - Background@PointerOver:=$AccentColor
       - Background@Pressed:=$Background
   - target: Grid#ConfirmatorMainGrid
     styles:
