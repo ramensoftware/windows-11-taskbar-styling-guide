@@ -202,15 +202,9 @@ controlStyles:
       - CornerRadius=$R1
   - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect
     styles:
-      - Height=15
-      - RadiusX=5
-      - RadiusY=5
       - Fill:=$Background
   - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalDecreaseRect
     styles:
-      - Height=15
-      - RadiusX=5
-      - RadiusY=5
       - Fill:=$AccentColor
   - target: Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground
     styles:
@@ -221,16 +215,6 @@ controlStyles:
   - target: Taskbar.TaskbarExtensionElement
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="0" />
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="0" />
-  - target: Border#SearchPillBackgroundElement
-    styles:
-      - BorderBrush:=$BorderBrush
-      - CornerRadius=$R1
-      - BorderThickness=$BorderThickness
-      - MaxWidth:=100
-      - Width=Auto
   - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
     styles:
       - Background:=$Background
@@ -261,7 +245,6 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed
     styles:
       - CornerRadius=$R1
-  
   - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
     styles:
       - Background:=$Background
@@ -282,7 +265,48 @@ controlStyles:
       - CornerRadius=$R1
   - target: SnapLayout.SnapLayoutControl@CommonStates > Windows.UI.Xaml.Controls.Border#LayoutBorder
     styles:
-      - Background@PointerOver:=$AccentColor
+      - Background@PointerOver:=$@AccentColor
       - Background@Pressed:=$Background
+  - target: Grid#ConfirmatorMainGrid
+    styles:
+      - Background:=$Background
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$R1
+      - Height=20
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+    styles:
+      - Background:=$Background
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$R1
+      - Margin=0,6
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$R1
+      - Margin=3,-6
+      - Padding=4
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: SearchUx.SearchUI.SearchPillButton#SearchPill > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+    styles:
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$R1
+      - BorderThickness=$BorderThickness
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#SearchPillBackgroundElement
+    styles:
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$R1
+      - BorderThickness=$BorderThickness
+      - MaxWidth:=100
+      - Width=Auto
+      - Margin=0,0,0,0
+  - target: Grid#DynamicSearchBoxGleamContainer
+    styles:
+      - Visibility=1
 ```
 </details>
