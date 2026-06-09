@@ -287,8 +287,7 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$R1
-      - Margin=3,-6
-      - Padding=4
+      - Margin=4,-5,6,-5
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="0" />
