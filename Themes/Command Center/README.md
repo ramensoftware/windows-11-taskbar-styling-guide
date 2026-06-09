@@ -77,19 +77,22 @@ controlStyles:
       - Background@MultiWindowPointerOver:=$OverlayColor2
       - Background@MultiWindowActive:=$ActiveColor
       - Background@MultiWindowPressed:=$OverlayColor
-      - CornerRadius=$R1
-  - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
+      - CornerRadius=$R1R1
+  - target: SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
-      - Padding=6
-      - Margin=2
       - Background:=$Background
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$R1
+      - Width=38
+      - Height=38
+  - target: SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
+    styles:
+      - Visibility=1
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - Padding=6
-      - Margin=2
+      - Width=38
+      - Height=38
       - Background@ActiveNormal:=$ActiveColor
       - Background@ActivePointerOver:=$OverlayColor
       - Background@ActivePressed:=$OverlayColor
@@ -112,9 +115,7 @@ controlStyles:
       - Width@ActiveRunningIndicator=21
   - target: Grid#SystemTrayFrameGrid
     styles:
-      - Padding=6
-      - Margin=2
-      - Height=50
+      - Height=38
       - Background:=Transparent
       - BorderBrush:=Transparent
       - BorderThickness=0
