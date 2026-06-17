@@ -33,6 +33,15 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
   - Inactive running indicator removed since almost all icons in the taskbar are running
   - Non running apps are indicated via a smaller icon instead
 
+Other taskbar-adjacent fixes:
+
+- App Icons' popup: gapless and cornered
+  - ![Screenshot of app popup before](screenshot_tray_popup_0pre.png) before
+  - ![Screenshot of app popup after](screenshot_tray_popup_1pos.png) after (the taskbar is invisible, but there is no gap)
+- Volume slider indicator control: gapless, cornered, and smaller
+  - ![Screenshot of volume slider before](screenshot_volume_bar_0pre.png) before
+  - ![Screenshot of volume slider after](screenshot_volume_bar_1pos.png) after (again, the taskbar is invisible, but there is no gap)
+
 ### Suggested Windows settings
 
 - Set taskbar alignment to left
