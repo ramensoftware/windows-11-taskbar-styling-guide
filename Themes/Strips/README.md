@@ -115,7 +115,7 @@ TaskbarButtonWidthSmall: 15
 ```
 </details>
 
-- Taskbar Height and Icon Size
+- Taskbar Background Helper
 
 <details>
 <summary>Click to expand mod settings</summary>
