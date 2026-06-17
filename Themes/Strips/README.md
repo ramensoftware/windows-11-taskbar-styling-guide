@@ -239,6 +239,41 @@ To achieve maximum Taskbar aesthetics, install and configure the following Windh
 
 To achieve compatible Taskbar functionality, install and configure the following Windhawk mods:
 
+- Click on empty taskbar space - to middle click show desktop on bottom right corner.
+  <details>
+  <summary>Click to expand Click on empty taskbar space settings</summary>
+
+  ```yaml
+  TriggerActionOptions:
+    - KeyboardTriggers:
+        - none
+        - lctrl
+        - lshift
+        - lalt
+        - win
+        - rctrl
+        - rshift
+        - ralt
+      MouseTrigger: middle
+      TaskbarType: all
+      Action: ACTION_SHOW_DESKTOP
+      AdditionalArgs: arg1;arg2
+  oldTaskbarOnWin11: 0
+  eagerTriggerEvaluation: 1
+  CombineTaskbarButtons:
+    State1: COMBINE_NEVER
+    State2: COMBINE_NEVER
+    StateSecondary1: COMBINE_NEVER
+    StateSecondary2: COMBINE_NEVER
+  doubleClickAction: ACTION_SHOW_DESKTOP
+  middleClickAction: ACTION_NOTHING
+  StartProcess: C:\Windows\System32\notepad.exe
+  VirtualKeyPress:
+    - '0x5B'
+    - '0x45'
+  ```
+  </details><br>
+
 - Taskbar minimize/restore on scroll.
   <details>
   <summary>Click to expand Taskbar minimize/restore on scroll settings</summary>
