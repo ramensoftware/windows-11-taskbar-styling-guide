@@ -5,23 +5,24 @@
 ## Dark Mode
 Normal - One window
 ![Dark1](Dark1.png)
-Normal - Multiple windows
-![DarkMultiple](DarkMultiple.png)
-Maximized window
+Maximized with multiple windows
 ![DarkMaximized](DarkMaximized.png)
 
 ## Light Mode
 Normal - One window
 ![Light1](Light1.png)
-Normal - Multiple windows
-![LightMultiple](LightMultiple.png)
-Maximized window
+Maximized with multiple windows
 ![LightMaximized](LightMaximized.png)
 
-## Better to Know
+## Notes
 - Theme is designed on Windows 11 - 25H2.
 - Mainly designed for dark mode, but compatible with light mode as well.
-
+- Designed to work with:
+  - Widgets - On
+  - Task view - Off
+  - Search - Hidden
+  - Taskbar alignment - Center
+  - Show smaller taskbar buttons - Never
 
 ## Required Windhawk Mods for similar results
 To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler:
