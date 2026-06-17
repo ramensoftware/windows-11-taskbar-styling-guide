@@ -114,7 +114,6 @@ To achieve similar results, install and configure the following Windhawk mods in
     FontStyle: ''
     FontStretch: ''
     CharacterSpacing: 0
-    Visible: 0
   DateStyle:
     Hidden: 0
     TextColor: ''
