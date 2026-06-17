@@ -24,8 +24,36 @@ Maximized with multiple windows
   - Taskbar alignment - Center
   - Show smaller taskbar buttons - Never
 
+
 ## Required Windhawk Mods for similar results
 To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler:
+
+- Taskbar Labels for Windows 11 – to control panels width.
+
+  <details>
+  <summary>Click to expand Taskbar Labels for Windows 11 settings</summary>
+
+  ```yaml
+  mode: labelsWithCombining
+  taskbarItemWidth: 500
+  runningIndicatorStyle: centerFixed
+  progressIndicatorStyle: sameAsRunningIndicatorStyle
+  excludedPrograms:
+    - excluded1.exe
+  minimumTaskbarItemWidth: 0
+  maximumTaskbarItemWidth: 500
+  fontSize: 12
+  fontFamily: ''
+  textTrimming: characterEllipsis
+  leftAndRightPaddingSize: 8
+  spaceBetweenIconAndLabel: 18
+  runningIndicatorHeight: -1
+  runningIndicatorVerticalOffset: 0
+  alwaysShowThumbnailLabels: 0
+  labelForSingleItem: '%name%'
+  labelForMultipleItems: '[%amount%] %name%'
+  ```
+  </details><br>
 
 - Taskbar Clock Customization – for styling the clock.
 
