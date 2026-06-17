@@ -5,13 +5,13 @@
 ## Dark Mode
 Normal - One window
 ![Dark1](Dark1.png)
-Maximized with multiple windows
+Maximized - Multiple windows
 ![DarkMaximized](DarkMaximized.png)
 
 ## Light Mode
 Normal - One window
 ![Light1](Light1.png)
-Maximized with multiple windows
+Maximized - Multiple windows
 ![LightMaximized](LightMaximized.png)
 
 ## Notes
