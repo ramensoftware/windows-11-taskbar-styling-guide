@@ -98,12 +98,12 @@ DateStyle:
   CharacterSpacing: 0
 oldTaskbarOnWin11: 0
 ```
-</details>
+</details><br>
 
 
 - Taskbar Height and Icon Size
 
-<details> 
+<details>
 <summary>Click to expand mod settings</summary>
 
 ```yaml
@@ -113,7 +113,10 @@ TaskbarButtonWidth: 30
 IconSizeSmall: 14
 TaskbarButtonWidthSmall: 15
 ```
-</details>
+
+
+
+</details><br>
 
 - Taskbar Background Helper
 
@@ -144,16 +147,122 @@ styleForDarkMode:
 </details>
 
 
-## Recommended Windhawk Mods
-To achieve maximum aesthetics and convenience, install and configure the following Windhawk mods in addition to Taskbar Styler:
+## Recommended visual Windhawk Mods
+To achieve maximum Taskbar aesthetics, install and configure the following Windhawk mods.
+
+- Taskbar tray system icon tweaks - to declutter the system tray icons (you may also disable the language indicator if you don't need it).
+<details>
+<summary>Click to expand mod settings</summary>
+
+```yaml
+hideVolumeIcon: 0
+hideNetworkIcon: 1
+hideBatteryIcon: 1
+grayscaleBatteryIcon: 1
+hideMicrophoneIcon: 0
+hideGeolocationIcon: 1
+hideStudioEffectsIcon: 0
+hideRecallIcon: 0
+hideLanguageBar: 0
+hideLanguageSupplementaryIcons: 1
+hideBellIcon: never
+showDesktopButtonWidth: 12
+```
+</details><br>
+
+- Windows 11 Notification Center Styler - to remove Notification Center shadows copy the content below (flyout shadows look truncated with transparent taskbar).
+
+<details>
+<summary>Click to expand mod settings</summary>
+
+```yaml
+controlStyles:
+  - target: Grid#NotificationCenterGrid
+    styles:
+      - Shadow :=
+  - target: Grid#CalendarCenterGrid
+    styles:
+      - Shadow :=
+  - target: Grid#ControlCenterRegion
+    styles:
+      - Shadow :=
+```
+</details><br>
+
+- Windows 11 Start Menu Styler - to remove Start Menu shadows copy the content below (shadows look truncated with transparent taskbar).
+<details>
+<summary>Click to expand mod settings</summary>
+
+```yaml
+controlStyles:
+  - target: Windows.UI.Xaml.Controls.Border#DropShadow
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Controls.Border#StartDropShadow
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Controls.Border#RootGridDropShadow
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Controls.Border#RightCompanionDropShadow
+    styles:
+      - Visibility=Collapsed
+```
+</details>
+
+## Recommended functional Windhawk Mods
+
+To achieve compatible Taskbar functionality, install and configure the following Windhawk mods:
+
+- Taskbar minimize/restore on scroll.
+<details>
+<summary>Click to expand mod settings</summary>
+
+```yaml
+scrollOverTaskbarButtons: 1
+scrollOverThumbnailPreviews: 1
+maximizeAndRestore: 0
+reverseScrollingDirection: 0
+oldTaskbarOnWin11: 0
+```
+</details><br>
+
+- Taskbar Volume Control - to control volume by mouse scroll wheel while hovering over the tray area.
+<details>
+<summary>Click to expand mod settings</summary>
+
+```yaml
+volumeIndicator: win11
+scrollArea: notification_area
+additionalScrollRegions: ''
+middleClickToMute: 1
+ctrlScrollVolumeChange: 0
+scrollAnywhereKeys:
+  shift: 0
+  ctrl: 0
+  alt: 0
+  win: 0
+fullScreenScrolling: disabled
+noAutomaticMuteToggle: 0
+volumeChangeStep: 2
+oldTaskbarOnWin11: 0
+```
+</details><br>
 
 - Middle click to close on the taskbar.
-- Taskbar minimize/restore on scroll.
+<details>
+<summary>Click to expand mod settings</summary>
+
+```yaml
+multipleItemsBehavior: closeAll
+keysToEndTask:
+  Ctrl: 1
+  Alt: 0
+oldTaskbarOnWin11: 0
+```
+</details><br>
+
 - Taskbar Thumbnail Reorder.
-- Taskbar tray system icon tweaks.
-- Taskbar Volume Control.
-- Windows 11 Notification Center Styler
-- Windows 11 Start Menu Styler.
 </details>
 
 
