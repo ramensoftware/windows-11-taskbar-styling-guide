@@ -90,7 +90,10 @@ oldTaskbarOnWin11: 0
 
 ## Taskbar Height and Icon Size
 
-The get the clock to show up like it does in the screenshot, follow these steps:
+> [!NOTE]
+> This is required for the taskbar and icons to have the correct size since this theme attempts to mimic the sizing of the macOS Dock. Attempting to do this directly makes it far too blurry.
+
+The get the taskbar and icons sizes to show up like they do in the screenshot, follow these steps:
 
 * Open the Taskbar Height and Icon Size mod in Windhawk.
 * Go to the "Settings" tab and select "Textual mode".
@@ -483,5 +486,45 @@ controlStyles:
       - Padding=2.5
       - Margin=0,1,10,0
       - Background:=<WindhawkBlur BlurAmount="0" TintColor="#5D101010"/>
+  - target: Windows.UI.Xaml.Controls.FlyoutPresenter
+    styles:
+      - RequestedTheme=Dark
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - BorderThickness=1.2,1,1.2,1
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#60404040" Offset="0.15" /><GradientStop Color="#55404040" Offset="0.28" /><GradientStop Color="#65252525" Offset="0.5" /><GradientStop Color="#55404040" Offset="0.72" /><GradientStop Color="#60404040" Offset="0.85" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
+      - CornerRadius=33
+      - Padding=2,3,2,3
+  - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
+    styles:
+      - Background:=Transparent
+      - BorderBrush:=Transparent
+      - BorderThickness=0
+      - Margin=0
+  - target: Windows.UI.Xaml.Controls.Border#LayoutBorder
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#30505050"/>
+      - BorderThickness=1
+      - BorderBrush:=<SolidColorBrush Color="#50FFFFFF"/>
+      - CornerRadius=12
+  - target: SnapLayout.SnapLayoutControl#SuggestionSnapLayout Windows.UI.Xaml.Controls.Border#LayoutBorder
+    styles:
+      - Background:=Transparent
+  - target: Windows.UI.Xaml.Controls.Grid#LayoutGrid > Windows.UI.Xaml.Controls.Button
+    styles:
+      - BorderBrush:=<SolidColorBrush Color="#70BBBBBB"/>
+      - BorderThickness=1
+      - CornerRadius=9.5
+      - Margin=1.5
+  - target: Windows.UI.Xaml.Controls.Grid#LayoutGrid > Windows.UI.Xaml.Controls.Button@CommonStates > Windows.UI.Xaml.Controls.Grid#RootGrid
+    styles:
+      - Background@PointerOver:=<SolidColorBrush Color="#40FFFFFF"/>
+      - Background@Pressed:=<SolidColorBrush Color="#20FFFFFF"/>
+  - target: Windows.UI.Xaml.Controls.Button#WindowGroupSuggestionButton > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter
+    styles:
+      - Background:=Transparent
+  - target: Windows.UI.Xaml.Controls.Button#WindowGroupSuggestionButton@CommonStates > Windows.UI.Xaml.Controls.Grid#RootGrid
+    styles:
+      - Background@PointerOver:=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark2}" Opacity="1" />
+      - Background@Pressed:=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark2}" Opacity="1" />
 ```
 </details>
