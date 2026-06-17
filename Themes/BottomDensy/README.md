@@ -169,6 +169,7 @@ controlStyles:
       - Width=20
       - Height=20
 
+  # App icons' popup
   - target: SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid
     styles:
       - Padding=0,0,0,0
@@ -181,6 +182,9 @@ controlStyles:
   - target: SystemSettings.View.RootPage > Grid#RootPageGrid > Grid#RootCommandSearchGrid > SystemSettings.View.SettingsAutoSuggestCommandSearchBox#CommandSearchBox
     styles:
       - Margin=0,0,0,0
+  - target: ScrollViewer > ScrollContentPresenter > Border > SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid > Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - CornerRadius=0 #≝
 
   # Volume icon+slider bar
   - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid
@@ -307,6 +311,7 @@ controlStyles:
       - Height@NoRunningIndicator=26
       - Margin@NoRunningIndicator=0,6,0,0
 
+  # App icons' popup
   - target: SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid
     styles:
       - Padding=0,0,0,0
@@ -319,6 +324,9 @@ controlStyles:
   - target: SystemSettings.View.RootPage > Grid#RootPageGrid > Grid#RootCommandSearchGrid > SystemSettings.View.SettingsAutoSuggestCommandSearchBox#CommandSearchBox
     styles:
       - Margin=0,0,0,0
+  - target: ScrollViewer > ScrollContentPresenter > Border > SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid > Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - CornerRadius=0 #≝
 
   # Volume icon+slider bar
   - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid
