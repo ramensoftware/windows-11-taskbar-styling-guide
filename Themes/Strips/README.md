@@ -1,6 +1,6 @@
 # Strips theme for Windows 11 Taskbar Styler
 
-**Author**: [Dean-0x](https://github.com/Dean-0x)
+**Author**: [Deen-0x](https://github.com/Deen-0x)
 
 ## Dark Mode
 Normal - One window
