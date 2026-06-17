@@ -102,6 +102,12 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 `BottomDensy`
 ```yaml
+# declare var: key = value
+# use     var: key:=$value
+# Margin=←,↑,→,↓
+styleConstants:
+  - volume_bar_width_outer_152=132 #≝152
+  - volume_bar_width_inner_110=90 #≝110
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
@@ -166,10 +172,71 @@ controlStyles:
   - target: SystemSettings.View.RootPage > Grid#RootPageGrid > Grid#RootCommandSearchGrid > SystemSettings.View.SettingsAutoSuggestCommandSearchBox#CommandSearchBox
     styles:
       - Margin=0,0,0,0
+
+  # Volume icon+slider bar
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid
+    styles:
+      - BorderThickness=0 #≝
+      - CornerRadius=0 #≝
+      - MinHeight=32 #≝48
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid
+    styles:
+      - Padding=0,0,0,0 #≝20,0,20,0
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator
+    styles:
+      - Padding=0,0,0,0 #≝5,3,0,3
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator > Button
+    styles:
+      - Margin=0,0,2,0 #≝0,0,5,0
+      - Height=16 #≝32
+      - Width=16 #≝32
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid
+    styles:
+      - MinHeight=16 #≝32
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator > Button > ContentPresenter#ContentPresenter > Microsoft.UI.Xaml.Controls.AnimatedIcon#VolumeIcon
+    styles:
+      - Padding=0,0,0,0 #≝0,0,0,1
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator > Slider#volumeSlider > Grid > Grid#SliderContainer > Grid#HorizontalTemplate
+    styles: # slider bar
+      - RowDefinitions:=<RowDefinitionCollection><RowDefinition Height="2"/><RowDefinition Height="Auto"/><RowDefinition Height="2"/></RowDefinitionCollection> #≝ [{Height=18px}, {Height=Auto}, {Height=18px}])
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator > TextBlock#volumeLevelText
+    styles: # volume№
+      - MinWidth=24 #≝40
+      - Margin=0,0,0,0 #≝0,0,0,2
+      - VerticalAlignment=1 #≝3
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas
+    styles: # position volume bar adjacent to the taskbar
+      - VerticalAlignment=1 #≝3
+  # Make it slightly more narrow, assuming you don't actually use it to change volume, but mostly for indication
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator
+    styles:
+      - Width:=$volume_bar_width_outer_152
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator > Slider#volumeSlider
+    styles:
+      - Width:=$volume_bar_width_inner_110
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid
+    styles:
+      - MaxWidth=4096 #≝280
+  # ↓ negatively affects the taskbar
+  # - target: ScrollViewer
+  #   styles:
+  #     - Height=16 #≝28.6667
+  # - target: Canvas
+  #   styles:
+  #     - Height=16 #≝
+  # - target: ScrollViewer > ScrollContentPresenter > Border
+  #   styles:
+  #     - Height=16 #≝28.6667
 ```
 
 `BottomDensyNoInd`
 ```yaml
+# declare var: key = value
+# use     var: key:=$value
+# Margin=←,↑,→,↓
+styleConstants:
+  - volume_bar_width_outer_152=132 #≝152
+  - volume_bar_width_inner_110=90 #≝110
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
@@ -243,5 +310,60 @@ controlStyles:
   - target: SystemSettings.View.RootPage > Grid#RootPageGrid > Grid#RootCommandSearchGrid > SystemSettings.View.SettingsAutoSuggestCommandSearchBox#CommandSearchBox
     styles:
       - Margin=0,0,0,0
+
+  # Volume icon+slider bar
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid
+    styles:
+      - BorderThickness=0 #≝
+      - CornerRadius=0 #≝
+      - MinHeight=32 #≝48
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid
+    styles:
+      - Padding=0,0,0,0 #≝20,0,20,0
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator
+    styles:
+      - Padding=0,0,0,0 #≝5,3,0,3
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator > Button
+    styles:
+      - Margin=0,0,2,0 #≝0,0,5,0
+      - Height=16 #≝32
+      - Width=16 #≝32
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid
+    styles:
+      - MinHeight=16 #≝32
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator > Button > ContentPresenter#ContentPresenter > Microsoft.UI.Xaml.Controls.AnimatedIcon#VolumeIcon
+    styles:
+      - Padding=0,0,0,0 #≝0,0,0,1
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator > Slider#volumeSlider > Grid > Grid#SliderContainer > Grid#HorizontalTemplate
+    styles: # slider bar
+      - RowDefinitions:=<RowDefinitionCollection><RowDefinition Height="2"/><RowDefinition Height="Auto"/><RowDefinition Height="2"/></RowDefinitionCollection> #≝ [{Height=18px}, {Height=Auto}, {Height=18px}])
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator > TextBlock#volumeLevelText
+    styles: # volume№
+      - MinWidth=24 #≝40
+      - Margin=0,0,0,0 #≝0,0,0,2
+      - VerticalAlignment=1 #≝3
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas
+    styles: # position volume bar adjacent to the taskbar
+      - VerticalAlignment=1 #≝3
+  # Make it slightly more narrow, assuming you don't actually use it to change volume, but mostly for indication
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator
+    styles:
+      - Width:=$volume_bar_width_outer_152
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid > Grid#VolumeConfirmator > Slider#volumeSlider
+    styles:
+      - Width:=$volume_bar_width_inner_110
+  - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid > Grid#ConfirmatorMainGrid
+    styles:
+      - MaxWidth=4096 #≝280
+  # ↓ negatively affects the taskbar
+  # - target: ScrollViewer
+  #   styles:
+  #     - Height=16 #≝28.6667
+  # - target: Canvas
+  #   styles:
+  #     - Height=16 #≝
+  # - target: ScrollViewer > ScrollContentPresenter > Border
+  #   styles:
+  #     - Height=16 #≝28.6667
 ```
 </details>
