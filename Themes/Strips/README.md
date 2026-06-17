@@ -260,17 +260,6 @@ To achieve compatible Taskbar functionality, install and configure the following
       AdditionalArgs: arg1;arg2
   oldTaskbarOnWin11: 0
   eagerTriggerEvaluation: 1
-  CombineTaskbarButtons:
-    State1: COMBINE_NEVER
-    State2: COMBINE_NEVER
-    StateSecondary1: COMBINE_NEVER
-    StateSecondary2: COMBINE_NEVER
-  doubleClickAction: ACTION_SHOW_DESKTOP
-  middleClickAction: ACTION_NOTHING
-  StartProcess: C:\Windows\System32\notepad.exe
-  VirtualKeyPress:
-    - '0x5B'
-    - '0x45'
   ```
   </details><br>
 
