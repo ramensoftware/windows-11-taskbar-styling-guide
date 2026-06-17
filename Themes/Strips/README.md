@@ -28,239 +28,236 @@ To achieve similar results, install and configure the following Windhawk mods in
 
 - Taskbar Clock Customization – for styling the clock.
 
-<details>
-<summary>Click to expand mod settings</summary>
+  <details>
+  <summary>Click to expand Taskbar Clock Customization settings</summary>
 
-```yaml
-ShowSeconds: 0
-TimeFormat: ''
-DateFormat: d/M/y
-WeekdayFormat: custom
-WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
-TopLine: ''
-BottomLine: '%weekday% %date% | %time%'
-MiddleLine: '%weekday%'
-TooltipLine: '%web1_full%'
-TooltipLineMode: append
-Width: 180
-Height: 60
-MaxWidth: 0
-TextSpacing: 1
-DataCollection:
-  NetworkMetricsFormat: mbs
-  NetworkMetricsFixedDecimals: -1
-  PercentageFormat: spacePaddingAndSymbol
-  UpdateInterval: 1
-  NetworkAdapterName: ''
-  GpuAdapterName: ''
-MediaPlayer:
-  IgnoredPlayers:
-    - ''
-  MaxLength: 28
-  NoMediaText: No media
-  RemoveBrackets: 0
-WebContentWeatherLocation: ''
-WebContentWeatherFormat: '%c 🌡️%t 🌬️%w'
-WebContentWeatherUnits: autoDetect
-WebContentsItems:
-  - Url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
-    BlockStart: <item>
-    Start: <title>
-    End: </title>
-    ContentMode: xmlHtml
-    SearchReplace:
-      - Search: ''
-        Replace: ''
+  ```yaml
+  ShowSeconds: 0
+  TimeFormat: ''
+  DateFormat: d/M/y
+  WeekdayFormat: custom
+  WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
+  TopLine: ''
+  BottomLine: '%weekday% %date% | %time%'
+  MiddleLine: '%weekday%'
+  TooltipLine: '%web1_full%'
+  TooltipLineMode: append
+  Width: 180
+  Height: 60
+  MaxWidth: 0
+  TextSpacing: 1
+  DataCollection:
+    NetworkMetricsFormat: mbs
+    NetworkMetricsFixedDecimals: -1
+    PercentageFormat: spacePaddingAndSymbol
+    UpdateInterval: 1
+    NetworkAdapterName: ''
+    GpuAdapterName: ''
+  MediaPlayer:
+    IgnoredPlayers:
+      - ''
     MaxLength: 28
-WebContentsUpdateInterval: 10
-TimeZones:
-  - Eastern Standard Time
-TimeStyle:
-  Hidden: 1
-  TextColor: ''
-  TextAlignment: Right
-  FontSize: 0
-  FontFamily: ''
-  FontWeight: ''
-  FontStyle: ''
-  FontStretch: ''
-  CharacterSpacing: 0
-  Visible: 0
-DateStyle:
-  Hidden: 0
-  TextColor: ''
-  TextAlignment: ''
-  FontSize: 11
-  FontFamily: ''
-  FontWeight: Medium
-  FontStyle: Normal
-  FontStretch: ''
-  CharacterSpacing: 0
-oldTaskbarOnWin11: 0
-```
-</details><br>
+    NoMediaText: No media
+    RemoveBrackets: 0
+  WebContentWeatherLocation: ''
+  WebContentWeatherFormat: '%c 🌡️%t 🌬️%w'
+  WebContentWeatherUnits: autoDetect
+  WebContentsItems:
+    - Url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+      BlockStart: <item>
+      Start: <title>
+      End: </title>
+      ContentMode: xmlHtml
+      SearchReplace:
+        - Search: ''
+          Replace: ''
+      MaxLength: 28
+  WebContentsUpdateInterval: 10
+  TimeZones:
+    - Eastern Standard Time
+  TimeStyle:
+    Hidden: 1
+    TextColor: ''
+    TextAlignment: Right
+    FontSize: 0
+    FontFamily: ''
+    FontWeight: ''
+    FontStyle: ''
+    FontStretch: ''
+    CharacterSpacing: 0
+    Visible: 0
+  DateStyle:
+    Hidden: 0
+    TextColor: ''
+    TextAlignment: ''
+    FontSize: 11
+    FontFamily: ''
+    FontWeight: Medium
+    FontStyle: Normal
+    FontStretch: ''
+    CharacterSpacing: 0
+  oldTaskbarOnWin11: 0
+  ```
+  </details><br>
 
 
 - Taskbar Height and Icon Size
 
-<details>
-<summary>Click to expand mod settings</summary>
+  <details>
+  <summary>Click to expand Taskbar Height and Icon Size settings</summary>
 
-```yaml
-TaskbarHeight: 46
-IconSize: 15
-TaskbarButtonWidth: 30
-IconSizeSmall: 14
-TaskbarButtonWidthSmall: 15
-```
-
-
-
-</details><br>
+  ```yaml
+  TaskbarHeight: 46
+  IconSize: 15
+  TaskbarButtonWidth: 30
+  IconSizeSmall: 14
+  TaskbarButtonWidthSmall: 15
+  ```
+  </details><br>
 
 - Taskbar Background Helper
 
-<details>
-<summary>Click to expand mod settings</summary>
+  <details>
+  <summary>Click to expand Taskbar Background Helper settings</summary>
 
-```yaml
-backgroundStyle: acrylicBlur
-color:
-  red: 200
-  green: 200
-  blue: 200
-  accentColor: 0
-  transparency: 150
-onlyWhenMaximized: 1
-excludedPrograms:
-  - ''
-styleForDarkMode:
-  use: 1
+  ```yaml
   backgroundStyle: acrylicBlur
   color:
-    red: 40
-    green: 40
-    blue: 40
+    red: 200
+    green: 200
+    blue: 200
     accentColor: 0
-    transparency: 255
-```
-</details>
+    transparency: 150
+  onlyWhenMaximized: 1
+  excludedPrograms:
+    - ''
+  styleForDarkMode:
+    use: 1
+    backgroundStyle: acrylicBlur
+    color:
+      red: 40
+      green: 40
+      blue: 40
+      accentColor: 0
+      transparency: 255
+  ```
+  </details>
 
 
 ## Recommended visual Windhawk Mods
 To achieve maximum Taskbar aesthetics, install and configure the following Windhawk mods.
 
 - Taskbar tray system icon tweaks - to declutter the system tray icons (you may also disable the language indicator if you don't need it).
-<details>
-<summary>Click to expand mod settings</summary>
+  <details>
+  <summary>Click to expand Taskbar tray system icon tweaks settings</summary>
 
-```yaml
-hideVolumeIcon: 0
-hideNetworkIcon: 1
-hideBatteryIcon: 1
-grayscaleBatteryIcon: 1
-hideMicrophoneIcon: 0
-hideGeolocationIcon: 1
-hideStudioEffectsIcon: 0
-hideRecallIcon: 0
-hideLanguageBar: 0
-hideLanguageSupplementaryIcons: 1
-hideBellIcon: never
-showDesktopButtonWidth: 12
-```
-</details><br>
+  ```yaml
+  hideVolumeIcon: 0
+  hideNetworkIcon: 1
+  hideBatteryIcon: 1
+  grayscaleBatteryIcon: 1
+  hideMicrophoneIcon: 0
+  hideGeolocationIcon: 1
+  hideStudioEffectsIcon: 0
+  hideRecallIcon: 0
+  hideLanguageBar: 0
+  hideLanguageSupplementaryIcons: 1
+  hideBellIcon: never
+  showDesktopButtonWidth: 12
+  ```
+  </details><br>
 
 - Windows 11 Notification Center Styler - to remove Notification Center shadows copy the content below (flyout shadows look truncated with transparent taskbar).
 
-<details>
-<summary>Click to expand mod settings</summary>
+  <details>
+  <summary>Click to expand Windows 11 Notification Center Styler settings</summary>
 
-```yaml
-controlStyles:
-  - target: Grid#NotificationCenterGrid
-    styles:
-      - Shadow :=
-  - target: Grid#CalendarCenterGrid
-    styles:
-      - Shadow :=
-  - target: Grid#ControlCenterRegion
-    styles:
-      - Shadow :=
-```
-</details><br>
+  ```yaml
+  controlStyles:
+    - target: Grid#NotificationCenterGrid
+      styles:
+        - Shadow :=
+    - target: Grid#CalendarCenterGrid
+      styles:
+        - Shadow :=
+    - target: Grid#ControlCenterRegion
+      styles:
+        - Shadow :=
+  ```
+  </details><br>
 
 - Windows 11 Start Menu Styler - to remove Start Menu shadows copy the content below (shadows look truncated with transparent taskbar).
-<details>
-<summary>Click to expand mod settings</summary>
+  <details>
+  <summary>Click to expand Windows 11 Start Menu Styler settings</summary>
 
-```yaml
-controlStyles:
-  - target: Windows.UI.Xaml.Controls.Border#DropShadow
-    styles:
-      - Visibility=Collapsed
-  - target: Windows.UI.Xaml.Controls.Border#StartDropShadow
-    styles:
-      - Visibility=Collapsed
-  - target: Windows.UI.Xaml.Controls.Border#RootGridDropShadow
-    styles:
-      - Visibility=Collapsed
-  - target: Windows.UI.Xaml.Controls.Border#RightCompanionDropShadow
-    styles:
-      - Visibility=Collapsed
-```
-</details>
+  ```yaml
+  controlStyles:
+    - target: Windows.UI.Xaml.Controls.Border#DropShadow
+      styles:
+        - Visibility=Collapsed
+    - target: Windows.UI.Xaml.Controls.Border#StartDropShadow
+      styles:
+        - Visibility=Collapsed
+    - target: Windows.UI.Xaml.Controls.Border#RootGridDropShadow
+      styles:
+        - Visibility=Collapsed
+    - target: Windows.UI.Xaml.Controls.Border#RightCompanionDropShadow
+      styles:
+        - Visibility=Collapsed
+  ```
+  </details>
 
 ## Recommended functional Windhawk Mods
 
 To achieve compatible Taskbar functionality, install and configure the following Windhawk mods:
 
 - Taskbar minimize/restore on scroll.
-<details>
-<summary>Click to expand mod settings</summary>
+  <details>
+  <summary>Click to expand Taskbar minimize/restore on scroll settings</summary>
 
-```yaml
-scrollOverTaskbarButtons: 1
-scrollOverThumbnailPreviews: 1
-maximizeAndRestore: 0
-reverseScrollingDirection: 0
-oldTaskbarOnWin11: 0
-```
-</details><br>
+  ```yaml
+  scrollOverTaskbarButtons: 1
+  scrollOverThumbnailPreviews: 1
+  maximizeAndRestore: 0
+  reverseScrollingDirection: 0
+  oldTaskbarOnWin11: 0
+  ```
+  </details><br>
 
 - Taskbar Volume Control - to control volume by mouse scroll wheel while hovering over the tray area.
-<details>
-<summary>Click to expand mod settings</summary>
+  <details>
+  <summary>Click to expand Taskbar Volume Control settings</summary>
 
-```yaml
-volumeIndicator: win11
-scrollArea: notification_area
-additionalScrollRegions: ''
-middleClickToMute: 1
-ctrlScrollVolumeChange: 0
-scrollAnywhereKeys:
-  shift: 0
-  ctrl: 0
-  alt: 0
-  win: 0
-fullScreenScrolling: disabled
-noAutomaticMuteToggle: 0
-volumeChangeStep: 2
-oldTaskbarOnWin11: 0
-```
-</details><br>
+  ```yaml
+  volumeIndicator: win11
+  scrollArea: notification_area
+  additionalScrollRegions: ''
+  middleClickToMute: 1
+  ctrlScrollVolumeChange: 0
+  scrollAnywhereKeys:
+    shift: 0
+    ctrl: 0
+    alt: 0
+    win: 0
+  fullScreenScrolling: disabled
+  noAutomaticMuteToggle: 0
+  volumeChangeStep: 2
+  oldTaskbarOnWin11: 0
+  ```
+  </details><br>
 
 - Middle click to close on the taskbar.
-<details>
-<summary>Click to expand mod settings</summary>
+  <details>
+  <summary>Click to expand Middle click to close on the taskbar settings</summary>
 
-```yaml
-multipleItemsBehavior: closeAll
-keysToEndTask:
-  Ctrl: 1
-  Alt: 0
-oldTaskbarOnWin11: 0
-```
-</details><br>
+  ```yaml
+  multipleItemsBehavior: closeAll
+  keysToEndTask:
+    Ctrl: 1
+    Alt: 0
+  oldTaskbarOnWin11: 0
+  ```
+  </details><br>
 
 - Taskbar Thumbnail Reorder.
 </details>
@@ -284,7 +281,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 * Copy the content below to the text box and click "Save settings".
 
 <details>
-<summary>Content to import (click to expand)</summary>
+<summary>Theme content to import (click to expand)</summary>
 
 ```yaml
 styleConstants:
