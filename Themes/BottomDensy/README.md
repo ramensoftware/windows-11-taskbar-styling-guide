@@ -153,6 +153,19 @@ controlStyles:
     styles:
       - Width=20
       - Height=20
+
+  - target: SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid
+    styles:
+      - Padding=0,0,0,0
+  - target: SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid > Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - BorderThickness=0,0,0,0
+  - target: SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid > ItemsControl
+    styles:
+      - Margin=0,0,0,0
+  - target: SystemSettings.View.RootPage > Grid#RootPageGrid > Grid#RootCommandSearchGrid > SystemSettings.View.SettingsAutoSuggestCommandSearchBox#CommandSearchBox
+    styles:
+      - Margin=0,0,0,0
 ```
 
 `BottomDensyNoInd`
@@ -217,5 +230,18 @@ controlStyles:
       - Width@NoRunningIndicator=26
       - Height@NoRunningIndicator=26
       - Margin@NoRunningIndicator=0,6,0,0
+
+  - target: SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid
+    styles:
+      - Padding=0,0,0,0
+  - target: SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid > Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - BorderThickness=0,0,0,0
+  - target: SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid > ItemsControl
+    styles:
+      - Margin=0,0,0,0
+  - target: SystemSettings.View.RootPage > Grid#RootPageGrid > Grid#RootCommandSearchGrid > SystemSettings.View.SettingsAutoSuggestCommandSearchBox#CommandSearchBox
+    styles:
+      - Margin=0,0,0,0
 ```
 </details>
