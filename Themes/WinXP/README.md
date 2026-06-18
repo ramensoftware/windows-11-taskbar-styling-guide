@@ -39,6 +39,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
+styleConstants:
+  - TrayIconWidth=32
 controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
@@ -101,7 +103,7 @@ controlStyles:
       - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#16acf0" Offset="0.0" /> <GradientStop Color="#19b6f2" Offset="0.08" /> <GradientStop Color="#0c8eea" Offset="0.18" /> <GradientStop Color="#0c8eea" Offset="0.9" /> <GradientStop Color="#095bc9" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=2,1,0,1
       - BorderBrush=#095BC9
-      - Padding=-12,0,0,0
+      - Padding={{-$TrayIconWidth / 2}},0,0,0
   - target: Grid#OverflowRootGrid > Border
     styles:
       - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#16acf0" Offset="0.0" /> <GradientStop Color="#19b6f2" Offset="0.08" /> <GradientStop Color="#0c8eea" Offset="0.18" /> <GradientStop Color="#0c8eea" Offset="0.9" /> <GradientStop Color="#095bc9" Offset="1.0" /></LinearGradientBrush>
