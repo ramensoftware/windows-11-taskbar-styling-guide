@@ -16,6 +16,9 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 ## Context Menu Preview
 ![Menu-Preview](menu.png)
 
+## Thumbnail Preview
+![Thumbnail-Preview](thumbnail.png)
+
 ## Windows Selector Preview:
 ![Selector-Preview](selector.png) 
 ---
@@ -126,20 +129,19 @@ controlStyles:
       - BorderThickness=1.2
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
-      - Fill:=<WindhawkBlur BlurAmount="3.5" TintColor="#1D101010"/>
+      - Fill:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - Stroke:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
-      - StrokeThickness=10
+      - StrokeThickness=5
       - RadiusX=10
       - RadiusY=10
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundStroke
     styles:
-      - Visibility=Visible
-      - Stroke:=<WindhawkBlur BlurAmount="30" TintColor="#10303030"/>
-      - StrokeThickness=10
+      - Fill:=<WindhawkBlur BlurAmount="3.5" TintColor="#2D101010"/>
+      - Stroke:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - StrokeThickness=5
       - RadiusX=10
       - RadiusY=10
-      - Margin=-10,-10,-10,-10
-      - Fill:=<WindhawkBlur BlurAmount="0" TintColor="#00101010"/>
+      - Fill:=<<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
   - target: Border#HoverFlyoutBackground
     styles:
       - Background:=Transparent
@@ -147,10 +149,11 @@ controlStyles:
       - CornerRadius=15
   - target: Windows.UI.Xaml.Controls.Button#CloseButton
     styles:
-      - CornerRadius=15/
-      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#2D101010"/>
-      - BorderThickness=1
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#60404040" Offset="0.15" /><GradientStop Color="#55404040" Offset="0.28" /><GradientStop Color="#65252525" Offset="0.5" /><GradientStop Color="#55404040" Offset="0.72" /><GradientStop Color="#60404040" Offset="0.85" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
+      - CornerRadius=20
+      - Width=24
+      - Height=24
+      - Margin=8
+      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#50FFFFFF"/>
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - CornerRadius=15
@@ -302,5 +305,6 @@ controlStyles:
 themeResourceVariables:
   - ''
 xamlDiagnosticsHandling: ''
+
 ```
 </details>
