@@ -132,21 +132,21 @@ controlStyles:
       - Fill:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - Stroke:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - StrokeThickness=5
-      - RadiusX=10
-      - RadiusY=10
+      - RadiusX=14
+      - RadiusY=14
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundStroke
     styles:
       - Fill:=<WindhawkBlur BlurAmount="3.5" TintColor="#2D101010"/>
       - Stroke:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - StrokeThickness=5
-      - RadiusX=10
-      - RadiusY=10
+      - RadiusX=14
+      - RadiusY=14
       - Fill:=<<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
   - target: Border#HoverFlyoutBackground
     styles:
       - Background:=Transparent
       - BorderThickness=0
-      - CornerRadius=15
+      - CornerRadius=18
   - target: Windows.UI.Xaml.Controls.Button#CloseButton
     styles:
       - CornerRadius=20
