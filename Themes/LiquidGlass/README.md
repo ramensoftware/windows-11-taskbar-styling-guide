@@ -164,13 +164,15 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```yaml
 controlStyles:
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid
+  - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
-      - Height=71
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+      - ActualWidth=>containerGridWidth
+      - ActualHeight=>TaskHeight
+      - HorizontalAlignment=Stretch
   - target: Taskbar.TaskbarFrame#TaskbarFrame
     styles:
       - Width=Auto
-      - Height=70
       - HorizontalAlignment=Center
       - MinWidth=100
       - MaxWidth={{max(containerGridWidth - 250, 100)}}
@@ -183,29 +185,22 @@ controlStyles:
       - Background=Transparent
       - HorizontalAlignment=Center
       - Width=Auto
-      - BorderThickness=0
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<WindhawkBlur BlurAmount="3" TintColor="#14090909"/>
-      - RadiusX=33
-      - RadiusY=33
+      - RadiusX={{(TaskHeight/4)*2}}
+      - RadiusY={{(TaskHeight/4)*2}}
       - StrokeThickness=1
       - Canvas.ZIndex=1
       - Margin=-50,0,-50,0
       - Stroke:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.1" /><GradientStop Color="#40404040" Offset="0.25" /><GradientStop Color="#40292929" Offset="0.5" /><GradientStop Color="#40404040" Offset="0.75" /><GradientStop Color="#50404040" Offset="0.9" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
-  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
-    styles:
-      - Fill:=<WindhawkBlur BlurAmount="4" TintColor="#1D101010"/>
-      - RadiusX=35
-      - RadiusY=35
-      - Margin=
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
     styles:
       - Visibility=Visible
       - Stroke:=<WindhawkBlur BlurAmount="25" TintColor="#00000000"/>
       - StrokeThickness=6
-      - RadiusX=36
-      - RadiusY=35
+      - RadiusX={{(TaskHeight/4)*2}}
+      - RadiusY={{(TaskHeight/4)*2}}
       - Canvas.ZIndex=-1
       - VerticalAlignment=Stretch
       - HorizontalAlignment=Stretch
@@ -215,13 +210,13 @@ controlStyles:
   - target: Grid#SystemTrayFrameGrid
     styles:
       - Background:=<WindhawkBlur BlurAmount="5" TintColor="#30101010"/>
-      - CornerRadius=30.5
+      - CornerRadius={{(TaskHeight/4)*1.8}}
       - BorderThickness=1.2,1,1.2,1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.1" /><GradientStop Color="#60404040" Offset="0.25" /><GradientStop Color="#40292929" Offset="0.5" /><GradientStop Color="#90404040" Offset="0.75" /><GradientStop Color="#90404040" Offset="0.9" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
       - Padding=11,0,10,0
       - Margin=0,1,0,1
       - VerticalAlignment=Center
-      - Height=60
+      - Height={{TaskHeight - 8}}
   - target: SystemTray.SystemTrayFrame
     styles:
       - HorizontalAlignment=Left
@@ -230,11 +225,6 @@ controlStyles:
   - target: Taskbar.Gripper#GripperControl
     styles:
       - MinWidth=24
-  - target: SystemTray.AdaptiveTextBlock#Base
-    styles:
-      - FontFamily=vivo Sans Global
-      - FontWeight=Medium
-      - FontSize=17.5
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=30
@@ -317,15 +307,34 @@ controlStyles:
       - CornerRadius=18
       - FontSize=14
       - FontWeight=Medium
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill:=<WindhawkBlur BlurAmount="3.5" TintColor="#1D101010"/>
+      - RadiusX=34
+      - RadiusY=34
+      - StrokeThickness:=1
+      - Stroke:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#65696969" Offset="0.5" /><GradientStop Color="#50505050" Offset="1" /></LinearGradientBrush>
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundStroke
+    styles:
+      - Visibility=Visible
+      - Stroke:=<WindhawkBlur BlurAmount="30" TintColor="#10303030"/>
+      - StrokeThickness=6
+      - RadiusX=30
+      - RadiusY=30
+      - Canvas.ZIndex=-1
+      - VerticalAlignment=Stretch
+      - HorizontalAlignment=Stretch
+      - Height=NaN
+      - Margin=0,1,0,0
+      - Fill:=<WindhawkBlur BlurAmount="0" TintColor="#00101010"/>
   - target: Border#HoverFlyoutBackground
     styles:
-      - Background:=<WindhawkBlur BlurAmount="0" TintColor="#1B242424"/>
-      - BorderThickness=1
-      - CornerRadius=35
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#65696969" Offset="0.5" /><GradientStop Color="#50505050" Offset="1" /></LinearGradientBrush>
+      - Background:=Transparent
+      - BorderThickness=0
+      - CornerRadius=34
   - target: ContentPresenter#HoverFlyoutContent
     styles:
-      - CornerRadius=20
+      - CornerRadius=40
       - BorderThickness=0
       - Padding=4,0,4,4
       - Margin:=4,4,4,4.5
@@ -339,9 +348,9 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid > Border
     styles:
       - CornerRadius=25,25,10,10
-      - Background:=<WindhawkBlur BlurAmount="18" TintColor="#801F1F1F"/>
+      - Background:=<WindhawkBlur BlurAmount="18" TintColor="#701F1F1F"/>
       - BorderThickness=1
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69D3D3D3" Offset="0.0" /><GradientStop Color="#609F9F9F" Offset="0.1" /><GradientStop Color="#50707070" Offset="0.5" /><GradientStop Color="#50505050" Offset="0.9" /><GradientStop Color="#69404040" Offset="1" /></LinearGradientBrush>
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50C0C0C0" Offset="0.0" /><GradientStop Color="#509F9F9F" Offset="0.1" /><GradientStop Color="#50707070" Offset="0.5" /><GradientStop Color="#55505050" Offset="0.9" /><GradientStop Color="#69404040" Offset="1" /></LinearGradientBrush>
   - target: Microsoft.UI.Xaml.Controls.AnimatedIcon#VolumeIcon
     styles:
       - Width=20
@@ -418,24 +427,7 @@ controlStyles:
     styles:
       - Margin=0,0,0,2.5
       - Width=60
-  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundStroke
-    styles:
-      - Visibility=Visible
-      - Stroke:=<WindhawkBlur BlurAmount="30" TintColor="#10303030"/>
-      - StrokeThickness=5
-      - RadiusX=30
-      - RadiusY=32
-      - Canvas.ZIndex=-1
-      - VerticalAlignment=Stretch
-      - HorizontalAlignment=Stretch
-      - Height=NaN
-      - Margin=0,1,0,0
-      - Fill:=<WindhawkBlur BlurAmount="0" TintColor="#00101010"/>
-  - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
-    styles:
-      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
-      - ActualWidth=>containerGridWidth
-      - HorizontalAlignment=Stretch
+
   - target: Taskbar.OverflowToggleButton
     styles:
       - MinWidth=60
@@ -547,18 +539,15 @@ controlStyles:
       - Background:=<WindhawkBlur BlurAmount="0" TintColor="#5D101010"/>
   - target: Windows.UI.Xaml.Controls.FlyoutPresenter
     styles:
-      - RequestedTheme=Dark
-      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - BorderThickness=1
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#60404040" Offset="0.15" /><GradientStop Color="#55404040" Offset="0.28" /><GradientStop Color="#65252525" Offset="0.5" /><GradientStop Color="#55404040" Offset="0.72" /><GradientStop Color="#60404040" Offset="0.85" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
       - CornerRadius=33
-      - Padding=2,3,2,3
   - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
     styles:
-      - Background:=Transparent
-      - BorderBrush:=Transparent
-      - BorderThickness=0
-      - Margin=0
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - BorderBrush:=<WindhawkBlur BlurAmount="40" TintColor="#3D404040"/>
+      - BorderThickness=1
+      - Padding=2,3,2,3
+      - CornerRadius=33
+      - Canvas.ZIndex=-5
   - target: Windows.UI.Xaml.Controls.Border#LayoutBorder
     styles:
       - Background:=<WindhawkBlur BlurAmount="15" TintColor="#30505050"/>
