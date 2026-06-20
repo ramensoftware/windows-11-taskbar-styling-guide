@@ -35,12 +35,12 @@ To achieve similar results, install and configure the following Windhawk mods in
 
   ```yaml
   mode: labelsWithCombining
-  taskbarItemWidth: 500
+  taskbarItemWidth: 502
   runningIndicatorStyle: centerFixed
   progressIndicatorStyle: sameAsRunningIndicatorStyle
   excludedPrograms:
-    - excluded1.exe
-  minimumTaskbarItemWidth: 0
+    - ''
+  minimumTaskbarItemWidth: 120
   maximumTaskbarItemWidth: 500
   fontSize: 12
   fontFamily: ''
@@ -340,12 +340,12 @@ styleConstants:
   - mainRadius = 6
   - transparent = <SolidColorBrush Color="Transparent"/>
   - base = <WindhawkBlur BlurAmount="2" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.3" TintLuminosityOpacity="0.3" NoiseOpacity="0.1" NoiseDensity="0.5" />
-  - overlay = <WindhawkBlur BlurAmount="2" TintColor="{ThemeResource SystemChromeMediumLowColor}" TintOpacity="0.35" TintLuminosityOpacity="0.3" NoiseOpacity="0.1" NoiseDensity="0.5" />
-  - overlay2 = <WindhawkBlur BlurAmount="2" TintColor="{ThemeResource SystemChromeMediumLowColor}" TintOpacity="0.5" TintLuminosityOpacity="0.3" NoiseOpacity="0.1" NoiseDensity="0.5" />
   - active = <WindhawkBlur BlurAmount="2" TintColor="{ThemeResource SystemChromeLowColor}" TintOpacity="0.55" TintLuminosityOpacity="0.3" NoiseOpacity="0.1" NoiseDensity="0.5" />
-  - accent = <AcrylicBrush TintColor="{ThemeResource SystemAccentColor}"/>
-  - BorderThickness=1
-  - BorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="{ThemeResource AdaptiveLight}" Offset="0.0" /><GradientStop Color="{ThemeResource AdaptiveFade}" Offset="2" /></LinearGradientBrush>
+  - overlay = <WindhawkBlur BlurAmount="2" TintColor="{ThemeResource SystemChromeMediumLowColor}" TintOpacity="0.35" TintLuminosityOpacity="0.3" NoiseOpacity="0.1" NoiseDensity="0.5" />
+  - MultiWindowIndicatorAccent = <AcrylicBrush TintColor="{ThemeResource SystemAccentColor}"/>
+  - BorderThicknessBase=1
+  - BorderThicknessActive=2,2,2,1
+  - BorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,2"><GradientStop Color="{ThemeResource AdaptiveLight}" Offset="0.0" /><GradientStop Color="{ThemeResource AdaptiveFade}" Offset="1" /></LinearGradientBrush>
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
@@ -370,59 +370,63 @@ controlStyles:
       - Visibility = 1
   - target: Taskbar.SearchBoxButton
     styles:
-      - Margin=0,0,2,0
-  - target: Border#BackgroundElement
-    styles:
-      - BorderThickness=0
+      - Visibility = Collapsed
   - target: Taskbar.TaskListButton#TaskListButton
     styles:
       - Margin = 0,0,10,0
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
-    styles:
-      - MinWidth=32
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - BorderBrush:=$BorderBrush
       - CornerRadius = $mainRadius
-      - BorderThickness:=$BorderThickness
+      - Margin = 0,7,0,6
       - Background@InactiveNormal :=$base
       - Background@ActiveNormal :=$active
       - Background@InactivePointerOver :=$overlay
-      - Background@ActivePointerOver:=$overlay2
-      - Background@ActivePressed:=$overlay2
+      - Background@ActivePointerOver:=$overlay
+      - Background@ActivePressed:=$overlay
       - Background@InactivePressed:=$base
       - Background@MultiWindowNormal:=$base
       - Background@MultiWindowActive:=$active
       - Background@MultiWindowPointerOver:=$overlay
       - Background@MultiWindowPressed:=$overlay
-      - Margin = 0,7,0,6
+      - BorderBrush:=$BorderBrush
+      - BorderBrush@ActiveNormal :=$BorderBrush
+      - BorderBrush@ActivePointerOver :=$BorderBrush
+      - BorderBrush@InactivePointerOver :=$BorderBrush
+      - BorderBrush@MultiWindowActive :=$BorderBrush
+      - BorderBrush@MultiWindowPointerOver :=$BorderBrush
+      - BorderThickness:=$BorderThicknessBase
+      - BorderThickness@ActiveNormal :=$BorderThicknessActive
+      - BorderThickness@ActivePointerOver :=$BorderThicknessActive
+      - BorderThickness@InactivePointerOver :=$BorderThicknessBase
+      - BorderThickness@MultiWindowActive :=$BorderThicknessActive
   - target: Border#MultiWindowElement
     styles:
-      - Width = 0
-      - Height = 0
-      - Padding = 0,0,0,0
-      - Background:=$transparent
-      - BorderThickness=0
-  - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
+      - Visibility=Collapsed
+  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
     styles:
-      - HorizontalAlignment = Stretch
-      - TextAlignment = Center
       - Margin=0,0,5,2
+      - HorizontalAlignment = 1
+      - FontWeight = Normal
+      - FontWeight@InactiveNormal = Normal
+      - FontWeight@InactivePointerOver = Bold
+      - FontWeight@InactivePressed = Normal
+      - FontWeight@ActiveNormal = Bold
+      - FontWeight@ActivePointerOver = Bold
+      - FontWeight@ActivePressed = Bold
+      - FontWeight@MultiWindowNormal = Normal
+      - FontWeight@MultiWindowPointerOver = Bold
+      - FontWeight@MultiWindowActive = Bold
   - target: Grid#SystemTrayFrameGrid
     styles:
       - CornerRadius = $mainRadius
-      - Background:=$base
-      - BorderThickness:=$BorderThickness
-      - BorderBrush:=$BorderBrush
       - Margin=-55,11,10,10
       - Padding=5,0,-5,0
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
+      - BorderThickness:=$BorderThicknessBase
+      - Background:=$base
+      - BorderBrush:=$BorderBrush
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
     styles:
       - Margin=0,0,2,0
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
-    styles:
-      - BorderThickness:=$BorderThickness
-      - BorderBrush:=$BorderBrush
   - target: Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Windows.UI.Xaml.Controls.TextBlock[2]
     styles:
       - RenderTransform:=<TranslateTransform X="30" Y="-8" />
@@ -431,66 +435,54 @@ controlStyles:
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="8" />
       - ActualWidth=>WeatherCondWidth
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Width = {{WeatherTempWidth+WeatherCondWidth+50}}
-      - Padding = 0,0,0,0
       - Margin = 10,4,0,4
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid
+      - Padding = 0,0,0,0
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+    styles:
+      - BorderThickness:=$BorderThicknessBase
+      - BorderBrush:=$BorderBrush
+  - target: Grid#AugmentedEntryPointContentGrid
     styles:
       - Margin = 7,0,0,0
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
     styles:
-      - Height=15
       - Width=15
+      - Height=15
       - Margin=10,4,0,0
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
     styles:
-      - Height=15
       - Width=15
+      - Height=15
       - Margin=0,2,0,0
-      - RenderTransform := <TranslateTransform X="4" Y="2" />
       - HorizontalAlignment= 1
       - VerticalAlignment= 1
+      - RenderTransform := <TranslateTransform X="4" Y="2" />
   - target: Grid#OverflowRootGrid > Border
     styles:
       - Shadow :=
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
     styles:
-      - Height=5
-      - Width=5
-      - RadiusX=30
-      - RadiusY=30
-      - StrokeThickness=0
-      - Margin=12,1,0,0
+      - Width=4
+      - Height=4
+      - Margin=13,33,0,0
+      - StrokeThickness=1
       - VerticalAlignment=0
       - HorizontalAlignment=0
-      - Canvas.ZIndex=1
-      - Fill@MultiWindowNormal:=$accent
-      - Fill@MultiWindowActive:=$accent
-      - Fill@MultiWindowPointerOver:=$accent
-      - Fill@MultiWindowPressed:=$accent
+      - Fill@MultiWindowNormal:=$MultiWindowIndicatorAccent
+      - Fill@MultiWindowActive:=$MultiWindowIndicatorAccent
+      - Fill@MultiWindowPointerOver:=$MultiWindowIndicatorAccent
+      - Fill@MultiWindowPressed=Transparent
       - Fill=transparent
+      - Canvas.ZIndex=1
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton
     styles:
       - Margin=0,0,10,0
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
-      - Height=0
-      - Width=0
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
-    styles:
-      - FontWeight = Normal
-      - FontWeight@InactiveNormal = Normal
-      - FontWeight@InactivePointerOver = Normal
-      - FontWeight@InactivePressed = Normal
-      - FontWeight@ActiveNormal = Bold
-      - FontWeight@ActivePointerOver = Bold
-      - FontWeight@ActivePressed = Bold
-      - FontWeight@MultiWindowNormal = Normal
-      - FontWeight@MultiWindowPointerOver = Normal
-      - FontWeight@MultiWindowActive = Bold
-      - FontWeight@MultiWindowPressed = Bold
+      - Visibility=Collapsed
 themeResourceVariables:
   - AdaptiveLight@Light=#DCDCDC
   - AdaptiveLight@Dark=#CC646464
