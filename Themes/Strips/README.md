@@ -427,14 +427,22 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
     styles:
       - Margin=0,0,2,0
-  - target: Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Windows.UI.Xaml.Controls.TextBlock[2]
-    styles:
-      - RenderTransform:=<TranslateTransform X="30" Y="-8" />
-      - ActualWidth=>WeatherTempWidth
-  - target: Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Windows.UI.Xaml.Controls.TextBlock[1]
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid[2] > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="8" />
       - ActualWidth=>WeatherCondWidth
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid[2] > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2]
+    styles:
+      - RenderTransform:=<TranslateTransform X="{{WeatherCondWidth+7}}" Y="-8" />
+      - ActualWidth=>WeatherTempWidth
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid
+    styles:
+      - HorizontalAlignment=0
+      - TextAlignment=0
+      - Width = {{WeatherTempWidth+WeatherCondWidth+50}}
+  - target: Grid#AugmentedEntryPointContentGrid > Grid > Grid
+    styles:
+      - Width = 300
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Width = {{WeatherTempWidth+WeatherCondWidth+50}}
@@ -446,7 +454,7 @@ controlStyles:
       - BorderBrush:=$BorderBrush
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
-      - Margin = 7,0,0,0
+      - Margin = 5,0,0,0
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
     styles:
       - Width=15
