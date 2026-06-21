@@ -345,7 +345,7 @@ styleConstants:
   - MultiWindowIndicatorAccent = <AcrylicBrush TintColor="{ThemeResource SystemAccentColor}"/>
   - BorderThicknessBase=1
   - BorderThicknessActive=2,2,2,1
-  - BorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,2"><GradientStop Color="{ThemeResource AdaptiveLight}" Offset="0.0" /><GradientStop Color="{ThemeResource AdaptiveFade}" Offset="1" /></LinearGradientBrush>
+  - BorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,2"><GradientStop Color="{ThemeResource AdaptiveLight}" Offset="0.0" /><GradientStop Color="{ThemeResource AdaptiveFade}" Offset="1.5" /></LinearGradientBrush>
 styleConstants:
   - mainRadius = 6
   - transparent = <SolidColorBrush Color="Transparent"/>
