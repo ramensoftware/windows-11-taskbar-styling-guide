@@ -1,8 +1,8 @@
-# OS26 Liquid Glass theme for Windows 11 Taskbar Styler
+# OS26 Liquid Glass(DOCK) theme for Windows 11 Taskbar Styler
 
-Author: [WasiXGamer](https://github.com/wasiabbas4pk)
+Author: [wasiabbas4pk](https://github.com/wasiabbas4pk)
 
-This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass" dock. It features a glassy dock with liquid glass backgrounds for apps. It also tweaks the volume and brightness indicator for a cleaner look.
+This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass" Dock. It features a glassy dock with liquid glass backgrounds for apps. It also tweaks the volume and brightness indicator for a cleaner look.
 
 ## Taskbar Preview:
 ![Taskbar-Preview](screenshot.png)
@@ -28,17 +28,17 @@ This theme requires the Windhawk mod [Taskbar Height and Icon size](https://wind
 
 ## Taskbar Height and Icon size Configurations
 
-**Large(Recommended):** `{"TaskbarHeight":70,"IconSize":30,"TaskbarButtonWidth":58,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
+**Large(Recommended):** `{"TaskbarHeight":85,"IconSize":30,"TaskbarButtonWidth":60,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview:
 ![Large-Preview](large.png)
 
-**Medium:** `{"TaskbarHeight":65,"IconSize":30,"TaskbarButtonWidth":54,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
+**Medium:** `{"TaskbarHeight":80,"IconSize":30,"TaskbarButtonWidth":55,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview:
 ![Medium-Preview](medium.png)
 
-**Small:** `{"TaskbarHeight":60,"IconSize":25,"TaskbarButtonWidth":48,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
+**Small:** `{"TaskbarHeight":75,"IconSize":25,"TaskbarButtonWidth":48,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
 Preview: 
 ![Small-Preview](small.png)
@@ -64,18 +64,35 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <details>
 <summary>Content to import (click to expand)</summary>
 
-```yaml
+```
+theme: ''
 styleConstants:
-  - ''
+  - IconBackground= <ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/glass.png" />
+  - IconBorder= <LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#F5ffffff" Offset="0.0" /><GradientStop Color="#40ffffff" Offset="0.4" /><GradientStop Color="#20ffffff" Offset="0.6" /><GradientStop Color="#90ffffff" Offset="1.0" /></LinearGradientBrush>
 controlStyles:
+  - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
+    styles:
+      - CornerRadius=20
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010" />
+      - BorderThickness=1
+      - Margin=-20,0,-20,0
+      - BorderBrush=#40FFFFFF
+      - Padding=-1
+  - target: Rectangle#BackgroundStroke
+    styles:
+      - Fill=Transparent
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Width=Auto
+      - HorizontalAlignment=Center
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
-      - RequestedTheme=Dark
-      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - Margin=150,1,150,4
-      - CornerRadius=20
-      - BorderThickness=1.2
-      - Padding=10,0
+      - Visibility=Visible
+      - Margin=0,8,0,2
+      - Padding=20,0,20,0
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid >
+    styles:
+      - ''
   - target: Windows.UI.Xaml.Controls.FlyoutPresenter
     styles:
       - RequestedTheme=Dark
@@ -109,23 +126,25 @@ controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid
     styles:
       - CornerRadius=12
-      - Background:=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/glass.png" />
+      - Background:=$IconBackground
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#F5ffffff" Offset="0.0" /><GradientStop Color="#40ffffff" Offset="0.4" /><GradientStop Color="#20ffffff" Offset="0.6" /><GradientStop Color="#90ffffff" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=1.2
   - target: Grid#SystemTrayFrameGrid
     styles:
-      - Background:=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/glass.png" />
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010" />
       - CornerRadius=15
-      - Margin=60,6,-280,8
+      - Margin=155,18,-480,10
       - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
       - Padding=10,2
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#50ffffff" Offset="0.0" /><GradientStop Color="#10ffffff" Offset="0.5" /><GradientStop Color="#30ffffff" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=2
+      - Visibility=Visible
   - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=15
-      - Background:=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/glass.png" />
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#F5ffffff" Offset="0.0" /><GradientStop Color="#40ffffff" Offset="0.4" /><GradientStop Color="#20ffffff" Offset="0.6" /><GradientStop Color="#90ffffff" Offset="1.0" /></LinearGradientBrush>
+      - CornerRadius=18
+      - Margin=0,5.5,0,5.5
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
       - BorderThickness=1.2
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
@@ -157,8 +176,8 @@ controlStyles:
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - CornerRadius=15
-      - Background:=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/glass.png" />
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#F5ffffff" Offset="0.0" /><GradientStop Color="#40ffffff" Offset="0.4" /><GradientStop Color="#20ffffff" Offset="0.6" /><GradientStop Color="#90ffffff" Offset="1.0" /></LinearGradientBrush>
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
       - Margin=2
       - BorderThickness=1.2
   - target: Border#OverflowFlyoutBackgroundBorder
@@ -174,11 +193,12 @@ controlStyles:
   - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
       - Fill:=#90ffffff
-      - RadiusX=4
-      - RadiusY=4
-      - Height=3
-      - Width=10
-      - Width@ActiveRunningIndicator=20
+      - RadiusX=6
+      - RadiusY=6
+      - Margin=-2
+      - Height=6
+      - Width=6
+      - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
@@ -200,7 +220,7 @@ controlStyles:
       - RequestedTheme=2
   - target: Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
-      - Background:=<WindhawkBlur BlurAmount="10" TintColor="#10ffffff" />
+      - Background:=$IconBackground
   - target: Taskbar.StartButton#StartButton
     styles:
       - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
@@ -234,9 +254,10 @@ controlStyles:
       - Margin=-12,0,0,0
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
-      - CornerRadius=15
-      - Background:=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/glass.png" />
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#F5ffffff" Offset="0.0" /><GradientStop Color="#40ffffff" Offset="0.4" /><GradientStop Color="#20ffffff" Offset="0.6" /><GradientStop Color="#90ffffff" Offset="1.0" /></LinearGradientBrush>
+      - Margin=0,5.5,0,5.5
+      - CornerRadius=18
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
     styles:
       - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff" />
@@ -251,10 +272,10 @@ controlStyles:
       - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=15
-      - Margin=0
-      - Background:=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/glass.png" />
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#F5ffffff" Offset="0.0" /><GradientStop Color="#40ffffff" Offset="0.4" /><GradientStop Color="#20ffffff" Offset="0.6" /><GradientStop Color="#90ffffff" Offset="1.0" /></LinearGradientBrush>
+      - CornerRadius=18
+      - Margin=0,5.5,0,5.5
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
       - BorderThickness=1.2
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
     styles:
