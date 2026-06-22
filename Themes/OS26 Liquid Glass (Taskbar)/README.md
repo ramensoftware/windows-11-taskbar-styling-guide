@@ -43,11 +43,14 @@ Preview:
 Preview: 
 ![Small-Preview](small.png)
 
+
 ## Full Sized Taskbar
 
 This Taskbar can be set to full Horizontal Length by Altering these Targets:
+
 <details>
-<summary>Target 1:(click to expand) </summary>
+<summary>Target 1: (click to expand)</summary>
+  
 ```yaml
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
@@ -58,13 +61,16 @@ This Taskbar can be set to full Horizontal Length by Altering these Targets:
       - BorderThickness=1.2
       - Padding=10,0
 ```
+
 </details>
+
 <details>
-<summary>Target 1:(click to expand) </summary>
+<summary>Target 2: (click to expand)</summary>
+
 ```yaml
   - target: Grid#SystemTrayFrameGrid
     styles:
-      - Background:=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/glass.png" />
+      - Background:=<ImageBrush Stretch="UniformtoFill" ImageSource="[https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/glass.png](https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/glass.png)" />
       - CornerRadius=15
       - Margin=150,6,-425,8
       - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
@@ -72,7 +78,9 @@ This Taskbar can be set to full Horizontal Length by Altering these Targets:
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#50ffffff" Offset="0.0" /><GradientStop Color="#10ffffff" Offset="0.5" /><GradientStop Color="#30ffffff" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=2
 ```
+
 </details>
+
 ## Theme selection
 
 The theme is integrated into the mod and can be selected directly from the mod's
