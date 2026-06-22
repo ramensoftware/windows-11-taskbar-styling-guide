@@ -48,7 +48,7 @@ Preview:
 This Taskbar can be set to full Horizontal Length by Altering these Targets:
 <details>
 <summary>Target 1:(click to expand) </summary>
-yaml```
+```yaml
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - RequestedTheme=Dark
@@ -61,7 +61,7 @@ yaml```
 </details>
 <details>
 <summary>Target 1:(click to expand) </summary>
-yaml```
+```yaml
   - target: Grid#SystemTrayFrameGrid
     styles:
       - Background:=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/glass.png" />
