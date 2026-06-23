@@ -1,4 +1,4 @@
-# Strips theme for Windows 11 Taskbar Styler
+# AdaptivePills theme for Windows 11 Taskbar Styler
 
 **Author**: [Deen-0x](https://github.com/Deen-0x)
 
@@ -322,7 +322,7 @@ settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
-* Select the theme "Strips" and save the settings.
+* Select the theme "AdaptivePills" and save the settings.
 
 ## Manual installation
 
