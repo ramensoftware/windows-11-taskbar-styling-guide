@@ -351,26 +351,26 @@ The theme styles can also be imported manually. To do that, follow these steps:
   
   ```yaml
   styleConstants:
-    - buttonRadius = 7
-    - buttonColor = <WindhawkBlur BlurAmount="3" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.5" TintLuminosityOpacity="1" NoiseOpacity="0.15"/>
+    - pillRadius = 7
+    - pillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.5" TintLuminosityOpacity="0.8" NoiseOpacity="0.15"/>
     - activeBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
     - showActiveBorder = 1
   controlStyles:
     - target: Border#BackgroundBorder
       styles:
-        - CornerRadius := {{$buttonRadius*0.69}}
+        - CornerRadius := {{$pillRadius*0.69}}
     - target: Border#BackgroundElement
       styles:
-        - CornerRadius := {{$buttonRadius*0.69}}
+        - CornerRadius := {{$pillRadius*0.69}}
     - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
       styles:
         - Visibility = Visible
         - Margin = 1,1,0,1
         - Height = 26
         - VerticalAlignment = 1
-        - RadiusX := $buttonRadius
-        - RadiusY := $buttonRadius
-        - Fill := $buttonColor
+        - RadiusX := $pillRadius
+        - RadiusY := $pillRadius
+        - Fill := $pillColor
         - Canvas.ZIndex = -1
     - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
       styles:
@@ -386,11 +386,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - BorderBrush@MultiWindowActive := $activeBorderColor
     - target: Border#MultiWindowElement
       styles:
-        - CornerRadius := {{$buttonRadius*0.69}}
+        - CornerRadius := {{$pillRadius*0.69}}
         - BorderThickness = 0
         - Height = 17
         - Margin = 0,0,5,1
-    - target: Rectangle#BackgroundFill
+    - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
       styles:
         - Visibility = Collapsed
     - target: Rectangle#BackgroundStroke
@@ -433,34 +433,34 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - Height = 26
         - Padding = 3,0,3,0
         - Margin = 10,0,-7,0
-        - CornerRadius = $buttonRadius
-        - Background := $buttonColor
+        - CornerRadius = $pillRadius
+        - Background := $pillColor
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid
       styles:
         - Height = 26
-        - Background := $buttonColor
-        - CornerRadius = 0,$buttonRadius,$buttonRadius,0
+        - Background := $pillColor
+        - CornerRadius = 0,$pillRadius,$pillRadius,0
         - Padding = 0,0,3,0
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#MainStack > Grid#Content
       styles:
         - Height = 26
-        - Background := $buttonColor
+        - Background := $pillColor
         - Padding = 0
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack > Grid#Content
       styles:
         - Height = 26
-        - Background := $buttonColor
+        - Background := $pillColor
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel
       styles:
         - Height = 26
-        - Background := $buttonColor
+        - Background := $pillColor
         - Padding = 0
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter
       styles:
         - Padding = 5,0,0,0
         - Height = 26
-        - Background := $buttonColor
-        - CornerRadius = $buttonRadius,0,0,$buttonRadius
+        - Background := $pillColor
+        - CornerRadius = $pillRadius,0,0,$pillRadius
     - target: Grid#OverflowRootGrid > Border
       styles:
         - Shadow :=
@@ -482,10 +482,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
       styles:
         - Width = {{WeatherTempWidth+WeatherCondWidth+50}}
-        - CornerRadius = $buttonRadius
+        - CornerRadius = $pillRadius
         - Margin = 10,8,5,7
         - Padding = 3
-        - Background := $buttonColor
+        - Background := $pillColor
     - target: Grid#AugmentedEntryPointContentGrid > Grid > Grid
       styles:
         - Width = 300
