@@ -2,31 +2,46 @@
 
 **Author**: [Deen-0x](https://github.com/Deen-0x)
 
-## Dark Mode
-Normal - One window
-![Dark1](Dark1.png)
-Maximized - Multiple windows
-![DarkMaximized](DarkMaximized.png)
-
 ## Light Mode
-Normal - One window
+Normal
 ![Light1](Light1.png)
-Maximized - Multiple windows
+Maximized
 ![LightMaximized](LightMaximized.png)
 
+## Dark Mode
+Normal
+![Dark1](Dark1.png)
+Maximized
+![DarkMaximized](DarkMaximized.png)
+
 ## Notes
-- Theme is designed on Windows 11 - 25H2.
-- Mainly designed for dark mode, but compatible with light mode as well.
+- Theme is designed on Windows 11 - 25H2 | on 1920x1080 screen resolution
+- Designed for both light and dark modes
 - Designed to work with:
   - Widgets - On
   - Task view - Off
   - Search - Hidden
   - Taskbar alignment - Center
   - Show smaller taskbar buttons - Never
-
+- Pinned applications are not supported (transparent background)
+- Activated border indicator for opened application - Optional.
 
 ## Required Windhawk Mods for similar results
 To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler:
+
+- Taskbar Height and Icon Size
+
+  <details>
+  <summary>Click to expand Taskbar Height and Icon Size settings</summary>
+
+  ```yaml
+  TaskbarHeight: 41
+  IconSize: 15
+  TaskbarButtonWidth: 30
+  IconSizeSmall: 14
+  TaskbarButtonWidthSmall: 15
+  ```
+  </details><br>
 
 - Taskbar Labels for Windows 11 – to control panels width.
 
@@ -35,13 +50,13 @@ To achieve similar results, install and configure the following Windhawk mods in
 
   ```yaml
   mode: labelsWithCombining
-  taskbarItemWidth: 502
-  runningIndicatorStyle: centerFixed
+  taskbarItemWidth: 0
+  runningIndicatorStyle: fullWidth
   progressIndicatorStyle: sameAsRunningIndicatorStyle
   excludedPrograms:
     - ''
-  minimumTaskbarItemWidth: 120
-  maximumTaskbarItemWidth: 500
+  minimumTaskbarItemWidth: 70
+  maximumTaskbarItemWidth: 200
   fontSize: 12
   fontFamily: ''
   textTrimming: characterEllipsis
@@ -67,7 +82,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   WeekdayFormat: custom
   WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
   TopLine: ''
-  BottomLine: '%weekday% %date% | %time%'
+  BottomLine: 📅  %date% | %time%
   MiddleLine: '%weekday%'
   TooltipLine: '%web1_full%'
   TooltipLineMode: append
@@ -118,28 +133,13 @@ To achieve similar results, install and configure the following Windhawk mods in
     Hidden: 0
     TextColor: ''
     TextAlignment: ''
-    FontSize: 11
+    FontSize: 12
     FontFamily: ''
     FontWeight: Medium
     FontStyle: Normal
     FontStretch: ''
     CharacterSpacing: 0
   oldTaskbarOnWin11: 0
-  ```
-  </details><br>
-
-
-- Taskbar Height and Icon Size
-
-  <details>
-  <summary>Click to expand Taskbar Height and Icon Size settings</summary>
-
-  ```yaml
-  TaskbarHeight: 46
-  IconSize: 15
-  TaskbarButtonWidth: 30
-  IconSizeSmall: 14
-  TaskbarButtonWidthSmall: 15
   ```
   </details><br>
 
@@ -171,7 +171,6 @@ To achieve similar results, install and configure the following Windhawk mods in
   ```
   </details>
 
-
 ## Recommended visual Windhawk Mods
 To achieve maximum Taskbar aesthetics, install and configure the following Windhawk mods.
 
@@ -183,7 +182,7 @@ To achieve maximum Taskbar aesthetics, install and configure the following Windh
   hideVolumeIcon: 0
   hideNetworkIcon: 1
   hideBatteryIcon: 1
-  grayscaleBatteryIcon: 1
+  grayscaleBatteryIcon: 0
   hideMicrophoneIcon: 0
   hideGeolocationIcon: 1
   hideStudioEffectsIcon: 0
@@ -313,7 +312,6 @@ To achieve compatible Taskbar functionality, install and configure the following
 
 - Taskbar Thumbnail Reorder.
 </details>
-
 
 ## Theme selection
 
