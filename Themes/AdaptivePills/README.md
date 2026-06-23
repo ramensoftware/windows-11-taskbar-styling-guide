@@ -352,7 +352,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   ```yaml
   styleConstants:
     - pillRadius = 7
-    - pillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.5" TintLuminosityOpacity="0.8" NoiseOpacity="0.15"/>
+    - pillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptivePillColor}" TintOpacity="0.5" TintLuminosityOpacity="0.8" NoiseOpacity="0.2"/>
     - activeBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
     - showActiveBorder = 1
   controlStyles:
@@ -489,5 +489,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - target: Grid#AugmentedEntryPointContentGrid > Grid > Grid
       styles:
         - Width = 300
+  themeResourceVariables:
+    - AdaptivePillColor@Light =#FFFFFF
+    - AdaptivePillColor@Dark =#0F1E1E1E
   ```
   </details>
