@@ -19,7 +19,7 @@ Maximized
 
 ## Notes
 - Theme is designed on Windows 11 - 25H2
-- Tested on monitors: 1920x1080  (100% scaling) | 3840x2160 (250% scaling)
+- Tested on monitors: 1920x1080 (100% scaling) | 3840x2160 (250% scaling)
 - Designed for both light and dark modes
 - Designed to work with:
   - Widgets - On
@@ -310,6 +310,18 @@ To achieve compatible Taskbar functionality, install and configure the following
   keysToEndTask:
     Ctrl: 1
     Alt: 0
+  oldTaskbarOnWin11: 0
+  ```
+  </details><br>
+
+- Disable Taskbar Thumbnails - to prevent thumbnails opening on hover:
+  <details>
+  <summary>Click to expand Disable Taskbar Thumbnails settings</summary>
+
+  ```yaml
+  mode: disabled
+  noVirtualDesktopSwitcherHover: 0
+  noTooltips: 0
   oldTaskbarOnWin11: 0
   ```
   </details><br>
