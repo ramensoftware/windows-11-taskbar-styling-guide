@@ -352,7 +352,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
   ```yaml
   styleConstants:
     - pillRadius = 7
-    - pillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptivePillColor}" TintOpacity="0.35" TintLuminosityOpacity="0.8" NoiseOpacity="0.2"/>
+    - pillFillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptivePillFill}" TintOpacity="0.45" TintLuminosityOpacity="0.8" NoiseOpacity="0.2"/>
+    - pillBorderColor = <SolidColorBrush Color="{ThemeResource AdaptivePillBorder}"/>
+    - showPillBorder = 1
     - activeBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
     - showActiveBorder = 1
   controlStyles:
@@ -370,7 +372,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - VerticalAlignment = 1
         - RadiusX := $pillRadius
         - RadiusY := $pillRadius
-        - Fill := $pillColor
+        - Fill := $pillFillColor
+        - StrokeThickness := $showPillBorder
+        - Stroke := $pillBorderColor
         - Canvas.ZIndex = -1
     - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
       styles:
@@ -434,33 +438,45 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - Padding = 3,0,3,0
         - Margin = 10,0,-7,0
         - CornerRadius = $pillRadius
-        - Background := $pillColor
+        - Background := $pillFillColor
+        - BorderThickness := $showPillBorder
+        - BorderBrush := $pillBorderColor
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid
       styles:
         - Height = 26
-        - Background := $pillColor
+        - Background := $pillFillColor
         - CornerRadius = 0,$pillRadius,$pillRadius,0
         - Padding = 0,0,3,0
+        - BorderThickness := 0,$showPillBorder,$showPillBorder,$showPillBorder
+        - BorderBrush := $pillBorderColor
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#MainStack > Grid#Content
       styles:
         - Height = 26
-        - Background := $pillColor
+        - Background := $pillFillColor
         - Padding = 0
+        - BorderThickness := 0,$showPillBorder,0,$showPillBorder
+        - BorderBrush := $pillBorderColor
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack > Grid#Content
       styles:
         - Height = 26
-        - Background := $pillColor
+        - Background := $pillFillColor
+        - BorderThickness := 0,$showPillBorder,0,$showPillBorder
+        - BorderBrush := $pillBorderColor
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel
       styles:
         - Height = 26
-        - Background := $pillColor
+        - Background := $pillFillColor
         - Padding = 0
+        - BorderThickness := 0,$showPillBorder,0,$showPillBorder
+        - BorderBrush := $pillBorderColor
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter
       styles:
         - Padding = 5,0,0,0
         - Height = 26
-        - Background := $pillColor
+        - Background := $pillFillColor
         - CornerRadius = $pillRadius,0,0,$pillRadius
+        - BorderThickness := $showPillBorder,$showPillBorder,0,$showPillBorder
+        - BorderBrush := $pillBorderColor
     - target: Grid#OverflowRootGrid > Border
       styles:
         - Shadow :=
@@ -485,12 +501,16 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - CornerRadius = $pillRadius
         - Margin = 10,8,5,7
         - Padding = 3
-        - Background := $pillColor
+        - Background := $pillFillColor
+        - BorderThickness := $showPillBorder
+        - BorderBrush := $pillBorderColor
     - target: Grid#AugmentedEntryPointContentGrid > Grid > Grid
       styles:
         - Width = 300
   themeResourceVariables:
-    - AdaptivePillColor@Light =#FFFFFF
-    - AdaptivePillColor@Dark =#0F1E1E1E
+    - AdaptivePillFill@Light =#FFFFFF
+    - AdaptivePillFill@Dark =#0F1E1E1E
+    - AdaptivePillBorder@Light =#FFFFFF
+    - AdaptivePillBorder@Dark =#54464646
   ```
   </details>
