@@ -14,8 +14,11 @@ Normal
 Maximized
 ![DarkMaximized](DarkMaximized.png)
 
+- Pill Demo
+![Dark1](PillDemo.png)
+
 ## Notes
-- Theme is designed on Windows 11 - 25H2 | on 1920x1080 screen resolution
+- Theme is designed on Windows 11 - 25H2 | 1920x1080 screen resolution
 - Designed for both light and dark modes
 - Designed to work with:
   - Widgets - On
@@ -24,12 +27,12 @@ Maximized
   - Taskbar alignment - Center
   - Show smaller taskbar buttons - Never
 - Pinned applications are not supported (transparent background)
-- Activated border indicator for opened application - Optional.
+- Activated border indicator for opened application - Optional
 
 ## Required Windhawk Mods for similar results
 To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler:
 
-- Taskbar Height and Icon Size
+- Taskbar Height and Icon Size:
 
   <details>
   <summary>Click to expand Taskbar Height and Icon Size settings</summary>
@@ -43,7 +46,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   ```
   </details><br>
 
-- Taskbar Labels for Windows 11 – to control panels width.
+- Taskbar Labels for Windows 11 – to control panels width:
 
   <details>
   <summary>Click to expand Taskbar Labels for Windows 11 settings</summary>
@@ -70,7 +73,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   ```
   </details><br>
 
-- Taskbar Clock Customization – for styling the clock.
+- Taskbar Clock Customization – for styling the clock:
 
   <details>
   <summary>Click to expand Taskbar Clock Customization settings</summary>
@@ -143,7 +146,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   ```
   </details><br>
 
-- Taskbar Background Helper
+- Taskbar Background Helper:
 
   <details>
   <summary>Click to expand Taskbar Background Helper settings</summary>
@@ -174,7 +177,7 @@ To achieve similar results, install and configure the following Windhawk mods in
 ## Recommended visual Windhawk Mods
 To achieve maximum Taskbar aesthetics, install and configure the following Windhawk mods.
 
-- Taskbar tray system icon tweaks - to declutter the system tray icons (you may also disable the language indicator if you don't need it).
+- Taskbar tray system icon tweaks - to declutter the system tray icons (you may also disable the language indicator if you don't need it):
   <details>
   <summary>Click to expand Taskbar tray system icon tweaks settings</summary>
 
@@ -194,7 +197,7 @@ To achieve maximum Taskbar aesthetics, install and configure the following Windh
   ```
   </details><br>
 
-- Windows 11 Notification Center Styler - to remove Notification Center shadows copy the content below (flyout shadows look truncated with transparent taskbar).
+- Windows 11 Notification Center Styler - to remove Notification Center shadows copy the content below (flyout shadows look truncated with transparent taskbar):
 
   <details>
   <summary>Click to expand Windows 11 Notification Center Styler settings</summary>
@@ -213,7 +216,7 @@ To achieve maximum Taskbar aesthetics, install and configure the following Windh
   ```
   </details><br>
 
-- Windows 11 Start Menu Styler - to remove Start Menu shadows copy the content below (shadows look truncated with transparent taskbar).
+- Windows 11 Start Menu Styler - to remove Start Menu shadows copy the content below (shadows look truncated with transparent taskbar):
   <details>
   <summary>Click to expand Windows 11 Start Menu Styler settings</summary>
 
@@ -238,7 +241,7 @@ To achieve maximum Taskbar aesthetics, install and configure the following Windh
 
 To achieve compatible Taskbar functionality, install and configure the following Windhawk mods:
 
-- Click on empty taskbar space - to middle click show desktop on bottom right corner.
+- Click on empty taskbar space - to middle click show desktop on bottom right corner:
   <details>
   <summary>Click to expand Click on empty taskbar space settings</summary>
 
@@ -262,7 +265,7 @@ To achieve compatible Taskbar functionality, install and configure the following
   ```
   </details><br>
 
-- Taskbar minimize/restore on scroll.
+- Taskbar minimize/restore on scroll:
   <details>
   <summary>Click to expand Taskbar minimize/restore on scroll settings</summary>
 
@@ -275,7 +278,7 @@ To achieve compatible Taskbar functionality, install and configure the following
   ```
   </details><br>
 
-- Taskbar Volume Control - to control volume by mouse scroll wheel while hovering over the tray area.
+- Taskbar Volume Control - to control volume by mouse scroll wheel while hovering over the tray area:
   <details>
   <summary>Click to expand Taskbar Volume Control settings</summary>
 
@@ -297,7 +300,7 @@ To achieve compatible Taskbar functionality, install and configure the following
   ```
   </details><br>
 
-- Middle click to close on the taskbar.
+- Middle click to close on the taskbar:
   <details>
   <summary>Click to expand Middle click to close on the taskbar settings</summary>
 
@@ -310,7 +313,7 @@ To achieve compatible Taskbar functionality, install and configure the following
   ```
   </details><br>
 
-- Taskbar Thumbnail Reorder.
+- Taskbar Thumbnail Reorder:
 </details>
 
 ## Theme selection
