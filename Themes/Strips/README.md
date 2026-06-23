@@ -338,8 +338,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
 ```yaml
 styleConstants:
   - buttonRadius = 7
-  - buttonColor = <WindhawkBlur BlurAmount="3" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.3" TintLuminosityOpacity="0.3" NoiseOpacity="0.1"/>
-  - activeIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.5"/>
+  - buttonColor = <WindhawkBlur BlurAmount="3" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.5" TintLuminosityOpacity="1" NoiseOpacity="0.15"/>
+  - activeBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
   - showActiveBorder = 1
 controlStyles:
   - target: Border#BackgroundBorder
@@ -350,8 +350,8 @@ controlStyles:
       - CornerRadius := {{$buttonRadius*0.69}}
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
     styles:
+      - Visibility = Visible
       - Margin = 1,1,0,1
-      - Visibility = 0
       - Height = 26
       - VerticalAlignment = 1
       - RadiusX := $buttonRadius
@@ -366,16 +366,16 @@ controlStyles:
       - Margin@MultiWindowNormal = 3,6,11,6
       - Margin@MultiWindowActive = 3,6,3,6
       - Margin@MultiWindowPressed = 3,6,11,6
-      - BorderThickness@ActiveNormal := {{$showActiveIndicator*1}}
-      - BorderBrush@ActiveNormal := $activeIndicatorColor
-      - BorderThickness@MultiWindowActive := {{$showActiveIndicator*1}}
-      - BorderBrush@MultiWindowActive := $activeIndicatorColor
+      - BorderThickness@ActiveNormal := $showActiveBorder
+      - BorderBrush@ActiveNormal := $activeBorderColor
+      - BorderThickness@MultiWindowActive := $showActiveBorder
+      - BorderBrush@MultiWindowActive := $activeBorderColor
   - target: Border#MultiWindowElement
     styles:
       - CornerRadius := {{$buttonRadius*0.69}}
       - BorderThickness = 0
-      - Height=19
-      - Margin=0,0,5,1
+      - Height = 17
+      - Margin = 0,0,5,1
   - target: Rectangle#BackgroundFill
     styles:
       - Visibility = Collapsed
