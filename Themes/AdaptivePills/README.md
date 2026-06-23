@@ -18,7 +18,8 @@ Maximized
 ![Dark1](PillDemo.png)
 
 ## Notes
-- Theme is designed on Windows 11 - 25H2 | 1920x1080 screen resolution
+- Theme is designed on Windows 11 - 25H2
+- Tested on monitors: 1920x1080  (100% scaling) | 3840x2160 (250% scaling)
 - Designed for both light and dark modes
 - Designed to work with:
   - Widgets - On
@@ -314,7 +315,7 @@ To achieve compatible Taskbar functionality, install and configure the following
   </details><br>
 
 - Taskbar Thumbnail Reorder:
-</details>
+
 
 ## Theme selection
 
@@ -333,147 +334,148 @@ The theme styles can also be imported manually. To do that, follow these steps:
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
 
-<details>
-<summary>Theme content to import (click to expand)</summary>
-
-```yaml
-styleConstants:
-  - buttonRadius = 7
-  - buttonColor = <WindhawkBlur BlurAmount="3" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.5" TintLuminosityOpacity="1" NoiseOpacity="0.15"/>
-  - activeBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
-  - showActiveBorder = 1
-controlStyles:
-  - target: Border#BackgroundBorder
-    styles:
-      - CornerRadius := {{$buttonRadius*0.69}}
-  - target: Border#BackgroundElement
-    styles:
-      - CornerRadius := {{$buttonRadius*0.69}}
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
-    styles:
-      - Visibility = Visible
-      - Margin = 1,1,0,1
-      - Height = 26
-      - VerticalAlignment = 1
-      - RadiusX := $buttonRadius
-      - RadiusY := $buttonRadius
-      - Fill := $buttonColor
-      - Canvas.ZIndex = -1
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
-    styles:
-      - Margin = 4
-      - Height = 20
-      - Margin@MultiWindowPointerOver = 3,6,11,6
-      - Margin@MultiWindowNormal = 3,6,11,6
-      - Margin@MultiWindowActive = 3,6,3,6
-      - Margin@MultiWindowPressed = 3,6,11,6
-      - BorderThickness@ActiveNormal := $showActiveBorder
-      - BorderBrush@ActiveNormal := $activeBorderColor
-      - BorderThickness@MultiWindowActive := $showActiveBorder
-      - BorderBrush@MultiWindowActive := $activeBorderColor
-  - target: Border#MultiWindowElement
-    styles:
-      - CornerRadius := {{$buttonRadius*0.69}}
-      - BorderThickness = 0
-      - Height = 17
-      - Margin = 0,0,5,1
-  - target: Rectangle#BackgroundFill
-    styles:
-      - Visibility = Collapsed
-  - target: Rectangle#BackgroundStroke
-    styles:
-      - Visibility = Collapsed
-  - target: Taskbar.SearchBoxButton
-    styles:
-      - Visibility = Collapsed
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
-    styles:
-      - Visibility = Collapsed
-  - target: Taskbar.TaskListButton#TaskListButton
-    styles:
-      - Margin = 2,0,2,0
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
-    styles:
-      - Margin = 6,0,7,2
-      - HorizontalAlignment = 0
-      - VerticalAlignment = 1
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
-    styles:
-      - Width = 13
-      - Height = 13
-      - Margin = 4,5,6,0
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
-    styles:
-      - MinWidth = 13
-      - Width = 13
-      - Height = 13
-      - Margin = 4,5,6,0
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText
-    styles:
-      - FontSize = 10
-      - HorizontalAlignment = 1
-  - target: Grid#SystemTrayFrameGrid
-    styles:
-      - Margin = -53,7,5,7
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid
-    styles:
-      - Height = 26
-      - Padding = 3,0,3,0
-      - Margin = 10,0,-7,0
-      - CornerRadius = $buttonRadius
-      - Background := $buttonColor
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid
-    styles:
-      - Height = 26
-      - Background := $buttonColor
-      - CornerRadius = 0,$buttonRadius,$buttonRadius,0
-      - Padding = 0,0,3,0
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#MainStack > Grid#Content
-    styles:
-      - Height = 26
-      - Background := $buttonColor
-      - Padding = 0
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack > Grid#Content
-    styles:
-      - Height = 26
-      - Background := $buttonColor
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel
-    styles:
-      - Height = 26
-      - Background := $buttonColor
-      - Padding = 0
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter
-    styles:
-      - Padding = 5,0,0,0
-      - Height = 26
-      - Background := $buttonColor
-      - CornerRadius = $buttonRadius,0,0,$buttonRadius
-  - target: Grid#OverflowRootGrid > Border
-    styles:
-      - Shadow :=
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid[2] > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
-    styles:
-      - ActualWidth => WeatherCondWidth
-      - RenderTransform := <TranslateTransform X="0" Y="8" />
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid[2] > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2]
-    styles:
-      - ActualWidth => WeatherTempWidth
-      - RenderTransform := <TranslateTransform X="{{WeatherCondWidth+7}}" Y="-8" />
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid
-    styles:
-      - Width = {{WeatherTempWidth+WeatherCondWidth+50}}
-      - HorizontalAlignment = 0
-  - target: Grid#AugmentedEntryPointContentGrid
-    styles:
-      - Margin = 5,0,0,0
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
-    styles:
-      - Width = {{WeatherTempWidth+WeatherCondWidth+50}}
-      - CornerRadius = $buttonRadius
-      - Margin = 10,8,5,7
-      - Padding = 3
-      - Background := $buttonColor
-  - target: Grid#AugmentedEntryPointContentGrid > Grid > Grid
-    styles:
-      - Width = 300
-</details>
+  <details>
+  <summary>Theme content to import (click to expand)</summary>
+  
+  ```yaml
+  styleConstants:
+    - buttonRadius = 7
+    - buttonColor = <WindhawkBlur BlurAmount="3" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.5" TintLuminosityOpacity="1" NoiseOpacity="0.15"/>
+    - activeBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
+    - showActiveBorder = 1
+  controlStyles:
+    - target: Border#BackgroundBorder
+      styles:
+        - CornerRadius := {{$buttonRadius*0.69}}
+    - target: Border#BackgroundElement
+      styles:
+        - CornerRadius := {{$buttonRadius*0.69}}
+    - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
+      styles:
+        - Visibility = Visible
+        - Margin = 1,1,0,1
+        - Height = 26
+        - VerticalAlignment = 1
+        - RadiusX := $buttonRadius
+        - RadiusY := $buttonRadius
+        - Fill := $buttonColor
+        - Canvas.ZIndex = -1
+    - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+      styles:
+        - Margin = 4
+        - Height = 20
+        - Margin@MultiWindowPointerOver = 3,6,11,6
+        - Margin@MultiWindowNormal = 3,6,11,6
+        - Margin@MultiWindowActive = 3,6,3,6
+        - Margin@MultiWindowPressed = 3,6,11,6
+        - BorderThickness@ActiveNormal := $showActiveBorder
+        - BorderBrush@ActiveNormal := $activeBorderColor
+        - BorderThickness@MultiWindowActive := $showActiveBorder
+        - BorderBrush@MultiWindowActive := $activeBorderColor
+    - target: Border#MultiWindowElement
+      styles:
+        - CornerRadius := {{$buttonRadius*0.69}}
+        - BorderThickness = 0
+        - Height = 17
+        - Margin = 0,0,5,1
+    - target: Rectangle#BackgroundFill
+      styles:
+        - Visibility = Collapsed
+    - target: Rectangle#BackgroundStroke
+      styles:
+        - Visibility = Collapsed
+    - target: Taskbar.SearchBoxButton
+      styles:
+        - Visibility = Collapsed
+    - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+      styles:
+        - Visibility = Collapsed
+    - target: Taskbar.TaskListButton#TaskListButton
+      styles:
+        - Margin = 2,0,2,0
+    - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
+      styles:
+        - Margin = 6,0,7,2
+        - HorizontalAlignment = 0
+        - VerticalAlignment = 1
+    - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
+      styles:
+        - Width = 13
+        - Height = 13
+        - Margin = 4,5,6,0
+    - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
+      styles:
+        - MinWidth = 13
+        - Width = 13
+        - Height = 13
+        - Margin = 4,5,6,0
+    - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText
+      styles:
+        - FontSize = 10
+        - HorizontalAlignment = 1
+    - target: Grid#SystemTrayFrameGrid
+      styles:
+        - Margin = -53,7,5,7
+    - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid
+      styles:
+        - Height = 26
+        - Padding = 3,0,3,0
+        - Margin = 10,0,-7,0
+        - CornerRadius = $buttonRadius
+        - Background := $buttonColor
+    - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid
+      styles:
+        - Height = 26
+        - Background := $buttonColor
+        - CornerRadius = 0,$buttonRadius,$buttonRadius,0
+        - Padding = 0,0,3,0
+    - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#MainStack > Grid#Content
+      styles:
+        - Height = 26
+        - Background := $buttonColor
+        - Padding = 0
+    - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack > Grid#Content
+      styles:
+        - Height = 26
+        - Background := $buttonColor
+    - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel
+      styles:
+        - Height = 26
+        - Background := $buttonColor
+        - Padding = 0
+    - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter
+      styles:
+        - Padding = 5,0,0,0
+        - Height = 26
+        - Background := $buttonColor
+        - CornerRadius = $buttonRadius,0,0,$buttonRadius
+    - target: Grid#OverflowRootGrid > Border
+      styles:
+        - Shadow :=
+    - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid[2] > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
+      styles:
+        - ActualWidth => WeatherCondWidth
+        - RenderTransform := <TranslateTransform X="0" Y="8" />
+    - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid[2] > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2]
+      styles:
+        - ActualWidth => WeatherTempWidth
+        - RenderTransform := <TranslateTransform X="{{WeatherCondWidth+7}}" Y="-8" />
+    - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid
+      styles:
+        - Width = {{WeatherTempWidth+WeatherCondWidth+50}}
+        - HorizontalAlignment = 0
+    - target: Grid#AugmentedEntryPointContentGrid
+      styles:
+        - Margin = 5,0,0,0
+    - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+      styles:
+        - Width = {{WeatherTempWidth+WeatherCondWidth+50}}
+        - CornerRadius = $buttonRadius
+        - Margin = 10,8,5,7
+        - Padding = 3
+        - Background := $buttonColor
+    - target: Grid#AugmentedEntryPointContentGrid > Grid > Grid
+      styles:
+        - Width = 300
+  ```
+  </details>
