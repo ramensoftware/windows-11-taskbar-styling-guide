@@ -17,16 +17,21 @@ Maximized
 - Pill Demo
 ![Dark1](PillDemo.png)
 
+- Comparison
+![AdaptivePillsTransition](AdaptivePillsTransition.gif)
+
 ## Notes
 - Theme is designed on Windows 11 - 25H2
 - Tested on monitors: 1920x1080 (100% scaling) | 3840x2160 (250% scaling)
 - Designed for both light and dark modes
 - Designed to work with:
-  - Widgets - On
+  - *Widgets - On
   - Task view - Off
   - Search - Hidden
   - Taskbar alignment - Center
   - Show smaller taskbar buttons - Never
+- *Widgets must be installed to enable the weather widget on the left. Install it back if you previously removed it.
+  - https://apps.microsoft.com/detail/9mssgkg348sp
 - Pinned applications are not supported (transparent background)
 - Activated border indicator for opened application - Optional
 
