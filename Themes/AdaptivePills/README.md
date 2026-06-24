@@ -405,7 +405,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - Visibility = Collapsed
     - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
       styles:
-        - Visibility = Collapsed
+        - Height = 0
     - target: Taskbar.TaskListButton#TaskListButton
       styles:
         - Margin = 2,0,2,0
@@ -431,7 +431,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - HorizontalAlignment = 1
     - target: Grid#SystemTrayFrameGrid
       styles:
-        - Margin = -53,7,5,7
+        - Margin = 0,7,5,7
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid
       styles:
         - Height = 26
@@ -480,6 +480,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - target: Grid#OverflowRootGrid > Border
       styles:
         - Shadow :=
+    - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
+      styles:
+        - Margin = 0,0,20,0
     - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid[2] > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
       styles:
         - ActualWidth => WeatherCondWidth
