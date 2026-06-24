@@ -2,6 +2,9 @@
 
 **Author**: [Deen-0x](https://github.com/Deen-0x)
 
+## Description
+AdaptivePills. A sleek, minimal reinterpretation of the Windows 11 taskbar with a background that turns task buttons into rounded adaptive pills that keep the native feel but breathe more.
+
 ## Light Mode
 Normal
 ![Light1](Light1.png)
