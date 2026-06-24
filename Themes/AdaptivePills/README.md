@@ -14,10 +14,12 @@ Normal
 Maximized
 ![DarkMaximized](DarkMaximized.png)
 
-- Pill Demo
+## Demonstration
+
+Pill States
 ![Dark1](PillDemo.png)
 
-- Comparison
+Comparison
 ![AdaptivePillsTransition](AdaptivePillsTransition.gif)
 
 ## Notes
