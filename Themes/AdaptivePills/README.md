@@ -366,11 +366,12 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - pillBorderThickness = 1
     - pillRadius = 7
     - pillBorderColor = <SolidColorBrush Color="{ThemeResource AdaptivePillBorder}"/>
-    - pillSpacing = 8
-    - highlightOffset = 2
+    - pillSpacing = 9
+    - highlightOffset = 4
     - highlightBorderThickness = 1
+    - highlightBorderColor = ''
     - highlightRadius = {{$pillRadius*0.69}}
-    - showHighlightActiveBorder = 1
+    - showHighlightActiveBorder = 0
     - iconLabelSpacing = 7
     - iconBadgeHeight = 13
     - iconBadgeSpacing = 2,5,0,0
@@ -420,7 +421,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - VerticalAlignment = 1
         - BorderBrush@ActiveNormal := $highlightActiveBorderColor
         - BorderBrush@ActivePointerOver := $highlightActiveBorderColor
-        - BorderBrush@MultiWindowPointerOver := $highlightActiveBorderColor
         - BorderBrush@MultiWindowActive := $highlightActiveBorderColor
         - BorderBrush := $highlightBorderColor
     - target: Border#MultiWindowElement
@@ -549,6 +549,13 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - BorderThickness := $highlightBorderThickness
         - Margin = {{$highlightOffset}}
         - BorderBrush := $highlightBorderColor
+    - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+      styles:
+        - FontSize=15
+    - target: SystemTray.ImageIconContent > Grid#ContainerGrid > Image
+      styles:
+        - Width = 15
+        - Height = 15
   themeResourceVariables:
     - AdaptivePillFill@Light =#FFFFFF
     - AdaptivePillFill@Dark =#0F1E1E1E
