@@ -205,7 +205,7 @@ To achieve maximum Taskbar aesthetics, install and configure the following Windh
   hideLanguageBar: 0
   hideLanguageSupplementaryIcons: 1
   hideBellIcon: never
-  showDesktopButtonWidth: 12
+  showDesktopButtonWidth: 10
   ```
   </details><br>
 
@@ -363,71 +363,72 @@ The theme styles can also be imported manually. To do that, follow these steps:
   ```yaml
   styleConstants:
     - pillHeight = 26
-    - pillRadius = 7
-    - highlightRadius = {{$pillRadius*0.69}}
-    - highlightOffset = 3
     - pillBorderThickness = 1
-    - highlightBorderThickness = 1
-    - showHighlightActiveBorder = 1
+    - pillRadius = 7
     - pillBorderColor = <SolidColorBrush Color="{ThemeResource AdaptivePillBorder}"/>
+    - pillSpacing = 8
+    - highlightOffset = 2
+    - highlightBorderThickness = 1
+    - highlightRadius = {{$pillRadius*0.69}}
+    - showHighlightActiveBorder = 1
+    - iconLabelSpacing = 7
+    - iconBadgeHeight = 13
+    - iconBadgeSpacing = 2,5,0,0
     - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
     - pillFillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptivePillFill}" TintOpacity="0.45" TintLuminosityOpacity="0.8" NoiseOpacity="0.2"/>
-    - iconLabelSpacing = 7
-    - pillSpacing = 8
-    - iconBadgeHeight = 13
-    - iconBadgeSpacing = 0,5,2,0
   controlStyles:
     - target: Border#BackgroundBorder
       styles:
         - CornerRadius := $highlightRadius
         - BorderThickness := $highlightBorderThickness
+        - BorderBrush := $highlightBorderColor
     - target: Border#BackgroundElement
       styles:
         - CornerRadius := $highlightRadius
-    - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
       styles:
         - Padding = 0
         - Margin = 0
-    - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
+    - target: Rectangle#RunningIndicator
       styles:
         - Visibility = Visible
-        - Margin = 0,2,0,1
+        - Margin = 0,0,0,0
         - Height := $pillHeight
-        - VerticalAlignment = 1
         - RadiusX := $pillRadius
         - RadiusY := $pillRadius
-        - Fill := $pillFillColor
         - StrokeThickness := $pillBorderThickness
+        - VerticalAlignment = 1
+        - Fill := $pillFillColor
         - Stroke := $pillBorderColor
         - Canvas.ZIndex = -1
     - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
       styles:
-        - VerticalAlignment = 1
-        - Margin := {{$highlightOffset}},1,{{$highlightOffset+6}},0
         - Height = {{$pillHeight-$highlightOffset*2}}
+        - Margin := {{$highlightOffset}},0,{{$highlightOffset+6}},0
+        - Margin@MultiWindowNormal := {{$highlightOffset}},0,16,0
+        - Margin@MultiWindowPointerOver := {{$highlightOffset}},0,16,0
+        - Margin@MultiWindowActive := {{$highlightOffset}},0,16,0
+        - Margin@MultiWindowPressed := {{$highlightOffset}},0,16,0
+        - Margin@RequestingAttentionMulti := {{$highlightOffset}},0,16,0
+        - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},01,16,0
+        - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},0,16,0
         - BorderThickness := $highlightBorderThickness
-        - Margin@MultiWindowPointerOver := {{$highlightOffset}},1,16,0
-        - Margin@MultiWindowNormal := {{$highlightOffset}},1,16,0
-        - Margin@MultiWindowActive := {{$highlightOffset}},1,16,0
-        - Margin@MultiWindowPressed := {{$highlightOffset}},1,16,0
-        - Margin@RequestingAttentionMulti := {{$highlightOffset}},1,16,0
-        - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},1,16,0
-        - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},1,16,0
         - BorderThickness@ActiveNormal := {{$highlightBorderThickness*$showHighlightActiveBorder}}
         - BorderThickness@ActivePointerOver := {{$highlightBorderThickness*$showHighlightActiveBorder}}
-        - BorderBrush@ActivePointerOver := $highlightActiveBorderColor
-        - BorderBrush@ActiveNormal := $highlightActiveBorderColor
         - BorderThickness@MultiWindowActive := {{$highlightBorderThickness*$showHighlightActiveBorder}}
-        - BorderBrush@MultiWindowPointerOver := $highlightActiveBorderColor
         - BorderThickness@MultiWindowPointerOver := {{$highlightBorderThickness*$showHighlightActiveBorder}}
+        - VerticalAlignment = 1
+        - BorderBrush@ActiveNormal := $highlightActiveBorderColor
+        - BorderBrush@ActivePointerOver := $highlightActiveBorderColor
+        - BorderBrush@MultiWindowPointerOver := $highlightActiveBorderColor
         - BorderBrush@MultiWindowActive := $highlightActiveBorderColor
+        - BorderBrush := $highlightBorderColor
     - target: Border#MultiWindowElement
       styles:
-        - HorizontalAlignment = 2
-        - CornerRadius := $highlightRadius
-        - BorderThickness = 0
-        - Height := {{$pillHeight-$highlightOffset-$pillBorderThickness-4}}
         - Margin = 0,0,10,0
+        - CornerRadius := $highlightRadius
+        - Height := {{$pillHeight-$highlightOffset-$pillBorderThickness-4}}
+        - HorizontalAlignment = 2
     - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
       styles:
         - Visibility = Collapsed
@@ -437,13 +438,12 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - target: Taskbar.SearchBoxButton
       styles:
         - Visibility = Collapsed
-    - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
       styles:
         - Height = 0
     - target: Taskbar.TaskListButton#TaskListButton
       styles:
         - Margin := {{$pillSpacing-6}},0,0,0
-        - Padding = 0
     - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
       styles:
         - Margin := {{$iconLabelSpacing}},0,12,2
@@ -464,16 +464,14 @@ The theme styles can also be imported manually. To do that, follow these steps:
       styles:
         - FontSize = 10
         - HorizontalAlignment = 1
-    - target: Grid#SystemTrayFrameGrid
-      styles:
-        - Margin = 0,7,5,7
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid
       styles:
         - Height := $pillHeight
-        - Margin := {{$pillSpacing}},0,-7,0
+        - Margin := {{$pillSpacing}},0,0,0
+        - Padding := {{-$pillBorderThickness}}
         - CornerRadius = $pillRadius
-        - Background := $pillFillColor
         - BorderThickness := $pillBorderThickness
+        - Background := $pillFillColor
         - BorderBrush := $pillBorderColor
     - target: Grid > Border#BackgroundBorder
       styles:
@@ -510,25 +508,22 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - Background := $pillFillColor
         - BorderThickness := 0,$pillBorderThickness,0,$pillBorderThickness
         - BorderBrush := $pillBorderColor
-    - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter
+    - target: SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter
       styles:
         - Height := $pillHeight
         - Padding := {{-$pillBorderThickness}}
         - Background := $pillFillColor
-        - CornerRadius = $pillRadius,0,0,$pillRadius
         - BorderThickness := $pillBorderThickness,$pillBorderThickness,0,$pillBorderThickness
+        - CornerRadius = $pillRadius,0,0,$pillRadius
         - BorderBrush := $pillBorderColor
     - target: Grid#OverflowRootGrid > Border
       styles:
         - Shadow :=
-    - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
-      styles:
-        - Margin = 0,0,20,0
-    - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid[2] > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
+    - target: AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
       styles:
         - ActualWidth => WeatherCondWidth
         - RenderTransform := <TranslateTransform X="0" Y="8" />
-    - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid[2] > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2]
+    - target: AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2]
       styles:
         - ActualWidth => WeatherTempWidth
         - RenderTransform := <TranslateTransform X="{{WeatherCondWidth+7}}" Y="-8" />
@@ -543,16 +538,17 @@ The theme styles can also be imported manually. To do that, follow these steps:
       styles:
         - Width = {{WeatherTempWidth+WeatherCondWidth+50}}
         - Height := $pillHeight
-        - CornerRadius = $pillRadius
         - Margin = 10,0,5,0
         - Padding = 0
-        - Background := $pillFillColor
+        - CornerRadius = $pillRadius
         - BorderThickness := $pillBorderThickness
+        - Background := $pillFillColor
         - BorderBrush := $pillBorderColor
     - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
       styles:
         - BorderThickness := $highlightBorderThickness
         - Margin = {{$highlightOffset}}
+        - BorderBrush := $highlightBorderColor
   themeResourceVariables:
     - AdaptivePillFill@Light =#FFFFFF
     - AdaptivePillFill@Dark =#0F1E1E1E
