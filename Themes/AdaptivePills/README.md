@@ -74,13 +74,14 @@ To achieve similar results, install and configure the following Windhawk mods in
     fontSize: 12
     fontFamily: ''
     textTrimming: characterEllipsis
-    leftAndRightPaddingSize: 8
-    spaceBetweenIconAndLabel: 18
-    runningIndicatorHeight: -1
+    leftAndRightPaddingSize: 11
+    spaceBetweenIconAndLabel: 0
+    runningIndicatorHeight: 0
     runningIndicatorVerticalOffset: 0
     alwaysShowThumbnailLabels: 0
-    labelForSingleItem: '%name%'
-    labelForMultipleItems: '[%amount%] %name%'
+    labelForSingleItem: ''
+    labelForMultipleItems: ''
+
   ```
   </details><br>
 
