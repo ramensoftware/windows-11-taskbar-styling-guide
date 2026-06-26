@@ -541,6 +541,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - target: Grid#OverflowRootGrid > Border
       styles:
         - Shadow :=
+        - Background := $pillFillColor
     - target: AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
       styles:
         - ActualWidth => WeatherCondWidth
