@@ -363,13 +363,12 @@ The theme styles can also be imported manually. To do that, follow these steps:
   ```yaml
   styleConstants:
     - pillHeight = 26
-    - pillBorderThickness = 1
     - pillRadius = 7
+    - pillBorderThickness = 1
     - pillBorderColor = <SolidColorBrush Color="{ThemeResource AdaptivePillBorder}"/>
     - pillSpacing = 9
     - highlightOffset = 4
     - highlightBorderThickness = 1
-    - highlightBorderColor = ''
     - highlightRadius = {{$pillRadius*0.69}}
     - showHighlightActiveBorder = 0
     - iconLabelSpacing = 7
@@ -378,11 +377,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
     - pillFillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptivePillFill}" TintOpacity="0.45" TintLuminosityOpacity="0.8" NoiseOpacity="0.2"/>
   controlStyles:
-    - target: Border#BackgroundBorder
-      styles:
-        - CornerRadius := $highlightRadius
-        - BorderThickness := $highlightBorderThickness
-        - BorderBrush := $highlightBorderColor
     - target: Border#BackgroundElement
       styles:
         - CornerRadius := $highlightRadius
@@ -473,9 +467,36 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - BorderThickness := $pillBorderThickness
         - Background := $pillFillColor
         - BorderBrush := $pillBorderColor
-    - target: Grid > Border#BackgroundBorder
+    - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder
       styles:
         - Margin = {{$highlightOffset}}
+        - CornerRadius := $highlightRadius
+        - BorderThickness := $highlightBorderThickness
+        - BorderBrush := $highlightBorderColor
+    - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
+      styles:
+        - Margin = {{$highlightOffset}}
+        - CornerRadius := $highlightRadius
+        - BorderThickness := $highlightBorderThickness
+        - BorderBrush := $highlightBorderColor
+    - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
+      styles:
+        - Margin = {{$highlightOffset}}
+        - CornerRadius := $highlightRadius
+        - BorderThickness := $highlightBorderThickness
+        - BorderBrush := $highlightBorderColor
+    - target: SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder
+      styles:
+        - Margin = {{$highlightOffset}}
+        - CornerRadius := $highlightRadius
+        - BorderThickness := $highlightBorderThickness
+        - BorderBrush := $highlightBorderColor
+    - target: SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > Border#BackgroundBorder
+      styles:
+        - Margin = {{$highlightOffset}}
+        - CornerRadius := $highlightRadius
+        - BorderThickness := $highlightBorderThickness
+        - BorderBrush := $highlightBorderColor
     - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter
       styles:
         - Margin = 0,0,0,1
@@ -504,6 +525,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel
       styles:
         - Height := $pillHeight
+        - Margin := 0
         - Padding := {{-$pillBorderThickness}}
         - Background := $pillFillColor
         - BorderThickness := 0,$pillBorderThickness,0,$pillBorderThickness
