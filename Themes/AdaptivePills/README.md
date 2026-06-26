@@ -578,6 +578,12 @@ The theme styles can also be imported manually. To do that, follow these steps:
       styles:
         - Width = 15
         - Height = 15
+    - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
+      styles:
+        - Shadow :=
+    - target: SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
+      styles:
+        - MaxLines=1
   themeResourceVariables:
     - AdaptivePillFill@Light =#FFFFFF
     - AdaptivePillFill@Dark =#0F1E1E1E
