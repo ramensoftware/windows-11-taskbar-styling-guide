@@ -177,16 +177,14 @@ controlStyles:
       - MinWidth=100
       - MaxWidth={{max(containerGridWidth - 250, 100)}}
       - Grid.Column=1
-  - target: Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
-      - Padding=50,0,50,0
+      - Padding=45,0,45,0
       - Margin=-10,0,0,3
       - CornerRadius=Auto
       - Background:=Red
       - HorizontalAlignment=Center
       - Width=Auto
-      - BorderThickness=100,3,1,0
-      - BorderBrush:=<WindhawkBlur BlurAmount="25" TintColor="#00000000"/>
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<WindhawkBlur BlurAmount="3" TintColor="#14090909"/>
@@ -211,7 +209,7 @@ controlStyles:
       - Fill:=<WindhawkBlur BlurAmount="0" TintColor="#00101010"/>
   - target: Grid#SystemTrayFrameGrid
     styles:
-      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#30101010"/>
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#39101010"/>
       - CornerRadius={{(TaskHeight/4)*1.8}}
       - BorderThickness=1.2,1,1.2,1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.1" /><GradientStop Color="#60404040" Offset="0.25" /><GradientStop Color="#40292929" Offset="0.5" /><GradientStop Color="#90404040" Offset="0.75" /><GradientStop Color="#90404040" Offset="0.9" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
@@ -230,7 +228,6 @@ controlStyles:
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=30
-      - // Bottom Shadow layer for Win+X flyout
   - target: MenuFlyoutPresenter > Border
     styles:
       - Background:=<WindhawkBlur BlurAmount="5" TintColor="#25131313"/>
@@ -238,7 +235,6 @@ controlStyles:
       - CornerRadius=32,32,30,30
       - Padding=5,9,6,9
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#59D3D3D3" Offset="0.0" /><GradientStop Color="#45494949" Offset="0.1" /><GradientStop Color="#50505050" Offset="0.5" /><GradientStop Color="#45494949" Offset="0.9" /><GradientStop Color="#50D3D3D3" Offset="1" /></LinearGradientBrush>
-      - // Win+X flyout
   - target: Grid#ConfirmatorMainGrid
     styles:
       - Background:=<WindhawkBlur BlurAmount="5" TintColor="#1C101010"/>
@@ -344,10 +340,10 @@ controlStyles:
       - Background:=Transparent
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
-      - CornerRadius={{ max(68, min(85, (AltTabHeight / 5) * 1.5)) }}
+      - CornerRadius={{ max(68, min(90, (AltTabHeight / 5) * 1.75)) }}
       - ActualHeight=>AltTabHeight
-      - BorderThickness=1.2,1,1.2,1
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69D3D3D3" Offset="0.0" /><GradientStop Color="#55303030" Offset="0.1" /><GradientStop Color="#60303030" Offset="0.5" /><GradientStop Color="#5F303030" Offset="0.9" /><GradientStop Color="#69D3D3D3" Offset="1" /></LinearGradientBrush>
+      - BorderThickness=1
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69D3D3D3" Offset="0.0" /><GradientStop Color="#5F303030" Offset="0.1" /><GradientStop Color="#70303030" Offset="0.5" /><GradientStop Color="#5F303030" Offset="0.9" /><GradientStop Color="#69D3D3D3" Offset="1" /></LinearGradientBrush>
       - Background:=<WindhawkBlur BlurAmount="6" TintColor="#2C101010"/>
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid > Border
     styles:
@@ -367,7 +363,7 @@ controlStyles:
       - Height=21
   - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
     styles:
-      - Background:=<WindhawkBlur BlurAmount="9" TintColor="#1B242424"/>
+      - Background:=<WindhawkBlur BlurAmount="7" TintColor="#1B242424"/>
       - BorderThickness=1.2,1,1.2,1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#60D3D3D3" Offset="0.0" /><GradientStop Color="#4F494949" Offset="0.1" /><GradientStop Color="#60505050" Offset="0.5" /><GradientStop Color="#4F494949" Offset="0.9" /><GradientStop Color="#60D3D3D3" Offset="1" /></LinearGradientBrush>
       - CornerRadius=27
@@ -392,7 +388,6 @@ controlStyles:
   - target: Border#BackgroundDimmingLayer
     styles:
       - Background:=<WindhawkBlur BlurAmount="12" TintColor="#101F1F1F"/>
-      - //Desktop Switcher's main bg layer
   - target: Border#VirtualDesktopBarBackground
     styles:
       - Background:=<WindhawkBlur BlurAmount="10" TintColor="#6B242424"/>
@@ -404,12 +399,10 @@ controlStyles:
     styles:
       - Margin=12,8,0,5
       - FontSize=14
-      - //Desktop 1,2 header text in desktop bar's opened desktop boxes
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed > Grid#MainGrid > TextBlock
     styles:
       - Margin=12,8,0,0
       - FontSize=14
-      - //New Desktop header text in desktop bar's new desktop opener box
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#MainBorder
     styles:
       - CornerRadius=19
@@ -468,12 +461,6 @@ controlStyles:
   - target: SystemTray.OmniButton#NotificationCenterButton
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="0" />
-  - target: SystemTray.DateTimeIconContent > Grid#ContainerGrid > StackPanel > TextBlock#TimeInnerTextBlock
-    styles:
-      - ''
-  - target: SystemTray.DateTimeIconContent > Grid#ContainerGrid > StackPanel > TextBlock#DateInnerTextBlock
-    styles:
-      - ''
   - target: SystemTray.OmniButton#ControlCenterButton@CommonStates > Grid > Border#BackgroundBorder
     styles:
       - Background:=Transparent
@@ -572,7 +559,7 @@ controlStyles:
       - CornerRadius=33
   - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
     styles:
-      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - Background:=<WindhawkBlur BlurAmount="7" TintColor="#2D101010"/>
       - BorderBrush:=<WindhawkBlur BlurAmount="40" TintColor="#3D404040"/>
       - BorderThickness=1
       - Padding=2,3,2,3
