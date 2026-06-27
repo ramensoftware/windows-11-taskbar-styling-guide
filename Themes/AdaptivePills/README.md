@@ -366,7 +366,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - pillRadius = 7
     - pillBorderThickness = 1
     - pillBorderColor = <SolidColorBrush Color="{ThemeResource AdaptivePillBorder}"/>
-    - pillSpacing = 9
+    - pillSpacing = 6
     - highlightOffset = 4
     - highlightBorderThickness = 1
     - highlightRadius = {{$pillRadius*0.69}}
@@ -375,15 +375,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - iconBadgeHeight = 13
     - iconBadgeSpacing = 2,5,0,0
     - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
-    - pillFillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptivePillFill}" TintOpacity="0.45" TintLuminosityOpacity="0.8" NoiseOpacity="0.2"/>
+    - pillFillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptivePillFill}" TintOpacity="0.45" TintLuminosityOpacity="0.8" NoiseOpacity="0.15"/>
   controlStyles:
     - target: Border#BackgroundElement
       styles:
         - CornerRadius := $highlightRadius
-    - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
-      styles:
-        - Padding = 0
-        - Margin = 0
     - target: Rectangle#RunningIndicator
       styles:
         - Visibility = Visible
@@ -399,14 +395,14 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
       styles:
         - Height = {{$pillHeight-$highlightOffset*2}}
-        - Margin := {{$highlightOffset}},0,{{$highlightOffset+6}},0
-        - Margin@MultiWindowNormal := {{$highlightOffset}},0,16,0
-        - Margin@MultiWindowPointerOver := {{$highlightOffset}},0,16,0
-        - Margin@MultiWindowActive := {{$highlightOffset}},0,16,0
-        - Margin@MultiWindowPressed := {{$highlightOffset}},0,16,0
-        - Margin@RequestingAttentionMulti := {{$highlightOffset}},0,16,0
-        - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},01,16,0
-        - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},0,16,0
+        - Margin := {{$highlightOffset+0}},0,{{$highlightOffset+2}},0
+        - Margin@MultiWindowNormal := {{$highlightOffset+0}},0,11,0
+        - Margin@MultiWindowPointerOver := {{$highlightOffset+0}},0,11,0
+        - Margin@MultiWindowActive := {{$highlightOffset+0}},0,11,0
+        - Margin@MultiWindowPressed := {{$highlightOffset+0}},0,11,0
+        - Margin@RequestingAttentionMulti := {{$highlightOffset+0}},0,11,0
+        - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset+0}},01,11,0
+        - Margin@RequestingAttentionMultiPressed := {{$highlightOffset+0}},0,11,0
         - BorderThickness := $highlightBorderThickness
         - BorderThickness@ActiveNormal := {{$highlightBorderThickness*$showHighlightActiveBorder}}
         - BorderThickness@ActivePointerOver := {{$highlightBorderThickness*$showHighlightActiveBorder}}
@@ -419,10 +415,13 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - BorderBrush := $highlightBorderColor
     - target: Border#MultiWindowElement
       styles:
-        - Margin = 0,0,10,0
+        - Margin = 0,0,5,0
         - CornerRadius := $highlightRadius
         - Height := {{$pillHeight-$highlightOffset-$pillBorderThickness-4}}
         - HorizontalAlignment = 2
+    - target: Taskbar.TaskListButton#TaskListButton
+      styles:
+        - Margin := {{$pillSpacing/2-3}},0,{{$pillSpacing/2-3}},0
     - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
       styles:
         - Visibility = Collapsed
@@ -435,12 +434,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
       styles:
         - Height = 0
-    - target: Taskbar.TaskListButton#TaskListButton
-      styles:
-        - Margin := {{$pillSpacing-6}},0,0,0
     - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
       styles:
-        - Margin := {{$iconLabelSpacing}},0,12,2
+        - Margin := {{$iconLabelSpacing}},0,6,2
         - HorizontalAlignment = 0
         - VerticalAlignment = 1
     - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
@@ -561,7 +557,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
       styles:
         - Width = {{WeatherTempWidth+WeatherCondWidth+50}}
         - Height := $pillHeight
-        - Margin = 10,0,5,0
+        - Margin = 10,0,30,0
         - Padding = 0
         - CornerRadius = $pillRadius
         - BorderThickness := $pillBorderThickness
