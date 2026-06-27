@@ -49,7 +49,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   <summary>Click to expand Taskbar Height and Icon Size settings</summary>
 
   ```yaml
-  TaskbarHeight: 41
+  TaskbarHeight: 38
   IconSize: 15
   TaskbarButtonWidth: 30
   IconSizeSmall: 15
@@ -63,24 +63,24 @@ To achieve similar results, install and configure the following Windhawk mods in
   <summary>Click to expand Taskbar Labels for Windows 11 settings</summary>
 
   ```yaml
-    mode: labelsWithCombining
-    taskbarItemWidth: 0
-    runningIndicatorStyle: fullWidth
-    progressIndicatorStyle: sameAsRunningIndicatorStyle
-    excludedPrograms:
-      - ''
-    minimumTaskbarItemWidth: 70
-    maximumTaskbarItemWidth: 200
-    fontSize: 12
-    fontFamily: ''
-    textTrimming: characterEllipsis
-    leftAndRightPaddingSize: 11
-    spaceBetweenIconAndLabel: 0
-    runningIndicatorHeight: 0
-    runningIndicatorVerticalOffset: 0
-    alwaysShowThumbnailLabels: 0
-    labelForSingleItem: ''
-    labelForMultipleItems: ''
+  mode: labelsWithCombining
+  taskbarItemWidth: 0
+  runningIndicatorStyle: fullWidth
+  progressIndicatorStyle: sameAsRunningIndicatorStyle
+  excludedPrograms:
+    - ''
+  minimumTaskbarItemWidth: 70
+  maximumTaskbarItemWidth: 200
+  fontSize: 12
+  fontFamily: ''
+  textTrimming: characterEllipsis
+  leftAndRightPaddingSize: 11
+  spaceBetweenIconAndLabel: 0
+  runningIndicatorHeight: -1
+  runningIndicatorVerticalOffset: 0
+  alwaysShowThumbnailLabels: 0
+  labelForSingleItem: ''
+  labelForMultipleItems: ''
 
   ```
   </details><br>
@@ -184,12 +184,9 @@ To achieve similar results, install and configure the following Windhawk mods in
       accentColor: 0
       transparency: 255
   ```
-  </details>
+  </details><br>
 
-## Recommended visual Windhawk Mods
-To achieve maximum Taskbar aesthetics, install and configure the following Windhawk mods.
-
-- Taskbar tray system icon tweaks - to declutter the system tray icons (you may also disable the language indicator if you don't need it):
+- Taskbar tray system icon tweaks - to set showDesktopButtonWidth and declutter the system tray icons.
   <details>
   <summary>Click to expand Taskbar tray system icon tweaks settings</summary>
 
@@ -205,9 +202,12 @@ To achieve maximum Taskbar aesthetics, install and configure the following Windh
   hideLanguageBar: 0
   hideLanguageSupplementaryIcons: 1
   hideBellIcon: never
-  showDesktopButtonWidth: 10
+  showDesktopButtonWidth: 1
   ```
   </details><br>
+
+## Recommended visual Windhawk Mods
+To achieve maximum aesthetics, install and configure the following Windhawk mods.
 
 - Windows 11 Notification Center Styler - to remove Notification Center shadows copy the content below (flyout shadows look truncated with transparent taskbar):
 
@@ -363,29 +363,34 @@ The theme styles can also be imported manually. To do that, follow these steps:
   ```yaml
   styleConstants:
     - fixedWidthOn = 0
-    - pillHeight = 26
-    - pillRadius = 7
-    - pillBorderThickness = 1
-    - pillBorderColor = <SolidColorBrush Color="{ThemeResource AdaptivePillBorder}"/>
+    - taskbarSidesOffset = 10
+    - taskbarBottomTopOffset = 6
     - pillSpacing = 6
     - highlightOffset = 4
+    - pillBorderThickness = 1
     - highlightBorderThickness = 1
-    - highlightRadius = {{$pillRadius*0.69}}
+    - pillRadius = 7
     - showHighlightActiveBorder = 0
     - iconLabelSpacing = 7
     - iconBadgeHeight = 13
     - iconBadgeSpacing = 2,5,0,0
+    - sysTrayIconSize = 15
+    - pillBorderColor = <SolidColorBrush Color="{ThemeResource AdaptivePillBorder}"/>
     - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
     - pillFillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptivePillFill}" TintOpacity="0.45" TintLuminosityOpacity="0.8" NoiseOpacity="0.15"/>
+    - highlightRadius = {{$pillRadius*0.69}}
   controlStyles:
     - target: Border#BackgroundElement
       styles:
         - CornerRadius := $highlightRadius
+    - target: ScrollViewer
+      styles:
+        - Height =>TaskbarHeight
     - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
       styles:
         - Visibility = Visible
-        - Margin = 0,0,0,0
-        - Height := $pillHeight
+        - Margin = 0
+        - Height := {{TaskbarHeight-2*$taskbarBottomTopOffset}}
         - RadiusX := $pillRadius
         - RadiusY := $pillRadius
         - StrokeThickness := $pillBorderThickness
@@ -393,9 +398,12 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - Fill := $pillFillColor
         - Stroke := $pillBorderColor
         - Canvas.ZIndex = -1
+    - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+      styles:
+        - Padding := 2,0,2,0
     - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
       styles:
-        - Height := {{$pillHeight-$highlightOffset*2}}
+        - Height := {{TaskbarHeight-2*$taskbarBottomTopOffset-2*$highlightOffset}}
         - Margin := {{$highlightOffset}},0,{{$highlightOffset+2}},0
         - Margin@MultiWindowNormal := {{$highlightOffset}},0,11,0
         - Margin@MultiWindowPointerOver := {{$highlightOffset}},0,11,0
@@ -423,7 +431,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
       styles:
         - Margin := 0,0,5,0
         - CornerRadius := $highlightRadius
-        - Height := {{$pillHeight-$highlightOffset-$pillBorderThickness-4}}
+        - Height := {{TaskbarHeight-2*$taskbarBottomTopOffset-2*$highlightOffset}}
         - HorizontalAlignment = 2
     - target: Taskbar.TaskListButton#TaskListButton
       styles:
@@ -455,10 +463,12 @@ The theme styles can also be imported manually. To do that, follow these steps:
       styles:
         - FontSize = 10
         - HorizontalAlignment = 1
+    - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton
+      styles:
+        - Margin := 0,0,{{$taskbarSidesOffset-1}},0
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid
       styles:
-        - Height := $pillHeight
-        - Margin := {{$pillSpacing}},0,0,0
+        - Margin := {{$pillSpacing}},{{$taskbarBottomTopOffset}},0,{{$taskbarBottomTopOffset}}
         - Padding := {{-$pillBorderThickness}}
         - CornerRadius := $pillRadius
         - BorderThickness := $pillBorderThickness
@@ -499,7 +509,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - Margin = 0,0,0,1
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid
       styles:
-        - Height := $pillHeight
+        - Margin := 0,{{$taskbarBottomTopOffset}},0,{{$taskbarBottomTopOffset}}
         - Padding := {{-$pillBorderThickness}}
         - Background := $pillFillColor
         - CornerRadius := 0,$pillRadius,$pillRadius,0
@@ -507,29 +517,28 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - BorderBrush := $pillBorderColor
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#MainStack > Grid#Content
       styles:
-        - Height := $pillHeight
+        - Margin := 0,{{$taskbarBottomTopOffset}},0,{{$taskbarBottomTopOffset}}
         - Padding := {{-$pillBorderThickness}}
         - Background := $pillFillColor
         - BorderThickness := 0,$pillBorderThickness,0,$pillBorderThickness
         - BorderBrush := $pillBorderColor
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack > Grid#Content
       styles:
-        - Height := $pillHeight
+        - Margin := 0,{{$taskbarBottomTopOffset}},0,{{$taskbarBottomTopOffset}}
         - Padding := {{-$pillBorderThickness}}
         - Background := $pillFillColor
         - BorderThickness := 0,$pillBorderThickness,0,$pillBorderThickness
         - BorderBrush := $pillBorderColor
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel
       styles:
-        - Height := $pillHeight
-        - Margin = 0
+        - Margin := 0,{{$taskbarBottomTopOffset}},0,{{$taskbarBottomTopOffset}}
         - Padding := {{-$pillBorderThickness}}
         - Background := $pillFillColor
         - BorderThickness := 0,$pillBorderThickness,0,$pillBorderThickness
         - BorderBrush := $pillBorderColor
     - target: SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter
       styles:
-        - Height := $pillHeight
+        - Margin := 0,{{$taskbarBottomTopOffset}},0,{{$taskbarBottomTopOffset}}
         - Padding := {{-$pillBorderThickness}}
         - Background := $pillFillColor
         - BorderThickness := $pillBorderThickness,$pillBorderThickness,0,$pillBorderThickness
@@ -557,8 +566,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
       styles:
         - Width := {{WeatherTempWidth+WeatherCondWidth+50}}
-        - Height := $pillHeight
-        - Margin = 10,0,30,0
+        - Height = Auto
+        - Margin := {{$taskbarSidesOffset}},{{$taskbarBottomTopOffset}},30,{{$taskbarBottomTopOffset}}
         - Padding = 0
         - CornerRadius := $pillRadius
         - BorderThickness := $pillBorderThickness
@@ -571,11 +580,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - BorderBrush := $highlightBorderColor
     - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
       styles:
-        - FontSize = 15
+        - FontSize := $sysTrayIconSize
     - target: SystemTray.ImageIconContent > Grid#ContainerGrid > Image
       styles:
-        - Width = 15
-        - Height = 15
+        - Width := $sysTrayIconSize
+        - Height := $sysTrayIconSize
     - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
       styles:
         - Shadow :=
