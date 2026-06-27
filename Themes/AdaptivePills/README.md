@@ -97,7 +97,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   WeekdayFormat: custom
   WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
   TopLine: ''
-  BottomLine: 📅  %date% | %time%
+  BottomLine: 📅  %date%  |  %time%
   MiddleLine: '%weekday%'
   TooltipLine: '%web1_full%'
   TooltipLineMode: append
@@ -380,7 +380,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - target: Border#BackgroundElement
       styles:
         - CornerRadius := $highlightRadius
-    - target: Rectangle#RunningIndicator
+    - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
       styles:
         - Visibility = Visible
         - Margin = 0,0,0,0
@@ -394,15 +394,15 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - Canvas.ZIndex = -1
     - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
       styles:
-        - Height = {{$pillHeight-$highlightOffset*2}}
-        - Margin := {{$highlightOffset+0}},0,{{$highlightOffset+2}},0
-        - Margin@MultiWindowNormal := {{$highlightOffset+0}},0,11,0
-        - Margin@MultiWindowPointerOver := {{$highlightOffset+0}},0,11,0
-        - Margin@MultiWindowActive := {{$highlightOffset+0}},0,11,0
-        - Margin@MultiWindowPressed := {{$highlightOffset+0}},0,11,0
-        - Margin@RequestingAttentionMulti := {{$highlightOffset+0}},0,11,0
-        - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset+0}},01,11,0
-        - Margin@RequestingAttentionMultiPressed := {{$highlightOffset+0}},0,11,0
+        - Height := {{$pillHeight-$highlightOffset*2}}
+        - Margin := {{$highlightOffset}},0,{{$highlightOffset+2}},0
+        - Margin@MultiWindowNormal := {{$highlightOffset}},0,11,0
+        - Margin@MultiWindowPointerOver := {{$highlightOffset}},0,11,0
+        - Margin@MultiWindowActive := {{$highlightOffset}},0,11,0
+        - Margin@MultiWindowPressed := {{$highlightOffset}},0,11,0
+        - Margin@RequestingAttentionMulti := {{$highlightOffset}},0,11,0
+        - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},0,11,0
+        - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},0,11,0
         - BorderThickness := $highlightBorderThickness
         - BorderThickness@ActiveNormal := {{$highlightBorderThickness*$showHighlightActiveBorder}}
         - BorderThickness@ActivePointerOver := {{$highlightBorderThickness*$showHighlightActiveBorder}}
@@ -459,37 +459,37 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - Height := $pillHeight
         - Margin := {{$pillSpacing}},0,0,0
         - Padding := {{-$pillBorderThickness}}
-        - CornerRadius = $pillRadius
+        - CornerRadius := $pillRadius
         - BorderThickness := $pillBorderThickness
         - Background := $pillFillColor
         - BorderBrush := $pillBorderColor
     - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder
       styles:
-        - Margin = {{$highlightOffset}}
+        - Margin := {{$highlightOffset}}
         - CornerRadius := $highlightRadius
         - BorderThickness := $highlightBorderThickness
         - BorderBrush := $highlightBorderColor
     - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
       styles:
-        - Margin = {{$highlightOffset}}
+        - Margin := {{$highlightOffset}}
         - CornerRadius := $highlightRadius
         - BorderThickness := $highlightBorderThickness
         - BorderBrush := $highlightBorderColor
     - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
       styles:
-        - Margin = {{$highlightOffset}}
+        - Margin := {{$highlightOffset}}
         - CornerRadius := $highlightRadius
         - BorderThickness := $highlightBorderThickness
         - BorderBrush := $highlightBorderColor
     - target: SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder
       styles:
-        - Margin = {{$highlightOffset}}
+        - Margin := {{$highlightOffset}}
         - CornerRadius := $highlightRadius
         - BorderThickness := $highlightBorderThickness
         - BorderBrush := $highlightBorderColor
     - target: SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > Border#BackgroundBorder
       styles:
-        - Margin = {{$highlightOffset}}
+        - Margin := {{$highlightOffset}}
         - CornerRadius := $highlightRadius
         - BorderThickness := $highlightBorderThickness
         - BorderBrush := $highlightBorderColor
@@ -501,7 +501,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - Height := $pillHeight
         - Padding := {{-$pillBorderThickness}}
         - Background := $pillFillColor
-        - CornerRadius = 0,$pillRadius,$pillRadius,0
+        - CornerRadius := 0,$pillRadius,$pillRadius,0
         - BorderThickness := 0,$pillBorderThickness,$pillBorderThickness,$pillBorderThickness
         - BorderBrush := $pillBorderColor
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#MainStack > Grid#Content
@@ -521,7 +521,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel
       styles:
         - Height := $pillHeight
-        - Margin := 0
+        - Margin = 0
         - Padding := {{-$pillBorderThickness}}
         - Background := $pillFillColor
         - BorderThickness := 0,$pillBorderThickness,0,$pillBorderThickness
@@ -532,45 +532,45 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - Padding := {{-$pillBorderThickness}}
         - Background := $pillFillColor
         - BorderThickness := $pillBorderThickness,$pillBorderThickness,0,$pillBorderThickness
-        - CornerRadius = $pillRadius,0,0,$pillRadius
+        - CornerRadius := $pillRadius,0,0,$pillRadius
         - BorderBrush := $pillBorderColor
     - target: Grid#OverflowRootGrid > Border
       styles:
         - Shadow :=
         - Background := $pillFillColor
-    - target: AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
+    - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
       styles:
         - ActualWidth => WeatherCondWidth
         - RenderTransform := <TranslateTransform X="0" Y="8" />
-    - target: AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2]
+    - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2]
       styles:
         - ActualWidth => WeatherTempWidth
         - RenderTransform := <TranslateTransform X="{{WeatherCondWidth+7}}" Y="-8" />
     - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid
       styles:
-        - Width = {{WeatherTempWidth+WeatherCondWidth+50}}
+        - Width := {{WeatherTempWidth+WeatherCondWidth+50}}
         - HorizontalAlignment = 0
     - target: Grid#AugmentedEntryPointContentGrid
       styles:
         - Margin = 5,0,0,0
     - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
       styles:
-        - Width = {{WeatherTempWidth+WeatherCondWidth+50}}
+        - Width := {{WeatherTempWidth+WeatherCondWidth+50}}
         - Height := $pillHeight
         - Margin = 10,0,30,0
         - Padding = 0
-        - CornerRadius = $pillRadius
+        - CornerRadius := $pillRadius
         - BorderThickness := $pillBorderThickness
         - Background := $pillFillColor
         - BorderBrush := $pillBorderColor
     - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
       styles:
         - BorderThickness := $highlightBorderThickness
-        - Margin = {{$highlightOffset}}
+        - Margin := {{$highlightOffset}}
         - BorderBrush := $highlightBorderColor
     - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
       styles:
-        - FontSize=15
+        - FontSize = 15
     - target: SystemTray.ImageIconContent > Grid#ContainerGrid > Image
       styles:
         - Width = 15
@@ -580,11 +580,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
         - Shadow :=
     - target: SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
       styles:
-        - MaxLines=1
+        - MaxLines = 1
   themeResourceVariables:
     - AdaptivePillFill@Light =#FFFFFF
     - AdaptivePillFill@Dark =#0F1E1E1E
     - AdaptivePillBorder@Light =#FFFFFF
-    - AdaptivePillBorder@Dark =#54464646
+    - AdaptivePillBorder@Dark =#B0454545
   ```
   </details>
