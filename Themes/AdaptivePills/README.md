@@ -37,8 +37,9 @@ Comparison
   - Show smaller taskbar buttons - Never
 - *Widgets must be installed to enable the weather widget on the left. Install it back if you previously removed it.
   - https://apps.microsoft.com/detail/9mssgkg348sp
-- Pinned applications are not supported (transparent background)
+- Pinned applications are not fully supported (transparent background)
 - Activated border indicator for opened application - Optional
+- Windows Start button display - Optional
 
 ## Required Windhawk Mods for similar results
 To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler:
@@ -57,7 +58,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   ```
   </details><br>
 
-- Taskbar Labels for Windows 11 – to control panels width:
+- Taskbar Labels for Windows 11 – to control panels width. You may increase taskbarItemWidth value to achieve longer buttons (just make sure to flip fixedWidthOn = 0 to 1 in the theme StyleConstants):
 
   <details>
   <summary>Click to expand Taskbar Labels for Windows 11 settings</summary>
@@ -158,7 +159,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   ```
   </details><br>
 
-- Taskbar Background Helper:
+- Taskbar Background Helper - for a background fill behind buttons when a window is expanded:
 
   <details>
   <summary>Click to expand Taskbar Background Helper settings</summary>
@@ -186,7 +187,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   ```
   </details><br>
 
-- Taskbar tray system icon tweaks - to set showDesktopButtonWidth and declutter the system tray icons.
+- Taskbar tray system icon tweaks - to set showDesktopButtonWidth and declutter the system tray icons:
   <details>
   <summary>Click to expand Taskbar tray system icon tweaks settings</summary>
 
@@ -371,7 +372,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - highlightBorderThickness = 1
     - pillRadius = 7
     - showHighlightActiveBorder = 0
-    - iconHighlightMinWidth = 36
+    - iconHighlightMinWidth = 34
     - iconLabelSpacing = 7
     - iconBadgeHeight = 13
     - iconBadgeNudge = 2,5,0,0
