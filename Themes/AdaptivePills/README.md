@@ -362,7 +362,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
   
   ```yaml
   styleConstants:
-    - fixedWidthOn = 0
+    - fixedWidth = 0
     - pillHeight = 26
     - pillRadius = 7
     - pillBorderThickness = 1
@@ -417,7 +417,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
     - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
       styles:
         - Margin := {{$iconLabelSpacing}},0,6,2
-        - HorizontalAlignment := $fixedWidthOn
+        - HorizontalAlignment := $fixedWidth
         - VerticalAlignment = 1
     - target: Border#MultiWindowElement
       styles:
