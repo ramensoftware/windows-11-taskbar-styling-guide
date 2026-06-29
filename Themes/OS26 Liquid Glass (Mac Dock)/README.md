@@ -65,9 +65,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```
-theme: ''
 styleConstants:
-  - IconBackground= <ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/glass.png" />
+  - IconBackground= <ImageBrush Stretch="UniformtoFill" ImageSource="C:\Backgrounds\custom.png" />
   - IconBorder= <LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#F5ffffff" Offset="0.0" /><GradientStop Color="#40ffffff" Offset="0.4" /><GradientStop Color="#20ffffff" Offset="0.6" /><GradientStop Color="#90ffffff" Offset="1.0" /></LinearGradientBrush>
 controlStyles:
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
@@ -133,7 +132,7 @@ controlStyles:
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010" />
       - CornerRadius=15
-      - Margin=155,18,-480,10
+      - Margin=195,18,-480,10
       - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
       - Padding=10,2
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#50ffffff" Offset="0.0" /><GradientStop Color="#10ffffff" Offset="0.5" /><GradientStop Color="#30ffffff" Offset="1.0" /></LinearGradientBrush>
