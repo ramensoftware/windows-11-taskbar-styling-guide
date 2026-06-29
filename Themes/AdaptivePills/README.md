@@ -259,30 +259,33 @@ The theme styles can also be imported manually. To do that, follow these steps:
 ```yaml
 styleConstants:
   - fixedWidthOn = 0
-  - taskbarSidesOffset = 10
-  - taskbarBottomTopOffset = 6
-  - pillSpacing = 6
+  - taskbarLeftOffset = 10
+  - taskbarRightOffset = 10
+  - taskbarTopOffset = 6
+  - taskbarBottomOffset = 5
+  - sysTraySpacing = 6
+  - buttonSpacing = 6
   - highlightOffset = 4
-  - pillBorderThickness = 1
+  - borderThickness = 1
   - highlightBorderThickness = 1
-  - pillRadius = 7
+  - buttonRadius = 7
+  - highlightRadius = {{$buttonRadius*0.69}}
   - showHighlightActiveBorder = 0
   - iconHighlightMinWidth = 34
   - iconLabelSpacing = 8
   - iconBadgeHeight = 13
   - iconBadgeNudge = 2,5,0,0
   - sysTrayIconSize = 15
-  - pillBorderColor = <SolidColorBrush Color="{ThemeResource AdaptivePillBorder}"/>
-  - highlightBorderColor = ''
-  - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
-  - pillFillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptivePillFill}" TintOpacity="0.45" TintLuminosityOpacity="0.8" NoiseOpacity="0.15"/>
   - isRoundedTopLeftRadius = 1
   - isRoundedTopRightRadius = 1
   - isRoundedBottomRightRadius = 1
   - isRoundedBottomLeftRadius = 1
   - windowsButtonEnabled = 0
   - windowsButtonWidth = 1
-  - highlightRadius = {{$pillRadius*0.69}}
+  - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}"/>
+  - highlightBorderColor = ''
+  - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
+  - fillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.45" TintLuminosityOpacity="0.8" NoiseOpacity="0.15"/>
 controlStyles:
   - target: ScrollViewer
     styles:
@@ -293,15 +296,15 @@ controlStyles:
       - MinWidth := $iconHighlightMinWidth
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - Height := {{TaskbarHeight-2*$taskbarBottomTopOffset-2*$highlightOffset}}
-      - Margin := {{$highlightOffset}},0,{{$highlightOffset+2}},0
-      - Margin@MultiWindowNormal := {{$highlightOffset}},0,11,0
-      - Margin@MultiWindowPointerOver := {{$highlightOffset}},0,11,0
-      - Margin@MultiWindowActive := {{$highlightOffset}},0,11,0
-      - Margin@MultiWindowPressed := {{$highlightOffset}},0,11,0
-      - Margin@RequestingAttentionMulti := {{$highlightOffset}},0,11,0
-      - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},0,11,0
-      - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},0,11,0
+      - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
+      - Margin := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{$highlightOffset+2}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowNormal := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowActive := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMulti := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
       - CornerRadius := $highlightRadius
       - BorderThickness := $highlightBorderThickness
       - BorderThickness@ActiveNormal := {{$highlightBorderThickness*$showHighlightActiveBorder}}
@@ -316,29 +319,32 @@ controlStyles:
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
     styles:
       - Visibility = Visible
-      - Height := {{TaskbarHeight-2*$taskbarBottomTopOffset}}
-      - Margin = 0
-      - RadiusX := $pillRadius
-      - RadiusY := $pillRadius
-      - StrokeThickness := $pillBorderThickness
+      - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
+      - Margin = 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - RadiusX := $buttonRadius
+      - RadiusY := $buttonRadius
+      - StrokeThickness := $borderThickness
       - VerticalAlignment = 1
-      - Fill := $pillFillColor
-      - Stroke := $pillBorderColor
+      - Fill := $fillColor
+      - Stroke := $borderColor
       - Canvas.ZIndex = -1
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
-    styles:
-      - Margin := {{$iconLabelSpacing}},0,6,2
-      - HorizontalAlignment := $fixedWidthOn
-      - VerticalAlignment = 1
   - target: Border#MultiWindowElement
     styles:
-      - Height := {{TaskbarHeight-2*$taskbarBottomTopOffset-2*$highlightOffset}}
-      - Margin := 0,0,5,0
+      - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
+      - Margin := 0,{{$taskbarTopOffset}},5,{{$taskbarBottomOffset}}
       - CornerRadius := $highlightRadius
       - HorizontalAlignment = 2
+  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
+    styles:
+      - Margin := {{$iconLabelSpacing}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset+2}}
+      - HorizontalAlignment := $fixedWidthOn
+      - VerticalAlignment = 1
   - target: Taskbar.TaskListButton#TaskListButton
     styles:
-      - Margin := {{$pillSpacing-6}},0,0,0
+      - Margin := {{$buttonSpacing-6}},0,0,0
+  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
+    styles:
+      - Margin := 11,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Visibility = Collapsed
@@ -356,9 +362,10 @@ controlStyles:
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Padding = 5
-      - CornerRadius := $pillRadius
-      - Background := $pillFillColor
-      - BorderBrush := $pillBorderColor
+      - CornerRadius := $buttonRadius
+      - BorderThickness := $borderThickness
+      - Background := $fillColor
+      - BorderBrush := $borderColor
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
     styles:
       - Width := $iconBadgeHeight
@@ -376,15 +383,15 @@ controlStyles:
       - HorizontalAlignment = 1
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton
     styles:
-      - Margin := 0,0,{{$taskbarSidesOffset-1}},0
+      - Margin := 0,0,{{$taskbarRightOffset-1}},0
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid
     styles:
-      - Margin := {{$pillSpacing}},{{$taskbarBottomTopOffset}},0,{{$taskbarBottomTopOffset}}
-      - Padding := {{-$pillBorderThickness}}
-      - CornerRadius := {{$pillRadius}},{{$pillRadius*$isRoundedTopRightRadius}},{{$pillRadius*$isRoundedBottomRightRadius}},{{$pillRadius}}
-      - BorderThickness := $pillBorderThickness
-      - Background := $pillFillColor
-      - BorderBrush := $pillBorderColor
+      - Margin := {{$sysTraySpacing}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Padding := {{-$borderThickness}}
+      - CornerRadius := {{$buttonRadius}},{{$buttonRadius*$isRoundedTopRightRadius}},{{$buttonRadius*$isRoundedBottomRightRadius}},{{$buttonRadius}}
+      - BorderThickness := $borderThickness
+      - Background := $fillColor
+      - BorderBrush := $borderColor
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder
     styles:
       - Margin := {{$highlightOffset}}
@@ -420,41 +427,41 @@ controlStyles:
       - Margin = 0,0,0,1
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid
     styles:
-      - Margin := 0,{{$taskbarBottomTopOffset}},0,{{$taskbarBottomTopOffset}}
-      - Padding := {{-$pillBorderThickness}}
-      - CornerRadius := 0,$pillRadius,$pillRadius,0
-      - BorderThickness := 0,$pillBorderThickness,$pillBorderThickness,$pillBorderThickness
-      - Background := $pillFillColor
-      - BorderBrush := $pillBorderColor
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Padding := {{-$borderThickness}}
+      - CornerRadius := 0,$buttonRadius,$buttonRadius,0
+      - BorderThickness := 0,$borderThickness,$borderThickness,$borderThickness
+      - Background := $fillColor
+      - BorderBrush := $borderColor
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#MainStack > Grid#Content
     styles:
-      - Margin := 0,{{$taskbarBottomTopOffset}},0,{{$taskbarBottomTopOffset}}
-      - Padding := {{-$pillBorderThickness}}
-      - BorderThickness := 0,$pillBorderThickness,0,$pillBorderThickness
-      - Background := $pillFillColor
-      - BorderBrush := $pillBorderColor
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Padding := {{-$borderThickness}}
+      - BorderThickness := 0,$borderThickness,0,$borderThickness
+      - Background := $fillColor
+      - BorderBrush := $borderColor
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack > Grid#Content
     styles:
-      - Margin := 0,{{$taskbarBottomTopOffset}},0,{{$taskbarBottomTopOffset}}
-      - Padding := {{-$pillBorderThickness}}
-      - BorderThickness := 0,$pillBorderThickness,0,$pillBorderThickness
-      - Background := $pillFillColor
-      - BorderBrush := $pillBorderColor
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Padding := {{-$borderThickness}}
+      - BorderThickness := 0,$borderThickness,0,$borderThickness
+      - Background := $fillColor
+      - BorderBrush := $borderColor
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel
     styles:
-      - Margin := 0,{{$taskbarBottomTopOffset}},0,{{$taskbarBottomTopOffset}}
-      - Padding := {{-$pillBorderThickness}}
-      - BorderThickness := 0,$pillBorderThickness,0,$pillBorderThickness
-      - Background := $pillFillColor
-      - BorderBrush := $pillBorderColor
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Padding := {{-$borderThickness}}
+      - BorderThickness := 0,$borderThickness,0,$borderThickness
+      - Background := $fillColor
+      - BorderBrush := $borderColor
   - target: SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter
     styles:
-      - Margin := 0,{{$taskbarBottomTopOffset}},0,{{$taskbarBottomTopOffset}}
-      - Padding := {{-$pillBorderThickness}}
-      - BorderThickness := $pillBorderThickness,$pillBorderThickness,0,$pillBorderThickness
-      - Background := $pillFillColor
-      - CornerRadius := $pillRadius,0,0,$pillRadius
-      - BorderBrush := $pillBorderColor
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Padding := {{-$borderThickness}}
+      - BorderThickness := $borderThickness,$borderThickness,0,$borderThickness
+      - Background := $fillColor
+      - CornerRadius := $buttonRadius,0,0,$buttonRadius
+      - BorderBrush := $borderColor
   - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
     styles:
       - FontSize := $sysTrayIconSize
@@ -471,7 +478,7 @@ controlStyles:
       - Margin = 1,-2,1,0
   - target: Grid#OverflowRootGrid > Border
     styles:
-      - Background := $pillFillColor
+      - Background := $fillColor
       - Shadow :=
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
@@ -495,12 +502,12 @@ controlStyles:
     styles:
       - Width := {{WeatherTempWidth+WeatherCondWidth+53}}
       - Height = Auto
-      - Margin := {{$taskbarSidesOffset}},{{$taskbarBottomTopOffset}},58,{{$taskbarBottomTopOffset}}
+      - Margin := {{$taskbarLeftOffset}},{{$taskbarTopOffset}},58,{{$taskbarBottomOffset}}
       - Padding = 0
-      - CornerRadius := {{$pillRadius*$isRoundedTopLeftRadius}},{{$pillRadius}},{{$pillRadius}},{{$pillRadius*$isRoundedBottomLeftRadius}}
-      - BorderThickness := $pillBorderThickness
-      - Background := $pillFillColor
-      - BorderBrush := $pillBorderColor
+      - CornerRadius := {{$buttonRadius*$isRoundedTopLeftRadius}},{{$buttonRadius}},{{$buttonRadius}},{{$buttonRadius*$isRoundedBottomLeftRadius}}
+      - BorderThickness := $borderThickness
+      - Background := $fillColor
+      - BorderBrush := $borderColor
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin := {{$highlightOffset}}
@@ -510,10 +517,10 @@ controlStyles:
     styles:
       - Shadow :=
 themeResourceVariables:
-  - AdaptivePillFill@Light =#FFFFFF
-  - AdaptivePillFill@Dark =#0F1E1E1E
-  - AdaptivePillBorder@Light =#FFFFFF
-  - AdaptivePillBorder@Dark =#B0454545
+  - AdaptiveFill@Light =#FFFFFF
+  - AdaptiveFill@Dark =#0F1E1E1E
+  - AdaptiveBorder@Light =#FFFFFF
+  - AdaptiveBorder@Dark =#B0454545
 ```
 </details><br>
 
