@@ -20,9 +20,6 @@ Dark Mode: Normal
 Dark Mode: Window Maximized
 ![DarkMaximized](DarkMaximized.png)
 
-Comparison
-![AdaptivePillsTransition](AdaptivePillsTransition.gif)
-
 Pill States
 ![PillDemo](PillDemo.png)
 
@@ -49,7 +46,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   <summary>Taskbar Height and Icon Size.</summary>
 
   ```yaml
-  TaskbarHeight: 38
+  TaskbarHeight: 37
   IconSize: 15
   TaskbarButtonWidth: 30
   IconSizeSmall: 15
