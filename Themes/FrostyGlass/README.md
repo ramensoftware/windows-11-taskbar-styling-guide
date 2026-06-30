@@ -21,13 +21,13 @@ This configuration provides a modern **Frosty Glass** aesthetic for your Windows
    
 ---
 
-## ✨ Design Philosophy
-This theme focuses on a clean, premium look through:
-* **Manual Dock Construction:** A custom-built configuration that transforms the standard taskbar into a centered, detached "dock" layout, engineered based on the DockLike theme.
-* **Translucent Effects:** Soft blurring via Acrylic effects for a modern, high-end feel.
-* **The "Floating" Layout:** Detached from screen edges with a centered, rounded appearance.
-* **Comprehensive Styling:** By handling all `explorer.exe` threads, this config extends the seamless "Frosty Glass" look far beyond the taskbar. It styles the volume and brightness popups, Alt+Tab and Win+Tab menus, the language popup, snap layout flyouts, and all app/system tray tooltips.
-* **Minimalist UI:** Removing unnecessary clutter to focus on pure aesthetics.
+## 🎨 Design Philosophy & Recommendations
+This theme is crafted for a pure, minimal "Dock" aesthetic. To maintain the visual integrity and prevent layout breakage, please follow these recommendations:
+
+* **Centralized Taskbar:** This theme is engineered specifically for a centered taskbar layout. Left-aligned taskbars are not supported and will break the aesthetic.
+* **Minimalist Tray:** For the best results, keep the taskbar free of clutter. 
+    * **Search:** If you must use Search, enable only the **Search box** (`Settings > Personalization > Taskbar > Taskbar items > Search > Search box`). Other search modes may cause UI inconsistencies.
+    * **Widgets & Task View:** It is recommended to disable **Widgets** to maintain a clean layout. The **Task view** button is fully supported and works perfectly within this design.
 
 ## 📐 Screen Compatibility & Reference Setup
 This configuration will work on **any device or resolution**. However, depending on your physical screen size and scaling, you may want to tweak certain values (like taskbar height or icon sizes) in the mods to perfectly align with your display.
