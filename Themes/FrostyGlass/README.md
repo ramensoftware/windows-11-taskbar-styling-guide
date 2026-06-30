@@ -73,15 +73,15 @@ The theme styles can be imported manually by following these steps:
 theme: ''
 styleConstants:
   - Background=<AcrylicBrush TintColor="#10000020"/>
-  - BorderBrush2=<LinearGradientBrush EndPoint="0,1" StartPoint="0,0"><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="0.0"/><GradientStop Color="{ThemeResource SystemChromeLowColor}" Offset="0.25"/><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="1"/></LinearGradientBrush>
+  - BorderBrush2=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="0.0" /><GradientStop Color="{ThemeResource SystemChromeLowColor}" Offset="0.25" /><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="1" /></LinearGradientBrush>
   - BorderThickness=1
   - CornerRadius=10
-  - BorderBrush=<LinearGradientBrush EndPoint="0,1" StartPoint="0,0"><GradientStop Color="#50808080" Offset="0.0"/><GradientStop Color="#50404040" Offset="0.25"/><GradientStop Color="#50808080" Offset="1"/></LinearGradientBrush>
-  - Background2=<AcrylicBrush FallbackColor="{ThemeResource SystemChromeAltHighColor}" TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.3"/>
+  - BorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.25" /><GradientStop Color="#50808080" Offset="1" /></LinearGradientBrush>
+  - Background2=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.3" FallbackColor="{ThemeResource SystemChromeAltHighColor}" />
   - TrayPadding=4.5,4,4.5,4
-  - ElementBG=<SolidColorBrush Color="{ThemeResource SystemChromeAltHighColor}" Opacity="0.3"/>
+  - ElementBG=<SolidColorBrush Color="{ThemeResource SystemChromeAltHighColor}" Opacity="0.3" />
   - ElementBorderThickness=1
-  - ElementBorderBrush=<LinearGradientBrush EndPoint="0,1" StartPoint="0,0"><GradientStop Color="#50808080" Offset="1"/><GradientStop Color="#50606060" Offset="0.15"/></LinearGradientBrush>
+  - ElementBorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="1" /><GradientStop Color="#50606060" Offset="0.15" /></LinearGradientBrush>
   - ElementCornerRadius=10
   - Background3=Transparent
   - BorderBrush3=Transparent
@@ -126,8 +126,9 @@ controlStyles:
       - CornerRadius=7
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid
     styles:
-      - Padding=$TrayPadding
+      - Padding=2,2,5,4
       - CornerRadius=7
+      - HorizontalAlignment=Center
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
     styles:
       - Padding=$TrayPadding
@@ -155,19 +156,19 @@ controlStyles:
   - target: TextBlock#TimeInnerTextBlock
     styles:
       - FontSize=13
-      - FontFamily=vivo Sans EN VF
+      - FontFamily=Segoe UI
       - Margin=0
       - Padding=0
-      - RenderTransform:=<TranslateTransform X="4" Y="2"/>
+      - RenderTransform:=<TranslateTransform X="4" Y="2" />
       - Width=Auto
       - MinWidth=Auto
       - HorizontalAlignment=Left
   - target: TextBlock#DateInnerTextBlock
     styles:
-      - Visibility=Collapsed
-      - RenderTransform:=<TranslateTransform X="0" Y="-9"/>
+      - Visibility=1
+      - RenderTransform:=<TranslateTransform X="4" Y="0" />
       - FontSize=11
-      - FontFamily=vivo Sans EN VF
+      - FontFamily=Segoe UI
   - target: TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
@@ -203,7 +204,7 @@ controlStyles:
       - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
     styles:
-      - //RenderTransform:=<TranslateTransform X="0" Y="60"/>
+      - //RenderTransform:=<TranslateTransform X="0" Y="60" />
       - CornerRadius=$CornerRadius
       - Background:=$Background
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
@@ -215,7 +216,7 @@ controlStyles:
       - Background:=$Background
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
-      - RenderTransform:=<TranslateTransform X="0" Y="10"/>
+      - RenderTransform:=<TranslateTransform X="0" Y="10" />
       - Margin=0,0,0,-10
       - CornerRadius=$CornerRadius
   - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
@@ -232,10 +233,10 @@ controlStyles:
       - Margin=0
   - target: Taskbar.TaskbarExtensionElement
     styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="0"/>
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="0"/>
+      - RenderTransform:=<TranslateTransform X="0" Y="0" />
       - Padding=1.5,4,1.5,4
   - target: Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot
     styles:
@@ -318,7 +319,7 @@ controlStyles:
     styles:
       - CornerRadius:=$CornerRadius
       - BorderBrush:=$BorderBrush
-      - BorderThickness=$BorderThickness
+      - BorderThickness:=$BorderThickness
       - Background:=$Background
       - Margin=0,0,0,0
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#BorderHighlight
@@ -359,7 +360,7 @@ controlStyles:
     styles:
       - Background:=$Background
       - BorderBrush:=$BorderBrush
-      - BorderThickness=$BorderThickness
+      - BorderThickness:=$BorderThickness
       - CornerRadius:=10
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
