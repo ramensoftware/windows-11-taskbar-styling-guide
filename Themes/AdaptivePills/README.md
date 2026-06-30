@@ -271,17 +271,17 @@ styleConstants:
   - buttonRadius = 7
   - highlightRadius = {{$buttonRadius*0.69}}
   - showHighlightActiveBorder = 0
-  - iconHighlightMinWidth = 34
+  - highlightMinWidth = 34
   - iconLabelSpacing = 8
-  - iconBadgeHeight = 13
-  - iconBadgeNudge = 2,5,0,0
+  - badgeSize = 13
+  - badgeNudge = 2,5,0,0
   - sysTrayIconSize = 15
-  - isRoundedTopLeftRadius = 1
-  - isRoundedTopRightRadius = 1
-  - isRoundedBottomRightRadius = 1
-  - isRoundedBottomLeftRadius = 1
+  - roundTopLeftRadius = 1
+  - roundTopRightRadius = 1
+  - roundBottomRightRadius = 1
+  - roundBottomLeftRadius = 1
   - windowsButtonEnabled = 0
-  - windowsButtonWidth = 1
+  - windowsButtonWidth = 50
   - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}"/>
   - highlightBorderColor = ''
   - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
@@ -293,7 +293,7 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - Padding := 2,0,2,0
-      - MinWidth := $iconHighlightMinWidth
+      - MinWidth := $highlightMinWidth
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
@@ -368,15 +368,15 @@ controlStyles:
       - BorderBrush := $borderColor
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
     styles:
-      - Width := $iconBadgeHeight
-      - Height := $iconBadgeHeight
-      - Margin := $iconBadgeNudge
+      - Width := $badgeSize
+      - Height := $badgeSize
+      - Margin := $badgeNudge
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
     styles:
-      - MinWidth := $iconBadgeHeight
-      - Width := $iconBadgeHeight
-      - Height := $iconBadgeHeight
-      - Margin := $iconBadgeNudge
+      - MinWidth := $badgeSize
+      - Width := $badgeSize
+      - Height := $badgeSize
+      - Margin := $badgeNudge
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText
     styles:
       - FontSize = 10
@@ -388,7 +388,7 @@ controlStyles:
     styles:
       - Margin := {{$sysTraySpacing}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Padding := {{-$borderThickness}}
-      - CornerRadius := {{$buttonRadius}},{{$buttonRadius*$isRoundedTopRightRadius}},{{$buttonRadius*$isRoundedBottomRightRadius}},{{$buttonRadius}}
+      - CornerRadius := {{$buttonRadius}},{{$buttonRadius*$roundTopRightRadius}},{{$buttonRadius*$roundBottomRightRadius}},{{$buttonRadius}}
       - BorderThickness := $borderThickness
       - Background := $fillColor
       - BorderBrush := $borderColor
@@ -504,7 +504,7 @@ controlStyles:
       - Height = Auto
       - Margin := {{$taskbarLeftOffset}},{{$taskbarTopOffset}},58,{{$taskbarBottomOffset}}
       - Padding = 0
-      - CornerRadius := {{$buttonRadius*$isRoundedTopLeftRadius}},{{$buttonRadius}},{{$buttonRadius}},{{$buttonRadius*$isRoundedBottomLeftRadius}}
+      - CornerRadius := {{$buttonRadius*$roundTopLeftRadius}},{{$buttonRadius}},{{$buttonRadius}},{{$buttonRadius*$roundBottomLeftRadius}}
       - BorderThickness := $borderThickness
       - Background := $fillColor
       - BorderBrush := $borderColor
@@ -524,4 +524,6 @@ themeResourceVariables:
 ```
 </details><br>
 
-If you'd like to tweak styleConstants (located at the top of the theme content), or themeResourceVariables (located at the bottom), you may use the illustration below as a guide:
+If you'd like to tweak styleConstants (located at the top of the theme content), or themeResourceVariables (located at the bottom), you may use the styleConstants illustration below as a guide:
+
+![styleConstantsIllustration](styleConstantsIllustration.png)
