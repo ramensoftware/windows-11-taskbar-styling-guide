@@ -6,27 +6,27 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 
 # Previews
 
-## Dock
+## Dock:
 ![Dock-Preview](screenshot-dock.png)
 
-## Taskbar
+## Taskbar:
 ![Taskbar-Preview](screenshot-taskbar.png)
 
 # Other Previews
 
-## Volume/Brightness indicator
+## Volume/Brightness indicator:
 ![Indicator-Preview](indicator.png)
 
-## Tray
+## Tray:
 ![Tray-Preview](tray.png)
 
-## Context Menu
+## Context Menu:
 ![Menu-Preview](menu.png)
 
-## Thumbnail
+## Thumbnail:
 ![Thumbnail-Preview](thumbnail.png)
 
-## Windows Selector
+## Windows Selector:
 ![Selector-Preview](selector.png) 
 
 ---
@@ -35,7 +35,7 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 
 This theme requires the Windhawk mod [Taskbar Height and Icon size](https://windhawk.net/mods/taskbar-icon-size) to function properly.
 
-## Dock
+## MacDock
 
 **Large (Recommended):** `{"TaskbarHeight":85,"IconSize":30,"TaskbarButtonWidth":60,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
@@ -72,9 +72,9 @@ Preview:
 
 ---
 
-# Full Sized Taskbar
+# Full Sized Taskbar 
 
-This Taskbar can be set to full Horizontal Length by Altering these Targets:
+The OS26 Liquid Glass (Taskbar) can be set to full Horizontal Length by Altering these Targets:
 
 <details>
 <summary>Target 1: (click to expand)</summary>
@@ -127,7 +127,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
 
-## Dock Configuration
+## OS26 Liquid Glass (MacDock) Configuration
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -397,7 +397,7 @@ xamlDiagnosticsHandling: ''
 ```
 </details>
 
-## Taskbar Configuration
+## OS26 Liquid Glass (Taskbar) Configuration
 
 <details>
 <summary>Content to import (click to expand)</summary>
