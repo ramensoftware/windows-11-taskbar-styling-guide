@@ -156,7 +156,7 @@ controlStyles:
   - target: TextBlock#TimeInnerTextBlock
     styles:
       - FontSize=13
-      - FontFamily=Segoe UI
+      - FontFamily=Segoe UI VF
       - Margin=0
       - Padding=0
       - RenderTransform:=<TranslateTransform X="4" Y="2" />
@@ -168,7 +168,7 @@ controlStyles:
       - Visibility=1
       - RenderTransform:=<TranslateTransform X="4" Y="0" />
       - FontSize=11
-      - FontFamily=Segoe UI
+      - FontFamily=Segoe UI VF
   - target: TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
