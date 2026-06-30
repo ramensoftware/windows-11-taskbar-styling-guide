@@ -271,16 +271,14 @@ styleConstants:
   - buttonRadius = 7
   - highlightRadius = {{$buttonRadius*0.69}}
   - showHighlightActiveBorder = 0
+  - showMultiWindowElement = 1
   - highlightMinWidth = 34
   - iconLabelSpacing = 8
   - badgeSize = 13
   - badgeNudge = 2,5,0,0
   - sysTrayIconSize = 15
-  - roundTopLeftRadius = 1
-  - roundTopRightRadius = 1
-  - roundBottomRightRadius = 1
-  - roundBottomLeftRadius = 1
-  - windowsButtonEnabled = 0
+  - taskbarSidesRounded = 1
+  - showWindowsButton = 0
   - windowsButtonWidth = 50
   - fillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.45" TintLuminosityOpacity="0.8" NoiseOpacity="0.15"/>
   - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}"/>
@@ -297,13 +295,13 @@ controlStyles:
     styles:
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
       - Margin := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{$highlightOffset+2}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowNormal := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowActive := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMulti := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},11,{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowNormal := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowActive := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMulti := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
       - CornerRadius := $highlightRadius
       - BorderThickness := $highlightBorderThickness
       - BorderThickness@ActiveNormal := {{$highlightBorderThickness*$showHighlightActiveBorder}}
@@ -328,6 +326,7 @@ controlStyles:
       - Canvas.ZIndex = -1
   - target: Border#MultiWindowElement
     styles:
+      - Visibility :={{1-$showMultiWindowElement}}
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
       - Margin := 0,{{$taskbarTopOffset}},5,{{$taskbarBottomOffset}}
       - CornerRadius := $highlightRadius
@@ -354,8 +353,8 @@ controlStyles:
       - Visibility = Collapsed
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
-      - Height := {{(TaskbarHeight-4)*$windowsButtonEnabled}}
-      - Width = {{$windowsButtonWidth*$windowsButtonEnabled}}
+      - Height := {{(TaskbarHeight-4)*$showWindowsButton}}
+      - Width = {{$windowsButtonWidth*$showWindowsButton}}
       - Margin = 0,0,2,0
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
@@ -386,7 +385,7 @@ controlStyles:
     styles:
       - Margin := {{$sysTraySpacing}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Padding := {{-$borderThickness}}
-      - CornerRadius := {{$buttonRadius}},{{$buttonRadius*$roundTopRightRadius}},{{$buttonRadius*$roundBottomRightRadius}},{{$buttonRadius}}
+      - CornerRadius := {{$buttonRadius}},{{$buttonRadius*$taskbarSidesRounded}},{{$buttonRadius*$taskbarSidesRounded}},{{$buttonRadius}}
       - BorderThickness := $borderThickness
       - Background := $fillColor
       - BorderBrush := $borderColor
@@ -497,7 +496,7 @@ controlStyles:
       - Height = Auto
       - Margin := {{$taskbarLeftOffset}},{{$taskbarTopOffset}},58,{{$taskbarBottomOffset}}
       - Padding = 0
-      - CornerRadius := {{$buttonRadius*$roundTopLeftRadius}},{{$buttonRadius}},{{$buttonRadius}},{{$buttonRadius*$roundBottomLeftRadius}}
+      - CornerRadius := {{$buttonRadius*$taskbarSidesRounded}},{{$buttonRadius}},{{$buttonRadius}},{{$buttonRadius*$taskbarSidesRounded}}
       - BorderThickness := $borderThickness
       - Background := $fillColor
       - BorderBrush := $borderColor
