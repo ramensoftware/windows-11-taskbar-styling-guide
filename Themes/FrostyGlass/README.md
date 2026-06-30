@@ -382,6 +382,12 @@ controlStyles:
       - BorderThickness:=$BorderThickness
       - BorderBrush:=$BorderBrush
       - BackgroundSizing=InnerBorderEdge
+themeResourceVariables:
+  - ''
+xamlDiagnosticsHandling: alert
+resourceVariables:
+  - variableKey: ''
+    value: ''
 
 ```
 
