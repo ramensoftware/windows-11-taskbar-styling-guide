@@ -282,10 +282,9 @@ styleConstants:
   - roundBottomLeftRadius = 1
   - windowsButtonEnabled = 0
   - windowsButtonWidth = 50
-  - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}"/>
-  - highlightBorderColor = ''
-  - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
   - fillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.45" TintLuminosityOpacity="0.8" NoiseOpacity="0.15"/>
+  - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}"/>
+  - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
 controlStyles:
   - target: ScrollViewer
     styles:
@@ -524,6 +523,6 @@ themeResourceVariables:
 ```
 </details><br>
 
-If you'd like to tweak styleConstants (located at the top of the theme content), or themeResourceVariables (located at the bottom), you may use the styleConstants illustration below as a guide:
+If you'd like to tweak styleConstants (located at the top of the theme content), you may use the styleConstants illustration below as a guide:
 
 ![styleConstantsIllustration](styleConstantsIllustration.png)
