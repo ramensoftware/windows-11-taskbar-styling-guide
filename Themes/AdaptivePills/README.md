@@ -314,7 +314,6 @@ controlStyles:
       - BorderBrush@ActiveNormal := $highlightActiveBorderColor
       - BorderBrush@ActivePointerOver := $highlightActiveBorderColor
       - BorderBrush@MultiWindowActive := $highlightActiveBorderColor
-      - BorderBrush := $highlightBorderColor
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
     styles:
       - Visibility = Visible
@@ -396,31 +395,26 @@ controlStyles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
       - BorderThickness := $highlightBorderThickness
-      - BorderBrush := $highlightBorderColor
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
       - BorderThickness := $highlightBorderThickness
-      - BorderBrush := $highlightBorderColor
   - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
       - BorderThickness := $highlightBorderThickness
-      - BorderBrush := $highlightBorderColor
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder
     styles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
       - BorderThickness := $highlightBorderThickness
-      - BorderBrush := $highlightBorderColor
   - target: SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
       - BorderThickness := $highlightBorderThickness
-      - BorderBrush := $highlightBorderColor
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter
     styles:
       - Margin = 0,0,0,1
@@ -511,7 +505,6 @@ controlStyles:
     styles:
       - Margin := {{$highlightOffset}}
       - BorderThickness := $highlightBorderThickness
-      - BorderBrush := $highlightBorderColor
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
     styles:
       - Shadow :=
