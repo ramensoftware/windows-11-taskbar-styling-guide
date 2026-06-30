@@ -157,11 +157,11 @@ To achieve similar results, install and configure the following Windhawk mods in
   ```yaml
   backgroundStyle: acrylicBlur
   color:
-    red: 200
-    green: 200
-    blue: 200
+    red: 250 
+    green: 250
+    blue: 250
     accentColor: 0
-    transparency: 150
+    transparency: 190
   onlyWhenMaximized: 1
   excludedPrograms:
     - ''
@@ -169,9 +169,9 @@ To achieve similar results, install and configure the following Windhawk mods in
     use: 1
     backgroundStyle: acrylicBlur
     color:
-      red: 40
-      green: 40
-      blue: 40
+      red: 0
+      green: 0
+      blue: 0
       accentColor: 0
       transparency: 250
   ```
@@ -272,6 +272,7 @@ styleConstants:
   - highlightRadius = {{$buttonRadius*0.69}}
   - showHighlightActiveBorder = 0
   - showMultiWindowElement = 1
+  - multiWindowElementSpacing = 2
   - highlightMinWidth = 34
   - iconLabelSpacing = 8
   - badgeSize = 13
@@ -295,13 +296,13 @@ controlStyles:
     styles:
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
       - Margin := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{$highlightOffset+2}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowNormal := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowActive := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMulti := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+11*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowNormal := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowActive := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMulti := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
       - CornerRadius := $highlightRadius
       - BorderThickness := $highlightBorderThickness
       - BorderThickness@ActiveNormal := {{$highlightBorderThickness*$showHighlightActiveBorder}}
