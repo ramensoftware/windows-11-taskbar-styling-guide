@@ -173,7 +173,7 @@ To achieve similar results, install and configure the following Windhawk mods in
       green: 40
       blue: 40
       accentColor: 0
-      transparency: 255
+      transparency: 250
   ```
   </details><br>
 
