@@ -200,7 +200,7 @@ controlStyles:
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - CornerRadius=15
-      - Margin=195,18,-480,10
+      - Margin=195,18,-450,10
       - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
       - Padding=10,2
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#50ffffff" Offset="0.0"/><GradientStop Color="#10ffffff" Offset="0.5"/><GradientStop Color="#30ffffff" Offset="1.0"/></LinearGradientBrush>
