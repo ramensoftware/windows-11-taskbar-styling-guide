@@ -30,6 +30,8 @@ This theme is crafted for a pure, minimal "Dock" aesthetic. To maintain the visu
     * **Widgets:** The Widgets button is fully supported and can be used without issues. However, disabling it is recommended if you want to maximize the minimalist layout.
 * * **Task View:** The Task View button is fully supported and integrates seamlessly within this design.
 
+---
+
 ## 📐 Screen Compatibility & Reference Setup
 This configuration will work on **any device or resolution**. However, depending on your physical screen size and scaling, you may want to tweak certain values (like taskbar height or icon sizes) in the mods to perfectly align with your display.
 
