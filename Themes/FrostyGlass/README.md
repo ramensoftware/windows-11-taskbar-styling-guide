@@ -249,8 +249,10 @@ controlStyles:
       - CornerRadius:=$CornerRadius
   - target: SearchUx.SearchUI.SearchButtonControl
     styles:
-      - MaxWidth=130
+      - MaxWidth=Auto
       - Margin=-1,0,-1,0
+      - Padding=$TrayPadding
+      - CornerRadius=7
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Windows.UI.Xaml.Controls.Grid#GridElement > Windows.UI.Xaml.Controls.Border#VirtualDesktopSwitcherBackground
     styles:
       - BorderBrush:=$BorderBrush
@@ -385,6 +387,14 @@ controlStyles:
       - BorderThickness:=$BorderThickness
       - BorderBrush:=$BorderBrush
       - BackgroundSizing=InnerBorderEdge
+  - target: SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - CornerRadius:=7
+      - Padding=$TrayPadding
+  - target: Windows.UI.Xaml.Controls.Border#SearchPillBackgroundElement
+    styles:
+      - CornerRadius:=7
+      - Padding=$TrayPadding
 themeResourceVariables:
   - ''
 xamlDiagnosticsHandling: alert
