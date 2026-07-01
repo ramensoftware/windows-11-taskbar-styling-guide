@@ -25,9 +25,10 @@ This configuration provides a modern **Frosty Glass** aesthetic for your Windows
 This theme is crafted for a pure, minimal "Dock" aesthetic. To maintain the visual integrity and prevent layout breakage, please follow these recommendations:
 
 * **Centralized Taskbar:** This theme is engineered specifically for a centered taskbar layout. Left-aligned taskbars are not supported and will break the aesthetic.
-* **Minimalist Tray:** For the best results, keep the taskbar free of clutter. 
-    * **Search:** If you must use Search, enable only the **Search box** (`Settings > Personalization > Taskbar > Taskbar items > Search > Search box`). Other search modes may cause UI inconsistencies.
-    * **Widgets & Task View:** It is recommended to disable **Widgets** to maintain a clean layout. The **Task view** button is fully supported and works perfectly within this design.
+* **Minimalist Elements & Tray:** For the best results, keep the taskbar free of unnecessary clutter to maintain the clean, floating dock aesthetic.
+    * **Search:** The **Search Icon** and **Search Icon and Label** options are fully supported and work perfectly. However, it is **strongly recommended to avoid the full Search Box** (`Settings > Personalization > Taskbar > Taskbar items > Search > Search box`). While it displays fine when stationary, clicking to open it causes a temporary UI layout shift and distortion. This is a known bug currently being worked on.
+    * **Widgets:** The Widgets button is fully supported and can be used without issues. However, disabling it is recommended if you want to maximize the minimalist layout.
+* * **Task View:** The Task View button is fully supported and integrates seamlessly within this design.
 
 ## 📐 Screen Compatibility & Reference Setup
 This configuration will work on **any device or resolution**. However, depending on your physical screen size and scaling, you may want to tweak certain values (like taskbar height or icon sizes) in the mods to perfectly align with your display.
