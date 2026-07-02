@@ -46,6 +46,7 @@ controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+      - Background=Transparent
       - HorizontalAlignment=Stretch
   - target: Taskbar.TaskbarFrame
     styles:
@@ -67,6 +68,12 @@ controlStyles:
   - target: Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
+  - target: Taskbar.TaskbarBackground#BackgroundControl
+    styles:
+      - Opacity=0
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl
+    styles:
+      - Opacity=0
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
       - Margin=0,4,0,4

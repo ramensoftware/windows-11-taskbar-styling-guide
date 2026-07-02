@@ -120,6 +120,12 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
+  - target: Taskbar.TaskbarBackground#BackgroundControl
+    styles:
+      - Opacity=0
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl
+    styles:
+      - Opacity=0
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Margin=0,4,0,4
@@ -146,6 +152,7 @@ controlStyles:
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+      - Background=Transparent
       - ActualWidth=>containerGridWidth
   - target: SystemTray.ChevronIconView
     styles:
@@ -365,6 +372,12 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
+  - target: Taskbar.TaskbarBackground#BackgroundControl
+    styles:
+      - Opacity=0
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl
+    styles:
+      - Opacity=0
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Margin=0,8,0,8
@@ -553,6 +566,7 @@ controlStyles:
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+      - Background=Transparent
       - ActualWidth=>containerGridWidth
 ```
 </details>
@@ -607,6 +621,12 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
+  - target: Taskbar.TaskbarBackground#BackgroundControl
+    styles:
+      - Opacity=0
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl
+    styles:
+      - Opacity=0
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Margin=0,10,0,10
