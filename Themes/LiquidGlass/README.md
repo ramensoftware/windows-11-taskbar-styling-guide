@@ -179,8 +179,8 @@ controlStyles:
       - Grid.Column=1
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
-      - Padding=45,0,45,0
-      - Margin=-10,0,0,3
+      - Padding=-1,0,45,0
+      - Margin=0,0,0,3
       - CornerRadius=Auto
       - Background:=Red
       - HorizontalAlignment=Center
@@ -188,11 +188,11 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<WindhawkBlur BlurAmount="3" TintColor="#14090909"/>
-      - RadiusX={{(TaskHeight/4)*2}}
-      - RadiusY={{(TaskHeight/4)*2}}
+      - RadiusX={{(TaskHeight/4.1)*2}}
+      - RadiusY={{(TaskHeight/4.1)*2}}
       - StrokeThickness=1
       - Canvas.ZIndex=1
-      - Margin=-50,0,-50,0
+      - Margin=-40,0,-40,0
       - Stroke:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#70707070" Offset="0.1" /><GradientStop Color="#70505050" Offset="0.25" /><GradientStop Color="#90404040" Offset="0.5" /><GradientStop Color="#70505050" Offset="0.75" /><GradientStop Color="#70707070" Offset="0.9" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
     styles:
@@ -205,7 +205,7 @@ controlStyles:
       - VerticalAlignment=Stretch
       - HorizontalAlignment=Stretch
       - Height=NaN
-      - Margin=-50,0,-50,0
+      - Margin=-40,0,-40,0
       - Fill:=<WindhawkBlur BlurAmount="0" TintColor="#00101010"/>
   - target: Grid#SystemTrayFrameGrid
     styles:
@@ -228,13 +228,15 @@ controlStyles:
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=30
+      - // Bottom Shadow layer for Win+X flyout
   - target: MenuFlyoutPresenter > Border
     styles:
-      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#25131313"/>
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#2F131313"/>
       - BorderThickness=1,1,1,1
       - CornerRadius=32,32,30,30
       - Padding=5,9,6,9
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#59D3D3D3" Offset="0.0" /><GradientStop Color="#45494949" Offset="0.1" /><GradientStop Color="#50505050" Offset="0.5" /><GradientStop Color="#45494949" Offset="0.9" /><GradientStop Color="#50D3D3D3" Offset="1" /></LinearGradientBrush>
+      - // Win+X flyout
   - target: Grid#ConfirmatorMainGrid
     styles:
       - Background:=<WindhawkBlur BlurAmount="5" TintColor="#1C101010"/>
@@ -302,8 +304,8 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius={{ max(19, min(40, (TooltipHeight / 2) * 1)) }}
       - ActualHeight=>TooltipHeight
-      - Padding={{ max(16, min(22, TooltipHeight * 0.35)) }},{{ max(9, min(12, TooltipHeight * 0.2)) }},{{ max(16, min(22, TooltipHeight * 0.35)) }},{{ max(9.5, min(12, TooltipHeight * 0.22)) }}
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#59505050" Offset="0.15" /><GradientStop Color="#50404040" Offset="0.28" /><GradientStop Color="#50202020" Offset="0.5" /><GradientStop Color="#50404040" Offset="0.72" /><GradientStop Color="#50595959" Offset="0.85" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
+      - Padding={{ max(16, min(22, TooltipHeight * 0.35)) }},{{ max(9, min(11.5, TooltipHeight * 0.2)) }},{{ max(16, min(22, TooltipHeight * 0.35)) }},{{ max(9.5, min(12, TooltipHeight * 0.22)) }}
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#59505050" Offset="0.15" /><GradientStop Color="#60404040" Offset="0.28" /><GradientStop Color="#60202020" Offset="0.5" /><GradientStop Color="#60404040" Offset="0.72" /><GradientStop Color="#50595959" Offset="0.85" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
       - FontSize=14
       - FontWeight=Medium
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
@@ -388,6 +390,7 @@ controlStyles:
   - target: Border#BackgroundDimmingLayer
     styles:
       - Background:=<WindhawkBlur BlurAmount="12" TintColor="#101F1F1F"/>
+      - //Desktop Switcher's main bg layer
   - target: Border#VirtualDesktopBarBackground
     styles:
       - Background:=<WindhawkBlur BlurAmount="10" TintColor="#6B242424"/>
@@ -399,10 +402,12 @@ controlStyles:
     styles:
       - Margin=12,8,0,5
       - FontSize=14
+      - //Desktop 1,2 header text in desktop bar's opened desktop boxes
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed > Grid#MainGrid > TextBlock
     styles:
       - Margin=12,8,0,0
       - FontSize=14
+      - //New Desktop header text in desktop bar's new desktop opener box
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#MainBorder
     styles:
       - CornerRadius=19
@@ -414,13 +419,13 @@ controlStyles:
       - CornerRadius=19
       - Background:=<WindhawkBlur BlurAmount="15" TintColor="#35252525"/>
       - BorderThickness=1
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#60D3D3D3" Offset="0.0" /><GradientStop Color="#20696969" Offset="0.5" /><GradientStop Color="#50C1C1C1" Offset="1" /></LinearGradientBrush>
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50C1C1C1" Offset="0.0" /><GradientStop Color="#20696969" Offset="0.5" /><GradientStop Color="#50AFAFAF" Offset="1" /></LinearGradientBrush>
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed > Grid#MainGrid > Border#BorderHighlight
     styles:
       - CornerRadius=19
       - Background:=<WindhawkBlur BlurAmount="15" TintColor="#35252525"/>
       - BorderThickness=1
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#60D3D3D3" Offset="0.0" /><GradientStop Color="#20696969" Offset="0.5" /><GradientStop Color="#50C1C1C1" Offset="1" /></LinearGradientBrush>
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50C1C1C1" Offset="0.0" /><GradientStop Color="#20696969" Offset="0.5" /><GradientStop Color="#50AFAFAF" Offset="1" /></LinearGradientBrush>
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#ActiveDesktopPill
     styles:
       - Margin=0,0,0,2.5
@@ -431,12 +436,12 @@ controlStyles:
       - Margin=5,0,5,0
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - Background:=Transparent
-      - BorderBrush:=Transparent
+      - Background=Transparent
+      - BorderBrush=Transparent
   - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - Background:=Transparent
-      - BorderBrush:=Transparent
+      - BorderBrush=Transparent
+      - Background=Transparent
   - target: SystemTray.ChevronIconView
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="0" />
@@ -461,47 +466,44 @@ controlStyles:
   - target: SystemTray.OmniButton#NotificationCenterButton
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="0" />
+  - target: SystemTray.DateTimeIconContent > Grid#ContainerGrid > StackPanel > TextBlock#TimeInnerTextBlock
+    styles:
+      - ''
+  - target: SystemTray.DateTimeIconContent > Grid#ContainerGrid > StackPanel > TextBlock#DateInnerTextBlock
+    styles:
+      - ''
   - target: SystemTray.OmniButton#ControlCenterButton@CommonStates > Grid > Border#BackgroundBorder
     styles:
       - Background:=Transparent
       - BorderBrush:=Transparent
-  - target: SystemTray.OmniButton#ControlCenterButton > Grid@CommonStates
-    styles:
-      - RenderTransformOrigin=0.5,0.5
-      - RenderTransform:=<ScaleTransform ScaleX="1.2" ScaleY="1.2" />
-      - RenderTransform@PointerOver:=<ScaleTransform ScaleX="1.25" ScaleY="1.25" />
-      - RenderTransform@Pressed:=<ScaleTransform ScaleX="1.25" ScaleY="1.25" />
-      - RenderTransform@Checked:=<ScaleTransform ScaleX="1.25" ScaleY="1.25" />
-      - RenderTransform@CheckedPointerOver:=<ScaleTransform ScaleX="1.25" ScaleY="1.25" />
-      - RenderTransform@CheckedPressed:=<ScaleTransform ScaleX="1.25" ScaleY="1.25" />
-  - target: SystemTray.OmniButton#NotificationCenterButton > Grid@CommonStates
-    styles:
-      - RenderTransformOrigin=0.5,0.5
-      - RenderTransform:=<ScaleTransform ScaleX="1.05" ScaleY="1.05" />
-      - RenderTransform@PointerOver:=<ScaleTransform ScaleX="1.075" ScaleY="1.085" />
-      - RenderTransform@Pressed:=<ScaleTransform ScaleX="1.075" ScaleY="1.085" />
-      - RenderTransform@Checked:=<ScaleTransform ScaleX="1.075" ScaleY="1.085" />
-      - RenderTransform@CheckedPointerOver:=<ScaleTransform ScaleX="1.075" ScaleY="1.085" />
-      - RenderTransform@CheckedPressed:=<ScaleTransform ScaleX="1.075" ScaleY="1.085" />
   - target: SystemTray.NotifyIconView > Grid@CommonStates
     styles:
       - RenderTransformOrigin=0.5,0.5
       - RenderTransform:=<ScaleTransform ScaleX="1.2" ScaleY="1.2" />
-      - RenderTransform@PointerOver:=<ScaleTransform ScaleX="1.25" ScaleY="1.25" />
-      - RenderTransform@Pressed:=<ScaleTransform ScaleX="1.25" ScaleY="1.25" />
-      - RenderTransform@Checked:=<ScaleTransform ScaleX="1.25" ScaleY="1.25" />
-      - RenderTransform@CheckedPointerOver:=<ScaleTransform ScaleX="1.25" ScaleY="1.25" />
-      - RenderTransform@CheckedPressed:=<ScaleTransform ScaleX="1.25" ScaleY="1.25" />
+      - RenderTransform@PointerOver:=<ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+      - RenderTransform@Pressed:=<ScaleTransform ScaleX="1.0" ScaleY="1.0" />
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid@CommonStates
+    styles:
+      - RenderTransformOrigin=0.5,0.5
+      - RenderTransform:=<ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+      - RenderTransform@PointerOver:=<ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+      - RenderTransform@Pressed:=<ScaleTransform ScaleX="1.0" ScaleY="1.0" />
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid@CommonStates
+    styles:
+      - RenderTransformOrigin=0.5,0.5
+      - RenderTransform:=<ScaleTransform ScaleX="1.05" ScaleY="1.05" />
+      - RenderTransform@PointerOver:=<ScaleTransform ScaleX="1.15" ScaleY="1.15" />
+      - RenderTransform@Pressed:=<ScaleTransform ScaleX="0.9" ScaleY="0.9" />
   - target: SystemTray.ChevronIconView > Grid#ContainerGrid@
     styles:
       - RenderTransformOrigin=0.5,0.5
-      - RenderTransform:=<ScaleTransform ScaleX="1.26" ScaleY="1.26" />
-      - RenderTransform@Normal:=<ScaleTransform ScaleX="1.26" ScaleY="1.26" />
-      - RenderTransform@PointerOver:=<ScaleTransform ScaleX="1.31" ScaleY="1.31" />
-      - RenderTransform@Pressed:=<ScaleTransform ScaleX="1.31" ScaleY="1.31" />
-      - RenderTransform@CheckedNormal:=<ScaleTransform ScaleX="1.31" ScaleY="1.31" />
-      - RenderTransform@CheckedPointerOver:=<ScaleTransform ScaleX="1.31" ScaleY="1.31" />
-      - RenderTransform@CheckedPressed:=<ScaleTransform ScaleX="1.31" ScaleY="1.31" />
+      - RenderTransform:=<ScaleTransform ScaleX="1.28" ScaleY="1.28" />
+      - RenderTransform@Normal:=<ScaleTransform ScaleX="1.28" ScaleY="1.28" />
+      - RenderTransform@PointerOver:=<ScaleTransform ScaleX="1.37" ScaleY="1.37" />
+      - RenderTransform@Pressed:=<ScaleTransform ScaleX="1.1" ScaleY="1.1" />
+      - RenderTransform@CheckedNormal:=<ScaleTransform ScaleX="1.37" ScaleY="1.37" />
+      - RenderTransform@CheckedPointerOver:=<ScaleTransform ScaleX="1.37" ScaleY="1.37" />
+      - RenderTransform@CheckedPressed:=<ScaleTransform ScaleX="1.1" ScaleY="1.1" />
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
     styles:
       - Margin=2,0,3,0
@@ -513,7 +515,7 @@ controlStyles:
     styles:
       - Background:=Transparent
       - BorderBrush:=Transparent
-  - target: SystemTray.ChevronIconView > * > TextBlock#InnerTextBlock
+  - target: SystemTray.ChevronIconView > * > TextBlock#InnerTextBlock[Text=]
     styles:
       - Text:=&#xED14;
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
