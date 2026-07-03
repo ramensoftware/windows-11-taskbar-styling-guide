@@ -27,10 +27,10 @@ Dark Mode
   ![Settings](Settings.png)
   </details><br>
   
-- Activated border indicator for opened app - Optional
-- Windows Start button display - Optional
 - *Widgets must be installed to enable the weather widget on the left. Install it back if you previously removed it:
    https://apps.microsoft.com/detail/9mssgkg348sp
+- Activated border indicator for opened app - Optional
+- Windows Start button display - Optional
 
 ## Required Windhawk Mods for similar results
 To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler (click each to expand settings):
@@ -322,9 +322,7 @@ controlStyles:
       - Canvas.ZIndex = -1
   - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
     styles:
-      - VerticalAlignment = 3
-      - HorizontalAlignment = 3
-      - Margin = -1,{{$taskbarTopOffset}},1,{{$taskbarBottomOffset}}
+      - Margin = 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
   - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator > Grid#LayoutRoot
     styles:
@@ -377,13 +375,13 @@ controlStyles:
       - Visibility = Collapsed
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
+      - Padding = 0
       - Visibility := {{1-$showWindowsButton}}
       - Width := $windowsButtonWidth
-      - Margin = 0,0,2,0
+      - Margin := 0,{{$taskbarTopOffset}},4,{{$taskbarBottomOffset}}
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
-      - Margin := 0,{{$taskbarTopOffset-4}},0,{{$taskbarBottomOffset-4}}
-      - Padding = 5
+      # - Padding = 5
       - CornerRadius := $buttonRadius
       - BorderThickness := $borderThickness
       - Background := $fillColor
@@ -521,7 +519,7 @@ controlStyles:
     styles:
       - Width := {{WeatherTempWidth+WeatherCondWidth+53}}
       - Height = Auto
-      - Margin := {{$taskbarLeftOffset}},{{$taskbarTopOffset}},58,{{$taskbarBottomOffset}}
+      - Margin := {{$taskbarLeftOffset}},{{$taskbarTopOffset}},60,{{$taskbarBottomOffset}}
       - Padding = 0
       - CornerRadius := {{$buttonRadius*$taskbarSidesRounded}},{{$buttonRadius}},{{$buttonRadius}},{{$buttonRadius*$taskbarSidesRounded}}
       - BorderThickness := $borderThickness
