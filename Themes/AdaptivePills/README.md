@@ -19,14 +19,18 @@ Dark Mode
 - Theme is designed on Windows 11 - 25H2 (OS Build 26200.8737)
 - Tested on monitors: 1920x1080 (100% scaling) | 3840x2160 (250% scaling)
 - Designed for both light and dark modes
-- Designed to work with: *Widgets - On | Task view - Off | Search - Hide | Taskbar alignment - Center |Show smaller taskbar buttons - Never
+- Designed to work with: Search - Hide | Task view - Off  | *Widgets - On | Taskbar alignment - Center | Show smaller taskbar buttons - Never
 
+  <details>
+  <summary>Click to expand to view Taskbar Windows Settings for similar results</summary>
 
-- *Widgets must be installed to enable the weather widget on the left. Install it back if you previously removed it.
-  - https://apps.microsoft.com/detail/9mssgkg348sp
+  ![Settings](Settings.png)
+  </details><br>
+  
 - Activated border indicator for opened app - Optional
 - Windows Start button display - Optional
-- Progress indicator is not supported (transparent background)
+- *Widgets must be installed to enable the weather widget on the left. Install it back if you previously removed it:
+   https://apps.microsoft.com/detail/9mssgkg348sp
 
 ## Required Windhawk Mods for similar results
 To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler (click each to expand settings):
@@ -273,9 +277,9 @@ styleConstants:
   - fillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.45" TintLuminosityOpacity="0.8" NoiseOpacity="0.15"/>
   - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}"/>
   - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.6"/>
-  - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.15"/>
+  - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
 controlStyles:
-  - target: ScrollViewer
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame
     styles:
       - Height =>TaskbarHeight
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
