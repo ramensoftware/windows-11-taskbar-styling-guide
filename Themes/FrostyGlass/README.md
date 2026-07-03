@@ -75,7 +75,7 @@ The theme styles can be imported manually by following these steps:
 ```yaml
 theme: ''
 styleConstants:
-  - Background=<AcrylicBrush TintColor="#10000020"/>
+  - Background=<AcrylicBrush TintColor="#1000000F"/>
   - BorderBrush2=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="0.0" /><GradientStop Color="{ThemeResource SystemChromeLowColor}" Offset="0.25" /><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="1" /></LinearGradientBrush>
   - BorderThickness=1
   - CornerRadius=10
