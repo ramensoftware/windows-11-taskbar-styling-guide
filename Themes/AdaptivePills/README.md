@@ -7,24 +7,21 @@ AdaptivePills. A sleek, minimal reinterpretation of the Windows 11 taskbar with 
 
 The theme is very parameterized. You can tweak styleConstants easily to generate various designs/adjustments. Scroll to the bottom for more info. 
 
-## Demonstration
-Light Mode: Normal
+## Demo (27" Monitor | 1920x1080)
+Light Mode
 ![Light](Light.png)
 
 
-Dark Mode: Normal
+Dark Mode
 ![Dark](Dark.png)
 
 ## Notes
-- Theme is designed on Windows 11 - 25H2
+- Theme is designed on Windows 11 - 25H2 (OS Build 26200.8737)
 - Tested on monitors: 1920x1080 (100% scaling) | 3840x2160 (250% scaling)
 - Designed for both light and dark modes
-- Designed to work with:
-  - *Widgets - On
-  - Task view - Off
-  - Search - Hide
-  - Taskbar alignment - Center
-  - Show smaller taskbar buttons - Never
+- Designed to work with: *Widgets - On | Task view - Off | Search - Hide | Taskbar alignment - Center |Show smaller taskbar buttons - Never
+
+
 - *Widgets must be installed to enable the weather widget on the left. Install it back if you previously removed it.
   - https://apps.microsoft.com/detail/9mssgkg348sp
 - Activated border indicator for opened app - Optional
@@ -275,7 +272,8 @@ styleConstants:
   - windowsButtonWidth = 50
   - fillColor = <WindhawkBlur BlurAmount="8" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.45" TintLuminosityOpacity="0.8" NoiseOpacity="0.15"/>
   - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}"/>
-  - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.9"/>
+  - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.6"/>
+  - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.15"/>
 controlStyles:
   - target: ScrollViewer
     styles:
@@ -305,6 +303,7 @@ controlStyles:
       - BorderBrush@ActiveNormal := $highlightActiveBorderColor
       - BorderBrush@ActivePointerOver := $highlightActiveBorderColor
       - BorderBrush@MultiWindowActive := $highlightActiveBorderColor
+      - Canvas.ZIndex = 2
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
     styles:
       - Visibility = Visible
@@ -317,19 +316,44 @@ controlStyles:
       - Fill := $fillColor
       - Stroke := $borderColor
       - Canvas.ZIndex = -1
+  - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
+    styles:
+      - VerticalAlignment = 3
+      - HorizontalAlignment = 3
+      - Margin = -1,{{$taskbarTopOffset}},1,{{$taskbarBottomOffset}}
+      - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
+  - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator > Grid#LayoutRoot
+    styles:
+      - Background := $fillColor
+      - BorderThickness := $borderThickness
+      - BorderBrush := $borderColor
+      - CornerRadius := $buttonRadius
+  - target: Border#ProgressBarRoot > Border > Grid
+    styles:
+      - Height = Auto
+  - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#ProgressBarTrack
+    styles:
+      - Fill := transparent
+  - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#DeterminateProgressBarIndicator
+    styles:
+      - RadiusX := $highlightRadius
+      - RadiusY := $highlightRadius
+      - Fill := $progressColor
+      - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
   - target: Border#MultiWindowElement
     styles:
       - Visibility :={{1-$showMultiWindowElement}}
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
-      - Margin := 0,{{$taskbarTopOffset}},5,{{$taskbarBottomOffset}}
-      - CornerRadius := $highlightRadius
+      - Margin := 0,0,5,0
       - HorizontalAlignment = 2
+      - Canvas.ZIndex = 2
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
     styles:
       - Margin := {{$iconLabelSpacing-6}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset+2}}
       - Padding := {{$leftRightPadding}},0
       - HorizontalAlignment = 1
       - VerticalAlignment = 1
+      - Canvas.ZIndex = 3
   - target: Taskbar.TaskListButton#TaskListButton
     styles:
       - Margin := {{$buttonSpacing-6}},0,0,0
@@ -337,6 +361,7 @@ controlStyles:
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - HorizontalAlignment = 2
+      - Canvas.ZIndex = 3
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Visibility = Collapsed
@@ -364,12 +389,14 @@ controlStyles:
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
+      - Canvas.ZIndex = 3
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
     styles:
       - MinWidth := $badgeSize
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
+      - Canvas.ZIndex = 3
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText
     styles:
       - FontSize = 10
