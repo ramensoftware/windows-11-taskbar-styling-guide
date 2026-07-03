@@ -15,10 +15,6 @@ Light Mode: Normal
 Dark Mode: Normal
 ![Dark](Dark.png)
 
-
-Pill States
-![PillDemo](PillDemo.png)
-
 ## Notes
 - Theme is designed on Windows 11 - 25H2
 - Tested on monitors: 1920x1080 (100% scaling) | 3840x2160 (250% scaling)
