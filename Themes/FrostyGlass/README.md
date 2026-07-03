@@ -81,7 +81,7 @@ styleConstants:
   - CornerRadius=10
   - BorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.25" /><GradientStop Color="#50808080" Offset="1" /></LinearGradientBrush>
   - Background2=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.3" FallbackColor="{ThemeResource SystemChromeAltHighColor}" />
-  - TrayPadding=4.5,4,4.5,4
+  - TrayPadding=2,4,2,4
   - ElementBG=<SolidColorBrush Color="{ThemeResource SystemChromeAltHighColor}" Opacity="0.3" />
   - ElementBorderThickness=1
   - ElementBorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="1" /><GradientStop Color="#50606060" Offset="0.15" /></LinearGradientBrush>
@@ -112,20 +112,20 @@ controlStyles:
       - Padding=-1,0,-1,0
   - target: SystemTray.ChevronIconView
     styles:
-      - Padding=$TrayPadding
+      - Padding=4.5,4,2,4
       - CornerRadius=7
   - target: SystemTray.NotifyIconView#NotifyItemIcon
     styles:
       - Padding=$TrayPadding
       - CornerRadius=7
-  - target: SystemTray.OmniButton
+  - target: SystemTray.OmniButton#ControlCenterButton
     styles:
       - Padding=$TrayPadding
       - CornerRadius=7
       - MaxWidth=Auto
-  - target: SystemTray.CopilotIcon
+  - target: SystemTray.OmniButton#NotificationCenterButton
     styles:
-      - Padding=$TrayPadding
+      - Padding=2,4,4.5,4
       - CornerRadius=7
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid
     styles:
@@ -180,7 +180,7 @@ controlStyles:
       - BorderThickness=$BorderThickness
       - BorderBrush:=$BorderBrush
       - Background:=$Background
-      - CornerRadius=$CornerRadius
+      - CornerRadius=10
   - target: TextBlock#SearchBoxTextBlock
     styles:
       - Text=Search
@@ -395,6 +395,15 @@ controlStyles:
     styles:
       - CornerRadius:=7
       - Padding=$TrayPadding
+  - target: Border#TaskbarSearchBackground
+    styles:
+      - CornerRadius=$CornerRadius
+      - Background:=$Background
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+  - target: SystemTray.NotifyIconView > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=7
 themeResourceVariables:
   - ''
 xamlDiagnosticsHandling: alert
