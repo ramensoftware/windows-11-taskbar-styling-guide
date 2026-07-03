@@ -30,7 +30,7 @@ Pill States
 - Designed to work with:
   - *Widgets - On
   - Task view - Off
-  - Search - Hidden
+  - Search - Hide
   - Taskbar alignment - Center
   - Show smaller taskbar buttons - Never
 - *Widgets must be installed to enable the weather widget on the left. Install it back if you previously removed it.
@@ -69,7 +69,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   fontSize: 12
   fontFamily: ''
   textTrimming: characterEllipsis
-  leftAndRightPaddingSize: 11
+  leftAndRightPaddingSize: 0
   spaceBetweenIconAndLabel: 0
   runningIndicatorHeight: -1
   runningIndicatorVerticalOffset: 0
@@ -192,7 +192,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   hideLanguageBar: 0
   hideLanguageSupplementaryIcons: 1
   hideBellIcon: never
-  showDesktopButtonWidth: 1
+  showDesktopButtonWidth: 12
   ```
   </details><br>
 
@@ -258,7 +258,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```yaml
 styleConstants:
-  - fixedWidthOn = 0
   - taskbarLeftOffset = 10
   - taskbarRightOffset = 10
   - taskbarTopOffset = 6
@@ -273,8 +272,9 @@ styleConstants:
   - showHighlightActiveBorder = 0
   - showMultiWindowElement = 1
   - multiWindowElementSpacing = 2
-  - highlightMinWidth = 34
-  - iconLabelSpacing = 8
+  - highlightMinWidth = 43
+  - iconLabelSpacing = 4
+  - leftRightPadding = 10
   - badgeSize = 13
   - badgeNudge = 2,5,0,0
   - sysTrayIconSize = 15
@@ -334,31 +334,34 @@ controlStyles:
       - HorizontalAlignment = 2
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
     styles:
-      - Margin := {{$iconLabelSpacing}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset+2}}
-      - HorizontalAlignment := $fixedWidthOn
+      - Margin := {{$iconLabelSpacing-6}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset+2}}
+      - Padding := {{$leftRightPadding}},0
+      - HorizontalAlignment = 1
       - VerticalAlignment = 1
   - target: Taskbar.TaskListButton#TaskListButton
     styles:
       - Margin := {{$buttonSpacing-6}},0,0,0
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
-      - Margin := 11,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - HorizontalAlignment = 2
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Visibility = Collapsed
   - target: Rectangle#BackgroundStroke
     styles:
       - Visibility = Collapsed
-  - target: Taskbar.SearchBoxButton
+  - target: Taskbar.TaskbarExtensionElement
     styles:
       - Visibility = Collapsed
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
-      - Height := {{(TaskbarHeight-4)*$showWindowsButton}}
-      - Width = {{$windowsButtonWidth*$showWindowsButton}}
+      - Visibility := {{1-$showWindowsButton}}
+      - Width := $windowsButtonWidth
       - Margin = 0,0,2,0
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
+      - Margin := 0,{{$taskbarTopOffset-4}},0,{{$taskbarBottomOffset-4}}
       - Padding = 5
       - CornerRadius := $buttonRadius
       - BorderThickness := $borderThickness
@@ -381,7 +384,7 @@ controlStyles:
       - HorizontalAlignment = 1
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton
     styles:
-      - Margin := 0,0,{{$taskbarRightOffset-1}},0
+      - Margin := 0,0,{{$taskbarRightOffset-12}},0
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid
     styles:
       - Margin := {{$sysTraySpacing}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
@@ -505,6 +508,16 @@ controlStyles:
     styles:
       - Margin := {{$highlightOffset}}
       - BorderThickness := $highlightBorderThickness
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[1]
+    styles:
+      - HorizontalAlignment = 0
+      - Margin = 3,0,0,0
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[2]
+    styles:
+      - HorizontalAlignment = 0
+      - VerticalAlignment = 0
+      - RenderTransformOrigin = -0.5,0.5
+      - RenderTransform := <TransformGroup><ScaleTransform ScaleX = "0.7" ScaleY = "0.7" /><TranslateTransform X="16" Y="0" /></TransformGroup>
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
     styles:
       - Shadow :=
