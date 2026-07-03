@@ -37,7 +37,7 @@ Pill States
   - https://apps.microsoft.com/detail/9mssgkg348sp
 - Activated border indicator for opened app - Optional
 - Windows Start button display - Optional
-- Pinned apps are not fully supported (transparent background)
+- Progress indicator is not supported (transparent background)
 
 ## Required Windhawk Mods for similar results
 To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler (click each to expand settings):
@@ -273,10 +273,10 @@ styleConstants:
   - showMultiWindowElement = 1
   - multiWindowElementSpacing = 2
   - highlightMinWidth = 43
-  - iconLabelSpacing = 4
-  - leftRightPadding = 10
+  - iconLabelSpacing = 5
+  - leftRightPadding = 8
   - badgeSize = 13
-  - badgeNudge = 2,5,0,0
+  - badgeNudge = 10,6,0,0
   - sysTrayIconSize = 15
   - taskbarSidesRounded = 1
   - showWindowsButton = 0
