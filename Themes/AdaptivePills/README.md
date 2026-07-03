@@ -9,16 +9,12 @@ The theme is very parameterized. You can tweak styleConstants easily to generate
 
 ## Demonstration
 Light Mode: Normal
-![Light1](Light1.png)
+![Light](Light.png)
 
-Light Mode: Window Maximized
-![LightMaximized](LightMaximized.png)
 
 Dark Mode: Normal
-![Dark1](Dark1.png)
+![Dark](Dark.png)
 
-Dark Mode: Window Maximized
-![DarkMaximized](DarkMaximized.png)
 
 Pill States
 ![PillDemo](PillDemo.png)
