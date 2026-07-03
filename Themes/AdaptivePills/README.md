@@ -381,7 +381,6 @@ controlStyles:
       - Margin := 0,{{$taskbarTopOffset}},4,{{$taskbarBottomOffset}}
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
-      # - Padding = 5
       - CornerRadius := $buttonRadius
       - BorderThickness := $borderThickness
       - Background := $fillColor
@@ -406,6 +405,9 @@ controlStyles:
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton
     styles:
       - Margin := 0,0,{{$taskbarRightOffset-12}},0
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel
+    styles:
+      - Padding = 4,0
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid
     styles:
       - Margin := {{$sysTraySpacing}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
@@ -492,7 +494,7 @@ controlStyles:
       - MaxLines = 1
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.DateTimeIconContent > Grid#ContainerGrid > StackPanel
     styles:
-      - Margin = 1,-2,1,0
+      - Margin = 0,-2,0,0
   - target: Grid#OverflowRootGrid > Border
     styles:
       - Background := $fillColor
