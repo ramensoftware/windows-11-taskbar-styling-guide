@@ -41,6 +41,8 @@ Light Mode | Normal & Maximized Window
 - Activated border indicator for focused app - Optional
 - Windows Start button visibility - Optional
 
+<br>
+
 ## Required Windhawk Mods for similar results
 To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler (click each to expand settings):
 
@@ -57,7 +59,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   </details><br>
 
   <details>
-  <summary>Taskbar Labels for Windows 11 – to control panels width. You may increase taskbarItemWidth value to achieve longer buttons (just make sure to flip fixedWidthOn = 0 to 1 in the theme StyleConstants).</summary>
+  <summary>Taskbar Labels for Windows 11 – for labels and control of taskbar buttons width. You may increase taskbarItemWidth value to achieve longer buttons.</summary>
 
   ```yaml
   mode: labelsWithCombining
