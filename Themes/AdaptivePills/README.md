@@ -95,6 +95,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   ShowSeconds: 0
   TimeFormat: ''
   DateFormat: d/M/y
+  DateLocale: ''
   WeekdayFormat: custom
   WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
   TopLine: ''
@@ -109,6 +110,8 @@ To achieve similar results, install and configure the following Windhawk mods in
   DataCollection:
     NetworkMetricsFormat: mbs
     NetworkMetricsFixedDecimals: -1
+    DiskMetricsFormat: ''
+    DiskMetricsFixedDecimals: 0
     PercentageFormat: spacePaddingAndSymbol
     UpdateInterval: 1
     NetworkAdapterName: ''
@@ -117,6 +120,7 @@ To achieve similar results, install and configure the following Windhawk mods in
     IgnoredPlayers:
       - ''
     MaxLength: 28
+    MediaInfoFormat: ''
     NoMediaText: No media
     RemoveBrackets: 0
   WebContentWeatherLocation: ''
@@ -145,16 +149,18 @@ To achieve similar results, install and configure the following Windhawk mods in
     FontStyle: ''
     FontStretch: ''
     CharacterSpacing: 0
+    LineHeight: 0
   DateStyle:
     Hidden: 0
     TextColor: ''
     TextAlignment: ''
     FontSize: 12
-    FontFamily: ''
+    FontFamily: Segoe UI Variable
     FontWeight: Medium
     FontStyle: Normal
     FontStretch: ''
     CharacterSpacing: 0
+    LineHeight: 0
   oldTaskbarOnWin11: 0
   ```
   </details><br>
@@ -542,6 +548,7 @@ controlStyles:
       - Canvas.ZIndex = 2
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
     styles:
+      - FontFamily = Segoe UI Variable
       - Margin := {{$iconLabelSpacing-6}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset+2}}
       - Padding := {{$leftRightPadding}},0
       - HorizontalAlignment = 1
