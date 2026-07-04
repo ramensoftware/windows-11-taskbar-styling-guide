@@ -10,11 +10,15 @@ The theme is very parameterized. You can tweak styleConstants easily to generate
 ## Demo (27" Monitor | 1920x1080)
 
 Dark Mode | Normal & Maximized Window
+
 ![Dark](Dark.png)
+
 ![DarkMaximized](DarkMaximized.png)
 
 Light Mode | Normal & Maximized Window
+
 ![Light](Light.png)
+
 ![LightMaximized](LightMaximized.png)
 
 ## Notes
