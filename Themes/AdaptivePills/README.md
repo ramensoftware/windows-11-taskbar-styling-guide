@@ -28,15 +28,15 @@ Dark Mode
   </details><br>
 
   
-- *Widgets must be installed to enable the weather widget on the left. Install it back if you previously removed it:
+- *Widgets must be installed to enable the weather widget on the left. Download link in case it was removed:
    https://apps.microsoft.com/detail/9mssgkg348sp
   <details>
   <summary>Click to expand to view Widget Board Settings for similar results</summary>
 
   ![WidgetBoardSettings](WidgetBoardSettings.png)
   </details><br>
-- Activated border indicator for opened app - Optional
-- Windows Start button display - Optional
+- Activated border indicator for focused app - Optional
+- Windows Start button visibility - Optional
 
 ## Required Windhawk Mods for similar results
 To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler (click each to expand settings):
