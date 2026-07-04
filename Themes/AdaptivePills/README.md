@@ -24,11 +24,17 @@ Dark Mode
   <details>
   <summary>Click to expand to view Taskbar Windows Settings for similar results</summary>
 
-  ![Settings](Settings.png)
+  ![TaskbarSettings](TaskbarSettings.png)
   </details><br>
+
   
 - *Widgets must be installed to enable the weather widget on the left. Install it back if you previously removed it:
    https://apps.microsoft.com/detail/9mssgkg348sp
+  <details>
+  <summary>Click to expand to view Widget Board Settings for similar results</summary>
+
+  ![WidgetBoardSettings](WidgetBoardSettings.png)
+  </details><br>
 - Activated border indicator for opened app - Optional
 - Windows Start button display - Optional
 
@@ -504,22 +510,22 @@ controlStyles:
       - CornerRadius := $highlightRadius
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
     styles:
-      - ActualWidth => WeatherCondWidth
+      - ActualWidth => WeatherTempWidth
       - RenderTransform := <TranslateTransform X="0" Y="8" />
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2]
     styles:
-      - ActualWidth => WeatherTempWidth
-      - RenderTransform := <TranslateTransform X="{{WeatherCondWidth+7}}" Y="-8" />
+      - ActualWidth => WeatherCondWidth
+      - RenderTransform := <TranslateTransform X="{{WeatherTempWidth+7}}" Y="-8" />
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid
     styles:
-      - Width := {{WeatherTempWidth+WeatherCondWidth+53}}
+      - Width := {{WeatherCondWidth+WeatherTempWidth+53}}
       - HorizontalAlignment = 0
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
       - Margin = 5,0,0,0
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
-      - Width := {{WeatherTempWidth+WeatherCondWidth+53}}
+      - Width := {{WeatherCondWidth+WeatherTempWidth+53}}
       - Height = Auto
       - Margin := {{$taskbarLeftOffset}},{{$taskbarTopOffset}},60,{{$taskbarBottomOffset}}
       - Padding = 0
