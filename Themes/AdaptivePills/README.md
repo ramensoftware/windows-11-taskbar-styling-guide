@@ -539,6 +539,18 @@ controlStyles:
       - RadiusY := $highlightRadius
       - Fill := $progressColor
       - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
+  - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#IndeterminateProgressBarIndicator
+    styles:
+      - RadiusX := $highlightRadius
+      - RadiusY := $highlightRadius
+      - Fill := $progressColor
+      - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
+  - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#IndeterminateProgressBarIndicator2
+    styles:
+      - RadiusX := $highlightRadius
+      - RadiusY := $highlightRadius
+      - Fill := $progressColor
+      - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
   - target: Border#MultiWindowElement
     styles:
       - Visibility :={{1-$showMultiWindowElement}}
