@@ -3,6 +3,14 @@
 **Author**: [mohsinhasanpc](https://github.com/mohsinhasanpc)
 
 ![Screenshot](screenshot.png)
+![Screenshot](screenshothoverflyout.png)
+![Screenshot](ScreenshotAltTabBar.png)
+![Screenshot](SnapbarFlyout.png)
+![Screenshot](SnapLayout.png)
+![Screenshot](ScreenshotBrightnessFlyout.png)
+![Screenshot](VolumeFlyout.png)
+![Screenshot](tooltips.png)
+![Screenshot](ScreenshotDesktopPreview.png)
 
 > [!NOTE]
 > This theme is made for dark mode. As such it may not display correctly if used on light themes.
