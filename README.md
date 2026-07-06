@@ -13,6 +13,7 @@
   * [Taskbar background](#taskbar-background)
   * [Taskbar border](#taskbar-border)
   * [Thumbnail preview background](#thumbnail-preview-background)
+  * [Tasklist + System tray grouped alignment](#Tasklist-+-System-tray-grouped-alignment)
 * [Task list](#task-list)
   * [Start button image](#start-button-image)
   * [Hide the start button](#hide-the-start-button)
@@ -203,6 +204,33 @@ Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#Backgr
 Style:
 ```
 Fill=<color>
+```
+
+### Tasklist + System tray grouped alignment
+**Original Author**: [CryptoProgenitor](https://github.com/CryptoProgenitor)
+Target:
+```
+ScrollViewer > ScrollContentPresenter > Border > Grid
+```
+Style:
+```
+ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+```
+Target:
+```
+Taskbar.TaskbarFrame
+```
+Style:
+```
+Grid.Column=1
+```
+Target:
+```
+SystemTray.SystemTrayFrame
+```
+Style:
+```
+Grid.Column=1
 ```
 
 ## Task list
@@ -568,6 +596,7 @@ Style:
 ```
 Height=<value>
 ```
+
 
 ## Transforms
 
