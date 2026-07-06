@@ -13,7 +13,7 @@
   * [Taskbar background](#taskbar-background)
   * [Taskbar border](#taskbar-border)
   * [Thumbnail preview background](#thumbnail-preview-background)
-  * [Tasklist + System tray grouped alignment](#Tasklist-+-System-tray-grouped-alignment)
+  * [Tasklist + System tray grouped alignment](#Tasklist--System-tray-grouped-alignment)
 * [Task list](#task-list)
   * [Start button image](#start-button-image)
   * [Hide the start button](#hide-the-start-button)
@@ -208,6 +208,7 @@ Fill=<color>
 
 ### Tasklist + System tray grouped alignment
 **Original Author**: [CryptoProgenitor](https://github.com/CryptoProgenitor)
+
 Target:
 ```
 ScrollViewer > ScrollContentPresenter > Border > Grid
