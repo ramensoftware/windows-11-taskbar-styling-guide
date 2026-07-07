@@ -24,7 +24,7 @@ Light Mode | Normal & Maximized Window
 ## Notes
 - Designed on Windows 11 - 25H2 (OS Build 26200.8737)
 - Tested on monitors: 1920x1080 (100% scaling) | 3840x2160 (250% scaling)
-- Supports both light and dark modes
+- Compatible with both light and dark modes
 - Settings: Search - Hide | Task view - Off  | *Widgets - On | Taskbar alignment - Center | Show smaller taskbar buttons - Never
 
   <details>
