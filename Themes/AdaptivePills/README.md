@@ -3,7 +3,7 @@
 **Author**: [Deen-0x](https://github.com/Deen-0x)
 
 ## Description
-AdaptivePills. A sleek reinterpretation of the Windows 11 taskbar with a background that turns task buttons into rounded adaptive pills that keep the native feel but breathe more.
+AdaptivePills. A sleek reinterpretation of the Windows 11 taskbar with a background that turns task buttons into small rounded adaptive pills that keep the native feel but breathe more.
 
 The theme is very parameterized. You can tweak styleConstants easily to generate various designs/adjustments. Scroll to the bottom for more info. 
 
@@ -32,7 +32,6 @@ Light Mode | Normal & Maximized Window
 
   ![TaskbarSettings](TaskbarSettings.png)
   </details><br>
-
   
 - *Widgets must be installed to enable the weather widget on the left. Download link in case it was removed:
    https://apps.microsoft.com/detail/9mssgkg348sp
@@ -41,9 +40,7 @@ Light Mode | Normal & Maximized Window
 
   ![WidgetBoardSettings](WidgetBoardSettings.png)
   </details><br>
-- The media player on the right of the weather widget is a separate Mod that will be included in Recommended Mods. 
-- Activated border indicator for focused app - Optional
-- Windows Start button visibility - Optional
+- The media player on the right of the weather widget is a separate Mod that is included in Recommended Mods - Optional.
 
 <br>
 
@@ -54,10 +51,10 @@ To achieve similar results, install and configure the following Windhawk mods in
   <summary>Taskbar Height and Icon Size.</summary>
 
   ```yaml
-  TaskbarHeight: 37
-  IconSize: 15
+  TaskbarHeight: 31
+  IconSize: 14
   TaskbarButtonWidth: 30
-  IconSizeSmall: 15
+  IconSizeSmall: 14
   TaskbarButtonWidthSmall: 15
   ```
   </details><br>
@@ -72,7 +69,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   progressIndicatorStyle: sameAsRunningIndicatorStyle
   excludedPrograms:
     - ''
-  minimumTaskbarItemWidth: 70
+  minimumTaskbarItemWidth: 20
   maximumTaskbarItemWidth: 200
   fontSize: 12
   fontFamily: ''
@@ -450,30 +447,24 @@ The theme styles can also be imported manually. To do that, follow these steps:
 styleConstants:
   - taskbarLeftOffset = 10
   - taskbarRightOffset = 10
-  - taskbarTopOffset = 6
-  - taskbarBottomOffset = 5
-  - sysTraySpacing = 10
-  - buttonSpacing = 10
-  - highlightOffset = 3
+  - taskbarTopOffset = 5
+  - taskbarBottomOffset = 4
+  - buttonSpacing = 6
+  - sysTraySpacing = 6
+  - highlightOffset = 2
   - borderThickness = 1
-  - highlightBorderThickness = 1
-  - buttonRadius = 7
-  - highlightRadius = {{$buttonRadius*0.69}}
-  - showHighlightActiveBorder = 0
-  - showMultiWindowElement = 1
-  - multiWindowElementSpacing = 2
   - highlightMinWidth = 43
+  - buttonRadius = 7
+  - highlightRadius = 6
   - iconLabelSpacing = 5
-  - leftRightPadding = 8
+  - leftRightPadding = 5
+  - multiWindowNotch = 4
   - badgeSize = 13
-  - badgeNudge = 10,6,0,0
+  - badgeNudge = 5,3,0,0
   - sysTrayIconSize = 15
   - taskbarSidesRounded = 1
-  - showWindowsButton = 0
-  - windowsButtonWidth = 50
-  - fillColor = <WindhawkBlur BlurAmount="3" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
+  - fillColor = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
   - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}"/>
-  - highlightActiveBorderColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.6"/>
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame
@@ -487,23 +478,16 @@ controlStyles:
     styles:
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
       - Margin := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{$highlightOffset+2}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowNormal := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowActive := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMulti := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)*(1-$showMultiWindowElement)+($multiWindowElementSpacing+9)*$showMultiWindowElement}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowNormal := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowActive := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMulti := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
       - CornerRadius := $highlightRadius
-      - BorderThickness := $highlightBorderThickness
-      - BorderThickness@ActiveNormal := {{$highlightBorderThickness*$showHighlightActiveBorder}}
-      - BorderThickness@ActivePointerOver := {{$highlightBorderThickness*$showHighlightActiveBorder}}
-      - BorderThickness@MultiWindowActive := {{$highlightBorderThickness*$showHighlightActiveBorder}}
-      - BorderThickness@MultiWindowPointerOver := {{$highlightBorderThickness*$showHighlightActiveBorder}}
+      - BorderThickness = 0
       - VerticalAlignment = 1
-      - BorderBrush@ActiveNormal := $highlightActiveBorderColor
-      - BorderBrush@ActivePointerOver := $highlightActiveBorderColor
-      - BorderBrush@MultiWindowActive := $highlightActiveBorderColor
       - Canvas.ZIndex = 2
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
     styles:
@@ -553,15 +537,11 @@ controlStyles:
       - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
   - target: Border#MultiWindowElement
     styles:
-      - Visibility :={{1-$showMultiWindowElement}}
-      - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
-      - Margin := 0,0,5,0
-      - HorizontalAlignment = 2
-      - Canvas.ZIndex = 2
+      - Visibility = Collapsed
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
     styles:
       - FontFamily = Segoe UI Variable
-      - Margin := {{$iconLabelSpacing-6}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset+2}}
+      - Margin := {{$iconLabelSpacing-6}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset+3}}
       - Padding := {{$leftRightPadding}},0
       - HorizontalAlignment = 1
       - VerticalAlignment = 1
@@ -571,7 +551,7 @@ controlStyles:
       - Margin := {{$buttonSpacing-6}},0,0,0
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
-      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 0,{{$taskbarTopOffset}},3,{{$taskbarBottomOffset}}
       - HorizontalAlignment = 2
       - Canvas.ZIndex = 3
   - target: Taskbar.TaskbarExtensionElement
@@ -579,10 +559,7 @@ controlStyles:
       - Visibility = Collapsed
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
-      - Padding = 0
-      - Visibility := {{1-$showWindowsButton}}
-      - Width := $windowsButtonWidth
-      - Margin := 0,{{$taskbarTopOffset}},4,{{$taskbarBottomOffset}}
+      - Visibility = Collapsed
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius := $buttonRadius
@@ -624,27 +601,27 @@ controlStyles:
     styles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
-      - BorderThickness := $highlightBorderThickness
+      - BorderThickness = 0
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
-      - BorderThickness := $highlightBorderThickness
+      - BorderThickness = 0
   - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
-      - BorderThickness := $highlightBorderThickness
+      - BorderThickness = 0
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder
     styles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
-      - BorderThickness := $highlightBorderThickness
+      - BorderThickness = 0
   - target: SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
-      - BorderThickness := $highlightBorderThickness
+      - BorderThickness = 0
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter
     styles:
       - Margin = 0,0,0,1
@@ -694,11 +671,11 @@ controlStyles:
       - Height := $sysTrayIconSize
   - target: SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
     styles:
-      - Margin = 0,0,0,2
+      - Margin = 0,0,0,3
       - MaxLines = 1
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.DateTimeIconContent > Grid#ContainerGrid > StackPanel
     styles:
-      - Margin = 0,-2,0,0
+      - Margin = 0,0,0,3
   - target: Grid#OverflowRootGrid > Border
     styles:
       - Background := $fillColor
@@ -734,7 +711,7 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin := {{$highlightOffset}}
-      - BorderThickness := $highlightBorderThickness
+      - BorderThickness = 0
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[1]
     styles:
       - HorizontalAlignment = 0
