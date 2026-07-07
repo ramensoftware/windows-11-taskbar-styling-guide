@@ -22,10 +22,10 @@ Light Mode | Normal & Maximized Window
 ![LightMaximized](LightMaximized.png)
 
 ## Notes
-- Theme is designed on Windows 11 - 25H2 (OS Build 26200.8737)
+- Designed on Windows 11 - 25H2 (OS Build 26200.8737)
 - Tested on monitors: 1920x1080 (100% scaling) | 3840x2160 (250% scaling)
-- Designed for both light and dark modes
-- Designed to work with: Search - Hide | Task view - Off  | *Widgets - On | Taskbar alignment - Center | Show smaller taskbar buttons - Never
+- Supports both light and dark modes
+- Settings: Search - Hide | Task view - Off  | *Widgets - On | Taskbar alignment - Center | Show smaller taskbar buttons - Never
 
   <details>
   <summary>Click to expand to view Taskbar Windows Settings for similar results</summary>
@@ -45,7 +45,7 @@ Light Mode | Normal & Maximized Window
 <br>
 
 ## Required Windhawk Mods for similar results
-To achieve similar results, install and configure the following Windhawk mods in addition to Taskbar Styler (click each to expand settings):
+To achieve similar results, install and configure the following Windhawk Mods in addition to Taskbar Styler (click each to expand settings):
 
   <details>
   <summary>Taskbar Height and Icon Size.</summary>
@@ -215,7 +215,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   </details><br>
 
 ## Recommended visual Windhawk Mods
-To remove clipped flyout shadows, install and configure the following Windhawk mods (click each to expand settings):
+To remove clipped flyout shadows, install and configure the following Windhawk Mods (click each to expand settings):
 
 
   <details>
@@ -426,10 +426,10 @@ MainSettings:
   
 ## Theme selection
 
-The theme is integrated into the mod and can be selected directly from the mod's
+The theme is integrated into the Mod and can be selected directly from the Mod's
 settings:
 
-* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Open the Windows 11 Taskbar Styler Mod in Windhawk.
 * Go to the "Settings" tab.
 * Select the theme "AdaptivePills" and save the settings.
 
@@ -437,7 +437,7 @@ settings:
 
 The theme styles can also be imported manually. To do that, follow these steps:
 
-* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Open the Windows 11 Taskbar Styler Mod in Windhawk.
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
 
@@ -732,6 +732,6 @@ themeResourceVariables:
 ```
 </details><br>
 
-If you'd like to tweak styleConstants (located at the top of the theme content), you may use the styleConstants illustration below as a guide:
+To tweak styleConstants (located at the top of the theme content), you may use the styleConstants illustration below as a guide:
 
 ![styleConstantsIllustration](styleConstantsIllustration.png)
