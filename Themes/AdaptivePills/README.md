@@ -70,7 +70,7 @@ To achieve similar results, install and configure the following Windhawk Mods in
   excludedPrograms:
     - ''
   minimumTaskbarItemWidth: 0
-  maximumTaskbarItemWidth: 1000
+  maximumTaskbarItemWidth: 200
   fontSize: 12
   fontFamily: ''
   textTrimming: characterEllipsis
