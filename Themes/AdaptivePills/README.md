@@ -17,7 +17,7 @@ Light Mode
 ![LightMaximized](LightMaximized.png)
 
 ## Description
-AdaptivePills sleek theme that turns task buttons into narrow rounded adaptive pills that keep the native feel but breathe more. It's also designed to stay sleek when windows are maximized.
+AdaptivePills. A sleek theme that turns task buttons into narrow rounded adaptive pills that keep the native feel but breathe more. It's also designed to be aesthetically pleasing even when windows are maximized.
 
 The theme is very parameterized. You can tweak styleConstants easily to generate various designs/adjustments. Scroll to the bottom for more info. 
 
