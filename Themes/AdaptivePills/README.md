@@ -166,7 +166,7 @@ To achieve similar results, install and configure the following Windhawk mods in
   <summary>Dynamic Taskbar Transparency - to dynamically show taskbar background when a window is maximized.</summary>
 
   ```yaml
-    desktop:
+  desktop:
     style: clear
   fallback:
     style: captured
@@ -420,6 +420,7 @@ DebugSettings:
   showDebugBorders: 0
   showLayoutAnchors: 0
   showRestartButton: 0
+
   ```
   </details>
   
