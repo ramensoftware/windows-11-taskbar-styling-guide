@@ -261,165 +261,165 @@ Set the media player:
 
   ```yaml
 MainSettings:
-  PlayerSetting:
-    position: taskbar_after_widgets_right
-    playerWidth: 0 0
-    playerHeight: 24 24
-    playerMargin: '-55 5'
-    mirrorLayout: 0
-  AlbumArtSetting:
-    showAlbumArt: 0
-    albumArtWidth: 32 64
-    albumArtHeight: 24 24
-    albumArtMargin: 0 0
-  TextAreaSetting:
-    showTrackTitle: 0
-    showTrackArtist: 0
-    textAreaWidth: 0 60
-    textAreaHeight: 0 0
-    textAreaMargin: 5 5
-    textSpacing: -1
-    enableTitleScrolling: 1
-    enableArtistScrolling: 0
-    scrollSpeed: 1
-    scrollPauseDuration: 1000
-    scrollMode: bounce
-    loopGap: 40
-    swapTitleArtist: 0
-    emptyTitleText: Untitled
-    noMediaTitleText: Not Playing
-    emptyArtistText: ''
-    noMediaArtistText: ''
-  MediaButtonsSettings:
-    showMediaButtons: 1
-    mediaButtons:
-      - prev
-      - play
+    PlayerSetting:
+      position: taskbar_after_widgets_right
+      playerWidth: 0 0
+      playerHeight: 24 24
+      playerMargin: '-55 5'
+      mirrorLayout: 0
+    AlbumArtSetting:
+      showAlbumArt: 0
+      albumArtWidth: 32 64
+      albumArtHeight: 24 24
+      albumArtMargin: 0 0
+    TextAreaSetting:
+      showTrackTitle: 0
+      showTrackArtist: 0
+      textAreaWidth: 0 60
+      textAreaHeight: 0 0
+      textAreaMargin: 5 5
+      textSpacing: -1
+      enableTitleScrolling: 1
+      enableArtistScrolling: 0
+      scrollSpeed: 1
+      scrollPauseDuration: 1000
+      scrollMode: bounce
+      loopGap: 40
+      swapTitleArtist: 0
+      emptyTitleText: Untitled
+      noMediaTitleText: Not Playing
+      emptyArtistText: ''
+      noMediaArtistText: ''
+    MediaButtonsSettings:
+      showMediaButtons: 1
+      mediaButtons:
+        - prev
+        - play
+        - next
+      mediaButtonsMargin: 2 2
+      buttonSize: 20
+      hideUnsupportedButtons: 0
+    VisualizerFunctionsSettings:
+      vizEnabled: 1
+      vizPosition: right
+      vizShape: stereo
+      vizEQ: default
+      vizAnchor: middle
+      vizBarCountGap: 7 4
+      vizBarSize: 2 3
+      vizPadding: 0 0
+      vizSensitivity: 150
+  AppearanceSettings:
+    BackgroundStyleSettings:
+      backgroundType: none
+      solidColor: 35 35 35
+      solidColor2: 35 35 35
+      gradientColor2: 128 128 128
+      solidOpacity: 100
+      gradientAngle: 50
+      gradientBalance: 50
+      acrylicTintOpacity: 50
+      micaOpacity: 50
+      blurOpacity: 65
+      blurRadius: 11
+      cornerRadius: '7'
+      enablePlayerHoverEffect: 'off'
+      enableMediaButtonsHoverEffect: auto
+    MediaButtonsStyleSettings:
+      iconStyle: fluent_outline
+      buttonSpacing: 0
+      buttonIconSize: 12
+      buttonCornerRadius: '4'
+      buttonColor: 0 0 0$255 255 255
+      buttonColorOpacity: 100
+    TitleTextStyleSettings:
+      titleColor: 0 0 0$255 255 255
+      titleColorOpacity: 100
+      titleFont: segoe_ui_variable
+      titleFontSize: 12
+      titleFontFamily: ''
+      titleFontWeight: ''
+      titleFontStyle: ''
+      titleCharacterSpacing: 0
+    ArtistTextStyleSettings:
+      artistColor: 0 0 0$255 255 255
+      artistColorOpacity: 80
+      artistFont: segoe_ui_variable
+      artistFontSize: 11
+      artistFontFamily: ''
+      artistFontWeight: ''
+      artistFontStyle: ''
+      artistCharacterSpacing: 0
+    AlbumArtDisplaySettings:
+      albumArtEmptyBehavior: show
+      emptyIconGlyph: E189
+      emptyIconSize: 16
+      emptyIconFont: segoe_fluent
+      emptyIconColor: 140 140 140
+      emptyIconOpacity: 100
+      albumArtQuality: medium
+      showPauseOverlay: 1
+      pauseOverlayIconSize: 16
+      pauseOverlayOpacity: 60
+      albumArtOpacity: 100
+      albumArtCornerRadius: '4'
+      showAppIcon: 0
+      appIconCorner: bottom_right
+      appIconSize: 12
+    VisualizerStyleSettings:
+      vizColorMode: acrylic
+      vizColor: 0 0 0$255 255 255
+      vizColor1: 30 215 96
+      vizColor2: 0 180 255
+  BehaviorSettings:
+    disableAlbumArtClick: 0
+    ClickActionSettings:
+      - object: player
+        click: left_click
+        action: play_pause
+      - object: player
+        click: right_click
+        action: open_context_menu
+      - object: album_art
+        click: left_double_click
+        action: open_app
+    MouseWheelActionSettings:
+      - object: player
+        click: mouse_wheel
+        action: switch_tracks
+      - object: album_art
+        click: mouse_wheel
+        action: switch_sessions
+    hideWhenNoMedia: 0
+    hideFullscreen: 1
+    idleHideSeconds: 0
+    showFullTitleOnHover: 1
+  AnimationSettings:
+    enableSmoothPositionAnimation: 1
+  NotificationSettings:
+    showSuccessNotification: 0
+  ContextMenuSettings:
+    contextMenuItems:
+      - repeat
+      - shuffle
+      - forward
+      - rewind
       - next
-    mediaButtonsMargin: 2 2
-    buttonSize: 20
-    hideUnsupportedButtons: 0
-  VisualizerFunctionsSettings:
-    vizEnabled: 1
-    vizPosition: right
-    vizShape: stereo
-    vizEQ: default
-    vizAnchor: middle
-    vizBarCountGap: 7 4
-    vizBarSize: 2 3
-    vizPadding: 0 0
-    vizSensitivity: 150
-AppearanceSettings:
-  BackgroundStyleSettings:
-    backgroundType: none
-    solidColor: 35 35 35
-    solidColor2: 35 35 35
-    gradientColor2: 128 128 128
-    solidOpacity: 100
-    gradientAngle: 50
-    gradientBalance: 50
-    acrylicTintOpacity: 50
-    micaOpacity: 50
-    blurOpacity: 65
-    blurRadius: 11
-    cornerRadius: '7'
-    enablePlayerHoverEffect: 'off'
-    enableMediaButtonsHoverEffect: auto
-  MediaButtonsStyleSettings:
-    iconStyle: fluent_outline
-    buttonSpacing: 0
-    buttonIconSize: 12
-    buttonCornerRadius: '4'
-    buttonColor: 0 0 0$255 255 255
-    buttonColorOpacity: 100
-  TitleTextStyleSettings:
-    titleColor: 0 0 0$255 255 255
-    titleColorOpacity: 100
-    titleFont: segoe_ui_variable
-    titleFontSize: 12
-    titleFontFamily: ''
-    titleFontWeight: ''
-    titleFontStyle: ''
-    titleCharacterSpacing: 0
-  ArtistTextStyleSettings:
-    artistColor: 0 0 0$255 255 255
-    artistColorOpacity: 80
-    artistFont: segoe_ui_variable
-    artistFontSize: 11
-    artistFontFamily: ''
-    artistFontWeight: ''
-    artistFontStyle: ''
-    artistCharacterSpacing: 0
-  AlbumArtDisplaySettings:
-    albumArtEmptyBehavior: show
-    emptyIconGlyph: E189
-    emptyIconSize: 16
-    emptyIconFont: segoe_fluent
-    emptyIconColor: 140 140 140
-    emptyIconOpacity: 100
-    albumArtQuality: medium
-    showPauseOverlay: 1
-    pauseOverlayIconSize: 16
-    pauseOverlayOpacity: 60
-    albumArtOpacity: 100
-    albumArtCornerRadius: '4'
-    showAppIcon: 0
-    appIconCorner: bottom_right
-    appIconSize: 12
-  VisualizerStyleSettings:
-    vizColorMode: acrylic
-    vizColor: 0 0 0$255 255 255
-    vizColor1: 30 215 96
-    vizColor2: 0 180 255
-BehaviorSettings:
-  disableAlbumArtClick: 0
-  ClickActionSettings:
-    - object: player
-      click: left_click
-      action: play_pause
-    - object: player
-      click: right_click
-      action: open_context_menu
-    - object: album_art
-      click: left_double_click
-      action: open_app
-  MouseWheelActionSettings:
-    - object: player
-      click: mouse_wheel
-      action: switch_tracks
-    - object: album_art
-      click: mouse_wheel
-      action: switch_sessions
-  hideWhenNoMedia: 0
-  hideFullscreen: 1
-  idleHideSeconds: 0
-  showFullTitleOnHover: 1
-AnimationSettings:
-  enableSmoothPositionAnimation: 1
-NotificationSettings:
-  showSuccessNotification: 0
-ContextMenuSettings:
-  contextMenuItems:
-    - repeat
-    - shuffle
-    - forward
-    - rewind
-    - next
-    - prev
-    - switch_sessions
-    - open_app
-  repeatStyle: submenu
-  shuffleStyle: toggle
-  showOpenWindhawk: 1
-  contextMenuIconStyle: as_media_buttons
-  contextMenuIconColor: 0 0 0$255 255 255
-  contextMenuIconOpacity: 100
-DebugSettings:
-  ignoredProcesses: ''
-  enableTreeDump: 0
-  showDebugBorders: 0
-  showLayoutAnchors: 0
-  showRestartButton: 0
+      - prev
+      - switch_sessions
+      - open_app
+    repeatStyle: submenu
+    shuffleStyle: toggle
+    showOpenWindhawk: 1
+    contextMenuIconStyle: as_media_buttons
+    contextMenuIconColor: 0 0 0$255 255 255
+    contextMenuIconOpacity: 100
+  DebugSettings:
+    ignoredProcesses: ''
+    enableTreeDump: 0
+    showDebugBorders: 0
+    showLayoutAnchors: 0
+    showRestartButton: 0
 
   ```
   </details>
