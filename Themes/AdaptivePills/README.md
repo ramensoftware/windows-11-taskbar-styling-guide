@@ -691,14 +691,14 @@ controlStyles:
       - RenderTransform := <TranslateTransform X="{{WeatherTempWidth+7}}" Y="-8" />
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid
     styles:
-      - Width := {{WeatherCondWidth+WeatherTempWidth+53}}
+      - Width := {{WeatherCondWidth+WeatherTempWidth+50}}
       - HorizontalAlignment = 0
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
       - Margin = 5,0,0,0
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
-      - Width := {{WeatherCondWidth+WeatherTempWidth+53}}
+      - Width := {{WeatherCondWidth+WeatherTempWidth+50}}
       - Height = Auto
       - Margin := {{$taskbarLeftOffset}},{{$taskbarTopOffset}},60,{{$taskbarBottomOffset}}
       - Padding = 0
