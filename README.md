@@ -597,8 +597,6 @@ Style:
 ```
 Height=<value>
 ```
-
-
 ## Transforms
 
 You can use transformation styles to translate, rotate, scale, or skew elements.
