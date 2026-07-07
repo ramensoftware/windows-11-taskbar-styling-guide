@@ -453,7 +453,7 @@ styleConstants:
   - sysTraySpacing = 6
   - highlightOffset = 2
   - borderThickness = 1
-  - highlightMinWidth = 43
+  - highlightMinWidth = 38
   - buttonRadius = 7
   - highlightRadius = 6
   - iconLabelSpacing = 5
@@ -516,7 +516,7 @@ controlStyles:
       - Height = Auto
   - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#ProgressBarTrack
     styles:
-      - Fill := transparent
+      - Fill = Transparent
   - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#DeterminateProgressBarIndicator
     styles:
       - RadiusX := $highlightRadius
@@ -680,9 +680,6 @@ controlStyles:
     styles:
       - Background := $fillColor
       - Shadow :=
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
-    styles:
-      - CornerRadius := $highlightRadius
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
     styles:
       - ActualWidth => WeatherTempWidth
@@ -710,6 +707,7 @@ controlStyles:
       - BorderBrush := $borderColor
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
+      - CornerRadius := $highlightRadius
       - Margin := {{$highlightOffset}}
       - BorderThickness = 0
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[1]
