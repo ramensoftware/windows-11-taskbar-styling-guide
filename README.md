@@ -209,6 +209,9 @@ Fill=<color>
 ### Tasklist + System tray grouped alignment
 **Original Author**: [CryptoProgenitor](https://github.com/CryptoProgenitor)
 
+> [!NOTE]
+> Useful for dock-like layouts to ensure the task list and system tray share the same alignment no matter the size or position of the taskbar, examples could be seen in the [UltraWideFriendly](Themes/UltraWideFriendly/README.md) theme and the [Borderless](Themes/Borderless/README.md) theme.
+
 Target:
 ```
 ScrollViewer > ScrollContentPresenter > Border > Grid
