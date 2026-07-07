@@ -25,7 +25,7 @@ The theme is very parameterized. You can tweak styleConstants easily to generate
 - Designed on Windows 11 - 25H2 (OS Build 26200.8737)
 - Tested on monitors: 1920x1080 (100% scaling) | 3840x2160 (250% scaling)
 - Compatible with both light and dark modes
-- Settings: Search - Hide | Task view - Off  | *Widgets - On | Taskbar alignment - Center | Show smaller taskbar buttons - Never
+- Settings: Search - Hide | Task view - Off  | *Widgets - On | Taskbar alignment - Center
 
   <details>
   <summary>Click to expand to view Taskbar Windows Settings for similar results</summary>
@@ -55,7 +55,7 @@ To achieve similar results, install and configure the following Windhawk Mods in
   IconSize: 14
   TaskbarButtonWidth: 30
   IconSizeSmall: 14
-  TaskbarButtonWidthSmall: 15
+  TaskbarButtonWidthSmall: 30
   ```
   </details><br>
 
@@ -69,8 +69,8 @@ To achieve similar results, install and configure the following Windhawk Mods in
   progressIndicatorStyle: sameAsRunningIndicatorStyle
   excludedPrograms:
     - ''
-  minimumTaskbarItemWidth: 20
-  maximumTaskbarItemWidth: 200
+  minimumTaskbarItemWidth: 0
+  maximumTaskbarItemWidth: 1000
   fontSize: 12
   fontFamily: ''
   textTrimming: characterEllipsis
