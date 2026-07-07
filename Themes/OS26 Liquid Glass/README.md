@@ -133,6 +133,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
+theme: ''
 styleConstants:
   - IconBackground= <ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26 Liquid Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
@@ -164,7 +165,7 @@ controlStyles:
     styles:
       - RequestedTheme=Dark
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - BorderThickness=10,10,10,10
+      - BorderThickness=2
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - CornerRadius=33
       - Padding=2,3,2,3
@@ -173,12 +174,12 @@ controlStyles:
       - RequestedTheme=Dark
       - Background:=Transparent
       - BorderBrush:=Transparent
-      - BorderThickness=5
+      - BorderThickness=2
       - Margin=0
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - BorderThickness=15,15,15,15
+      - BorderThickness=2
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - CornerRadius=50
   - target: MenuFlyoutPresenter
@@ -187,7 +188,7 @@ controlStyles:
   - target: MenuFlyoutPresenter > Border
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - BorderThickness=10,10,10,10
+      - BorderThickness=2
       - CornerRadius=25
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid
@@ -198,9 +199,10 @@ controlStyles:
       - BorderThickness=1.2
   - target: Grid#SystemTrayFrameGrid
     styles:
+      - Width=Auto
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - CornerRadius=15
-      - Margin=195,18,-480,10
+      - Margin=195,18,-450,10
       - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
       - Padding=10,2
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#50ffffff" Offset="0.0"/><GradientStop Color="#10ffffff" Offset="0.5"/><GradientStop Color="#30ffffff" Offset="1.0"/></LinearGradientBrush>
@@ -242,7 +244,7 @@ controlStyles:
       - Background:=<WindhawkBlur BlurAmount="15" TintColor="#50FFFFFF"/>
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
-      - CornerRadius=15
+      - CornerRadius=12
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - Margin=2
@@ -251,7 +253,7 @@ controlStyles:
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#60ffffff"/>
-      - BorderThickness=10
+      - BorderThickness=2
       - CornerRadius=32,32,30,30
       - Margin=-10
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent
@@ -363,7 +365,7 @@ controlStyles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - CornerRadius=24
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
-      - BorderThickness=10
+      - BorderThickness=2
       - Margin=0,0,0,10
   - target: Windows.UI.Xaml.Controls.Grid.Border#ConfirmatorMainGrid
     styles:
@@ -418,7 +420,7 @@ controlStyles:
     styles:
       - RequestedTheme=Dark
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - BorderThickness=10,10,10,10
+      - BorderThickness=2,2,2,2
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - CornerRadius=33
       - Padding=2,3,2,3
@@ -432,7 +434,7 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - BorderThickness=15,15,15,15
+      - BorderThickness=2
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - CornerRadius=50
   - target: MenuFlyoutPresenter
@@ -441,7 +443,7 @@ controlStyles:
   - target: MenuFlyoutPresenter > Border
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - BorderThickness=10,10,10,10
+      - BorderThickness=2,2,2,2
       - CornerRadius=25
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid
@@ -503,7 +505,7 @@ controlStyles:
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#60ffffff"/>
-      - BorderThickness=10
+      - BorderThickness=2
       - CornerRadius=32,32,30,30
       - Margin=-10
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent
@@ -613,7 +615,7 @@ controlStyles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - CornerRadius=24
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
-      - BorderThickness=10
+      - BorderThickness=2
       - Margin=0,0,0,10
   - target: Windows.UI.Xaml.Controls.Grid.Border#ConfirmatorMainGrid
     styles:
