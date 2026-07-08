@@ -454,7 +454,7 @@ styleConstants:
   - sysTraySpacing = 6
   - highlightOffset = 2
   - borderThickness = 1
-  - highlightMin38
+  - highlightMinWidth = 38
   - buttonRadius = 7
   - highlightRadius = 6
   - iconLabelSpacing = 5
