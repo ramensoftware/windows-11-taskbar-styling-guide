@@ -454,7 +454,7 @@ styleConstants:
   - sysTraySpacing = 6
   - highlightOffset = 2
   - borderThickness = 1
-  - highlightMinWidth = 38
+  - highlightMin38
   - buttonRadius = 7
   - highlightRadius = 6
   - iconLabelSpacing = 5
@@ -564,6 +564,7 @@ controlStyles:
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Width = 1
+      - Height = 0
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius := $buttonRadius
