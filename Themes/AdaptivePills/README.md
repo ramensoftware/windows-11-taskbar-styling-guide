@@ -72,7 +72,7 @@ To achieve similar results, install and configure the following Windhawk Mods in
   minimumTaskbarItemWidth: 0
   maximumTaskbarItemWidth: 200
   fontSize: 12
-  fontFamily: ''
+  fontFamily: Segoe UI Variable
   textTrimming: characterEllipsis
   leftAndRightPaddingSize: 0
   spaceBetweenIconAndLabel: 0
@@ -452,11 +452,11 @@ styleConstants:
   - taskbarBottomOffset = 4
   - buttonSpacing = 6
   - sysTraySpacing = 6
-  - highlightOffset = 2
   - borderThickness = 1
-  - highlightMinWidth = 38
   - buttonRadius = 7
   - highlightRadius = 6
+  - highlightOffset = 2
+  - highlightMinWidth = 38
   - iconLabelSpacing = 5
   - leftRightPadding = 5
   - multiWindowNotch = 4
@@ -544,7 +544,6 @@ controlStyles:
       - Visibility = Collapsed
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
     styles:
-      - FontFamily = Segoe UI Variable
       - Margin := {{$iconLabelSpacing-6}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset+3}}
       - Padding := {{$leftRightPadding}},0
       - HorizontalAlignment = 1
