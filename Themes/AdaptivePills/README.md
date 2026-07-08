@@ -509,9 +509,9 @@ controlStyles:
   - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator > Grid#LayoutRoot
     styles:
       - Background := $fillColor
-      - BorderThickness := $borderThickness
-      - BorderBrush := $borderColor
+      - BorderThickness = 0
       - CornerRadius := $buttonRadius
+      - Canvas.ZIndex = 10
   - target: Border#ProgressBarRoot > Border > Grid
     styles:
       - Height = Auto
@@ -520,20 +520,23 @@ controlStyles:
       - Fill = Transparent
   - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#DeterminateProgressBarIndicator
     styles:
-      - RadiusX := $highlightRadius
-      - RadiusY := $highlightRadius
+      - StrokeThickness = 1
+      - RadiusX := $buttonRadius
+      - RadiusY := $buttonRadius
       - Fill := $progressColor
       - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
   - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#IndeterminateProgressBarIndicator
     styles:
-      - RadiusX := $highlightRadius
-      - RadiusY := $highlightRadius
+      - StrokeThickness = 1
+      - RadiusX := $buttonRadius
+      - RadiusY := $buttonRadius
       - Fill := $progressColor
       - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
   - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#IndeterminateProgressBarIndicator2
     styles:
-      - RadiusX := $highlightRadius
-      - RadiusY := $highlightRadius
+      - StrokeThickness = 1
+      - RadiusX := $buttonRadius
+      - RadiusY := $buttonRadius
       - Fill := $progressColor
       - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
   - target: Border#MultiWindowElement
