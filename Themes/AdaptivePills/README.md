@@ -541,7 +541,7 @@ controlStyles:
       - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
   - target: Border#MultiWindowElement
     styles:
-      - Visibility = Collapsed
+      - Opacity = 0
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
     styles:
       - FontFamily = Segoe UI Variable
@@ -563,7 +563,7 @@ controlStyles:
       - Visibility = Collapsed
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
-      - Visibility = Collapsed
+      - Width = 1
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius := $buttonRadius
