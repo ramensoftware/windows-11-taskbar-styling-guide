@@ -563,7 +563,7 @@ controlStyles:
       - Visibility = Collapsed
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
-      - Visibility = Collapsed
+      - Width = 1
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius := $buttonRadius
