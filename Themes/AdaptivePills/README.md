@@ -72,7 +72,7 @@ To achieve similar results, install and configure the following Windhawk Mods in
   minimumTaskbarItemWidth: 0
   maximumTaskbarItemWidth: 200
   fontSize: 12
-  fontFamily: Segoe UI Variable
+  fontFamily: ''
   textTrimming: characterEllipsis
   leftAndRightPaddingSize: 0
   spaceBetweenIconAndLabel: 0
@@ -152,7 +152,7 @@ To achieve similar results, install and configure the following Windhawk Mods in
     TextColor: ''
     TextAlignment: ''
     FontSize: 12
-    FontFamily: Segoe UI Variable
+    FontFamily: ''
     FontWeight: Medium
     FontStyle: Normal
     FontStretch: ''
