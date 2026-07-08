@@ -467,6 +467,7 @@ styleConstants:
   - fillColor = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
   - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}"/>
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
+  - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}"/>
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame
     styles:
@@ -727,6 +728,15 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
     styles:
       - Shadow :=
+  - target: Grid#ContainerGrid@ > Rectangle#ShowDesktopPipe
+    styles:
+      - Width = 2
+      - Height = 2
+      - RadiusX	= 2
+      - RadiusY	= 2
+      - Fill := $showDesktopIndicatorColor
+      - Height@PointerOver = 10
+      - Height@Pressed = 6
 themeResourceVariables:
   - AdaptiveFill@Light =#FFFFFF
   - AdaptiveFill@Dark =#000000
