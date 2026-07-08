@@ -467,7 +467,7 @@ styleConstants:
   - fillColor = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
   - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}"/>
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
-  - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}"/>
+  - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame
     styles:
