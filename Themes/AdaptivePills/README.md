@@ -732,8 +732,8 @@ controlStyles:
     styles:
       - Width = 2
       - Height = 2
-      - RadiusX	= 2
-      - RadiusY	= 2
+      - RadiusX = 2
+      - RadiusY = 2
       - Fill := $showDesktopIndicatorColor
       - Height@PointerOver = 10
       - Height@Pressed = 6
