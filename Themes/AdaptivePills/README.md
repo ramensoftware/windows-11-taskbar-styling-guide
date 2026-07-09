@@ -11,7 +11,6 @@ Light Mode
 ![Light](Light.png)
 ![LightMaximized](LightMaximized.png)
 
-## Description
 AdaptivePills. A sleek theme that turns task buttons into narrow rounded adaptive pills that keep the native feel but breathe more. It's also designed to be aesthetically pleasing even when windows are maximized.
 
 ## Notes
