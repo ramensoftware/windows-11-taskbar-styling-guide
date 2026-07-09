@@ -1,4 +1,4 @@
-# AdaptivePills theme for Windows 11 Taskbar Styler
+# Pills theme for Windows 11 Taskbar Styler
 
 **Author**: [Deen-0x](https://github.com/Deen-0x)
 
@@ -11,7 +11,7 @@ Light Mode
 ![Light](Light.png)
 ![LightMaximized](LightMaximized.png)
 
-AdaptivePills. A sleek theme that turns task buttons into narrow rounded adaptive pills that keep the native feel but breathe more. It's also designed to be aesthetically pleasing even when windows are maximized.
+Pills. A sleek theme that turns task buttons into narrow rounded adaptive pills that keep the native feel but breathe more. It's also designed to be aesthetically pleasing even when windows are maximized.
 
 ## Notes
 - Designed on Windows 11 - 25H2 (OS Build 26200.8737).
@@ -376,7 +376,7 @@ settings:
 
 * Open the Windows 11 Taskbar Styler Mod in Windhawk.
 * Go to the "Settings" tab.
-* Select the theme "AdaptivePills" and save the settings.
+* Select the theme "Pills" and save the settings.
 
 ## Manual installation
 
