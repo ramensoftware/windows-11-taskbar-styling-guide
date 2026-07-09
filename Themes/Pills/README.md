@@ -400,7 +400,7 @@ styleConstants:
   - borderThickness = 1
   - buttonRadius = 7
   - highlightRadius = 6
-  - highlightOffset = 2
+  - highlightOffset = 3
   - highlightMinWidth = 38
   - iconLabelSpacing = 5
   - leftRightPadding = 5
