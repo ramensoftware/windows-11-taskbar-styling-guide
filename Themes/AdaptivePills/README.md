@@ -29,8 +29,8 @@ AdaptivePills. A sleek theme that turns task buttons into narrow rounded adaptiv
   <summary>Click to expand to view Widget Board Settings for similar results</summary>
 
   ![WidgetBoardSettings](WidgetBoardSettings.png)
-  </details><br>
-
+  </details>
+  
 - The media player on the right of the weather widget is a separate Mod.
 
 ## Windhawk Mods for similar results
@@ -693,8 +693,6 @@ themeResourceVariables:
 </details><br>
 
 To tweak styleConstants (located at the top of the theme content), you may use the styleConstants illustration below as a guide:
-
-
 
   <details>
   <summary>styleConstants illustration</summary>
