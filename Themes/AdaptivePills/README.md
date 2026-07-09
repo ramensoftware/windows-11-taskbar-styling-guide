@@ -2,53 +2,43 @@
 
 **Author**: [Deen-0x](https://github.com/Deen-0x)
 
-## Demo (27" Monitor | 1920x1080)
 
 Dark Mode
-
 ![Dark](Dark.png)
-
 ![DarkMaximized](DarkMaximized.png)
 
 Light Mode
-
 ![Light](Light.png)
-
 ![LightMaximized](LightMaximized.png)
 
 ## Description
 AdaptivePills. A sleek theme that turns task buttons into narrow rounded adaptive pills that keep the native feel but breathe more. It's also designed to be aesthetically pleasing even when windows are maximized.
 
-The theme is very parameterized. You can tweak styleConstants easily to generate various designs/adjustments. Scroll to the bottom for more info. 
-
 ## Notes
-- Designed on Windows 11 - 25H2 (OS Build 26200.8737)
-- Tested on monitors: 1920x1080 (100% scaling) | 3840x2160 (250% scaling)
-- Compatible with both light and dark modes
-- Settings: Search - Hide | Task view - Off  | *Widgets - On | Taskbar alignment - Center
+- Designed on Windows 11 - 25H2 (OS Build 26200.8737).
+- Tested on monitors: 1920x1080 (100% scaling) | 3840x2160 (250% scaling).
+- Compatible with both light and dark modes.
+- Settings: Search - Hide | Task view - Off  | Widgets - On | Taskbar alignment - Center.
 
   <details>
   <summary>Click to expand to view Taskbar Windows Settings for similar results</summary>
 
   ![TaskbarSettings](TaskbarSettings.png)
-  </details><br>
+  </details>
   
-- *Widgets must be installed to enable the weather widget on the left. Download link in case it was removed:
-   https://apps.microsoft.com/detail/9mssgkg348sp
   <details>
   <summary>Click to expand to view Widget Board Settings for similar results</summary>
 
   ![WidgetBoardSettings](WidgetBoardSettings.png)
   </details><br>
-- The media player on the right of the weather widget is a separate Mod that is included in Recommended Mods - Optional.
 
-<br>
+- The media player on the right of the weather widget is a separate Mod.
 
-## Required Windhawk Mods for similar results
-To achieve similar results, install and configure the following Windhawk Mods in addition to Taskbar Styler (click each to expand settings):
+## Windhawk Mods for similar results
+Install and configure the following Windhawk Mods in addition to Taskbar Styler (click each to expand settings):
 
   <details>
-  <summary>Taskbar Height and Icon Size.</summary>
+  <summary>Taskbar Height and Icon Size</summary>
 
   ```yaml
   TaskbarHeight: 31
@@ -57,10 +47,10 @@ To achieve similar results, install and configure the following Windhawk Mods in
   IconSizeSmall: 14
   TaskbarButtonWidthSmall: 30
   ```
-  </details><br>
+  </details>
 
   <details>
-  <summary>Taskbar Labels for Windows 11 – for labels and control of taskbar buttons width. You may increase taskbarItemWidth value to achieve longer buttons.</summary>
+  <summary>Taskbar Labels for Windows 11</summary>
 
   ```yaml
   mode: labelsWithCombining
@@ -83,10 +73,10 @@ To achieve similar results, install and configure the following Windhawk Mods in
   labelForMultipleItems: ''
 
   ```
-  </details><br>
+  </details>
 
   <details>
-  <summary>Taskbar Clock Customization – for styling the clock.</summary>
+  <summary>Taskbar Clock Customization</summary>
 
   ```yaml
   ShowSeconds: 0
@@ -160,10 +150,10 @@ To achieve similar results, install and configure the following Windhawk Mods in
     LineHeight: 0
   oldTaskbarOnWin11: 0
   ```
-  </details><br>
+  </details>
 
   <details>
-  <summary>Dynamic Taskbar Transparency - to dynamically show taskbar background when a window is maximized.</summary>
+  <summary>Dynamic Taskbar Transparency</summary>
 
   ```yaml
   desktop:
@@ -193,10 +183,10 @@ To achieve similar results, install and configure the following Windhawk Mods in
   detection:
     fullscreenAsMaximized: 1
   ```
-  </details><br>
+  </details>
 
   <details>
-  <summary>Taskbar tray system icon tweaks - to set showDesktopButtonWidth and declutter the system tray icons.</summary>
+  <summary>Taskbar tray system icon tweaks</summary>
 
   ```yaml
   hideVolumeIcon: 0
@@ -212,52 +202,10 @@ To achieve similar results, install and configure the following Windhawk Mods in
   hideBellIcon: never
   showDesktopButtonWidth: 12
   ```
-  </details><br>
-
-## Recommended visual Windhawk Mods
-To remove clipped flyout shadows, install and configure the following Windhawk Mods (click each to expand settings):
-
+  </details>
 
   <details>
-  <summary>Windows 11 Notification Center Styler.</summary>
-
-  ```yaml
-  controlStyles:
-    - target: Grid#NotificationCenterGrid
-      styles:
-        - Shadow :=
-    - target: Grid#CalendarCenterGrid
-      styles:
-        - Shadow :=
-    - target: Grid#ControlCenterRegion
-      styles:
-        - Shadow :=
-  ```
-  </details><br>
-
-  <details>
-  <summary>Windows 11 Start Menu Styler.</summary>
-
-  ```yaml
-  controlStyles:
-    - target: Windows.UI.Xaml.Controls.Border#DropShadow
-      styles:
-        - Visibility=Collapsed
-    - target: Windows.UI.Xaml.Controls.Border#StartDropShadow
-      styles:
-        - Visibility=Collapsed
-    - target: Windows.UI.Xaml.Controls.Border#RootGridDropShadow
-      styles:
-        - Visibility=Collapsed
-    - target: Windows.UI.Xaml.Controls.Border#RightCompanionDropShadow
-      styles:
-        - Visibility=Collapsed
-  ```
-  </details><br>
-
-Set the media player:
-  <details>
-  <summary>Taskbar Fluent Media Player.</summary>
+  <summary>Optional - Taskbar Fluent Media Player</summary>
 
   ```yaml
 MainSettings:
@@ -423,7 +371,7 @@ MainSettings:
 
   ```
   </details>
-  
+
 ## Theme selection
 
 The theme is integrated into the Mod and can be selected directly from the Mod's
@@ -747,4 +695,10 @@ themeResourceVariables:
 
 To tweak styleConstants (located at the top of the theme content), you may use the styleConstants illustration below as a guide:
 
-![styleConstantsIllustration](styleConstantsIllustration.png)
+
+
+  <details>
+  <summary>styleConstants illustration</summary>
+
+  ![styleConstantsIllustration](styleConstantsIllustration.png)
+  </details>
