@@ -15,8 +15,6 @@ AdaptivePills. A sleek theme that turns task buttons into narrow rounded adaptiv
 
 ## Notes
 - Designed on Windows 11 - 25H2 (OS Build 26200.8737).
-- Tested on monitors: 1920x1080 (100% scaling) | 3840x2160 (250% scaling).
-- Compatible with both light and dark modes.
 - Settings: Search - Hide | Task view - Off  | Widgets - On | Taskbar alignment - Center.
 
   <details>
@@ -382,7 +380,7 @@ settings:
 
 ## Manual installation
 
-The theme styles can also be imported manually. To do that, follow these steps:
+To manually import the theme, follow these steps:
 
 * Open the Windows 11 Taskbar Styler Mod in Windhawk.
 * Go to the "Settings" tab and select "Textual mode".
