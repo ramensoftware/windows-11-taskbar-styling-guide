@@ -56,7 +56,7 @@ Install and configure the following Windhawk Mods in addition to Taskbar Styler 
   progressIndicatorStyle: sameAsRunningIndicatorStyle
   excludedPrograms:
     - ''
-  minimumTaskbarItemWidth: 0
+  minimumTaskbarItemWidth: 38
   maximumTaskbarItemWidth: 200
   fontSize: 12
   fontFamily: ''
