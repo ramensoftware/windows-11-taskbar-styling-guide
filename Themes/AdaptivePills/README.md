@@ -18,13 +18,13 @@ AdaptivePills. A sleek theme that turns task buttons into narrow rounded adaptiv
 - Settings: Search - Hide | Task view - Off  | Widgets - On | Taskbar alignment - Center.
 
   <details>
-  <summary>Click to expand to view Taskbar Windows Settings for similar results</summary>
+  <summary>Click to expand to view Taskbar Windows Settings</summary>
 
   ![TaskbarSettings](TaskbarSettings.png)
   </details>
   
   <details>
-  <summary>Click to expand to view Widget Board Settings for similar results</summary>
+  <summary>Click to expand to view Widget Board Settings</summary>
 
   ![WidgetBoardSettings](WidgetBoardSettings.png)
   </details>
