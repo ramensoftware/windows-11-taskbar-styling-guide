@@ -404,7 +404,6 @@ styleConstants:
   - highlightMinWidth = 38
   - iconLabelSpacing = 5
   - leftRightPadding = 5
-  - multiWindowNotch = 4
   - badgeSize = 13
   - badgeNudge = 5,3,0,0
   - sysTrayIconSize = 15
@@ -413,6 +412,7 @@ styleConstants:
   - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}"/>
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
+  - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame
     styles:
@@ -425,13 +425,13 @@ controlStyles:
     styles:
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
       - Margin := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{$highlightOffset+2}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowNormal := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowActive := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMulti := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)+$multiWindowNotch}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowNormal := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowActive := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@MultiWindowPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMulti := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
       - CornerRadius := $highlightRadius
       - BorderThickness = 0
       - VerticalAlignment = 1
@@ -503,6 +503,21 @@ controlStyles:
       - Margin := 0,{{$taskbarTopOffset}},3,{{$taskbarBottomOffset}}
       - HorizontalAlignment = 2
       - Canvas.ZIndex = 3
+  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
+    styles:
+      - Stretch = 2
+      - Height = 3
+      - Width = 3
+      - Visibility = 1
+      - Visibility@MultiWindowNormal = 0
+      - Visibility@MultiWindowActive = 0
+      - Visibility@MultiWindowPressed = 0
+      - Visibility@MultiWindowPointerOver = 0
+      - Fill := $multiWinIndicatorColor
+      - RadiusX = 2
+      - RadiusY = 2
+      - StrokeThickness = 0
+      - Margin = 0,0,14,0
   - target: Taskbar.TaskbarExtensionElement
     styles:
       - Visibility = Collapsed
@@ -687,6 +702,8 @@ themeResourceVariables:
   - AdaptiveFill@Dark =#000000
   - AdaptiveBorder@Light =#75B4B4B4
   - AdaptiveBorder@Dark =#60454545
+  - AdaptiveIndicator@Light =#000000
+  - AdaptiveIndicator@Dark =#FFFFFF
 ```
 </details>
 
