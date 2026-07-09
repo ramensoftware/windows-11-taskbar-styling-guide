@@ -690,7 +690,9 @@ themeResourceVariables:
   - AdaptiveBorder@Light =#75B4B4B4
   - AdaptiveBorder@Dark =#60454545
 ```
-</details><br>
+</details>
+
+## Styling
 
 To tweak styleConstants (located at the top of the theme content), you may use the styleConstants illustration below as a guide:
 
