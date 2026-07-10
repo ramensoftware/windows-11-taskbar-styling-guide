@@ -506,8 +506,8 @@ controlStyles:
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
       - Stretch = 2
-      - Height = 3
-      - Width = 3
+      - Height = 4
+      - Width = 4
       - Visibility = 1
       - Visibility@MultiWindowNormal = 0
       - Visibility@MultiWindowActive = 0
@@ -517,7 +517,7 @@ controlStyles:
       - RadiusX = 2
       - RadiusY = 2
       - StrokeThickness = 0
-      - Margin = 0,0,14,0
+      - Margin = 0,0,16,0
   - target: Taskbar.TaskbarExtensionElement
     styles:
       - Visibility = Collapsed
