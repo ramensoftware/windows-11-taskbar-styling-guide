@@ -11,7 +11,7 @@ Light Mode
 ![Light](Light.png)
 ![LightMaximized](LightMaximized.png)
 
-Pills. A sleek theme that turns task buttons into narrow rounded adaptive pills that keep the native feel but breathe more. It's also designed to be aesthetically pleasing even when windows are maximized.
+Pills. A sleek theme that turns task buttons into narrow rounded labeled, adaptive and breathable pills. The design is aesthetically pleasing even when windows are maximized.
 
 ## Notes
 - Designed on Windows 11 - 25H2 (OS Build 26200.8737).
