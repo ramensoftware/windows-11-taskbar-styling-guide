@@ -4,6 +4,8 @@ Taskbar dock-like theme with removal of borders and drop shadows from hover flyo
 
 **Author**: [Ali Cool](https://github.com/AliCool412)
 
+**Special thanks to**: [CryptoProgenitor](https://github.com/CryptoProgenitor) for the column definitions used in this theme.
+
 ![Screenshot](screenshot.png)
 
 ## Notice
