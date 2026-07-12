@@ -351,12 +351,6 @@ controlStyles:
     styles:
       - Width = 1
       - Height = 0
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
-    styles:
-      - CornerRadius := $buttonRadius
-      - BorderThickness := $borderThickness
-      - Background := $fillColor
-      - BorderBrush := $borderColor
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
     styles:
       - Width := $badgeSize
