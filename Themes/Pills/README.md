@@ -30,7 +30,7 @@ Pills. A sleek theme that turns taskbar buttons into labeled breathable pills. T
   </details>
   
 ## Windhawk Mods for similar results
-Install and configure the following Windhawk Mods in addition to Taskbar Styler (click each to expand settings):
+Click each to expand settings:
 
   <details>
   <summary>Taskbar Height and Icon Size</summary>
