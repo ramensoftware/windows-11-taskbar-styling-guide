@@ -29,7 +29,7 @@ Pills. A sleek theme that turns taskbar buttons into labeled breathable pills. T
   ![WidgetBoardSettings](WidgetBoardSettings.png)
   </details>
   
-## Windhawk Mods for similar results
+## Windhawk mods for similar results
 Click each to expand settings:
 
   <details>
