@@ -495,7 +495,7 @@ controlStyles:
     styles:
       - Width := {{WeatherCondWidth+WeatherTempWidth+50}}
       - Height = Auto
-      - Margin := {{$taskbarLeftOffset}},{{$taskbarTopOffset}},50,{{$taskbarBottomOffset}}
+      - Margin := {{$taskbarLeftOffset}},{{$taskbarTopOffset}},60,{{$taskbarBottomOffset}}
       - Padding = 0
       - CornerRadius := {{$buttonRadius*$taskbarSidesRounded}},{{$buttonRadius}},{{$buttonRadius}},{{$buttonRadius*$taskbarSidesRounded}}
       - BorderThickness := $borderThickness
