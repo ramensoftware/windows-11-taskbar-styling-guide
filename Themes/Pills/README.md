@@ -159,19 +159,19 @@ Install and configure the following Windhawk Mods in addition to Taskbar Styler 
     enabled: 1
     style: fallback
   startOpened:
-    enabled: 1
+    enabled: 0
     style: fallback
   searchOpened:
-    enabled: 1
+    enabled: 0
     style: fallback
   taskViewOpened:
-    enabled: 1
+    enabled: 0
     style: fallback
   trayFlyoutOpened:
-    enabled: 1
+    enabled: 0
     style: fallback
   otherInteraction:
-    enabled: 1
+    enabled: 0
     style: fallback
   animation:
     durationMs: 220
