@@ -200,20 +200,15 @@ Install and configure the following Windhawk Mods in addition to Taskbar Styler 
   </details>
 
 
-## Theme selection
+## Theme selection installation
 
-The theme is integrated into the Mod and can be selected directly from the Mod's
-settings:
-
-* Open the Windows 11 Taskbar Styler Mod in Windhawk.
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
 * Select the theme "Pills" and save the settings.
 
 ## Manual installation
 
-To manually import the theme, follow these steps:
-
-* Open the Windows 11 Taskbar Styler Mod in Windhawk.
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
 
@@ -540,7 +535,7 @@ themeResourceVariables:
 
 ## Styling
 
-To tweak styleConstants (located at the top of the theme content), you may use the styleConstants illustration below as a guide:
+To tweak styleConstants, you may use the illustration below as a guide:
 
   <details>
   <summary>styleConstants illustration</summary>
