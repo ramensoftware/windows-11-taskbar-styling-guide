@@ -38,10 +38,11 @@ You can save the above as `Themes/TaskbarHeightAndIconSize/settings.txt` (option
 - Primary blur: WindhawkBlur (preferred for smooth blur).  
 - Fallback: AcrylicBrush (used when WindhawkBlur is unavailable).  
 - If the host system does not support blur at all, the theme will degrade to semi‑transparent or solid fallback styles; visual fidelity will vary.
-
+  
 ## Screenshots
-Example images are included in Themes/FrostedAcrylic/assets/. In the repository README these are referenced with relative paths for preview:
-![Preview](https://raw.githubusercontent.com/EvanYFWong/windows-11-taskbar-styling-guide/EvanYFWong-patch-1/Themes/FrostedAcrylic/assets/screenshot-1920x1080.png)
+Example images are included in `Themes/FrostedAcrylic/assets/`. In the repository README these are referenced with relative paths for preview:
+
+![Preview](assets/screenshot-1920x1080.png)
 
 Customization tips
 To change the bar’s maximum width, gutters, or button sizing, edit the constants in theme.txt (for example: TaskbarFrameWidth, SideMargin, TrayRightMargin, TaskbarButtonWidth).
