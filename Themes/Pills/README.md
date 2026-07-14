@@ -22,13 +22,13 @@ Pills. A sleek theme that turns taskbar buttons into labeled breathable pills. T
 
   ![TaskbarSettings](TaskbarSettings.png)
   </details>
-  
+
   <details>
   <summary>Click to expand to view Widget Board Settings</summary>
 
   ![WidgetBoardSettings](WidgetBoardSettings.png)
   </details>
-  
+
 ## Windhawk mods for similar results
 Click each to expand settings:
 
