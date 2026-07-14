@@ -399,7 +399,7 @@ xamlDiagnosticsHandling: ''
 ```
 </details>
 
-## OS26 Liquid Glass (Taskbar) Configuration
+## OS26 Liquid Glass (Taskbar, Island) Configuration
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -407,20 +407,33 @@ xamlDiagnosticsHandling: ''
 ```yaml
 styleConstants:
   - IconBackground= <ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26 Liquid Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
+  - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
 controlStyles:
+  - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
+    styles:
+      - CornerRadius=20
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - BorderThickness=1
+      - Margin=150,0,150,0
+      - BorderBrush=#40FFFFFF
+      - Padding=-1
+  - target: Rectangle#BackgroundStroke
+    styles:
+      - Fill=Transparent
+
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
-      - RequestedTheme=Dark
-      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - Margin=150,1,150,4
-      - CornerRadius=20
-      - BorderThickness=1.2
-      - Padding=10,0
+      - Visibility=Visible
+      - Margin=0,8,0,2
+      - Padding=20,0,20,0
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid >
+    styles:
+      - ''
   - target: Windows.UI.Xaml.Controls.FlyoutPresenter
     styles:
       - RequestedTheme=Dark
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - BorderThickness=2,2,2,2
+      - BorderThickness=2
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - CornerRadius=33
       - Padding=2,3,2,3
@@ -429,7 +442,7 @@ controlStyles:
       - RequestedTheme=Dark
       - Background:=Transparent
       - BorderBrush:=Transparent
-      - BorderThickness=5
+      - BorderThickness=2
       - Margin=0
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
@@ -443,7 +456,7 @@ controlStyles:
   - target: MenuFlyoutPresenter > Border
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - BorderThickness=2,2,2,2
+      - BorderThickness=2
       - CornerRadius=25
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid
@@ -454,18 +467,21 @@ controlStyles:
       - BorderThickness=1.2
   - target: Grid#SystemTrayFrameGrid
     styles:
-      - Background:=$IconBackground
+      - Width=Auto
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - CornerRadius=15
-      - Margin=60,6,-280,8
+      - Margin=80,20,-255,10
       - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
       - Padding=10,2
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#50ffffff" Offset="0.0"/><GradientStop Color="#10ffffff" Offset="0.5"/><GradientStop Color="#30ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=2
+      - Visibility=Visible
   - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=15
+      - CornerRadius=18
+      - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
+      - BorderBrush:=$IconBorder
       - BorderThickness=1.2
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
@@ -496,9 +512,9 @@ controlStyles:
       - Background:=<WindhawkBlur BlurAmount="15" TintColor="#50FFFFFF"/>
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
-      - CornerRadius=15
+      - CornerRadius=12
       - Background:=$IconBackground
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
+      - BorderBrush:=$IconBorder
       - Margin=2
       - BorderThickness=1.2
   - target: Border#OverflowFlyoutBackgroundBorder
@@ -514,11 +530,12 @@ controlStyles:
   - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
       - Fill:=#90ffffff
-      - RadiusX=4
-      - RadiusY=4
-      - Height=3
-      - Width=10
-      - Width@ActiveRunningIndicator=20
+      - RadiusX=6
+      - RadiusY=6
+      - Margin=-2
+      - Height=6
+      - Width=6
+      - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
@@ -540,7 +557,7 @@ controlStyles:
       - RequestedTheme=2
   - target: Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
-      - Background:=<WindhawkBlur BlurAmount="10" TintColor="#10ffffff"/>
+      - Background:=$IconBackground
   - target: Taskbar.StartButton#StartButton
     styles:
       - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
@@ -574,9 +591,10 @@ controlStyles:
       - Margin=-12,0,0,0
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
-      - CornerRadius=15
+      - Margin=0,5.5,0,5.5
+      - CornerRadius=18
       - Background:=$IconBackground
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
+      - BorderBrush:=$IconBorder
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
     styles:
       - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
@@ -591,10 +609,10 @@ controlStyles:
       - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=15
-      - Margin=0
+      - CornerRadius=18
+      - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
+      - BorderBrush:=$IconBorder
       - BorderThickness=1.2
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
     styles:
@@ -645,6 +663,7 @@ controlStyles:
 themeResourceVariables:
   - ''
 xamlDiagnosticsHandling: ''
+
 
 ```
 </details>
