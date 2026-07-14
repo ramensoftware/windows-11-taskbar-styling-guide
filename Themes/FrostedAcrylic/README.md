@@ -41,7 +41,7 @@ You can save the above as `Themes/TaskbarHeightAndIconSize/settings.txt` (option
 
 ## Screenshots
 Example images are included in Themes/FrostedAcrylic/assets/. In the repository README these are referenced with relative paths for preview:
-![Preview](assets/screenshot-1920x1080.png)
+![Preview](https://raw.githubusercontent.com/EvanYFWong/windows-11-taskbar-styling-guide/EvanYFWong-patch-1/Themes/FrostedAcrylic/assets/screenshot-1920x1080.png)
 
 Customization tips
 To change the bar’s maximum width, gutters, or button sizing, edit the constants in theme.txt (for example: TaskbarFrameWidth, SideMargin, TrayRightMargin, TaskbarButtonWidth).
