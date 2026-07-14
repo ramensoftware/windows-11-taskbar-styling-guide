@@ -32,7 +32,7 @@ IconSizeSmall: 25
 TaskbarButtonWidthSmall: 30
 
 
-You can save the above as `Themes/TaskbarHeightAndIconSize/settings.txt` (optional) or paste them into your height/icon size mod’s configuration.
+You paste them into your height/icon size mod’s configuration.
 
 ## Compatibility & fallback behavior
 - Primary blur: WindhawkBlur (preferred for smooth blur).  
