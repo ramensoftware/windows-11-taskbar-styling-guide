@@ -35,40 +35,31 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 
 This theme requires the Windhawk mod [Taskbar Height and Icon size](https://windhawk.net/mods/taskbar-icon-size) to function properly.
 
-## MacDock
+
 
 **Large (Recommended):** `{"TaskbarHeight":85,"IconSize":30,"TaskbarButtonWidth":60,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
-
 Preview:
+## MacDock
 ![Large-Preview](large-dock.png)
-
-**Medium:** `{"TaskbarHeight":80,"IconSize":30,"TaskbarButtonWidth":55,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
-
-Preview:
-![Medium-Preview](medium-dock.png)
-
-**Small:** `{"TaskbarHeight":75,"IconSize":25,"TaskbarButtonWidth":48,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
-
-Preview: 
-![Small-Preview](small-dock.png)
-
-
 ## Taskbar
-
-**Large (Recommended):** `{"TaskbarHeight":70,"IconSize":30,"TaskbarButtonWidth":58,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
-
-Preview:
 ![Large-Preview](large-taskbar.png)
 
-**Medium:** `{"TaskbarHeight":65,"IconSize":30,"TaskbarButtonWidth":54,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
+**Medium:** `{"TaskbarHeight":80,"IconSize":30,"TaskbarButtonWidth":55,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 Preview:
-![Medium-Preview](medium-taskbar.png)
+## MacDock
+![Medium-dock-Preview](medium-dock.png)
+## Taskbar
+![Medium-taskbar-Preview](medium-taskbar.png)
 
-**Small:** `{"TaskbarHeight":60,"IconSize":25,"TaskbarButtonWidth":48,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 
+**Small:** `{"TaskbarHeight":75,"IconSize":25,"TaskbarButtonWidth":48,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
 Preview: 
+## MacDock
+![Small-dock-Preview](small-dock.png)
+## Taskbar
 ![Small-Preview](small-taskbar.png)
+
 
 ---
 
