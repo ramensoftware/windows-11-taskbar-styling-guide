@@ -26,6 +26,7 @@ controlStyles:
       - Margin=0
       - Background:=Transparent
       - HorizontalAlignment=Stretch
+      - Padding=0
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Width=Auto
@@ -55,14 +56,12 @@ controlStyles:
     styles:
       - Background:=Transparent
       - CornerRadius=6
-
   - target: SearchUx.SearchUI.SearchButtonControl
     styles:
       - Width=48
       - MinWidth=48
       - MaxWidth=48
       - Margin=0
-
   - target: Taskbar.TaskListButton
     styles:
       - Width=48
@@ -185,8 +184,72 @@ controlStyles:
     styles:
       - Background:=$Background
       - BorderBrush:=$BorderBrush
-      - BorderThickness:=$BorderThickness
-      - CornerRadius=12
+      - BorderThickness=$BorderThickness
+      - CornerRadius=1
+  - target: Taskbar.TaskItemThumbnailView > Grid#BackgroundGrid > Border#BackgroundElement
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Taskbar.TaskItemThumbnailView > Border#BackgroundElement
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Taskbar.TaskItemThumbnailView > Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
+    styles:
+      - Fill:=$Background
+      - Visibility=Visible
+  - target: Popup > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Popup > Grid > Border
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Border
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+      - Padding=6
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Border
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Popup > Windows.UI.Xaml.Controls.Border#InputSwitcherPopupBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill:=$Background
+      - Visibility=Visible
+
 themeResourceVariables:
   - ''
 xamlDiagnosticsHandling: ''
