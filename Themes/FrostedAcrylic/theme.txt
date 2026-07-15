@@ -13,6 +13,7 @@ styleConstants:
   - ElementBorderThickness=0.3,0.3,0.3,1
   - ElementCornerRadius=12
   - TrayPadding=2,4,2,4
+
 controlStyles:
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
@@ -54,6 +55,14 @@ controlStyles:
     styles:
       - Background:=Transparent
       - CornerRadius=6
+
+  - target: SearchUx.SearchUI.SearchButtonControl
+    styles:
+      - Width=48
+      - MinWidth=48
+      - MaxWidth=48
+      - Margin=0
+
   - target: Taskbar.TaskListButton
     styles:
       - Width=48
