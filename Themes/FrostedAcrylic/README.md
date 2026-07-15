@@ -42,6 +42,8 @@ You paste them into your height/icon size mod’s configuration.
 ## Screenshots
 Example images are included in `Themes/FrostedAcrylic/assets/`. In this README they are referenced with relative paths for preview (paths are relative to this file in `Themes/FrostedAcrylic/`):
 
+![Taskbar preview](assets/screenshot-1920x1080.png)
+
 ### Preview / Popup screenshots
 Applied frost to: Alt+Tab, overflow flyouts, task thumbnail preview, input switcher
 
