@@ -38,8 +38,9 @@ This theme requires the Windhawk mod [Taskbar Height and Icon size](https://wind
 
 
 ## **Large (Recommended):** 
-`{"TaskbarHeight":85,"IconSize":30,"TaskbarButtonWidth":60,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
-
+```json
+{"TaskbarHeight":85,"IconSize":30,"TaskbarButtonWidth":60,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
+```
 Preview:
 ### MacDock
 ![Large-Preview](large-dock.png)
@@ -48,7 +49,9 @@ Preview:
 
 
 ## **Small:** 
-`{"TaskbarHeight":75,"IconSize":25,"TaskbarButtonWidth":48,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}`
+```json
+{"TaskbarHeight":80,"IconSize":29,"TaskbarButtonWidth":54,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}
+```
 
 Preview: 
 ### MacDock
