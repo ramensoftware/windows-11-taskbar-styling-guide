@@ -227,6 +227,7 @@ styleConstants:
   - buttonRadius = 7
   - highlightRadius = 6
   - highlightOffset = 3
+  - highlightMinWidth = 38
   - iconLabelSpacing = 5
   - leftRightPadding = 5
   - badgeSize = 13
@@ -245,21 +246,11 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - Padding := 2,0,2,0
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
+      - MinWidth := $highlightMinWidth
+  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
       - Margin := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{$highlightOffset+2}},{{$taskbarBottomOffset-$highlightOffset}}
-<<<<<<< HEAD
-      - Margin@NoRunningIndicator := 0,{{$taskbarTopOffset-$highlightOffset}},2,{{$taskbarBottomOffset-$highlightOffset}}
-=======
-      - Margin@MultiWindowNormal := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowActive := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@MultiWindowPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMulti := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMultiPointerOver := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@RequestingAttentionMultiPressed := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{($highlightOffset+2)}},{{$taskbarBottomOffset-$highlightOffset}}
->>>>>>> parent of bcfb962 (refactoring + addressing RequestingAttentionMulti indicator)
       - CornerRadius := $highlightRadius
       - BorderThickness = 0
       - VerticalAlignment = 1
@@ -268,7 +259,7 @@ controlStyles:
     styles:
       - Visibility = Visible
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
-      - Margin = 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - RadiusX := $buttonRadius
       - RadiusY := $buttonRadius
       - StrokeThickness := $borderThickness
@@ -326,28 +317,30 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton
     styles:
       - Margin := {{$buttonSpacing-6}},0,0,0
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Image#Icon
+  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
-      - Visibility@NoRunningIndicator = 0
       - Margin := 0,{{$taskbarTopOffset}},3,{{$taskbarBottomOffset}}
       - HorizontalAlignment = 2
-      - HorizontalAlignment@NoRunningIndicator = 1
       - Canvas.ZIndex = 3
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
       - Stretch = 2
-      - Height = 4
-      - Width = 4
+      - Height = 3
+      - Width = 3
       - Visibility = 1
       - Visibility@MultiWindowNormal = 0
       - Visibility@MultiWindowActive = 0
       - Visibility@MultiWindowPressed = 0
       - Visibility@MultiWindowPointerOver = 0
+      - Visibility@RequestingAttentionMulti = 0
+      - Visibility@RequestingAttentionMultiPointerOver = 0
+      - Visibility@RequestingAttentionMultiPressed = 0
       - Fill := $multiWinIndicatorColor
       - RadiusX = 2
       - RadiusY = 2
       - StrokeThickness = 0
       - Margin = 0,0,16,0
+      - Canvas.ZIndex = 4
   - target: Taskbar.TaskbarExtensionElement
     styles:
       - Visibility = Collapsed
