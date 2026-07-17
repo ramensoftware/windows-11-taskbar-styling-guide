@@ -227,7 +227,6 @@ styleConstants:
   - buttonRadius = 7
   - highlightRadius = 6
   - highlightOffset = 3
-  - highlightMinWidth = 38
   - iconLabelSpacing = 5
   - leftRightPadding = 5
   - badgeSize = 13
@@ -246,11 +245,11 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - Padding := 2,0,2,0
-      - MinWidth := $highlightMinWidth
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
       - Margin := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{$highlightOffset+2}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin@NoRunningIndicator := 0,{{$taskbarTopOffset-$highlightOffset}},2,{{$taskbarBottomOffset-$highlightOffset}}
       - CornerRadius := $highlightRadius
       - BorderThickness = 0
       - VerticalAlignment = 1
@@ -317,10 +316,12 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton
     styles:
       - Margin := {{$buttonSpacing-6}},0,0,0
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
+  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Image#Icon
     styles:
+      - Visibility@NoRunningIndicator = 0
       - Margin := 0,{{$taskbarTopOffset}},3,{{$taskbarBottomOffset}}
       - HorizontalAlignment = 2
+      - HorizontalAlignment@NoRunningIndicator = 1
       - Canvas.ZIndex = 3
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
