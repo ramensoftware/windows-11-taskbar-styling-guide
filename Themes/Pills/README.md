@@ -247,7 +247,7 @@ controlStyles:
     styles:
       - Padding := 2,0,2,0
       - MinWidth := $highlightMinWidth
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
     styles:
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
       - Margin := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{$highlightOffset+2}},{{$taskbarBottomOffset-$highlightOffset}}
@@ -280,7 +280,7 @@ controlStyles:
   - target: Border#ProgressBarRoot > Border > Grid
     styles:
       - Height = Auto
-  - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#ProgressBarTrack
+  - target: Grid#LayoutRoot > Border#ProgressBarRoot > Border > Grid > Rectangle#ProgressBarTrack
     styles:
       - Fill = Transparent
   - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#DeterminateProgressBarIndicator
@@ -307,7 +307,7 @@ controlStyles:
   - target: Border#MultiWindowElement
     styles:
       - Visibility = Collapsed
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
+  - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
       - Margin := {{$iconLabelSpacing-6}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset+3}}
       - Padding := {{$leftRightPadding}},0
