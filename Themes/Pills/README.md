@@ -54,7 +54,7 @@ Click each to expand settings:
   progressIndicatorStyle: sameAsRunningIndicatorStyle
   excludedPrograms:
     - ''
-  minimumTaskbarItemWidth: 38
+  minimumTaskbarItemWidth: 30
   maximumTaskbarItemWidth: 200
   fontSize: 12
   fontFamily: ''
