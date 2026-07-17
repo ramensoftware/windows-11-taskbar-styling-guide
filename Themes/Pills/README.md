@@ -255,8 +255,10 @@ controlStyles:
       - BorderThickness = 0
       - VerticalAlignment = 1
       - Canvas.ZIndex = 2
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
+      - Opacity = 1
+      - Opacity@NoRunningIndicator = 0
       - Visibility = Visible
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
