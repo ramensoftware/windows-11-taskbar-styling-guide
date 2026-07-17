@@ -276,7 +276,7 @@ controlStyles:
       - Background := $fillColor
       - BorderThickness = 0
       - CornerRadius := $buttonRadius
-      - Canvas.ZIndex = 10
+      - Canvas.ZIndex = 1
   - target: Border#ProgressBarRoot > Border > Grid
     styles:
       - Height = Auto
