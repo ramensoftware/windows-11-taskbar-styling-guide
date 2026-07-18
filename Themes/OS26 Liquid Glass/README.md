@@ -97,7 +97,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
 
-## OS26 Liquid Glass (MacDock) Configuration
+# Clear Variants:
+
+## OS26 Liquid Glass (Clear, MacDock) Configuration
 ![preview-dock](screenshot-dock-1.png)
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -400,7 +402,7 @@ xamlDiagnosticsHandling: ''
 ```
 </details>
 
-## OS26 Liquid Glass (Taskbar, Island) Configuration
+## OS26 Liquid Glass (Clear Taskbar, Island) Configuration
 ![preview-taskbar-island](screenshot-taskbar-island.png)
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -708,7 +710,7 @@ xamlDiagnosticsHandling: ''
 </details>
 
 
-## OS26 Liquid Glass (Taskbar, Full Width) Configuration
+## OS26 Liquid Glass (Clear Taskbar, Full Width) Configuration
 ![Preview-taskbar-full](screenshot-taskbar-full.png)
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -1014,6 +1016,8 @@ xamlDiagnosticsHandling: ''
 ```
 </details>
 
+# Dark Variants:
+
 ## OS26 Liquid Glass (Dark MacDock) Configuration
 ![preview-dock-dark](screenshot-dock-dark-1.png)
 <details>
@@ -1022,7 +1026,7 @@ xamlDiagnosticsHandling: ''
 ```yaml
 
 styleConstants:
-  - IconBackground=<ImageBrush Stretch="UniformtoFill" ImageSource="C:\Backgrounds\Untitled.png" />
+  - IconBackground=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/darkappbg.png" />
   - IconBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#50ffffff" Offset="0.0"/> <GradientStop Color="#50606060" Offset="0.35"/> <GradientStop Color="#70303030" Offset="0.6"/> <GradientStop Color="#50606060" Offset="0.65"/> <GradientStop Color="#50ffffff" Offset="1.0"/> </LinearGradientBrush>
 controlStyles:
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
@@ -1326,7 +1330,7 @@ xamlDiagnosticsHandling: ''
 ```yaml
 
 styleConstants:
-  - IconBackground=<ImageBrush Stretch="UniformtoFill" ImageSource="C:\Backgrounds\Untitled.png" />
+  - IconBackground=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/darkappbg.png" />
   - IconBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#50ffffff" Offset="0.0"/> <GradientStop Color="#50606060" Offset="0.35"/> <GradientStop Color="#70303030" Offset="0.6"/> <GradientStop Color="#50606060" Offset="0.65"/> <GradientStop Color="#50ffffff" Offset="1.0"/> </LinearGradientBrush>
 controlStyles:
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
@@ -1635,7 +1639,7 @@ xamlDiagnosticsHandling: ''
 
 ```yaml
 styleConstants:
-  - IconBackground=<ImageBrush Stretch="UniformtoFill" ImageSource="C:\Backgrounds\Untitled.png" />
+  - IconBackground=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/darkappbg.png" />
   - IconBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#50ffffff" Offset="0.0"/> <GradientStop Color="#50606060" Offset="0.35"/> <GradientStop Color="#70303030" Offset="0.6"/> <GradientStop Color="#50606060" Offset="0.65"/> <GradientStop Color="#50ffffff" Offset="1.0"/> </LinearGradientBrush>
 controlStyles:
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
