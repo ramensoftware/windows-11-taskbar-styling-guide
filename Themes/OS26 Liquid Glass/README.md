@@ -144,9 +144,10 @@ controlStyles:
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid
     styles:
+      - Height=35
       - CornerRadius=12
       - Background:=$IconBackground
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
+      - BorderBrush:=$IconBorder
       - BorderThickness=1.2
   - target: Grid#SystemTrayFrameGrid
     styles:
@@ -442,9 +443,10 @@ controlStyles:
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid
     styles:
+      - Height=35
       - CornerRadius=12
       - Background:=$IconBackground
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
+      - BorderBrush:=$IconBorder
       - BorderThickness=1.2
   - target: Grid#SystemTrayFrameGrid
     styles:
@@ -749,9 +751,10 @@ controlStyles:
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid
     styles:
+      - Height=35
       - CornerRadius=12
       - Background:=$IconBackground
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
+      - BorderBrush:=$IconBorder
       - BorderThickness=1.2
   - target: Grid#SystemTrayFrameGrid
     styles:
