@@ -141,12 +141,14 @@ Taskbar Styler mod. The following themes are available:
 | [TintedGlass](Themes/TintedGlass/README.md) | [![TintedGlass](Themes/TintedGlass/screenshot.png)](Themes/TintedGlass/screenshot.png)
 | [TaskbarToStatusbar](Themes/TaskbarToStatusbar/README.md) | [![TaskbarToStatusbar](Themes/TaskbarToStatusbar/screenshot.png)](Themes/TaskbarToStatusbar/screenshot.png)
 | [UltraWideFriendly](Themes/UltraWideFriendly/README.md) | [![UltraWideFriendly](Themes/UltraWideFriendly/screenshot.png)](Themes/UltraWideFriendly/screenshot.png)
-| [LiquidGlass](Themes/LiquidGlass/README.md) | [![LiquidGlass](Themes/LiquidGlass/screenshot.png)](Themes/LiquidGlass/screenshot.png)
+| [LiquidGlass](Themes/LiquidGlass2/README.md) | [![LiquidGlass](Themes/LiquidGlass2/screenshot.png)](Themes/LiquidGlass2/screenshot.png)
+| [LiquidGlass (Legacy)](Themes/LiquidGlass/README.md) | [![LiquidGlass (Legacy)](Themes/LiquidGlass/screenshot.png)](Themes/LiquidGlass/screenshot.png)
 | [Borderless](Themes/Borderless/README.md) | [![Borderless](Themes/Borderless/screenshot.png)](Themes/Borderless/screenshot.png)
 | [Command Center](Themes/Command%20Center/README.md) | [![Command Center](Themes/Command%20Center/screenshot.png)](Themes/Command%20Center/screenshot.png)
 | [FluentGlass](Themes/FluentGlass/README.md) | [![FluentGlass](Themes/FluentGlass/screenshot.png)](Themes/FluentGlass/screenshot.png)
 | [OS26 Liquid Glass](Themes/OS26%20Liquid%20Glass/README.md) | [![OS26 Liquid Glass](Themes/OS26%20Liquid%20Glass/screenshot.png)](Themes/OS26%20Liquid%20Glass/screenshot.png)
 | [FrostyGlass](Themes/FrostyGlass/README.md) | [![FrostyGlass](Themes/FrostyGlass/screenshot.png)](Themes/FrostyGlass/screenshot.png)
+| [FrostedAcrylic](Themes/FrostedAcrylic/README.md) | [![FrostedAcrylic](Themes/FrostedAcrylic/screenshot.png)](Themes/FrostedAcrylic/screenshot.png)
 | [Pills](Themes/Pills/README.md) | [![Pills](Themes/Pills/Dark.png)](Themes/Pills/Dark.png)
 
 ## General
