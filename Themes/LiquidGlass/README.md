@@ -188,7 +188,7 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Padding=-1,0,45,0
-      - Margin=0,0,0,3
+      - Margin=0,0,0,4
       - CornerRadius=Auto
       - Background:=Red
       - HorizontalAlignment=Center
@@ -220,7 +220,7 @@ controlStyles:
       - Background:=<WindhawkBlur BlurAmount="5" TintColor="#39101010"/>
       - CornerRadius={{(TaskHeight/4)*1.8}}
       - BorderThickness=1.2,1,1.2,1
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.1" /><GradientStop Color="#60404040" Offset="0.25" /><GradientStop Color="#40292929" Offset="0.5" /><GradientStop Color="#90404040" Offset="0.75" /><GradientStop Color="#90404040" Offset="0.9" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.1" /><GradientStop Color="#60404040" Offset="0.25" /><GradientStop Color="#70202020" Offset="0.5" /><GradientStop Color="#90404040" Offset="0.75" /><GradientStop Color="#90404040" Offset="0.9" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
       - Padding=11,0,10,0
       - Margin=0,1,0,1
       - VerticalAlignment=Center
@@ -252,7 +252,7 @@ controlStyles:
       - ActualWidth=>FlyWid
       - ActualHeight=>FlyHyt
       - BorderThickness=1,1,1,0.5
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50454545" Offset="0.16" /><GradientStop Color="#50404040" Offset="0.28" /><GradientStop Color="#80303030" Offset="0.5" /><GradientStop Color="#50404040" Offset="0.72" /><GradientStop Color="#50404040" Offset="0.84" /><GradientStop Color="#70D3D3D3" Offset="1" /></LinearGradientBrush>
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50454545" Offset="0.16" /><GradientStop Color="#50404040" Offset="0.28" /><GradientStop Color="#70101010" Offset="0.5" /><GradientStop Color="#50404040" Offset="0.72" /><GradientStop Color="#50404040" Offset="0.84" /><GradientStop Color="#70D3D3D3" Offset="1" /></LinearGradientBrush>
       - RenderTransform:=<ScaleTransform ScaleX="1.12" ScaleY="1.15" />
       - RenderTransformOrigin=0.5,0
       - Margin=7,0,13,155
@@ -308,11 +308,11 @@ controlStyles:
       - Background:=Red
   - target: Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot
     styles:
-      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#15101010"/>
+      - Background:=<WindhawkBlur BlurAmount="4" TintColor="#20000000"/>
       - BorderThickness=1
       - CornerRadius={{ max(19, min(40, (TooltipHeight / 2) * 1)) }}
       - ActualHeight=>TooltipHeight
-      - Padding={{ max(16, min(22, TooltipHeight * 0.35)) }},{{ max(9, min(11.5, TooltipHeight * 0.2)) }},{{ max(16, min(22, TooltipHeight * 0.35)) }},{{ max(9.5, min(12, TooltipHeight * 0.22)) }}
+      - Padding={{ max(16, min(23, TooltipHeight * 0.35)) }},{{ max(9, min(11.5, TooltipHeight * 0.2)) }},{{ max(16, min(22, TooltipHeight * 0.35)) }},{{ max(9.5, min(12, TooltipHeight * 0.22)) }}
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#59505050" Offset="0.15" /><GradientStop Color="#60404040" Offset="0.28" /><GradientStop Color="#60202020" Offset="0.5" /><GradientStop Color="#60404040" Offset="0.72" /><GradientStop Color="#50595959" Offset="0.85" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
       - FontSize=14
       - FontWeight=Medium
@@ -322,7 +322,7 @@ controlStyles:
       - RadiusX=34
       - RadiusY=34
       - StrokeThickness:=1
-      - Stroke:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#65696969" Offset="0.5" /><GradientStop Color="#50505050" Offset="1" /></LinearGradientBrush>
+      - Stroke:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70C0C0C0" Offset="0.0" /><GradientStop Color="#60696969" Offset="0.5" /><GradientStop Color="#50505050" Offset="1" /></LinearGradientBrush>
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundStroke
     styles:
       - Visibility=Visible
@@ -373,35 +373,29 @@ controlStyles:
       - Height=21
   - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
     styles:
-      - Background:=<WindhawkBlur BlurAmount="7" TintColor="#1B242424"/>
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#1B242424"/>
       - BorderThickness=1.2,1,1.2,1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#60D3D3D3" Offset="0.0" /><GradientStop Color="#4F494949" Offset="0.1" /><GradientStop Color="#60505050" Offset="0.5" /><GradientStop Color="#4F494949" Offset="0.9" /><GradientStop Color="#60D3D3D3" Offset="1" /></LinearGradientBrush>
       - CornerRadius=27
       - Margin=0
       - Padding=-30,0,-30,0
-  - target: SnapLayout.SnapLayoutPickerControl
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SnapAssistList > Grid > Border#ListBackground
     styles:
-      - Background:=<WindhawkBlur BlurAmount="12" TintColor="#1B242424"/>
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50DDDDDD" Offset="0.0" /><GradientStop Color="#1C696969" Offset="0.28" /><GradientStop Color="#20696969" Offset="0.43" /><GradientStop Color="#20696969" Offset="0.58" /><GradientStop Color="#1C606060" Offset="0.75" /><GradientStop Color="#50C1C1C1" Offset="1" /></LinearGradientBrush>
-      - BorderThickness=1
-      - CornerRadius=10
-  - target: SnapLayout.SnapLayoutControl
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="12" TintColor="#15151515"/>
-      - CornerRadius=10
-      - BorderThickness=1
-      - BorderBrush:=<SolidColorBrush Color="#50808080" />
-  - target: SnapLayout.SnapLayoutControl@CommonStates > Windows.UI.Xaml.Controls.Border#LayoutBorder
-    styles:
-      - Background@PointerOver:=$ElementSysColor2
-      - Background@Pressed:=$ElementSysColor3
+      - ActualHeight=>SnapAssistHyt
+      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#20181818"/>
+      - BorderThickness=1.2,1,1.2,1
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#4F494949" Offset="0.15" /><GradientStop Color="#50505050" Offset="0.5" /><GradientStop Color="#4F494949" Offset="0.85" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
+      - // Proportional rounded corners based on the layout height
+      - CornerRadius={{ max(20, min(30, SnapAssistHyt * 0.05)) }}
+      - Margin=8
+      - Padding=8
   - target: Border#BackgroundDimmingLayer
     styles:
       - Background:=<WindhawkBlur BlurAmount="12" TintColor="#101F1F1F"/>
       - //Desktop Switcher's main bg layer
   - target: Border#VirtualDesktopBarBackground
     styles:
-      - Background:=<WindhawkBlur BlurAmount="10" TintColor="#6B242424"/>
+      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#6B242424"/>
       - BorderThickness=1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50DDDDDD" Offset="0.0" /><GradientStop Color="#0C696969" Offset="0.28" /><GradientStop Color="#50C1C1C1" Offset="1" /></LinearGradientBrush>
       - Margin=45,-5,45,-2
@@ -425,13 +419,13 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#BorderHighlight
     styles:
       - CornerRadius=19
-      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#35252525"/>
+      - Background:=<WindhawkBlur BlurAmount="0" TintColor="#35252525"/>
       - BorderThickness=1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50C1C1C1" Offset="0.0" /><GradientStop Color="#20696969" Offset="0.5" /><GradientStop Color="#50AFAFAF" Offset="1" /></LinearGradientBrush>
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed > Grid#MainGrid > Border#BorderHighlight
     styles:
       - CornerRadius=19
-      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#35252525"/>
+      - Background:=<WindhawkBlur BlurAmount="0" TintColor="#35252525"/>
       - BorderThickness=1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50C1C1C1" Offset="0.0" /><GradientStop Color="#20696969" Offset="0.5" /><GradientStop Color="#50AFAFAF" Offset="1" /></LinearGradientBrush>
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#ActiveDesktopPill
@@ -569,7 +563,7 @@ controlStyles:
       - CornerRadius=33
   - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
     styles:
-      - Background:=<WindhawkBlur BlurAmount="7" TintColor="#2D101010"/>
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#2D101010"/>
       - BorderBrush:=<WindhawkBlur BlurAmount="40" TintColor="#3D404040"/>
       - BorderThickness=1
       - Padding=2,3,2,3
@@ -583,7 +577,7 @@ controlStyles:
       - CornerRadius=12
   - target: SnapLayout.SnapLayoutControl#SuggestionSnapLayout Windows.UI.Xaml.Controls.Border#LayoutBorder
     styles:
-      - Background:=Transparent
+      - Background:=Red
   - target: Windows.UI.Xaml.Controls.Grid#LayoutGrid > Windows.UI.Xaml.Controls.Button
     styles:
       - BorderBrush:=<SolidColorBrush Color="#70BBBBBB"/>
