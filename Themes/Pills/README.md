@@ -50,7 +50,7 @@ Click each to expand settings:
   ```yaml
   mode: labelsWithCombining
   taskbarItemWidth: 0
-  runningIndicatorStyle: left
+  runningIndicatorStyle: fullWidth
   progressIndicatorStyle: sameAsRunningIndicatorStyle
   excludedPrograms:
     - ''
@@ -66,7 +66,6 @@ Click each to expand settings:
   alwaysShowThumbnailLabels: 0
   labelForSingleItem: ''
   labelForMultipleItems: ''
-
   ```
   </details>
 
@@ -224,7 +223,7 @@ Click each to expand settings:
 
 ```yaml
 styleConstants:
-  - modsOn = 1
+  - modsOn = 0
   - taskbarLeftOffset = 10
   - taskbarRightOffset = 10
   - taskbarTopOffset = 5
@@ -259,11 +258,12 @@ controlStyles:
       - // Icon panels of taskbar buttons. Left and right padding must be preserved to native for behavior consistency with Labels mod.
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
+      - Opacity@NoRunningIndicator := $modsOn
       - Background@ActiveRunningIndicator :=
       - Background@NoRunningIndicator := $fillColor
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
       - Height@NoRunningIndicator := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
-      - BorderThickness := {{1-$modsOn}}
+      - BorderThickness = 0
       - BorderThickness@NoRunningIndicator := $borderThickness
       - BorderBrush@NoRunningIndicator := $borderColor
       - CornerRadius@NoRunningIndicator := $buttonRadius
@@ -276,12 +276,10 @@ controlStyles:
       - // The native highlighter. Border thickness set to zero for consistent behavior (in light mode the border is transparent).
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
-      - Width = Auto
-      - Grid.ColumnSpan = 2
-      - Opacity@NoRunningIndicator = 0
+      - Opacity := $modsOn
       - Visibility = Visible
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
-      - Margin := 0,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - RadiusX := $buttonRadius
       - RadiusY := $buttonRadius
       - StrokeThickness := $borderThickness
@@ -292,10 +290,8 @@ controlStyles:
       - // The running indicator functions as the background of taskbar buttons. Left and right margins must be zero to work along with the Labels mod.
   - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
     styles:
-      - Width = Auto
-      - Grid.ColumnSpan = 2
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
-      - Margin = 0,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
+      - Margin = 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - // Same rule for progress indicator applies. Left and Right Margins must be zero to work along with the Labels mod.
   - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator > Grid#LayoutRoot
     styles:
