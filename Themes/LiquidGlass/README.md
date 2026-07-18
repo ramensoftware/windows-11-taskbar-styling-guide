@@ -1,9 +1,9 @@
-# LiquidGlass theme for Windows 11 Taskbar Styler
+# LiquidGlass (Legacy) theme for Windows 11 Taskbar Styler
 
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
 
 > [!NOTE]
-> Support for the LiquidGlas themes is being dropped in favor of a new Fluid Glass theme being released by another author. Their theme is going in the direction this one was aimed and does a lot better than this one does. So, there won't be any future updates to the LiquidGlass themes going forward and they will eventually be removed.
+> Support for the LiquidGlass (Legacy) theme is being dropped in favor of [a new Fluid Glass theme](https://github.com/ramensoftware/windows-11-taskbar-styling-guide/blob/main/Themes/LiquidGlass2/README.md) by another author. Their theme is going in the direction this one was aimed and does a lot better than this one does. So, there won't be any future updates to the LiquidGlass (Legacy) theme going forward.
 
 ![Screenshot](screenshot.png)
 
