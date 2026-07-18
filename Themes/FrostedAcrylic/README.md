@@ -45,9 +45,10 @@ To change the bar’s maximum width, gutters, or button sizing, override the con
 ## Contributing and feedback
 Pull requests are welcome. If you encounter issues on a specific Windows/Explorer version or scaling value, please open an issue and include:
 
-Windows build/version
-display resolution and scaling (DPI%)
-a screenshot of the taskbar showing the problem
+* Windows build/version
+* display resolution and scaling (DPI%)
+* a screenshot of the taskbar showing the problem
+
 Contributions that improve compatibility across scaling/DPI, add presets, or include additional screenshots are appreciated.
 <!--
 ## Theme selection
