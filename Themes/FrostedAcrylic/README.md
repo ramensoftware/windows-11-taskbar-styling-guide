@@ -1,15 +1,10 @@
-# Frosted Acrylic Sheet (Taskbar Theme)
+# FrostedAcrylic theme for Windows 11 Taskbar Styler
 
-**Author:** Evan (@EvanYFWong)  
+**Author:** [Evan](https://github.com/EvanYFWong)
 **License:** MIT
 
 ## Overview
 This is a Frosted Acrylic appearance theme for the Windows 11 Taskbar Styler. It gives the taskbar and system tray a unified, semi‑transparent frosted acrylic look while keeping a clean icon‑only layout.
-
-## Included files
-- `theme.txt` — the theme definition (YAML) placed under `Themes/FrostedAcrylic/`.  
-- `README.md` — this file.  
-- `assets/` — example screenshots (e.g., `screenshot-1920x1080.png`).
 
 ## Tested resolutions & scaling
 This theme has been tested and verified under the following display configurations:
@@ -18,30 +13,19 @@ This theme has been tested and verified under the following display configuratio
 - 1366×768 @ 125%
 - 1680×1050 @ 125%
 
-## Installation (for end users)
-1. Install Windhawk and the Windows 11 Taskbar Styler mod (or another tool that reads these theme files).  
-2. Copy `Themes/FrostedAcrylic/theme.txt` into the theme folder required by your tool, or import the theme through the tool’s UI.  
-3. Optional (recommended for matching the screenshots): enable the "Taskbar Height & Icon Size" mod, or apply the settings shown below to match the sample visuals. The theme will still work without those mods but may appear different.
-
 ## Taskbar Height & Icon Size (recommended pairing)
 Use these settings with your height/icon size mod to reproduce the example visuals exactly:
+```yaml
 TaskbarHeight: 60 
 IconSize: 40 
 TaskbarButtonWidth: 48 
 IconSizeSmall: 25 
 TaskbarButtonWidthSmall: 30
-
+```
 
 You paste them into your height/icon size mod’s configuration.
 
-## Compatibility & fallback behavior
-- Primary blur: WindhawkBlur (preferred for smooth blur).  
-- Fallback: AcrylicBrush (used when WindhawkBlur is unavailable).  
-- If the host system does not support blur at all, the theme will degrade to semi‑transparent or solid fallback styles; visual fidelity will vary.
-  
 ## Screenshots
-Example images are included in `Themes/FrostedAcrylic/assets/`. In this README they are referenced with relative paths for preview (paths are relative to this file in `Themes/FrostedAcrylic/`):
-
 ![Taskbar preview](assets/screenshot-1920x1080.png)
 
 ### Preview / Popup screenshots
@@ -56,8 +40,7 @@ Applied frost to: Alt+Tab, overflow flyouts, task thumbnail preview, input switc
 ![Thumbnail preview](assets/thumbnail%20preview.png)
 
 ## Customization tips
-To change the bar’s maximum width, gutters, or button sizing, edit the constants in theme.txt (for example: TaskbarFrameWidth, SideMargin, TrayRightMargin, TaskbarButtonWidth).
-If you want the theme to automatically adapt to screen width (e.g., a percentage of the screen), generate theme.txt with a small pre‑processing script that calculates values based on the current environment.
+To change the bar’s maximum width, gutters, or button sizing, override the constants in "Style constants" in the mod settings (for example: TaskbarFrameWidth, SideMargin, TrayRightMargin, TaskbarButtonWidth).
 
 ## Contributing and feedback
 Pull requests are welcome. If you encounter issues on a specific Windows/Explorer version or scaling value, please open an issue and include:
@@ -66,10 +49,282 @@ Windows build/version
 display resolution and scaling (DPI%)
 a screenshot of the taskbar showing the problem
 Contributions that improve compatibility across scaling/DPI, add presets, or include additional screenshots are appreciated.
+<!--
+## Theme selection
 
-## Maintainer notes
-Recommended placement: Themes/FrostedAcrylic/ with theme.txt, README.md, and assets/ containing screenshots.
-If you prefer a different filename or directory layout, tell me and I will update the branch.
+The theme is integrated into the mod and can be selected directly from the mod's
+settings:
 
-Contact
-GitHub: @EvanYFWong
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
+
+## Manual installation
+
+The theme styles can also be imported manually. To do that, follow these steps:
+-->
+
+## Manual installation
+
+To import the theme manually, follow these steps:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab and select "Textual mode".
+* Copy the content below to the text box and click "Save settings".
+
+<details>
+<summary>Content to import (click to expand)</summary>
+
+```yaml
+styleConstants:
+  - SideMargin=40
+  - TrayRightMargin=50
+  - Translucent=<WindhawkBlur BlurAmount="15" TintColor="#10808080"/>
+  - Glass=<WindhawkBlur BlurAmount="12" TintColor="#20FFFFFF" TintOpacity="0.3" />
+  - Frosted=<WindhawkBlur BlurAmount="20" TintColor="#30D0D0D0" TintOpacity="0.2" />
+  - Acrylic=<WindhawkBlur BlurAmount="30" TintColor="#40B0B0B0" TintOpacity="0.25" />
+  - Background=$Glass
+  - BorderBrush=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="0.0" /><GradientStop Color="#30404040" Offset="0.25" /><GradientStop Color="#40808080" Offset="1" /></LinearGradientBrush>
+  - BorderThickness=0.5,1,0.5,1
+  - CornerRadius=4
+  - ElementBorderThickness=0.3,0.3,0.3,1
+  - ElementCornerRadius=12
+  - TrayPadding=2,4,2,4
+
+controlStyles:
+  - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
+    styles:
+      - ActualWidth=>containerGridWidth
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Width=Auto
+      - MinWidth:=100
+      - MaxWidth={{containerGridWidth}}
+      - Margin=0
+      - Background:=Transparent
+      - HorizontalAlignment=Stretch
+      - Padding=0
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid
+    styles:
+      - Width=Auto
+      - MinWidth=100
+      - HorizontalAlignment=Stretch
+      - Margin=$SideMargin,2,$SideMargin,3
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
+      - Background:=$Background
+      - Padding=0
+  - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
+    styles:
+      - Visibility=Collapsed
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Width=Auto
+      - HorizontalAlignment=Right
+      - Height=40
+      - VerticalAlignment=Center
+      - Margin=0,0,$TrayRightMargin,0
+      - Background:=$Background
+  - target: Grid#SystemTrayFrameGrid
+    styles:
+      - Background:=Transparent
+      - CornerRadius=6
+  - target: SearchUx.SearchUI.SearchButtonControl
+    styles:
+      - Width=48
+      - MinWidth=48
+      - MaxWidth=48
+      - Margin=0
+  - target: Taskbar.TaskListButton
+    styles:
+      - Width=48
+      - MinWidth=48
+      - MaxWidth=48
+      - Height=60
+      - MinHeight=60
+      - MaxHeight=60
+      - Padding=0
+      - Margin=0
+      - HorizontalAlignment=Center
+      - VerticalAlignment=Center
+  - target: Taskbar.TaskListButton > Taskbar.TaskListButtonPanel
+    styles:
+      - Width=48
+      - MinWidth=48
+      - MaxWidth=48
+      - Height=60
+      - MinHeight=60
+      - MaxHeight=60
+      - Padding=0
+      - Margin=0
+      - HorizontalAlignment=Center
+      - VerticalAlignment=Center
+  - target: Taskbar.TaskListButton > Taskbar.TaskListButtonPanel > Grid
+    styles:
+      - Width=48
+      - MinWidth=48
+      - MaxWidth=48
+      - Height=60
+      - MinHeight=60
+      - MaxHeight=60
+      - Padding=0
+      - Margin=0
+      - VerticalAlignment=Center
+      - HorizontalAlignment=Center
+  - target: Taskbar.TaskListButtonPanel > TextBlock
+    styles:
+      - Visibility=Collapsed
+      - Margin=0
+  - target: Taskbar.TaskListButtonPanel > Grid > TextBlock
+    styles:
+      - Visibility=Collapsed
+      - Margin=0
+  - target: Taskbar.TaskListButtonPanel > Grid > StackPanel > TextBlock
+    styles:
+      - Visibility=Collapsed
+      - Opacity=0
+      - Width=0
+      - MinWidth=0
+      - MaxWidth=0
+  - target: Taskbar.TaskListButtonPanel > Grid > Grid > TextBlock
+    styles:
+      - Visibility=Collapsed
+      - Opacity=0
+      - Width=0
+      - MinWidth=0
+      - MaxWidth=0
+  - target: Taskbar.TaskListButtonPanel > Grid > ContentPresenter > TextBlock
+    styles:
+      - Visibility=Collapsed
+      - Opacity=0
+      - Width=0
+      - MinWidth=0
+      - MaxWidth=0
+  - target: Taskbar.TaskListButtonPanel > StackPanel > TextBlock
+    styles:
+      - Visibility=Collapsed
+      - Opacity=0
+      - Width=0
+      - MinWidth=0
+      - MaxWidth=0
+  - target: Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.FontIcon#FontIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock
+    styles:
+      - Text=
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Visibility=Visible
+  - target: Windows.UI.Xaml.Shapes.Rectangle#MostRecentlyUsedDivider
+    styles:
+      - Height=32
+      - Width=2
+  - target: Windows.UI.Xaml.Shapes.Rectangle#LeftOverflowButtonDivider
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Shapes.Rectangle#RightOverflowButtonDivider
+    styles:
+      - Visibility=Collapsed
+  - target: Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
+    styles:
+      - CornerRadius=22
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - Background:=$Background
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
+    styles:
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - Background:=$Background
+      - CornerRadius=$CornerRadius
+  - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
+      - BorderThickness=$BorderThickness
+  - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
+      - BorderThickness=$BorderThickness
+  - target: Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=1
+  - target: Taskbar.TaskItemThumbnailView > Grid#BackgroundGrid > Border#BackgroundElement
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Taskbar.TaskItemThumbnailView > Border#BackgroundElement
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Taskbar.TaskItemThumbnailView > Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
+    styles:
+      - Fill:=$Background
+      - Visibility=Visible
+  - target: Popup > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Popup > Grid > Border
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Border
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+      - Padding=6
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Border
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Popup > Windows.UI.Xaml.Controls.Border#InputSwitcherPopupBorder
+    styles:
+      - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill:=$Background
+      - Visibility=Visible
+```
+</details>
