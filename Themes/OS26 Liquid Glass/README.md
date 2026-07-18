@@ -80,6 +80,26 @@ maxHeight: 0
 preserveAspectRatio: 0
 ```
 
+# Taskbar Dock Animation Confiuration
+
+The Mod can be made look better and more like MacOS by using [Taskbar Dock Animation](https://windhawk.net/mods/taskbar-dock-animation) Mod! The Following config is Recommended to be used:
+```yaml
+AnimationType: 0
+MaxScale: 128
+EffectRadius: 100
+SpacingFactor: 100
+BounceDelay: 500
+FocusDuration: 150
+MirrorForTopTaskbar: 0
+DisableVerticalBounce: 0
+TaskbarLabelsMode: 0
+ExcludeSystemButtonsMode: 0
+LerpSpeed: 60
+DisableBounce: 1
+```
+## Preview:
+![Animation-Preview](dock-animation-preview.gif)
+
 
 # Theme selection
 
