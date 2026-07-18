@@ -221,9 +221,9 @@ styleConstants:
   - taskbarRightOffset = 10
   - taskbarTopOffset = 5
   - taskbarBottomOffset = 4
-  - buttonSpacing = 6
-  - sysTraySpacing = 6
   - borderThickness = 1
+  - sysTraySpacing = 6
+  - buttonSpacing = 6
   - buttonRadius = 7
   - highlightRadius = 6
   - highlightOffset = 3
