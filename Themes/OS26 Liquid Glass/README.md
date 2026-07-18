@@ -166,13 +166,7 @@ controlStyles:
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
-  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
-    styles:
-      - Fill:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - Stroke:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
-      - StrokeThickness=5
-      - RadiusX=14
-      - RadiusY=14
+
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundStroke
     styles:
       - Fill:=<WindhawkBlur BlurAmount="3.5" TintColor="#2D101010"/>
@@ -181,18 +175,54 @@ controlStyles:
       - RadiusX=14
       - RadiusY=14
       - Fill:=<<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
+    styles:
+      - Canvas.ZIndex=0
+      - Fill:=
+      - Stroke:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - StrokeThickness=5
+      - RadiusX=14
+      - RadiusY=14
+  - target: Taskbar.FlyoutFrame > Windows.UI.Xaml.Controls.Canvas#HoverFlyoutCanvas > Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.ContentPresenter#HoverFlyoutContent > Taskbar.TaskItemThumbnailList > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskItemThumbnailListRepeater > Taskbar.TaskItemThumbnailView > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - VerticalAlignment=Bottom
+      - Canvas.ZIndex=1
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#761E1E1E"/>
+      - Height=25
+      - CornerRadius=0,0,15,15
+      - Margin=5,0,5,0
   - target: Border#HoverFlyoutBackground
     styles:
+      - Margin=4,36,4,0
+      - Canvas.ZIndex=1
+      - Width=Auto
       - Background:=Transparent
       - BorderThickness=0
       - CornerRadius=18
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
+    styles:
+      - Visibility=Collapsed
   - target: Windows.UI.Xaml.Controls.Button#CloseButton
     styles:
+      - HorizontalAlignment=left
+      - Grid.ColumnSpan=1
+      - Grid.RowSpan=1
+      - Canvas.ZIndex=1
       - CornerRadius=20
-      - Width=24
-      - Height=24
-      - Margin=8
-      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#50FFFFFF"/>
+      - Width=28
+      - Height=28
+      - Margin=-18,40,15,-40
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#80ffffff"/>
+      - Foreground=black
+      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#761E1E1E"/>
+  - target: Taskbar.FlyoutFrame > Windows.UI.Xaml.Controls.Canvas#HoverFlyoutCanvas > Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.ContentPresenter#HoverFlyoutContent > Taskbar.TaskItemThumbnailList > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskItemThumbnailListRepeater > Taskbar.TaskItemThumbnailView > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock#DisplayNameTextBlock
+    styles:
+      - Grid.ColumnSpan=2
+      - Grid.RowSpan=2
+      - VerticalAlignment=bottom
+      - HorizontalAlignment=Center
+      - Margin=0,-5,0,5
+      - Canvas.ZIndex=1
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - CornerRadius=12
@@ -434,13 +464,6 @@ controlStyles:
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
-  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
-    styles:
-      - Fill:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - Stroke:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
-      - StrokeThickness=5
-      - RadiusX=14
-      - RadiusY=14
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundStroke
     styles:
       - Fill:=<WindhawkBlur BlurAmount="3.5" TintColor="#2D101010"/>
@@ -449,18 +472,62 @@ controlStyles:
       - RadiusX=14
       - RadiusY=14
       - Fill:=<<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
+    styles:
+      - Canvas.ZIndex=0
+      - Fill:=
+      - Stroke:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - StrokeThickness=5
+      - RadiusX=14
+      - RadiusY=14
+  - target: Taskbar.FlyoutFrame > Windows.UI.Xaml.Controls.Canvas#HoverFlyoutCanvas > Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.ContentPresenter#HoverFlyoutContent > Taskbar.TaskItemThumbnailList > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskItemThumbnailListRepeater > Taskbar.TaskItemThumbnailView > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - VerticalAlignment=Bottom
+      - Canvas.ZIndex=1
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#761E1E1E"/>
+      - Height=25
+      - CornerRadius=0,0,15,15
+      - Margin=5,0,5,0
   - target: Border#HoverFlyoutBackground
     styles:
+      - Margin=4,36,4,0
+      - Canvas.ZIndex=1
+      - Width=Auto
       - Background:=Transparent
       - BorderThickness=0
       - CornerRadius=18
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
+    styles:
+      - Visibility=Collapsed
   - target: Windows.UI.Xaml.Controls.Button#CloseButton
     styles:
+      - HorizontalAlignment=left
+      - Grid.ColumnSpan=1
+      - Grid.RowSpan=1
+      - Canvas.ZIndex=1
       - CornerRadius=20
-      - Width=24
-      - Height=24
-      - Margin=8
-      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#50FFFFFF"/>
+      - Width=28
+      - Height=28
+      - Margin=-18,40,15,-40
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#80ffffff"/>
+      - Foreground=black
+      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#761E1E1E"/>
+  - target: Taskbar.FlyoutFrame > Windows.UI.Xaml.Controls.Canvas#HoverFlyoutCanvas > Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.ContentPresenter#HoverFlyoutContent > Taskbar.TaskItemThumbnailList > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskItemThumbnailListRepeater > Taskbar.TaskItemThumbnailView > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock#DisplayNameTextBlock
+    styles:
+      - Grid.ColumnSpan=2
+      - Grid.RowSpan=2
+      - VerticalAlignment=bottom
+      - HorizontalAlignment=Center
+      - Margin=0,-5,0,5
+      - Canvas.ZIndex=1
+
+  - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=12
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - Margin=2
+      - BorderThickness=1.2
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - CornerRadius=12
@@ -704,13 +771,6 @@ controlStyles:
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
-  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
-    styles:
-      - Fill:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
-      - Stroke:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
-      - StrokeThickness=5
-      - RadiusX=14
-      - RadiusY=14
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundStroke
     styles:
       - Fill:=<WindhawkBlur BlurAmount="3.5" TintColor="#2D101010"/>
@@ -719,18 +779,62 @@ controlStyles:
       - RadiusX=14
       - RadiusY=14
       - Fill:=<<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
+    styles:
+      - Canvas.ZIndex=0
+      - Fill:=
+      - Stroke:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - StrokeThickness=5
+      - RadiusX=14
+      - RadiusY=14
+  - target: Taskbar.FlyoutFrame > Windows.UI.Xaml.Controls.Canvas#HoverFlyoutCanvas > Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.ContentPresenter#HoverFlyoutContent > Taskbar.TaskItemThumbnailList > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskItemThumbnailListRepeater > Taskbar.TaskItemThumbnailView > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - VerticalAlignment=Bottom
+      - Canvas.ZIndex=1
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#761E1E1E"/>
+      - Height=25
+      - CornerRadius=0,0,15,15
+      - Margin=5,0,5,0
   - target: Border#HoverFlyoutBackground
     styles:
+      - Margin=4,36,4,0
+      - Canvas.ZIndex=1
+      - Width=Auto
       - Background:=Transparent
       - BorderThickness=0
       - CornerRadius=18
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
+    styles:
+      - Visibility=Collapsed
   - target: Windows.UI.Xaml.Controls.Button#CloseButton
     styles:
+      - HorizontalAlignment=left
+      - Grid.ColumnSpan=1
+      - Grid.RowSpan=1
+      - Canvas.ZIndex=1
       - CornerRadius=20
-      - Width=24
-      - Height=24
-      - Margin=8
-      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#50FFFFFF"/>
+      - Width=28
+      - Height=28
+      - Margin=-18,40,15,-40
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#80ffffff"/>
+      - Foreground=black
+      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#761E1E1E"/>
+  - target: Taskbar.FlyoutFrame > Windows.UI.Xaml.Controls.Canvas#HoverFlyoutCanvas > Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.ContentPresenter#HoverFlyoutContent > Taskbar.TaskItemThumbnailList > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskItemThumbnailListRepeater > Taskbar.TaskItemThumbnailView > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock#DisplayNameTextBlock
+    styles:
+      - Grid.ColumnSpan=2
+      - Grid.RowSpan=2
+      - VerticalAlignment=bottom
+      - HorizontalAlignment=Center
+      - Margin=0,-5,0,5
+      - Canvas.ZIndex=1
+
+  - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=12
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - Margin=2
+      - BorderThickness=1.2
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - CornerRadius=12
