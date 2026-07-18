@@ -42,7 +42,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
-      - Fill:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#3168d5" Offset="0.0" /> <GradientStop Color="#4993E6" Offset="0.1" /> <GradientStop Color="#2157D7" Offset="0.35" /> <GradientStop Color="#2663E0" Offset="0.8" /> <GradientStop Color="#1941A5" Offset="1.0" /></LinearGradientBrush>
+      - Fill:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#3168d5" Offset="0.0" /> <GradientStop Color="#4993e6" Offset="0.08" /> <GradientStop Color="#245dd7" Offset="0.18" /> <GradientStop Color="#2561de" Offset="0.9" /> <GradientStop Color="#1941a5" Offset="1.0" /></LinearGradientBrush>
       - VerticalAlignment=Stretch
       - Height=Auto
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
@@ -96,13 +96,24 @@ controlStyles:
       - Margin=-2
   - target: Grid#SystemTrayFrameGrid
     styles:
-      - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#16ADF0" Offset="0.0" /> <GradientStop Color="#19B9F3" Offset="0.1" /> <GradientStop Color="#118FE9" Offset="0.35" /> <GradientStop Color="#0E9EF0" Offset="0.8" /> <GradientStop Color="#1580D9" Offset="1.0" /></LinearGradientBrush>
-      - BorderThickness=1,1,0,1
+      - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#16acf0" Offset="0.0" /> <GradientStop Color="#19b6f2" Offset="0.08" /> <GradientStop Color="#0c8eea" Offset="0.18" /> <GradientStop Color="#0c8eea" Offset="0.9" /> <GradientStop Color="#095bc9" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness=2,1,0,1
       - BorderBrush=#095BC9
-      - Padding=4,-1,0,-1
+      - Padding={{-ChevronIconWidth/2}},0,0,0
+  - target: SystemTray.Stack#NotifyIconStack
+    styles:
+      - ActualWidth=>ChevronIconWidth
   - target: Grid#OverflowRootGrid > Border
     styles:
-      - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#3168d5" Offset="0.0" /> <GradientStop Color="#4993E6" Offset="0.1" /> <GradientStop Color="#2157D7" Offset="0.35" /> <GradientStop Color="#2663E0" Offset="0.8" /> <GradientStop Color="#1941A5" Offset="1.0" /></LinearGradientBrush>
+      - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#16acf0" Offset="0.0" /> <GradientStop Color="#19b6f2" Offset="0.08" /> <GradientStop Color="#0c8eea" Offset="0.18" /> <GradientStop Color="#0c8eea" Offset="0.9" /> <GradientStop Color="#095bc9" Offset="1.0" /></LinearGradientBrush>
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - Background:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#86cbef" Offset="0.0" /><GradientStop Color="#71ccf8" Offset="0.25" /><GradientStop Color="#0983ee" Offset="0.75" /><GradientStop Color="#0872eb" Offset="1" /></LinearGradientBrush>
+      - Width=20
+      - Height=20
+      - CornerRadius=10
+      - BorderThickness=1
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#000000" Offset="0.0" /><GradientStop Color="#FFFFFF" Offset="1" /></LinearGradientBrush>
 ```
 </details>
 
