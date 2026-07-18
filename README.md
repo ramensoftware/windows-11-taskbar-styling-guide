@@ -146,6 +146,7 @@ Taskbar Styler mod. The following themes are available:
 | [Command Center](Themes/Command%20Center/README.md) | [![Command Center](Themes/Command%20Center/screenshot.png)](Themes/Command%20Center/screenshot.png)
 | [FluentGlass](Themes/FluentGlass/README.md) | [![FluentGlass](Themes/FluentGlass/screenshot.png)](Themes/FluentGlass/screenshot.png)
 | [OS26 Liquid Glass](Themes/OS26%20Liquid%20Glass/README.md) | [![OS26 Liquid Glass](Themes/OS26%20Liquid%20Glass/screenshot.png)](Themes/OS26%20Liquid%20Glass/screenshot.png)
+| [FrostyGlass](Themes/FrostyGlass/README.md) | [![FrostyGlass](Themes/FrostyGlass/screenshot.png)](Themes/FrostyGlass/screenshot.png)
 
 ## General
 
