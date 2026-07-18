@@ -50,7 +50,7 @@ Click each to expand settings:
   ```yaml
   mode: labelsWithCombining
   taskbarItemWidth: 0
-  runningIndicatorStyle: fullWidth
+  runningIndicatorStyle: left
   progressIndicatorStyle: sameAsRunningIndicatorStyle
   excludedPrograms:
     - ''
@@ -224,7 +224,7 @@ Click each to expand settings:
 
 ```yaml
 styleConstants:
-  - modsOn = 0
+  - modsOn = 1
   - taskbarLeftOffset = 10
   - taskbarRightOffset = 10
   - taskbarTopOffset = 5
@@ -276,11 +276,12 @@ controlStyles:
       - // The native highlighter. Border thickness set to zero for consistent behavior (in light mode the border is transparent).
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
-      - Opacity := $modsOn
+      - Width = Auto
+      - Grid.ColumnSpan = 2
       - Opacity@NoRunningIndicator = 0
       - Visibility = Visible
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
-      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 0,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
       - RadiusX := $buttonRadius
       - RadiusY := $buttonRadius
       - StrokeThickness := $borderThickness
@@ -291,8 +292,10 @@ controlStyles:
       - // The running indicator functions as the background of taskbar buttons. Left and right margins must be zero to work along with the Labels mod.
   - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
     styles:
+      - Width = Auto
+      - Grid.ColumnSpan = 2
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
-      - Margin = 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin = 0,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
       - // Same rule for progress indicator applies. Left and Right Margins must be zero to work along with the Labels mod.
   - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator > Grid#LayoutRoot
     styles:
@@ -583,9 +586,6 @@ controlStyles:
       - RadiusY = 2
       - Fill := $showDesktopIndicatorColor
       - // Show desktop pipe.
-  - target: Grid#AiQuota_Root
-    styles:
-      - Margin = -56,0,-10,0
 themeResourceVariables:
   - AdaptiveFill@Light =#FFFFFF
   - AdaptiveFill@Dark =#000000
