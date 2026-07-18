@@ -1,6 +1,6 @@
 # FrostedAcrylic theme for Windows 11 Taskbar Styler
 
-**Author:** [Evan](https://github.com/EvanYFWong)
+**Author:** [Evan](https://github.com/EvanYFWong) \
 **License:** MIT
 
 ## Overview
@@ -291,12 +291,15 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$CornerRadius
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Border
+  - target: Grid#ModalRootGrid > Border#BackgroundElement
     styles:
-      - Background:=$Background
+      - Background=Transparent
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$CornerRadius
+  - target: Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$Background
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher
     styles:
       - Background:=$Background
