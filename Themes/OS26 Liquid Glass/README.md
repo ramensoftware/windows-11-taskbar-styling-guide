@@ -27,6 +27,8 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 ## Tray:
 ![Tray-Preview](tray.png)
 
+![Tray-Dark-Preview](tray-dark.png)
+
 ## Context Menu:
 ![Menu-Preview](menu.png)
 
