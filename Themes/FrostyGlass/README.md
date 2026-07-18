@@ -1,12 +1,13 @@
-# ❄️ Windows 11 Taskbar Styler: Frosty Glass Edition
-> A refined, translucent "Dock" experience for Windows 11 via Windhawk.
+# ❄️ FrostyGlass theme for Windows 11 Taskbar Styler
+
+A refined, translucent "Dock" experience for Windows 11 via Windhawk.
+
+**Author**: [Guido Lamanna](https://github.com/guidolamanna)
 
 [![Windhawk](https://img.shields.io/badge/Requires-Windhawk-blue?style=flat-square)](https://windhawk.net/)
 [![Style](https://img.shields.io/badge/Style-Frosty_Glass-lightgrey?style=flat-square)](#)
 
 This configuration provides a modern **Frosty Glass** aesthetic for your Windows 11 taskbar. It utilizes custom translucent `AcrylicBrush` effects and manual layout adjustments to create a soft, blurred interface that feels perfectly integrated with the desktop environment.
-
----
 
 ## 📋 Prerequisites
 
@@ -18,8 +19,6 @@ This configuration provides a modern **Frosty Glass** aesthetic for your Windows
    * **Taskbar height and icon size**
    * **Taskbar auto-hide when maximized**
    * **Taskbar Auto-Hide Instant Show**
-   
----
 
 ## 🎨 Design Philosophy & Recommendations
 This theme is crafted for a pure, minimal "Dock" aesthetic. To maintain the visual integrity and prevent layout breakage, please follow these recommendations:
@@ -30,16 +29,12 @@ This theme is crafted for a pure, minimal "Dock" aesthetic. To maintain the visu
     * **Widgets:** The **`Widgets`** button is fully supported and can be used without issues. However, disabling it is recommended if you want to maximize the minimalist layout.
     * **Task View:** The **`Task view`** button is fully supported and integrates seamlessly within this design.
 
----
-
 ## 📐 Screen Compatibility & Reference Setup
 This configuration will work on **any device or resolution**. However, depending on your physical screen size and scaling, you may want to tweak certain values (like taskbar height or icon sizes) in the mods to perfectly align with your display.
 
 For reference, the default values in this config and the screenshots below are based on my personal setup:
 * **Device:** 14" Laptop (ROG Zephyrus G14 - 2024)
 * **Resolution & Scaling:** 2880 x 1800 at 200%
-
----
 
 ## 🛠️ The Full Setup
 For the complete minimal and smooth "Frosty Glass" experience, I use the following Windhawk mod ecosystem:
@@ -56,10 +51,32 @@ Paste this into the **Advanced** tab of the **Taskbar Auto-Hide Instant Show** m
 
 ```json
 {"animationType":"slideFade","showSpeedup":400,"hideSpeedup":400,"showDuration":100,"hideDuration":100,"frameRate":120,"unhideDelay":1,"hideDelay":1,"oldTaskbarOnWin11":0,"edgeDetection":0}
-
 ```
 
----
+## 📸 Showcase
+*Here is the Frosty Glass dock taskbar in action:*
+
+**Video Demonstration:**
+
+https://github.com/user-attachments/assets/d1448b78-aadb-4d16-bca2-853ece6e96a7
+
+https://github.com/user-attachments/assets/4e61b37f-efa9-460c-858c-0d7f0b29154d
+
+**Theme Gallery:**
+
+<img width="2876" height="1799" alt="Screenshot 2026-04-30 150608" src="https://github.com/user-attachments/assets/6db309dc-db2a-44a9-9343-6adcfe3cc2f0" />
+<img width="1043" height="651" alt="Screenshot 2026-04-30 150622" src="https://github.com/user-attachments/assets/05a923bb-b7a9-4b3f-8739-b7c81d7dfbbf" /><img width="553" height="600" alt="image" src="https://github.com/user-attachments/assets/9e23aeae-22e4-4736-99cd-44c280004d8e" />
+<img width="873" height="307" alt="image" src="https://github.com/user-attachments/assets/b0d3ff24-55cb-4cd0-b151-91cdf72bc46c" />
+<img width="1066" height="553" alt="image" src="https://github.com/user-attachments/assets/d85aa313-ea82-4bf8-849b-cf001370b06d" />
+
+## 🔗 Related Projects
+
+Complete the look across your entire UI! Check out my other Frosty Glass styling repositories:
+* [❄️ Frosty Glass Start Menu Styler](https://github.com/guidolamanna/windows-11-start-menu-styling-guide/blob/main/Themes/FrostyGlass/README.md) to apply this exact same aesthetic to your Start Menu and Lock Screen!
+* [❄️ Frosty Glass Notification Center Styler](https://github.com/ramensoftware/windows-11-notification-center-styling-guide/blob/main/Themes/FrostyGlass/README.md) to theme your Notifications, Calendar, and Control Center flyouts!
+
+## 🙌 Credits & Inspiration
+A huge thank you to [Ramen Software](https://github.com/ramensoftware) for creating Windhawk. This configuration was heavily inspired by the official [Windows 11 Taskbar Styling Guide](https://github.com/ramensoftware/windows-11-taskbar-styling-guide) and the Windhawk modding community.
 
 ## 📦 Manual Installation
 
@@ -73,7 +90,6 @@ The theme styles can be imported manually by following these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-theme: ''
 styleConstants:
   - Background=<AcrylicBrush TintColor="#1000000F"/>
   - BorderBrush2=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="0.0" /><GradientStop Color="{ThemeResource SystemChromeLowColor}" Offset="0.25" /><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="1" /></LinearGradientBrush>
@@ -404,47 +420,5 @@ controlStyles:
   - target: SystemTray.NotifyIconView > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - CornerRadius=7
-themeResourceVariables:
-  - ''
-xamlDiagnosticsHandling: alert
-resourceVariables:
-  - variableKey: ''
-    value: ''
-
 ```
-
 </details>
-
----
-
-## 📸 Showcase
-*Here is the Frosty Glass dock taskbar in action:*
-
-**Video Demonstration:**
-
-https://github.com/user-attachments/assets/d1448b78-aadb-4d16-bca2-853ece6e96a7
-
-https://github.com/user-attachments/assets/4e61b37f-efa9-460c-858c-0d7f0b29154d
-
-**Theme Gallery:**
-
-<img width="2876" height="1799" alt="Screenshot 2026-04-30 150608" src="https://github.com/user-attachments/assets/6db309dc-db2a-44a9-9343-6adcfe3cc2f0" />
-<img width="1043" height="651" alt="Screenshot 2026-04-30 150622" src="https://github.com/user-attachments/assets/05a923bb-b7a9-4b3f-8739-b7c81d7dfbbf" /><img width="553" height="600" alt="image" src="https://github.com/user-attachments/assets/9e23aeae-22e4-4736-99cd-44c280004d8e" />
-<img width="873" height="307" alt="image" src="https://github.com/user-attachments/assets/b0d3ff24-55cb-4cd0-b151-91cdf72bc46c" />
-<img width="1066" height="553" alt="image" src="https://github.com/user-attachments/assets/d85aa313-ea82-4bf8-849b-cf001370b06d" />
-
----
-
-## 🔗 Related Projects
-
-Complete the look across your entire UI! Check out my other Frosty Glass styling repositories:
-* [❄️ Frosty Glass Start Menu Styler](https://github.com/guidolamanna/windows-11-start-menu-styling-guide/blob/main/Themes/FrostyGlass/README.md) to apply this exact same aesthetic to your Start Menu and Lock Screen!
-* [❄️ Frosty Glass Notification Center Styler](https://github.com/guidolamanna/windows-11-notification-center-styling-guide/blob/main/Themes/FrostyGlass/README.md) to theme your Notifications, Calendar, and Control Center flyouts!
-
----
-
-## 🙌 Credits & Inspiration
-A huge thank you to [Ramen Software](https://github.com/ramensoftware) for creating Windhawk. This configuration was heavily inspired by the official [Windows 11 Taskbar Styling Guide](https://github.com/ramensoftware/windows-11-taskbar-styling-guide) and the Windhawk modding community.
-
----
-*Created by [Guido Lamanna](https://github.com/guidolamanna)*
