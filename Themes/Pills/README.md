@@ -552,14 +552,14 @@ controlStyles:
     styles:
       - HorizontalAlignment = 0
       - Margin = 3,0,0,0
-      - // Weather widget grid 1.
+      - // Weather widget grid 1 (when overflow).
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[2]
     styles:
       - HorizontalAlignment = 0
       - VerticalAlignment = 0
       - RenderTransformOrigin = -0.5,0.5
-      - RenderTransform := <TransformGroup><ScaleTransform ScaleX = "0.7" ScaleY = "0.7" /><TranslateTransform X="16" Y="0" /></TransformGroup>
-      - // Weather widget grid 2.
+      - RenderTransform := <TransformGroup><ScaleTransform ScaleX = "0.75" ScaleY = "0.75" /><TranslateTransform X="16" Y="0" /></TransformGroup>
+      - // Weather widget grid 2 (when overflow).
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
     styles:
       - Shadow :=
