@@ -348,12 +348,15 @@ controlStyles:
       - Padding=4,0,4,4
       - Margin:=4,4,4,4.5
       - Background:=Transparent
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
+  - target: Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - CornerRadius={{ max(68, min(90, (AltTabHeight / 5) * 1.75)) }}
       - ActualHeight=>AltTabHeight
       - BorderThickness=1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69D3D3D3" Offset="0.0" /><GradientStop Color="#5F303030" Offset="0.1" /><GradientStop Color="#70303030" Offset="0.5" /><GradientStop Color="#5F303030" Offset="0.9" /><GradientStop Color="#69D3D3D3" Offset="1" /></LinearGradientBrush>
+      - Background=Transparent
+  - target: Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
       - Background:=<WindhawkBlur BlurAmount="6" TintColor="#2C101010"/>
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid > Border
     styles:
