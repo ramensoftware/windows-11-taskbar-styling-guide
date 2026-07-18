@@ -582,9 +582,6 @@ controlStyles:
       - RadiusY = 2
       - Fill := $showDesktopIndicatorColor
       - // Show desktop pipe.
-  - target: Grid#AiQuota_Root
-    styles:
-      - Margin = -56,0,-10,0
 themeResourceVariables:
   - AdaptiveFill@Light =#FFFFFF
   - AdaptiveFill@Dark =#000000
