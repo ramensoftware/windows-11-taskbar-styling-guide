@@ -197,8 +197,15 @@ Click each to expand settings:
   hideBellIcon: never
   showDesktopButtonWidth: 12
   ```
-  </details>
+  </details><br>
 
+  Finally, in the Taskbar Styler Settings, flip "modsOn" StyleConstant from 0 to 1:
+  <details>
+  <summary>modsOn StyleConstant</summary>
+
+  ![ModsOnStyleConstant](ModsOnStyleConstant.png)
+
+  </details>
 
 ## Theme selection installation
 
@@ -217,13 +224,14 @@ Click each to expand settings:
 
 ```yaml
 styleConstants:
+  - modsOn = 1
   - taskbarLeftOffset = 10
   - taskbarRightOffset = 10
   - taskbarTopOffset = 5
   - taskbarBottomOffset = 4
   - borderThickness = 1
-  - sysTraySpacing = 6
   - buttonSpacing = 6
+  - sysTraySpacing = 6
   - buttonRadius = 7
   - highlightRadius = 6
   - highlightOffset = 3
@@ -255,7 +263,7 @@ controlStyles:
       - Background@NoRunningIndicator := $fillColor
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
       - Height@NoRunningIndicator := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
-      - BorderThickness = 0
+      - BorderThickness := {{1-$modsOn}}
       - BorderThickness@NoRunningIndicator := $borderThickness
       - BorderBrush@NoRunningIndicator := $borderColor
       - CornerRadius@NoRunningIndicator := $buttonRadius
@@ -268,7 +276,7 @@ controlStyles:
       - // The native highlighter. Border thickness set to zero for consistent behavior (in light mode the border is transparent).
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
-      - Opacity = 1
+      - Opacity := $modsOn
       - Opacity@NoRunningIndicator = 0
       - Visibility = Visible
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
@@ -341,7 +349,7 @@ controlStyles:
       - // Taskbar buttons.
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
-      - Margin := 5,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := {{5*$modsOn}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - HorizontalAlignment = 1
       - Canvas.ZIndex = 3
       - RenderTransformOrigin = 0.5,0.5
@@ -525,7 +533,7 @@ controlStyles:
       - // Weather widget content grid.
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
-      - Margin = 5,0,0,0
+      - Margin = {{5*$modsOn}},0,0,0
       - // Weather widget content grid.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
     styles:
@@ -568,12 +576,15 @@ controlStyles:
     styles:
       - Width = 2
       - Height = 2
+      - Height@PointerOver = 10
+      - Height@Pressed = 6
       - RadiusX = 2
       - RadiusY = 2
       - Fill := $showDesktopIndicatorColor
-      - Height@PointerOver = 10
-      - Height@Pressed = 6
       - // Show desktop pipe.
+  - target: Grid#AiQuota_Root
+    styles:
+      - Margin = -56,0,-10,0
 themeResourceVariables:
   - AdaptiveFill@Light =#FFFFFF
   - AdaptiveFill@Dark =#000000
