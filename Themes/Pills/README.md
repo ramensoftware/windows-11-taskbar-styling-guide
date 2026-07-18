@@ -224,7 +224,7 @@ Click each to expand settings:
 
 ```yaml
 styleConstants:
-  - modsOn = 1
+  - modsOn = 0
   - taskbarLeftOffset = 10
   - taskbarRightOffset = 10
   - taskbarTopOffset = 5
