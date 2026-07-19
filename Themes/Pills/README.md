@@ -234,9 +234,9 @@ styleConstants:
   - taskbarSidesRounded = 1
   - fillColor = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="{{0.2*(LabelsMod-1)}}" TintLuminosityOpacity="{{0.2*(LabelsMod-1)}}"/>
   - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="{{1*(LabelsMod-1)}}"/>
-  - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{{0.2*(LabelsMod-1)}}"/>
-  - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{{0.7*(LabelsMod-1)}}"/>
-  - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="{{0.7*(LabelsMod-1)}}"/>
+  - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
+  - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
+  - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
 controlStyles:
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
     styles:
@@ -283,6 +283,7 @@ controlStyles:
       - // The running indicator functions as the background of taskbar buttons. Left and right margins must be zero to work along with the Labels mod.
   - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
     styles:
+      - Opacity := {{LabelsMod-1}}
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
       - Margin = 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - // Same rule for progress indicator applies. Left and Right Margins must be zero to work along with the Labels mod.
@@ -349,6 +350,7 @@ controlStyles:
       - // Taskbar buttons icons.
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
+      - Opacity := {{LabelsMod-1}}
       - Stretch = 2
       - Height = 3
       - Width = 3
@@ -568,6 +570,7 @@ controlStyles:
       - // Language flyout.
   - target: Grid#ContainerGrid@ > Rectangle#ShowDesktopPipe
     styles:
+      - Opacity := {{LabelsMod-1}}
       - Width = 2
       - Height = 2
       - Height@PointerOver = 10
@@ -576,7 +579,7 @@ controlStyles:
       - RadiusY = 2
       - Fill := $showDesktopIndicatorColor
       - // Show desktop pipe.
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel
+  - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel
     styles:
       - Margin := 5,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Padding = 0
