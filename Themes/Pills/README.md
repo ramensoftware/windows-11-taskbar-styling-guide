@@ -243,7 +243,7 @@ styleConstants:
   - sysTrayIconSize = 15
   - taskbarSidesRounded = 1
   - fillColor = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="{{0.2*$modsOn}}" TintLuminosityOpacity="{{0.2*$modsOn}}"/>
-  - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="{{1*$modsOn}}"/>
+  - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="{{$modsOn}}"/>
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{{0.2*$modsOn}}"/>
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{{0.7*$modsOn}}"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="{{0.7*$modsOn}}"/>
