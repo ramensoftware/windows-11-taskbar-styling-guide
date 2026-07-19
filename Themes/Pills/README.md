@@ -241,7 +241,7 @@ controlStyles:
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
     styles:
       - Grid.ColumnSpan => LabelsMod
-      - // Running Indicator. Get horizontal alignment value (2 when Labels mod on | 1 when Labels mod off)
+      - // Running Indicator. Get Grid.ColumnSpan value (2 when Labels mod on | 1 when Labels mod off)
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame
     styles:
       - Height => TaskbarHeight
