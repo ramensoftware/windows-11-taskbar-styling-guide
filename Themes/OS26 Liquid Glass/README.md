@@ -108,6 +108,7 @@ styleConstants:
 controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
+      - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height=80
       - MaxHeight=80
       - Width=Auto
@@ -1095,6 +1096,8 @@ styleConstants:
 controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
+      - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
+
       - Width=Auto
       - HorizontalAlignment=Center  
       - Height=80
