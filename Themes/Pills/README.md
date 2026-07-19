@@ -196,14 +196,6 @@ Click each to expand settings:
   hideBellIcon: never
   showDesktopButtonWidth: 12
   ```
-  </details><br>
-
-  Finally, in the Taskbar Styler Settings, flip "modsOn" StyleConstant from 0 to 1:
-  <details>
-  <summary>modsOn StyleConstant</summary>
-
-  ![ModsOnStyleConstant](ModsOnStyleConstant.png)
-
   </details>
 
 ## Theme selection installation
@@ -223,8 +215,6 @@ Click each to expand settings:
 
 ```yaml
 styleConstants:
-  - // Flip modsOn from 0 to 1 when the required mods are installed and configured.
-  - modsOn = 1
   - taskbarLeftOffset = 10
   - taskbarRightOffset = 10
   - taskbarTopOffset = 5
@@ -242,15 +232,19 @@ styleConstants:
   - badgeNudge = 5,3,0,0
   - sysTrayIconSize = 15
   - taskbarSidesRounded = 1
-  - fillColor = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="{{0.2*$modsOn}}" TintLuminosityOpacity="{{0.2*$modsOn}}"/>
-  - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="{{1*$modsOn}}"/>
-  - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{{0.2*$modsOn}}"/>
-  - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{{0.7*$modsOn}}"/>
-  - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="{{0.7*$modsOn}}"/>
+  - fillColor = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="{{0.2*(LabelsMod-1)}}" TintLuminosityOpacity="{{0.2*(LabelsMod-1)}}"/>
+  - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="{{1*(LabelsMod-1)}}"/>
+  - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{{0.2*(LabelsMod-1)}}"/>
+  - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{{0.7*(LabelsMod-1)}}"/>
+  - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="{{0.7*(LabelsMod-1)}}"/>
 controlStyles:
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
+    styles:
+      - Grid.ColumnSpan => LabelsMod
+      - // Running Indicator. Get horizontal alignment value (2 when Labels mod on | 1 when Labels mod off)
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame
     styles:
-      - Height =>TaskbarHeight
+      - Height => TaskbarHeight
       - // Taskbar. Get height as a helper to calculate other elements' heights.
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
@@ -259,7 +253,7 @@ controlStyles:
       - // Icon panels of taskbar buttons. Left and right padding must be preserved to native for behavior consistency with Labels mod.
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
-      - Opacity@NoRunningIndicator := $modsOn
+      - Opacity@NoRunningIndicator := {{LabelsMod-1}}
       - Background@ActiveRunningIndicator :=
       - Background@NoRunningIndicator := $fillColor
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
@@ -271,20 +265,18 @@ controlStyles:
       - Margin := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{$highlightOffset+2}},{{$taskbarBottomOffset-$highlightOffset}}
       - Margin@NoRunningIndicator := 0,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
       - CornerRadius := $highlightRadius
-      - VerticalAlignment = 1
       - Canvas.ZIndex = 2
       - Canvas.ZIndex@NoRunningIndicator = -10
       - // The native highlighter. Border thickness set to zero for consistent behavior (in light mode the border is transparent).
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
-      - Visibility := {{1-$modsOn}}
+      - Opacity := {{LabelsMod-1}}
       - Opacity@NoRunningIndicator = 0
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - RadiusX := $buttonRadius
       - RadiusY := $buttonRadius
       - StrokeThickness := $borderThickness
-      - VerticalAlignment = 1
       - Fill := $fillColor
       - Stroke := $borderColor
       - Canvas.ZIndex = -10
@@ -349,7 +341,7 @@ controlStyles:
       - // Taskbar buttons.
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
-      - Margin := {{5*$modsOn}},{{$taskbarTopOffset}},{{2*(1-$modsOn)}},{{$taskbarBottomOffset}}
+      - Margin := {{5*(LabelsMod-1)}},{{$taskbarTopOffset}},{{2*(1-(LabelsMod-1))}},{{$taskbarBottomOffset}}
       - HorizontalAlignment = 1
       - Canvas.ZIndex = 3
       - RenderTransformOrigin = 0.5,0.5
@@ -386,7 +378,7 @@ controlStyles:
       - // Windows Start button hidden using small width and zero height (a method to prevent language flyout displacement bug).
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
     styles:
-      - Opacity := $modsOn
+      - Opacity := {{LabelsMod-1}}
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
@@ -394,7 +386,7 @@ controlStyles:
       - // Badge indicator for specific apps.
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
     styles:
-      - Opacity := $modsOn
+      - Opacity := {{LabelsMod-1}}
       - MinWidth := $badgeSize
       - Width := $badgeSize
       - Height := $badgeSize
@@ -535,7 +527,7 @@ controlStyles:
       - // Weather widget content grid.
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
-      - Margin = {{5*$modsOn}},0,0,0
+      - Margin = {{5*(LabelsMod-1)}},0,0,0
       - // Weather widget content grid.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
     styles:
@@ -598,9 +590,6 @@ controlStyles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
       - // Overflow button background
-  - target: Grid#VdSwitcherBar > Button > ContentPresenter@CommonStates
-    styles:
-      - BorderThickness = 0
 themeResourceVariables:
   - AdaptiveFill@Light =#FFFFFF
   - AdaptiveFill@Dark =#000000
