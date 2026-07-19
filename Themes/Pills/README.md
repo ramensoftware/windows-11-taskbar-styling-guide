@@ -223,6 +223,7 @@ Click each to expand settings:
 
 ```yaml
 styleConstants:
+  - // Flip modsOn from 0 to 1 when the required mods are installed and configured.
   - modsOn = 0
   - taskbarLeftOffset = 10
   - taskbarRightOffset = 10
@@ -241,11 +242,11 @@ styleConstants:
   - badgeNudge = 5,3,0,0
   - sysTrayIconSize = 15
   - taskbarSidesRounded = 1
-  - fillColor = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
-  - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}"/>
-  - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
-  - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
-  - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
+  - fillColor = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="{{0.2*$modsOn}}" TintLuminosityOpacity="{{0.2*$modsOn}}"/>
+  - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="{{1*$modsOn}}"/>
+  - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{{0.2*$modsOn}}"/>
+  - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{{0.7*$modsOn}}"/>
+  - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="{{0.7*$modsOn}}"/>
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame
     styles:
@@ -276,8 +277,8 @@ controlStyles:
       - // The native highlighter. Border thickness set to zero for consistent behavior (in light mode the border is transparent).
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
-      - Opacity := $modsOn
-      - Visibility = Visible
+      - Visibility := {{1-$modsOn}}
+      - Opacity@NoRunningIndicator = 0
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - RadiusX := $buttonRadius
@@ -348,7 +349,7 @@ controlStyles:
       - // Taskbar buttons.
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
-      - Margin := {{5*$modsOn}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := {{5*$modsOn}},{{$taskbarTopOffset}},{{2*(1-$modsOn)}},{{$taskbarBottomOffset}}
       - HorizontalAlignment = 1
       - Canvas.ZIndex = 3
       - RenderTransformOrigin = 0.5,0.5
@@ -356,7 +357,6 @@ controlStyles:
       - // Taskbar buttons icons.
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
-      - Opacity := $modsOn
       - Stretch = 2
       - Height = 3
       - Width = 3
@@ -386,6 +386,7 @@ controlStyles:
       - // Windows Start button hidden using small width and zero height (a method to prevent language flyout displacement bug).
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
     styles:
+      - Opacity := $modsOn
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
@@ -393,6 +394,7 @@ controlStyles:
       - // Badge indicator for specific apps.
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
     styles:
+      - Opacity := $modsOn
       - MinWidth := $badgeSize
       - Width := $badgeSize
       - Height := $badgeSize
