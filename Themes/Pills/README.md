@@ -224,14 +224,14 @@ Click each to expand settings:
 ```yaml
 styleConstants:
   - // Flip modsOn from 0 to 1 when the required mods are installed and configured.
-  - modsOn = 0
+  - modsOn = 1
   - taskbarLeftOffset = 10
   - taskbarRightOffset = 10
   - taskbarTopOffset = 5
   - taskbarBottomOffset = 4
   - borderThickness = 1
   - buttonSpacing = 6
-  - sysTraySpacing = 6
+  - sysTraySpacing = 10
   - buttonRadius = 7
   - highlightRadius = 6
   - highlightOffset = 3
@@ -243,7 +243,7 @@ styleConstants:
   - sysTrayIconSize = 15
   - taskbarSidesRounded = 1
   - fillColor = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="{{0.2*$modsOn}}" TintLuminosityOpacity="{{0.2*$modsOn}}"/>
-  - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="{{$modsOn}}"/>
+  - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="{{1*$modsOn}}"/>
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{{0.2*$modsOn}}"/>
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{{0.7*$modsOn}}"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="{{0.7*$modsOn}}"/>
@@ -345,7 +345,7 @@ controlStyles:
       - // Taskbar buttons labels
   - target: Taskbar.TaskListButton#TaskListButton
     styles:
-      - Margin := {{$buttonSpacing-6}},0,0,0
+      - Margin := {{($buttonSpacing-6)/2}},0,{{($buttonSpacing-6)/2}},0
       - // Taskbar buttons.
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
@@ -545,7 +545,7 @@ controlStyles:
     styles:
       - Width := {{WeatherCondWidth+WeatherTempWidth+50}}
       - Height = Auto
-      - Margin := {{$taskbarLeftOffset}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := {{$taskbarLeftOffset}},{{$taskbarTopOffset}},58,{{$taskbarBottomOffset}}
       - Padding = 0
       - CornerRadius := {{$buttonRadius*$taskbarSidesRounded}},{{$buttonRadius}},{{$buttonRadius}},{{$buttonRadius*$taskbarSidesRounded}}
       - BorderThickness := $borderThickness
@@ -584,6 +584,23 @@ controlStyles:
       - RadiusY = 2
       - Fill := $showDesktopIndicatorColor
       - // Show desktop pipe.
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel
+    styles:
+      - Margin := 5,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Padding = 0
+      - Background := $fillColor
+      - CornerRadius := $buttonRadius
+      - BorderThickness := $borderThickness
+      - BorderBrush := $borderColor
+      - // Overflow button
+  - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Border#BackgroundElement
+    styles:
+      - Margin := {{$highlightOffset}}
+      - CornerRadius := $highlightRadius
+      - // Overflow button background
+  - target: Grid#VdSwitcherBar > Button > ContentPresenter@CommonStates
+    styles:
+      - BorderThickness = 0
 themeResourceVariables:
   - AdaptiveFill@Light =#FFFFFF
   - AdaptiveFill@Dark =#000000
