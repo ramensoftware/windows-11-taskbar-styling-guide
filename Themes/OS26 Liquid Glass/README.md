@@ -40,34 +40,8 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 
 ---
 
-# Taskbar Height and Icon size Configurations
-
-This theme requires the Windhawk mod [Taskbar Height and Icon size](https://windhawk.net/mods/taskbar-icon-size) to function properly.
-
-
-
-## **Large (Recommended):** 
-```json
-{"TaskbarHeight":85,"IconSize":30,"TaskbarButtonWidth":60,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}
-```
-**Preview:(Works for both Dark & Clear Variants)**
-### MacDock
-![Large-Preview](large-dock.png)
-### Taskbar
-![Large-Preview](large-taskbar.png)
-
-
-## **Small:** 
-```json
-{"TaskbarHeight":80,"IconSize":29,"TaskbarButtonWidth":54,"IconSizeSmall":16,"TaskbarButtonWidthSmall":32}
-```
-
-**Preview:(Works for both Dark & Clear Variants)** 
-### MacDock
-![Small-dock-Preview](small-dock.png)
-### Taskbar
-![Small-Preview](small-taskbar.png)
-
+> [!NOTE]
+> Do Not use Taskbar Height And Icon Size Mod with this! It will Not work and force the taskbar to go against the border of the screen.
 
 # Taskbar Thumbnail Size Configurations
 
@@ -87,7 +61,7 @@ preserveAspectRatio: 0
 The Mod can be made look better and more like MacOS by using [Taskbar Dock Animation](https://windhawk.net/mods/taskbar-dock-animation) Mod! The Following config is Recommended to be used:
 ```yaml
 AnimationType: 0
-MaxScale: 128
+MaxScale: 130
 EffectRadius: 100
 SpacingFactor: 100
 BounceDelay: 500
@@ -127,11 +101,34 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-theme: ''
+
 styleConstants:
   - IconBackground= <ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26 Liquid Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
 controlStyles:
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Height=80
+      - MaxHeight=80
+      - Width=Auto
+      - HorizontalAlignment=Center
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
+    styles:
+      - Height=24
+      - Width=24
+      - Margin=10,0,0,0
+  - target: Taskbar.TaskListButtonPanel
+    styles:
+      - Width=55
+      - Height=70
+  - target: Taskbar.TaskListLabeledButtonPanel
+    styles:
+      - Width=55
+      - Height=70
+  - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+    styles:
+      - Width=55
+      - Height=70      
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - CornerRadius=20
@@ -143,10 +140,7 @@ controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
       - Fill=Transparent
-  - target: Taskbar.TaskbarFrame
-    styles:
-      - Width=Auto
-      - HorizontalAlignment=Center
+
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Visibility=Visible
@@ -197,7 +191,7 @@ controlStyles:
       - Width=Auto
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - CornerRadius=15
-      - Margin=195,15,-450,5
+      - Margin=220,5,-450,-5
       - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
       - Padding=10,2
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#50ffffff" Offset="0.0"/><GradientStop Color="#10ffffff" Offset="0.5"/><GradientStop Color="#30ffffff" Offset="1.0"/></LinearGradientBrush>
@@ -286,12 +280,14 @@ controlStyles:
       - CornerRadius=15
   - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
+
       - Fill:=#90ffffff
       - RadiusX=3 
       - RadiusY=3 
       - Margin=-2
       - Height=6
       - Width=6
+      - Margin=10,0,0,-2 
       - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
@@ -434,6 +430,28 @@ styleConstants:
   - IconBackground= <ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26 Liquid Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
 controlStyles:
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Height=80
+      - MaxHeight=80
+      - HorizontalAlignment=Center
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
+    styles:
+      - Height=24
+      - Width=24
+      - Margin=10,0,0,0
+  - target: Taskbar.TaskListButtonPanel
+    styles:
+      - Width=55
+      - Height=70
+  - target: Taskbar.TaskListLabeledButtonPanel
+    styles:
+      - Width=55
+      - Height=70
+  - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+    styles:
+      - Width=55
+      - Height=70      
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - CornerRadius=20
@@ -496,7 +514,7 @@ controlStyles:
       - Width=Auto
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - CornerRadius=15
-      - Margin=80,15,-255,5
+      - Margin=80,5,-255,-5
       - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
       - Padding=10,2
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#50ffffff" Offset="0.0"/><GradientStop Color="#10ffffff" Offset="0.5"/><GradientStop Color="#30ffffff" Offset="1.0"/></LinearGradientBrush>
@@ -598,6 +616,7 @@ controlStyles:
       - Margin=-2
       - Height=6
       - Width=6
+      - Margin=10,0,0,-2 
       - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
@@ -743,6 +762,28 @@ styleConstants:
   - IconBackground= <ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26 Liquid Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
 controlStyles:
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Height=80
+      - MaxHeight=80
+      - HorizontalAlignment=Center
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
+    styles:
+      - Height=24
+      - Width=24
+      - Margin=10,0,0,0
+  - target: Taskbar.TaskListButtonPanel
+    styles:
+      - Width=55
+      - Height=70
+  - target: Taskbar.TaskListLabeledButtonPanel
+    styles:
+      - Width=55
+      - Height=70
+  - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+    styles:
+      - Width=55
+      - Height=70  
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - CornerRadius=20
@@ -804,7 +845,7 @@ controlStyles:
       - Width=Auto
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - CornerRadius=15
-      - Margin=200,15,-425,5
+      - Margin=200,5,-425,-5
       - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
       - Padding=10,2
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#50ffffff" Offset="0.0"/><GradientStop Color="#10ffffff" Offset="0.5"/><GradientStop Color="#30ffffff" Offset="1.0"/></LinearGradientBrush>
@@ -906,6 +947,7 @@ controlStyles:
       - Margin=-2
       - Height=6
       - Width=6
+      - Margin=10,0,0,-2 
       - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
@@ -1051,6 +1093,30 @@ styleConstants:
   - IconBackground=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/darkappbg.png" />
   - IconBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#50ffffff" Offset="0.0"/> <GradientStop Color="#50606060" Offset="0.35"/> <GradientStop Color="#70303030" Offset="0.6"/> <GradientStop Color="#50606060" Offset="0.65"/> <GradientStop Color="#50ffffff" Offset="1.0"/> </LinearGradientBrush>
 controlStyles:
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Width=Auto
+      - HorizontalAlignment=Center  
+      - Height=80
+      - MaxHeight=80
+      - HorizontalAlignment=Center
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
+    styles:
+      - Height=24
+      - Width=24
+      - Margin=10,0,0,0
+  - target: Taskbar.TaskListButtonPanel
+    styles:
+      - Width=55
+      - Height=70
+  - target: Taskbar.TaskListLabeledButtonPanel
+    styles:
+      - Width=55
+      - Height=70
+  - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+    styles:
+      - Width=55
+      - Height=70  
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - CornerRadius=20
@@ -1062,10 +1128,7 @@ controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
       - Fill=Transparent
-  - target: Taskbar.TaskbarFrame
-    styles:
-      - Width=Auto
-      - HorizontalAlignment=Center
+
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Visibility=Visible
@@ -1116,7 +1179,7 @@ controlStyles:
       - Width=Auto
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - CornerRadius=15
-      - Margin=195,15,-450,5
+      - Margin=220,5,-450,-5
       - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
       - Padding=10,2
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#50ffffff" Offset="0.0"/><GradientStop Color="#10ffffff" Offset="0.5"/><GradientStop Color="#30ffffff" Offset="1.0"/></LinearGradientBrush>
@@ -1211,6 +1274,7 @@ controlStyles:
       - Margin=-2
       - Height=6
       - Width=6
+      - Margin=10,0,0,-2 
       - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
@@ -1355,6 +1419,28 @@ styleConstants:
   - IconBackground=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/darkappbg.png" />
   - IconBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#50ffffff" Offset="0.0"/> <GradientStop Color="#50606060" Offset="0.35"/> <GradientStop Color="#70303030" Offset="0.6"/> <GradientStop Color="#50606060" Offset="0.65"/> <GradientStop Color="#50ffffff" Offset="1.0"/> </LinearGradientBrush>
 controlStyles:
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Height=80
+      - MaxHeight=80
+      - HorizontalAlignment=Center
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
+    styles:
+      - Height=24
+      - Width=24
+      - Margin=10,0,0,0
+  - target: Taskbar.TaskListButtonPanel
+    styles:
+      - Width=55
+      - Height=70
+  - target: Taskbar.TaskListLabeledButtonPanel
+    styles:
+      - Width=55
+      - Height=70
+  - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+    styles:
+      - Width=55
+      - Height=70  
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - CornerRadius=20
@@ -1417,7 +1503,7 @@ controlStyles:
       - Width=Auto
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - CornerRadius=15
-      - Margin=80,15,-255,5
+      - Margin=80,5,-255,-5
       - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
       - Padding=10,2
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#50ffffff" Offset="0.0"/><GradientStop Color="#10ffffff" Offset="0.5"/><GradientStop Color="#30ffffff" Offset="1.0"/></LinearGradientBrush>
@@ -1519,6 +1605,7 @@ controlStyles:
       - Margin=-2
       - Height=6
       - Width=6
+      - Margin=10,0,0,-2     
       - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
@@ -1664,6 +1751,28 @@ styleConstants:
   - IconBackground=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/darkappbg.png" />
   - IconBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#50ffffff" Offset="0.0"/> <GradientStop Color="#50606060" Offset="0.35"/> <GradientStop Color="#70303030" Offset="0.6"/> <GradientStop Color="#50606060" Offset="0.65"/> <GradientStop Color="#50ffffff" Offset="1.0"/> </LinearGradientBrush>
 controlStyles:
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Height=80
+      - MaxHeight=80
+      - HorizontalAlignment=Center
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
+    styles:
+      - Height=24
+      - Width=24
+      - Margin=10,0,0,0
+  - target: Taskbar.TaskListButtonPanel
+    styles:
+      - Width=55
+      - Height=70
+  - target: Taskbar.TaskListLabeledButtonPanel
+    styles:
+      - Width=55
+      - Height=70
+  - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+    styles:
+      - Width=55
+      - Height=70  
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - CornerRadius=20
@@ -1725,7 +1834,7 @@ controlStyles:
       - Width=Auto
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - CornerRadius=15
-      - Margin=200,15,-425,5
+      - Margin=200,5,-425,-5
       - RenderTransform:=<TranslateTransform X="-435" Y="-2"/>
       - Padding=10,2
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#50ffffff" Offset="0.0"/><GradientStop Color="#10ffffff" Offset="0.5"/><GradientStop Color="#30ffffff" Offset="1.0"/></LinearGradientBrush>
@@ -1821,12 +1930,14 @@ controlStyles:
       - CornerRadius=15
   - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
+
       - Fill:=#90ffffff
       - RadiusX=3 
       - RadiusY=3 
       - Margin=-2
       - Height=6
       - Width=6
+      - Margin=10,0,0,-2      
       - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
