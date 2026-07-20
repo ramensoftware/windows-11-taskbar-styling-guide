@@ -555,7 +555,6 @@ controlStyles:
       - // System tray language indicator position refinement and restricting it to one line (in the case of 2 lines "ENG US").
   - target: Grid#OverflowRootGrid > Border
     styles:
-      - Background := $fillColor
       - Shadow :=
       - // System tray overflow flyout background.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
