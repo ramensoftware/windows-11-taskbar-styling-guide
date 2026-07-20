@@ -326,7 +326,8 @@ controlStyles:
       - // Indeterminate progress bar 2 indicator.
   - target: Border#MultiWindowElement
     styles:
-      - Visibility = Collapsed
+      - Visibility := {{LabelsMod-1}}
+      - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
       - // Multi window element collapsed (later replaced with a dot indicator).
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
