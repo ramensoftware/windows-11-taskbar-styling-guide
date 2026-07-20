@@ -2,7 +2,6 @@
 
 **Author**: [Deen-0x](https://github.com/Deen-0x)
 
-
 Dark Mode
 ![Dark](Dark.png)
 ![DarkMaximized](DarkMaximized.png)
@@ -11,7 +10,8 @@ Light Mode
 ![Light](Light.png)
 ![LightMaximized](LightMaximized.png)
 
-Pills. A sleek theme that turns taskbar buttons into labeled breathable pills. The design is aesthetically pleasing also when windows get maximized.
+Pills. A sleek theme that turns taskbar buttons into labeled breathable pills. The design is aesthetically pleasing also when windows get maximized. Pill states have been meticulously targeted:
+![PillStates](PillStates.png)
 
 ## Notes
 - Designed on Windows 11 - 25H2 (OS Build 26200.8737).
@@ -198,6 +198,51 @@ Click each to expand settings:
   ```
   </details>
 
+## Recommended Windhawk mods
+
+  <details>
+  <summary>Taskbar Virtual Desktop Switcher</summary>
+
+  ```yaml
+  position: nextToStart
+  gridMode: singleRow
+  smartLayout: packHorizontal
+  fillOrder: rowFirst
+  buttonRows: 0
+  buttonColumns: 0
+  shortGroupAlign: center
+  buttonWidth: 15
+  buttonHeight: 15
+  buttonSpacing: 5
+  labelFormat: roman
+  customLabels: ''
+  fontSize: 10
+  activeTextColor: ''
+  inactiveTextColor: ''
+  activeColor: ''
+  inactiveColor: transparent
+  hoverBackgroundColor: ''
+  pressedBackgroundColor: ''
+  borderColor: '#454545'
+  borderThickness: 0
+  cornerRadius: 10
+  buttonOpacity: 100
+  shineEffect: 0
+  activeBold: 1
+  paddingLeft: 10
+  paddingRight: 10
+  gridVerticalOffset: -3
+  hideWhenSingle: 0
+  multiMonitor: 1
+  showMasterButton: 1
+  masterButtonLabel: 🖥️
+  masterButtonPosition: after
+  masterButtonHeight: 6
+  masterButtonWidth: 14
+  masterButtonSpacing: 0
+  ```
+  </details>
+
 ## Theme selection installation
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
@@ -253,7 +298,6 @@ controlStyles:
       - // Icon panels of taskbar buttons. Left and right padding must be preserved to native for behavior consistency with Labels mod.
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
-      - Opacity@NoRunningIndicator := {{LabelsMod-1}}
       - Background@ActiveRunningIndicator :=
       - Background@NoRunningIndicator := $fillColor
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
@@ -594,6 +638,17 @@ controlStyles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
       - // Overflow button background
+  - target: Grid#VdSwitcherBar
+    styles:
+      - Background := $fillColor
+      - Padding = 7,2,7,3
+      - BorderThickness = 1
+      - CornerRadius := $buttonRadius
+      - BorderBrush := $borderColor
+      - // Taskbar Virtual Desktop Switcher.
+  - target: Grid#VdSwitcherBar > Button > ContentPresenter@CommonStates
+    styles:
+      - BorderThickness = 0
 themeResourceVariables:
   - AdaptiveFill@Light =#FFFFFF
   - AdaptiveFill@Dark =#000000
