@@ -237,7 +237,7 @@ Click each to expand settings:
   multiMonitor: 1
   showMasterButton: 1
   masterButtonLabel: 🖥️
-  masterButtonPosition: after
+  masterButtonPosition: before
   masterButtonHeight: 6
   masterButtonWidth: 14
   masterButtonSpacing: 0
