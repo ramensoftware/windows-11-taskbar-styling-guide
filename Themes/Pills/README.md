@@ -11,6 +11,7 @@ Light Mode
 ![LightMaximized](LightMaximized.png)
 
 Pills. A sleek theme that turns taskbar buttons into labeled breathable pills. The design is aesthetically pleasing also when windows get maximized. Pill states have been meticulously targeted:
+
 ![PillStates](PillStates.png)
 
 ## Notes
