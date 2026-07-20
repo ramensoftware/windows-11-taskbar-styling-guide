@@ -62,8 +62,8 @@ The Mod can be made look better and more like MacOS by using [Taskbar Dock Anima
 ```yaml
 AnimationType: 0
 MaxScale: 130
-EffectRadius: 100
-SpacingFactor: 100
+EffectRadius: 180
+SpacingFactor: 80
 BounceDelay: 500
 FocusDuration: 150
 MirrorForTopTaskbar: 0
