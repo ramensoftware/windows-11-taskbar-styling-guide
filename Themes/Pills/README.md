@@ -328,7 +328,7 @@ controlStyles:
     styles:
       - Visibility := {{LabelsMod-1}}
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
-      - // Multi window element collapsed (later replaced with a dot indicator).
+      - // Multi window element shows when Labels mod is disabled (stock taskbar mode).
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
       - Margin := {{$iconLabelSpacing-6}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset+3}}
@@ -516,12 +516,12 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
     styles:
       - ActualWidth => WeatherTempWidth
-      - RenderTransform := <TranslateTransform X="0" Y="8" />
+      - RenderTransform := <TranslateTransform X="0" Y="{{8*(LabelsMod-1)}}" />
       - // Weather widget's temperature text block.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2]
     styles:
       - ActualWidth => WeatherCondWidth
-      - RenderTransform := <TranslateTransform X="{{WeatherTempWidth+7}}" Y="-8" />
+      - RenderTransform := <TranslateTransform X="{{(WeatherTempWidth+7)*(LabelsMod-1)}}" Y="{{-8*(LabelsMod-1)}}" />
       - // Weather widget's weather condition text block.
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid
     styles:
