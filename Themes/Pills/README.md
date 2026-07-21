@@ -266,12 +266,12 @@ styleConstants:
   - taskbarTopOffset = 5
   - taskbarBottomOffset = 4
   - borderThickness = 1
-  - buttonSpacing = 6
-  - sysTraySpacing = 10
   - buttonRadius = 7
   - highlightRadius = 6
   - highlightOffset = 3
-  - highlightMinWidth = 38
+  - buttonMinWidth = 38
+  - buttonSpacing = 6
+  - sysTraySpacing = 10
   - iconLabelSpacing = 5
   - leftRightPadding = 7
   - badgeSize = 13
@@ -295,7 +295,7 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - Padding := 2,0,2,0
-      - MinWidth := $highlightMinWidth
+      - MinWidth := $buttonMinWidth
       - // Icon panels of taskbar buttons. Left and right padding must be preserved to native for behavior consistency with Labels mod.
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
@@ -640,10 +640,10 @@ controlStyles:
       - // Overflow button background
   - target: Grid#VdSwitcherBar
     styles:
-      - Background := $fillColor
       - Padding = 7,2,7,3
       - BorderThickness = 1
       - CornerRadius := $buttonRadius
+      - Background := $fillColor
       - BorderBrush := $borderColor
       - // Taskbar Virtual Desktop Switcher.
   - target: Grid#VdSwitcherBar > Button > ContentPresenter@CommonStates
