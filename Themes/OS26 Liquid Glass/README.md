@@ -200,7 +200,7 @@ controlStyles:
       - Visibility=Visible
   - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=18
+      - CornerRadius=15
       - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
@@ -237,7 +237,7 @@ controlStyles:
       - Width=Auto
       - Background:=Transparent
       - BorderThickness=0
-      - CornerRadius=18
+      - CornerRadius=15
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
@@ -346,7 +346,7 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
-      - CornerRadius=18
+      - CornerRadius=15
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
@@ -363,7 +363,7 @@ controlStyles:
       - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=18
+      - CornerRadius=15
       - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
@@ -523,7 +523,7 @@ controlStyles:
       - Visibility=Visible
   - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=18
+      - CornerRadius=15
       - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
@@ -559,7 +559,7 @@ controlStyles:
       - Width=Auto
       - Background:=Transparent
       - BorderThickness=0
-      - CornerRadius=18
+      - CornerRadius=15
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
@@ -675,7 +675,7 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
-      - CornerRadius=18
+      - CornerRadius=15
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
@@ -692,7 +692,7 @@ controlStyles:
       - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=18
+      - CornerRadius=15
       - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
@@ -854,7 +854,7 @@ controlStyles:
       - Visibility=Visible
   - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=18
+      - CornerRadius=15
       - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
@@ -890,7 +890,7 @@ controlStyles:
       - Width=Auto
       - Background:=Transparent
       - BorderThickness=0
-      - CornerRadius=18
+      - CornerRadius=15
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
@@ -1006,7 +1006,7 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
-      - CornerRadius=18
+      - CornerRadius=15
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
@@ -1023,7 +1023,7 @@ controlStyles:
       - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=18
+      - CornerRadius=15
       - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
@@ -1190,7 +1190,7 @@ controlStyles:
       - Visibility=Visible
   - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=18
+      - CornerRadius=15
       - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
@@ -1227,7 +1227,7 @@ controlStyles:
       - Width=Auto
       - Background:=Transparent
       - BorderThickness=0
-      - CornerRadius=18
+      - CornerRadius=15
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
@@ -1335,7 +1335,7 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
-      - CornerRadius=18
+      - CornerRadius=15
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
@@ -1352,7 +1352,7 @@ controlStyles:
       - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=18
+      - CornerRadius=15
       - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
@@ -1514,7 +1514,7 @@ controlStyles:
       - Visibility=Visible
   - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=18
+      - CornerRadius=15
       - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
@@ -1550,7 +1550,7 @@ controlStyles:
       - Width=Auto
       - Background:=Transparent
       - BorderThickness=0
-      - CornerRadius=18
+      - CornerRadius=15
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
@@ -1666,7 +1666,7 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
-      - CornerRadius=18
+      - CornerRadius=15
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
@@ -1683,7 +1683,7 @@ controlStyles:
       - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=18
+      - CornerRadius=15
       - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
@@ -1845,7 +1845,7 @@ controlStyles:
       - Visibility=Visible
   - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=18
+      - CornerRadius=15
       - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
@@ -1881,7 +1881,7 @@ controlStyles:
       - Width=Auto
       - Background:=Transparent
       - BorderThickness=0
-      - CornerRadius=18
+      - CornerRadius=15
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
@@ -1998,7 +1998,7 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
-      - CornerRadius=18
+      - CornerRadius=15
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
@@ -2015,7 +2015,7 @@ controlStyles:
       - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - CornerRadius=18
+      - CornerRadius=15
       - Margin=0,5.5,0,5.5
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
