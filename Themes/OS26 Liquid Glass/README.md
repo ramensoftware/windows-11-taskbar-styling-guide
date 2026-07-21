@@ -1091,8 +1091,8 @@ xamlDiagnosticsHandling: ''
 ```yaml
 
 styleConstants:
-  - IconBackground=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/darkappbg.png" />
-  - IconBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#50ffffff" Offset="0.0"/> <GradientStop Color="#50606060" Offset="0.35"/> <GradientStop Color="#70303030" Offset="0.6"/> <GradientStop Color="#50606060" Offset="0.65"/> <GradientStop Color="#50ffffff" Offset="1.0"/> </LinearGradientBrush>
+  - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
+  - IconBorder=<LinearGradientBrush StartPoint="0.25,-0.20" EndPoint="0.99,1.39"><GradientStop Offset="0.11" Color="#50FFFFFF"/><GradientStop Offset="0.3" Color="#631C1C1C"/><GradientStop Offset="0.62" Color="#591C1C1C"/><GradientStop Offset="0.77" Color="#50FFFFFF"/></LinearGradientBrush>
 controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
@@ -1419,8 +1419,8 @@ xamlDiagnosticsHandling: ''
 ```yaml
 
 styleConstants:
-  - IconBackground=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/darkappbg.png" />
-  - IconBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#50ffffff" Offset="0.0"/> <GradientStop Color="#50606060" Offset="0.35"/> <GradientStop Color="#70303030" Offset="0.6"/> <GradientStop Color="#50606060" Offset="0.65"/> <GradientStop Color="#50ffffff" Offset="1.0"/> </LinearGradientBrush>
+  - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
+  - IconBorder=<LinearGradientBrush StartPoint="0.25,-0.20" EndPoint="0.99,1.39"><GradientStop Offset="0.11" Color="#50FFFFFF"/><GradientStop Offset="0.3" Color="#631C1C1C"/><GradientStop Offset="0.62" Color="#591C1C1C"/><GradientStop Offset="0.77" Color="#50FFFFFF"/></LinearGradientBrush>
 controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
@@ -1751,8 +1751,8 @@ xamlDiagnosticsHandling: ''
 
 ```yaml
 styleConstants:
-  - IconBackground=<ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/darkappbg.png" />
-  - IconBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"> <GradientStop Color="#50ffffff" Offset="0.0"/> <GradientStop Color="#50606060" Offset="0.35"/> <GradientStop Color="#70303030" Offset="0.6"/> <GradientStop Color="#50606060" Offset="0.65"/> <GradientStop Color="#50ffffff" Offset="1.0"/> </LinearGradientBrush>
+  - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
+  - IconBorder=<LinearGradientBrush StartPoint="0.25,-0.20" EndPoint="0.99,1.39"><GradientStop Offset="0.11" Color="#50FFFFFF"/><GradientStop Offset="0.3" Color="#631C1C1C"/><GradientStop Offset="0.62" Color="#591C1C1C"/><GradientStop Offset="0.77" Color="#50FFFFFF"/></LinearGradientBrush>
 controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
