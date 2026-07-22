@@ -269,6 +269,15 @@ controlStyles:
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
       - CornerRadius=15
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Width=48
+      - Height=48
+      - Margin=2,4,0,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15    
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
     styles:
       - Visibility=1
@@ -1325,6 +1334,15 @@ controlStyles:
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
       - CornerRadius=15
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Width=48
+      - Height=48
+      - Margin=2,4,0,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15    
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
     styles:
       - Visibility=1
