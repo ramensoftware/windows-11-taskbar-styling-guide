@@ -102,7 +102,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```yaml
 
-theme: ''
 styleConstants:
   - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26 Liquid Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
@@ -113,7 +112,6 @@ controlStyles:
       - MinWidth:=100
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
-
       - Height=80
       - MaxHeight=80
       - HorizontalAlignment=Center
@@ -183,10 +181,9 @@ controlStyles:
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid
     styles:
-      
       - Height=48
       - Width=48
-      - Margin=25,2,4,0
+      - Margin=25,2,8,0
       - CornerRadius=15
       - Background=transparent
       - BorderBrush:=lightgray
@@ -195,7 +192,7 @@ controlStyles:
     styles:
       - Width=48
       - Height=48
-      - Margin=2,4,2,0
+      - Margin=0,4,2,0
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
@@ -206,9 +203,10 @@ controlStyles:
       - FontSize=32
   - target: Grid#SystemTrayFrameGrid
     styles:
-      - Margin=0,4,0,0
+      - Margin=0,0,0.5,0
       - Height=70
-      - Padding=0,0,0,0
+      - VerticalAlignment=Bottom
+      - Padding=0
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - BorderBrush=#40FFFFFF
       - BorderThickness=0,1,1,1
@@ -219,13 +217,14 @@ controlStyles:
       - Background=transparent
       - BorderBrush=#40FFFFFF
       - BorderThickness=2,0,0,0
+      - Padding=0
       - CornerRadius=0
-      - Height=35
+      - Height=40
   - target: TextBlock#DateInnerTextBlock
     styles:
       - FontWeight=Bold
       - Margin=-2,9,2,-9
-      - Foreground=White
+      - Foreground=white
       - Visibility=visible
       - RenderTransform:=<TranslateTransform X="0" Y="-9"/>
       - FontSize=13
@@ -241,7 +240,9 @@ controlStyles:
     styles:
       - CornerRadius=12
       - BorderThickness=1.2
-      - Background:=<LinearGradientBrush StartPoint="0.50,-1.50" EndPoint="0.50,2.50"><GradientStop Offset="0.48" Color="#FF3A40"/><GradientStop Offset="0.49" Color="#141414"/></LinearGradientBrush>
+      - Background:=<LinearGradientBrush StartPoint="0.50,-1.50" EndPoint="0.50,2.50"><GradientStop Offset="0.48" Color="#54CCCCCC"/><GradientStop Offset="0.49" Color="#423E3C3C"/></LinearGradientBrush>
+
+
       - BorderBrush:=$IconBorder
       - Height=45
       - Margin=0,5,0,-1
@@ -255,35 +256,82 @@ controlStyles:
       - Grid.Column=2
       - Width=Auto
       - HorizontalAlignment=Left
-      - Margin=0
+      - Margin=0,1,0,-0.5
   - target: :root > ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
       - ActualWidth=>containerGridWidth
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - Background:=Transparent
+      - BorderThickness=0
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder
     styles:
+      - Background:=Transparent
+      - BorderThickness=0
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter
+    styles:
+      - Background:=transparent
+      - BorderThickness=0
+  - target: SystemTray.Stack#MainStack
+    styles:
+      - Visibility=1
+      - // System tray > Microphone and Location Icons Grid
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Visibility=1
       - Width=48
       - Height=48
-      - Margin=2,4,0,0
+      - Margin=0,4,2,0
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
       - CornerRadius=15
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+      - // System Tray > Show Desktop Button
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
     styles:
+      - Visibility=Visible
       - Width=48
       - Height=48
-      - Margin=2,4,0,0
+      - Margin=0,4,2,0
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
-      - CornerRadius=15    
-  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
-    styles:
-      - Visibility=1
+      - CornerRadius=15
+      - // [Tray Wifi Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[2] > SystemTray.IconView > Grid > Grid
     styles:
-      - Margin=4,2,-4,-2
+      - Visibility=Collapsed
+      - Width=48
+      - Height=48
+      - Margin=0,4,2,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
+      - // [Tray Audio Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[3] > SystemTray.IconView > Grid > Grid
+    styles:
+      - Visibility=Visible
+      - Width=48
+      - Height=48
+      - Margin=0,4,2,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
+      - // [Tray Battery Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Visibility=Visible
+      - Width=48
+      - Height=48
+      - Margin=0,4,2,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
+      - // [Notify Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock
     styles:
       - Foreground=white
@@ -356,7 +404,6 @@ controlStyles:
       - Canvas.ZIndex=1
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
-      - Transitions:=<TransitionCollection> <AddDeleteThemeTransition/> </TransitionCollection>
       - CornerRadius=12
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
