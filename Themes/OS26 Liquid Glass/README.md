@@ -241,6 +241,10 @@ controlStyles:
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#ThumbBarRepeater > Taskbar.ThumbBarButton#ThumbBarButton > Windows.UI.Xaml.Controls.ContentPresenter#BorderElement      
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#761E1E1E"/>
+      - Margin=0,-20,0,20
   - target: Windows.UI.Xaml.Controls.Button#CloseButton
     styles:
       - HorizontalAlignment=left
@@ -563,6 +567,10 @@ controlStyles:
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#ThumbBarRepeater > Taskbar.ThumbBarButton#ThumbBarButton > Windows.UI.Xaml.Controls.ContentPresenter#BorderElement      
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#761E1E1E"/>
+      - Margin=0,-20,0,20
   - target: Windows.UI.Xaml.Controls.Button#CloseButton
     styles:
       - HorizontalAlignment=left
@@ -894,6 +902,10 @@ controlStyles:
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#ThumbBarRepeater > Taskbar.ThumbBarButton#ThumbBarButton > Windows.UI.Xaml.Controls.ContentPresenter#BorderElement      
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#761E1E1E"/>
+      - Margin=0,-20,0,20
   - target: Windows.UI.Xaml.Controls.Button#CloseButton
     styles:
       - HorizontalAlignment=left
@@ -1231,6 +1243,10 @@ controlStyles:
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#ThumbBarRepeater > Taskbar.ThumbBarButton#ThumbBarButton > Windows.UI.Xaml.Controls.ContentPresenter#BorderElement      
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#761E1E1E"/>
+      - Margin=0,-20,0,20
   - target: Windows.UI.Xaml.Controls.Button#CloseButton
     styles:
       - HorizontalAlignment=left
@@ -1554,6 +1570,10 @@ controlStyles:
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#ThumbBarRepeater > Taskbar.ThumbBarButton#ThumbBarButton > Windows.UI.Xaml.Controls.ContentPresenter#BorderElement      
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#761E1E1E"/>
+      - Margin=0,-20,0,20
   - target: Windows.UI.Xaml.Controls.Button#CloseButton
     styles:
       - HorizontalAlignment=left
@@ -1885,6 +1905,10 @@ controlStyles:
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#ThumbBarRepeater > Taskbar.ThumbBarButton#ThumbBarButton > Windows.UI.Xaml.Controls.ContentPresenter#BorderElement      
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#761E1E1E"/>
+      - Margin=0,-20,0,20
   - target: Windows.UI.Xaml.Controls.Button#CloseButton
     styles:
       - HorizontalAlignment=left
