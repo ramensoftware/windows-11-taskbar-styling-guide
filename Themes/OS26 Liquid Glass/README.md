@@ -1167,7 +1167,6 @@ xamlDiagnosticsHandling: ''
 
 ```yaml
 
-theme: ''
 styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.04,-0.14" EndPoint="1.22,1.10"><GradientStop Offset="0.18" Color="#4FFFFFFF"/><GradientStop Offset="0.34" Color="#661D1D1D"/><GradientStop Offset="0.63" Color="#00000000"/><GradientStop Offset="0.72" Color="#662D2D2D"/><GradientStop Offset="0.84" Color="#4FFFFFFF"/></LinearGradientBrush>
@@ -1178,7 +1177,6 @@ controlStyles:
       - MinWidth:=100
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
-
       - Height=80
       - MaxHeight=80
       - HorizontalAlignment=Center
@@ -1248,10 +1246,9 @@ controlStyles:
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid
     styles:
-      
       - Height=48
       - Width=48
-      - Margin=25,2,4,0
+      - Margin=25,2,8,0
       - CornerRadius=15
       - Background=transparent
       - BorderBrush:=lightgray
@@ -1260,7 +1257,7 @@ controlStyles:
     styles:
       - Width=48
       - Height=48
-      - Margin=2,4,2,0
+      - Margin=0,4,2,0
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
@@ -1271,9 +1268,10 @@ controlStyles:
       - FontSize=32
   - target: Grid#SystemTrayFrameGrid
     styles:
-      - Margin=0,4,0,0
+      - Margin=0,0,0.5,0
       - Height=70
-      - Padding=0,0,0,0
+      - VerticalAlignment=Bottom
+      - Padding=0
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - BorderBrush=#40FFFFFF
       - BorderThickness=0,1,1,1
@@ -1284,8 +1282,9 @@ controlStyles:
       - Background=transparent
       - BorderBrush=#40FFFFFF
       - BorderThickness=2,0,0,0
+      - Padding=0
       - CornerRadius=0
-      - Height=35
+      - Height=40
   - target: TextBlock#DateInnerTextBlock
     styles:
       - FontWeight=Bold
@@ -1320,35 +1319,82 @@ controlStyles:
       - Grid.Column=2
       - Width=Auto
       - HorizontalAlignment=Left
-      - Margin=0
+      - Margin=0,1,0,-0.5
   - target: :root > ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
       - ActualWidth=>containerGridWidth
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - Background:=Transparent
+      - BorderThickness=0
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder
     styles:
+      - Background:=Transparent
+      - BorderThickness=0
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter
+    styles:
+      - Background:=transparent
+      - BorderThickness=0
+  - target: SystemTray.Stack#MainStack
+    styles:
+      - Visibility=1
+      - // System tray > Microphone and Location Icons Grid
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Visibility=1
       - Width=48
       - Height=48
-      - Margin=2,4,0,0
+      - Margin=0,4,2,0
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
       - CornerRadius=15
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+      - // System Tray > Show Desktop Button
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
     styles:
+      - Visibility=Visible
       - Width=48
       - Height=48
-      - Margin=2,4,0,0
+      - Margin=0,4,2,0
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
-      - CornerRadius=15    
-  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
-    styles:
-      - Visibility=1
+      - CornerRadius=15
+      - // [Tray Wifi Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[2] > SystemTray.IconView > Grid > Grid
     styles:
-      - Margin=4,2,-4,-2
+      - Visibility=Collapsed
+      - Width=48
+      - Height=48
+      - Margin=0,4,2,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
+      - // [Tray Audio Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[3] > SystemTray.IconView > Grid > Grid
+    styles:
+      - Visibility=Visible
+      - Width=48
+      - Height=48
+      - Margin=0,4,2,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
+      - // [Tray Battery Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Visibility=Visible
+      - Width=48
+      - Height=48
+      - Margin=0,4,2,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
+      - // [Notify Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock
     styles:
       - Foreground=white
@@ -1421,7 +1467,6 @@ controlStyles:
       - Canvas.ZIndex=1
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
-      - Transitions:=<TransitionCollection> <AddDeleteThemeTransition/> </TransitionCollection>
       - CornerRadius=12
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
@@ -1551,7 +1596,6 @@ themeResourceVariables:
   - ''
 clickThroughTaskbar: 1
 xamlDiagnosticsHandling: ''
-
 
 ```
 </details>
