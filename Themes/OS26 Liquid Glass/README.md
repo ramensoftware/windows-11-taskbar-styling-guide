@@ -102,6 +102,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```yaml
 
+
 styleConstants:
   - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26 Liquid Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
@@ -241,11 +242,9 @@ controlStyles:
       - CornerRadius=12
       - BorderThickness=1.2
       - Background:=<LinearGradientBrush StartPoint="0.50,-1.50" EndPoint="0.50,2.50"><GradientStop Offset="0.48" Color="#54CCCCCC"/><GradientStop Offset="0.49" Color="#423E3C3C"/></LinearGradientBrush>
-
-
       - BorderBrush:=$IconBorder
       - Height=45
-      - Margin=0,5,0,-1
+      - Margin=0,3,0,-1
       - Width=Auto
   - target: SystemTray.AdaptiveTextBlock > TextBlock
     styles:
