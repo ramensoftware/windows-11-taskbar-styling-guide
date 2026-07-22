@@ -149,7 +149,7 @@ Taskbar Styler mod. The following themes are available:
 | [OS26 Liquid Glass](Themes/OS26%20Liquid%20Glass/README.md) | [![OS26 Liquid Glass](Themes/OS26%20Liquid%20Glass/screenshot.png)](Themes/OS26%20Liquid%20Glass/screenshot.png)
 | [FrostyGlass](Themes/FrostyGlass/README.md) | [![FrostyGlass](Themes/FrostyGlass/screenshot.png)](Themes/FrostyGlass/screenshot.png)
 | [FrostedAcrylic](Themes/FrostedAcrylic/README.md) | [![FrostedAcrylic](Themes/FrostedAcrylic/screenshot.png)](Themes/FrostedAcrylic/screenshot.png)
-| [Pills](Themes/Pills/README.md) | [![Pills](Themes/Pills/Dark.png)](Themes/Pills/Dark.png)
+| [Pills](Themes/Pills/README.md) | [![Pills](Themes/Pills/screenshot.png)](Themes/Pills/screenshot.png)
 
 ## General
 

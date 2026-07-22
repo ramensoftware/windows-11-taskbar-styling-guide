@@ -244,20 +244,35 @@ Click each to expand settings:
   ```
   </details>
 
-## Theme selection installation
+## Styling
+
+To tweak styleConstants, you may use the illustration below as a guide:
+
+  <details>
+  <summary>styleConstants illustration</summary>
+
+  ![styleConstantsIllustration](styleConstantsIllustration.png)
+  </details>
+
+## Theme selection
+
+The theme is integrated into the mod and can be selected directly from the mod's
+settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
-* Select the theme "Pills" and save the settings.
+* Select the theme and save the settings.
 
 ## Manual installation
+
+The theme styles can also be imported manually. To do that, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
 
 <details>
-<summary>Theme content to import (click to expand)</summary>
+<summary>Content to import (click to expand)</summary>
 
 ```yaml
 styleConstants:
@@ -684,13 +699,3 @@ themeResourceVariables:
   - AdaptiveIndicator@Dark =#FFFFFF
 ```
 </details>
-
-## Styling
-
-To tweak styleConstants, you may use the illustration below as a guide:
-
-  <details>
-  <summary>styleConstants illustration</summary>
-
-  ![styleConstantsIllustration](styleConstantsIllustration.png)
-  </details>
