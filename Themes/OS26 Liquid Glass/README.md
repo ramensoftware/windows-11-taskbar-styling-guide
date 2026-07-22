@@ -541,8 +541,8 @@ xamlDiagnosticsHandling: ''
 
 ```yaml
 styleConstants:
-  - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
-  - IconBorder=<LinearGradientBrush StartPoint="0.25,-0.20" EndPoint="0.99,1.39"><GradientStop Offset="0.11" Color="#50FFFFFF"/><GradientStop Offset="0.3" Color="#631C1C1C"/><GradientStop Offset="0.62" Color="#591C1C1C"/><GradientStop Offset="0.77" Color="#50FFFFFF"/></LinearGradientBrush>
+  - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26 Liquid Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
+  - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
 controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
@@ -1650,12 +1650,14 @@ xamlDiagnosticsHandling: ''
 
 ```yaml
 
+theme: ''
 styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.25,-0.20" EndPoint="0.99,1.39"><GradientStop Offset="0.11" Color="#50FFFFFF"/><GradientStop Offset="0.3" Color="#631C1C1C"/><GradientStop Offset="0.62" Color="#591C1C1C"/><GradientStop Offset="0.77" Color="#50FFFFFF"/></LinearGradientBrush>
 controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
+      - Width=1620
       - Height=80
       - MaxHeight=80
       - HorizontalAlignment=Center
@@ -1675,19 +1677,18 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Width=55
-      - Height=70  
+      - Height=70
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - CornerRadius=20
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - BorderThickness=1
-      - Margin=150,0,150,0
+      - Margin=0,0,0,0
       - BorderBrush=#40FFFFFF
       - Padding=-1
   - target: Rectangle#BackgroundStroke
     styles:
       - Fill=Transparent
-
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Visibility=Visible
@@ -1786,7 +1787,7 @@ controlStyles:
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
     styles:
       - Visibility=Collapsed
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#ThumbBarRepeater > Taskbar.ThumbBarButton#ThumbBarButton > Windows.UI.Xaml.Controls.ContentPresenter#BorderElement      
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#ThumbBarRepeater > Taskbar.ThumbBarButton#ThumbBarButton > Windows.UI.Xaml.Controls.ContentPresenter#BorderElement
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#761E1E1E"/>
       - Margin=0,-20,0,20
@@ -1811,7 +1812,6 @@ controlStyles:
       - HorizontalAlignment=Center
       - Margin=0,-5,0,5
       - Canvas.ZIndex=1
-
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - CornerRadius=12
@@ -1839,12 +1839,12 @@ controlStyles:
   - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
       - Fill:=#90ffffff
-      - RadiusX=3 
-      - RadiusY=3 
+      - RadiusX=3
+      - RadiusY=3
       - Margin=-2
       - Height=6
       - Width=6
-      - Margin=10,0,0,-2     
+      - Margin=10,0,0,-2
       - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
@@ -1972,9 +1972,8 @@ controlStyles:
       - Foreground=White
 themeResourceVariables:
   - ''
+clickThroughTaskbar: 1
 xamlDiagnosticsHandling: ''
-
-
 
 ```
 </details>
