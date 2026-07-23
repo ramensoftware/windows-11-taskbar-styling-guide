@@ -253,7 +253,7 @@ controlStyles:
       - Grid.Column=2
       - Width=Auto
       - HorizontalAlignment=Left
-      - Margin=0,1,0,-0.5
+      - Margin=0,0.5,0,-0.5
   - target: :root > ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
@@ -1363,7 +1363,7 @@ controlStyles:
       - Grid.Column=2
       - Width=Auto
       - HorizontalAlignment=Left
-      - Margin=0,1,0,-0.5
+      - Margin=0,0.5,0,-0.5
   - target: :root > ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
