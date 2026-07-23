@@ -40,8 +40,9 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 
 ---
 
-> # [!NOTE]
-> # Do Not use [Taskbar Height & Icon Size](https://windhawk.net/mods/taskbar-icon-size) Mod with this! It will Not work and force the taskbar to go against the border of the screen.
+> [!NOTE]
+> ## Do Not use [Taskbar Height & Icon Size](https://windhawk.net/mods/taskbar-icon-size) Mod with this!
+> ## It will Not work and force the taskbar to go against the border of the screen.
 
 # Taskbar Thumbnail Size Configurations
 
@@ -532,9 +533,9 @@ themeResourceVariables:
   - ''
 clickThroughTaskbar: 1
 xamlDiagnosticsHandling: ''
-
 ```
 </details>
+
 
 
 ## OS26 Liquid Glass (Clear Taskbar) Configuration
