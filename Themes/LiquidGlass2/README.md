@@ -34,8 +34,8 @@ TimeFormat: hh':'mm tt;hh':'mm':'ss tt
 DateFormat: MM/dd;dddd - MMMM dd, yyyy
 WeekdayFormat: dddd
 WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
-TopLine: %time%
-BottomLine: %date%
+TopLine: '%time%'
+BottomLine: '%date%'
 MiddleLine: '%weekday%'
 TooltipLine: 📅 %date2%%n%🕒 %time2%%n%%n%🌐 %web1_full%%n%%n%📻 %media_info%
 TooltipLineMode: replace
