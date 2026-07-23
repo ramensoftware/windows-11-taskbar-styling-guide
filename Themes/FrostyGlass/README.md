@@ -105,7 +105,7 @@ styleConstants:
   - Background3=Transparent
   - BorderBrush3=Transparent
 controlStyles:
-  - target: Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Margin=0,0,0,4
       - BorderThickness=$BorderThickness
@@ -313,7 +313,7 @@ controlStyles:
       - CornerRadius=7
       - Padding=$TrayPadding
       - Visibility=0
-  - target: Taskbar.TaskbarFrame#TaskbarFrame
+  - target: Taskbar.TaskbarFrame
     styles:
       - HorizontalAlignment=Auto
       - Width=Auto
