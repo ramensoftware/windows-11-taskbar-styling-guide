@@ -881,6 +881,7 @@ xamlDiagnosticsHandling: ''
 
 ```yaml
 
+theme: ''
 styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.04,-0.14" EndPoint="1.22,1.10"><GradientStop Offset="0.18" Color="#4FFFFFFF"/><GradientStop Offset="0.34" Color="#661D1D1D"/><GradientStop Offset="0.63" Color="#00000000"/><GradientStop Offset="0.72" Color="#662D2D2D"/><GradientStop Offset="0.84" Color="#4FFFFFFF"/></LinearGradientBrush>
@@ -962,24 +963,114 @@ controlStyles:
     styles:
       - Height=48
       - Width=48
-      - Margin=25,2,8,0
+      - Margin=25,2,12,0
       - CornerRadius=15
       - Background=transparent
       - BorderBrush:=lightgray
       - BorderThickness=3
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+  - target: SystemTray.LanguageTextIconContent > Windows.UI.Xaml.Controls.Grid#ContainerGrid
     styles:
       - Width=48
       - Height=48
-      - Margin=0,4,2,0
+      - Margin=-6,4,-3,0
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
       - CornerRadius=15
+  - target: SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Width=48
+      - Height=48
+      - Margin=-3,4,8,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Visibility=1
+      - Width=48
+      - Height=48
+      - Margin=2,4,2,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
+      - // System Tray > Show Desktop Button
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
+    styles:
+      - Visibility=Visible
+      - Width=48
+      - Height=48
+      - Margin=2,4,2,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
+      - // [Tray Wifi Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[2] > SystemTray.IconView > Grid > Grid
+    styles:
+      - Visibility=Visible
+      - Width=48
+      - Height=48
+      - Margin=2,4,2,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
+      - // [Tray Audio Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[3] > SystemTray.IconView > Grid > Grid
+    styles:
+      - Visibility=Visible
+      - Width=48
+      - Height=48
+      - Margin=2,4,2,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
+      - // [Tray Battery Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Visibility=Visible
+      - Width=48
+      - Height=48
+      - Margin=-2,4,0,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
+      - // [Notify Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
+  - target: SystemTray.AdaptiveTextBlock > TextBlock
+    styles:
+      - FontSize=30
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+    styles:
+      - FontSize=32
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+
+    styles:
+      - VerticalAlignment=Center  
+      - HorizontalAlignment=Center   
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - // [Do not disturb indicator]
+      - Visibility=Collapsed
+  - target: SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
+    styles:
+      - FontSize=16
+      - FontWeight=Bold
   - target: SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent
     styles:
       - FontWeight=bold
       - FontSize=32
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Height=80
+      - Grid.Column=2
+      - Width=Auto
+      - HorizontalAlignment=Left
+      - Margin=0,-2,0.5,2
   - target: Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,0,0.5,0
@@ -1023,17 +1114,10 @@ controlStyles:
       - BorderBrush:=$IconBorder
       - Height=45
       - Margin=0,3,15,-1
-      - Width=Auto
-  - target: SystemTray.AdaptiveTextBlock > TextBlock
+      - Width=auto
+  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
     styles:
       - FontSize=30
-  - target: SystemTray.SystemTrayFrame
-    styles:
-      - Height=75
-      - Grid.Column=2
-      - Width=Auto
-      - HorizontalAlignment=Left
-      - Margin=0,0.5,0,-0.5
   - target: :root > ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
@@ -1055,61 +1139,6 @@ controlStyles:
     styles:
       - Visibility=1
       - // System tray > Microphone and Location Icons Grid
-  - target: SystemTray.Stack#ShowDesktopStack
-    styles:
-      - Visibility=1
-      - Width=48
-      - Height=48
-      - Margin=0,4,2,0
-      - Background:=$IconBackground
-      - BorderBrush:=$IconBorder
-      - BorderThickness=1.2
-      - CornerRadius=15
-      - // System Tray > Show Desktop Button
-  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
-    styles:
-      - Visibility=Visible
-      - Width=48
-      - Height=48
-      - Margin=0,4,2,0
-      - Background:=$IconBackground
-      - BorderBrush:=$IconBorder
-      - BorderThickness=1.2
-      - CornerRadius=15
-      - // [Tray Wifi Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
-  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[2] > SystemTray.IconView > Grid > Grid
-    styles:
-      - Visibility=Collapsed
-      - Width=48
-      - Height=48
-      - Margin=0,4,2,0
-      - Background:=$IconBackground
-      - BorderBrush:=$IconBorder
-      - BorderThickness=1.2
-      - CornerRadius=15
-      - // [Tray Audio Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
-  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[3] > SystemTray.IconView > Grid > Grid
-    styles:
-      - Visibility=Visible
-      - Width=48
-      - Height=48
-      - Margin=0,4,2,0
-      - Background:=$IconBackground
-      - BorderBrush:=$IconBorder
-      - BorderThickness=1.2
-      - CornerRadius=15
-      - // [Tray Battery Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
-    styles:
-      - Visibility=Visible
-      - Width=48
-      - Height=48
-      - Margin=0,4,2,0
-      - Background:=$IconBackground
-      - BorderBrush:=$IconBorder
-      - BorderThickness=1.2
-      - CornerRadius=15
-      - // [Notify Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock
     styles:
       - Foreground=white
@@ -1311,7 +1340,6 @@ themeResourceVariables:
   - ''
 clickThroughTaskbar: 1
 xamlDiagnosticsHandling: ''
-
 
 ```
 </details>
