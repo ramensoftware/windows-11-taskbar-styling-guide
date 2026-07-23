@@ -242,7 +242,7 @@ controlStyles:
       - Background:=<LinearGradientBrush StartPoint="0.50,-1.50" EndPoint="0.50,2.50"><GradientStop Offset="0.48" Color="#54CCCCCC"/><GradientStop Offset="0.49" Color="#423E3C3C"/></LinearGradientBrush>
       - BorderBrush:=$IconBorder
       - Height=45
-      - Margin=0,3,0,-1
+      - Margin=0,3,15,-1
       - Width=Auto
   - target: SystemTray.AdaptiveTextBlock > TextBlock
     styles:
@@ -268,6 +268,7 @@ controlStyles:
       - BorderThickness=0
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter
     styles:
+      - Margin=0,0,15,0
       - Background:=transparent
       - BorderThickness=0
   - target: SystemTray.Stack#MainStack
@@ -1351,7 +1352,7 @@ controlStyles:
       - Background:=<LinearGradientBrush StartPoint="0.50,-1.50" EndPoint="0.50,2.50"><GradientStop Offset="0.48" Color="#FF3A40"/><GradientStop Offset="0.49" Color="#141414"/></LinearGradientBrush>
       - BorderBrush:=$IconBorder
       - Height=45
-      - Margin=0,5,0,-1
+      - Margin=0,3,15,-1
       - Width=Auto
   - target: SystemTray.AdaptiveTextBlock > TextBlock
     styles:
@@ -1377,6 +1378,7 @@ controlStyles:
       - BorderThickness=0
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter
     styles:
+      - Margin=0,0,15,0
       - Background:=transparent
       - BorderThickness=0
   - target: SystemTray.Stack#MainStack
