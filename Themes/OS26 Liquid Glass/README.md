@@ -532,8 +532,8 @@ themeResourceVariables:
   - ''
 clickThroughTaskbar: 1
 xamlDiagnosticsHandling: ''
-
 ```
+
 
 ## OS26 Liquid Glass (Clear Taskbar) Configuration
 ![Preview-taskbar-full](screenshot-taskbar.png)
@@ -867,6 +867,7 @@ xamlDiagnosticsHandling: ''
 
 ```
 </details>
+
 
 # Dark Variants:
 
