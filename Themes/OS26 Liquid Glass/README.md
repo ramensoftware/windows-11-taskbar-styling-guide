@@ -1,4 +1,4 @@
-# OS26 Liquid Glass Theme for Windows 11 Taskbar Styler
+# OS26 Liquid Glass theme for Windows 11 Taskbar Styler
 
 Author: [WasiXGamer](https://github.com/wasixgamer)
 
@@ -57,7 +57,7 @@ maxHeight: 0
 preserveAspectRatio: 0
 ```
 
-# Taskbar Dock Animation Confiuration
+# Taskbar Dock Animation Configuration
 
 The Mod can be made look better and more like MacOS by using [Taskbar Dock Animation](https://windhawk.net/mods/taskbar-dock-animation) Mod! The Following config is Recommended to be used:
 ```yaml
@@ -77,16 +77,16 @@ DisableBounce: 1
 ## Preview:
 ![Animation-Preview](dock-animation-preview.gif)
 
+## Theme selection
 
-# Theme selection
-
-The theme is integrated into the mod and can be selected directly from the mod's settings:
+The theme is integrated into the mod and can be selected directly from the mod's
+settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
 * Select the theme and save the settings.
 
-# Manual installation
+## Manual installation
 
 The theme styles can also be imported manually. To do that, follow these steps:
 
@@ -102,9 +102,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-
 styleConstants:
-  - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26 Liquid Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
+  - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
 controlStyles:
   - target: Taskbar.TaskbarFrame
@@ -252,7 +251,7 @@ controlStyles:
       - CornerRadius=15
       - // [Tray Battery Icon. Set Visibility=Collapsed to Remove it, and Visibility=Visible to bring it back]
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.BatteryIconContent > Grid#ContainerGrid > StackPanel
-     styles:
+    styles:
       - HorizontalAlignment=Center    
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
     styles:
@@ -560,14 +559,8 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
-themeResourceVariables:
-  - ''
-clickThroughTaskbar: 1
-xamlDiagnosticsHandling: ''
 ```
 </details>
-
-
 
 ## OS26 Liquid Glass (Clear Taskbar) Configuration
 ![Preview-taskbar-full](screenshot-clear-taskbar.png)
@@ -575,9 +568,8 @@ xamlDiagnosticsHandling: ''
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-
 styleConstants:
-  - IconBackground= <ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26 Liquid Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
+  - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
 controlStyles:
   - target: Taskbar.TaskbarFrame
@@ -895,13 +887,8 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
-themeResourceVariables:
-  - ''
-xamlDiagnosticsHandling: ''
-
 ```
 </details>
-
 
 # Dark Variants:
 
@@ -911,8 +898,6 @@ xamlDiagnosticsHandling: ''
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-
-theme: ''
 styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.04,-0.14" EndPoint="1.22,1.10"><GradientStop Offset="0.18" Color="#4FFFFFFF"/><GradientStop Offset="0.34" Color="#661D1D1D"/><GradientStop Offset="0.63" Color="#00000000"/><GradientStop Offset="0.72" Color="#662D2D2D"/><GradientStop Offset="0.84" Color="#4FFFFFFF"/></LinearGradientBrush>
@@ -1370,14 +1355,8 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
-themeResourceVariables:
-  - ''
-clickThroughTaskbar: 1
-xamlDiagnosticsHandling: ''
-
 ```
 </details>
-
 
 ## OS26 Liquid Glass (Dark Taskbar) Configuration
 ![Preview-dark-taskbar-full](screenshot-dark-taskbar.png)
@@ -1385,7 +1364,6 @@ xamlDiagnosticsHandling: ''
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-
 styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.25,-0.20" EndPoint="0.99,1.39"><GradientStop Offset="0.11" Color="#50FFFFFF"/><GradientStop Offset="0.3" Color="#631C1C1C"/><GradientStop Offset="0.62" Color="#591C1C1C"/><GradientStop Offset="0.77" Color="#50FFFFFF"/></LinearGradientBrush>
@@ -1706,9 +1684,5 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
-themeResourceVariables:
-  - ''
-xamlDiagnosticsHandling: ''
-
 ```
 </details>
