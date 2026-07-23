@@ -539,7 +539,7 @@ xamlDiagnosticsHandling: ''
 
 
 ## OS26 Liquid Glass (Clear Taskbar) Configuration
-![Preview-taskbar-full](screenshot-taskbar.png)
+![Preview-taskbar-full](screenshot-clear-taskbar.png)
 <details>
 <summary>Content to import (click to expand)</summary>
 
