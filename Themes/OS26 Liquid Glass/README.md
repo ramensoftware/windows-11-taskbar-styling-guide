@@ -41,7 +41,7 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 ---
 
 > [!NOTE]
-> #Do Not use Taskbar Height And Icon Size Mod with this! It will Not work and force the taskbar to go against the border of the screen.
+> # Do Not use Taskbar Height And Icon Size Mod with this! It will Not work and force the taskbar to go against the border of the screen.
 
 # Taskbar Thumbnail Size Configurations
 
