@@ -535,7 +535,7 @@ xamlDiagnosticsHandling: ''
 ```
 
 ## OS26 Liquid Glass (Clear Taskbar) Configuration
-![Preview-taskbar-full](screenshot-taskbar-full.png)
+![Preview-taskbar-full](screenshot-taskbar.png)
 <details>
 <summary>Content to import (click to expand)</summary>
 
@@ -1311,7 +1311,7 @@ xamlDiagnosticsHandling: ''
 </details>
 
 ## OS26 Liquid Glass (Dark Taskbar) Configuration
-![Preview-dark-taskbar-full](screenshot-dark-taskbar-full.png)
+![Preview-dark-taskbar-full](screenshot-dark-taskbar.png)
 <details>
 <summary>Content to import (click to expand)</summary>
 
