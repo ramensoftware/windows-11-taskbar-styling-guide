@@ -325,7 +325,7 @@ controlStyles:
       - BorderThickness@NoRunningIndicator := $borderThickness
       - BorderBrush@NoRunningIndicator := $borderColor
       - CornerRadius@NoRunningIndicator := $buttonRadius
-      - Margin := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{$highlightOffset+2}},{{$taskbarBottomOffset-$highlightOffset}}
+      - Margin := {{$highlightOffset}},{{$highlightOffset}},{{$highlightOffset+2}},{{$highlightOffset}}
       - Margin@NoRunningIndicator := 0,{{$taskbarTopOffset-4}},2,{{$taskbarBottomOffset-4}}
       - CornerRadius := $highlightRadius
       - Canvas.ZIndex = 2
