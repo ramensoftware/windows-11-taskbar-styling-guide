@@ -600,7 +600,7 @@ controlStyles:
       - // Weather widget content grid.
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
-      - Margin = {{6*($modsOn)}},0,0,2
+      - Margin = {{4*($modsOn)}},0,0,2
       - // Weather widget content grid.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
     styles:
