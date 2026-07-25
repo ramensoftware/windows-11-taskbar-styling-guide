@@ -315,18 +315,20 @@ controlStyles:
     styles:
       - MinWidth := $buttonMinWidth
       - // Taskbar buttons min width
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Border
+    styles:
+      - Margin := {{$highlightOffset}},{{($taskbarTopOffset-$taskbarBottomOffset)/2}},{{$highlightOffset+2}},{{($taskbarBottomOffset-$taskbarTopOffset)/2}}
+      - Margin@NoRunningIndicator := 0,{{$taskbarTopOffset-4}},2,{{$taskbarBottomOffset-4}}
+      - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*($highlightOffset)}}
+      - Height@NoRunningIndicator := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - Background@ActiveRunningIndicator :=
       - Background@NoRunningIndicator := $fillColor
-      - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
-      - Height@NoRunningIndicator := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
       - BorderThickness = 0
       - BorderThickness@NoRunningIndicator := $borderThickness
       - BorderBrush@NoRunningIndicator := $borderColor
       - CornerRadius@NoRunningIndicator := $buttonRadius
-      - Margin := {{$highlightOffset}},{{$taskbarTopOffset-$highlightOffset}},{{$highlightOffset+2}},{{$taskbarBottomOffset-$highlightOffset}}
-      - Margin@NoRunningIndicator := 0,{{$taskbarTopOffset-4}},2,{{$taskbarBottomOffset-4}}
       - CornerRadius := $highlightRadius
       - Canvas.ZIndex = 2
       - Canvas.ZIndex@NoRunningIndicator = -10
