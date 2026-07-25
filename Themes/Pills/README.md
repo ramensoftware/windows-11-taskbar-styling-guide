@@ -34,18 +34,6 @@ Pills. A sleek theme that turns taskbar buttons into labeled breathable pills. T
 Click each to expand settings:
 
   <details>
-  <summary>Taskbar Height and Icon Size</summary>
-
-  ```yaml
-  TaskbarHeight: 32
-  IconSize: 14
-  TaskbarButtonWidth: 28
-  IconSizeSmall: 14
-  TaskbarButtonWidthSmall: 28
-  ```
-  </details>
-
-  <details>
   <summary>Taskbar Labels for Windows 11</summary>
 
   ```yaml
@@ -67,6 +55,18 @@ Click each to expand settings:
   alwaysShowThumbnailLabels: 0
   labelForSingleItem: ''
   labelForMultipleItems: ''
+  ```
+  </details>
+  
+  <details>
+  <summary>Taskbar Height and Icon Size</summary>
+
+  ```yaml
+  TaskbarHeight: 32
+  IconSize: 14
+  TaskbarButtonWidth: 28
+  IconSizeSmall: 14
+  TaskbarButtonWidthSmall: 28
   ```
   </details>
 
@@ -199,6 +199,13 @@ Click each to expand settings:
   ```
   </details>
 
+  <details>
+  
+  <summary>Finally, under Taskbar Styler's mod "Settings" tab, add a styleConstant "modsOn=1" and save the settings.</summary>
+  
+  ![modsOn](modsOn.jpeg)
+  </details>
+
 ## Recommended Windhawk mods
 
   <details>
@@ -261,12 +268,7 @@ settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
-* Select the theme.
-<details>
-<summary>Add a styleConstant "modsOn=1" and save the settings.</summary>
-
-![modsOn](modsOn.jpeg)
-</details>
+* Select the theme and save the settings.
 
 ## Manual installation
 
@@ -274,8 +276,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab and select "Textual mode".
-* Copy the content below to the text box.
-* Flip the first styleConstant "modsOn" from 0 to 1 and click "Save settings".
+* Copy the content below to the text box and click "Save settings".
 
 <details>
 <summary>Content to import (click to expand)</summary>
