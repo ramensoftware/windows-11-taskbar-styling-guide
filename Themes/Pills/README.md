@@ -301,12 +301,22 @@ styleConstants:
   - badgeNudge = 4,4,0,0
   - sysTrayIconSize = 16
   - taskbarSidesRounded = 1
-  - fillColor = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="{{0.2*($modsOn)}}" TintLuminosityOpacity="{{0.2*($modsOn)}}"/>
-  - borderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="{{1*($modsOn)}}"/>
+  - buttonFill = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="{{0.2*($modsOn)}}" TintLuminosityOpacity="{{0.2*($modsOn)}}"/>
+  - buttonBorderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="{{1*($modsOn)}}"/>
+  - taskbarFill = ''
+  - taskbarStrokeColor = ''
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
 controlStyles:
+  - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill := $taskbarFill
+      - // Taskbar background
+  - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundStroke
+    styles:
+      - Fill := $taskbarStrokeColor
+      - // Taskbar stroke
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame
     styles:
       - Height => TaskbarHeight
@@ -324,10 +334,10 @@ controlStyles:
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - Background@ActiveRunningIndicator :=
-      - Background@NoRunningIndicator := $fillColor
+      - Background@NoRunningIndicator := $buttonFill
       - BorderThickness = 0
       - BorderThickness@NoRunningIndicator := $borderThickness
-      - BorderBrush@NoRunningIndicator := $borderColor
+      - BorderBrush@NoRunningIndicator := $buttonBorderColor
       - CornerRadius@NoRunningIndicator := $buttonRadius
       - CornerRadius := $highlightRadius
       - Canvas.ZIndex = 2
@@ -347,8 +357,8 @@ controlStyles:
       - RadiusX := $buttonRadius
       - RadiusY := $buttonRadius
       - StrokeThickness := $borderThickness
-      - Fill := $fillColor
-      - Stroke := $borderColor
+      - Fill := $buttonFill
+      - Stroke := $buttonBorderColor
       - Canvas.ZIndex = -10
       - // The running indicator functions as the background of taskbar buttons. Left and right margins must be zero to work along with the Labels mod.
   - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
@@ -486,8 +496,8 @@ controlStyles:
       - Padding := {{-$borderThickness}}
       - CornerRadius := {{$buttonRadius}},{{$buttonRadius*$taskbarSidesRounded}},{{$buttonRadius*$taskbarSidesRounded}},{{$buttonRadius}}
       - BorderThickness := $borderThickness
-      - Background := $fillColor
-      - BorderBrush := $borderColor
+      - Background := $buttonFill
+      - BorderBrush := $buttonBorderColor
       - // System tray date & time background.
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder
     styles:
@@ -529,41 +539,41 @@ controlStyles:
       - Padding := {{-$borderThickness}}
       - CornerRadius := 0,$buttonRadius,$buttonRadius,0
       - BorderThickness := 0,$borderThickness,$borderThickness,$borderThickness
-      - Background := $fillColor
-      - BorderBrush := $borderColor
+      - Background := $buttonFill
+      - BorderBrush := $buttonBorderColor
       - // System tray control center background.
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#MainStack > Grid#Content
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Padding := {{-$borderThickness}}
       - BorderThickness := 0,$borderThickness,0,$borderThickness
-      - Background := $fillColor
-      - BorderBrush := $borderColor
+      - Background := $buttonFill
+      - BorderBrush := $buttonBorderColor
       - // System tray main stack background.
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack > Grid#Content
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Padding := {{-$borderThickness}}
       - BorderThickness := 0,$borderThickness,0,$borderThickness
-      - Background := $fillColor
-      - BorderBrush := $borderColor
+      - Background := $buttonFill
+      - BorderBrush := $buttonBorderColor
       - // System tray language indicator's background
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Padding := {{-$borderThickness}}
       - BorderThickness := 0,$borderThickness,0,$borderThickness
-      - Background := $fillColor
-      - BorderBrush := $borderColor
+      - Background := $buttonFill
+      - BorderBrush := $buttonBorderColor
       - // System tray notification area icons' background.
   - target: SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Padding := {{-$borderThickness}}
       - BorderThickness := $borderThickness,$borderThickness,0,$borderThickness
-      - Background := $fillColor
+      - Background := $buttonFill
       - CornerRadius := $buttonRadius,0,0,$buttonRadius
-      - BorderBrush := $borderColor
+      - BorderBrush := $buttonBorderColor
       - // System tray overflow indicator's highlight.
   - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
     styles:
@@ -614,8 +624,8 @@ controlStyles:
       - Padding = 0
       - CornerRadius := {{$buttonRadius*$taskbarSidesRounded}},{{$buttonRadius}},{{$buttonRadius}},{{$buttonRadius*$taskbarSidesRounded}}
       - BorderThickness := $borderThickness
-      - Background := $fillColor
-      - BorderBrush := $borderColor
+      - Background := $buttonFill
+      - BorderBrush := $buttonBorderColor
       - // Weather widget's background (width is adaptive to the sum of weather temperature and condition text blocks widths).
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
@@ -658,10 +668,10 @@ controlStyles:
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Padding = 0
-      - Background := $fillColor
+      - Background := $buttonFill
       - CornerRadius := 0,{{$buttonRadius}},{{$buttonRadius}},0
       - BorderThickness := 0,{{$borderThickness}},{{$borderThickness}},{{$borderThickness}}
-      - BorderBrush := $borderColor
+      - BorderBrush := $buttonBorderColor
       - // Overflow button
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Border#BackgroundElement
     styles:
@@ -675,8 +685,8 @@ controlStyles:
       - Height = 24
       - BorderThickness := $borderThickness
       - CornerRadius := $buttonRadius
-      - Background := $fillColor
-      - BorderBrush := $borderColor
+      - Background := $buttonFill
+      - BorderBrush := $buttonBorderColor
       - // Taskbar Virtual Desktop Switcher.
   - target: Grid#VdSwitcherBar > Button > ContentPresenter@CommonStates
     styles:
