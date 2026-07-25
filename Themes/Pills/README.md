@@ -605,7 +605,7 @@ controlStyles:
       - // Weather widget content grid.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
     styles:
-      - Margin := 0,{{$highlightOffset}},0,{{$highlightOffset}}
+     - VerticalAlignment = 1
       - // Weather widget content grid panel.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
