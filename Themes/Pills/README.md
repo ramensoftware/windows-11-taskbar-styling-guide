@@ -306,10 +306,6 @@ styleConstants:
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
 controlStyles:
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
-    styles:
-      - Grid.ColumnSpan => LabelsMod
-      - // Running Indicator. Get Grid.ColumnSpan value (2 when Labels mod on | 1 when Labels mod off)
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame
     styles:
       - Height => TaskbarHeight
