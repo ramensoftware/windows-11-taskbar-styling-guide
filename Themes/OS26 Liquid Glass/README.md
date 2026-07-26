@@ -2307,6 +2307,7 @@ xamlDiagnosticsHandling: ''
 
 ```
 </details>
+
 ## OS26 Liquid Glass (Dark Taskbar) Configuration
 ![Preview-dark-taskbar-full](screenshot-dark-taskbar.png)
 <details>
