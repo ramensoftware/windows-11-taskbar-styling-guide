@@ -55,6 +55,7 @@ styleConstants:
   - aeroColor={ThemeResource SystemAccentColor}
   - aeroOpacity=0.3
   - reflection=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/AeroPeek.png
+  - reflectionBlue=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/AeroPeekBlue.png
   - taskbandInactiveNormal=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/InactiveNormal.png
   - taskbandInactivePointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/InactivePointerOver.png
   - taskbandInactivePressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/ActiveNormal.png
@@ -186,6 +187,14 @@ controlStyles:
       - FontFamily=Segoe UI
       - FlowDirection=0
       - Typography.StylisticSet1=true
+  - target: SystemTray.BatteryIconContent > Grid#ContainerGrid > StackPanel > TextBlock
+    styles:
+      - Foreground=White
+      - FontFamily=Segoe UI
+      - Typography.StylisticSet1=true
+  - target: SystemTray.BatteryIconContent > Grid#ContainerGrid > StackPanel > Grid > TextBlock[1]
+    styles:
+      - Foreground=White
   - target: SystemTray.OmniButton#ControlCenterButton > Windows.UI.Xaml.Controls.Grid@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
     styles:
       - Background@Normal=Transparent
@@ -354,5 +363,8 @@ controlStyles:
       - FontFamily=Segoe UI
       - Typography.StylisticSet1=true
       - Foreground=White
+  - target: Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Background:=<ImageBrush Stretch="None" ImageSource="$reflectionBlue" />
 ```
 </details>
