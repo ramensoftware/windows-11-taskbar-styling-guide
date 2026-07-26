@@ -334,7 +334,7 @@ controlStyles:
     styles:
       - CornerRadius=12
       - BorderThickness=1.2
-      - Background:=<LinearGradientBrush StartPoint="0.50,-1.50" EndPoint="0.50,2.50"><GradientStop Offset="0.48" Color="#FF3A40"/><GradientStop Offset="0.49" Color="#141414"/></LinearGradientBrush>
+      - Background:=<LinearGradientBrush StartPoint="0.50,-0.77" EndPoint="0.49,1.77"><GradientStop Offset="0.46" Color="#52A3A3A3"/><GradientStop Offset="0.5" Color="#33000000"/></LinearGradientBrush>
       - BorderBrush:=$IconBorder
       - Height=45
       - Margin=0,3,15,-1
