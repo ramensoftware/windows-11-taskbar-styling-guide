@@ -563,8 +563,7 @@ controlStyles:
 ```
 </details>
 
-### Small Version
-
+### Compact Version:
 <details>
 <summary>Content to import (click to expand)</summary>
 
@@ -1370,6 +1369,7 @@ controlStyles:
 
 ## OS26 Liquid Glass (Dark MacDock) Configuration
 ![preview-dock-dark](screenshot-dock-dark-1.png)
+
 <details>
 <summary>Content to import (click to expand)</summary>
 
@@ -1834,8 +1834,7 @@ controlStyles:
 ```
 </details>
 
-### Small Version
-
+### Compact Version:
 <details>
 <summary>Content to import (click to expand)</summary>
 
