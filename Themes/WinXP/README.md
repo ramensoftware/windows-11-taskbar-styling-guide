@@ -80,6 +80,9 @@ controlStyles:
   - target: SystemTray.TextIconContent > Grid > SystemTray.AdaptiveTextBlock#Base > TextBlock
     styles:
       - Foreground=White
+  - target: SystemTray.BatteryIconContent > Grid#ContainerGrid > StackPanel > TextBlock
+    styles:
+      - Foreground=White
   - target: SystemTray.BatteryIconContent > Grid#ContainerGrid > StackPanel > Grid > TextBlock[1]
     styles:
       - Foreground=White
