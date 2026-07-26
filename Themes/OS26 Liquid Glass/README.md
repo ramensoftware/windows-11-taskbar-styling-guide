@@ -98,6 +98,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ## OS26 Liquid Glass (Clear, MacDock) Configuration
 ![preview-dock](screenshot-dock-1.png)
+
 <details>
 <summary>Content to import (click to expand)</summary>
 
@@ -1035,6 +1036,8 @@ xamlDiagnosticsHandling: ''
 
 ```
 </details>
+
+
 ## OS26 Liquid Glass (Clear Taskbar) Configuration
 ![Preview-taskbar-full](screenshot-clear-taskbar.png)
 <details>
