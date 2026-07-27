@@ -176,7 +176,6 @@ controlStyles:
     styles:
       - Margin=0
       - BorderThickness=0
-      - ActualWidth=>WidgetWidth
   - target: Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid
     styles:
       - Margin=12,0,0,0
