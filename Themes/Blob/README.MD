@@ -62,7 +62,7 @@ TaskbarButtonWidthSmall: 28
   WeekdayFormat: custom
   WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
   TopLine: ''
-  BottomLine: '📅  %date% 〡 %time%'
+  BottomLine: '%date% 〡 %time%'
   MiddleLine: '%weekday%'
   TooltipLine: '%web1_full%'
   TooltipLineMode: append
