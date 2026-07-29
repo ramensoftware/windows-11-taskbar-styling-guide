@@ -42,11 +42,11 @@ Colors:
   <summary>Taskbar Height and Icon Size</summary>
 
   ```yaml
-  TaskbarHeight: 32
-  IconSize: 14
-  TaskbarButtonWidth: 28
-  IconSizeSmall: 14
-  TaskbarButtonWidthSmall: 28
+TaskbarHeight: 36
+IconSize: 16
+TaskbarButtonWidth: 28
+IconSizeSmall: 16
+TaskbarButtonWidthSmall: 28
   ```
   </details>
 
