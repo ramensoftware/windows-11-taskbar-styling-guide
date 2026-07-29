@@ -19,7 +19,7 @@ Blob Taskbar Replaces the rounded-rectangle indicator behind Windows 11 taskbar 
 Click each to expand settings:
 
   <details>
-  <summary>Taskbar Blob</summary>
+  <summary>Taskbar Blob Shape</summary>
 
   ```yaml
 BlobShape:
