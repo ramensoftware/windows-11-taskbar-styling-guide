@@ -405,11 +405,11 @@ controlStyles:
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid
     styles:
       - Width := {{WeatherCondWidth+WeatherTempWidth+60}}
-      - HorizontalAlignment = 0
+      - HorizontalAlignment = 1
       - // Weather widget content grid.
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
-      - Margin = 0,0,0,2
+      - Margin = 4,0,0,2
       - // Weather widget content grid.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
