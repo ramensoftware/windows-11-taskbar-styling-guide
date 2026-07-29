@@ -190,7 +190,7 @@ styleConstants:
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
-  - separatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.1"/>
+  - separatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.15"/>
   - labelAndIconOffsetY = -1
   - showStartButton = 1
 controlStyles:
@@ -204,7 +204,7 @@ controlStyles:
       - // Taskbar background
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundStroke
     styles:
-      - Height = $taskbarStrokeHeight
+      - Height := $taskbarStrokeHeight
       - Fill := $taskbarStrokeColor
       - // Taskbar stroke
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
@@ -223,9 +223,9 @@ controlStyles:
     styles:
       - Opacity@NoRunningIndicator = 0
       - Width = 2
-      - Height := 2
+      - Height = 2
       - VerticalAlignment = 1
-      - Margin := 3,0,0,0
+      - Margin = 3,0,0,0
       - Visibility = 1
       - Visibility@MultiWindowNormal = 0
       - Visibility@MultiWindowActive = 0
@@ -424,7 +424,7 @@ controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[1]
     styles:
       - HorizontalAlignment = 0
-      - Margin = 4,0,0,0
+      - Margin := {{$buttonSpacing+4}},0,0,0
       - // Weather widget grid 1 (when overflow).
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[2]
     styles:
@@ -454,7 +454,7 @@ controlStyles:
       - // Show desktop pipe.
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel
     styles:
-      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 8,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Padding = 0
       - // Overflow button
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Border#BackgroundElement
@@ -480,7 +480,7 @@ controlStyles:
     styles:
       - Opacity = 0
       - // Multi window indicator in overflow flyout
-  - target: Windows.UI.Xaml.Shapes.Path#ElasticBorder
+  - target: Windows.UI.Xaml.Shapes.Path#BlobShape
     styles:
       - Fill :=$blobFill
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
