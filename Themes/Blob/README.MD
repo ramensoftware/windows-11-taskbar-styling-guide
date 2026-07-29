@@ -12,7 +12,7 @@ Blob Taskbar Replaces the rounded-rectangle indicator behind Windows 11 taskbar 
 
 ## Notes
 - Designed on Windows 11 - 25H2 (OS Build 26200.8737).
-- Settings: Search: hide/icon only | Task view: on/off | Widgets - On | Taskbar alignment - Center.
+- Taskbar settings: Search: hide/icon only | Task view: on/off | Widgets - On | Taskbar alignment - Center.
 
 
 ## Windhawk mods for similar results
