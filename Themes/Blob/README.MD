@@ -154,7 +154,7 @@ TaskbarButtonWidthSmall: 28
   labelForSingleItem: ''
   labelForMultipleItems: ''
   ```
-  </details><br>
+  </details>
 
 
 # Theme selection
