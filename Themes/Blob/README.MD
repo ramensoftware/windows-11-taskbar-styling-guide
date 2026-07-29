@@ -27,50 +27,14 @@ Click each to expand settings:
   <summary>Taskbar Blob</summary>
 
   ```yaml
-Border:
-  Dimensions: auto, 20
-  Margins: 0, 2, 0, 0
-  BorderRadius: '8'
-  ExtensionHeight: '10'
-  ExtensionRadius: '10'
-  TrackSystemButtons: 0
-BorderStyle:
-  StrokeOpacity: 1.0, 1.0
-  StrokeThickness: '0'
-  StrokeColor: ''
-  StrokeGradientDirection: horizontal
-  StrokePosition: outer
-  SecondaryStrokeColor: ''
-  SecondaryStrokeGradientDirection: horizontal
-  SecondaryStrokeOpacity: 1.0, 1.0
-  SecondaryStrokePosition: outer
-  SecondaryStrokeThickness: '0.0'
+BlobShape:
+  Dimensions: auto, 18
+  Margins: 0, 3, 0, 0
+  BottomRadius: '8'
+  TopRadius: '10'
 Colors:
-  BgOpacity: 1, 1
-  ColorMode: custom
-  CustomColor: '#3c3c3c'
-  BgGradientDirection: horizontal
-Animation:
-  AnimationStyle: stretch
-  UseSpringPhysics: 0
-  ElasticIntensity: '1.0'
-  SpeedMultiplier: '1.0'
-  FadeTransition: 0
-  SquishTransition: 0
-  SquishMultiplier: '1.0'
-  FadeDurationMultiplier: '1.0'
-PointerInteractions:
-  HoverScale: '1.0'
-  PressedScale: '1.0'
-  HoverBgColor: ''
-  PressedBgColor: ''
-  HoverBorderColor: ''
-  PressedBorderColor: ''
-ShadowSettings:
-  ShadowOpacity: 0.0, 0.0
-  ShadowColor: '#000000, #000000'
-  ShadowRadius: '12.0'
-  ShadowOffset: 0.0, 4.0
+  BgOpacity: ''
+  CustomColor: ''
   ```
   </details>
 
