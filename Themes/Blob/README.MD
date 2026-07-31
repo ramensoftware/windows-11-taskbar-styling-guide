@@ -24,7 +24,7 @@ Click each to expand settings:
   ```yaml
 BlobShape:
   Dimensions: auto, 18
-  Margins: 0, 3, 0, 0
+  Margins: 0, 4, 0, 0
   BottomRadius: '8'
   TopRadius: '10'
 Colors:
