@@ -124,34 +124,6 @@ TaskbarButtonWidthSmall: 28
   </details>
 
 
-## Recommended Windhawk mods
-
-  <details>
-  <summary>Taskbar Labels for Windows 11</summary>
-
-  ```yaml
-  mode: labelsWithCombining
-  taskbarItemWidth: 0
-  runningIndicatorStyle: fullWidth
-  progressIndicatorStyle: sameAsRunningIndicatorStyle
-  excludedPrograms:
-    - ''
-  minimumTaskbarItemWidth: 40
-  maximumTaskbarItemWidth: 200
-  fontSize: 12
-  fontFamily: ''
-  textTrimming: characterEllipsis
-  leftAndRightPaddingSize: 0
-  spaceBetweenIconAndLabel: 0
-  runningIndicatorHeight: -1
-  runningIndicatorVerticalOffset: 0
-  alwaysShowThumbnailLabels: 0
-  labelForSingleItem: ''
-  labelForMultipleItems: ''
-  ```
-  </details>
-
-
 # Theme selection
 The theme is integrated into the mod and can be selected directly from the mod's settings:
 
