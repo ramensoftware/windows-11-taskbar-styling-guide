@@ -138,7 +138,7 @@ TaskbarButtonWidthSmall: 28
   maximumTaskbarItemWidth: 200
   fontSize: 12
   fontFamily: ''
-  textTrimming: characterEllipsis
+  textTrimming: clip
   leftAndRightPaddingSize: 0
   spaceBetweenIconAndLabel: 0
   runningIndicatorHeight: -1
