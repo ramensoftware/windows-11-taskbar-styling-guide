@@ -172,6 +172,8 @@ styleConstants:
   - taskbarRightOffset = 12
   - taskbarTopOffset = 8
   - taskbarBottomOffset = 4
+  - taskbarStrokeHeight = 4
+  - taskbarContentOffset = 4
   - highlightRadius = 8
   - buttonMinWidth = 36
   - buttonSpacing = 4
@@ -179,8 +181,8 @@ styleConstants:
   - iconLabelSpacing = 4
   - leftRightPadding = 4
   - badgeSize = 12
-  - badgeNudge = 4,4,0,0
-  - taskbarStrokeHeight = 4
+  - badgeNudge = 4,6,0,0
+  - showStartButton = 1
   - blobFill = <SolidColorBrush Color="{ThemeResource AdaptiveBlob}"/>
   - taskbarStrokeColor = <SolidColorBrush Color="{ThemeResource AdaptiveBlob}"/>
   - taskbarFill = <SolidColorBrush Color="{ThemeResource Default}"/>
@@ -188,10 +190,8 @@ styleConstants:
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
   - separatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.15"/>
-  - labelAndIconOffsetY = -1
-  - showStartButton = 1
 controlStyles:
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame
+  - target: Taskbar.TaskbarFrame
     styles:
       - Height => TaskbarHeight
       - // Taskbar. Get height as a helper to calculate other elements' heights.
@@ -209,10 +209,35 @@ controlStyles:
       - Padding := {{$buttonSpacing-2}},{{$taskbarTopOffset}},{{$buttonSpacing-2}},{{$taskbarBottomOffset}}
       - MinWidth := $buttonMinWidth
       - // Taskbar buttons min width
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Padding := {{$buttonSpacing-2}},{{$taskbarTopOffset}},{{$buttonSpacing-2}},{{$taskbarBottomOffset}}
+      - MinWidth := $buttonMinWidth
+      - // Start and task view buttons root panel
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement > ContentPresenter > SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+    styles:
+      - Padding := {{$buttonSpacing-2}},{{$taskbarTopOffset}},{{$buttonSpacing-2}},{{$taskbarBottomOffset}}
+      - MinWidth := $buttonMinWidth
+      - // Search box root panel
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+    styles:
+      - CornerRadius := $highlightRadius
+      - // Start and task view buttons background
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement > ContentPresenter > SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
+    styles:
+      - CornerRadius := $highlightRadius
+      - // Search box background
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+    styles:
+      - Margin := 0,0,0,{{$taskbarContentOffset-2}}
+      - // Start and task view icons
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+    styles:
+      - Margin := 0,0,0,{{$taskbarContentOffset-2}}
+      - // Search icon
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Border#BackgroundElement
     styles:
       - Margin = 0
-      - // Opacity@ActivePointerOver = 1
       - CornerRadius := $highlightRadius
       - Canvas.ZIndex = 2
       - // The native highlighter. Border thickness set to zero for consistent behavior (in light mode the border is transparent).
@@ -279,16 +304,13 @@ controlStyles:
       - // Multi window element.
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
-      - Margin := {{$iconLabelSpacing}},0,4,0
+      - Margin := {{$iconLabelSpacing}},0,4,{{$taskbarContentOffset}}
       - Padding := {{$leftRightPadding}},0
-      - RenderTransform := <TranslateTransform X="0" Y="{{$labelAndIconOffsetY}}" />
       - Canvas.ZIndex = 3
       - // Taskbar buttons labels
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
-      - Margin := {{$iconSpacing}},0,0,0
-      - Canvas.ZIndex = 3
-      - RenderTransform := <TranslateTransform X="0" Y= "{{$labelAndIconOffsetY}}" />
+      - Margin := {{$iconSpacing}},0,0,{{$taskbarContentOffset-2}}
       - // Taskbar buttons icons.
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
@@ -321,74 +343,69 @@ controlStyles:
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText
     styles:
       - FontSize = 8
-      - HorizontalAlignment = 1
       - // Label of badge indicator for specific apps.
   - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton
     styles:
       - Margin := 0,0,{{$taskbarRightOffset-12}},0
       - // System tray notification area (right margin minus 12 to compensate for the default "show desktop" indicator width).
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton > Grid
-    styles:
-      - Padding := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
-      - // System tray date & time background.
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid
-    styles:
-      - Padding := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
-      - // System tray control center background.
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#MainStack > Grid#Content
-    styles:
-      - Padding := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
-      - // System tray main stack background.
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack > Grid#Content
-    styles:
-      - Padding := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
-      - // System tray language indicator's background
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel
-    styles:
-      - Padding := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
-      - // System tray notification area icons' background.
-  - target: SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter
-    styles:
-      - Padding := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
-      - // System tray overflow indicator's highlight.
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder
     styles:
-      - Margin = 0
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - CornerRadius := $highlightRadius
       - // System tray date & time highlight.
-  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
-    styles:
-      - Margin = 0
-      - CornerRadius := $highlightRadius
-      - // System tray language indicator's highlight.
-  - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
-    styles:
-      - Margin = 0
-      - CornerRadius := $highlightRadius
-      - // System tray overflow indicator's highlight.
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder
     styles:
-      - Margin = 0
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - CornerRadius := $highlightRadius
       - // System tray control center highlight.
+  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - CornerRadius := $highlightRadius
+      - // System tray language indicator and system tray icons' highlight.
   - target: SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
-      - Margin = 0
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - CornerRadius := $highlightRadius
-      - // System tray notification area icons' highlight.
-  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter
+      - // System tray notification area icons item icons' highlight.
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
-      - Margin = 0,0,0,1
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - CornerRadius := $highlightRadius
+      - // System tray overflow chevron indicator's highlight.
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel
+    styles:
+      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset}}
       - // System tray date & time label (position refinement).
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter
+    styles:
+      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset-2}}
+      - // System tray control center (position refinement).
   - target: SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
     styles:
-      - Margin = 0,0,0,2.5
       - MaxLines = 1
-      - // System tray language indicator position refinement and restricting it to one line (in the case of 2 lines "ENG US").
+      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset}}
+      - // System tray language indicator restricting it to one line (in the case of 2 lines "ENG US").
+  - target: SystemTray.Stack#MainStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base
+    styles:
+      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset-2}}
+      - // System tray icons (position refinement).
+  - target: SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image
+    styles:
+      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset-2}}
+      - // System notification area icons item icons (position refinement).
+  - target: SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+    styles:
+      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset}}
+      - // System tray overflow chevron (position refinement).
   - target: Grid#OverflowRootGrid > Border
     styles:
       - Shadow :=
       - // System tray overflow flyout background.
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
+    styles:
+      - RenderTransform := <TranslateTransform X="0" Y="-1" />
+      - // Weather widget's text (position refinement).
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
     styles:
       - ActualWidth => WeatherTempWidth
@@ -401,17 +418,12 @@ controlStyles:
       - // Weather widget's weather condition text block.
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid
     styles:
-      - Width := {{WeatherCondWidth+WeatherTempWidth+60}}
-      - HorizontalAlignment = 2
-      - VerticalAlignment = 1
-      - // Weather widget content grid.
-  - target: Grid#AugmentedEntryPointContentGrid
-    styles:
-      - Margin = 4,0,0,2
+      - Margin := 0,0,0,{{$taskbarContentOffset-4}}
+      - Width := {{WeatherCondWidth+WeatherTempWidth+62}}
       - // Weather widget content grid.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
-      - Width := {{WeatherCondWidth+WeatherTempWidth+60}}
+      - Width := {{WeatherCondWidth+WeatherTempWidth+62}}
       - Margin := 0,0,56,0
       - Padding = {{$taskbarLeftOffset}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - // Weather widget's background (width is adaptive to the sum of weather temperature and condition text blocks widths).
@@ -419,30 +431,29 @@ controlStyles:
     styles:
       - CornerRadius := $highlightRadius
       - // Weather widget's highlight.
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[1]
+  - target: Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
     styles:
-      - HorizontalAlignment = 0
-      - Margin = 16,4,0,0
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid
+      - Margin = 0,3,0,0
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid[0] > Grid[2]
     styles:
-      - Height = {{TaskbarHeight}}
-      - MaxHeight = {{TaskbarHeight}}
-      - // Weather widget grid 1 (when overflow).
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[2]
-    styles:
-      - MinWidth = 40
-      - HorizontalAlignment = 0
+      - HorizontalAlignment = 1
       - VerticalAlignment = 1
       - RenderTransformOrigin = -0.5,0.5
-      - RenderTransform := <TransformGroup><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /><TranslateTransform X="22" Y="14" /></TransformGroup>
-      - // Weather widget grid 2 (when overflow).
+      - RenderTransform := <TransformGroup><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /><TranslateTransform X="10" Y="8" /></TransformGroup>
+      - // Weather widget grid (when overflow).
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid
     styles:
       - Background = Transparent
       - // Weather widget temperature background (when overflow).
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
+  - target: Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid
     styles:
-      - Margin = 4,0,0,0
+      - Margin = 16,0,0,0
+      - HorizontalAlignment = 0
+      - // Weather widget temperature background (when overflow).
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker1 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#BadgeAnchorLargeTicker
+    styles:
+      - Margin := 0,0,0,1
+      - // Weather widget icon (position refinement).
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
     styles:
       - Shadow :=
@@ -453,9 +464,9 @@ controlStyles:
       - Height = 4
       - Height@PointerOver = 10
       - Height@Pressed = 6
-      - Margin := 0,{{$taskbarStrokeHeight}},0,0
       - RadiusX = 2
       - RadiusY = 2
+      - Margin := 0,0,0,{{$taskbarContentOffset-4}}
       - Fill := $showDesktopIndicatorColor
       - // Show desktop pipe.
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel
@@ -489,32 +500,6 @@ controlStyles:
   - target: Windows.UI.Xaml.Shapes.Path#BlobShape
     styles:
       - Fill :=$blobFill
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
-    styles:
-      - Padding := {{$buttonSpacing-2}},{{$taskbarTopOffset}},{{$buttonSpacing-2}},{{$taskbarBottomOffset}}
-      - MinWidth := $buttonMinWidth
-      - // Start and task view buttons root panel
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement > ContentPresenter > SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
-    styles:
-      - Padding := {{$buttonSpacing-2}},{{$taskbarTopOffset}},{{$buttonSpacing-2}},{{$taskbarBottomOffset}}
-      - MinWidth := $buttonMinWidth
-      - // Search box root panel
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
-    styles:
-      - CornerRadius := $highlightRadius
-      - // Start and task view buttons background
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement > ContentPresenter > SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
-    styles:
-      - CornerRadius := $highlightRadius
-      - // Search box background
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
-    styles:
-      - Margin =  0,0,0,2
-      - // Start and task view icons
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
-    styles:
-      - Margin =  0,0,0,2
-      - // Search icon
 themeResourceVariables:
   - AdaptiveIndicator@Light =#000000
   - AdaptiveIndicator@Dark =#FFFFFF
