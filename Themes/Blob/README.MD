@@ -25,8 +25,8 @@ Click each to expand settings:
 BlobShape:
   Dimensions: auto, 18
   Margins: 0, 4, 0, 0
-  BottomRadius: '8'
   TopRadius: '10'
+  BottomRadius: '8'
 Colors:
   BgOpacity: ''
   CustomColor: ''
