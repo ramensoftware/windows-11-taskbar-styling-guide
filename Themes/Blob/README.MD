@@ -183,6 +183,7 @@ styleConstants:
   - badgeSize = 12
   - badgeNudge = 4,6,0,0
   - showStartButton = 1
+  - transparent = <SolidColorBrush Color="{ThemeResource AdaptiveBlob}" Opacity="0.01"/>
   - blobFill = <SolidColorBrush Color="{ThemeResource AdaptiveBlob}"/>
   - taskbarStrokeColor = <SolidColorBrush Color="{ThemeResource AdaptiveBlob}"/>
   - taskbarFill = <SolidColorBrush Color="{ThemeResource Default}"/>
@@ -238,8 +239,16 @@ controlStyles:
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Border#BackgroundElement
     styles:
       - Margin = 0
+      - Background := $transparent
       - CornerRadius := $highlightRadius
-      - Canvas.ZIndex = 2
+      - Background@InactivePointerOver := $blobFill
+      - Background@InactiveNormal := $transparent
+      - Opacity@InactivePointerOver = 1
+      - Background@ActivePointerOver := $blobFill
+      - Background@ActivePressed := $blobFill
+      - Background@InactivePressed := $blobFill
+      - BorderThickness = 0
+      - Canvas.ZIndex = 0
       - // The native highlighter. Border thickness set to zero for consistent behavior (in light mode the border is transparent).
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Rectangle#RunningIndicator
     styles:
@@ -311,6 +320,7 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
       - Margin := {{$iconSpacing}},0,0,{{$taskbarContentOffset-2}}
+      - Canvas.ZIndex = 3
       - // Taskbar buttons icons.
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
@@ -394,9 +404,9 @@ controlStyles:
     styles:
       - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset-2}}
       - // System notification area icons item icons (position refinement).
-  - target: SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter
     styles:
-      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset}}
+      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset-2}}
       - // System tray overflow chevron (position refinement).
   - target: Grid#OverflowRootGrid > Border
     styles:
@@ -424,8 +434,8 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Width := {{WeatherCondWidth+WeatherTempWidth+62}}
-      - Margin := 0,0,56,0
-      - Padding = {{$taskbarLeftOffset}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := {{$taskbarLeftOffset-12}},0,56,0
+      - Padding = 12,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - // Weather widget's background (width is adaptive to the sum of weather temperature and condition text blocks widths).
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
