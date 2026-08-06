@@ -184,7 +184,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Theme content to import (click to expand)</summary>
 
 ```yaml
-theme: ''
 styleConstants:
   - taskbarLeftOffset = 12
   - taskbarRightOffset = 12
@@ -575,8 +574,5 @@ themeResourceVariables:
   - AdaptiveIndicator@Dark =#FFFFFF
   - AdaptiveBlob@Light =#FFFFFF
   - AdaptiveBlob@Dark =#09131E
-clickThroughTaskbar: 0
-xamlDiagnosticsHandling: ''
-
 ```
 </details>
