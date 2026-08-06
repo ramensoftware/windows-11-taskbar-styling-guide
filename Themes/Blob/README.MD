@@ -8,7 +8,7 @@ Dark Mode
 Light Mode
 ![BlobLight](BlobLight.png)
 
-Blob Taskbar Replaces the rounded-rectangle indicator behind Windows 11 taskbar buttons with a parametric "blob" — a tab-like shape whose top edge is flat and wide, with concave flares at the top corners so each button reads as a tab merging into the desktop above it.
+Blob Taskbar Replaces the rounded-rectangle indicator behind Windows 11 taskbar buttons with a parametric "blob" — a tab-like shape whose top edge is flat and wide, with concave flares at the top corners so each button reads as a tab merging into the taskbar stroke above it.
 
 ## Notes
 - Designed on Windows 11 - 25H2 (OS Build 26200.8737).
