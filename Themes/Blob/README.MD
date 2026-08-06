@@ -172,6 +172,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Theme content to import (click to expand)</summary>
 
 ```yaml
+theme: ''
 styleConstants:
   - taskbarLeftOffset = 12
   - taskbarRightOffset = 12
@@ -196,7 +197,6 @@ styleConstants:
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
   - separatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.15"/>
-  - noTransition = <BrushTransition Duration="0:0:0"/>
 controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
@@ -268,11 +268,11 @@ controlStyles:
       - CornerRadius := $highlightRadius
       - BorderThickness = 0
       - Canvas.ZIndex = 0
-      - BackgroundTransition := $noTransition
+      - BackgroundTransition := <BrushTransition Duration="0:0:0"/>
       - // Native button highlight, and the standalone fallback for the blob. It carries the same
       - // $blobFill so a button still reads correctly when the Blob Shape mod is not installed.
       - // Border thickness is zeroed for consistent behavior (in light mode the native border is transparent).
-      - // $noTransition disables the brush transition, which is what removes the hover flashing that
+      - // <BrushTransition Duration="0:0:0"/> disables the brush transition, which is what removes the hover flashing that
       - // appears when the Windows "Animation effects" setting is on.
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Rectangle#RunningIndicator
     styles:
@@ -563,5 +563,8 @@ themeResourceVariables:
   - AdaptiveIndicator@Dark =#FFFFFF
   - AdaptiveBlob@Light =#FFFFFF
   - AdaptiveBlob@Dark =#09131E
+clickThroughTaskbar: 0
+xamlDiagnosticsHandling: ''
+
 ```
 </details>
