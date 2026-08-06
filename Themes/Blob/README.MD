@@ -154,6 +154,18 @@ TaskbarButtonWidthSmall: 28
   ```
   </details>
 
+
+## Styling
+
+To tweak styleConstants, you may use the illustration below as a guide:
+
+  <details>
+  <summary>styleConstants illustration</summary>
+
+  ![styleConstantsIllustration](styleConstantsIllustration.png)
+  </details>
+
+
 # Theme selection
 The theme is integrated into the mod and can be selected directly from the mod's settings:
 
