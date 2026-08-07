@@ -328,14 +328,12 @@ controlStyles:
     styles:
       - MinWidth := $buttonMinWidth
       - // Taskbar buttons min width
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Border
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*($highlightOffset)}}
       - Height@NoRunningIndicator := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
       - Margin := {{$highlightOffset}},{{($taskbarTopOffset-$taskbarBottomOffset)/2-2}},{{$highlightOffset+2}},{{($taskbarBottomOffset-$taskbarTopOffset)/2-2}}
       - Margin@NoRunningIndicator := 0,{{$taskbarTopOffset-4}},2,{{$taskbarBottomOffset-4}}
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Border#BackgroundElement
-    styles:
       - Background@ActiveRunningIndicator :=
       - Background@NoRunningIndicator := $buttonFill
       - BorderThickness = 0
@@ -411,6 +409,7 @@ controlStyles:
     styles:
       - Visibility := {{LabelsMod-1}}
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
+      - RenderTransform := <TranslateTransform X="4" Y="0" />
       - // Multi window element shows when Labels mod is disabled (stock taskbar mode).
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
@@ -427,7 +426,7 @@ controlStyles:
       - // Taskbar buttons.
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
-      - Margin := {{8*(LabelsMod-1)}},{{$taskbarTopOffset}},{{2*(1-(LabelsMod-1))}},{{$taskbarBottomOffset}}
+      - Margin := {{4.4*(LabelsMod)}},{{$taskbarTopOffset}},{{2*(1-(LabelsMod-1))}},{{$taskbarBottomOffset}}
       - HorizontalAlignment = 1
       - Canvas.ZIndex = 3
       - RenderTransformOrigin = 0.5,0.5
