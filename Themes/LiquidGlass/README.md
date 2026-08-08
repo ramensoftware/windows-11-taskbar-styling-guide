@@ -214,7 +214,7 @@ controlStyles:
       - CornerRadius=$CornerRadius
       - BorderThickness=$BorderThickness
       - Margin=2
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=$ElementCornerRadius
       - BorderThickness=$ElementBorderThickness
@@ -456,7 +456,7 @@ controlStyles:
       - CornerRadius=$CornerRadius
       - BorderThickness=$BorderThickness
       - Margin=2
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=$ElementCornerRadius
       - BorderThickness=$ElementBorderThickness

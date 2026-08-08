@@ -55,7 +55,7 @@ styleConstants:
   - IconBackground= <ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Minecraft%20Hotbar/Assets/hotbar.png" />
   - ActiveBackground= <ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Minecraft%20Hotbar/Assets/hotbaractive.png" />
 controlStyles:
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
+  - target: Grid#IconPanel@CommonStates > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
       - Margin=5.5,0,-5.5,0 
       - Margin@ActiveNormal=9,0,-10,0
@@ -76,16 +76,16 @@ controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
       - Fill=Transparent
-  - target: Taskbar.TaskListButtonPanel
+  - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
     styles:
       - MinWidth=55
-  - target: Taskbar.TaskListLabeledButtonPanel
+  - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel
     styles:
       - MinWidth=55
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - MinWidth=55
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=0
       - Margin=0,5.5,0,5.5
@@ -124,7 +124,7 @@ controlStyles:
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
       - ActualWidth=>containerGridWidth
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
       - Fill:=#90ffffff
       - RadiusX=0
@@ -151,7 +151,7 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer
     styles:
       - Visibility=0
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - // [Normal ICON BG]
       - CornerRadius=0
@@ -162,7 +162,7 @@ controlStyles:
       - Background@ActivePointerOver:=$ActiveBackground
       - Background@MultiWindowPointerOver:=$ActiveBackground
       - BorderThickness=0
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates
+  - target: Grid#IconPanel@CommonStates, Taskbar.TaskListLabeledButtonPanel@CommonStates
     styles:
       - Width@InactivePointerOver=59
       - Width@MultiWindowPointerOver=59
@@ -175,7 +175,7 @@ controlStyles:
       - Margin@ActivePointerOver=0,-5,0,-5
       - Margin@ActivePressed=0,-5,0,-5
       - Margin@ActiveNormal=0,-5,0,-5
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - // [TaskView and Start ICON BG]
       - Canvas.ZIndex=0
@@ -184,7 +184,7 @@ controlStyles:
       - Background:=$IconBackground
       - Background@InactivePointerOver:=$ActiveBackground
       - BorderThickness=0
-  - target: Taskbar.TaskListButtonPanel@CommonStates
+  - target: Grid#IconPanel@CommonStates, Taskbar.TaskListButtonPanel@CommonStates
     styles:
       - Canvas.ZIndex=0
       - Width@InactivePointerOver=59
@@ -408,7 +408,7 @@ controlStyles:
       - Width=55
       - Height=55
       - Background:=$IconBackground     
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > TextBlock#LabelControl
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > TextBlock#LabelControl, ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > TextBlock#LabelControl
     styles:
       - Visibility=1
 ```

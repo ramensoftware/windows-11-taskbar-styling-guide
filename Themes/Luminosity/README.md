@@ -1222,7 +1222,7 @@ controlStyles:
     styles:
       - Width=16
       - Height=16
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Windows.UI.Xaml.Controls.TextBlock#LabelControl
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Windows.UI.Xaml.Controls.TextBlock#LabelControl, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Windows.UI.Xaml.Controls.TextBlock#LabelControl
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="-1" />
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton

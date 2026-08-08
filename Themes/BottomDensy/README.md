@@ -20,7 +20,7 @@ A dense theme eliminating some of the excessive/useless taskbar UI elements for 
 ![Screenshot of taskbar extending into an app](screenshot_ind_extend.png)
 
  - Active: Full icon width for a better "merging" effect. Tip: Change active running indicator color to match your borderless app background, to make an icon "extend" into the app
-      - Target: `Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator`
+      - Target: `Grid#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator`
       - Style: `Fill@ActiveRunningIndicator=#fef9f0`
     - Inactive: Make them tiny, since usually you only have a few icons "pinned", so not that much need to separate running apps from pinned apps to begin with. Most of the icons will have a running indicator, so if it's big as in default style, that's just extra noise.
   - **Start Button**: removed since the ↙ corner already has ∞ dimensions across both horizontal and vertical axes, so it's more convenient to simply move your mouse until the very end to the corner (will never miss) instead of trying to precisely stop at the Start button. Downside: on hover at the ↙ corner you see a popup for the left-most icon
@@ -124,7 +124,7 @@ controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
       - Fill=Transparent
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
       - Fill=#8f8f8f
       - Fill@ActiveRunningIndicator=#fef9f0
@@ -132,7 +132,7 @@ controlStyles:
       - Height=2
       - Margin=0,-2,0,0
       - Width@ActiveRunningIndicator=32
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator
+  - target: Grid#IconPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator
     styles:
       - VerticalAlignment=0
   - target: Rectangle#RunningIndicator
@@ -147,7 +147,7 @@ controlStyles:
   - target: Rectangle#IndeterminateProgressBarIndicator2
     styles:
       - VerticalAlignment=0
-  - target: Taskbar.TaskListLabeledButtonPanel
+  - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel
     styles:
       - Padding=2,0,2,0
       - VerticalAlignment=2
@@ -257,7 +257,7 @@ controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
       - Fill=Transparent
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
       - Fill=#8f8f8f
       - Fill@ActiveRunningIndicator=#fef9f0
@@ -267,7 +267,7 @@ controlStyles:
       - Width@ActiveRunningIndicator=32
       - Height@ActiveRunningIndicator=2
       - Margin@ActiveRunningIndicator=0,-2,0,0
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator
+  - target: Grid#IconPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator
     styles:
       - VerticalAlignment=0
   - target: Rectangle#RunningIndicator
@@ -282,7 +282,7 @@ controlStyles:
   - target: Rectangle#IndeterminateProgressBarIndicator2
     styles:
       - VerticalAlignment=0
-  - target: Taskbar.TaskListLabeledButtonPanel
+  - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel
     styles:
       - Padding=2,0,2,0
       - VerticalAlignment=2
@@ -303,7 +303,7 @@ controlStyles:
     styles:
       - Width=20
       - Height=20
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Image#Icon
+  - target: Grid#IconPanel@RunningIndicatorStates > Image#Icon, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Image#Icon
     styles:
       - Width@ActiveRunningIndicator=30
       - Height@ActiveRunningIndicator=30

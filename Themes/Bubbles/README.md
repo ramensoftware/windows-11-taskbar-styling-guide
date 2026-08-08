@@ -32,7 +32,7 @@ controlStyles:
   - target: Rectangle#BackgroundFill
     styles:
       - Fill:=<SolidColorBrush x:Name="SystemChromeLow" Color="{ThemeResource SystemChromeLowColor}" />
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
+  - target: Grid#IconPanel@RunningIndicatorStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - CornerRadius=20
       - Background@NoRunningIndicator:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.18" Color="{ThemeResource SystemChromeHighColor}" />
@@ -42,7 +42,7 @@ controlStyles:
       - BorderThickness@NoRunningIndicator=1
       - BorderBrush@NoRunningIndicator:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />
       - Margin=1
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.3" Color="{ThemeResource SystemChromeHighColor}" />
       - BorderBrush:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.6" Color="{ThemeResource SystemChromeHighColor}" />
@@ -62,7 +62,7 @@ controlStyles:
       - Padding=10,0,-10,0
       - BorderBrush:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.9" Color="{ThemeResource SystemChromeHighColor}" />
       - BorderThickness=1.5
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@CommonStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
     styles:
       - Stroke@InactivePointerOver=#75A8E6
       - Stroke@InactivePressed=#7CB1F2
@@ -89,7 +89,7 @@ controlStyles:
       - Height=39
       - Width=39
       - MinWidth=Auto
-  - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
+  - target: Grid#IconPanel > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
       - Margin=4,0,0,0
   - target: Taskbar.SearchBoxButton

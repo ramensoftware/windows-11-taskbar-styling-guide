@@ -114,7 +114,7 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<WindhawkBlur BlurAmount="5" TintColor="#12FFFFFF"/>
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
+  - target: Grid#IconPanel@RunningIndicatorStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - Background:=$TaskItemBackground
       - Margin=-1,5.5,1,4
@@ -128,7 +128,7 @@ controlStyles:
       - Margin=-1,5.5,2.5,4
       - BorderThickness=2,1,0.5,2
       - BorderBrush:=$SystemItemBorder
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@CommonStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
     styles:
       - Margin=0,0,0,8
   - target: Border#MultiWindowElement

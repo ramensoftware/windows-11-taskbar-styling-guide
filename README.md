@@ -336,7 +336,7 @@ https://learn.microsoft.com/en-us/typography/fonts/windows_11_font_list).
 
 Target:
 ```
-Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+Grid#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
 ```
 
 Various styles can be applied to the running indicator. Here are some examples:

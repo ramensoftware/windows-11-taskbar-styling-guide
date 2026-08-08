@@ -161,7 +161,7 @@ controlStyles:
       - Margin=1
       - CornerRadius=$CornerRadius
       - BorderThickness=$BorderThickness
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background@ActiveNormal:=$NormalBG
       - Background@ActivePointerOver:=$Hover

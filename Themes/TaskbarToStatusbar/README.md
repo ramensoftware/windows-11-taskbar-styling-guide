@@ -62,7 +62,7 @@ controlStyles:
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Visibility=Collapsed
   - target: Taskbar.SearchBoxButton#SearchBoxButton[AutomationProperties.AutomationId=SearchButton] > Taskbar.TaskListButtonPanel
@@ -74,7 +74,7 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel
+  - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - Visibility=Collapsed
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel

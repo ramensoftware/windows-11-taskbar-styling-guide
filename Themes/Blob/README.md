@@ -234,7 +234,7 @@ controlStyles:
       - Fill := $taskbarStrokeColor
       - // Taskbar top stroke, thickened to $taskbarStrokeHeight and tinted with the blob color so the
       - // blob's flat top edge reads as continuous with the taskbar edge (the tab-strip look).
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - Padding := {{$buttonSpacing-2}},{{$taskbarTopOffset}},{{$buttonSpacing-2}},{{$taskbarBottomOffset}}
       - MinWidth := $buttonMinWidth
@@ -282,7 +282,7 @@ controlStyles:
     styles:
       - Margin := 0,0,0,{{$taskbarContentOffset-2}}
       - // Search glyph, lifted to the same optical baseline as the other icons.
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Border#BackgroundElement
     styles:
       - Margin = 0
       - Background@ActiveNormal := $blobFill
@@ -307,7 +307,7 @@ controlStyles:
       - // Border thickness is zeroed for consistent behavior (in light mode the native border is transparent).
       - // <BrushTransition Duration="0:0:0"/> disables the brush transition, which is what removes the hover flashing that
       - // appears when the Windows "Animation effects" setting is on.
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@CommonStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Rectangle#RunningIndicator
     styles:
       - Opacity@NoRunningIndicator = 0
       - Width = 2
@@ -370,21 +370,21 @@ controlStyles:
     styles:
       - Visibility = 1
       - // Native multi-window bar collapsed; Rectangle#RunningIndicator above takes over that role.
-  - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
+  - target: Grid#IconPanel > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
       - Margin := {{$iconLabelSpacing}},0,4,{{$taskbarContentOffset}}
       - Padding := {{$leftRightPadding}},0
       - Canvas.ZIndex = 3
       - // Button label. Left margin is the icon-to-label gap; right margin plus padding plus the panel
       - // padding gives the trailing inset, matching the leading inset on the icon side.
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
       - Margin := {{$iconSpacing}},0,0,{{$taskbarContentOffset-2}}
       - Canvas.ZIndex = 3
       - HorizontalAlignment = 0
       - // Button icon. Left margin plus the panel padding gives the leading inset;
       - // the -2 keeps it on the same baseline as the other icons.
-  - target: Taskbar.TaskListLabeledButtonPanel > Rectangle#DefaultIcon
+  - target: Grid#IconPanel > Rectangle#DefaultIcon, Taskbar.TaskListLabeledButtonPanel > Rectangle#DefaultIcon
     styles:
       - Stretch = 1
       - Height = 8
@@ -401,14 +401,14 @@ controlStyles:
       - // Start / Task View visibility. $showStartButton = 1 shows them, 0 collapses them
       - // (the expression inverts because Visibility 0 = Visible, 1 = Collapsed).
       - // The constant is named for Start, but this selector covers Task View as well.
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
+  - target: Grid#IconPanel > Image#OverlayIcon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
     styles:
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
       - Canvas.ZIndex = 3
       - // Overlay badge (e.g. Teams status), resized and nudged onto the icon corner.
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
+  - target: Grid#IconPanel > Taskbar.Badge#BadgeControl, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
     styles:
       - MinWidth := $badgeSize
       - Width := $badgeSize
@@ -416,7 +416,7 @@ controlStyles:
       - Margin := $badgeNudge
       - Canvas.ZIndex = 3
       - // Counter badge, matched to the overlay badge size and position.
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText
+  - target: Grid#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText
     styles:
       - FontSize = 8
       - // Counter badge text, hand-tuned to fit $badgeSize; re-check it if the badge size changes.
@@ -611,23 +611,23 @@ controlStyles:
     styles:
       - Shadow :=
       - // Overflow flyout background, shadow cleared.
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Grid#IconPanel, Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - MinWidth = 28
       - Padding := {{$buttonSpacing-2}},4
       - // Buttons inside the overflow flyout. Padding is reset to a uniform value, because the
       - // asymmetric $taskbarTopOffset / $taskbarBottomOffset inherited from the main rule is meant
       - // for the taskbar edges and has nothing to align to inside a flyout.
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Image#Icon, Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
       - Margin = 0
       - // Flyout button icons. The $iconSpacing offset used on the taskbar is cancelled here,
       - // since there is no label to leave room for.
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Border#BackgroundElement, Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - Margin = 0
       - // Flyout button highlight, reset to fill its button.
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Rectangle#RunningIndicator, Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
     styles:
       - Opacity = 0
       - // Multi-window marker hidden inside the flyout, where it has no room to read clearly.

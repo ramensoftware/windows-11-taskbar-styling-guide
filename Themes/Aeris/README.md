@@ -31,7 +31,7 @@ TaskbarButtonWidthSmall: 32
 
 ```
 Target:
-Taskbar.TaskListLabeledButtonPanel > Image
+Grid#IconPanel > Image, Taskbar.TaskListLabeledButtonPanel > Image
 
 Styles:
 Transform3D:=<CompositeTransform3D TranslateX="0" TranslateY="2" />
@@ -87,14 +87,14 @@ controlStyles:
     styles:
       - Visibility=Collapsed
       - Fill:=<SolidColorBrush Color="$primaryColor" Opacity="0.05"/>
-  - target: Taskbar.TaskListButtonPanel@CommonStates
+  - target: Grid#IconPanel@CommonStates, Taskbar.TaskListButtonPanel@CommonStates
     styles:
       - Padding=0
       - Margin=$taskListMargin,0,$taskListMargin,0
       - Background@ActiveNormal:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background@ActivePointerOver:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background@ActivePressed:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background:=$transparent
       - Background@InactivePointerOver:=$pointerOver
@@ -104,7 +104,7 @@ controlStyles:
       - BorderThickness=0
       - CornerRadius=0
       - Margin=0
-  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates
+  - target: Taskbar.TaskListButton > Grid#IconPanel@RunningIndicatorStates, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates
     styles:
       - Padding=0
       - Margin=$taskListMargin,0,$taskListMargin,0
@@ -112,7 +112,7 @@ controlStyles:
       - Background@InactiveRunningIndicator:=<SolidColorBrush Color="$primaryColor" Opacity="0.1"/>
       - Background@ActiveRunningIndicator:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background:=<SolidColorBrush Color="$requestAttentionColor" Opacity="0.5"/>
-  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListButton > Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background:=$transparent
       - Background@InactivePointerOver:=$pointerOver
@@ -128,10 +128,10 @@ controlStyles:
       - BorderThickness=0
       - CornerRadius=0
       - Margin=0
-  - target: Taskbar.TaskListLabeledButtonPanel > Border#MultiWindowElement
+  - target: Grid#IconPanel > Border#MultiWindowElement, Taskbar.TaskListLabeledButtonPanel > Border#MultiWindowElement
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@CommonStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
     styles:
       - Visibility=Collapsed
       - Fill:=<SolidColorBrush Color="$primaryColor" Opacity="0.2"/>
@@ -173,10 +173,10 @@ controlStyles:
       - RadiusY=0
       - Fill:=<SolidColorBrush Color="$progressColor" Opacity="0.4"/>
       - Fill@Paused:=<SolidColorBrush Color="$progressPausedColor" Opacity="0.4"/>
-  - target: Taskbar.TaskListLabeledButtonPanel > Image
+  - target: Grid#IconPanel > Image, Taskbar.TaskListLabeledButtonPanel > Image
     styles:
       - Transform3D:=<CompositeTransform3D TranslateX="2" TranslateY="1" />
-  - target: Taskbar.TaskListLabeledButtonPanel > Rectangle#DefaultIcon
+  - target: Grid#IconPanel > Rectangle#DefaultIcon, Taskbar.TaskListLabeledButtonPanel > Rectangle#DefaultIcon
     styles:
       - Visibility=Collapsed
   - target: Taskbar.TaskListButtonPanel > AnimatedVisualPlayer

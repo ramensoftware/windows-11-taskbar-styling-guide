@@ -82,7 +82,7 @@ styleConstants:
   - widgetsPointerOver=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/widgetsPointerOver.png
   - widgetsPressed=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Windows7/ThemeResources/widgetsPressed.png
 controlStyles:
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - Background@InactiveNormal:=<ImageBrush Stretch="Fill" ImageSource="$taskbandInactiveNormal" />
       - Background@InactivePointerOver:=<ImageBrush Stretch="Fill" ImageSource="$taskbandInactivePointerOver" />
@@ -101,16 +101,16 @@ controlStyles:
       - Background@RequestingAttentionMulti:=<ImageBrush Stretch="Fill" ImageSource="$taskbandRequestingAttention" />
       - Background@RequestingAttentionMultiPointerOver:=<ImageBrush Stretch="Fill" ImageSource="$taskbandRequestingAttention" />
       - Background@RequestingAttentionMultiPressed:=<ImageBrush Stretch="Fill" ImageSource="$taskbandRequestingAttention" />
-  - target: Taskbar.TaskListLabeledButtonPanel
+  - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel
     styles:
       - Padding=0,0,0,0
   - target: Windows.UI.Xaml.Shapes.Rectangle#RunningIndicator
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListLabeledButtonPanel > Image
+  - target: Grid#IconPanel > Image, Taskbar.TaskListLabeledButtonPanel > Image
     styles:
       - RenderTransform:=<TranslateTransform X="2" />
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: Grid#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - Opacity@NoRunningIndicator=0
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
@@ -144,7 +144,7 @@ controlStyles:
   - target: Taskbar.TaskListButton
     styles:
       - Margin=1,0,1,0
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#MultiWindowElement
+  - target: Grid#IconPanel@CommonStates > Windows.UI.Xaml.Controls.Border#MultiWindowElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#MultiWindowElement
     styles:
       - Background@MultiWindowNormal:=<ImageBrush Stretch="Fill" ImageSource="$taskbandInactiveNormal" />
       - Background@MultiWindowActive:=<ImageBrush Stretch="Fill" ImageSource="$taskbandActiveNormal" />
@@ -262,11 +262,11 @@ controlStyles:
       - Background@CheckedPointerOver:=<ImageBrush Stretch="Fill" ImageSource="$trayPointerOver" />
       - Background@CheckedPressed:=<ImageBrush Stretch="Fill" ImageSource="$trayPressed" />
       - Width=24
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon
+  - target: Grid#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon, Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon
     styles:
       - Visibility=Collapsed
       - Visibility@NoRunningIndicator=Visible
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon
+  - target: Grid#IconPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon, Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon
     styles:
       - Fill=Transparent
       - Width=54

@@ -95,10 +95,10 @@ styleConstants:
   - WindhawkBlur=<WindhawkBlur BlurAmount="30" TintColor="#cc2a2e32" />
   - Acrylic=<AcrylicBrush TintColor="#2a2e32" TintOpacity="0.8" FallbackColor="#2a2e32" />
 controlStyles:
-  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel
     styles:
       - Padding=0
-  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: Taskbar.TaskListButton > Grid#IconPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - CornerRadius=0
       - BorderThickness=1,0,1,0
@@ -120,13 +120,13 @@ controlStyles:
       - Background@RequestingAttentionMulti:=$taskbandAttention
       - Background@RequestingAttentionMultiPointerOver:=$taskbandPointerOver
       - Background@RequestingAttentionMultiPressed:=$taskbandPointerOver
-  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: Taskbar.TaskListButton > Grid#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - Opacity@NoRunningIndicator=0
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Windows.UI.Xaml.Controls.Image#Icon
+  - target: Grid#IconPanel > Windows.UI.Xaml.Controls.Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Windows.UI.Xaml.Controls.Image#Icon
     styles:
       - RenderTransform:=<TranslateTransform X="2" />
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#RunningIndicator
+  - target: Grid#IconPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#RunningIndicator
     styles:
       - Width=50
       - RadiusX=0
@@ -160,7 +160,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Border#MultiWindowElement
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon
+  - target: Grid#IconPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon, Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon
     styles:
       - Fill:=<ImageBrush Stretch="Uniform" ImageSource="$plusIndicator" />
       - Width=11

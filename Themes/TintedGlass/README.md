@@ -337,7 +337,7 @@ controlStyles:
     styles:
       - Height=32
       - Width=32
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel
+  - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - Padding=2,2,2,2
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel

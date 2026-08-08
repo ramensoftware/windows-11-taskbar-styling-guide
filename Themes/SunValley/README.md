@@ -437,11 +437,11 @@ controlStyles:
   - target: Grid#SearchBoxContentGrid
     styles:
       - Visibility=Visible
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - Padding=2
       - Margin=2,0,2,0
-  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel > Rectangle
+  - target: Taskbar.TaskListButton > Grid#IconPanel > Rectangle, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel > Rectangle
     styles:
       - RadiusX=2
       - Margin=0,0,0,0
@@ -458,26 +458,26 @@ controlStyles:
       - Transitions:=<TransitionCollection>              <ContentThemeTransition VerticalOffset="100" />           </TransitionCollection>
       - BorderThickness=1
       - BorderBrush:=<SolidColorBrush Color="{ThemeResource SystemChromeHighColor}" Opacity="0.5" />
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
+  - target: Grid#IconPanel > Image#OverlayIcon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
     styles:
       - Transform3D:=<CompositeTransform3D TranslateY="15" TranslateX="-2" />
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge
+  - target: Grid#IconPanel > Taskbar.Badge, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge
     styles:
       - Transform3D:=<CompositeTransform3D TranslateY="15" TranslateX="-2" />
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge > Grid > Rectangle
+  - target: Grid#IconPanel > Taskbar.Badge > Grid > Rectangle, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge > Grid > Rectangle
     styles:
       - Fill=Transparent
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge > Grid
+  - target: Grid#IconPanel > Taskbar.Badge > Grid, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge > Grid
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemChromeMediumHighColor}" TintOpacity="0" TintLuminosityOpacity="0,7" FallbackColor="{ThemeResource SystemChromeMediumColor}" />
       - BorderBrush:=<AcrylicBrush TintColor="{ThemeResource SystemChromeHighColor}" TintOpacity="0" TintLuminosityOpacity="0.5" FallbackColor="{ThemeResource SystemChromeMediumColor}" />
       - BorderThickness=0,1,0,0
       - CornerRadius=15
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge > Grid > TextBlock
+  - target: Grid#IconPanel > Taskbar.Badge > Grid > TextBlock, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge > Grid > TextBlock
     styles:
       - Foreground:=<SolidColorBrush Color="{ThemeResource SystemBaseHighColor}" />
       - Transform3D:=<CompositeTransform3D TranslateY="-1" />
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge
+  - target: Grid#IconPanel > Taskbar.Badge, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge
     styles:
       - Height=17
       - Width=17
@@ -530,10 +530,10 @@ controlStyles:
   - target: SystemTray.NotificationAreaOverflow > Windows.UI.Xaml.Controls.Grid#OverflowRootGrid
     styles:
       - Margin=7,0,0,0
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - Margin=-3,0,-3,0
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Rectangle
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel@RunningIndicatorStates > Rectangle, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Rectangle
     styles:
       - Width@ActiveRunningIndicator=40
       - RadiusX=2
@@ -546,14 +546,14 @@ controlStyles:
     styles:
       - Margin=-1,0,-1,0
       - Opacity=0.5
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Border#MultiWindowElement
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel@CommonStates > Border#MultiWindowElement, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Border#MultiWindowElement
     styles:
       - Margin=-4,0,-4,0
       - Opacity=0.5
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border
     styles:
       - Opacity=0.5
-  - target: Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
+  - target: Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
     styles:
       - Opacity=0.5
   - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid#SearchBoxContentGrid
