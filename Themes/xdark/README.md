@@ -214,7 +214,7 @@ controlStyles:
   - target: Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
     styles:
       - Background=#000000
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background=#000000
       - CornerRadius=13

@@ -109,7 +109,7 @@ controlStyles:
       - Width=Auto
       - HorizontalAlignment=Left
       - Margin=$IslandHorizontalMargin,0,0,0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<SolidColorBrush Color="$IslandBackgroundColor"/>
       - CornerRadius=10

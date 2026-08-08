@@ -61,7 +61,7 @@ controlStyles:
       - Foreground@ActivePointerOver=Black
       - Margin=0,0,3,0
       - Foreground@ActivePressed=#BFBFBF
-  - target: SystemTray.SystemTrayFrame > Grid
+  - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid
     styles:
       - Background:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50000000" Offset="0.3" /><GradientStop Color="#EE000000" Offset="0.9" /></LinearGradientBrush>
       - Margin=0
@@ -216,7 +216,7 @@ controlStyles:
       - Foreground@ActivePointerOver=Black
       - Margin=0,0,3,0
       - Foreground@ActivePressed=#424242
-  - target: SystemTray.SystemTrayFrame > Grid
+  - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid
     styles:
       - Background:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50000000" Offset="0.3" /><GradientStop Color="#EE000000" Offset="0.9" /></LinearGradientBrush>
       - Margin=0

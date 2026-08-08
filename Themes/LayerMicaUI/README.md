@@ -41,7 +41,7 @@ To make the taskbar look better, follow these settings:
     styles:
       - BorderBrush:=$ThemeOutBorder
 
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - BorderBrush:=$ThemeOutBorder
   ```
@@ -264,7 +264,7 @@ controlStyles:
     styles:
       - Background:=$ThemeBlur
       - // Window Snapping Arrangement Window ( Move Window to Top of screen )
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=$ThemeLayer
       - CornerRadius=$OuterRadius

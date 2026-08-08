@@ -117,7 +117,7 @@ controlStyles:
       - Fill:=$ActiveColor
       - Fill@ActiveRunningIndicator:=$AccentColor
       - Width@ActiveRunningIndicator=21
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Height=38
       - Background:=Transparent

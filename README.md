@@ -540,7 +540,7 @@ Visibility=Collapsed
 
 Target:
 ```
-Grid#SystemTrayFrameGrid
+StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
 ```
 Style:
 ```

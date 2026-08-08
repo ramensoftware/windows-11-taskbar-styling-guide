@@ -125,7 +125,7 @@ controlStyles:
       - VerticalAlignment=Center
       - Margin=0,0,$TrayRightMargin,0
       - Background:=$Background
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=Transparent
       - CornerRadius=6

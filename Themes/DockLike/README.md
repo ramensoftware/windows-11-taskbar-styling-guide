@@ -61,7 +61,7 @@ CornerRadius=8
 
 Target:
 ```
-Grid#SystemTrayFrameGrid
+StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
 ```
 Style:
 ```
@@ -86,7 +86,7 @@ BorderBrush:=<SolidColorBrush Color="{ThemeResource SurfaceStrokeColorDefault}" 
 
 Target:
 ```
-Grid#SystemTrayFrameGrid
+StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
 ```
 Styles:
 ```
@@ -149,7 +149,7 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Margin=0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.8" FallbackColor="{ThemeResource SystemChromeLowColor}" />
       - Margin=-4,-8,-4,-8

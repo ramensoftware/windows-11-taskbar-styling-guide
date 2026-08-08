@@ -135,7 +135,7 @@ controlStyles:
       - Width=Auto
       - HorizontalAlignment=Left
       - Margin=0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,2,0,2
       - Padding=0,0,8,0
@@ -374,7 +374,7 @@ controlStyles:
       - BorderBrush:=#20808080
       - Padding=2,0,5,0
       - MaxWidth:=200
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,2,3,2
       - Background:=$Background
@@ -616,7 +616,7 @@ controlStyles:
       - BorderBrush:=#20808080
       - Padding=2,0,5,0
       - MaxWidth:=200
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,8,8,7
       - Background:=Transparent

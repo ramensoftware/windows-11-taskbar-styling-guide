@@ -57,7 +57,7 @@ controlStyles:
       - Background@InactiveNormal:=<AcrylicBrush TintColor="Black" TintOpacity="0.7" FallbackColor="#BB222222" />
       - Background@InactivePressed:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" FallbackColor="#CC222222" />
       - Background@ActivePressed:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" FallbackColor="#CC222222" />
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" FallbackColor="#BB222222"/>
       - CornerRadius=5
@@ -155,7 +155,7 @@ controlStyles:
       - BorderThickness@NoRunningIndicator=1
       - Background@InactiveRunningIndicator:=<AcrylicBrush TintOpacity="0.7" TintColor="Black" FallbackColor="#DD222222" />
       - Background@ActiveRunningIndicator:=<AcrylicBrush TintOpacity="1" TintColor="Black" FallbackColor="#DD222222" />
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<AcrylicBrush TintOpacity="0.8" TintColor="Black" FallbackColor="#BB222222" />
       - Margin=0,5,18,5

@@ -113,7 +113,7 @@ controlStyles:
   - target: TextBlock#DateInnerTextBlock
     styles:
       - Visibility=Collapsed
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,-4,0,-4
       - Opacity=0.75

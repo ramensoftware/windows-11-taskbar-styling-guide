@@ -127,7 +127,7 @@ controlStyles:
       - Height=$TaskbarHeight
       - MinWidth=250
       - Margin=0,0,0,12
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background=Transparent
       - BorderThickness=0

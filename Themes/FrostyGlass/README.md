@@ -127,7 +127,7 @@ controlStyles:
       - Margin=3.5
       - Background:=$Background
       - CornerRadius=$CornerRadius
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=12,0,12,4
       - Background:=$Background
@@ -323,7 +323,7 @@ controlStyles:
       - MinWidth:=500
       - MaxWidth:=900
       - Padding=1,0,1,0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Visibility=0
   - target: Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
@@ -402,7 +402,7 @@ controlStyles:
     styles:
       - Width=Auto
       - MinWidth=24
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=$Background
       - CornerRadius:=10

@@ -92,7 +92,7 @@ controlStyles:
       - HorizontalAlignment=Left
       - Grid.Column=1
       - Margin=2,0,0,0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<SolidColorBrush Color="{ThemeResource SystemChromeAltHighColor}" Opacity="0.6" />
       - CornerRadius=4

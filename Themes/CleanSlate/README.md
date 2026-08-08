@@ -51,7 +51,7 @@ controlStyles:
       - Background@ActiveNormal:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark1}" TintOpacity="0.6" FallbackColor="{ThemeResource SystemAccentColorDark2}"/>
       - Background@InactivePressed:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark1}" TintOpacity="0.6" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
       - Background@ActivePressed:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" />
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.5" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
       - CornerRadius=5

@@ -33,7 +33,7 @@ TaskbarButtonWidthSmall: 32
 
 If you are using "MyDockFinder", you can hide the system tray with this style:
 
-Target: `Grid#SystemTrayFrameGrid`
+Target: `StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid`
 Style: `Visibility=Collapsed`
 
 ## Customization
@@ -102,7 +102,7 @@ controlStyles:
       - Visibility=Visible
       - Margin=0,0,0,10
       - Padding=20,0,20,0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,0,0,10
       - CornerRadius=20,0,0,20

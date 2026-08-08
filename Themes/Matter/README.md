@@ -198,7 +198,7 @@ controlStyles:
       - Width=12
       - Fill@ActiveRunningIndicator :=$accentColor
       - Width@ActiveRunningIndicator=21
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=$base
       - CornerRadius = $mainRadius

@@ -73,7 +73,7 @@ controlStyles:
     styles:
       - Background:=#302d47
       - CornerRadius=6
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=#302d47
       - CornerRadius=6

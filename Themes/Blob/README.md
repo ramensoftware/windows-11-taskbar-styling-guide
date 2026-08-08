@@ -420,7 +420,7 @@ controlStyles:
     styles:
       - FontSize = 8
       - // Counter badge text, hand-tuned to fit $badgeSize; re-check it if the badge size changes.
-  - target: SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton
+  - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton
     styles:
       - Margin := 0,0,{{$taskbarRightOffset-12}},0
       - // System tray trailing margin. 12 is subtracted to absorb the default "show desktop"

@@ -54,7 +54,7 @@ controlStyles:
       - CornerRadius=20
       - BorderThickness@InactivePressed=3
       - BorderThickness=2
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.6" Color="{ThemeResource SystemChromeHighColor}" />
       - CornerRadius=20
