@@ -199,12 +199,6 @@ Click each to expand settings:
   ```
   </details>
 
-  <details>
-  
-  <summary>Finally, under Taskbar Styler's mod "Settings" tab, add a styleConstant "modsOn=1" and save the settings.</summary>
-  
-  ![modsOn](modsOn.jpeg)
-  </details>
 
 ## Recommended Windhawk mods
 
