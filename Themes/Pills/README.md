@@ -609,7 +609,23 @@ controlStyles:
   - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
     styles:
       - FontSize := $sysTrayIconSize
-      - // Tray glyph icons (network, volume, battery), sized by font size.
+      - // Tray glyph icons base (network, volume), sized by font size.
+  - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock
+    styles:
+      - FontSize := $sysTrayIconSize
+      - // Tray glyph icons underlay (network, volume), sized by font size.
+  - target: SystemTray.BatteryIconContent > Grid#ContainerGrid > StackPanel > Grid > TextBlock
+    styles:
+      - FontSize := $sysTrayIconSize
+      - // Tray glyph icon (battery), sized by font size.
+  - target: SystemTray.LanguageTextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
+    styles:
+      - FontSize := {{$sysTrayIconSize-4}}
+      - // Tray glyph icon (language), sized by font size.
+  - target: SystemTray.LanguageTextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
+    styles:
+      - FontSize := {{$sysTrayIconSize-4}}
+      - // Tray glyph icon (language), sized by font size.
   - target: SystemTray.ImageIconContent > Grid#ContainerGrid > Image
     styles:
       - Width := $sysTrayIconSize
@@ -678,6 +694,88 @@ controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[2]
     styles:
       - HorizontalAlignment = 0
-      - VerticalAlignment
+      - VerticalAlignment = 0
+      - RenderTransformOrigin = -0.5,0.5
+      - RenderTransform := <TransformGroup><ScaleTransform ScaleX = "0.75" ScaleY = "0.75" /><TranslateTransform X="16" Y="0" /></TransformGroup>
+      - // Weather widget icon grid (when overflow), scaled down and repositioned.
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid
+    styles:
+      - Background = Transparent
+      - // Weather widget temperature panel, card background cleared (when overflow).
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
+    styles:
+      - Shadow :=
+      - // Language switcher flyout, shadow cleared.
+  - target: Grid#ContainerGrid@ > Rectangle#ShowDesktopPipe
+    styles:
+      - Opacity := {{LabelsMod-1}}
+      - Width = 4
+      - Height = 4
+      - Height@PointerOver = 10
+      - Height@Pressed = 6
+      - RadiusX = 2
+      - RadiusY = 2
+      - Fill := $showDesktopIndicatorColor
+      - // "Show desktop" corner control, reshaped from a bar into a dot that grows on hover, and
+      - // hidden in stock mode. The bare @ attaches to the element's default visual state group.
+  - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel
+    styles:
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Padding = 0
+      - Background := $buttonFill
+      - CornerRadius := 0,{{$buttonRadius}},{{$buttonRadius}},0
+      - BorderThickness := 0,{{$borderThickness}},{{$borderThickness}},{{$borderThickness}}
+      - BorderBrush := $buttonBorderColor
+      - // Overflow ("show hidden icons") button, styled as another tray segment with its left edge
+      - // shared with the neighbour.
+  - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Border#BackgroundElement
+    styles:
+      - Margin := {{$highlightOffset}}
+      - BorderThickness = 0
+      - CornerRadius := $highlightRadius
+      - // Overflow button highlight.
+  - target: Grid#VdSwitcherBar
+    styles:
+      - Padding = 8,1,6,0
+      - Height = 24
+      - BorderThickness := $borderThickness
+      - CornerRadius := $buttonRadius
+      - Background := $buttonFill
+      - BorderBrush := $buttonBorderColor
+      - // Virtual desktop switcher, styled to match the tray pill. This element comes from a separate
+      - // Windhawk mod and simply matches nothing when that mod is not installed.
+      - // Its padding and height are literals rather than constants.
+  - target: Grid#VdSwitcherBar > Button > ContentPresenter
+    styles:
+      - BorderThickness = 0
+      - // Virtual desktop switcher buttons.
+  - target: ScrollViewer > ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground
+    styles:
+      - Shadow :=
+      - // Overflow flyout background, shadow cleared.
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - MinWidth = 28
+      - // Buttons inside the overflow flyout, narrower than $buttonMinWidth (a literal, not derived).
+  - target: ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
+    styles:
+      - Margin = 0
+      - // Flyout button icons. The taskbar leading offset is cancelled here, since there is no label
+      - // to leave room for.
+  - target: ScrollViewer > ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
+    styles:
+      - Margin = 0
+      - // Flyout button highlight, reset to fill its button.
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
+    styles:
+      - Opacity = 0
+      - // Pill hidden inside the flyout, where the buttons are too small for it to read.
+themeResourceVariables:
+  - AdaptiveFill@Light =#FFFFFF
+  - AdaptiveFill@Dark =#000000
+  - AdaptiveBorder@Light =#90B4B4B4
+  - AdaptiveBorder@Dark =#90454545
+  - AdaptiveIndicator@Light =#000000
+  - AdaptiveIndicator@Dark =#FFFFFF
 ```
 </details>
