@@ -419,11 +419,11 @@ controlStyles:
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid@CommonStates > Border#BackgroundBorder
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
-      - Background@CheckedNormal := $blobFill
-      - Background@CheckedPressed := $blobFill
-      - Background@Pressed := $blobFill
-      - Background@CheckedPointerOver := $blobFill
       - Background@PointerOver := $blobFill
+      - Background@Pressed := $blobFill
+      - Background@Checked := $blobFill
+      - Background@CheckedPointerOver := $blobFill
+      - Background@CheckedPressed := $blobFill
       - CornerRadius := $highlightRadius
       - BorderThickness = 0
       - BackgroundTransition := <BrushTransition Duration="0:0:0"/>
@@ -432,11 +432,11 @@ controlStyles:
   - target: SystemTray.OmniButton#ControlCenterButton > Grid@CommonStates > Border#BackgroundBorder
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
-      - Background@CheckedNormal := $blobFill
-      - Background@CheckedPressed := $blobFill
-      - Background@Pressed := $blobFill
-      - Background@CheckedPointerOver := $blobFill
       - Background@PointerOver := $blobFill
+      - Background@Pressed := $blobFill
+      - Background@Checked := $blobFill
+      - Background@CheckedPointerOver := $blobFill
+      - Background@CheckedPressed := $blobFill
       - CornerRadius := $highlightRadius
       - BorderThickness = 0
       - BackgroundTransition := <BrushTransition Duration="0:0:0"/>
