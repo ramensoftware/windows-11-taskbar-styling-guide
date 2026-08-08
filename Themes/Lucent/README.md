@@ -105,7 +105,7 @@ controlStyles:
       - BorderThickness=0
       - Margin=-2,-4,-2,-4
       - CornerRadius=0
-  - target: Grid#IconPanel@CommonStates > Border, Taskbar.TaskListButtonPanel@CommonStates > Border
+  - target: Grid#IconPanel@CommonStates > Border, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border, Taskbar.TaskListButtonPanel@CommonStates > Border
     styles:
       - CornerRadius=0
       - Background@InactivePointerOver:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight3}"/>
@@ -154,7 +154,7 @@ controlStyles:
     styles:
       - CornerRadius=0
       - Margin=2,-5,2,-5
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border
     styles:
       - Width=48
   - target: Grid#IconPanel > Border#MultiWindowElement, Taskbar.TaskListLabeledButtonPanel > Border#MultiWindowElement
@@ -260,7 +260,7 @@ controlStyles:
       - BorderThickness=0
       - Margin=-2,-4,-2,-4
       - CornerRadius=0
-  - target: Grid#IconPanel@CommonStates > Border, Taskbar.TaskListButtonPanel@CommonStates > Border
+  - target: Grid#IconPanel@CommonStates > Border, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border, Taskbar.TaskListButtonPanel@CommonStates > Border
     styles:
       - CornerRadius=0
       - Background@InactivePointerOver=#BBBBBB
@@ -308,7 +308,7 @@ controlStyles:
     styles:
       - CornerRadius=0
       - Margin=2,-5,2,-5
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border
     styles:
       - Width=48
   - target: Grid#IconPanel > Border#MultiWindowElement, Taskbar.TaskListLabeledButtonPanel > Border#MultiWindowElement

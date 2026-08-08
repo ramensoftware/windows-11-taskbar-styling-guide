@@ -45,7 +45,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```yaml
 controlStyles:
-  - target: Taskbar.SearchBoxButton#SearchBoxButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: Taskbar.SearchBoxButton#SearchBoxButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.SearchBoxButton#SearchBoxButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - CornerRadius=4
       - BorderThickness=0,1,0,0
@@ -62,7 +62,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.FontIcon#SearchBoxFontIcon
     styles:
       - FontFamily=Segoe Fluent Icons
-  - target: SearchUx.SearchUI.SearchBoxButton#SearchBox > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.TextBlock#SearchBoxTextBlock
+  - target: SearchUx.SearchUI.SearchBoxButton#SearchBox > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock#SearchBoxTextBlock, SearchUx.SearchUI.SearchBoxButton#SearchBox > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.TextBlock#SearchBoxTextBlock
     styles:
       - Text=Type here to search
       - FontSize=15
@@ -277,7 +277,7 @@ controlStyles:
     styles:
       - Height=15
       - Width=15
-  - target: SearchUx.SearchUI.SearchButtonRootGrid > Border
+  - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid > Border
     styles:
       - CornerRadius=4
   - target: TextBlock#BatteryTextBlock
@@ -348,7 +348,7 @@ controlStyles:
     styles:
       - Width=48
       - Background:=<ImageBrush Stretch="Uniform" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/SunValley/Assets/start.png" />
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Visibility=Collapsed
   - target: ToolTip > ContentPresenter > TextBlock
@@ -387,7 +387,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemChromeMediumHighColor}" TintOpacity="0" TintLuminosityOpacity="0.7" FallbackColor="{ThemeResource SystemChromeMediumColor}" />
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - RenderTransform:=<ScaleTransform ScaleX="1.1" ScaleY="0.9" />
       - Transform3D:=<CompositeTransform3D TranslateY="2" TranslateX="-2" />
@@ -399,7 +399,7 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemChromeMediumHighColor}" TintOpacity="0.2" TintLuminosityOpacity="0.9" FallbackColor="{ThemeResource SystemChromeMediumColor}" />
-  - target: SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer
+  - target: SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer, SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer
     styles:
       - Height=18
       - Width=18
@@ -408,10 +408,10 @@ controlStyles:
     styles:
       - Margin=-3,-6,-3,-6
       - Width=346
-  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid#SearchBoxContentGrid
+  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > Grid#SearchBoxContentGrid, SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid#SearchBoxContentGrid
     styles:
       - HorizontalAlignment=0
-  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid#SearchBoxContentGrid > FontIcon
+  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > Grid#SearchBoxContentGrid > FontIcon, SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid#SearchBoxContentGrid > FontIcon
     styles:
       - Transform3D:=<CompositeTransform3D TranslateY="-1" TranslateX="-10.5" />
       - FontSize=19.4
@@ -420,7 +420,7 @@ controlStyles:
       - Opacity=0.7
       - Grid.Column=0
       - HorizontalAlignment=0
-  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid#SearchBoxContentGrid > TextBlock
+  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > Grid#SearchBoxContentGrid > TextBlock, SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid#SearchBoxContentGrid > TextBlock
     styles:
       - Transform3D:=<CompositeTransform3D TranslateX="-5" />
       - FontFamily=Segoe UI
@@ -429,7 +429,7 @@ controlStyles:
       - Grid.Column=1
       - HorizontalAlignment=0
       - FontSize=15
-  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Border#SearchPillBackgroundElement
+  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Border#SearchPillBackgroundElement
     styles:
       - CornerRadius=4
       - BorderThickness=1
@@ -485,7 +485,7 @@ controlStyles:
     styles:
       - Padding=0,2,2,2
       - Width=48
-  - target: SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid > TextBlock
+  - target: SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > TextBlock, SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid > TextBlock
     styles:
       - Transform3D:=<CompositeTransform3D TranslateX="5" TranslateY="1" />
   - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchV2ButtonRootPanel
@@ -517,14 +517,14 @@ controlStyles:
       - FontSize=15
       - Transform3D:=<CompositeTransform3D TranslateY="-1" />
       - Text=Ask me anything
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Visibility=Collapsed
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel@CommonStates
     styles:
       - Background:=<ImageBrush Stretch="Uniform" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/SunValley/Assets/taskview.png" />
       - Width=48
-  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid#SearchBoxContentGrid > FontIcon > Grid > TextBlock
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > Grid#SearchBoxContentGrid > FontIcon > Grid > TextBlock, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid#SearchBoxContentGrid > FontIcon > Grid > TextBlock
     styles:
       - FontWeight=Light
   - target: SystemTray.NotificationAreaOverflow > Windows.UI.Xaml.Controls.Grid#OverflowRootGrid
@@ -539,10 +539,10 @@ controlStyles:
       - RadiusX=2
       - RadiusY=2
       - Width@InactiveRunningIndicator=35
-  - target: Taskbar.ExperienceToggleButton > Taskbar.TaskListButtonPanel > Border
+  - target: Taskbar.ExperienceToggleButton > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton > Taskbar.TaskListButtonPanel > Border
     styles:
       - Margin=-3,0,-3,0
-  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > Border
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > Border
     styles:
       - Margin=-1,0,-1,0
       - Opacity=0.5
@@ -550,16 +550,16 @@ controlStyles:
     styles:
       - Margin=-4,0,-4,0
       - Opacity=0.5
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border
     styles:
       - Opacity=0.5
   - target: Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
     styles:
       - Opacity=0.5
-  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid#SearchBoxContentGrid
+  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > Grid#SearchBoxContentGrid, SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid#SearchBoxContentGrid
     styles:
       - Width=344
-  - target: SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border
+  - target: SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Grid > Border, SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border
     styles:
       - BorderBrush@InactiveNormal_SearchBox_Wave3:=<SolidColorBrush Color="{ThemeResource SystemChromeHighColor}" Opacity="0.7" />
       - Background@InactiveNormal_SearchBox_Wave3:=<SolidColorBrush Color="{ThemeResource SystemBaseHighColor}" Opacity="0.06" />

@@ -171,7 +171,7 @@ controlStyles:
       - Margin=0
       - VerticalAlignment=Center
       - HorizontalAlignment=Center
-  - target: Grid#IconPanel > TextBlock, Taskbar.TaskListButtonPanel > TextBlock
+  - target: Grid#IconPanel > TextBlock, Taskbar.TaskListButtonPanel > Grid > TextBlock, Taskbar.TaskListButtonPanel > TextBlock
     styles:
       - Visibility=Collapsed
       - Margin=0
@@ -200,14 +200,14 @@ controlStyles:
       - Width=0
       - MinWidth=0
       - MaxWidth=0
-  - target: Taskbar.TaskListButtonPanel > StackPanel > TextBlock
+  - target: Taskbar.TaskListButtonPanel > Grid > StackPanel > TextBlock, Taskbar.TaskListButtonPanel > StackPanel > TextBlock
     styles:
       - Visibility=Collapsed
       - Opacity=0
       - Width=0
       - MinWidth=0
       - MaxWidth=0
-  - target: Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.FontIcon#FontIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock
+  - target: Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.FontIcon#FontIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock, Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.FontIcon#FontIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock
     styles:
       - Text=
   - target: SystemTray.Stack#ShowDesktopStack

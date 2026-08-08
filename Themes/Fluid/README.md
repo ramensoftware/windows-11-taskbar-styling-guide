@@ -144,7 +144,7 @@ controlStyles:
   - target: Border#BackgroundBorder
     styles:
       - BackgroundTransition:=<BrushTransition Duration="0:0:0.083" />
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement@CommonStates, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates
     styles:
       - Background@ActiveNormal:=$NormalBG
       - Background@ActivePointerOver:=$Hover

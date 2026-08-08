@@ -94,7 +94,7 @@ controlStyles:
       - Background@ActiveNormal:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background@ActivePointerOver:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background@ActivePressed:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background:=$transparent
       - Background@InactivePointerOver:=$pointerOver
@@ -179,7 +179,7 @@ controlStyles:
   - target: Grid#IconPanel > Rectangle#DefaultIcon, Taskbar.TaskListLabeledButtonPanel > Rectangle#DefaultIcon
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListButtonPanel > AnimatedVisualPlayer
+  - target: Taskbar.TaskListButtonPanel > Grid > AnimatedVisualPlayer, Taskbar.TaskListButtonPanel > AnimatedVisualPlayer
     styles:
       - Transform3D:=<CompositeTransform3D TranslateX="0" TranslateY="1" />
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel
@@ -204,7 +204,7 @@ controlStyles:
       - Background@ActiveNormal:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background@ActivePointerOver:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background@ActivePressed:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
-  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - BorderThickness=0
       - CornerRadius=0
@@ -215,12 +215,12 @@ controlStyles:
       - Background@ActiveNormal_SearchIcon:=$transparent
       - Background@ActivePointerOver_SearchIcon:=$pointerOver
       - Background@ActivePressed_SearchIcon:=$pressed
-  - target: Taskbar.SearchBoxLaunchListButton > Taskbar.TaskListButtonPanel > Border#BackgroundElement
+  - target: Taskbar.SearchBoxLaunchListButton > Taskbar.TaskListButtonPanel > Grid > Border#BackgroundElement, Taskbar.SearchBoxLaunchListButton > Taskbar.TaskListButtonPanel > Border#BackgroundElement
     styles:
       - BorderThickness=0
       - CornerRadius=0
       - Margin=0
-  - target: SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
     styles:
       - BorderThickness=0
       - CornerRadius=0

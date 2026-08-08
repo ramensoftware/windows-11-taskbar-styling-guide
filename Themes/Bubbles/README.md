@@ -42,7 +42,7 @@ controlStyles:
       - BorderThickness@NoRunningIndicator=1
       - BorderBrush@NoRunningIndicator:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />
       - Margin=1
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.3" Color="{ThemeResource SystemChromeHighColor}" />
       - BorderBrush:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.6" Color="{ThemeResource SystemChromeHighColor}" />
@@ -103,7 +103,7 @@ controlStyles:
     styles:
       - Background:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.8" Color="{ThemeResource SystemChromeHighColor}" />
       - BorderBrush:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.1" Color="{ThemeResource SearchPillButtonForeground}" />
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Margin=1,0,0,0
   - target: SystemTray.Stack#ShowDesktopStack
@@ -180,7 +180,7 @@ controlStyles:
   - target: Rectangle#RightDropInsertionMarker
     styles:
       - Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight1}" />
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border
     styles:
       - CornerRadius=20
       - Background:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />

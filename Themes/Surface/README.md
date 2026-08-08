@@ -121,7 +121,7 @@ controlStyles:
       - CornerRadius=12
       - BorderThickness=2,1,0.5,2
       - BorderBrush:=$TaskItemBorder
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Background:=$SystemItemBackground
       - CornerRadius=12

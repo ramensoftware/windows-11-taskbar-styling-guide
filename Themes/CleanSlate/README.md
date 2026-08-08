@@ -42,7 +42,7 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark1}" />
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=100
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
@@ -83,7 +83,7 @@ controlStyles:
   - target: SystemTray.NotifyIconView > Grid > Border#BackgroundBorder
     styles:
       - Margin=0,3,0,3
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement@CommonStates, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
       - CornerRadius=20
@@ -157,7 +157,7 @@ controlStyles:
     styles:
       - Background=Transparent
       - BorderThickness=0
-  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=5
       - CornerRadius@InactiveNormal_SearchIcon=100
@@ -180,21 +180,21 @@ controlStyles:
     styles:
       - Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}"  />
       - Margin=8,4,-8,4
-  - target: Taskbar.OverflowToggleButton > Taskbar.TaskListButtonPanel@CommonStates > Border
+  - target: Taskbar.OverflowToggleButton > Taskbar.TaskListButtonPanel@CommonStates > Grid > Border, Taskbar.OverflowToggleButton > Taskbar.TaskListButtonPanel@CommonStates > Border
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
       - Background@InactivePointerOver:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark1}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark1}" />
   - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel
     styles:
       - Margin=0
-  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=100
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
   - target: SearchUx.SearchUI.SearchButtonRootGrid
     styles:
       - Margin=0,0,3,0
-  - target: SearchUx.SearchUI.SearchButtonRootGrid > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid > Border#BackgroundElement
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
   - target: Border#SearchPillBackgroundElement

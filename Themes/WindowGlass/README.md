@@ -475,7 +475,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
       - Background:=Transparent
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - CornerRadius=10
   - target: Taskbar.TaskListButton#TaskListButton
@@ -717,7 +717,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
       - Background:=Transparent
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - CornerRadius=10
   - target: Taskbar.TaskListButton#TaskListButton

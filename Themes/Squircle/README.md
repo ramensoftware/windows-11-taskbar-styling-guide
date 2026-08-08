@@ -47,7 +47,7 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill=#CC222222
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=5
       - Background:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" FallbackColor="#BB222222" />
@@ -95,7 +95,7 @@ controlStyles:
     styles:
       - Margin=0,3,0,3
       - CornerRadius=5
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement@CommonStates, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates
     styles:
       - Background@InactivePointerOver:=<AcrylicBrush TintColor="Black" TintOpacity="0" />
       - Background:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" FallbackColor="#BB222222" />
@@ -173,7 +173,7 @@ controlStyles:
   - target: Grid
     styles:
       - RequestedTheme=2
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement@CommonStates, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates
     styles:
       - Background:=<AcrylicBrush TintOpacity="0.8" TintColor="Black" FallbackColor="#BB222222" />
       - Width=125
@@ -184,7 +184,7 @@ controlStyles:
       - Padding=0
       - Margin=0,0,0,12
       - CornerRadius=5
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border
     styles:
       - Background:=<AcrylicBrush TintOpacity="0.8" TintColor="Black" FallbackColor="#BB222222" />
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
@@ -193,13 +193,13 @@ controlStyles:
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
       - Margin=10,0,-5,0
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View] > Taskbar.TaskListButtonPanel > Border
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View] > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View] > Taskbar.TaskListButtonPanel > Border
     styles:
       - CornerRadius=0,5,5,0
   - target: SearchUx.SearchUI.SearchBoxButton
     styles:
       - Background:=<AcrylicBrush TintOpacity="0.8" TintColor="Black" FallbackColor="#BB333333" />
-  - target: SearchUx.SearchUI.SearchButtonRootGrid > Border
+  - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid > Border
     styles:
       - Opacity=0
   - target: SearchUx.SearchUI.SearchButtonRootGrid
@@ -208,10 +208,10 @@ controlStyles:
       - MinWidth=0
       - CornerRadius=0,5,5,0
       - Margin=0,4,2,4
-  - target: SearchUx.SearchUI.SearchBoxButton#SearchBox > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+  - target: SearchUx.SearchUI.SearchBoxButton#SearchBox > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, SearchUx.SearchUI.SearchBoxButton#SearchBox > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Margin=14,0,0,0
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Start] > Taskbar.TaskListButtonPanel > Border
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Start] > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Start] > Taskbar.TaskListButtonPanel > Border
     styles:
       - Margin=1,0,0,0
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Start] > Taskbar.TaskListButtonPanel

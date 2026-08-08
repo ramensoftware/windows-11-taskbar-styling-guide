@@ -526,7 +526,7 @@ controlStyles:
     styles:
       - Height=30
       - // Taskbar Search Bar >  Art container beside search > Button background
-  - target: ContentPresenter > SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchBoxButton#SearchBox > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > TextBlock#SearchBoxTextBlock
+  - target: ContentPresenter > SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchBoxButton#SearchBox > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > TextBlock#SearchBoxTextBlock, ContentPresenter > SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchBoxButton#SearchBox > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > TextBlock#SearchBoxTextBlock
     styles:
       - FontFamily=$ThFnt
       - FontWeight=$ThFntWt
@@ -558,7 +558,7 @@ controlStyles:
     styles:
       - Margin=0,-1,0,0
       - // Taskbar Search Bar Button
-  - target: SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
     styles:
       - Background:=$ThemeIsland
       - BorderBrush:=$ThemeOutBorder
@@ -566,7 +566,7 @@ controlStyles:
       - CornerRadius=$InnerRadius
       - Margin=0,-2.5,0,-2.5
       - // Taskbar Search Bar Button > Background
-  - target: SearchUx.SearchUI.SearchPillButton#SearchPill > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#SearchPillBackgroundElement
+  - target: SearchUx.SearchUI.SearchPillButton#SearchPill > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchPillButton#SearchPill > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#SearchPillBackgroundElement
     styles:
       - CornerRadius=$InnerRadius
       - Height=26
