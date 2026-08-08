@@ -35,6 +35,11 @@ BlobShape:
 Colors:
   BgOpacity: ''
   CustomColor: '#FFFFFF | #09131E'
+SystemButtons:
+  SystemButtonsBlob: 1
+  WidgetsBlob: 1
+  DateTimeBlob: 1
+  TrayButtonsBlob: 1
   ```
   </details>
 
