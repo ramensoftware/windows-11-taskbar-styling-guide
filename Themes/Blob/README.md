@@ -243,14 +243,28 @@ controlStyles:
       - Padding := {{$buttonSpacing-2}},{{$taskbarTopOffset}},{{$buttonSpacing-2}},{{$taskbarBottomOffset}}
       - MinWidth := $buttonMinWidth
       - // Search button (icon mode). Same padding/min-width recipe as task buttons.
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel@CommonStates > Border#BackgroundElement
     styles:
+      - Background@ActiveNormal := $blobFill
+      - Background@ActivePressed := $blobFill
+      - Background@InactivePressed := $blobFill
+      - Background@ActivePointerOver := $blobFill
+      - Background@InactivePointerOver := $blobFill
       - CornerRadius := $highlightRadius
-      - // Start / Task View highlight, rounded to match the task button highlight.
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement > ContentPresenter > SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
+      - BorderThickness = 0
+      - BackgroundTransition := <BrushTransition Duration="0:0:0"/>
+      - // Start / Task View highlight.
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement > ContentPresenter > SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Border#BackgroundElement
     styles:
+      - Background@ActiveNormal := $blobFill
+      - Background@ActivePressed := $blobFill
+      - Background@InactivePressed := $blobFill
+      - Background@ActivePointerOver := $blobFill
+      - Background@InactivePointerOver := $blobFill
       - CornerRadius := $highlightRadius
-      - // Search button highlight, rounded to match the task button highlight.
+      - BorderThickness = 0
+      - BackgroundTransition := <BrushTransition Duration="0:0:0"/>
+      - // Search button highlight.
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Margin := 0,0,0,{{$taskbarContentOffset-2}}
@@ -402,30 +416,67 @@ controlStyles:
       - Margin := 0,0,{{$taskbarRightOffset-12}},0
       - // System tray trailing margin. 12 is subtracted to absorb the default "show desktop"
       - // indicator width, so $taskbarRightOffset = 12 means "flush with the stock edge".
-  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid@CommonStates > Border#BackgroundBorder
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Background@CheckedNormal := $blobFill
+      - Background@CheckedPressed := $blobFill
+      - Background@Pressed := $blobFill
+      - Background@CheckedPointerOver := $blobFill
+      - Background@PointerOver := $blobFill
       - CornerRadius := $highlightRadius
-      - // Clock / notification center highlight, inset and rounded like the task buttons.
-  - target: SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder
+      - BorderThickness = 0
+      - BackgroundTransition := <BrushTransition Duration="0:0:0"/>
+      - CornerRadius := $highlightRadius
+      - // Clock / notification center highlight.
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid@CommonStates > Border#BackgroundBorder
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Background@CheckedNormal := $blobFill
+      - Background@CheckedPressed := $blobFill
+      - Background@Pressed := $blobFill
+      - Background@CheckedPointerOver := $blobFill
+      - Background@PointerOver := $blobFill
       - CornerRadius := $highlightRadius
-      - // Control center highlight, inset and rounded like the task buttons.
-  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
+      - BorderThickness = 0
+      - BackgroundTransition := <BrushTransition Duration="0:0:0"/>
+      - CornerRadius := $highlightRadius
+      - // Control center highlight.
+  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid@ > Border#BackgroundBorder
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Background@CheckedNormal := $blobFill
+      - Background@CheckedPressed := $blobFill
+      - Background@Pressed := $blobFill
+      - Background@CheckedPointerOver := $blobFill
+      - Background@PointerOver := $blobFill
       - CornerRadius := $highlightRadius
+      - BorderThickness = 0
+      - BackgroundTransition := <BrushTransition Duration="0:0:0"/>
       - // Language indicator and system tray icon highlights.
-  - target: SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > Border#BackgroundBorder
+  - target: SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid@ > Border#BackgroundBorder
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Background@CheckedNormal := $blobFill
+      - Background@CheckedPressed := $blobFill
+      - Background@Pressed := $blobFill
+      - Background@CheckedPointerOver := $blobFill
+      - Background@PointerOver := $blobFill
       - CornerRadius := $highlightRadius
+      - BorderThickness = 0
+      - BackgroundTransition := <BrushTransition Duration="0:0:0"/>
       - // Notification area (tray) icon highlights.
-  - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid@ > Border#BackgroundBorder
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Background@CheckedNormal := $blobFill
+      - Background@CheckedPressed := $blobFill
+      - Background@Pressed := $blobFill
+      - Background@CheckedPointerOver := $blobFill
+      - Background@PointerOver := $blobFill
       - CornerRadius := $highlightRadius
+      - BorderThickness = 0
+      - BackgroundTransition := <BrushTransition Duration="0:0:0"/>
       - // Tray overflow chevron highlight.
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel
     styles:
@@ -487,9 +538,16 @@ controlStyles:
       - // Weather widget root, kept the same width as its content grid.
       - // Leading margin subtracts 12 so $taskbarLeftOffset = 12 means "flush with the stock edge";
       - // the trailing 56 reserves room before the first task button.
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel@CommonStates > Border#BackgroundElement
     styles:
+      - Background@ActiveNormal := $blobFill
+      - Background@ActivePressed := $blobFill
+      - Background@InactivePressed := $blobFill
+      - Background@ActivePointerOver := $blobFill
+      - Background@InactivePointerOver := $blobFill
       - CornerRadius := $highlightRadius
+      - BorderThickness = 0
+      - BackgroundTransition := <BrushTransition Duration="0:0:0"/>
       - // Weather widget highlight, rounded like the task buttons.
   - target: Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
     styles:
