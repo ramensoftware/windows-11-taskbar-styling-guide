@@ -590,7 +590,7 @@ controlStyles:
       - Height@Pressed = 6
       - RadiusX = 2
       - RadiusY = 2
-      - Margin := 0,0,0,{{$taskbarContentOffset-4}}
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset+$taskbarContentOffset-4}}
       - Fill := $showDesktopIndicatorColor
       - // "Show desktop" corner control, reshaped from a bar into a dot that grows on hover.
       - // The bare @ attaches to the element's default visual state group (it has only one).
