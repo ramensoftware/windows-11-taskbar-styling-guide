@@ -201,13 +201,13 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton[AutomationProperties.AutomationId=WidgetsButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Width=Auto
-  - target: SystemTray.Stack#NotifyIconStack
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack
     styles:
       - Grid.Column=5
-  - target: SystemTray.NotificationAreaIcons#NotificationAreaIcons
+  - target: Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons
     styles:
       - Grid.Column=0
-  - target: SystemTray.OmniButton#ControlCenterButton
+  - target: Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton
     styles:
       - Grid.Column=1
   - target: SystemTray.OmniButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
@@ -284,7 +284,7 @@ controlStyles:
   - target: SystemTray.Stack#MainStack
     styles:
       - //Grid.Column=2
-  - target: SystemTray.Stack#NonActivatableStack
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack
     styles:
       - Grid.Column=3
   - target: SystemTray.IconView#SystemTrayIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder

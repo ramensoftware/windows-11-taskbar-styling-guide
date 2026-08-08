@@ -359,28 +359,36 @@ controlStyles:
       - Foreground:=<SolidColorBrush Color="{ThemeResource Accent1}" />
       - Canvas.ZIndex=-1
       - // New (Themed) Plugged in device/USB Indicator Icon on taskbar
-  - target: SystemTray.OmniButton#ControlCenterButton
+  - target: Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton, StackPanel#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton
     styles:
-      - Grid.Column=4
       - CornerRadius=$InnerRadius
       - // System Tray > Control Center Button
-  - target: SystemTray.OmniButton#NotificationCenterButton
+  - target: Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton
     styles:
-      - Grid.Column=5
+      - Grid.Column=4
+  - target: Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton, StackPanel#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton
+    styles:
       - CornerRadius=$InnerRadius
       - // System Tray > Notification Center Button
-  - target: SystemTray.Stack#MainStack
+  - target: Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton
     styles:
-      - Grid.Column=6
+      - Grid.Column=5
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#MainStack, StackPanel#SystemTrayFrameGrid > SystemTray.Stack#MainStack
+    styles:
       - CornerRadius=$InnerRadius
       - // System tray > Microphone and Location Icons Grid
-  - target: SystemTray.Stack#ShowDesktopStack
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#MainStack
+    styles:
+      - Grid.Column=6
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#ShowDesktopStack, StackPanel#SystemTrayFrameGrid > SystemTray.Stack#ShowDesktopStack
     styles:
       - CornerRadius=$InnerRadius
-      - Grid.Column=7
       - Width=5
       - // System Tray > Show Desktop Button
-  - target: SystemTray.Stack#NonActivatableStack
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Grid.Column=7
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack
     styles:
       - Grid.Column=2
       - // System Tray > Taskbar Additional Buttons Grid (Touch keyboard, Emoji Buttons)
@@ -565,11 +573,13 @@ controlStyles:
       - BorderBrush:=$ThemeBorder
       - Background:=$ThemeOverlay
       - // Taskbar Search Button (Pill Shaped search) > Background
-  - target: SystemTray.NotificationAreaIcons#NotificationAreaIcons
+  - target: Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons, StackPanel#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons
     styles:
-      - Grid.Column=1
       - CornerRadius=$InnerRadius
       - // Apps Pinned to system tray + Bluetooth and Usb Grid
+  - target: Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons
+    styles:
+      - Grid.Column=1
   - target: SystemTray.SystemTrayFrame
     styles:
       - HorizontalAlignment=Right

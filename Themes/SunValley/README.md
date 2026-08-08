@@ -94,13 +94,15 @@ controlStyles:
       - Padding=0,2,0,2
       - Margin=0,0,5,0
       - BorderThickness=0,1,0,0
-  - target: SystemTray.Stack#NonActivatableStack
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack, StackPanel#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack
     styles:
       - Height=Auto
       - CornerRadius=3
       - Margin=0,0,0,0
       - Padding=0,2,0,2
       - BorderThickness=0,1,0,0
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack
+    styles:
       - Grid.Column=4
   - target: Rectangle#ShowDesktopPipe@CommonStates
     styles:
@@ -109,12 +111,14 @@ controlStyles:
       - Height=500
       - Fill@Active:=<AcrylicBrush TintColor="{ThemeResource SystemBaseLowColor}" TintOpacity="0.5" Opacity="0"/>
       - Stroke:=<SolidColorBrush Color="{ThemeResource SystemBaseHighColor}" Opacity="0.3"/>
-  - target: SystemTray.OmniButton#ControlCenterButton
+  - target: Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton, StackPanel#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton
     styles:
       - Padding=0,2,0,2
       - CornerRadius=3
       - Margin=0,0,0,0
       - BorderThickness=0,1,0,0
+  - target: Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton
+    styles:
       - Grid.Column=3
   - target: SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
     styles:
