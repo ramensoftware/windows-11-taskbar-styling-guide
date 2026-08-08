@@ -294,7 +294,7 @@ styleConstants:
   - buttonMinWidth = 38
   - buttonSpacing = 6
   - sysTraySpacing = 6
-  - iconLabelSpacing = 4
+  - iconLabelSpacing = 6
   - leftRightPadding = 8
   - badgeSize = 12
   - badgeNudge = 4,4,0,0
@@ -426,7 +426,7 @@ controlStyles:
       - // Taskbar buttons.
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
-      - Margin := {{4.4*(LabelsMod)}},{{$taskbarTopOffset}},{{2*(1-(LabelsMod-1))}},{{$taskbarBottomOffset}}
+      - Margin := {{4.4*(LabelsMod)}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - HorizontalAlignment = 1
       - Canvas.ZIndex = 3
       - RenderTransformOrigin = 0.5,0.5
