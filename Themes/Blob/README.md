@@ -378,6 +378,7 @@ controlStyles:
     styles:
       - Margin := {{$iconSpacing}},0,0,{{$taskbarContentOffset-2}}
       - Canvas.ZIndex = 3
+      - HorizontalAlignment = 0
       - // Button icon. Left margin plus the panel padding gives the leading inset;
       - // the -2 keeps it on the same baseline as the other icons.
   - target: Taskbar.TaskListLabeledButtonPanel > Rectangle#DefaultIcon
