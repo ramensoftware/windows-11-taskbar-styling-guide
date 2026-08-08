@@ -423,7 +423,7 @@ controlStyles:
       - // indicator width, so $taskbarRightOffset = 12 means "flush with the stock edge".
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid@CommonStates > Border#BackgroundBorder
     styles:
-      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 2,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Background@PointerOver := $blobFill
       - Background@Pressed := $blobFill
       - Background@Checked := $blobFill
@@ -436,7 +436,7 @@ controlStyles:
       - // Clock / notification center highlight.
   - target: SystemTray.OmniButton#ControlCenterButton > Grid@CommonStates > Border#BackgroundBorder
     styles:
-      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 2,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
       - Background@PointerOver := $blobFill
       - Background@Pressed := $blobFill
       - Background@Checked := $blobFill
@@ -449,7 +449,7 @@ controlStyles:
       - // Control center highlight.
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid@ > Border#BackgroundBorder
     styles:
-      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 2,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
       - Background@CheckedNormal := $blobFill
       - Background@CheckedPressed := $blobFill
       - Background@Pressed := $blobFill
@@ -461,7 +461,7 @@ controlStyles:
       - // Language indicator and system tray icon highlights.
   - target: SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid@ > Border#BackgroundBorder
     styles:
-      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 2,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
       - Background@CheckedNormal := $blobFill
       - Background@CheckedPressed := $blobFill
       - Background@Pressed := $blobFill
@@ -473,7 +473,7 @@ controlStyles:
       - // Notification area (tray) icon highlights.
   - target: SystemTray.ChevronIconView > Grid#ContainerGrid@ > Border#BackgroundBorder
     styles:
-      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 2,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
       - Background@CheckedNormal := $blobFill
       - Background@CheckedPressed := $blobFill
       - Background@Pressed := $blobFill
