@@ -261,6 +261,10 @@ controlStyles:
       - MaxWidth=$showDesktopWidth
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid@ > Rectangle#ShowDesktopPipe
     styles:
+      - Grid.Row=0
+      - Grid.RowSpan=3
+      - Grid.Column=0
+      - Grid.ColumnSpan=3
       - VerticalAlignment=Stretch
       - HorizontalAlignment=Stretch
       - Height=Auto

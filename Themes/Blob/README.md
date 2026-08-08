@@ -588,6 +588,10 @@ controlStyles:
       - // Language switcher flyout, shadow cleared.
   - target: Grid#ContainerGrid@ > Rectangle#ShowDesktopPipe
     styles:
+      - Grid.Row = 0
+      - Grid.RowSpan = 3
+      - Grid.Column = 0
+      - Grid.ColumnSpan = 3
       - Width = 4
       - Height = 4
       - Height@PointerOver = 10

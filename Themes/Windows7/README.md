@@ -229,6 +229,10 @@ controlStyles:
       - FlowDirection=1
   - target: Windows.UI.Xaml.Controls.Grid#ContainerGrid@ > Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe
     styles:
+      - Grid.Row=0
+      - Grid.RowSpan=3
+      - Grid.Column=0
+      - Grid.ColumnSpan=3
       - Fill@Normal:=<ImageBrush Stretch="Fill" ImageSource="$desktopNormal" />
       - Height=39
       - Width=$desktopWidth

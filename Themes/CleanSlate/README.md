@@ -108,6 +108,10 @@ controlStyles:
       - Background@RequestingAttentionRunningIndicator:=<SolidColorBrush Color="#ffdf5e" Opacity="0.4" />
   - target: Rectangle#ShowDesktopPipe
     styles:
+      - Grid.Row=0
+      - Grid.RowSpan=3
+      - Grid.Column=0
+      - Grid.ColumnSpan=3
       - Width=12
       - Height=38
       - Margin=-6,0,0,0

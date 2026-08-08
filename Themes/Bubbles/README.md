@@ -112,7 +112,12 @@ controlStyles:
       - Margin=2,0,10,0
   - target: Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe
     styles:
-      - MinWidth=4
+      - Grid.Row=0
+      - Grid.RowSpan=3
+      - Grid.Column=0
+      - Grid.ColumnSpan=3
+      - Height=16
+      - Width=4
       - RadiusX=2
       - RadiusY=2
       - Margin=-5,0,5,0

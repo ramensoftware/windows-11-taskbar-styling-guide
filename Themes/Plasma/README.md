@@ -263,11 +263,15 @@ controlStyles:
     styles:
       - Width=48
       - Height=Auto
-  - target: SystemTray.IconView[AutomationProperties.Name=Show Desktop]
+  - target: SystemTray.Stack#ShowDesktopStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid
     styles:
       - Width=48
   - target: Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe
     styles:
+      - Grid.Row=0
+      - Grid.RowSpan=3
+      - Grid.Column=0
+      - Grid.ColumnSpan=3
       - Width=48
       - Height=50
       - Fill:=<ImageBrush Stretch="None" ImageSource="$desktopButton" />

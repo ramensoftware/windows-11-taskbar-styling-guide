@@ -106,6 +106,10 @@ controlStyles:
       - Grid.Column=4
   - target: Rectangle#ShowDesktopPipe@CommonStates
     styles:
+      - Grid.Row=0
+      - Grid.RowSpan=3
+      - Grid.Column=0
+      - Grid.ColumnSpan=3
       - Width=9
       - Margin=0,0,-10,0
       - Height=500
