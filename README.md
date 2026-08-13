@@ -143,7 +143,7 @@ Taskbar Styler mod. The following themes are available:
 | [UltraWideFriendly](Themes/UltraWideFriendly/README.md) | [![UltraWideFriendly](Themes/UltraWideFriendly/screenshot.png)](Themes/UltraWideFriendly/screenshot.png)
 | [LiquidGlass](Themes/LiquidGlass2/README.md) | [![LiquidGlass](Themes/LiquidGlass2/screenshot.png)](Themes/LiquidGlass2/screenshot.png)
 | [LiquidGlass (Legacy)](Themes/LiquidGlass/README.md) | [![LiquidGlass (Legacy)](Themes/LiquidGlass/screenshot.png)](Themes/LiquidGlass/screenshot.png)
-| [DWM Glass)](Themes/DWMGlass/README.md) | [![DWM Glass)](Themes/DWMGlass/screenshot.png)](Themes/DWMGlass/screenshot.png)
+| [DWM Glass](Themes/DWMGlass/README.md) | [![DWM Glass](Themes/DWMGlass/screenshot.png)](Themes/DWMGlass/screenshot.png)
 | [Borderless](Themes/Borderless/README.md) | [![Borderless](Themes/Borderless/screenshot.png)](Themes/Borderless/screenshot.png)
 | [Command Center](Themes/Command%20Center/README.md) | [![Command Center](Themes/Command%20Center/screenshot.png)](Themes/Command%20Center/screenshot.png)
 | [FluentGlass](Themes/FluentGlass/README.md) | [![FluentGlass](Themes/FluentGlass/screenshot.png)](Themes/FluentGlass/screenshot.png)
