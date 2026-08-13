@@ -3,7 +3,7 @@
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
 
 > [!NOTE]
-> Support for the LiquidGlass (Legacy) theme is being dropped in favor of [a new Fluid Glass theme](https://github.com/ramensoftware/windows-11-taskbar-styling-guide/blob/main/Themes/LiquidGlass2/README.md) by another author. Their theme is going in the direction this one was aimed and does a lot better than this one does. So, there won't be any future updates to the LiquidGlass (Legacy) theme going forward.
+> This theme will be getting renamed to Fluent Glass in the future due to the new [Liquid Glass theme](https://github.com/ramensoftware/windows-11-taskbar-styling-guide/blob/main/Themes/LiquidGlass2/README.md) being made by another author. Their theme is going in the direction this one was originally aimed and does a lot better than this one does.
 
 ![Screenshot](screenshot.png)
 
