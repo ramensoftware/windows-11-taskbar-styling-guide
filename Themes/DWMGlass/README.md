@@ -2,12 +2,12 @@
 
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
 
-### Requirements
+## Requirements
 * [Windows 11 Taskbar Styler](https://windhawk.net/mods/windows-11-taskbar-styler)
 
 ![Screenshot](screenshot.png)
 
-## Taskbar Clock Customization (Optional)
+### Taskbar Clock Customization (Optional)
 
 The get the clock to show up like it does in the screenshot, follow these steps:
 
@@ -84,6 +84,7 @@ DateStyle:
   CharacterSpacing: 0
 oldTaskbarOnWin11: 0
 ```
+
 </details>
 
 ## Theme selection
@@ -320,6 +321,7 @@ controlStyles:
     styles:
       - HorizontalAlignment=Left
 ```
+
 </details>
 
 ### Alternate variant
@@ -559,4 +561,5 @@ controlStyles:
     styles:
       - HorizontalAlignment=Left
 ```
+
 </details>
