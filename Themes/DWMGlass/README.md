@@ -1,9 +1,8 @@
-# LiquidGlass (Legacy) theme for Windows 11 Taskbar Styler
+# DWM Glass theme for Windows 11 Taskbar Styler
 
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
 
 > [!NOTE]
-> This theme will be getting moved to [DWM Glass](../DWMGlass/README.md) in the future due to the new [Liquid Glass theme](../LiquidGlass2/README.md) being made by another author. Their theme is going in the direction this one was originally aimed and does a lot better than this one does. So it will be the future of the Liquid Glass theme going forward.
 
 ![Screenshot](screenshot.png)
 
