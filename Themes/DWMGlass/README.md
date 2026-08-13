@@ -3,6 +3,7 @@
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
 
 ## Requirements
+
 * [Windows 11 Taskbar Styler](https://windhawk.net/mods/windows-11-taskbar-styler)
 
 ![Screenshot](screenshot.png)
