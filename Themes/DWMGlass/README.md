@@ -322,8 +322,8 @@ controlStyles:
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
       - HorizontalAlignment=Left
+xamlDiagnosticsHandling: allow
 ```
-
 </details>
 
 ### Alternate variant
@@ -563,6 +563,7 @@ controlStyles:
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
       - HorizontalAlignment=Left
+xamlDiagnosticsHandling: allow
 ```
 
 </details>
