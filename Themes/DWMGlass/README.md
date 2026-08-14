@@ -109,6 +109,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
+theme: DWM Glass
 styleConstants:
   - Background=<WindhawkBlur BlurAmount="15" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.2" />
   - ElementBackground=<WindhawkBlur BlurAmount="20" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.4" />
@@ -333,6 +334,7 @@ controlStyles:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
+theme: DWM Glass (Alternate)
 styleConstants:
   - Background=<WindhawkBlur BlurAmount="15" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.2" />
   - ElementBackground=<WindhawkBlur BlurAmount="20" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.4" />
