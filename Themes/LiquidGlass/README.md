@@ -1,13 +1,14 @@
-# LiquidGlass (Legacy) theme for Windows 11 Taskbar Styler
+# DWM Glass theme for Windows 11 Taskbar Styler
 
 **Author**: [PhantomNimbi](https://github.com/PhantomNimbi)
 
-> [!NOTE]
-> This theme will be getting moved to [DWM Glass](../DWMGlass/README.md) in the future due to the new [Liquid Glass theme](../LiquidGlass2/README.md) being made by another author. Their theme is going in the direction this one was originally aimed and does a lot better than this one does. So it will be the future of the Liquid Glass theme going forward.
+## Requirements
+
+* [Windows 11 Taskbar Styler](https://windhawk.net/mods/windows-11-taskbar-styler)
 
 ![Screenshot](screenshot.png)
 
-## Taskbar Clock Customization (Optional)
+### Taskbar Clock Customization (Optional)
 
 The get the clock to show up like it does in the screenshot, follow these steps:
 
@@ -84,6 +85,7 @@ DateStyle:
   CharacterSpacing: 0
 oldTaskbarOnWin11: 0
 ```
+
 </details>
 
 ## Theme selection
@@ -107,6 +109,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
+theme: DWM Glass
 styleConstants:
   - Background=<WindhawkBlur BlurAmount="15" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.2" />
   - ElementBackground=<WindhawkBlur BlurAmount="20" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.4" />
@@ -319,6 +322,7 @@ controlStyles:
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
       - HorizontalAlignment=Left
+xamlDiagnosticsHandling: allow
 ```
 </details>
 
@@ -330,6 +334,7 @@ controlStyles:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
+theme: DWM Glass (Alternate)
 styleConstants:
   - Background=<WindhawkBlur BlurAmount="15" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.2" />
   - ElementBackground=<WindhawkBlur BlurAmount="20" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.4" />
@@ -558,5 +563,7 @@ controlStyles:
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
       - HorizontalAlignment=Left
+xamlDiagnosticsHandling: allow
 ```
+
 </details>
