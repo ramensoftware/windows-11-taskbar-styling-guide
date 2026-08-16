@@ -7,7 +7,7 @@ A refined, translucent "Dock" experience for Windows 11 via Windhawk.
 [![Windhawk](https://img.shields.io/badge/Requires-Windhawk-blue?style=flat-square)](https://windhawk.net/)
 [![Style](https://img.shields.io/badge/Style-Frosty_Glass-lightgrey?style=flat-square)](#)
 
-This configuration provides a modern **Frosty Glass** aesthetic for your Windows 11 taskbar. It utilizes custom translucent `AcrylicBrush` effects and manual layout adjustments to create a soft, blurred interface that feels perfectly integrated with the desktop environment.
+This configuration provides a modern **Frosty Glass** aesthetic for your Windows 11 taskbar. It utilizes custom translucent `WindhawkBlur` effects and manual layout adjustments to create a soft, blurred interface that feels perfectly integrated with the desktop environment.
 
 ## 📋 Prerequisites
 
@@ -90,8 +90,9 @@ The theme styles can be imported manually by following these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
+theme: ''
 styleConstants:
-  - Background=<AcrylicBrush TintColor="#1000000F"/>
+  - Background=<WindhawkBlur BlurAmount="20" TintColor="{ThemeResource SystemChromeDarkColor}" TintOpacity="0.15" />
   - BorderBrush2=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="0.0" /><GradientStop Color="{ThemeResource SystemChromeLowColor}" Offset="0.25" /><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="1" /></LinearGradientBrush>
   - BorderThickness=1
   - CornerRadius=10
@@ -420,5 +421,9 @@ controlStyles:
   - target: SystemTray.NotifyIconView > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - CornerRadius=7
+themeResourceVariables:
+  - ''
+clickThroughTaskbar: 0
+xamlDiagnosticsHandling: ''
 ```
 </details>
