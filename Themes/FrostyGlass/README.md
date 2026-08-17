@@ -78,6 +78,15 @@ Complete the look across your entire UI! Check out my other Frosty Glass styling
 ## 🙌 Credits & Inspiration
 A huge thank you to [Ramen Software](https://github.com/ramensoftware) for creating Windhawk. This configuration was heavily inspired by the official [Windows 11 Taskbar Styling Guide](https://github.com/ramensoftware/windows-11-taskbar-styling-guide) and the Windhawk modding community.
 
+## 🎚️ Theme selection
+
+The theme is integrated into the mod and can be selected directly from the mod's
+settings:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
+
 ## 📦 Manual Installation
 
 The theme styles can be imported manually by following these steps:
