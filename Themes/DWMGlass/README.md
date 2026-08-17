@@ -561,5 +561,4 @@ controlStyles:
     styles:
       - HorizontalAlignment=Left
 ```
-
 </details>
