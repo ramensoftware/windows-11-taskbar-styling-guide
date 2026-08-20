@@ -188,7 +188,7 @@ controlStyles:
       - FontFamily=Segoe UI VF
       - Margin=0
       - Padding=0
-      - RenderTransform:=<TranslateTransform X="3" Y="2" />
+      - RenderTransform:=<TranslateTransform X="3.5" Y="2" />
       - Width=Auto
       - MinWidth=Auto
       - HorizontalAlignment=Left
