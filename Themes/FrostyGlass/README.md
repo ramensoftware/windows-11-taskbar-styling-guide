@@ -78,7 +78,7 @@ Complete the look across your entire UI! Check out my other Frosty Glass styling
 ## 🙌 Credits & Inspiration
 A huge thank you to [Ramen Software](https://github.com/ramensoftware) for creating Windhawk. This configuration was heavily inspired by the official [Windows 11 Taskbar Styling Guide](https://github.com/ramensoftware/windows-11-taskbar-styling-guide) and the Windhawk modding community.
 
-## 🎚️ Theme selection
+## Theme selection
 
 The theme is integrated into the mod and can be selected directly from the mod's
 settings:
@@ -87,19 +87,18 @@ settings:
 * Go to the "Settings" tab.
 * Select the theme and save the settings.
 
-## 📦 Manual Installation
+## Manual installation
 
-The theme styles can be imported manually by following these steps:
+The theme styles can also be imported manually. To do that, follow these steps:
 
-1. Open the **Windows 11 Taskbar Styler** (or relevant mod) in Windhawk.
-2. Go to the **Settings** tab and select **Textual mode**.
-3. Copy the content below and click **Save settings**.
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab and select "Textual mode".
+* Copy the content below to the text box and click "Save settings".
 
 <details>
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-theme: ''
 styleConstants:
   - Background=<WindhawkBlur BlurAmount="20" TintColor="{ThemeResource SystemChromeDarkColor}" TintOpacity="0.15" />
   - BorderBrush2=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="0.0" /><GradientStop Color="{ThemeResource SystemChromeLowColor}" Offset="0.25" /><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="1" /></LinearGradientBrush>
@@ -430,9 +429,5 @@ controlStyles:
   - target: SystemTray.NotifyIconView > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - CornerRadius=7
-themeResourceVariables:
-  - ''
-clickThroughTaskbar: 0
-xamlDiagnosticsHandling: ''
 ```
 </details>
