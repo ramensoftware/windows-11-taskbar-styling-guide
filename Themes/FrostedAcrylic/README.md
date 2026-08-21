@@ -50,7 +50,7 @@ Pull requests are welcome. If you encounter issues on a specific Windows/Explore
 * a screenshot of the taskbar showing the problem
 
 Contributions that improve compatibility across scaling/DPI, add presets, or include additional screenshots are appreciated.
-<!--
+
 ## Theme selection
 
 The theme is integrated into the mod and can be selected directly from the mod's
@@ -63,11 +63,6 @@ settings:
 ## Manual installation
 
 The theme styles can also be imported manually. To do that, follow these steps:
--->
-
-## Manual installation
-
-To import the theme manually, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab and select "Textual mode".
