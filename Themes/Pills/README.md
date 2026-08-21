@@ -294,20 +294,18 @@ styleConstants:
   - badgeNudge = 4,4,0,0
   - sysTrayIconSize = 16
   - taskbarSidesRounded = 1
-  - buttonFill = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="{{0.2*(LabelsMod-1)}}" TintLuminosityOpacity="{{0.2*(LabelsMod-1)}}"/>
-  - buttonBorderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="{{1*(LabelsMod-1)}}"/>
+  - buttonFill = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
+  - buttonBorderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="1"/>
   - taskbarFill = ''
   - taskbarStrokeColor = ''
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
 controlStyles:
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
+  - target: Taskbar.TaskListButton#TaskListButton
     styles:
-      - Grid.ColumnSpan => LabelsMod
-      - // Capture only, no styling. Grid.ColumnSpan is 2 when the Taskbar Labels mod is on and 1 when
-      - // it is off, so LabelsMod-1 acts as a boolean used throughout the file to switch the whole
-      - // theme between its labels variant and stock-taskbar mode.
+      - ActualWidth => BtnW
+      - // Capture only, no styling.
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill := $taskbarFill
@@ -352,15 +350,17 @@ controlStyles:
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Border#BackgroundElement
     styles:
       - Opacity = 1
-      - Opacity@InactiveNormal := {{LabelsMod-1}}
-      - // Second rule on the same element, using the other state group. It hides the idle highlight
-      - // in stock mode (LabelsMod-1 resolves to 0) and keeps it in labels mode.
+      - Opacity@InactiveNormal = 1
       - // The two rules touch disjoint properties on purpose. Keep it that way, since precedence
       - // between two state groups on one element is not something to rely on.
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
       - Opacity = 1
       - Opacity@NoRunningIndicator = 0
+      - MinWidth = {{BtnW-6}}
+      - MaxWidth = {{BtnW-6}}
+      - HorizontalAlignment = 0
+      - Grid.ColumnSpan = 2
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
       - Margin := 0,{{$taskbarTopOffset-4}},0,{{$taskbarBottomOffset-4}}
       - RadiusX := $buttonRadius
@@ -371,16 +371,22 @@ controlStyles:
       - Canvas.ZIndex = -10
       - // The running indicator is repurposed as the pill background for running apps, which
       - // sidesteps the layout constraints on the native highlight element.
-      - // Left and right margins must stay zero for this to line up with the Labels mod.
+      - // Left and right margins must stay zero for this to work.
       - // The -4 terms are the stock offsets, so $taskbarTopOffset = 4 means "no change".
+      - // The pill spans the button because MinWidth/MaxWidth track the captured BtnW.
   - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
     styles:
-      - Opacity := {{LabelsMod-1}}
+      - Opacity = 1
+      - MinWidth = {{BtnW-6}}
+      - MaxWidth = {{BtnW-6}}
+      - HorizontalAlignment = 0
+      - Grid.ColumnSpan = 2
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
       - Margin := 0,{{$taskbarTopOffset-4}},0,{{$taskbarBottomOffset-4}}
       - // The progress bar replaces the running indicator in the tree while a task shows progress,
       - // so it has to repeat the same height and margin recipe to keep the pill footprint identical.
-      - // Left and right margins must stay zero to work along with the Labels mod.
+      - // Left and right margins must stay zero to work.
+      - // The pill spans the button because MinWidth/MaxWidth track the captured BtnW.
   - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator > Grid#LayoutRoot
     styles:
       - BorderThickness = 0
@@ -422,11 +428,8 @@ controlStyles:
       - // Second indeterminate progress fill (the trailing bar of the animation).
   - target: Border#MultiWindowElement
     styles:
-      - Visibility := {{LabelsMod-1}}
-      - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*$highlightOffset}}
-      - RenderTransform := <TranslateTransform X="4" Y="0" />
-      - // Native multi-window bar, shown only in stock mode (Visibility 0 = Visible, so LabelsMod-1
-      - // resolving to 0 shows it). In labels mode the dot below takes over instead.
+      - Visibility = 1
+      - // Native multi-window bar, collapsed (Visibility = 1); the dot on DefaultIcon replaces it.
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
       - Margin := {{$iconLabelSpacing-6}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset}}
@@ -443,16 +446,16 @@ controlStyles:
       - // Button spacing, split half per side. The -6 makes $buttonSpacing = 6 mean "stock spacing".
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
-      - Margin := {{4.4*(LabelsMod)}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 8.8,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - HorizontalAlignment = 1
       - Canvas.ZIndex = 3
       - RenderTransformOrigin = 0.5,0.5
       - RenderTransform@InactivePointerOver := <TransformGroup><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /></TransformGroup>
-      - // Button icon, nudged right to sit inside the pill and shrunk slightly on hover for an
-      - // inactive button. The leading margin is hand-tuned (8.8 in labels mode, 4.4 in stock mode).
+      - // Button icon, nudged right to sit inside the pill and shrunk slightly on hover for an inactive button.
+      - // 8.8 is a hand-tuned literal (not derived) chosen to center the icon acceptably across 100/125/150% scaling.
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
-      - Opacity := {{LabelsMod-1}}
+      - Opacity = 1
       - Stretch = 2
       - Height = 3
       - Width = 3
@@ -470,10 +473,8 @@ controlStyles:
       - StrokeThickness = 0
       - Margin = 0,0,14,0
       - Canvas.ZIndex = 4
-      - // The fallback icon slot is repurposed as a multi-window dot. Collapsed by default and shown
-      - // only in the MultiWindow and RequestingAttentionMulti states, and only in labels mode
-      - // (Opacity 0 in stock mode, where Border#MultiWindowElement above is used instead).
-      - // Trailing margin is a hand-tuned literal and does not track the spacing constants.
+      - // The fallback icon slot is repurposed as a multi-window dot. Hidden by default (Visibility = 1),
+      - // shown only in the MultiWindow and RequestingAttentionMulti states.
   - target: Taskbar.TaskbarExtensionElement
     styles:
       - Visibility = 1
@@ -488,21 +489,19 @@ controlStyles:
       - // Unconditional. There is no constant for turning it back on.
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
     styles:
-      - Opacity := {{LabelsMod-1}}
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
       - Canvas.ZIndex = 3
-      - // Overlay badge, labels mode only.
+      - // Overlay badge.
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
     styles:
-      - Opacity := {{LabelsMod-1}}
       - MinWidth := $badgeSize
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
       - Canvas.ZIndex = 3
-      - // Counter badge, matched to the overlay badge size and position, labels mode only.
+      - // Counter badge, matched to the overlay badge size and position.
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText
     styles:
       - FontSize = 8
@@ -622,10 +621,6 @@ controlStyles:
     styles:
       - FontSize := {{$sysTrayIconSize-4}}
       - // Tray glyph icon (language), sized by font size.
-  - target: SystemTray.LanguageTextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
-    styles:
-      - FontSize := {{$sysTrayIconSize-4}}
-      - // Tray glyph icon (language), sized by font size.
   - target: SystemTray.ImageIconContent > Grid#ContainerGrid > Image
     styles:
       - Width := $sysTrayIconSize
@@ -643,16 +638,15 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
     styles:
       - ActualWidth => WeatherTempWidth
-      - RenderTransform := <TranslateTransform X="0" Y="{{8*(LabelsMod-1)}}" />
+      - RenderTransform := <TranslateTransform X="0" Y="8" />
       - // Temperature text. Its measured width is captured into WeatherTempWidth and drives both the
-      - // condition text offset and the widget width below. The single-line layout is labels mode
-      - // only; in stock mode the transform resolves to zero and the stock stacking is kept.
+      - // condition text offset and the widget width below.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2]
     styles:
       - ActualWidth => WeatherCondWidth
-      - RenderTransform := <TranslateTransform X="{{(WeatherTempWidth+8)*(LabelsMod-1)}}" Y="{{-8*(LabelsMod-1)}}" />
+      - RenderTransform := <TranslateTransform X="{{(WeatherTempWidth+8)}}" Y="-8" />
       - // Condition text, pushed right of the temperature by its measured width plus an 8px gap and
-      - // pulled back onto the same line, again labels mode only.
+      - // pulled back onto the same line.
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid
     styles:
       - Width := {{WeatherCondWidth+WeatherTempWidth+52}}
@@ -661,7 +655,7 @@ controlStyles:
       - // icon and padding. The same figure is repeated on the root panel below.
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
-      - Margin := {{4*(LabelsMod-1)}},0,0,2
+      - Margin := 4,0,0,2
       - // Weather widget content.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
     styles:
@@ -708,7 +702,7 @@ controlStyles:
       - // Language switcher flyout, shadow cleared.
   - target: Grid#ContainerGrid@ > Rectangle#ShowDesktopPipe
     styles:
-      - Opacity := {{LabelsMod-1}}
+      - Opacity = 1
       - Width = 4
       - Height = 4
       - Height@PointerOver = 10
@@ -716,8 +710,8 @@ controlStyles:
       - RadiusX = 2
       - RadiusY = 2
       - Fill := $showDesktopIndicatorColor
-      - // "Show desktop" corner control, reshaped from a bar into a dot that grows on hover, and
-      - // hidden in stock mode. The bare @ attaches to the element's default visual state group.
+      - // "Show desktop" corner control, reshaped from a bar into a dot that grows on hover.
+      - // The bare @ attaches to the element's default visual state group.
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
