@@ -102,7 +102,7 @@ styleConstants:
 controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
-      - MaxWidth={{min($TaskbarFrameMaxWidth, containerGridWidth)}}
+      - 'MaxWidth={{containerGridWidth > 0 ? min($TaskbarFrameMaxWidth, containerGridWidth) : $TaskbarFrameMaxWidth}}'
       - Width=Auto
       - MinWidth:=100
       - Grid.Column=1
@@ -348,7 +348,7 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Grid.Column=1
-      - MaxWidth={{min($TaskbarFrameMaxWidth, containerGridWidth)}}
+      - 'MaxWidth={{containerGridWidth > 0 ? min($TaskbarFrameMaxWidth, containerGridWidth) : $TaskbarFrameMaxWidth}}'
       - Width=Auto
       - MinWidth:=100
   - target: Taskbar.TaskbarFrame > Grid#RootGrid

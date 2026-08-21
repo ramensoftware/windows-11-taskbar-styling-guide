@@ -95,7 +95,7 @@ controlStyles:
     styles:
       - Width=Auto
       - MinWidth:=100
-      - MaxWidth={{containerGridWidth}}
+      - 'MaxWidth={{containerGridWidth > 0 ? containerGridWidth : `Infinity`}}'
       - Margin=0
       - Background:=Transparent
       - HorizontalAlignment=Stretch
