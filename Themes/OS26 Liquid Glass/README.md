@@ -6,36 +6,35 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 
 # Previews
 
-## Dock(Clear):
+## Dock (Clear)
 ![Dock-Preview](screenshot-dock.png)
 
-## Taskbar(Clear):
+## Taskbar (Clear)
 ![Taskbar-Preview](screenshot-taskbar.png)
 
-## Dock(Dark)
+## Dock (Dark)
 ![Taskbar-Dark-Preview](screenshot-dock-dark.png)
 
-## Taskbar(Dark)
+## Taskbar (Dark)
 ![Taskbar-Dark-Preview](screenshot-taskbar-dark.png)
-
 
 # Other Previews
 
-## Volume/Brightness indicator:
+## Volume/Brightness indicator
 ![Indicator-Preview](indicator.png)
 
-## Tray:
+## Tray
 ![Tray-Preview](tray.png)
 
 ![Tray-Dark-Preview](tray-dark.png)
 
-## Context Menu:
+## Context Menu
 ![Menu-Preview](menu.png)
 
-## Thumbnail:
+## Thumbnail
 ![Thumbnail-Preview](thumbnail.png)
 
-## Windows Selector:
+## Windows Selector
 ![Selector-Preview](selector.png) 
 
 ---
@@ -563,7 +562,7 @@ controlStyles:
 ```
 </details>
 
-### Compact Version:
+### Compact Version
 <details>
 <summary>Content to import (click to expand)</summary>
 
@@ -1028,14 +1027,8 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
-themeResourceVariables:
-  - ''
-clickThroughTaskbar: 1
-xamlDiagnosticsHandling: ''
-
 ```
 </details>
-
 
 ## OS26 Liquid Glass (Clear Taskbar) Configuration
 ![Preview-taskbar-full](screenshot-clear-taskbar.png)
@@ -1085,9 +1078,6 @@ controlStyles:
       - Visibility=Visible
       - Margin=0,8,0,2
       - Padding=20,0,20,0
-  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid >
-    styles:
-      - ''
   - target: Windows.UI.Xaml.Controls.FlyoutPresenter
     styles:
       - RequestedTheme=Dark
@@ -1834,12 +1824,11 @@ controlStyles:
 ```
 </details>
 
-### Compact Version:
+### Compact Version
 <details>
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-theme: 'MacDock(Dark, Small) by WasiXGamer'
 styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.04,-0.14" EndPoint="1.22,1.10"><GradientStop Offset="0.18" Color="#4FFFFFFF"/><GradientStop Offset="0.34" Color="#661D1D1D"/><GradientStop Offset="0.63" Color="#00000000"/><GradientStop Offset="0.72" Color="#662D2D2D"/><GradientStop Offset="0.84" Color="#4FFFFFFF"/></LinearGradientBrush>
@@ -2300,11 +2289,6 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
-themeResourceVariables:
-  - ''
-clickThroughTaskbar: 1
-xamlDiagnosticsHandling: ''
-
 ```
 </details>
 
@@ -2356,9 +2340,6 @@ controlStyles:
       - Visibility=Visible
       - Margin=0,8,0,2
       - Padding=20,0,20,0
-  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid >
-    styles:
-      - ''
   - target: Windows.UI.Xaml.Controls.FlyoutPresenter
     styles:
       - RequestedTheme=Dark
