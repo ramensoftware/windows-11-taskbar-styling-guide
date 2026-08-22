@@ -66,7 +66,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```yaml
 
-theme: 'ONE UI TASKBAR(By WasiXGamer)'
+theme: 'ONE UI DOCK(By WasiXGamer)'
 styleConstants: 
   - IconBackground=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/template.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
   - IconBorder=transparent
