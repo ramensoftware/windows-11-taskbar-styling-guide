@@ -2,19 +2,20 @@
 
 Author: [WasiXGamer](https://github.com/wasixgamer)
 
-This theme attempts to make Windows 11 Taskbar look like Minecraft Hotbar.
+This theme attempts to make the Windows 11 taskbar look like the Minecraft hotbar.
 
 ![Preview](screenshot.png)
 
-# Additional Mod Requirements & Configuration:
+## Additional mod requirements and configuration
 
 > [!NOTE]
-> Do Not use [Taskbar Height & Icon Size](https://windhawk.net/mods/taskbar-icon-size) Mod with this!
-> It will Not work and force the taskbar to go against the border of the screen.
+> Do not use the [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size) mod with this theme!
+> It will not work, and it will force the taskbar against the border of the screen.
 
-# Taskbar Thumbnail Size Configurations
+## Taskbar thumbnail size configuration
 
-The Thumbnails look more appropriate with the [Taskbar Thumbnail Size](https://windhawk.net/mods/taskbar-thumbnail-size) Mod. The following Configuration is Preferable to use:
+The thumbnails look more appropriate with the [Taskbar Thumbnail Size](https://windhawk.net/mods/taskbar-thumbnail-size) mod. The following configuration is preferable:
+
 ```yaml
 size: 160
 useAbsoluteSize: 0
@@ -24,8 +25,10 @@ maxWidth: 0
 maxHeight: 0
 preserveAspectRatio: 0
 ```
-## Credits:
-Give Credits If distributing, or Forking the Style. 
+
+## Credits
+
+Give credit if distributing or forking the style.
 
 ## Theme selection
 
