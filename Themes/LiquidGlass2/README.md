@@ -207,7 +207,7 @@ controlStyles:
       - ActualWidth=>containerGridWidth
       - ActualHeight=>TaskHeight
       - HorizontalAlignment=Stretch
-  - target: Taskbar.TaskbarFrame#TaskbarFrame
+  - target: Taskbar.TaskbarFrame
     styles:
       - Width=Auto
       - HorizontalAlignment=Center

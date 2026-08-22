@@ -65,10 +65,10 @@ controlStyles:
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=transparent
-  - target: Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Background:=transparent 
-  - target: Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Margin=0,9,0,9
       - Fill:=<WindhawkBlur BlurAmount="4" />
@@ -407,7 +407,7 @@ controlStyles:
       - Width=55
       - Height=55
       - Background:=$IconBackground     
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > TextBlock#LabelControl
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > TextBlock#LabelControl
     styles:
       - Visibility=1
 ```
