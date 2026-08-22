@@ -285,7 +285,6 @@ styleConstants:
   - buttonRadius = 7
   - highlightRadius = 5
   - highlightOffset = 4
-  - buttonMinWidth = 38
   - buttonSpacing = 6
   - sysTraySpacing = 6
   - iconLabelSpacing = 6
@@ -322,7 +321,7 @@ controlStyles:
       - // indicator and the progress bar below.
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
-      - MinWidth := $buttonMinWidth
+      - MinWidth := {{3*ImageIconWidth}}
       - // Taskbar button minimum width (mainly used to set the minumum width of pinned buttons).
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
@@ -446,13 +445,14 @@ controlStyles:
       - // Button spacing, split half per side. The -6 makes $buttonSpacing = 6 mean "stock spacing".
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
-      - Margin := 8.8,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - ActualWidth => ImageIconWidth
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - HorizontalAlignment = 1
       - Canvas.ZIndex = 3
       - RenderTransformOrigin = 0.5,0.5
-      - RenderTransform@InactivePointerOver := <TransformGroup><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /></TransformGroup>
+      - RenderTransform := <TranslateTransform X="{{ImageIconWidth/2-1}}" Y="0" />
+      - RenderTransform@InactivePointerOver := <TransformGroup><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /><TranslateTransform X="{{ImageIconWidth/2-1}}" Y="0" /></TransformGroup>
       - // Button icon, nudged right to sit inside the pill and shrunk slightly on hover for an inactive button.
-      - // 8.8 is a hand-tuned literal (not derived) chosen to center the icon acceptably across 100/125/150% scaling.
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
       - Opacity = 1
@@ -671,7 +671,7 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Width := {{WeatherCondWidth + WeatherTempWidth + WeatherIconWidth + 36}}
-      - MinWidth = 48
+      - MinWidth = 52
       - Margin := {{$taskbarLeftOffset}},{{$taskbarTopOffset}},56,{{$taskbarBottomOffset}}
       - Padding = 0
       - CornerRadius := {{$buttonRadius*$taskbarSidesRounded}},{{$buttonRadius}},{{$buttonRadius}},{{$buttonRadius*$taskbarSidesRounded}}
@@ -692,14 +692,14 @@ controlStyles:
       - // Weather widget text grid (when overflow).
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[2]
     styles:
-      - Padding = 0,8,0,0
+      - Padding = 4
       - HorizontalAlignment = 0
       - RenderTransformOrigin = 0.5,0.5
-      - RenderTransform := <TransformGroup><ScaleTransform ScaleX = "0.75" ScaleY = "0.75" /><TranslateTransform X="16" Y="0" /></TransformGroup>
+      - RenderTransform := <TransformGroup><ScaleTransform ScaleX = "0.75" ScaleY = "0.75" /><TranslateTransform X="11" Y="0" /></TransformGroup>
       - // Weather widget icon grid (when overflow), scaled down and repositioned.
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid
     styles:
-      - //Background = Transparent
+      - Background = Transparent
       - // Weather widget temperature panel, card background cleared (when overflow). Currently Commented out.
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
     styles:
@@ -755,11 +755,11 @@ controlStyles:
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - MinWidth = 28
-      - // Buttons inside the overflow flyout, narrower than $buttonMinWidth (a literal, not derived).
+      - // Buttons inside the overflow flyout (a literal, not derived).
   - target: ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
-      - Margin = 0
-      - // Flyout button icons. The taskbar leading offset is cancelled here, since there is no label
+      - RenderTransform := <TranslateTransform X="0" Y="0" />
+      - // Flyout button icons. The taskbar translate is cancelled here.
       - // to leave room for.
   - target: ScrollViewer > ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
