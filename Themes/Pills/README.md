@@ -290,7 +290,7 @@ styleConstants:
   - iconLabelSpacing = 6
   - leftRightPadding = 8
   - badgeSize = 12
-  - badgeNudge = 4,4,0,0
+  - badgeNudge = 12,4,0,0
   - sysTrayIconSize = 16
   - taskbarSidesRounded = 1
   - buttonFill = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
