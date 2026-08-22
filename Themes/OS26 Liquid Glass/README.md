@@ -170,10 +170,13 @@ controlStyles:
       - Margin=0
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
-      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - Background=Transparent
       - BorderThickness=2
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - CornerRadius=50
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20
@@ -640,10 +643,13 @@ controlStyles:
       - Margin=0
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
-      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - Background=Transparent
       - BorderThickness=2
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - CornerRadius=50
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20
@@ -1102,10 +1108,13 @@ controlStyles:
       - Margin=0
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
-      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - Background=Transparent
       - BorderThickness=2
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - CornerRadius=50
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20
@@ -1436,10 +1445,13 @@ controlStyles:
       - Margin=0
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
-      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - Background=Transparent
       - BorderThickness=2
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - CornerRadius=50
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20
@@ -1906,10 +1918,13 @@ controlStyles:
       - Margin=0
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
-      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - Background=Transparent
       - BorderThickness=2
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - CornerRadius=50
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20
@@ -2368,10 +2383,13 @@ controlStyles:
       - Margin=0
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
-      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - Background=Transparent
       - BorderThickness=2
       - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
       - CornerRadius=50
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20

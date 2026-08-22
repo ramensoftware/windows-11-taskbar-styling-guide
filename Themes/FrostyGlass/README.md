@@ -224,12 +224,6 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - Background:=$Background
       - CornerRadius:=$CornerRadius
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Border
-    styles:
-      - BorderThickness=$BorderThickness
-      - BorderBrush:=$BorderBrush
-      - Background:=$Background
-      - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
     styles:
       - //RenderTransform:=<TranslateTransform X="0" Y="60" />
@@ -377,10 +371,13 @@ controlStyles:
       - Visibility=Collapsed
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
-      - Background:=$Background
+      - Background=Transparent
       - BorderThickness:=$BorderThickness
       - BorderBrush:=$BorderBrush
       - CornerRadius:=$CornerRadius
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$Background
   - target: Taskbar.TaskbarFrame
     styles:
       - Width=Auto
