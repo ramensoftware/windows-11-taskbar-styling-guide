@@ -6,12 +6,11 @@ This theme attempts to make Windows 11 Taskbar look like Minecraft Hotbar.
 
 ![Preview](screenshot.png)
 
-
 # Additional Mod Requirements & Configuration:
 
 > [!NOTE]
-> ## Do Not use [Taskbar Height & Icon Size](https://windhawk.net/mods/taskbar-icon-size) Mod with this!
-> ## It will Not work and force the taskbar to go against the border of the screen.
+> Do Not use [Taskbar Height & Icon Size](https://windhawk.net/mods/taskbar-icon-size) Mod with this!
+> It will Not work and force the taskbar to go against the border of the screen.
 
 # Taskbar Thumbnail Size Configurations
 
@@ -27,7 +26,6 @@ preserveAspectRatio: 0
 ```
 ## Credits:
 Give Credits If distributing, or Forking the Style. 
-
 
 ## Theme selection
 
@@ -50,7 +48,6 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-theme: 'Minecraft Hotbar(By WasiXGamer)'
 styleConstants:
   - IconBackground= <ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Minecraft%20Hotbar/Assets/hotbar.png" />
   - ActiveBackground= <ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Minecraft%20Hotbar/Assets/hotbaractive.png" />
@@ -410,12 +407,5 @@ controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > TextBlock#LabelControl
     styles:
       - Visibility=1
-themeResourceVariables:
-  - ''
-clickThroughTaskbar: false
-xamlDiagnosticsHandling: ''
-
 ```
 </details>
-
-
