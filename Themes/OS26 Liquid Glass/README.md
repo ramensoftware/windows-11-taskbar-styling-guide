@@ -2,50 +2,51 @@
 
 Author: [WasiXGamer](https://github.com/wasixgamer)
 
-This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass" dock or taskbar. It features a glassy dock with liquid glass backgrounds for apps. It also tweaks the volume and brightness indicators, tray icons, application switcher, context menu, thumbnails, and snap layout for a cleaner look.
+This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass" dock or taskbar. It features a glassy dock with Liquid Glass backgrounds for apps. It also tweaks the volume and brightness indicators, tray icons, application switcher, context menu, thumbnails, and snap layout for a cleaner look.
 
-# Previews
+## Previews
 
-## Dock (Clear)
+### Dock (Clear)
 ![Dock-Preview](screenshot-dock.png)
 
-## Taskbar (Clear)
+### Taskbar (Clear)
 ![Taskbar-Preview](screenshot-taskbar.png)
 
-## Dock (Dark)
-![Taskbar-Dark-Preview](screenshot-dock-dark.png)
+### Dock (Dark)
+![Dock-Dark-Preview](screenshot-dock-dark.png)
 
-## Taskbar (Dark)
+### Taskbar (Dark)
 ![Taskbar-Dark-Preview](screenshot-taskbar-dark.png)
 
-# Other Previews
+## Other previews
 
-## Volume/Brightness indicator
+### Volume/brightness indicator
 ![Indicator-Preview](indicator.png)
 
-## Tray
+### Tray
 ![Tray-Preview](tray.png)
 
 ![Tray-Dark-Preview](tray-dark.png)
 
-## Context Menu
+### Context menu
 ![Menu-Preview](menu.png)
 
-## Thumbnail
+### Thumbnail
 ![Thumbnail-Preview](thumbnail.png)
 
-## Windows Selector
-![Selector-Preview](selector.png) 
+### Application switcher
+![Selector-Preview](selector.png)
 
 ---
 
 > [!NOTE]
-> ## Do Not use [Taskbar Height & Icon Size](https://windhawk.net/mods/taskbar-icon-size) Mod with this!
-> ## It will Not work and force the taskbar to go against the border of the screen.
+> Do not use the [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size) mod with this theme!
+> It will not work, and it will force the taskbar against the border of the screen.
 
-# Taskbar Thumbnail Size Configurations
+## Taskbar thumbnail size configuration
 
-The Thumbnails look more appropriate with the [Taskbar Thumbnail Size](https://windhawk.net/mods/taskbar-thumbnail-size) Mod. The following Configuration is Preferable to use:
+The thumbnails look more appropriate with the [Taskbar Thumbnail Size](https://windhawk.net/mods/taskbar-thumbnail-size) mod. The following configuration is preferable:
+
 ```yaml
 size: 180
 useAbsoluteSize: 0
@@ -56,9 +57,10 @@ maxHeight: 0
 preserveAspectRatio: 0
 ```
 
-# Taskbar Dock Animation Configuration
+## Taskbar dock animation configuration
 
-The Mod can be made look better and more like MacOS by using [Taskbar Dock Animation](https://windhawk.net/mods/taskbar-dock-animation) Mod! The Following config is Recommended to be used:
+The theme can be made to look better and more like macOS by using the [Taskbar Dock Animation](https://windhawk.net/mods/taskbar-dock-animation) mod. The following configuration is recommended:
+
 ```yaml
 AnimationType: 0
 MaxScale: 130
@@ -73,7 +75,8 @@ ExcludeSystemButtonsMode: 0
 LerpSpeed: 60
 DisableBounce: 1
 ```
-## Preview:
+
+### Preview
 ![Animation-Preview](dock-animation-preview.gif)
 
 ## Theme selection
@@ -93,9 +96,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
 
-# Clear Variants:
+## Clear variants
 
-## OS26 Liquid Glass (Clear, MacDock) Configuration
+### OS26 Liquid Glass (Clear, MacDock) configuration
 ![preview-dock](screenshot-dock-1.png)
 
 <details>
@@ -563,7 +566,8 @@ controlStyles:
 ```
 </details>
 
-### Compact Version
+#### Compact version
+
 <details>
 <summary>Content to import (click to expand)</summary>
 
@@ -1032,8 +1036,9 @@ controlStyles:
 ```
 </details>
 
-## OS26 Liquid Glass (Clear Taskbar) Configuration
+### OS26 Liquid Glass (Clear Taskbar) configuration
 ![Preview-taskbar-full](screenshot-clear-taskbar.png)
+
 <details>
 <summary>Content to import (click to expand)</summary>
 
@@ -1357,9 +1362,9 @@ controlStyles:
 ```
 </details>
 
-# Dark Variants:
+## Dark variants
 
-## OS26 Liquid Glass (Dark MacDock) Configuration
+### OS26 Liquid Glass (Dark MacDock) configuration
 ![preview-dock-dark](screenshot-dock-dark-1.png)
 
 <details>
@@ -1827,7 +1832,8 @@ controlStyles:
 ```
 </details>
 
-### Compact Version
+#### Compact version
+
 <details>
 <summary>Content to import (click to expand)</summary>
 
@@ -2296,8 +2302,9 @@ controlStyles:
 ```
 </details>
 
-## OS26 Liquid Glass (Dark Taskbar) Configuration
+### OS26 Liquid Glass (Dark Taskbar) configuration
 ![Preview-dark-taskbar-full](screenshot-dark-taskbar.png)
+
 <details>
 <summary>Content to import (click to expand)</summary>
 
