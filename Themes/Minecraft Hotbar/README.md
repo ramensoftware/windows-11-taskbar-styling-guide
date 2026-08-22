@@ -92,6 +92,7 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Width=Auto
+      - 'MaxWidth={{containerGridWidth > 0 ? containerGridWidth : `Infinity`}}'
       - Height=70
 
       - MinWidth:=100
