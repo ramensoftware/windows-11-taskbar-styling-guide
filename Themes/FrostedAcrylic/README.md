@@ -13,7 +13,7 @@ This theme has been tested and verified under the following display configuratio
 - 1366×768 @ 125%
 - 1680×1050 @ 125%
 
-## Taskbar Height & Icon Size (recommended pairing)
+## Taskbar height and icon size (recommended pairing)
 Use these settings with your height/icon size mod to reproduce the example visuals exactly:
 ```yaml
 TaskbarHeight: 60 
