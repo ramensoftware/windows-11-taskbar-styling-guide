@@ -273,13 +273,13 @@ controlStyles:
       - BorderThickness=1
       - // BorderBrush:=$ThemeOutBorder
       - // Taskbar System Tray (Right Region) Grid > Background
-  - target: Grid#ModalRootGrid > Border#BackgroundElement
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=Transparent
       - CornerRadius=$OuterRadius
       - BorderBrush:=$ThemeOutBorder
       - // Alt + Tab View Outer Background
-  - target: Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$ThemeBlur
       - // Alt + Tab View Inner Background
