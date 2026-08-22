@@ -7,7 +7,7 @@ A refined, translucent "Dock" experience for Windows 11 via Windhawk.
 [![Windhawk](https://img.shields.io/badge/Requires-Windhawk-blue?style=flat-square)](https://windhawk.net/)
 [![Style](https://img.shields.io/badge/Style-Frosty_Glass-lightgrey?style=flat-square)](#)
 
-This configuration provides a modern **Frosty Glass** aesthetic for your Windows 11 taskbar. It utilizes custom translucent `AcrylicBrush` effects and manual layout adjustments to create a soft, blurred interface that feels perfectly integrated with the desktop environment.
+This configuration provides a modern **Frosty Glass** aesthetic for your Windows 11 taskbar. It utilizes custom translucent `WindhawkBlur` effects and manual layout adjustments to create a soft, blurred interface that feels perfectly integrated with the desktop environment.
 
 ## 📋 Prerequisites
 
@@ -64,34 +64,43 @@ https://github.com/user-attachments/assets/4e61b37f-efa9-460c-858c-0d7f0b29154d
 
 **Theme Gallery:**
 
-<img width="2876" height="1799" alt="Screenshot 2026-04-30 150608" src="https://github.com/user-attachments/assets/6db309dc-db2a-44a9-9343-6adcfe3cc2f0" />
-<img width="1043" height="651" alt="Screenshot 2026-04-30 150622" src="https://github.com/user-attachments/assets/05a923bb-b7a9-4b3f-8739-b7c81d7dfbbf" /><img width="553" height="600" alt="image" src="https://github.com/user-attachments/assets/9e23aeae-22e4-4736-99cd-44c280004d8e" />
-<img width="873" height="307" alt="image" src="https://github.com/user-attachments/assets/b0d3ff24-55cb-4cd0-b151-91cdf72bc46c" />
-<img width="1066" height="553" alt="image" src="https://github.com/user-attachments/assets/d85aa313-ea82-4bf8-849b-cf001370b06d" />
+![Desktop with the Frosty Glass dock](screenshot-desktop.png)
+![Input switcher flyout](input-switcher.png) ![Snap layouts flyout](snap-layouts.png)
+![Volume flyout above the dock](volume-flyout.png)
+![Taskbar thumbnail preview](thumbnail-preview.png)
 
 ## 🔗 Related Projects
 
 Complete the look across your entire UI! Check out my other Frosty Glass styling repositories:
-* [❄️ Frosty Glass Start Menu Styler](https://github.com/guidolamanna/windows-11-start-menu-styling-guide/blob/main/Themes/FrostyGlass/README.md) to apply this exact same aesthetic to your Start Menu and Lock Screen!
+* [❄️ Frosty Glass Start Menu Styler](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/blob/main/Themes/FrostyGlass/README.md) to apply this exact same aesthetic to your Start Menu and Lock Screen!
 * [❄️ Frosty Glass Notification Center Styler](https://github.com/ramensoftware/windows-11-notification-center-styling-guide/blob/main/Themes/FrostyGlass/README.md) to theme your Notifications, Calendar, and Control Center flyouts!
 
 ## 🙌 Credits & Inspiration
 A huge thank you to [Ramen Software](https://github.com/ramensoftware) for creating Windhawk. This configuration was heavily inspired by the official [Windows 11 Taskbar Styling Guide](https://github.com/ramensoftware/windows-11-taskbar-styling-guide) and the Windhawk modding community.
 
-## 📦 Manual Installation
+## Theme selection
 
-The theme styles can be imported manually by following these steps:
+The theme is integrated into the mod and can be selected directly from the mod's
+settings:
 
-1. Open the **Windows 11 Taskbar Styler** (or relevant mod) in Windhawk.
-2. Go to the **Settings** tab and select **Textual mode**.
-3. Copy the content below and click **Save settings**.
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab.
+* Select the theme and save the settings.
+
+## Manual installation
+
+The theme styles can also be imported manually. To do that, follow these steps:
+
+* Open the Windows 11 Taskbar Styler mod in Windhawk.
+* Go to the "Settings" tab and select "Textual mode".
+* Copy the content below to the text box and click "Save settings".
 
 <details>
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
 styleConstants:
-  - Background=<AcrylicBrush TintColor="#1000000F"/>
+  - Background=<WindhawkBlur BlurAmount="20" TintColor="{ThemeResource SystemChromeDarkColor}" TintOpacity="0.15" />
   - BorderBrush2=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="0.0" /><GradientStop Color="{ThemeResource SystemChromeLowColor}" Offset="0.25" /><GradientStop Color="{ThemeResource SystemChromeHighColor}" Offset="1" /></LinearGradientBrush>
   - BorderThickness=1
   - CornerRadius=10
@@ -215,12 +224,6 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - Background:=$Background
       - CornerRadius:=$CornerRadius
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Border
-    styles:
-      - BorderThickness=$BorderThickness
-      - BorderBrush:=$BorderBrush
-      - Background:=$Background
-      - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
     styles:
       - //RenderTransform:=<TranslateTransform X="0" Y="60" />
@@ -366,12 +369,15 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundFill
     styles:
       - Visibility=Collapsed
-  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
-      - Background:=$Background
+      - Background=Transparent
       - BorderThickness:=$BorderThickness
       - BorderBrush:=$BorderBrush
       - CornerRadius:=$CornerRadius
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+    styles:
+      - Background:=$Background
   - target: Taskbar.TaskbarFrame
     styles:
       - Width=Auto

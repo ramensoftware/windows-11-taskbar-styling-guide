@@ -15,7 +15,7 @@
 > [!NOTE]
 > This theme is made for dark mode. As such it may not display correctly if used on light themes.
 > This was made on screen resolution of 1920x1440 pixels & 15'6 screen size.
-> Windows OS version used for the mod - 26200.8655
+> "Widgets" button is only available if Click-through-Taskbar feature is turned OFF. This theme will hide the "Widgets" button when Click-through-Taskbar is turned ON, to ensure the theme works smoothly.
 
 ## Taskbar Clock Customization (Optional)
 
@@ -149,10 +149,9 @@ DisableBounce: 0
 ```
 </details>
 
-
 ## Theme selection
 
-The theme is integrated into the mod and can simply be selected from the mod's
+The theme is integrated into the mod and can be selected directly from the mod's
 settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
@@ -172,9 +171,39 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```yaml
 controlStyles:
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+    styles:
+      - Margin=0
+      - BorderThickness=0
+  - target: Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid
+    styles:
+      - Margin=12,0,0,0
+      - HorizontalAlignment=Left
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
+    styles:
+      - Margin=0
+      - Visibility={{clickThroughTaskbar}}
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Margin=-400,0,0,0
+      - Height={{TaskHeight - 8}}
+      - MinWidth=80
+      - MaxWidth=200
+      - Width=Auto
+      - CornerRadius=30
+      - Padding=0
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#39101010" TintSaturation="1.5"/>
+      - CornerRadius={{(TaskHeight/4)*1.8}}
+      - BorderThickness=1.2,1,1.2,1
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.1" /><GradientStop Color="#60404040" Offset="0.25" /><GradientStop Color="#70202020" Offset="0.5" /><GradientStop Color="#90404040" Offset="0.75" /><GradientStop Color="#90404040" Offset="0.9" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
+  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle
+    styles:
+      - Width=4.5
+      - Height=4.2
+      - Fill@Inactive=#50ffffff
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
-      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/></ColumnDefinitionCollection>
       - ActualWidth=>containerGridWidth
       - ActualHeight=>TaskHeight
       - HorizontalAlignment=Stretch
@@ -187,21 +216,20 @@ controlStyles:
       - Grid.Column=1
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
-      - Padding=-1,0,45,0
+      - Padding=41,0,41,0
       - Margin=0,0,0,4
-      - CornerRadius=Auto
-      - Background:=Red
+      - Background:=Transparent
       - HorizontalAlignment=Center
       - Width=Auto
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
-      - Fill:=<WindhawkBlur BlurAmount="3" TintColor="#14090909"/>
+      - Fill:=<WindhawkBlur BlurAmount="3" TintColor="#14090909" TintSaturation="1.2"/>
       - RadiusX={{(TaskHeight/4.1)*2}}
       - RadiusY={{(TaskHeight/4.1)*2}}
       - StrokeThickness=1
       - Canvas.ZIndex=1
       - Margin=-40,0,-40,0
-      - Stroke:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#70707070" Offset="0.1" /><GradientStop Color="#70505050" Offset="0.25" /><GradientStop Color="#90404040" Offset="0.5" /><GradientStop Color="#70505050" Offset="0.75" /><GradientStop Color="#70707070" Offset="0.9" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
+      - Stroke:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69E0E0E0" Offset="0.0" /><GradientStop Color="#70707070" Offset="0.1" /><GradientStop Color="#70505050" Offset="0.25" /><GradientStop Color="#70292929" Offset="0.5" /><GradientStop Color="#70505050" Offset="0.75" /><GradientStop Color="#70707070" Offset="0.9" /><GradientStop Color="#65D0D0D0" Offset="1" /></LinearGradientBrush>
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
     styles:
       - Visibility=Visible
@@ -217,7 +245,7 @@ controlStyles:
       - Fill:=<WindhawkBlur BlurAmount="0" TintColor="#00101010"/>
   - target: Grid#SystemTrayFrameGrid
     styles:
-      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#39101010"/>
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#39101010" TintSaturation="1.5"/>
       - CornerRadius={{(TaskHeight/4)*1.8}}
       - BorderThickness=1.2,1,1.2,1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.1" /><GradientStop Color="#60404040" Offset="0.25" /><GradientStop Color="#70202020" Offset="0.5" /><GradientStop Color="#90404040" Offset="0.75" /><GradientStop Color="#90404040" Offset="0.9" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
@@ -247,7 +275,7 @@ controlStyles:
       - // Win+X flyout
   - target: Grid#ConfirmatorMainGrid
     styles:
-      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#1C101010"/>
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#1C101010" TintSaturation="1.2"/>
       - CornerRadius=34
       - ActualWidth=>FlyWid
       - ActualHeight=>FlyHyt
@@ -343,21 +371,27 @@ controlStyles:
       - CornerRadius=34
   - target: ContentPresenter#HoverFlyoutContent
     styles:
-      - CornerRadius=40
+      - CornerRadius=30
       - BorderThickness=0
-      - Padding=4,0,4,4
-      - Margin:=4,4,4,4.5
+      - Padding=5,2,5,7
+      - Margin:=1
       - Background:=Transparent
-  - target: Grid#ModalRootGrid > Border#BackgroundElement
+  - target: Windows.UI.Xaml.Controls.TextBlock#DisplayName
+    styles:
+      - ''
+  - target: Windows.UI.Xaml.Controls.Grid#Root > Windows.UI.Xaml.Controls.Image#Iconlmage
+    styles:
+      - ''
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - CornerRadius={{ max(68, min(90, (AltTabHeight / 5) * 1.75)) }}
       - ActualHeight=>AltTabHeight
       - BorderThickness=1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69D3D3D3" Offset="0.0" /><GradientStop Color="#5F303030" Offset="0.1" /><GradientStop Color="#70303030" Offset="0.5" /><GradientStop Color="#5F303030" Offset="0.9" /><GradientStop Color="#69D3D3D3" Offset="1" /></LinearGradientBrush>
       - Background=Transparent
-  - target: Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
-      - Background:=<WindhawkBlur BlurAmount="6" TintColor="#2C101010"/>
+      - Background:=<WindhawkBlur BlurAmount="6" TintColor="#20000000" TintSaturation="1.2"/>
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid > Border
     styles:
       - CornerRadius=25,25,12,12
@@ -598,21 +632,6 @@ controlStyles:
     styles:
       - Background@PointerOver:=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark2}" Opacity="1" />
       - Background@Pressed:=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark2}" Opacity="1" />
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
-    styles:
-      - Background:=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.8" FallbackColor="{ThemeResource SystemChromeLowColor}" />
-      - Margin=-4
-      - BorderBrush:=<SolidColorBrush Color="{ThemeResource SurfaceStrokeColorDefault}" />
-      - BorderThickness=1
-      - CornerRadius=5
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
-    styles:
-      - Margin=273,0,0,2
-      - Width=26
-  - target: Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid
-    styles:
-      - Margin=10,0,0,0
-      - HorizontalAlignment=Left
   - target: SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Visibility=1

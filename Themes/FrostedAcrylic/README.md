@@ -13,7 +13,7 @@ This theme has been tested and verified under the following display configuratio
 - 1366×768 @ 125%
 - 1680×1050 @ 125%
 
-## Taskbar Height & Icon Size (recommended pairing)
+## Taskbar height and icon size (recommended pairing)
 Use these settings with your height/icon size mod to reproduce the example visuals exactly:
 ```yaml
 TaskbarHeight: 60 
@@ -50,7 +50,7 @@ Pull requests are welcome. If you encounter issues on a specific Windows/Explore
 * a screenshot of the taskbar showing the problem
 
 Contributions that improve compatibility across scaling/DPI, add presets, or include additional screenshots are appreciated.
-<!--
+
 ## Theme selection
 
 The theme is integrated into the mod and can be selected directly from the mod's
@@ -63,11 +63,6 @@ settings:
 ## Manual installation
 
 The theme styles can also be imported manually. To do that, follow these steps:
--->
-
-## Manual installation
-
-To import the theme manually, follow these steps:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab and select "Textual mode".
@@ -100,7 +95,7 @@ controlStyles:
     styles:
       - Width=Auto
       - MinWidth:=100
-      - MaxWidth={{containerGridWidth}}
+      - 'MaxWidth={{containerGridWidth > 0 ? containerGridWidth : `Infinity`}}'
       - Margin=0
       - Background:=Transparent
       - HorizontalAlignment=Stretch
@@ -292,13 +287,13 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$CornerRadius
-  - target: Grid#ModalRootGrid > Border#BackgroundElement
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=Transparent
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$CornerRadius
-  - target: Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$Background
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher
