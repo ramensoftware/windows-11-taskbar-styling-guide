@@ -36,6 +36,9 @@ ExcludeSystemButtonsMode: 0
 LerpSpeed: 60
 DisableBounce: 1
 ```
+## Credits and Distribution
+Includes One UI icons. Original icon assets and intellectual property belong to Samsung.
+You can distribute the theme, or its fork by giving credits to the Author.
 
 ## Theme selection
 
