@@ -190,14 +190,14 @@ controlStyles:
     styles:
       - Fill:= <AcrylicBrush TintColor="{ThemeResource SystemAccentColor}" TintOpacity="1" TintLuminosityOpacity="1" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
       - //Target= Volume & Brightness Popups > Fill Track
-  - target: Grid#ModalRootGrid > Border#BackgroundElement
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=Transparent
       - BorderBrush=Transparent
       - CornerRadius=20
       - Shadow:=
       - //Target= Alt+Tab Window Outer Background
-  - target: Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$DarkAccent
       - //Target= Alt+Tab Window Inner Background

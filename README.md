@@ -150,6 +150,8 @@ Taskbar Styler mod. The following themes are available:
 | [FrostyGlass](Themes/FrostyGlass/README.md) | [![FrostyGlass](Themes/FrostyGlass/screenshot.png)](Themes/FrostyGlass/screenshot.png)
 | [FrostedAcrylic](Themes/FrostedAcrylic/README.md) | [![FrostedAcrylic](Themes/FrostedAcrylic/screenshot.png)](Themes/FrostedAcrylic/screenshot.png)
 | [Pills](Themes/Pills/README.md) | [![Pills](Themes/Pills/screenshot.png)](Themes/Pills/screenshot.png)
+| [Blob](Themes/Blob/README.md) | [![Blob](Themes/Blob/screenshot.png)](Themes/Blob/screenshot.png)
+| [Minecraft Hotbar](Themes/Minecraft%20Hotbar/README.md) | [![Minecraft Hotbar](Themes/Minecraft%20Hotbar/screenshot.png)](Themes/Minecraft%20Hotbar/screenshot.png)
 
 ## General
 
@@ -550,7 +552,7 @@ Visibility=Collapsed
 
 Target:
 ```
-Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
 ```
 Style:
 ```
@@ -559,7 +561,7 @@ Background=Transparent
 
 Target:
 ```
-Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
 ```
 Style:
 ```

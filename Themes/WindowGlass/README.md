@@ -102,7 +102,7 @@ styleConstants:
 controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
-      - MaxWidth={{min($TaskbarFrameMaxWidth, containerGridWidth)}}
+      - 'MaxWidth={{containerGridWidth > 0 ? min($TaskbarFrameMaxWidth, containerGridWidth) : $TaskbarFrameMaxWidth}}'
       - Width=Auto
       - MinWidth:=100
       - Grid.Column=1
@@ -219,13 +219,13 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Button
     styles:
       - BorderThickness=$BorderThickness
-  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - BorderThickness=$BorderThickness
       - BorderBrush:=$BorderBrush
       - Background=Transparent
       - CornerRadius=$CornerRadius
-  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$Background
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
@@ -348,7 +348,7 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Grid.Column=1
-      - MaxWidth={{min($TaskbarFrameMaxWidth, containerGridWidth)}}
+      - 'MaxWidth={{containerGridWidth > 0 ? min($TaskbarFrameMaxWidth, containerGridWidth) : $TaskbarFrameMaxWidth}}'
       - Width=Auto
       - MinWidth:=100
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
@@ -452,13 +452,13 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Button
     styles:
       - BorderThickness=$BorderThickness
-  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - BorderThickness=$BorderThickness
       - BorderBrush:=$BorderBrush
       - Background=Transparent
       - CornerRadius=$CornerRadius
-  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$Background
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
@@ -694,13 +694,13 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Button
     styles:
       - BorderThickness=$BorderThickness
-  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - BorderThickness=$BorderThickness
       - BorderBrush:=$BorderBrush
       - Background=Transparent
       - CornerRadius=$CornerRadius
-  - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$Background
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
