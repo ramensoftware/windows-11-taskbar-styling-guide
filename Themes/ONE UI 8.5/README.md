@@ -69,6 +69,37 @@ styleConstants:
   - IconBorder=transparent
 controlStyles:
 # OneUI icon pack
+  # --- WINDOWS CAMERA ---
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+    styles:
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/windowscamera.png
+      - Height=40
+      - Width=40
+      - Margin=0,0,0,0
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+    styles:
+      - Visibility=Collapsed
+  # --- COMMAND PROMPT ---
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+    styles:
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/cmd.png
+      - Height=40
+      - Width=40
+      - Margin=0,0,0,0
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+    styles:
+      - Visibility=Collapsed
+
+  # --- WINDOWS POWERSHELL ---
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+    styles:
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/powershell.png
+      - Height=40
+      - Width=40
+      - Margin=0,0,0,0
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+    styles:
+      - Visibility=Collapsed
   # --- On Screen keyboard ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
@@ -772,6 +803,34 @@ styleConstants:
   - IconBorder=transparent
 controlStyles:
 # OneUI icon pack
+  # --- WINDOWS CAMERA ---
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+    styles:
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/windowscamera.png
+      - Height=40
+      - Width=40
+      - Margin=0,0,0,0
+  # --- COMMAND PROMPT ---
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+    styles:
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/cmd.png
+      - Height=40
+      - Width=40
+      - Margin=0,0,0,0
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+    styles:
+      - Visibility=Collapsed
+
+  # --- WINDOWS POWERSHELL ---
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+    styles:
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/powershell.png
+      - Height=40
+      - Width=40
+      - Margin=0,0,0,0
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+    styles:
+      - Visibility=Collapsed
   # --- On Screen keyboard ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
