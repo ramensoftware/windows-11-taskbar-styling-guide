@@ -25,6 +25,8 @@ maxWidth: 0
 maxHeight: 0
 preserveAspectRatio: 0
 ```
+## Credits:
+Give Credits If distributing, or Forking the Style. 
 
 
 ## Theme selection
@@ -44,16 +46,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
 
-# Clear Variants:
-
-## OS26 Liquid Glass (Clear, MacDock) Configuration
-![preview-dock](screenshot-dock-1.png)
-
 <details>
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-
+theme:'Minecraft Hotbar(By WasiXGamer)'
 styleConstants:
   - IconBackground= <ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Minecraft%20Hotbar/Assets/hotbar.png" />
   - ActiveBackground= <ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Minecraft%20Hotbar/Assets/hotbaractive.png" />
