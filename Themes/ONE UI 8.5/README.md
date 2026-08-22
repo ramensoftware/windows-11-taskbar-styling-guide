@@ -817,13 +817,13 @@ styleConstants:
 controlStyles:
 # OneUI icon pack
   # --- XBOX APP ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/xbox.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
   # --- WINDOWS CAMERA ---
