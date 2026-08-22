@@ -151,6 +151,7 @@ Taskbar Styler mod. The following themes are available:
 | [FrostedAcrylic](Themes/FrostedAcrylic/README.md) | [![FrostedAcrylic](Themes/FrostedAcrylic/screenshot.png)](Themes/FrostedAcrylic/screenshot.png)
 | [Pills](Themes/Pills/README.md) | [![Pills](Themes/Pills/screenshot.png)](Themes/Pills/screenshot.png)
 | [Blob](Themes/Blob/README.md) | [![Blob](Themes/Blob/screenshot.png)](Themes/Blob/screenshot.png)
+| [Minecraft Hotbar](Themes/Minecraft%20Hotbar/README.md) | [![Minecraft Hotbar](Themes/Minecraft%20Hotbar/screenshot.png)](Themes/Minecraft%20Hotbar/screenshot.png)
 
 ## General
 
