@@ -471,7 +471,7 @@ controlStyles:
       - RadiusX = 2
       - RadiusY = 2
       - StrokeThickness = 0
-      - Margin = 0,0,14,0
+      - Margin = 0,0,12,0
       - Canvas.ZIndex = 4
       - // The fallback icon slot is repurposed as a multi-window dot. Hidden by default (Visibility = 1),
       - // shown only in the MultiWindow and RequestingAttentionMulti states.
