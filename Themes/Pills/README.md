@@ -319,10 +319,6 @@ controlStyles:
       - Height => TaskbarHeight
       - // Taskbar frame. Capture only. TaskbarHeight feeds the height math for the pill, the running
       - // indicator and the progress bar below.
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
-    styles:
-      - MinWidth := {{3*ImageIconWidth}}
-      - // Taskbar button minimum width (mainly used to set the minumum width of pinned buttons).
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)-2*($highlightOffset)}}
@@ -453,6 +449,10 @@ controlStyles:
       - RenderTransform := <TranslateTransform X="{{ImageIconWidth/2-1}}" Y="0" />
       - RenderTransform@InactivePointerOver := <TransformGroup><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /><TranslateTransform X="{{ImageIconWidth/2-1}}" Y="0" /></TransformGroup>
       - // Button icon, nudged right to sit inside the pill and shrunk slightly on hover for an inactive button.
+  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - MinWidth := {{3*ImageIconWidth}}
+      - // Taskbar button minimum width (mainly used to set the minumum width of pinned buttons).
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
       - Opacity = 1
