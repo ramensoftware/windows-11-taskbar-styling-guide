@@ -1,27 +1,26 @@
-# ONE UI 8.5 Taskbar/Dock + Icon Pack
+# One UI 8.5 theme for Windows 11 Taskbar Styler
 
 Author: [WasiXGamer](https://github.com/wasixgamer)
 
-This theme makes Windows 11 Taskbar looks like ONE UI Style Dock/Taskbar.
+This theme makes the Windows 11 taskbar look like a One UI-style dock/taskbar.
 
-# Previews
+## Previews
 
-## ONE UI 8.5 Dock
+### One UI 8.5 Dock
 ![Dock-Preview](screenshot-dock.png)
 
-## ONE UI 8.5 Taskbar
+### One UI 8.5 Taskbar
 ![Taskbar-Preview](screenshot-taskbar.png)
 
-
-# Additional Requirements:
+## Additional requirements
 
 > [!NOTE]
-> ## Do Not use [Taskbar Height & Icon Size](https://windhawk.net/mods/taskbar-icon-size) Mod with this!
-> ## It will Not work and force the taskbar to go against the border of the screen.
+> Do not use the [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size) mod with this theme!
+> It will not work, and it will force the taskbar against the border of the screen.
 
+### Taskbar Dock Animation configuration (optional and recommended)
+The theme can be made to look better and more like macOS by using the [Taskbar Dock Animation](https://windhawk.net/mods/taskbar-dock-animation) mod. The following configuration is recommended:
 
-# Taskbar Dock Animation Configuration(Optional & Recommended)
-The Mod can be made look better and more like MacOS by using [Taskbar Dock Animation](https://windhawk.net/mods/taskbar-dock-animation) Mod! The Following config is Recommended to be used:
 ```yaml
 AnimationType: 0
 MaxScale: 130
@@ -36,9 +35,10 @@ ExcludeSystemButtonsMode: 0
 LerpSpeed: 60
 DisableBounce: 1
 ```
-## Credits and Distribution
+
+## Credits and distribution
 Includes One UI icons. Original icon assets and intellectual property belong to Samsung.
-You can distribute the theme, or its fork by giving credits to the Author.
+You can distribute the theme, or a fork of it, as long as you give credit to the author.
 
 ## Theme selection
 
@@ -57,25 +57,22 @@ The theme styles can also be imported manually. To do that, follow these steps:
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
 
-
-## ONE UI 8.5 (DOCK) Configuration
+## Dock variant
 ![preview-dock](screenshot-dock-small.png)
 
 <details>
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-
-theme: 'ONE UI DOCK(By WasiXGamer)'
-styleConstants: 
-  - IconBackground=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/template.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
+styleConstants:
+  - IconBackground=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/template.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
   - IconBorder=transparent
 controlStyles:
 # OneUI icon pack
   # --- XBOX APP ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/xbox.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/xbox.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -85,7 +82,7 @@ controlStyles:
   # --- WINDOWS CAMERA ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/windowscamera.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/windowscamera.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -95,7 +92,7 @@ controlStyles:
   # --- COMMAND PROMPT ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/cmd.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/cmd.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -106,7 +103,7 @@ controlStyles:
   # --- WINDOWS POWERSHELL ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/powershell.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/powershell.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -116,7 +113,7 @@ controlStyles:
   # --- On Screen keyboard ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/osk.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/osk.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -126,7 +123,7 @@ controlStyles:
   # --- PAINT ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/paint.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/paint.png
       - Height=40
       - Width=40 
       - Margin=0,0,0,0
@@ -137,7 +134,7 @@ controlStyles:
   # --- SNIPPING TOOL ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/snippingtool.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/snippingtool.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -148,7 +145,7 @@ controlStyles:
   # --- SPOTIFY ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/Spotify.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Spotify.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -159,7 +156,7 @@ controlStyles:
   # --- PHOTOS ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/photos.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/photos.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -170,7 +167,7 @@ controlStyles:
   # --- MEDIA PLAYER ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/mediaplayer.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/mediaplayer.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -181,7 +178,7 @@ controlStyles:
   # --- STEAM ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/steam.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/steam.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -192,7 +189,7 @@ controlStyles:
   # --- WINDOWS CALCULATOR ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/calculator.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/calculator.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -203,7 +200,7 @@ controlStyles:
   # --- WINDOWS CLOCK / ALARMS ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/time.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/time.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -214,7 +211,7 @@ controlStyles:
   # --- WINDOWS SECURITY ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/security.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/security.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -225,7 +222,7 @@ controlStyles:
   # --- MICROSOFT STORE ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/store.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/store.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -236,7 +233,7 @@ controlStyles:
   # --- WHATSAPP (STABLE) ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/whatsapp.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/whatsapp.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -247,7 +244,7 @@ controlStyles:
   # --- MICROSOFT WORD ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/word.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/word.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -258,7 +255,7 @@ controlStyles:
   # --- MICROSOFT POWERPOINT ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/powerpoint.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/powerpoint.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -269,7 +266,7 @@ controlStyles:
   # --- MICROSOFT ONENOTE ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/onenote.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/onenote.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -280,7 +277,7 @@ controlStyles:
   # --- MICROSOFT ONEDRIVE ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/OneDrive.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/OneDrive.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -291,7 +288,7 @@ controlStyles:
   # --- MICROSOFT TEAMS ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/ms-teams.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/ms-teams.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -302,7 +299,7 @@ controlStyles:
   # --- MICROSOFT OUTLOOK ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/outlook.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/outlook.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -313,7 +310,7 @@ controlStyles:
   # --- CONTROL PANEL ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/ControlPanel.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/ControlPanel.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -324,7 +321,7 @@ controlStyles:
   # --- FILE EXPLORER ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/explorer.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/explorer.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -335,7 +332,7 @@ controlStyles:
   # --- DISCORD ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/discord.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/discord.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -346,7 +343,7 @@ controlStyles:
   # --- SYSTEM SETTINGS ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/systemsettings.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/systemsettings.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -357,7 +354,7 @@ controlStyles:
   # --- NOTEPAD ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/notepad.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/notepad.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -367,7 +364,7 @@ controlStyles:
   # --- YOUTUBE MUSIC ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/YouTubeMusic.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/YouTubeMusic.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -378,7 +375,7 @@ controlStyles:
   # --- BLUESTACKS ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/Bluestacks.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Bluestacks.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -389,7 +386,7 @@ controlStyles:
   # --- DESKFX ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/DeskFX.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/DeskFX.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -400,7 +397,7 @@ controlStyles:
   # --- WINDHAWK ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/windhawk.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/windhawk.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -411,7 +408,7 @@ controlStyles:
   # --- WHATSAPP (BETA) ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/whatsapp.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/whatsapp.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -442,7 +439,7 @@ controlStyles:
     styles: 
       - Margin=0,5.5,0,5.5
       - CornerRadius=0
-      - Background:=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/Search.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush>
+      - Background:=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Search.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush>
       - BorderBrush:=$IconBorder
 
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
@@ -451,7 +448,7 @@ controlStyles:
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[3] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
-      - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
+      - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
       - BorderThickness=0
       - CornerRadius=0
   - target: TaskListButtonPanel[1] > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon'
@@ -460,7 +457,7 @@ controlStyles:
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[1] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
-      - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/Start.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
+      - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Start.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
       - BorderThickness=0
   - target: Border#MultiWindowElement
     styles:
@@ -608,7 +605,7 @@ controlStyles:
       - CornerRadius=15
   - target: ScrollViewer > ScrollContentPresenter > Border > SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid > ItemsControl > ItemsPresenter > WrapGrid > ContentPresenter > SystemTray.NotifyIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid
     styles:
-      - Background:=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
+      - Background:=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
       - Width=35
       - Height=35
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid
@@ -799,27 +796,25 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
-
 ```
 </details>
 
-## ONE UI 8.5 (TASKBAR) Configuration
-![preview-dock](screenshot-taskbar-small.png)
+## Taskbar variant
+![preview-taskbar](screenshot-taskbar-small.png)
 
 <details>
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
-theme: 'ONE UI TASKBAR(By WasiXGamer)'
-styleConstants: 
-  - IconBackground=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/template.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
+styleConstants:
+  - IconBackground=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/template.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
   - IconBorder=transparent
 controlStyles:
 # OneUI icon pack
   # --- XBOX APP ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/xbox.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/xbox.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -829,14 +824,14 @@ controlStyles:
   # --- WINDOWS CAMERA ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/windowscamera.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/windowscamera.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
   # --- COMMAND PROMPT ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/cmd.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/cmd.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -847,7 +842,7 @@ controlStyles:
   # --- WINDOWS POWERSHELL ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/powershell.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/powershell.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -857,14 +852,14 @@ controlStyles:
   # --- On Screen keyboard ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/osk.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/osk.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
   # --- PAINT ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/paint.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/paint.png
       - Height=40
       - Width=40 
       - Margin=0,0,0,0
@@ -875,7 +870,7 @@ controlStyles:
   # --- SNIPPING TOOL ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/snippingtool.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/snippingtool.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -886,7 +881,7 @@ controlStyles:
   # --- SPOTIFY ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/Spotify.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Spotify.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -897,7 +892,7 @@ controlStyles:
   # --- PHOTOS ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/photos.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/photos.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -908,7 +903,7 @@ controlStyles:
   # --- MEDIA PLAYER ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/mediaplayer.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/mediaplayer.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -919,7 +914,7 @@ controlStyles:
   # --- STEAM ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/steam.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/steam.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -930,7 +925,7 @@ controlStyles:
   # --- WINDOWS CALCULATOR ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/calculator.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/calculator.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -941,7 +936,7 @@ controlStyles:
   # --- WINDOWS CLOCK / ALARMS ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/time.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/time.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -952,7 +947,7 @@ controlStyles:
   # --- WINDOWS SECURITY ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/security.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/security.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -963,7 +958,7 @@ controlStyles:
   # --- MICROSOFT STORE ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/store.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/store.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -974,7 +969,7 @@ controlStyles:
   # --- WHATSAPP (STABLE) ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/whatsapp.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/whatsapp.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -985,7 +980,7 @@ controlStyles:
   # --- MICROSOFT WORD ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/word.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/word.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -996,7 +991,7 @@ controlStyles:
   # --- MICROSOFT POWERPOINT ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/powerpoint.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/powerpoint.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1007,7 +1002,7 @@ controlStyles:
   # --- MICROSOFT ONENOTE ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/onenote.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/onenote.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1018,7 +1013,7 @@ controlStyles:
   # --- MICROSOFT ONEDRIVE ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/OneDrive.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/OneDrive.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1029,7 +1024,7 @@ controlStyles:
   # --- MICROSOFT TEAMS ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/ms-teams.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/ms-teams.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1040,7 +1035,7 @@ controlStyles:
   # --- MICROSOFT OUTLOOK ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/outlook.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/outlook.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1051,7 +1046,7 @@ controlStyles:
   # --- CONTROL PANEL ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/ControlPanel.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/ControlPanel.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1062,7 +1057,7 @@ controlStyles:
   # --- FILE EXPLORER ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/explorer.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/explorer.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1073,7 +1068,7 @@ controlStyles:
   # --- DISCORD ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/discord.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/discord.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1084,7 +1079,7 @@ controlStyles:
   # --- SYSTEM SETTINGS ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/systemsettings.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/systemsettings.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1095,7 +1090,7 @@ controlStyles:
   # --- NOTEPAD ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/notepad.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/notepad.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1105,7 +1100,7 @@ controlStyles:
   # --- YOUTUBE MUSIC ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/YouTubeMusic.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/YouTubeMusic.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1116,7 +1111,7 @@ controlStyles:
   # --- BLUESTACKS ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/Bluestacks.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Bluestacks.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1127,7 +1122,7 @@ controlStyles:
   # --- DESKFX ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/DeskFX.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/DeskFX.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1138,7 +1133,7 @@ controlStyles:
   # --- WINDHAWK ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/windhawk.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/windhawk.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1149,7 +1144,7 @@ controlStyles:
   # --- WHATSAPP (BETA) ---
   - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
-      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/whatsapp.png
+      - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/whatsapp.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
@@ -1180,7 +1175,7 @@ controlStyles:
     styles: 
       - Margin=0,5.5,0,5.5
       - CornerRadius=0
-      - Background:=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/Search.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush>
+      - Background:=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Search.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush>
       - BorderBrush:=$IconBorder
 
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
@@ -1189,7 +1184,7 @@ controlStyles:
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[3] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
-      - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
+      - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
       - BorderThickness=0
       - CornerRadius=0
   - target: TaskListButtonPanel[1] > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon'
@@ -1198,7 +1193,7 @@ controlStyles:
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[1] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
-      - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/Start.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
+      - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Start.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
       - BorderThickness=0
   - target: Border#MultiWindowElement
     styles:
@@ -1243,7 +1238,7 @@ controlStyles:
 # Tray Icons Styles
   - target: ScrollViewer > ScrollContentPresenter > Border > SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid > ItemsControl > ItemsPresenter > WrapGrid > ContentPresenter > SystemTray.NotifyIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid
     styles:
-      - Background:=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/ONE%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
+      - Background:=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
       - Width=35
       - Height=35
   - target: ScrollViewer > ScrollContentPresenter > Border > SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid > Border#OverflowFlyoutBackgroundBorder
