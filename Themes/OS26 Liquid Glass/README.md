@@ -113,7 +113,7 @@ controlStyles:
     styles:
       - Width=auto
       - MinWidth:=100
-      - 'MaxWidth={{containerGridWidth > 0 ? containerGridWidth : `Infinity`}}'
+      - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height=80
@@ -583,7 +583,7 @@ controlStyles:
     styles:
       - Width=auto
       - MinWidth:=100
-      - 'MaxWidth={{containerGridWidth > 0 ? containerGridWidth : `Infinity`}}'
+      - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height=70
@@ -1388,7 +1388,7 @@ controlStyles:
     styles:
       - Width=auto
       - MinWidth:=100
-      - 'MaxWidth={{containerGridWidth > 0 ? containerGridWidth : `Infinity`}}'
+      - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height=80
@@ -1858,7 +1858,7 @@ controlStyles:
     styles:
       - Width=auto
       - MinWidth:=100
-      - 'MaxWidth={{containerGridWidth > 0 ? containerGridWidth : `Infinity`}}'
+      - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height=70
