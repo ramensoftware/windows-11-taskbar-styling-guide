@@ -49,7 +49,7 @@ Click each to expand settings:
   fontFamily: ''
   textTrimming: characterEllipsis
   leftAndRightPaddingSize: 0
-  spaceBetweenIconAndLabel: 0
+  spaceBetweenIconAndLabel: 24
   runningIndicatorHeight: -1
   runningIndicatorVerticalOffset: 0
   alwaysShowThumbnailLabels: 0
