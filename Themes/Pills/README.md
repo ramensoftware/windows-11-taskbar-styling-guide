@@ -287,10 +287,10 @@ styleConstants:
   - highlightOffset = 4
   - buttonSpacing = 6
   - sysTraySpacing = 6
-  - iconLabelSpacing = 6
+  - iconLabelSpacing = 10
   - leftRightPadding = 8
   - badgeSize = 12
-  - badgeNudge = 4,4,0,0
+  - badgeNudge = 12,4,0,0
   - sysTrayIconSize = 16
   - taskbarSidesRounded = 1
   - buttonFill = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
@@ -418,7 +418,7 @@ controlStyles:
       - // Native multi-window bar, collapsed (Visibility = 1); the dot on DefaultIcon replaces it.
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
-      - Margin := {{$iconLabelSpacing-6}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset}}
+      - Margin := {{$iconLabelSpacing-12}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset}}
       - Padding := {{$leftRightPadding}},0
       - HorizontalAlignment = 1
       - VerticalAlignment = 1
@@ -433,16 +433,17 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
       - ActualWidth => ImageIconWidth
-      - Margin := {{ImageIconWidth-4}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - // Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - HorizontalAlignment = 0
       - Canvas.ZIndex = 3
-      - RenderTransformOrigin = 0.5,0.5
-      - RenderTransform@InactivePointerOver := <TransformGroup><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /></TransformGroup>
-      - // Icon is Left-aligned and positioned by its left Margin (not RenderTransform)
+      - RenderTransformOrigin = 1,0.5
+      - RenderTransform := <TranslateTransform X="{{max((ImageIconWidth/2-3),10)}}" Y="0" />
+      - RenderTransform@InactivePointerOver := <TransformGroup><TranslateTransform X="{{max((ImageIconWidth/2-3),10)}}" Y="0" /><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /></TransformGroup>
+      - // Icon is Left-aligned and positioned by RenderTransform
       - //so its layout box matches its visual position
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
-      - MinWidth := {{3*ImageIconWidth-2}}
+      - MinWidth := {{max(40,(2*ImageIconWidth+2))}}
       - // Taskbar button minimum width (used to set the minimum width of pinned buttons).
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
@@ -720,12 +721,13 @@ controlStyles:
     styles:
       - MinWidth = 28
       - // Buttons inside the overflow flyout (a literal, not derived).
-  - target: ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
+  - target: ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
-      - Margin := 0
-      - HorizontalAlignment = 1
+      - RenderTransformOrigin = 0.5,0.5
+      - RenderTransform := <TranslateTransform X="{{max((ImageIconWidth/2-3),10/2)}}" Y="0" />
+      - RenderTransform@InactivePointerOver := <TransformGroup><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /><TranslateTransform X="{{max((ImageIconWidth/2-3),10/2)}}" Y="0" /></TransformGroup>
       - // Flyout button icons.
-      - // Zeroing margins back to 0, and flipping HorizontalAlignment back to 1 for flyout icons.
+      - // Zeroing TranslateTransform, and flipping HorizontalAlignment back to 1 for flyout icons.
   - target: ScrollViewer > ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - Background = Transparent
