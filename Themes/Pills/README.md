@@ -658,7 +658,7 @@ controlStyles:
     styles:
       - HorizontalAlignment = 0
       - RenderTransformOrigin = 0.5,0.5
-      - RenderTransform := <TransformGroup><ScaleTransform ScaleX = "0.75" ScaleY = "0.75" /><TranslateTransform X="8" Y="2" /></TransformGroup>
+      - RenderTransform := <TransformGroup><TranslateTransform X="20" Y="2" /><ScaleTransform ScaleX = "0.85" ScaleY = "0.85" /></TransformGroup>
       - // Weather widget icon grid (when overflow), scaled down and repositioned.
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid
     styles:
