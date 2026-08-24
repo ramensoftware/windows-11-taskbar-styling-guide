@@ -290,7 +290,7 @@ styleConstants:
   - iconLabelSpacing = 6
   - leftRightPadding = 8
   - badgeSize = 12
-  - badgeNudge = 12,4,0,0
+  - badgeNudge = 4,4,0,0
   - sysTrayIconSize = 16
   - taskbarSidesRounded = 1
   - buttonFill = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
@@ -442,16 +442,16 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
       - ActualWidth => ImageIconWidth
-      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
-      - HorizontalAlignment = 1
+      - Margin := {{ImageIconWidth-4}},{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - HorizontalAlignment = 0
       - Canvas.ZIndex = 3
       - RenderTransformOrigin = 0.5,0.5
-      - RenderTransform := <TranslateTransform X="{{ImageIconWidth/2-1}}" Y="0" />
-      - RenderTransform@InactivePointerOver := <TransformGroup><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /><TranslateTransform X="{{ImageIconWidth/2-1}}" Y="0" /></TransformGroup>
-      - // Button icon, nudged right to sit inside the pill and shrunk slightly on hover for an inactive button.
+      - RenderTransform@InactivePointerOver := <TransformGroup><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /></TransformGroup>
+      - // Icon is Left-aligned and positioned by its left Margin (not RenderTransform)
+      - //so its layout box matches its visual position
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
-      - MinWidth := {{3*ImageIconWidth}}
+      - MinWidth := {{3*ImageIconWidth-2}}
       - // Taskbar button minimum width (mainly used to set the minumum width of pinned buttons).
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
@@ -700,7 +700,7 @@ controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid
     styles:
       - Background = Transparent
-      - // Weather widget temperature panel, card background cleared (when overflow). Currently Commented out.
+      - // Weather widget temperature panel, card background cleared (when overflow).
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
     styles:
       - Shadow :=
@@ -758,11 +758,14 @@ controlStyles:
       - // Buttons inside the overflow flyout (a literal, not derived).
   - target: ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
-      - RenderTransform := <TranslateTransform X="0" Y="0" />
-      - // Flyout button icons. The taskbar translate is cancelled here.
-      - // to leave room for.
+      - Margin := 0
+      - HorizontalAlignment = 1
+      - // Flyout button icons.
+      - // Zeroing margins back to 0 for and flipping HorizontalAlignment back to 1 for flyout icons.
   - target: ScrollViewer > ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
+      - Background = Transparent
+      - BorderBrush = Transparent
       - Margin = 0
       - // Flyout button highlight, reset to fill its button.
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Rectangle#RunningIndicator
