@@ -396,23 +396,14 @@ controlStyles:
     styles:
       - Fill = Transparent
       - // Progress bar track hidden. Only the indicators below are tinted.
-  - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#DeterminateProgressBarIndicator
+  - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#DeterminateProgressBarIndicator, Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#IndeterminateProgressBarIndicator
     styles:
       - StrokeThickness = 1
       - RadiusX := $buttonRadius
       - RadiusY := $buttonRadius
       - Fill := $progressColor
       - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
-      - // Determinate progress fill (task progress). The paused brush is inlined here and in the two
-      - // rules below rather than coming from a style constant.
-  - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#IndeterminateProgressBarIndicator
-    styles:
-      - StrokeThickness = 1
-      - RadiusX := $buttonRadius
-      - RadiusY := $buttonRadius
-      - Fill := $progressColor
-      - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
-      - // Indeterminate progress fill (loading state).
+      - // Determinate progress fill (task progress) | Indeterminate progress fill (loading state).
   - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#IndeterminateProgressBarIndicator2
     styles:
       - StrokeThickness = 1
@@ -452,7 +443,7 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - MinWidth := {{3*ImageIconWidth-2}}
-      - // Taskbar button minimum width (mainly used to set the minumum width of pinned buttons).
+      - // Taskbar button minimum width (used to set the minimum width of pinned buttons).
   - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
       - Opacity = 1
@@ -486,22 +477,13 @@ controlStyles:
       - Height = 0
       - // Windows Start button hidden using small width and zero height, rather than a collapse,
       - // because collapsing it displaces the language flyout.
-      - // Unconditional. There is no constant for turning it back on.
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
     styles:
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
       - Canvas.ZIndex = 3
-      - // Overlay badge.
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
-    styles:
-      - MinWidth := $badgeSize
-      - Width := $badgeSize
-      - Height := $badgeSize
-      - Margin := $badgeNudge
-      - Canvas.ZIndex = 3
-      - // Counter badge, matched to the overlay badge size and position.
+      - // Overlay badge | Counter badge, matched to the overlay badge size and position.
   - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText
     styles:
       - FontSize = 8
@@ -527,36 +509,13 @@ controlStyles:
       - // Clock segment of the tray pill. Negative padding cancels the border thickness so adding a
       - // border does not grow the element, which is what lets the tray segments butt together
       - // seamlessly. $taskbarSidesRounded zeroes the outer corners when set to 0.
-  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder, SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder, SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder, SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder, SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
       - BorderThickness = 0
-      - // Clock highlight, inset uniformly by $highlightOffset like every other tray highlight.
-  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
-    styles:
-      - Margin := {{$highlightOffset}}
-      - CornerRadius := $highlightRadius
-      - BorderThickness = 0
-      - // Language indicator highlight.
-  - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
-    styles:
-      - Margin := {{$highlightOffset}}
-      - CornerRadius := $highlightRadius
-      - BorderThickness = 0
-      - // Tray overflow chevron highlight.
-  - target: SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder
-    styles:
-      - Margin := {{$highlightOffset}}
-      - CornerRadius := $highlightRadius
-      - BorderThickness = 0
-      - // Control center highlight.
-  - target: SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > Border#BackgroundBorder
-    styles:
-      - Margin := {{$highlightOffset}}
-      - CornerRadius := $highlightRadius
-      - BorderThickness = 0
-      - // Notification area icon highlights.
+      - // Clock highlight | Language indicator highlight | Tray overflow chevron highlight
+      - // Control center highlight | Notification area icon highlights | all inset uniformly by $highlightOffset
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter
     styles:
       - Margin = 0,0,0,1
@@ -605,18 +564,11 @@ controlStyles:
       - BorderBrush := $buttonBorderColor
       - // Overflow chevron segment, opening the left end of the tray pill. Right border omitted so it
       - // shares an edge with the next segment.
-  - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+  - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock, SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock, SystemTray.BatteryIconContent > Grid#ContainerGrid > StackPanel > Grid > TextBlock
     styles:
       - FontSize := $sysTrayIconSize
-      - // Tray glyph icons base (network, volume), sized by font size.
-  - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock
-    styles:
-      - FontSize := $sysTrayIconSize
-      - // Tray glyph icons underlay (network, volume), sized by font size.
-  - target: SystemTray.BatteryIconContent > Grid#ContainerGrid > StackPanel > Grid > TextBlock
-    styles:
-      - FontSize := $sysTrayIconSize
-      - // Tray glyph icon (battery), sized by font size.
+      - // Tray glyph icons base (network, volume) | Tray glyph icons underlay (network, volume)
+      - // Tray glyph icon (battery) all sized by font size.
   - target: SystemTray.LanguageTextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
     styles:
       - FontSize := {{$sysTrayIconSize-4}}
@@ -639,7 +591,7 @@ controlStyles:
     styles:
       - ActualWidth => WeatherIconWidth
       - RenderTransform := <TranslateTransform X="0" Y="1" />
-      - // Weather Widget icon. Capture and Poisition refinement.
+      - // Weather Widget icon. Capture and position refinement.
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
     styles:
       - ActualWidth => WeatherTempWidth
@@ -656,7 +608,7 @@ controlStyles:
     styles:
       - Margin = 0
       - Width := {{WeatherCondWidth+WeatherTempWidth + WeatherIconWidth + 44}}
-      - VerticalAlignment = 0
+      - VerticalAlignment = 1
       - RenderTransform := <TranslateTransform X="0" Y="1" />
       - // Weather widget content grid, width driven by the two captured text widths plus 44px for the
       - // icon and padding. The same figure is repeated on the root panel below.
@@ -667,7 +619,7 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
     styles:
       - Margin = 0
-      - // Weather widget card panel, centred vertically.
+      - // Weather widget card panel.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Width := {{WeatherCondWidth + WeatherTempWidth + WeatherIconWidth + 36}}
@@ -685,17 +637,28 @@ controlStyles:
       - Margin := {{$highlightOffset}}
       - BorderThickness = 0
       - // Weather widget highlight, inset like the tray highlights.
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
+    styles:
+      - VerticalAlignment = 1
+      - // Weather widget items panel, centered vertically.
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid
+    styles:
+      - VerticalAlignment = 1
+      - // Weather widget grid, centered vertically.
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[1]
     styles:
       - HorizontalAlignment = 0
-      - RenderTransform := <TranslateTransform X="8" Y="4" />
-      - // Weather widget text grid (when overflow).
+      - RenderTransform := <TranslateTransform X="8" Y="-2" />
+      - // Weather widget text grid (taskbar overflow state).
+  - target: Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#BadgeAnchorLargeTicker, Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#BadgeAnchorSmallTicker
+    styles:
+      - MaxWidth = 20
+      - // Weather widget icons; large (regular mode), and small (taskbar overflow mode)
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid[2]
     styles:
-      - Padding = 4
       - HorizontalAlignment = 0
       - RenderTransformOrigin = 0.5,0.5
-      - RenderTransform := <TransformGroup><ScaleTransform ScaleX = "0.75" ScaleY = "0.75" /><TranslateTransform X="11" Y="0" /></TransformGroup>
+      - RenderTransform := <TransformGroup><ScaleTransform ScaleX = "0.75" ScaleY = "0.75" /><TranslateTransform X="8" Y="2" /></TransformGroup>
       - // Weather widget icon grid (when overflow), scaled down and repositioned.
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid
     styles:
@@ -714,6 +677,7 @@ controlStyles:
       - Height@Pressed = 6
       - RadiusX = 2
       - RadiusY = 2
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Fill := $showDesktopIndicatorColor
       - // "Show desktop" corner control, reshaped from a bar into a dot that grows on hover.
       - // The bare @ attaches to the element's default visual state group.
@@ -761,7 +725,7 @@ controlStyles:
       - Margin := 0
       - HorizontalAlignment = 1
       - // Flyout button icons.
-      - // Zeroing margins back to 0 for and flipping HorizontalAlignment back to 1 for flyout icons.
+      - // Zeroing margins back to 0, and flipping HorizontalAlignment back to 1 for flyout icons.
   - target: ScrollViewer > ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - Background = Transparent
