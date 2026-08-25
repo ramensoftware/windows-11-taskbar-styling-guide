@@ -451,9 +451,6 @@ controlStyles:
       - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
       - BorderThickness=0
       - CornerRadius=0
-  - target: //TaskListButtonPanel[1] > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, TaskListButtonPanel[1] > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
-    styles:
-      - Visibility=Collapsed
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[1] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[1] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
@@ -1187,9 +1184,6 @@ controlStyles:
       - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
       - BorderThickness=0
       - CornerRadius=0
-  - target: //TaskListButtonPanel[1] > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, TaskListButtonPanel[1] > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
-    styles:
-      - Visibility=Collapsed
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[1] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[1] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
