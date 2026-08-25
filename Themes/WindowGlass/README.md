@@ -637,6 +637,9 @@ controlStyles:
     styles:
       - Padding=$TrayPadding
       - CornerRadius=10
+  - target: SystemTray.OmniButton#ControlCenterButton > StackPanel
+    styles:
+      - Padding=0,-4,0,-4
   - target: SystemTray.CopilotIcon
     styles:
       - Padding=$TrayPadding
