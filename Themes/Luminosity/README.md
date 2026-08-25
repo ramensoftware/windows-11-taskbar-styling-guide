@@ -1228,9 +1228,9 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
     styles:
       - Margin=0,0,$WidgetGap57,0
-  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
+  - target: SystemTray.SystemTrayFrame
     styles:
-      - Margin=0,0,0,18
+      - Height=30
   - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
     styles:
       - FontSize=14
