@@ -415,7 +415,7 @@ controlStyles:
   - target: Border#MultiWindowElement
     styles:
       - Visibility = 1
-      - // Native multi-window bar, collapsed (Visibility = 1); the dot on DefaultIcon replaces it.
+      - // Native multi-window indicator, collapsed (Visibility = 1); the dot on DefaultIcon replaces it.
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
       - Margin := {{$iconLabelSpacing-12}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset}}
@@ -463,7 +463,7 @@ controlStyles:
       - RadiusX = 2
       - RadiusY = 2
       - StrokeThickness = 0
-      - Margin = 0,0,12,0
+      - Margin = 0,0,{{ImageIconWidth+8}},0
       - Canvas.ZIndex = 4
       - // The fallback icon slot is repurposed as a multi-window dot. Hidden by default (Visibility = 1),
       - // shown only in the MultiWindow and RequestingAttentionMulti states.
@@ -510,13 +510,14 @@ controlStyles:
       - // Clock segment of the tray pill. Negative padding cancels the border thickness so adding a
       - // border does not grow the element, which is what lets the tray segments butt together
       - // seamlessly. $taskbarSidesRounded zeroes the outer corners when set to 0.
-  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder, SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder, SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder, SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder, SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > Border#BackgroundBorder
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder, SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder, SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder, SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder, SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > Border#BackgroundBorder, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin := {{$highlightOffset}}
       - CornerRadius := $highlightRadius
       - BorderThickness = 0
       - // Clock highlight | Language indicator highlight | Tray overflow chevron highlight
-      - // Control center highlight | Notification area icon highlights | all inset uniformly by $highlightOffset
+      - // Control center highlight | Notification area icon highlights |Weather widget
+      - // all inset uniformly by $highlightOffset
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter
     styles:
       - Margin = 0,0,0,1
@@ -632,12 +633,6 @@ controlStyles:
       - Background := $buttonFill
       - BorderBrush := $buttonBorderColor
       - // Weather widget, styled as a pill of its own at the left end of the taskbar.
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
-    styles:
-      - CornerRadius := $highlightRadius
-      - Margin := {{$highlightOffset}}
-      - BorderThickness = 0
-      - // Weather widget highlight, inset like the tray highlights.
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
     styles:
       - VerticalAlignment = 1
@@ -727,7 +722,7 @@ controlStyles:
       - RenderTransform := <TranslateTransform X="{{max((ImageIconWidth/2-3),10/2)}}" Y="0" />
       - RenderTransform@InactivePointerOver := <TransformGroup><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /><TranslateTransform X="{{max((ImageIconWidth/2-3),10/2)}}" Y="0" /></TransformGroup>
       - // Flyout button icons.
-      - // Zeroing TranslateTransform, and flipping HorizontalAlignment back to 1 for flyout icons.
+      - // Resetting TranslateTransform flyout icons.
   - target: ScrollViewer > ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - Background = Transparent
