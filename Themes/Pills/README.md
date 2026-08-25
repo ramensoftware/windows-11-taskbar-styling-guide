@@ -435,7 +435,7 @@ controlStyles:
       - RenderTransform@InactivePointerOver := <TransformGroup><TranslateTransform X="{{max((ImageIconWidth/2-3),10)}}" Y="0" /><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /></TransformGroup>
       - // Icon is Left-aligned and shifted right by RenderTransform to sit inside the pill.
       - // RenderTransformOrigin is pushed right so the native press-scale pivots near the
-      - // icon's visual centre (transform is used over margin to avoid clipping, at the cost of a small press-time nudge.
+      - // icon's visual centre (transform is used over margin to avoid clipping, at the cost of a small press-time nudge).
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - MinWidth := {{max(40,(2*ImageIconWidth+2))}}
