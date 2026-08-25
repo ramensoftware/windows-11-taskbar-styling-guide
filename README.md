@@ -152,6 +152,7 @@ Taskbar Styler mod. The following themes are available:
 | [Pills](Themes/Pills/README.md) | [![Pills](Themes/Pills/screenshot.png)](Themes/Pills/screenshot.png)
 | [Blob](Themes/Blob/README.md) | [![Blob](Themes/Blob/screenshot.png)](Themes/Blob/screenshot.png)
 | [Minecraft Hotbar](Themes/Minecraft%20Hotbar/README.md) | [![Minecraft Hotbar](Themes/Minecraft%20Hotbar/screenshot.png)](Themes/Minecraft%20Hotbar/screenshot.png)
+| [One UI 8.5](Themes/One%20UI%208.5/README.md) | [![One UI 8.5](Themes/One%20UI%208.5/screenshot.png)](Themes/One%20UI%208.5/screenshot.png)
 
 ## General
 

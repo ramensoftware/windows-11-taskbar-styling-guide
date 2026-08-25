@@ -96,7 +96,7 @@ controlStyles:
       - Width=Auto
       - HorizontalAlignment=Right
       - Margin=0,0,$IslandHorizontalMargin,0
-      - 'MaxWidth={{containerGridWidth > 0 ? min($TaskbarFrameMaxWidth, containerGridWidth) : $TaskbarFrameMaxWidth}}'
+      - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth}}
   - target: Taskbar.TaskbarFrame > Grid
     styles:
       - Background:=<SolidColorBrush Color="$IslandBackgroundColor"/>

@@ -6,16 +6,16 @@ This theme makes the Windows 11 taskbar look like an OS26-inspired "Liquid Glass
 
 ## Previews
 
-### Dock (Clear)
+### Clear MacDock
 ![Dock-Preview](screenshot-dock.png)
 
-### Taskbar (Clear)
+### Clear Taskbar
 ![Taskbar-Preview](screenshot-taskbar.png)
 
-### Dock (Dark)
+### Dark MacDock
 ![Dock-Dark-Preview](screenshot-dock-dark.png)
 
-### Taskbar (Dark)
+### Dark Taskbar
 ![Taskbar-Dark-Preview](screenshot-taskbar-dark.png)
 
 ## Other previews
@@ -57,7 +57,7 @@ maxHeight: 0
 preserveAspectRatio: 0
 ```
 
-## Taskbar dock animation configuration
+## Taskbar Dock Animation configuration
 
 The theme can be made to look better and more like macOS by using the [Taskbar Dock Animation](https://windhawk.net/mods/taskbar-dock-animation) mod. The following configuration is recommended:
 
@@ -98,7 +98,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ## Clear variants
 
-### OS26 Liquid Glass (Clear, MacDock) configuration
+### Clear MacDock variant
 ![preview-dock](screenshot-dock-1.png)
 
 <details>
@@ -113,7 +113,7 @@ controlStyles:
     styles:
       - Width=auto
       - MinWidth:=100
-      - 'MaxWidth={{containerGridWidth > 0 ? containerGridWidth : `Infinity`}}'
+      - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height=80
@@ -569,7 +569,7 @@ controlStyles:
 ```
 </details>
 
-#### Compact version
+#### Compact variant
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -583,7 +583,7 @@ controlStyles:
     styles:
       - Width=auto
       - MinWidth:=100
-      - 'MaxWidth={{containerGridWidth > 0 ? containerGridWidth : `Infinity`}}'
+      - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height=70
@@ -1042,7 +1042,7 @@ controlStyles:
 ```
 </details>
 
-### OS26 Liquid Glass (Clear Taskbar) configuration
+### Clear Taskbar variant
 ![Preview-taskbar-full](screenshot-clear-taskbar.png)
 
 <details>
@@ -1373,7 +1373,7 @@ controlStyles:
 
 ## Dark variants
 
-### OS26 Liquid Glass (Dark MacDock) configuration
+### Dark MacDock variant
 ![preview-dock-dark](screenshot-dock-dark-1.png)
 
 <details>
@@ -1388,7 +1388,7 @@ controlStyles:
     styles:
       - Width=auto
       - MinWidth:=100
-      - 'MaxWidth={{containerGridWidth > 0 ? containerGridWidth : `Infinity`}}'
+      - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height=80
@@ -1844,7 +1844,7 @@ controlStyles:
 ```
 </details>
 
-#### Compact version
+#### Compact variant
 
 <details>
 <summary>Content to import (click to expand)</summary>
@@ -1858,7 +1858,7 @@ controlStyles:
     styles:
       - Width=auto
       - MinWidth:=100
-      - 'MaxWidth={{containerGridWidth > 0 ? containerGridWidth : `Infinity`}}'
+      - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height=70
@@ -2317,7 +2317,7 @@ controlStyles:
 ```
 </details>
 
-### OS26 Liquid Glass (Dark Taskbar) configuration
+### Dark Taskbar variant
 ![Preview-dark-taskbar-full](screenshot-dark-taskbar.png)
 
 <details>
