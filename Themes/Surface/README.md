@@ -83,11 +83,13 @@ styleConstants:
   - SystemItemBackground=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.8" FallbackColor="{ThemeResource SystemChromeLowColor}" />
   - SystemItemBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="0.5,1"><GradientStop Color="#00000000" Offset="0" /><GradientStop Color="#33000000" Offset="1.5" /></LinearGradientBrush>
 controlStyles:
+  - target: Grid#RootGrid > Taskbar.TaskbarBackground
+    styles:
+      - Margin=-20,0,-20,0
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - CornerRadius=20
       - BorderThickness=1
-      - Margin=-20,0,-20,0
       - BorderBrush=#40FFFFFF
       - Padding=-1
   - target: Rectangle#BackgroundStroke

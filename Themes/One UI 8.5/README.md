@@ -477,13 +477,15 @@ controlStyles:
       - Margin=0,8,0,2
       - Padding=20,0,20,0
       - BorderBrush=#40FFFFFF
+  - target: Grid#RootGrid > Taskbar.TaskbarBackground
+    styles:
+      - Margin=-20,0,-20,0
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
       - CornerRadius=25,0,0,25
       - BorderThickness=1,1,0,1
       - Width=Auto
-      - Margin=-20,0,-20,0
       - BorderBrush=#40FFFFFF
       - Padding=-1
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
@@ -1203,10 +1205,12 @@ controlStyles:
     styles:
       - Margin=0,8,0,2
       - BorderBrush=#40FFFFFF
+  - target: Grid#RootGrid > Taskbar.TaskbarBackground
+    styles:
+      - Margin=5,0,5,0
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#761E1E1E"/>
-      - Margin=5,0,5,0
       - CornerRadius=10
       - BorderThickness=1
       - BorderBrush=#40FFFFFF
