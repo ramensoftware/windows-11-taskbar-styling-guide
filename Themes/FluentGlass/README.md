@@ -162,7 +162,7 @@ controlStyles:
       - Padding=$ItemPadding
       - VerticalAlignment=Center
       - Height=$IconHeight
-  - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButtonPanel
     styles:
       - VerticalAlignment=Center
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
