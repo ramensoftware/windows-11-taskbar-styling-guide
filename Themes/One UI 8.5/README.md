@@ -1200,7 +1200,7 @@ controlStyles:
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height=70
       - MaxHeight=70
-      - HorizontalAlignment=Center
+      - HorizontalAlignment=Stretch
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Margin=0,8,0,2
