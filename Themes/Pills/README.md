@@ -34,43 +34,6 @@ Pills. A sleek theme that turns taskbar buttons into labeled breathable pills. T
 Click each to expand settings:
 
   <details>
-  <summary>Taskbar Labels for Windows 11</summary>
-
-  ```yaml
-  mode: labelsWithCombining
-  taskbarItemWidth: 0
-  runningIndicatorStyle: fullWidth
-  progressIndicatorStyle: sameAsRunningIndicatorStyle
-  excludedPrograms:
-    - ''
-  minimumTaskbarItemWidth: 40
-  maximumTaskbarItemWidth: 200
-  fontSize: 12
-  fontFamily: ''
-  textTrimming: characterEllipsis
-  leftAndRightPaddingSize: 0
-  spaceBetweenIconAndLabel: 24
-  runningIndicatorHeight: -1
-  runningIndicatorVerticalOffset: 0
-  alwaysShowThumbnailLabels: 0
-  labelForSingleItem: ''
-  labelForMultipleItems: ''
-  ```
-  </details>
-  
-  <details>
-  <summary>Taskbar Height and Icon Size</summary>
-
-  ```yaml
-  TaskbarHeight: 32
-  IconSize: 14
-  TaskbarButtonWidth: 28
-  IconSizeSmall: 14
-  TaskbarButtonWidthSmall: 28
-  ```
-  </details>
-
-  <details>
   <summary>Taskbar Clock Customization</summary>
 
   ```yaml
@@ -146,7 +109,19 @@ Click each to expand settings:
   oldTaskbarOnWin11: 0
   ```
   </details>
+  
+  <details>
+  <summary>Taskbar Height and Icon Size</summary>
 
+  ```yaml
+  TaskbarHeight: 32
+  IconSize: 14
+  TaskbarButtonWidth: 28
+  IconSizeSmall: 14
+  TaskbarButtonWidthSmall: 28
+  ```
+  </details>
+  
   <details>
   <summary>Dynamic Taskbar Transparency</summary>
 
@@ -179,6 +154,33 @@ Click each to expand settings:
     fullscreenAsMaximized: 1
   ```
   </details>
+  
+## Recommended Windhawk mods
+
+  <details>
+  <summary>Taskbar Labels for Windows 11</summary>
+
+  ```yaml
+  mode: labelsWithCombining
+  taskbarItemWidth: 0
+  runningIndicatorStyle: fullWidth
+  progressIndicatorStyle: sameAsRunningIndicatorStyle
+  excludedPrograms:
+    - ''
+  minimumTaskbarItemWidth: 40
+  maximumTaskbarItemWidth: 200
+  fontSize: 12
+  fontFamily: ''
+  textTrimming: characterEllipsis
+  leftAndRightPaddingSize: 0
+  spaceBetweenIconAndLabel: 24
+  runningIndicatorHeight: -1
+  runningIndicatorVerticalOffset: 0
+  alwaysShowThumbnailLabels: 0
+  labelForSingleItem: ''
+  labelForMultipleItems: ''
+  ```
+  </details>
 
   <details>
   <summary>Taskbar tray system icon tweaks</summary>
@@ -198,10 +200,6 @@ Click each to expand settings:
   showDesktopButtonWidth: 12
   ```
   </details>
-
-
-## Recommended Windhawk mods
-
   <details>
   <summary>Taskbar Virtual Desktop Switcher</summary>
 
@@ -295,8 +293,8 @@ styleConstants:
   - taskbarSidesRounded = 1
   - buttonFill = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
   - buttonBorderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="1"/>
-  - taskbarFill = ''
-  - taskbarStrokeColor = ''
+  - taskbarFill = {{__unset}}
+  - taskbarStrokeColor = {{__unset}}
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
@@ -308,12 +306,15 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill := $taskbarFill
-      - // Taskbar background. $taskbarFill is empty on purpose, which assigns null and leaves the
-      - // surface transparent. Set the constant to a brush to give the taskbar its own fill.
+      - // Taskbar background. $taskbarFill is {{__unset}} on purpose, which will bind it to a variable that is unset,
+      - // and so only this style will be skipped leaving the background color as native Windows.
+      - // Set the constant to a brush to give the taskbar background its own fill.
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundStroke
     styles:
       - Fill := $taskbarStrokeColor
-      - // Taskbar top stroke, nulled the same way as the background fill above.
+      - // Taskbar Stroke. $taskbarStrokeColor is {{__unset}} on purpose, which will bind it to a variable that is unset,
+      - // and so only this style will be skipped leaving the stroke color as native Windows.
+      - // Set the constant to a brush to give the stroke background its own fill.
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame
     styles:
       - Height => TaskbarHeight
@@ -417,7 +418,7 @@ controlStyles:
       - VerticalAlignment = 1
       - RenderTransform := <TranslateTransform X="0" Y="-1" />
       - Canvas.ZIndex = 3
-      - // Button label. The -6 makes $iconLabelSpacing = 6 mean "stock spacing". The right margin is
+      - // Button label. The -12 makes $iconLabelSpacing = 10 mean "zero visual spacing". The right margin is
       - // a literal 6 and does not follow $iconLabelSpacing.
   - target: Taskbar.TaskListButton#TaskListButton
     styles:
@@ -426,14 +427,15 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
       - ActualWidth => ImageIconWidth
-      - // Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - HorizontalAlignment = 0
       - Canvas.ZIndex = 3
       - RenderTransformOrigin = 1,0.5
       - RenderTransform := <TranslateTransform X="{{max((ImageIconWidth/2-3),10)}}" Y="0" />
       - RenderTransform@InactivePointerOver := <TransformGroup><TranslateTransform X="{{max((ImageIconWidth/2-3),10)}}" Y="0" /><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /></TransformGroup>
-      - // Icon is Left-aligned and positioned by RenderTransform
-      - // so its layout box matches its visual position
+      - // Icon is Left-aligned and shifted right by RenderTransform to sit inside the pill.
+      - // RenderTransformOrigin is pushed right so the native press-scale pivots near the
+      - // icon's visual centre (transform is used over margin to avoid clipping, at the cost of a small press-time nudge).
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - MinWidth := {{max(40,(2*ImageIconWidth+2))}}
@@ -460,6 +462,7 @@ controlStyles:
       - Canvas.ZIndex = 4
       - // The fallback icon slot is repurposed as a multi-window dot. Hidden by default,
       - // shown only in the MultiWindow and RequestingAttentionMulti states.
+      - // Left spacing driven by $ImageIconWidth to support both stock and styled modes.
   - target: Taskbar.TaskbarExtensionElement
     styles:
       - Visibility = 1
