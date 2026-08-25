@@ -221,6 +221,9 @@ controlStyles:
       - Background:=Transparent
       - HorizontalAlignment=Center
       - Width=Auto
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground
+    styles:
+      - Margin=-40,0,-40,0
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<WindhawkBlur BlurAmount="3" TintColor="#14090909" TintSaturation="1.2"/>
@@ -228,7 +231,6 @@ controlStyles:
       - RadiusY={{(TaskHeight/4.1)*2}}
       - StrokeThickness=1
       - Canvas.ZIndex=1
-      - Margin=-40,0,-40,0
       - Stroke:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69E0E0E0" Offset="0.0" /><GradientStop Color="#70707070" Offset="0.1" /><GradientStop Color="#70505050" Offset="0.25" /><GradientStop Color="#70292929" Offset="0.5" /><GradientStop Color="#70505050" Offset="0.75" /><GradientStop Color="#70707070" Offset="0.9" /><GradientStop Color="#65D0D0D0" Offset="1" /></LinearGradientBrush>
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
     styles:
@@ -241,7 +243,6 @@ controlStyles:
       - VerticalAlignment=Stretch
       - HorizontalAlignment=Stretch
       - Height=NaN
-      - Margin=-40,0,-40,0
       - Fill:=<WindhawkBlur BlurAmount="0" TintColor="#00101010"/>
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
