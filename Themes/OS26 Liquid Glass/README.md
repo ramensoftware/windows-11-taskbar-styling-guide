@@ -123,7 +123,7 @@ controlStyles:
     styles:
       - Height=24
       - Width=24
-      - Margin=10,0,0,0
+      - Margin=5,0,-5,0
   - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
     styles:
       - Width=55
@@ -593,7 +593,7 @@ controlStyles:
     styles:
       - Height=24
       - Width=24
-      - Margin=6,0,0,0
+      - Margin=3,0,-3,0
   - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
     styles:
       - Width=50
@@ -1062,7 +1062,7 @@ controlStyles:
     styles:
       - Height=24
       - Width=24
-      - Margin=10,0,0,0
+      - Margin=5,0,-5,0
   - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
     styles:
       - Width=55
@@ -1398,7 +1398,7 @@ controlStyles:
     styles:
       - Height=24
       - Width=24
-      - Margin=10,0,0,0
+      - Margin=5,0,-5,0
   - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
     styles:
       - Width=55
@@ -1868,7 +1868,7 @@ controlStyles:
     styles:
       - Height=24
       - Width=24
-      - Margin=6,0,0,0
+      - Margin=3,0,-3,0
   - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
     styles:
       - Width=50
@@ -2337,7 +2337,7 @@ controlStyles:
     styles:
       - Height=24
       - Width=24
-      - Margin=10,0,0,0
+      - Margin=5,0,-5,0
   - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
     styles:
       - Width=55
