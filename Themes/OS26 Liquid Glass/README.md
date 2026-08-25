@@ -1062,6 +1062,9 @@ controlStyles:
       - Height=80
       - MaxHeight=80
       - HorizontalAlignment=Center
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - VerticalAlignment=Center
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
       - Height=24
@@ -2343,6 +2346,9 @@ controlStyles:
       - Height=80
       - MaxHeight=80
       - HorizontalAlignment=Center
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - VerticalAlignment=Center
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
       - Height=24
