@@ -1061,7 +1061,7 @@ controlStyles:
     styles:
       - Height=80
       - MaxHeight=80
-      - HorizontalAlignment=Center
+      - HorizontalAlignment=Stretch
   - target: SystemTray.SystemTrayFrame
     styles:
       - VerticalAlignment=Center
@@ -2345,7 +2345,7 @@ controlStyles:
     styles:
       - Height=80
       - MaxHeight=80
-      - HorizontalAlignment=Center
+      - HorizontalAlignment=Stretch
   - target: SystemTray.SystemTrayFrame
     styles:
       - VerticalAlignment=Center
