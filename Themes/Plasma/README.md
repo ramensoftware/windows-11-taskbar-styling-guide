@@ -263,7 +263,7 @@ controlStyles:
     styles:
       - Width=48
       - Height=Auto
-  - target: SystemTray.Stack#ShowDesktopStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid
+  - target: SystemTray.Stack#ShowDesktopStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid, SystemTray.Stack#ShowDesktopStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon
     styles:
       - Width=48
   - target: Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe
