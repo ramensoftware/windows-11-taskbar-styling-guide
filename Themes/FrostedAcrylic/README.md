@@ -149,28 +149,13 @@ controlStyles:
       - VerticalAlignment=Center
   - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListButtonPanel
     styles:
-      - Width=48
-      - MinWidth=48
-      - MaxWidth=48
       - Height=60
       - MinHeight=60
       - MaxHeight=60
-      - Padding=0
+      - Padding=2,4,2,4
       - Margin=0
       - HorizontalAlignment=Center
       - VerticalAlignment=Center
-  - target: Taskbar.TaskListButton > Taskbar.TaskListButtonPanel > Grid
-    styles:
-      - Width=48
-      - MinWidth=48
-      - MaxWidth=48
-      - Height=60
-      - MinHeight=60
-      - MaxHeight=60
-      - Padding=0
-      - Margin=0
-      - VerticalAlignment=Center
-      - HorizontalAlignment=Center
   - target: Grid#IconPanel > TextBlock, Taskbar.TaskListButtonPanel > Grid > TextBlock, Taskbar.TaskListButtonPanel > TextBlock
     styles:
       - Visibility=Collapsed
