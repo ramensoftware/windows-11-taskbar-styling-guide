@@ -415,7 +415,7 @@ controlStyles:
       - VerticalAlignment = 1
       - RenderTransform := <TranslateTransform X="0" Y="-1" />
       - Canvas.ZIndex = 3
-      - // Button label. The -6 makes $iconLabelSpacing = 6 mean "stock spacing". The right margin is
+      - // Button label. The -12 makes $iconLabelSpacing = 10 mean "zero visual spacing". The right margin is
       - // a literal 6 and does not follow $iconLabelSpacing.
   - target: Taskbar.TaskListButton#TaskListButton
     styles:
@@ -458,6 +458,7 @@ controlStyles:
       - Canvas.ZIndex = 4
       - // The fallback icon slot is repurposed as a multi-window dot. Hidden by default,
       - // shown only in the MultiWindow and RequestingAttentionMulti states.
+      - // Left spacing driven by $ImageIconWidth to support both stock and styled modes.
   - target: Taskbar.TaskbarExtensionElement
     styles:
       - Visibility = 1
