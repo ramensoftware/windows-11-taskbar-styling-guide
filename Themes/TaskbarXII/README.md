@@ -90,6 +90,7 @@ controlStyles:
   - target: SystemTray.SystemTrayFrame
     styles:
       - HorizontalAlignment=Left
+      - VerticalAlignment=Center
       - Grid.Column=1
       - Margin=2,0,0,0
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
