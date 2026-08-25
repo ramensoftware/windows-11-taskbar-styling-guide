@@ -396,26 +396,19 @@ controlStyles:
     styles:
       - Fill = Transparent
       - // Progress bar track hidden. Only the indicators below are tinted.
-  - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#DeterminateProgressBarIndicator, Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#IndeterminateProgressBarIndicator
+  - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#DeterminateProgressBarIndicator, Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#IndeterminateProgressBarIndicator, Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#IndeterminateProgressBarIndicator2
     styles:
       - StrokeThickness = 1
       - RadiusX := $buttonRadius
       - RadiusY := $buttonRadius
       - Fill := $progressColor
       - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
-      - // Determinate progress fill (task progress) | Indeterminate progress fill (loading state).
-  - target: Grid#LayoutRoot@CommonStates > Border#ProgressBarRoot > Border > Grid > Rectangle#IndeterminateProgressBarIndicator2
-    styles:
-      - StrokeThickness = 1
-      - RadiusX := $buttonRadius
-      - RadiusY := $buttonRadius
-      - Fill := $progressColor
-      - Fill@Paused := <SolidColorBrush Color="orange" Opacity="0.2"/>
+      - // Determinate progress fill (task progress) | Indeterminate progress fill (loading state) |
       - // Second indeterminate progress fill (the trailing bar of the animation).
   - target: Border#MultiWindowElement
     styles:
       - Visibility = 1
-      - // Native multi-window indicator, collapsed (Visibility = 1); the dot on DefaultIcon replaces it.
+      - // Native multi-window indicator, collapsed ; the dot on DefaultIcon replaces it.
   - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
       - Margin := {{$iconLabelSpacing-12}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset}}
@@ -440,7 +433,7 @@ controlStyles:
       - RenderTransform := <TranslateTransform X="{{max((ImageIconWidth/2-3),10)}}" Y="0" />
       - RenderTransform@InactivePointerOver := <TransformGroup><TranslateTransform X="{{max((ImageIconWidth/2-3),10)}}" Y="0" /><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /></TransformGroup>
       - // Icon is Left-aligned and positioned by RenderTransform
-      - //so its layout box matches its visual position
+      - // so its layout box matches its visual position
   - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - MinWidth := {{max(40,(2*ImageIconWidth+2))}}
@@ -465,13 +458,12 @@ controlStyles:
       - StrokeThickness = 0
       - Margin = 0,0,{{ImageIconWidth+8}},0
       - Canvas.ZIndex = 4
-      - // The fallback icon slot is repurposed as a multi-window dot. Hidden by default (Visibility = 1),
+      - // The fallback icon slot is repurposed as a multi-window dot. Hidden by default,
       - // shown only in the MultiWindow and RequestingAttentionMulti states.
   - target: Taskbar.TaskbarExtensionElement
     styles:
       - Visibility = 1
-      - // Search box hidden. This selector matches the extension element class rather than the search
-      - // control specifically.
+      - // Search box hidden. This selector matches the extension element class rather than the search control specifically.
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Width = 1
@@ -516,7 +508,7 @@ controlStyles:
       - CornerRadius := $highlightRadius
       - BorderThickness = 0
       - // Clock highlight | Language indicator highlight | Tray overflow chevron highlight
-      - // Control center highlight | Notification area icon highlights |Weather widget
+      - // Control center highlight | Notification area icon highlights | Weather widget,
       - // all inset uniformly by $highlightOffset
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter
     styles:
@@ -570,7 +562,7 @@ controlStyles:
     styles:
       - FontSize := $sysTrayIconSize
       - // Tray glyph icons base (network, volume) | Tray glyph icons underlay (network, volume)
-      - // Tray glyph icon (battery) all sized by font size.
+      - // And Tray glyph icon (battery), all sized by font size.
   - target: SystemTray.LanguageTextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
     styles:
       - FontSize := {{$sysTrayIconSize-4}}
@@ -585,10 +577,6 @@ controlStyles:
       - Margin = 0,0,0,2.5
       - MaxLines = 1
       - // Language indicator forced to one line (otherwise it wraps to "ENG / US") and nudged up.
-  - target: Grid#OverflowRootGrid > Border
-    styles:
-      - Shadow :=
-      - // Tray overflow flyout, shadow cleared (an empty := assigns null).
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker1
     styles:
       - ActualWidth => WeatherIconWidth
@@ -611,13 +599,10 @@ controlStyles:
       - Margin = 0
       - Width := {{WeatherCondWidth+WeatherTempWidth + WeatherIconWidth + 44}}
       - VerticalAlignment = 1
+      - HorizontalAlignment = 0
       - RenderTransform := <TranslateTransform X="0" Y="1" />
       - // Weather widget content grid, width driven by the two captured text widths plus 44px for the
       - // icon and padding. The same figure is repeated on the root panel below.
-  - target: Grid#AugmentedEntryPointContentGrid
-    styles:
-      - // Weather widget content.
-      - HorizontalAlignment = 0
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel
     styles:
       - Margin = 0
@@ -654,16 +639,12 @@ controlStyles:
     styles:
       - HorizontalAlignment = 0
       - RenderTransformOrigin = 0.5,0.5
-      - RenderTransform := <TransformGroup><TranslateTransform X="20" Y="2" /><ScaleTransform ScaleX = "0.85" ScaleY = "0.85" /></TransformGroup>
+      - RenderTransform := <TransformGroup><TranslateTransform X="20" Y="-4" /><ScaleTransform ScaleX = "0.75" ScaleY = "0.75" /></TransformGroup>
       - // Weather widget icon grid (when overflow), scaled down and repositioned.
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid
     styles:
       - Background = Transparent
       - // Weather widget temperature panel, card background cleared (when overflow).
-  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
-    styles:
-      - Shadow :=
-      - // Language switcher flyout, shadow cleared.
   - target: Grid#ContainerGrid@ > Rectangle#ShowDesktopPipe
     styles:
       - Opacity = 1
@@ -676,7 +657,6 @@ controlStyles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
       - Fill := $showDesktopIndicatorColor
       - // "Show desktop" corner control, reshaped from a bar into a dot that grows on hover.
-      - // The bare @ attaches to the element's default visual state group.
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel
     styles:
       - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
@@ -703,26 +683,24 @@ controlStyles:
       - BorderBrush := $buttonBorderColor
       - // Virtual desktop switcher, styled to match the tray pill. This element comes from a separate
       - // Windhawk mod and simply matches nothing when that mod is not installed.
-      - // Its padding and height are literals rather than constants.
   - target: Grid#VdSwitcherBar > Button > ContentPresenter
     styles:
       - BorderThickness = 0
       - // Virtual desktop switcher buttons.
-  - target: ScrollViewer > ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground
+  - target: ScrollViewer > ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground, WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid, Grid#OverflowRootGrid > Border
     styles:
       - Shadow :=
-      - // Overflow flyout background, shadow cleared.
+      - // Overflow flyout background | Language switcher flyout, shadow cleared | Grid#OverflowRootGrid > Border shadow cleared.
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - MinWidth = 28
-      - // Buttons inside the overflow flyout (a literal, not derived).
+      - // Buttons inside the overflow flyout.
   - target: ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
       - RenderTransformOrigin = 0.5,0.5
       - RenderTransform := <TranslateTransform X="{{max((ImageIconWidth/2-3),10/2)}}" Y="0" />
       - RenderTransform@InactivePointerOver := <TransformGroup><ScaleTransform ScaleX = "0.9" ScaleY = "0.9" /><TranslateTransform X="{{max((ImageIconWidth/2-3),10/2)}}" Y="0" /></TransformGroup>
-      - // Flyout button icons.
-      - // Resetting TranslateTransform flyout icons.
+      - // Reset TranslateTransform for flyout icons.
   - target: ScrollViewer > ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > ContentPresenter#HoverFlyoutContent > Taskbar.OverflowFlyoutList > ScrollViewer#OverflowScrollView > Border#Root > Grid > ScrollContentPresenter#ScrollContentPresenter > Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - Background = Transparent
