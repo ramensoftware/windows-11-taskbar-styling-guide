@@ -194,37 +194,17 @@ The dock's width changes depending on your **screen resolution** using **horizon
 <details>
 <summary>(Click to expand guide)</summary>
 
-Locate and edit these `styleConstants` values:
-
-  - DockMargin
-  - DockMarginFix
-
-The examples are for a **full length dock** (corner to corner).
-
-## 1. Main taskbar width
+Locate and edit this `styleConstants` value:
 
 `DockMargin=250`
 
-This controls the main dock width.
+This controls the main dock width. The system tray uses the same value, so it
+stays aligned with the dock's right edge.
 
 - Smaller value = wider dock
 - Larger value = narrower dock
 
-Example: `DockMargin=5`
-
----
-
-## 2. Background alignment fix
-
-`DockMarginFix=500`
-
-This value must always equal: `DockMargin × 2`
-
-Example:
-
-If: `DockMargin=5`
-
-Then: `DockMarginFix=10`
+Example: `DockMargin=5` for a **full length dock** (corner to corner).
 </details>
 
 ---
@@ -239,8 +219,6 @@ Set the following style constants to these values:
 ```yaml
   - DockHeight=53
   - DockTopGap=0
-  - DockTrayMarginUp=-2
-  - DockTrayMarginDown=4
 ```
 </details>
 
@@ -265,9 +243,9 @@ Like this: `WidgetGap=`
 <details>
 <summary>Click to expand guide</summary>
 
-You can edit the constant `Height=58`'s value, but doing so requires manually adjusting `DockTrayMarginUp` and `DockTrayMarginDown`.
+You can edit the `DockHeight` constant's value. The system tray follows the dock's vertical position on its own.
 
-Removing the last target allows external mods to change the height, though the manual adjustments listed above are still required.
+Removing the last target allows external mods to change the height:
 
 ```yaml
   - target: Taskbar.TaskbarFrame
@@ -305,7 +283,7 @@ AnimationSettings=IsStaggeringEnabled="True" FromHorizontalOffset="-50" FromVert
 I didn't know how to fix these. I couldn't find the correct target names, or I'm not sure if they can even be changed/fixed.
 
 - **Left Taskbar Alignment (Dock/Compact):** **Left Taskbar Alignment** is not compatible by default. Refer to the [Left Taskbar Alignment Fix Guide](#left-taskbar-alignment-fix).
-- **Taskbar height and icon size Mod (Dock):** `Taskbar height and icon size` is not compatible, but you can edit manually. Refer to [Taskbar height and icon size Compatibility Guide](#taskbar-height-and-icon-size-compatibility).
+- **Taskbar height and icon size Mod (Dock):** The dock pins its own height, so `Taskbar height and icon size` has no effect until that is removed. Refer to [Taskbar height and icon size Compatibility Guide](#taskbar-height-and-icon-size-compatibility).
 - **Icon Hitboxes (Dock):** The Taskbar's rounded corners slightly limit the icon hitbox on the **top and bottom**, which makes it **impossible to minimize windows by clicking in those areas**.
 - **SearchBox (Dock/Classic):** Has **mismatched look and position** when typing.
 - **SearchBox (Compact):** Has incorrect styling and positioning in the Compact version.
@@ -340,11 +318,9 @@ The theme styles can also be imported manually. To do that, follow these steps:
 ```yaml
 styleConstants:
   - DockMargin=250
-  - DockMarginFix=500
   - DockHeight=58
   - DockTopGap=5
-  - DockTrayMarginUp=1
-  - DockTrayMarginDown=1
+  - DockBottomGap=5
   - WidgetGap=-
   - AccentColor=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}" Opacity="1.0" />
   - AnimationSettings=IsStaggeringEnabled="True" FromHorizontalOffset="-50" FromVerticalOffset="50"
@@ -615,6 +591,8 @@ controlStyles:
       - Visibility=Collapsed
   - target: Taskbar.TaskbarFrame
     styles:
+      - Width=Auto
+      - HorizontalAlignment=Stretch
       - Margin=$DockMargin,0,$DockMargin,0
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
@@ -622,7 +600,7 @@ controlStyles:
       - BorderThickness=$bt
       - BorderBrush=$bb
       - CornerRadius=$mcr
-      - Margin=0,$DockTopGap,$DockMarginFix,5
+      - Margin=0,$DockTopGap,0,$DockBottomGap
   - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
@@ -635,10 +613,10 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
     styles:
       - Margin=0,0,$WidgetGap57,0
-  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
+  - target: SystemTray.SystemTrayFrame
     styles:
-      - Margin=-$DockMargin,$DockTrayMarginUp,$DockMargin,$DockTrayMarginDown
-      - HorizontalAlignment=Right
+      - VerticalAlignment=Center
+      - Margin=0,$DockTopGap,$DockMargin,$DockBottomGap
   - target: Taskbar.TaskbarFrame
     styles:
       - Height=$DockHeight
