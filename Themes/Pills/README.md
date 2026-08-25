@@ -34,43 +34,6 @@ Pills. A sleek theme that turns taskbar buttons into labeled breathable pills. T
 Click each to expand settings:
 
   <details>
-  <summary>Taskbar Labels for Windows 11</summary>
-
-  ```yaml
-  mode: labelsWithCombining
-  taskbarItemWidth: 0
-  runningIndicatorStyle: fullWidth
-  progressIndicatorStyle: sameAsRunningIndicatorStyle
-  excludedPrograms:
-    - ''
-  minimumTaskbarItemWidth: 40
-  maximumTaskbarItemWidth: 200
-  fontSize: 12
-  fontFamily: ''
-  textTrimming: characterEllipsis
-  leftAndRightPaddingSize: 0
-  spaceBetweenIconAndLabel: 24
-  runningIndicatorHeight: -1
-  runningIndicatorVerticalOffset: 0
-  alwaysShowThumbnailLabels: 0
-  labelForSingleItem: ''
-  labelForMultipleItems: ''
-  ```
-  </details>
-  
-  <details>
-  <summary>Taskbar Height and Icon Size</summary>
-
-  ```yaml
-  TaskbarHeight: 32
-  IconSize: 14
-  TaskbarButtonWidth: 28
-  IconSizeSmall: 14
-  TaskbarButtonWidthSmall: 28
-  ```
-  </details>
-
-  <details>
   <summary>Taskbar Clock Customization</summary>
 
   ```yaml
@@ -146,7 +109,19 @@ Click each to expand settings:
   oldTaskbarOnWin11: 0
   ```
   </details>
+  
+  <details>
+  <summary>Taskbar Height and Icon Size</summary>
 
+  ```yaml
+  TaskbarHeight: 32
+  IconSize: 14
+  TaskbarButtonWidth: 28
+  IconSizeSmall: 14
+  TaskbarButtonWidthSmall: 28
+  ```
+  </details>
+  
   <details>
   <summary>Dynamic Taskbar Transparency</summary>
 
@@ -179,6 +154,33 @@ Click each to expand settings:
     fullscreenAsMaximized: 1
   ```
   </details>
+  
+## Recommended Windhawk mods
+
+  <details>
+  <summary>Taskbar Labels for Windows 11</summary>
+
+  ```yaml
+  mode: labelsWithCombining
+  taskbarItemWidth: 0
+  runningIndicatorStyle: fullWidth
+  progressIndicatorStyle: sameAsRunningIndicatorStyle
+  excludedPrograms:
+    - ''
+  minimumTaskbarItemWidth: 40
+  maximumTaskbarItemWidth: 200
+  fontSize: 12
+  fontFamily: ''
+  textTrimming: characterEllipsis
+  leftAndRightPaddingSize: 0
+  spaceBetweenIconAndLabel: 24
+  runningIndicatorHeight: -1
+  runningIndicatorVerticalOffset: 0
+  alwaysShowThumbnailLabels: 0
+  labelForSingleItem: ''
+  labelForMultipleItems: ''
+  ```
+  </details>
 
   <details>
   <summary>Taskbar tray system icon tweaks</summary>
@@ -198,10 +200,6 @@ Click each to expand settings:
   showDesktopButtonWidth: 12
   ```
   </details>
-
-
-## Recommended Windhawk mods
-
   <details>
   <summary>Taskbar Virtual Desktop Switcher</summary>
 
