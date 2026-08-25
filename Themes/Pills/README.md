@@ -306,12 +306,13 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill := $taskbarFill
-      - // Taskbar background. $taskbarFill is empty on purpose, which assigns null and leaves the
-      - // surface transparent. Set the constant to a brush to give the taskbar its own fill.
+      - // Taskbar background. $taskbarFill is set '' on purpose, which leaves the
+      - // surface as native Windows background. Set the constant to a brush to give the taskbar its own fill.
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundStroke
     styles:
       - Fill := $taskbarStrokeColor
-      - // Taskbar top stroke, nulled the same way as the background fill above.
+      - // Taskbar Stroke. $taskbarStrokeColor is set '' on purpose, which leaves the
+      - // stroke color as native Windows. Set the constant to a brush to give the stroke its own fill.
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame
     styles:
       - Height => TaskbarHeight
