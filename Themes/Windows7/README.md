@@ -325,6 +325,30 @@ controlStyles:
       - Height@ActivePressed_SearchIcon=Auto
       - Height@ActivePointerOver_SearchIcon=Auto
       - Height@InactiveNormal_SearchIcon=Auto
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - BorderBrush@InactivePointerOver:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPointerOver" />
+      - BorderBrush@InactivePressed:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPressed" />
+      - BorderBrush@ActivePressed:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPressed" />
+      - BorderBrush@ActivePointerOver:=<ImageBrush Stretch="Uniform" ImageSource="$taskbandNotRunningPointerOver" />
+      - BorderBrush@ActiveNormal=Transparent
+      - BorderThickness@InactivePointerOver=2
+      - BorderThickness@InactivePressed=2
+      - BorderThickness@ActivePressed=2
+      - BorderThickness@ActivePointerOver=2
+      - Background@ActiveNormal:=<ImageBrush Stretch="None" ImageSource="$searchIcon" />
+      - Background@InactivePointerOver:=<ImageBrush Stretch="None" ImageSource="$searchIcon" />
+      - Background@InactivePressed:=<ImageBrush Stretch="None" ImageSource="$searchIcon" />
+      - Background@ActivePressed:=<ImageBrush Stretch="None" ImageSource="$searchIcon" />
+      - Background@ActivePointerOver:=<ImageBrush Stretch="None" ImageSource="$searchIcon" />
+      - Background@InactiveNormal:=<ImageBrush Stretch="None" ImageSource="$searchIcon" />
+      - Height=30
+      - Height@ActiveNormal=Auto
+      - Height@InactivePointerOver=Auto
+      - Height@InactivePressed=Auto
+      - Height@ActivePressed=Auto
+      - Height@ActivePointerOver=Auto
+      - Height@InactiveNormal=Auto
   - target: Taskbar.SearchBoxButton#SearchBoxButton[AutomationProperties.AutomationId=SearchButton] > Taskbar.TaskListButtonPanel@CommonStates > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer, Taskbar.SearchBoxButton#SearchBoxButton[AutomationProperties.AutomationId=SearchButton] > Taskbar.TaskListButtonPanel@CommonStates > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer
     styles:
       - Visibility@ActiveNormal_SearchIcon=Collapsed
@@ -333,6 +357,14 @@ controlStyles:
       - Visibility@ActivePressed_SearchIcon=Collapsed
       - Visibility@ActivePointerOver_SearchIcon=Collapsed
       - Visibility@InactiveNormal_SearchIcon=Collapsed
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer
+    styles:
+      - Visibility@ActiveNormal=Collapsed
+      - Visibility@InactivePointerOver=Collapsed
+      - Visibility@InactivePressed=Collapsed
+      - Visibility@ActivePressed=Collapsed
+      - Visibility@ActivePointerOver=Collapsed
+      - Visibility@InactiveNormal=Collapsed
   - target: Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView > Windows.UI.Xaml.Controls.Grid@ > Windows.UI.Xaml.Controls.Border#BackgroundBorder
     styles:
       - Background@CheckedPressed:=<ImageBrush Stretch="Fill" ImageSource="$clockPressed" />

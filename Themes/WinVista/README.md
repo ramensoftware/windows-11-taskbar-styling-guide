@@ -48,6 +48,9 @@ controlStyles:
   - target: Taskbar.SearchBoxButton
     styles:
       - CornerRadius=2
+  - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid > Border
+    styles:
+      - CornerRadius=2
   - target: Taskbar.TaskListButton
     styles:
       - CornerRadius=2

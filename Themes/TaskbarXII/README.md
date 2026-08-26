@@ -57,7 +57,7 @@ controlStyles:
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
       - Margin=0,0,3,0
-  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel
+  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Margin=2,0,6,0
   - target: TextBlock#SearchBoxTextBlock

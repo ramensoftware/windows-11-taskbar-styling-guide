@@ -156,13 +156,19 @@ controlStyles:
       - Padding=$ItemPadding
       - VerticalAlignment=Center
       - Height=$IconHeight
+  - target: SearchUx.SearchUI.SearchButtonControl
+    styles:
+      - Margin=$ItemMargin
+      - Padding=$ItemPadding
+      - VerticalAlignment=Center
+      - Height=$IconHeight
   - target: Taskbar.TaskViewButton
     styles:
       - Margin=$ItemMargin
       - Padding=$ItemPadding
       - VerticalAlignment=Center
       - Height=$IconHeight
-  - target: Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButtonPanel, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - VerticalAlignment=Center
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement

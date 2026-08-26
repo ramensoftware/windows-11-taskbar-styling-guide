@@ -42,7 +42,7 @@ controlStyles:
       - BorderThickness@NoRunningIndicator=1
       - BorderBrush@NoRunningIndicator:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />
       - Margin=1
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.3" Color="{ThemeResource SystemChromeHighColor}" />
       - BorderBrush:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.6" Color="{ThemeResource SystemChromeHighColor}" />
@@ -96,6 +96,11 @@ controlStyles:
     styles:
       - Height=48
       - Margin=0,-2,0,0
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
+    styles:
+      - CornerRadius=20
+      - Background:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />
+      - BorderBrush:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.25" Color="{ThemeResource SearchPillButtonForeground}" />
   - target: Border#MultiWindowElement
     styles:
       - Height=0
