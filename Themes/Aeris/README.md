@@ -179,7 +179,7 @@ controlStyles:
   - target: Grid#IconPanel > Rectangle#DefaultIcon, Taskbar.TaskListLabeledButtonPanel > Rectangle#DefaultIcon
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListButtonPanel > Grid > AnimatedVisualPlayer, Taskbar.TaskListButtonPanel > AnimatedVisualPlayer
+  - target: Taskbar.TaskListButtonPanel > Grid > AnimatedVisualPlayer, Taskbar.TaskListButtonPanel > AnimatedVisualPlayer, SearchUx.SearchUI.SearchButtonRootGrid > Grid > AnimatedVisualPlayer, SearchUx.SearchUI.SearchButtonRootGrid > AnimatedVisualPlayer
     styles:
       - Transform3D:=<CompositeTransform3D TranslateX="0" TranslateY="1" />
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel

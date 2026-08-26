@@ -166,6 +166,9 @@ controlStyles:
   - target: Taskbar.SearchBoxButton
     styles:
       - Margin=0,0,2,0
+  - target: SearchUx.SearchUI.SearchButtonControl
+    styles:
+      - Margin=0,0,2,0
   - target: Border#BackgroundElement
     styles:
       - BorderThickness=0
@@ -283,6 +286,10 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
     styles:
       - Background@InactiveNormal :=$base
-      - CornerRadius = 8
+      - CornerRadius = $mainRadius
+      - Background :=$base
+      - Background@InactivePointerOver :=$overlay2
+      - Background@ActivePointerOver:=$overlay
+      - Background@ActiveNormal :=$active
 ```
 </details>

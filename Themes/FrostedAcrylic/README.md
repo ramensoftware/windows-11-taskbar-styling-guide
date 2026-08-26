@@ -156,7 +156,7 @@ controlStyles:
       - Margin=0
       - HorizontalAlignment=Center
       - VerticalAlignment=Center
-  - target: Grid#IconPanel > TextBlock, Taskbar.TaskListButtonPanel > Grid > TextBlock, Taskbar.TaskListButtonPanel > TextBlock
+  - target: Grid#IconPanel > TextBlock, Taskbar.TaskListButtonPanel > Grid > TextBlock, Taskbar.TaskListButtonPanel > TextBlock, SearchUx.SearchUI.SearchButtonRootGrid > Grid > TextBlock, SearchUx.SearchUI.SearchButtonRootGrid > TextBlock
     styles:
       - Visibility=Collapsed
       - Margin=0
