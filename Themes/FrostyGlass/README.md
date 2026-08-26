@@ -152,7 +152,7 @@ controlStyles:
     styles:
       - Padding=2,4,4.5,4
       - CornerRadius=7
-  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid
     styles:
       - Padding=2,2,5,4
       - CornerRadius=7

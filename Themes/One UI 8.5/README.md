@@ -70,349 +70,349 @@ styleConstants:
 controlStyles:
 # OneUI icon pack
   # --- XBOX APP ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/xbox.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
   # --- WINDOWS CAMERA ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/windowscamera.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
   # --- COMMAND PROMPT ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/cmd.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WINDOWS POWERSHELL ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/powershell.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
   # --- On Screen keyboard ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/osk.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
   # --- PAINT ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/paint.png
       - Height=40
       - Width=40 
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- SNIPPING TOOL ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/snippingtool.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- SPOTIFY ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Spotify.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- PHOTOS ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/photos.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MEDIA PLAYER ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/mediaplayer.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- STEAM ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/steam.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WINDOWS CALCULATOR ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/calculator.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WINDOWS CLOCK / ALARMS ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/time.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WINDOWS SECURITY ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/security.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT STORE ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/store.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WHATSAPP (STABLE) ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/whatsapp.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT WORD ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/word.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT POWERPOINT ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/powerpoint.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT ONENOTE ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/onenote.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT ONEDRIVE ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/OneDrive.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT TEAMS ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/ms-teams.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT OUTLOOK ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/outlook.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- CONTROL PANEL ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/ControlPanel.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- FILE EXPLORER ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/explorer.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- DISCORD ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/discord.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- SYSTEM SETTINGS ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/systemsettings.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- NOTEPAD ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/notepad.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
   # --- YOUTUBE MUSIC ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/YouTubeMusic.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- BLUESTACKS ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Bluestacks.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- DESKFX ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/DeskFX.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WINDHAWK ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/windhawk.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WHATSAPP (BETA) ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/whatsapp.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 # Taskbar icon styles
@@ -811,343 +811,343 @@ styleConstants:
 controlStyles:
 # OneUI icon pack
   # --- XBOX APP ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/xbox.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.AppL] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.GamingApp_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
   # --- WINDOWS CAMERA ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCamera_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/windowscamera.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
   # --- COMMAND PROMPT ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/cmd.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\cmd.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: C:\Windows\System32\cmd.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WINDOWS POWERSHELL ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/powershell.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {A7CC3F66-580E-49E6-913B-556111443D24}\Windows PowerShell\Windows PowerShell.lnk] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
   # --- On Screen keyboard ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\osk.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/osk.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
   # --- PAINT ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/paint.png
       - Height=40
       - Width=40 
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Paint_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- SNIPPING TOOL ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/snippingtool.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ScreenSketch_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- SPOTIFY ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Spotify.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- PHOTOS ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/photos.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Photos_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MEDIA PLAYER ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/mediaplayer.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- STEAM ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/steam.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Valve.Steam.Client] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WINDOWS CALCULATOR ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/calculator.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsCalculator_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WINDOWS CLOCK / ALARMS ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/time.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsAlarms_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WINDOWS SECURITY ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/security.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.SecHealthUI_8wekyb3d8bbwe!SecHealthUI] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT STORE ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/store.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsStore_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WHATSAPP (STABLE) ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/whatsapp.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT WORD ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/word.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.WINWORD.EXE.15] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT POWERPOINT ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/powerpoint.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.POWERPNT.EXE.15] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT ONENOTE ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/onenote.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Office.ONENOTE.EXE.15] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT ONEDRIVE ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/OneDrive.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OneDrive] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT TEAMS ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/ms-teams.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: MSTeams_8wekyb3d8bbwe!MSTeams] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- MICROSOFT OUTLOOK ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/outlook.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- CONTROL PANEL ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/ControlPanel.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.ControlPanel] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- FILE EXPLORER ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/explorer.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.Windows.Explorer] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- DISCORD ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/discord.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.squirrel.Discord.Discord] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- SYSTEM SETTINGS ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/systemsettings.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- NOTEPAD ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/notepad.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: Microsoft.WindowsNotepad_8wekyb3d8bbwe!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
   # --- YOUTUBE MUSIC ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/YouTubeMusic.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: com.github.th-ch.youtube-music] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- BLUESTACKS ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Bluestacks.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: BlueStacks_nxt] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- DESKFX ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/DeskFX.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: {7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\NCH Software\DeskFX\deskfx.exe] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WINDHAWK ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/windhawk.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: RamenSoftware.Windhawk] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 
   # --- WHATSAPP (BETA) ---
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > Grid#IconPanel > Image#Icon, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Image#Icon'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > Grid#IconPanel > Image#Icon, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon'
     styles:
       - Source=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/whatsapp.png
       - Height=40
       - Width=40
       - Margin=0,0,0,0
-  - target: 'taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > Grid#IconPanel > Border, taskbar:TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > taskbar:TaskListLabeledButtonPanel#IconPanel > Border'
+  - target: 'Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > Grid#IconPanel > Border, Taskbar.TaskListButton[AutomationProperties.AutomationId=Appid: 5319275A.51895FA4EA97F_cv1g1gvanyjgm!App] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border'
     styles:
       - Visibility=Collapsed
 # Taskbar icon styles

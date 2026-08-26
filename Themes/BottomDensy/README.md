@@ -132,7 +132,7 @@ controlStyles:
       - Height=2
       - Margin=0,-2,0,0
       - Width@ActiveRunningIndicator=32
-  - target: Grid#IconPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator
+  - target: Grid#IconPanel@RunningIndicatorStates > Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
     styles:
       - VerticalAlignment=0
   - target: Rectangle#RunningIndicator
@@ -267,7 +267,7 @@ controlStyles:
       - Width@ActiveRunningIndicator=32
       - Height@ActiveRunningIndicator=2
       - Margin@ActiveRunningIndicator=0,-2,0,0
-  - target: Grid#IconPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > muxc:ProgressBar#ProgressIndicator
+  - target: Grid#IconPanel@RunningIndicatorStates > Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
     styles:
       - VerticalAlignment=0
   - target: Rectangle#RunningIndicator

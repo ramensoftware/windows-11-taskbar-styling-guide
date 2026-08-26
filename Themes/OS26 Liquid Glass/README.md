@@ -512,7 +512,7 @@ controlStyles:
       - CornerRadius=20
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, taskbar:TaskListLabeledButtonPanel@RunningIndicatorStates > Border
+  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
     styles:
       - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff"/>
       - CornerRadius=12
@@ -987,7 +987,7 @@ controlStyles:
       - CornerRadius=20
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, taskbar:TaskListLabeledButtonPanel@RunningIndicatorStates > Border
+  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
     styles:
       - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff"/>
       - CornerRadius=12
@@ -1318,7 +1318,7 @@ controlStyles:
       - CornerRadius=20
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, taskbar:TaskListLabeledButtonPanel@RunningIndicatorStates > Border
+  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
     styles:
       - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff"/>
       - CornerRadius=12
@@ -1796,7 +1796,7 @@ controlStyles:
       - CornerRadius=20
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, taskbar:TaskListLabeledButtonPanel@RunningIndicatorStates > Border
+  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
     styles:
       - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff"/>
       - CornerRadius=12
@@ -2271,7 +2271,7 @@ controlStyles:
       - CornerRadius=20
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, taskbar:TaskListLabeledButtonPanel@RunningIndicatorStates > Border
+  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
     styles:
       - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff"/>
       - CornerRadius=13
@@ -2603,7 +2603,7 @@ controlStyles:
       - CornerRadius=20
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, taskbar:TaskListLabeledButtonPanel@RunningIndicatorStates > Border
+  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
     styles:
       - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff"/>
       - CornerRadius=12

@@ -120,7 +120,7 @@ controlStyles:
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
     styles:
       - Margin=-12,0,0,0
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, taskbar:TaskListLabeledButtonPanel@RunningIndicatorStates > Border
+  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
     styles:
       - Background@ActiveRunningIndicator:=<AcrylicBrush TintOpacity="0.8" TintColor="Black" />
       - Background@InactiveRunningIndicator:=<AcrylicBrush TintOpacity="0.8" TintColor="Black" />
