@@ -31,7 +31,7 @@ TaskbarButtonWidthSmall: 32
 
 ```
 Target:
-Taskbar.TaskListLabeledButtonPanel > Image
+Grid#IconPanel > Image, Taskbar.TaskListLabeledButtonPanel > Image
 
 Styles:
 Transform3D:=<CompositeTransform3D TranslateX="0" TranslateY="2" />
@@ -87,14 +87,14 @@ controlStyles:
     styles:
       - Visibility=Collapsed
       - Fill:=<SolidColorBrush Color="$primaryColor" Opacity="0.05"/>
-  - target: Taskbar.TaskListButtonPanel@CommonStates
+  - target: Grid#IconPanel@CommonStates, Taskbar.TaskListButtonPanel@CommonStates
     styles:
       - Padding=0
       - Margin=$taskListMargin,0,$taskListMargin,0
       - Background@ActiveNormal:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background@ActivePointerOver:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background@ActivePressed:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background:=$transparent
       - Background@InactivePointerOver:=$pointerOver
@@ -104,7 +104,7 @@ controlStyles:
       - BorderThickness=0
       - CornerRadius=0
       - Margin=0
-  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates
+  - target: Taskbar.TaskListButton > Grid#IconPanel@RunningIndicatorStates, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates
     styles:
       - Padding=0
       - Margin=$taskListMargin,0,$taskListMargin,0
@@ -112,7 +112,7 @@ controlStyles:
       - Background@InactiveRunningIndicator:=<SolidColorBrush Color="$primaryColor" Opacity="0.1"/>
       - Background@ActiveRunningIndicator:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background:=<SolidColorBrush Color="$requestAttentionColor" Opacity="0.5"/>
-  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListButton > Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background:=$transparent
       - Background@InactivePointerOver:=$pointerOver
@@ -128,10 +128,10 @@ controlStyles:
       - BorderThickness=0
       - CornerRadius=0
       - Margin=0
-  - target: Taskbar.TaskListLabeledButtonPanel > Border#MultiWindowElement
+  - target: Grid#IconPanel > Border#MultiWindowElement, Taskbar.TaskListLabeledButtonPanel > Border#MultiWindowElement
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@CommonStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
     styles:
       - Visibility=Collapsed
       - Fill:=<SolidColorBrush Color="$primaryColor" Opacity="0.2"/>
@@ -173,13 +173,13 @@ controlStyles:
       - RadiusY=0
       - Fill:=<SolidColorBrush Color="$progressColor" Opacity="0.4"/>
       - Fill@Paused:=<SolidColorBrush Color="$progressPausedColor" Opacity="0.4"/>
-  - target: Taskbar.TaskListLabeledButtonPanel > Image
+  - target: Grid#IconPanel > Image, Taskbar.TaskListLabeledButtonPanel > Image
     styles:
       - Transform3D:=<CompositeTransform3D TranslateX="2" TranslateY="1" />
-  - target: Taskbar.TaskListLabeledButtonPanel > Rectangle#DefaultIcon
+  - target: Grid#IconPanel > Rectangle#DefaultIcon, Taskbar.TaskListLabeledButtonPanel > Rectangle#DefaultIcon
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListButtonPanel > AnimatedVisualPlayer
+  - target: Taskbar.TaskListButtonPanel > Grid > AnimatedVisualPlayer, Taskbar.TaskListButtonPanel > AnimatedVisualPlayer, SearchUx.SearchUI.SearchButtonRootGrid > Grid > AnimatedVisualPlayer, SearchUx.SearchUI.SearchButtonRootGrid > AnimatedVisualPlayer
     styles:
       - Transform3D:=<CompositeTransform3D TranslateX="0" TranslateY="1" />
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel
@@ -204,7 +204,7 @@ controlStyles:
       - Background@ActiveNormal:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background@ActivePointerOver:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background@ActivePressed:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
-  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - BorderThickness=0
       - CornerRadius=0
@@ -215,12 +215,12 @@ controlStyles:
       - Background@ActiveNormal_SearchIcon:=$transparent
       - Background@ActivePointerOver_SearchIcon:=$pointerOver
       - Background@ActivePressed_SearchIcon:=$pressed
-  - target: Taskbar.SearchBoxLaunchListButton > Taskbar.TaskListButtonPanel > Border#BackgroundElement
+  - target: Taskbar.SearchBoxLaunchListButton > Taskbar.TaskListButtonPanel > Grid > Border#BackgroundElement, Taskbar.SearchBoxLaunchListButton > Taskbar.TaskListButtonPanel > Border#BackgroundElement
     styles:
       - BorderThickness=0
       - CornerRadius=0
       - Margin=0
-  - target: SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
     styles:
       - BorderThickness=0
       - CornerRadius=0
@@ -255,12 +255,16 @@ controlStyles:
     styles:
       - MinWidth=$showDesktopWidth
       - MaxWidth=$showDesktopWidth
-  - target: SystemTray.Stack#ShowDesktopStack > Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView
+  - target: SystemTray.Stack#ShowDesktopStack > Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView > Grid#ContainerGrid, SystemTray.Stack#ShowDesktopStack > Grid > SystemTray.StackListView > Windows.UI.Xaml.Controls.ItemsPresenter > Windows.UI.Xaml.Controls.StackPanel > Windows.UI.Xaml.Controls.ContentPresenter > SystemTray.IconView
     styles:
       - MinWidth=$showDesktopWidth
       - MaxWidth=$showDesktopWidth
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid@ > Rectangle#ShowDesktopPipe
     styles:
+      - Grid.Row=0
+      - Grid.RowSpan=3
+      - Grid.Column=0
+      - Grid.ColumnSpan=3
       - VerticalAlignment=Stretch
       - HorizontalAlignment=Stretch
       - Height=Auto

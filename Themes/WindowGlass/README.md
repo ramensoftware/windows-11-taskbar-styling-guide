@@ -135,7 +135,7 @@ controlStyles:
       - Width=Auto
       - HorizontalAlignment=Left
       - Margin=0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,2,0,2
       - Padding=0,0,8,0
@@ -166,7 +166,7 @@ controlStyles:
     styles:
       - Padding=6,0,6,0
       - Margin=2,0,0,0
-  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid
     styles:
       - Padding=$TrayPadding
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
@@ -374,7 +374,7 @@ controlStyles:
       - BorderBrush:=#20808080
       - Padding=2,0,5,0
       - MaxWidth:=200
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,2,3,2
       - Background:=$Background
@@ -399,7 +399,7 @@ controlStyles:
   - target: SystemTray.CopilotIcon
     styles:
       - Padding=$TrayPadding
-  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid
     styles:
       - Padding=$TrayPadding
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
@@ -475,7 +475,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
       - Background:=Transparent
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - CornerRadius=10
   - target: Taskbar.TaskListButton#TaskListButton
@@ -616,7 +616,7 @@ controlStyles:
       - BorderBrush:=#20808080
       - Padding=2,0,5,0
       - MaxWidth:=200
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,8,8,7
       - Background:=Transparent
@@ -637,10 +637,13 @@ controlStyles:
     styles:
       - Padding=$TrayPadding
       - CornerRadius=10
+  - target: SystemTray.OmniButton#ControlCenterButton > StackPanel
+    styles:
+      - Padding=0,-4,0,-4
   - target: SystemTray.CopilotIcon
     styles:
       - Padding=$TrayPadding
-  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid
     styles:
       - Padding=$TrayPadding
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
@@ -717,7 +720,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
       - Background:=Transparent
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - CornerRadius=10
   - target: Taskbar.TaskListButton#TaskListButton

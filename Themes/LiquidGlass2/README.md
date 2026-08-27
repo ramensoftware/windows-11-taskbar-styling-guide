@@ -171,7 +171,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```yaml
 controlStyles:
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0
       - BorderThickness=0
@@ -196,7 +196,7 @@ controlStyles:
       - CornerRadius={{(TaskHeight/4)*1.8}}
       - BorderThickness=1.2,1,1.2,1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.1" /><GradientStop Color="#60404040" Offset="0.25" /><GradientStop Color="#70202020" Offset="0.5" /><GradientStop Color="#90404040" Offset="0.75" /><GradientStop Color="#90404040" Offset="0.9" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle
+  - target: Grid#IconPanel@RunningIndicatorStates > Rectangle, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle
     styles:
       - Width=4.5
       - Height=4.2
@@ -221,6 +221,9 @@ controlStyles:
       - Background:=Transparent
       - HorizontalAlignment=Center
       - Width=Auto
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground
+    styles:
+      - Margin=-40,0,-40,0
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<WindhawkBlur BlurAmount="3" TintColor="#14090909" TintSaturation="1.2"/>
@@ -228,7 +231,6 @@ controlStyles:
       - RadiusY={{(TaskHeight/4.1)*2}}
       - StrokeThickness=1
       - Canvas.ZIndex=1
-      - Margin=-40,0,-40,0
       - Stroke:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69E0E0E0" Offset="0.0" /><GradientStop Color="#70707070" Offset="0.1" /><GradientStop Color="#70505050" Offset="0.25" /><GradientStop Color="#70292929" Offset="0.5" /><GradientStop Color="#70505050" Offset="0.75" /><GradientStop Color="#70707070" Offset="0.9" /><GradientStop Color="#65D0D0D0" Offset="1" /></LinearGradientBrush>
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
     styles:
@@ -241,9 +243,8 @@ controlStyles:
       - VerticalAlignment=Stretch
       - HorizontalAlignment=Stretch
       - Height=NaN
-      - Margin=-40,0,-40,0
       - Fill:=<WindhawkBlur BlurAmount="0" TintColor="#00101010"/>
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<WindhawkBlur BlurAmount="5" TintColor="#39101010" TintSaturation="1.5"/>
       - CornerRadius={{(TaskHeight/4)*1.8}}
@@ -473,11 +474,11 @@ controlStyles:
     styles:
       - MinWidth=60
       - Margin=5,0,5,0
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background=Transparent
       - BorderBrush=Transparent
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - BorderBrush=Transparent
       - Background=Transparent
@@ -543,7 +544,7 @@ controlStyles:
       - RenderTransform@CheckedNormal:=<ScaleTransform ScaleX="1.37" ScaleY="1.37" />
       - RenderTransform@CheckedPointerOver:=<ScaleTransform ScaleX="1.37" ScaleY="1.37" />
       - RenderTransform@CheckedPressed:=<ScaleTransform ScaleX="1.1" ScaleY="1.1" />
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock, ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
     styles:
       - Margin=2,0,3,0
   - target: SystemTray.OmniButton#NotificationCenterButton@CommonStates > Grid > Border#BackgroundBorder
@@ -632,16 +633,16 @@ controlStyles:
     styles:
       - Background@PointerOver:=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark2}" Opacity="1" />
       - Background@Pressed:=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark2}" Opacity="1" />
-  - target: SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Visibility=1
-  - target: SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Visibility=1
   - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Visibility=1
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Visibility=1
   - target: SearchUx.SearchUI.SearchPillButton#SearchPill > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
@@ -652,7 +653,7 @@ controlStyles:
       - Margin=0,10,0,10
       - BorderBrush:=<SolidColorBrush Color="#40BBBBBB"/>
       - BorderThickness=1
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#SearchPillBackgroundElement
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#SearchPillBackgroundElement
     styles:
       - Visibility=1
 ```

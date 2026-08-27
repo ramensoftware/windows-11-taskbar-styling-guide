@@ -250,7 +250,7 @@ Grid.Column=1
 
 Target:
 ```
-Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
+Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
 ```
 Style:
 ```
@@ -258,7 +258,7 @@ Background:=<ImageBrush Stretch="Uniform" ImageSource="<image>" />
 ```
 Target:
 ```
-Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
 ```
 Style:
 ```
@@ -336,7 +336,7 @@ https://learn.microsoft.com/en-us/typography/fonts/windows_11_font_list).
 
 Target:
 ```
-Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+Grid#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
 ```
 
 Various styles can be applied to the running indicator. Here are some examples:
@@ -540,7 +540,7 @@ Visibility=Collapsed
 
 Target:
 ```
-Grid#SystemTrayFrameGrid
+StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
 ```
 Style:
 ```

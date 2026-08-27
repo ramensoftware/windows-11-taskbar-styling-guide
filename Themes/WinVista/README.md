@@ -48,10 +48,13 @@ controlStyles:
   - target: Taskbar.SearchBoxButton
     styles:
       - CornerRadius=2
+  - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid > Border
+    styles:
+      - CornerRadius=2
   - target: Taskbar.TaskListButton
     styles:
       - CornerRadius=2
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
       - Height=2
       - Width@ActiveRunningIndicator=30
@@ -61,7 +64,7 @@ controlStyles:
   - target: Rectangle#BackgroundFill
     styles:
       - Fill:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="0.7"><GradientStop Color="#B5B9BC" Offset="0.0" /><GradientStop Color="#B5B9BC" Offset="0.03125" /><GradientStop Color="#909296" Offset="0.03125" /><GradientStop Color="#464B51" Offset="0.5" /><GradientStop Color="#060F15" Offset="0.5" /><GradientStop Color="#040C11" Offset="0.96875" /><GradientStop Color="#000000" Offset="0.96875" /><GradientStop Color="#000000" Offset="1.0" /></LinearGradientBrush>
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
+  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
     styles:
       - Background@ActiveRunningIndicator:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="0.2"><GradientStop Color="#111111" Offset="0.0" /><GradientStop Color="#111111" Offset="1.0" /></LinearGradientBrush>
       - CornerRadius=2
@@ -72,7 +75,7 @@ controlStyles:
       - Background@NoRunningIndicator=Transparent
       - Background@ActiveRunningIndicator=#55BBBBBB
       - BorderBrush@ActiveRunningIndicator=#55212121
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Margin=0,0,0,2
       - BorderThickness=1
@@ -82,7 +85,7 @@ controlStyles:
       - BorderBrush@ActiveNormal=#44AAAAAA
       - BorderBrush@ActivePointerOver=#FF888888
       - BorderBrush@InactiveNormal=Transparent
-  - target: Taskbar.TaskListLabeledButtonPanel > TextBlock
+  - target: Grid#IconPanel > TextBlock, Taskbar.TaskListLabeledButtonPanel > TextBlock
     styles:
       - FontFamily=Segoe UI
   - target: SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock

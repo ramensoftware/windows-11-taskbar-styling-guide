@@ -69,17 +69,17 @@ controlStyles:
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
+  - target: Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
     styles:
       - Background:=#302d47
       - CornerRadius=6
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=#302d47
       - CornerRadius=6
       - Margin=0,5,4,4
       - Padding=3,0,-8,0
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@CommonStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
     styles:
       - Height=27
       - RadiusX=5
@@ -120,7 +120,7 @@ controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
       - Fill=Transparent
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Background=#302d47
   - target: TextBlock#DateInnerTextBlock

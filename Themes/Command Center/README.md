@@ -67,7 +67,7 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$R1
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Padding=6
       - Margin=2
@@ -82,7 +82,7 @@ controlStyles:
       - Background@MultiWindowActive:=$ActiveColor
       - Background@MultiWindowPressed:=$OverlayColor
       - CornerRadius=$R1
-  - target: SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Background:=$Background
       - BorderBrush:=$BorderBrush
@@ -90,10 +90,10 @@ controlStyles:
       - CornerRadius=$R1
       - Width=38
       - Height=38
-  - target: SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Visibility=1
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Width=38
       - Height=38
@@ -108,7 +108,7 @@ controlStyles:
       - Background@MultiWindowActive:=$ActiveColor
       - Background@MultiWindowPressed:=$OverlayColor
       - CornerRadius=$R1
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
       - RadiusX=1.5
       - RadiusY=1.5
@@ -117,7 +117,7 @@ controlStyles:
       - Fill:=$ActiveColor
       - Fill@ActiveRunningIndicator:=$AccentColor
       - Width@ActiveRunningIndicator=21
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Height=38
       - Background:=Transparent
@@ -170,7 +170,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Shapes.Rectangle#DeterminateProgressBarIndicator
     styles:
       - Fill:=$AccentColor
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
     styles:
       - MinHeight=4
       - Width=26
@@ -286,7 +286,7 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - CornerRadius=$R1
       - Margin=0,6
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Background:=Transparent
       - BorderBrush:=Transparent
@@ -305,7 +305,7 @@ controlStyles:
       - MaxHeight=38
       - Width=Auto
       - Height=Auto
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#SearchPillBackgroundElement
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#SearchPillBackgroundElement
     styles:
       - BorderBrush:=$BorderBrush
       - CornerRadius=$R1

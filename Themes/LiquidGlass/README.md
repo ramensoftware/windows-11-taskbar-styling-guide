@@ -133,7 +133,7 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Margin=-3,0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=$ElementBackground
       - BorderBrush:=$ElementBorderBrush
@@ -199,7 +199,7 @@ controlStyles:
     styles:
       - Background:=$Background
       - CornerRadius=$CornerRadius
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$CornerRadius
       - BorderThickness=$ElementBorderThickness
@@ -214,7 +214,7 @@ controlStyles:
       - CornerRadius=$CornerRadius
       - BorderThickness=$BorderThickness
       - Margin=2
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=$ElementCornerRadius
       - BorderThickness=$ElementBorderThickness
@@ -285,7 +285,7 @@ controlStyles:
   - target: Rectangle#RightOverflowButtonDivider
     styles:
       - Visibility=1
-  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
     styles:
       - Background:=Transparent
       - BorderBrush:=Transparent
@@ -299,7 +299,7 @@ controlStyles:
       - BorderThickness=$ElementBorderThickness
       - CornerRadius=$ElementCornerRadius
       - Margin=0,1
-  - target: SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=$ElementCornerRadius
       - BorderThickness=$ElementBorderThickness
@@ -365,7 +365,7 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Margin=-3,0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=$ElementBackground
       - BorderBrush:=$ElementBorderBrush
@@ -441,7 +441,7 @@ controlStyles:
       - Padding=0,-6
       - MaxWidth:=200
       - MaxHeight=46
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$ElementCornerRadius
       - BorderThickness=$ElementBorderThickness
@@ -456,7 +456,7 @@ controlStyles:
       - CornerRadius=$CornerRadius
       - BorderThickness=$BorderThickness
       - Margin=2
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=$ElementCornerRadius
       - BorderThickness=$ElementBorderThickness
@@ -524,7 +524,7 @@ controlStyles:
   - target: Rectangle#RightOverflowButtonDivider
     styles:
       - Visibility=1
-  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
     styles:
       - Background:=Transparent
       - BorderBrush:=Transparent
@@ -538,7 +538,7 @@ controlStyles:
       - BorderThickness=$ElementBorderThickness
       - CornerRadius=$ElementCornerRadius
       - Margin=0,1
-  - target: SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchBoxButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=$ElementCornerRadius
       - BorderThickness=$ElementBorderThickness

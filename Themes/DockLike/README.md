@@ -61,7 +61,7 @@ CornerRadius=8
 
 Target:
 ```
-Grid#SystemTrayFrameGrid
+StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
 ```
 Style:
 ```
@@ -86,7 +86,7 @@ BorderBrush:=<SolidColorBrush Color="{ThemeResource SurfaceStrokeColorDefault}" 
 
 Target:
 ```
-Grid#SystemTrayFrameGrid
+StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
 ```
 Styles:
 ```
@@ -149,7 +149,7 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Margin=0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.8" FallbackColor="{ThemeResource SystemChromeLowColor}" />
       - Margin=-4,-8,-4,-8
@@ -168,7 +168,7 @@ controlStyles:
   - target: SystemTray.CopilotIcon
     styles:
       - Padding=0
-  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid
     styles:
       - Padding=4,0,4,0
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid

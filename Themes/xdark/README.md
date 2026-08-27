@@ -211,10 +211,10 @@ controlStyles:
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid > Grid > SystemTray.TextIconContent
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
+  - target: Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
     styles:
       - Background=#000000
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background=#000000
       - CornerRadius=13

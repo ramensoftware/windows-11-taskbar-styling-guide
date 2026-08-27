@@ -59,10 +59,10 @@ controlStyles:
     styles:
       - Width=3840
       - Margin=0,0,-3840,0
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Visibility=Collapsed
   - target: Taskbar.SearchBoxButton#SearchBoxButton[AutomationProperties.AutomationId=SearchButton] > Taskbar.TaskListButtonPanel
@@ -74,7 +74,7 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel
+  - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - Visibility=Collapsed
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel
@@ -87,7 +87,7 @@ controlStyles:
     styles:
       - Width=1920
       - Margin=0,0,-1920,0
-  - target: SystemTray.StackListView#IconStack[AutomationProperties.AutomationId=ShowDesktop] > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon
+  - target: SystemTray.StackListView#IconStack[AutomationProperties.AutomationId=ShowDesktop] > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid, SystemTray.StackListView#IconStack[AutomationProperties.AutomationId=ShowDesktop] > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon
     styles:
       - Width=1920
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid@ > Rectangle#ShowDesktopPipe
@@ -113,7 +113,7 @@ controlStyles:
   - target: TextBlock#DateInnerTextBlock
     styles:
       - Visibility=Collapsed
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,-4,0,-4
       - Opacity=0.75

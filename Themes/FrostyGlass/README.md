@@ -127,7 +127,7 @@ controlStyles:
       - Margin=3.5
       - Background:=$Background
       - CornerRadius=$CornerRadius
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=12,0,12,4
       - Background:=$Background
@@ -152,7 +152,7 @@ controlStyles:
     styles:
       - Padding=2,4,4.5,4
       - CornerRadius=7
-  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > systemtray:IconView#SystemTrayIcon > Grid
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid
     styles:
       - Padding=2,2,5,4
       - CornerRadius=7
@@ -311,7 +311,7 @@ controlStyles:
       - CornerRadius=7
       - Padding=$TrayPadding
       - Visibility=0
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - CornerRadius=7
       - Padding=$TrayPadding
@@ -323,10 +323,10 @@ controlStyles:
       - MinWidth:=500
       - MaxWidth:=900
       - Padding=1,0,1,0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Visibility=0
-  - target: Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
+  - target: Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
     styles:
       - Visibility=0
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
@@ -402,14 +402,14 @@ controlStyles:
     styles:
       - Width=Auto
       - MinWidth=24
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=$Background
       - CornerRadius:=10
       - BorderThickness:=$BorderThickness
       - BorderBrush:=$BorderBrush
       - BackgroundSizing=InnerBorderEdge
-  - target: SearchUx.SearchUI.SearchIconButton#SearchIcon > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - CornerRadius:=7
       - Padding=$TrayPadding

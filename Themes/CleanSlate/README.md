@@ -42,7 +42,7 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark1}" />
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=100
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
@@ -51,7 +51,7 @@ controlStyles:
       - Background@ActiveNormal:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark1}" TintOpacity="0.6" FallbackColor="{ThemeResource SystemAccentColorDark2}"/>
       - Background@InactivePressed:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark1}" TintOpacity="0.6" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
       - Background@ActivePressed:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" />
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.5" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
       - CornerRadius=5
@@ -60,7 +60,7 @@ controlStyles:
   - target: Rectangle#RunningIndicator
     styles:
       - Fill=Transparent
-  - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
+  - target: Grid#IconPanel > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
       - Margin=8,0,0,0
       - Foreground=White
@@ -77,13 +77,13 @@ controlStyles:
   - target: SystemTray.AdaptiveTextBlock
     styles:
       - Foreground=White
-  - target: Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
+  - target: Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - Background:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" />
   - target: SystemTray.NotifyIconView > Grid > Border#BackgroundBorder
     styles:
       - Margin=0,3,0,3
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement@CommonStates, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
       - CornerRadius=20
@@ -100,7 +100,7 @@ controlStyles:
   - target: Border#BackgroundElement
     styles:
       - BorderThickness=0
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
+  - target: Grid#IconPanel@RunningIndicatorStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - Background@InactiveRunningIndicator:=<SolidColorBrush Color="Black" Opacity="0.4" />
       - Background@InactiveRunningIndicator:=<SolidColorBrush Color="Black" Opacity="0.4" />
@@ -108,13 +108,17 @@ controlStyles:
       - Background@RequestingAttentionRunningIndicator:=<SolidColorBrush Color="#ffdf5e" Opacity="0.4" />
   - target: Rectangle#ShowDesktopPipe
     styles:
+      - Grid.Row=0
+      - Grid.RowSpan=3
+      - Grid.Column=0
+      - Grid.ColumnSpan=3
       - Width=12
       - Height=38
       - Margin=-6,0,0,0
   - target: SystemTray.Stack#ShowDesktopStack
     styles:
       - Width=12
-  - target: Taskbar.TaskListButtonPanel
+  - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
     styles:
       - Margin=-3,0,0,0
   - target: Grid#OverflowRootGrid > Border
@@ -133,7 +137,7 @@ controlStyles:
   - target: Border#ProgressBarRoot > Border > Grid > Rectangle#ProgressBarTrack
     styles:
       - Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark3}" />
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - BorderBrush@InactivePointerOver:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight1}"  />
       - BorderBrush@ActiveNormal:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}" />
@@ -153,11 +157,11 @@ controlStyles:
     styles:
       - Background:=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark2}"  />
       - Foreground=White
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#MultiWindowElement
+  - target: Grid#IconPanel@CommonStates > Border#MultiWindowElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#MultiWindowElement
     styles:
       - Background=Transparent
       - BorderThickness=0
-  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=5
       - CornerRadius@InactiveNormal_SearchIcon=100
@@ -180,21 +184,21 @@ controlStyles:
     styles:
       - Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}"  />
       - Margin=8,4,-8,4
-  - target: Taskbar.OverflowToggleButton > Taskbar.TaskListButtonPanel@CommonStates > Border
+  - target: Taskbar.OverflowToggleButton > Taskbar.TaskListButtonPanel@CommonStates > Grid > Border, Taskbar.OverflowToggleButton > Taskbar.TaskListButtonPanel@CommonStates > Border
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
       - Background@InactivePointerOver:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark1}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark1}" />
-  - target: Taskbar.TaskListLabeledButtonPanel
+  - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel
     styles:
       - Margin=0
-  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=100
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
   - target: SearchUx.SearchUI.SearchButtonRootGrid
     styles:
       - Margin=0,0,3,0
-  - target: SearchUx.SearchUI.SearchButtonRootGrid > Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid > Border#BackgroundElement
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
   - target: Border#SearchPillBackgroundElement

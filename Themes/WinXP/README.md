@@ -59,10 +59,10 @@ controlStyles:
       - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#2D6B2D" Offset="0.0" /> <GradientStop Color="#7ED57E" Offset="0.08" /> <GradientStop Color="#3DB43D" Offset="0.35" /> <GradientStop Color="#2A752E" Offset="0.85" /> <GradientStop Color="#144818" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=0,0,2,0
       - BorderBrush:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#400D330D" Offset="0.0" /> <GradientStop Color="#800D330D" Offset="0.4" /> <GradientStop Color="#FF0D330D" Offset="1.0" /></LinearGradientBrush>
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
     styles:
       - Background:=<ImageBrush Stretch="None" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/orb.png" />
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Visibility=Collapsed
   - target: TextBlock#LabelControl
@@ -86,7 +86,7 @@ controlStyles:
   - target: SystemTray.BatteryIconContent > Grid#ContainerGrid > StackPanel > Grid > TextBlock[1]
     styles:
       - Foreground=White
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
+  - target: Grid#IconPanel@RunningIndicatorStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - Background@NoRunningIndicator=Transparent
       - Background@ActiveRunningIndicator:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#1542A8" Offset="0.0" /> <GradientStop Color="#245DD4" Offset="0.2" /> <GradientStop Color="#1542A8" Offset="1.0" /></LinearGradientBrush>
@@ -97,7 +97,7 @@ controlStyles:
   - target: Taskbar.TaskListButton
     styles:
       - Margin=-2
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#16acf0" Offset="0.0" /> <GradientStop Color="#19b6f2" Offset="0.08" /> <GradientStop Color="#0c8eea" Offset="0.18" /> <GradientStop Color="#0c8eea" Offset="0.9" /> <GradientStop Color="#095bc9" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=2,1,0,1
@@ -140,11 +140,11 @@ controlStyles:
     styles:
       - Padding=0
       - Background:=<LinearGradientBrush StartPoint="0.5,0.5" EndPoint="0.5,1"> <GradientStop Color="#D76A27" Offset="0.05" /> <GradientStop Color="#B44704" Offset="0.1" /> <GradientStop Color="#772E01" Offset="0.5" /> <GradientStop Color="#772E01" Offset="1" /> <GradientStop Color="#AA4201" Offset="1" /></LinearGradientBrush>
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
     styles:
       - Background:=<ImageBrush Stretch="Uniform" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/WinXP/Assets/orb.png" />
       - Height=32
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Visibility=Collapsed
   - target: TextBlock#LabelControl
@@ -162,13 +162,13 @@ controlStyles:
   - target: SystemTray.TextIconContent > Grid > SystemTray.AdaptiveTextBlock#Base > TextBlock
     styles:
       - Foreground=White
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
+  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
     styles:
       - BorderThickness=1
       - CornerRadius=2
       - BorderBrush@NoRunningIndicator=Transparent
       - Margin=-2,-1,-2,-1
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
+  - target: Grid#IconPanel@RunningIndicatorStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - BorderBrush=#BB4B4B4B
       - Margin=1
@@ -180,16 +180,16 @@ controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
       - Fill=#858585
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<LinearGradientBrush StartPoint="0.5,0.42" EndPoint="0.5,0.75"> <GradientStop Color="#454545" Offset="0.0" /> <GradientStop Color="#313131" Offset="0.5" /> <GradientStop Color="#363636" Offset="0.35" /> <GradientStop Color="#1D1D1D" Offset="0.8" /> <GradientStop Color="#1D1D1D" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=1,0,0,0
       - BorderBrush=#222222
       - Padding=4,0,0,0
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Image#Icon
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Image#Icon, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Image#Icon
     styles:
       - Height@NoRunningIndicator=16
-  - target: Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel@RunningIndicatorStates, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates
     styles:
       - Margin@NoRunningIndicator=-7,0,-7,0
       - Padding@NoRunningIndicator=0

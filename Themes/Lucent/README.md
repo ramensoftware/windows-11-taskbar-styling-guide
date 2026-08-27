@@ -45,23 +45,23 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<LinearGradientBrush StartPoint="0,0.5" EndPoint="0,1"><GradientStop Color="#ee000000" Offset="0.1" /><GradientStop Color="{ThemeResource SystemAccentColorDark2}" Offset="0.9" /><GradientStop Color="#AAFFFFFF" Offset="1.0" /></LinearGradientBrush>
-  - target: Taskbar.TaskListLabeledButtonPanel > Rectangle#RunningIndicator
+  - target: Grid#IconPanel > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel > Rectangle#RunningIndicator
     styles:
       - Fill=Transparent
   - target: Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
+  - target: Grid#IconPanel@RunningIndicatorStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - Background@InactiveRunningIndicator:=<LinearGradientBrush StartPoint="0,0.5" EndPoint="0,1"><GradientStop Color="#3300290c" Offset="0.1" /><GradientStop Color="{ThemeResource SystemAccentColorDark2}" Offset="0.9" /><GradientStop Color="#AAFFFFFF" Offset="1.0" /></LinearGradientBrush>
       - Margin=0,-1,0,-1
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
+  - target: Grid#IconPanel@CommonStates > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
     styles:
       - Foreground@ActiveNormal=Black
       - Foreground@ActivePointerOver=Black
       - Margin=0,0,3,0
       - Foreground@ActivePressed=#BFBFBF
-  - target: SystemTray.SystemTrayFrame > Grid
+  - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid
     styles:
       - Background:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50000000" Offset="0.3" /><GradientStop Color="#EE000000" Offset="0.9" /></LinearGradientBrush>
       - Margin=0
@@ -87,7 +87,7 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton
     styles:
       - Margin=10,0,-10,0
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates
+  - target: Grid#IconPanel@CommonStates, Taskbar.TaskListLabeledButtonPanel@CommonStates
     styles:
       - Background@ActiveNormal:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight3}"/>
       - Background@ActivePointerOver:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}"/>
@@ -100,12 +100,12 @@ controlStyles:
       - Background@MultiWindowPointerOver:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}"/>
       - Background@MultiWindowActive:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight3}"/>
       - Background@MultiWindowPressed:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight1}"/>
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border
+  - target: Grid#IconPanel@CommonStates > Border, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border
     styles:
       - BorderThickness=0
       - Margin=-2,-4,-2,-4
       - CornerRadius=0
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border
+  - target: Grid#IconPanel@CommonStates > Border, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border, Taskbar.TaskListButtonPanel@CommonStates > Border
     styles:
       - CornerRadius=0
       - Background@InactivePointerOver:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight3}"/>
@@ -154,13 +154,13 @@ controlStyles:
     styles:
       - CornerRadius=0
       - Margin=2,-5,2,-5
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border
     styles:
       - Width=48
-  - target: Taskbar.TaskListLabeledButtonPanel > Border#MultiWindowElement
+  - target: Grid#IconPanel > Border#MultiWindowElement, Taskbar.TaskListLabeledButtonPanel > Border#MultiWindowElement
     styles:
       - Height=0
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle
+  - target: Grid#IconPanel@CommonStates > Rectangle, Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle
     styles:
       - StrokeThickness=3
       - Stroke@MultiWindowNormal:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight3}"/>
@@ -185,6 +185,18 @@ controlStyles:
       - Background@ActiveNormal_SearchIcon=#BEBEBE
       - Background@ActivePointerOver_SearchIcon=#DDDDDD
       - Background@ActivePressed_SearchIcon=#EEEEEE
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates
+    styles:
+      - Background@InactivePointerOver=#BEBEBE
+      - Background@InactivePressed=#DDDDDD
+      - Background@ActiveNormal=#BEBEBE
+      - Background@ActivePointerOver=#DDDDDD
+      - Background@ActivePressed=#EEEEEE
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border
+    styles:
+      - CornerRadius=0
+      - Margin=-3,-10,-3,-10
+      - BorderThickness=0
 ```
 </details>
 
@@ -200,23 +212,23 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<LinearGradientBrush StartPoint="0,0.5" EndPoint="0,1"><GradientStop Color="#ee000000" Offset="0.1" /><GradientStop Color="#EBEBEB" Offset="0.9" /><GradientStop Color="#AAFFFFFF" Offset="1.0" /></LinearGradientBrush>
-  - target: Taskbar.TaskListLabeledButtonPanel > Rectangle#RunningIndicator
+  - target: Grid#IconPanel > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel > Rectangle#RunningIndicator
     styles:
       - Fill=Transparent
   - target: Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
+  - target: Grid#IconPanel@RunningIndicatorStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - Background@InactiveRunningIndicator:=<LinearGradientBrush StartPoint="0,0.5" EndPoint="0,1"><GradientStop Color="#33000000" Offset="0.1" /><GradientStop Color="#33EBEBEB" Offset="0.9" /><GradientStop Color="#AAFFFFFF" Offset="1.0" /></LinearGradientBrush>
       - Margin=0,-1,0,-1
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
+  - target: Grid#IconPanel@CommonStates > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel@CommonStates > TextBlock#LabelControl
     styles:
       - Foreground@ActiveNormal=Black
       - Foreground@ActivePointerOver=Black
       - Margin=0,0,3,0
       - Foreground@ActivePressed=#424242
-  - target: SystemTray.SystemTrayFrame > Grid
+  - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid
     styles:
       - Background:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50000000" Offset="0.3" /><GradientStop Color="#EE000000" Offset="0.9" /></LinearGradientBrush>
       - Margin=0
@@ -242,7 +254,7 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton
     styles:
       - Margin=10,0,-10,0
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates
+  - target: Grid#IconPanel@CommonStates, Taskbar.TaskListLabeledButtonPanel@CommonStates
     styles:
       - Background@ActiveNormal=#FCFCFC
       - Background@ActivePointerOver=#BBBBBB
@@ -255,12 +267,12 @@ controlStyles:
       - Background@MultiWindowPointerOver=#BBBBBB
       - Background@MultiWindowActive=#BBBBBB
       - Background@MultiWindowPressed=#EBEBEB
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border
+  - target: Grid#IconPanel@CommonStates > Border, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border
     styles:
       - BorderThickness=0
       - Margin=-2,-4,-2,-4
       - CornerRadius=0
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border
+  - target: Grid#IconPanel@CommonStates > Border, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border, Taskbar.TaskListButtonPanel@CommonStates > Border
     styles:
       - CornerRadius=0
       - Background@InactivePointerOver=#BBBBBB
@@ -308,13 +320,13 @@ controlStyles:
     styles:
       - CornerRadius=0
       - Margin=2,-5,2,-5
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border
     styles:
       - Width=48
-  - target: Taskbar.TaskListLabeledButtonPanel > Border#MultiWindowElement
+  - target: Grid#IconPanel > Border#MultiWindowElement, Taskbar.TaskListLabeledButtonPanel > Border#MultiWindowElement
     styles:
       - Height=0
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle
+  - target: Grid#IconPanel@CommonStates > Rectangle, Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle
     styles:
       - StrokeThickness=3
       - Stroke@MultiWindowNormal=#BBBBBB
@@ -337,5 +349,15 @@ controlStyles:
       - Background@InactivePointerOver_SearchIcon=#BEBEBE
       - Background@ActiveNormal_SearchIcon=#BEBEBE
       - Background@ActivePointerOver_SearchIcon=#EBEBEB
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates
+    styles:
+      - Background@InactivePointerOver=#BEBEBE
+      - Background@ActiveNormal=#BEBEBE
+      - Background@ActivePointerOver=#EBEBEB
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border
+    styles:
+      - CornerRadius=0
+      - Margin=-3,-10,-3,-10
+      - BorderThickness=0
 ```
 </details>

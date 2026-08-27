@@ -95,10 +95,10 @@ styleConstants:
   - WindhawkBlur=<WindhawkBlur BlurAmount="30" TintColor="#cc2a2e32" />
   - Acrylic=<AcrylicBrush TintColor="#2a2e32" TintOpacity="0.8" FallbackColor="#2a2e32" />
 controlStyles:
-  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel
     styles:
       - Padding=0
-  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: Taskbar.TaskListButton > Grid#IconPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - CornerRadius=0
       - BorderThickness=1,0,1,0
@@ -120,13 +120,13 @@ controlStyles:
       - Background@RequestingAttentionMulti:=$taskbandAttention
       - Background@RequestingAttentionMultiPointerOver:=$taskbandPointerOver
       - Background@RequestingAttentionMultiPressed:=$taskbandPointerOver
-  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: Taskbar.TaskListButton > Grid#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - Opacity@NoRunningIndicator=0
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Windows.UI.Xaml.Controls.Image#Icon
+  - target: Grid#IconPanel > Windows.UI.Xaml.Controls.Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Windows.UI.Xaml.Controls.Image#Icon
     styles:
       - RenderTransform:=<TranslateTransform X="2" />
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#RunningIndicator
+  - target: Grid#IconPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#RunningIndicator
     styles:
       - Width=50
       - RadiusX=0
@@ -160,7 +160,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Border#MultiWindowElement
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon
+  - target: Grid#IconPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon, Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon
     styles:
       - Fill:=<ImageBrush Stretch="Uniform" ImageSource="$plusIndicator" />
       - Width=11
@@ -175,39 +175,39 @@ controlStyles:
       - HorizontalAlignment=Center
       - Visibility@MultiWindowPressed=Visible
       - Visibility=Collapsed
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Padding=0
       - Width=50
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel@CommonStates > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - CornerRadius=0
       - BorderThickness=0
       - Width=32
       - Background=Transparent
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel@CommonStates
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel@CommonStates, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates
     styles:
       - BorderThickness@ActiveNormal=0,3,0,0
       - Width=50
       - BorderBrush:=$selectionBorder
       - BorderThickness@ActivePointerOver=0,3,0,0
       - BorderThickness@ActivePressed=0,3,0,0
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
     styles:
       - Background:=<ImageBrush Stretch="Uniform" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Plasma/ThemeResources/$StartButton.png" />
   - target: Taskbar.AugmentedEntryPointButton[AutomationProperties.AutomationId=WidgetsButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Width=Auto
-  - target: SystemTray.Stack#NotifyIconStack
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack
     styles:
       - Grid.Column=5
-  - target: SystemTray.NotificationAreaIcons#NotificationAreaIcons
+  - target: Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons
     styles:
       - Grid.Column=0
-  - target: SystemTray.OmniButton#ControlCenterButton
+  - target: Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton
     styles:
       - Grid.Column=1
   - target: SystemTray.OmniButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
@@ -263,11 +263,15 @@ controlStyles:
     styles:
       - Width=48
       - Height=Auto
-  - target: SystemTray.IconView[AutomationProperties.Name=Show Desktop]
+  - target: SystemTray.Stack#ShowDesktopStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid, SystemTray.Stack#ShowDesktopStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon
     styles:
       - Width=48
   - target: Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe
     styles:
+      - Grid.Row=0
+      - Grid.RowSpan=3
+      - Grid.Column=0
+      - Grid.ColumnSpan=3
       - Width=48
       - Height=50
       - Fill:=<ImageBrush Stretch="None" ImageSource="$desktopButton" />
@@ -284,7 +288,7 @@ controlStyles:
   - target: SystemTray.Stack#MainStack
     styles:
       - //Grid.Column=2
-  - target: SystemTray.Stack#NonActivatableStack
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#NonActivatableStack
     styles:
       - Grid.Column=3
   - target: SystemTray.IconView#SystemTrayIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder

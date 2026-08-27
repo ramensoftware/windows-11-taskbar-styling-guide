@@ -32,7 +32,7 @@ controlStyles:
   - target: Rectangle#BackgroundFill
     styles:
       - Fill:=<SolidColorBrush x:Name="SystemChromeLow" Color="{ThemeResource SystemChromeLowColor}" />
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
+  - target: Grid#IconPanel@RunningIndicatorStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - CornerRadius=20
       - Background@NoRunningIndicator:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.18" Color="{ThemeResource SystemChromeHighColor}" />
@@ -42,7 +42,7 @@ controlStyles:
       - BorderThickness@NoRunningIndicator=1
       - BorderBrush@NoRunningIndicator:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />
       - Margin=1
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.3" Color="{ThemeResource SystemChromeHighColor}" />
       - BorderBrush:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.6" Color="{ThemeResource SystemChromeHighColor}" />
@@ -54,7 +54,7 @@ controlStyles:
       - CornerRadius=20
       - BorderThickness@InactivePressed=3
       - BorderThickness=2
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.6" Color="{ThemeResource SystemChromeHighColor}" />
       - CornerRadius=20
@@ -62,7 +62,7 @@ controlStyles:
       - Padding=10,0,-10,0
       - BorderBrush:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.9" Color="{ThemeResource SystemChromeHighColor}" />
       - BorderThickness=1.5
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@CommonStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
     styles:
       - Stroke@InactivePointerOver=#75A8E6
       - Stroke@InactivePressed=#7CB1F2
@@ -89,13 +89,18 @@ controlStyles:
       - Height=39
       - Width=39
       - MinWidth=Auto
-  - target: Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
+  - target: Grid#IconPanel > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
       - Margin=4,0,0,0
   - target: Taskbar.SearchBoxButton
     styles:
       - Height=48
       - Margin=0,-2,0,0
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
+    styles:
+      - CornerRadius=20
+      - Background:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />
+      - BorderBrush:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.25" Color="{ThemeResource SearchPillButtonForeground}" />
   - target: Border#MultiWindowElement
     styles:
       - Height=0
@@ -103,7 +108,7 @@ controlStyles:
     styles:
       - Background:=<SolidColorBrush x:Name="SystemChromeHigh" Opacity="0.8" Color="{ThemeResource SystemChromeHighColor}" />
       - BorderBrush:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.1" Color="{ThemeResource SearchPillButtonForeground}" />
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Margin=1,0,0,0
   - target: SystemTray.Stack#ShowDesktopStack
@@ -112,7 +117,12 @@ controlStyles:
       - Margin=2,0,10,0
   - target: Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe
     styles:
-      - MinWidth=4
+      - Grid.Row=0
+      - Grid.RowSpan=3
+      - Grid.Column=0
+      - Grid.ColumnSpan=3
+      - Height=16
+      - Width=4
       - RadiusX=2
       - RadiusY=2
       - Margin=-5,0,5,0
@@ -180,7 +190,7 @@ controlStyles:
   - target: Rectangle#RightDropInsertionMarker
     styles:
       - Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight1}" />
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border
     styles:
       - CornerRadius=20
       - Background:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />

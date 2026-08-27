@@ -33,7 +33,7 @@ TaskbarButtonWidthSmall: 32
 
 If you are using "MyDockFinder", you can hide the system tray with this style:
 
-Target: `Grid#SystemTrayFrameGrid`
+Target: `StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid`
 Style: `Visibility=Collapsed`
 
 ## Customization
@@ -83,11 +83,13 @@ styleConstants:
   - SystemItemBackground=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.8" FallbackColor="{ThemeResource SystemChromeLowColor}" />
   - SystemItemBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="0.5,1"><GradientStop Color="#00000000" Offset="0" /><GradientStop Color="#33000000" Offset="1.5" /></LinearGradientBrush>
 controlStyles:
+  - target: Grid#RootGrid > Taskbar.TaskbarBackground
+    styles:
+      - Margin=-20,0,-20,0
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - CornerRadius=20
       - BorderThickness=1
-      - Margin=-20,0,-20,0
       - BorderBrush=#40FFFFFF
       - Padding=-1
   - target: Rectangle#BackgroundStroke
@@ -102,7 +104,7 @@ controlStyles:
       - Visibility=Visible
       - Margin=0,0,0,10
       - Padding=20,0,20,0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,0,0,10
       - CornerRadius=20,0,0,20
@@ -114,21 +116,21 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<WindhawkBlur BlurAmount="5" TintColor="#12FFFFFF"/>
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
+  - target: Grid#IconPanel@RunningIndicatorStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement
     styles:
       - Background:=$TaskItemBackground
       - Margin=-1,5.5,1,4
       - CornerRadius=12
       - BorderThickness=2,1,0.5,2
       - BorderBrush:=$TaskItemBorder
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Background:=$SystemItemBackground
       - CornerRadius=12
       - Margin=-1,5.5,2.5,4
       - BorderThickness=2,1,0.5,2
       - BorderBrush:=$SystemItemBorder
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@CommonStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
     styles:
       - Margin=0,0,0,8
   - target: Border#MultiWindowElement

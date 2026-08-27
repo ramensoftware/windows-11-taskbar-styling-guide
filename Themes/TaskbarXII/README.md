@@ -57,7 +57,7 @@ controlStyles:
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
       - Margin=0,0,3,0
-  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel
+  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Margin=2,0,6,0
   - target: TextBlock#SearchBoxTextBlock
@@ -90,26 +90,27 @@ controlStyles:
   - target: SystemTray.SystemTrayFrame
     styles:
       - HorizontalAlignment=Left
+      - VerticalAlignment=Center
       - Grid.Column=1
       - Margin=2,0,0,0
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<SolidColorBrush Color="{ThemeResource SystemChromeAltHighColor}" Opacity="0.6" />
       - CornerRadius=4
       - Padding=8,3,0,3
-  - target: SystemTray.Stack#SecondaryClockStack
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#SecondaryClockStack
     styles:
       - Grid.Column=8
-  - target: SystemTray.OmniButton#ControlCenterButton
+  - target: Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton
     styles:
       - Grid.Column=4
-  - target: SystemTray.OmniButton#NotificationCenterButton
+  - target: Grid#SystemTrayFrameGrid > SystemTray.OmniButton#NotificationCenterButton
     styles:
       - Grid.Column=5
-  - target: SystemTray.Stack#MainStack
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#MainStack
     styles:
       - Grid.Column=6
-  - target: SystemTray.Stack#ShowDesktopStack
+  - target: Grid#SystemTrayFrameGrid > SystemTray.Stack#ShowDesktopStack
     styles:
       - Grid.Column=7
   - target: SystemTray.DateTimeIconContent > Grid > StackPanel

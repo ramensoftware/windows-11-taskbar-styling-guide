@@ -127,7 +127,7 @@ controlStyles:
       - Height=$TaskbarHeight
       - MinWidth=250
       - Margin=0,0,0,12
-  - target: Grid#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background=Transparent
       - BorderThickness=0
@@ -156,16 +156,22 @@ controlStyles:
       - Padding=$ItemPadding
       - VerticalAlignment=Center
       - Height=$IconHeight
+  - target: SearchUx.SearchUI.SearchButtonControl
+    styles:
+      - Margin=$ItemMargin
+      - Padding=$ItemPadding
+      - VerticalAlignment=Center
+      - Height=$IconHeight
   - target: Taskbar.TaskViewButton
     styles:
       - Margin=$ItemMargin
       - Padding=$ItemPadding
       - VerticalAlignment=Center
       - Height=$IconHeight
-  - target: Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButtonPanel, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - VerticalAlignment=Center
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=$GlobalRadius
       - BorderThickness=0

@@ -86,13 +86,13 @@ controlStyles:
     styles:
       - FontSize=22
       - //Target= Taskbar > Control Center Taskbar icons
-  - target: Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+  - target: Grid#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
       - Fill@ActiveRunningIndicator:=$SolidAccent
       - Height=4
       - Width@ActiveRunningIndicator=25
       - //Target= Taskbar > App Running Indicator
-  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel > Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
+  - target: Taskbar.TaskListButton > Grid#IconPanel > Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel > Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
     styles:
       - MinHeight=4
       - Width=25
