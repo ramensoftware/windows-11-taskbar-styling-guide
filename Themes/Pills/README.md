@@ -441,7 +441,7 @@ controlStyles:
     styles:
       - MinWidth := {{max(40,(2*ImageIconWidth+2))}}
       - // Taskbar button minimum width (used to set the minimum width of pinned buttons).
-  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
+  - target: Grid#IconPanel@CommonStates > Rectangle#DefaultIcon, Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#DefaultIcon
     styles:
       - Opacity = 1
       - Stretch = 2
@@ -474,9 +474,8 @@ controlStyles:
       - Height = 0
       - // Windows Start button hidden using small width and zero height, rather than a collapse,
       - // because collapsing it displaces the language flyout.
-  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
+  - target: Grid#IconPanel > Image#OverlayIcon, Grid#IconPanel > Taskbar.Badge#BadgeControl, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
     styles:
-      - HorizontalAlignment = 2
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
