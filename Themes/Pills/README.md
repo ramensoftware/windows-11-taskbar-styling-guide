@@ -481,7 +481,6 @@ controlStyles:
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
-      - // Margin = 0,4,2,0
       - RenderTransform := <TranslateTransform X="{{LabelWidth>0?6:0}}" Y="0" />
       - Canvas.ZIndex = 3
       - // Overlay badge | Counter badge, matched to the overlay badge size and position.
