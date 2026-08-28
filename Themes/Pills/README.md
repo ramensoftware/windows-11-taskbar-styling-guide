@@ -288,7 +288,7 @@ styleConstants:
   - iconLabelSpacing = 10
   - leftRightPadding = 8
   - badgeSize = 12
-  - badgeNudge = 12,4,0,0
+  - badgeNudge = 0,4,2,0
   - sysTrayIconSize = 16
   - taskbarSidesRounded = 1
   - buttonFill = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
@@ -412,6 +412,7 @@ controlStyles:
       - // Native multi-window indicator, collapsed ; the dot on DefaultIcon replaces it.
   - target: Grid#IconPanel > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
     styles:
+      - ActualWidth => LabelWidth
       - Margin := {{$iconLabelSpacing-12}},{{$taskbarTopOffset}},6,{{$taskbarBottomOffset}}
       - Padding := {{$leftRightPadding}},0
       - HorizontalAlignment = 1
@@ -458,11 +459,11 @@ controlStyles:
       - RadiusX = 2
       - RadiusY = 2
       - StrokeThickness = 0
-      - Margin = 0,0,{{ImageIconWidth+8}},0
+      - HorizontalAlignment = 0
+      - Margin = 4,0,0,0
       - Canvas.ZIndex = 4
       - // The fallback icon slot is repurposed as a multi-window dot. Hidden by default,
       - // shown only in the MultiWindow and RequestingAttentionMulti states.
-      - // Left spacing driven by $ImageIconWidth to support both stock and styled modes.
   - target: Taskbar.TaskbarExtensionElement
     styles:
       - Visibility = 1
@@ -478,6 +479,7 @@ controlStyles:
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
+      - RenderTransform := <TranslateTransform X="{{LabelWidth>0?6:0}}" Y="0" />
       - Canvas.ZIndex = 3
       - // Overlay badge | Counter badge, matched to the overlay badge size and position.
   - target: Grid#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText
