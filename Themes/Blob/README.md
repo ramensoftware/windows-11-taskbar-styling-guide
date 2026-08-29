@@ -501,6 +501,10 @@ controlStyles:
       - MaxLines = 1
       - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset}}
       - // Language indicator forced to one line (otherwise it wraps to "ENG / US"), lifted like the clock.
+  - target: SystemTray.Stack#MainStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base, SystemTray.Stack#MainStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base
+    styles:
+      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset-2}}
+      - // Main stack glyph icons (privacy indicators such as microphone in use), lifted to the shared glyph baseline.
   - target: SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image
     styles:
       - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset-2}}

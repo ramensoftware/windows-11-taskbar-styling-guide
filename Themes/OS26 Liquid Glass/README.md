@@ -206,6 +206,15 @@ controlStyles:
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
       - CornerRadius=15
+  - target: SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid, SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Width=48
+      - Height=48
+      - Margin=-3,4,8,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
   - target: SystemTray.Stack#ShowDesktopStack
     styles:
       - Visibility=1
@@ -652,6 +661,15 @@ controlStyles:
       - Height=44
       - Width=44
       - Margin=-6,4,-3,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=13
+  - target: SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid, SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Height=44
+      - Width=44
+      - Margin=-3,4,8,0
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
@@ -1440,6 +1458,15 @@ controlStyles:
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2
       - CornerRadius=15
+  - target: SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid, SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Width=48
+      - Height=48
+      - Margin=-3,4,8,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=15
   - target: SystemTray.Stack#ShowDesktopStack
     styles:
       - Visibility=1
@@ -1886,6 +1913,15 @@ controlStyles:
       - Height=44
       - Width=44
       - Margin=-6,4,-3,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.2
+      - CornerRadius=13
+  - target: SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid, SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Height=44
+      - Width=44
+      - Margin=-3,4,8,0
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
       - BorderThickness=1.2

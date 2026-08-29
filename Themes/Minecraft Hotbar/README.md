@@ -219,6 +219,13 @@ controlStyles:
       - Margin=-1,0,-13,0
       - Background:=$IconBackground
       - BorderThickness=0
+  - target: SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid, SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - CornerRadius=0
+      - Height=55
+      - Width=55
+      - Background:=$IconBackground
+      - BorderThickness=0
   - target: SystemTray.Stack#ShowDesktopStack
     styles:
       - Visibility=1

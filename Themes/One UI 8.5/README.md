@@ -588,6 +588,15 @@ controlStyles:
       - BorderBrush:=$IconBorder
       - BorderThickness=1.3
       - CornerRadius=15
+  - target: SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid, SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Height=40
+      - Width=40
+      - Margin=-3,4,3,0
+      - Background:=$IconBackground
+      - BorderBrush:=$IconBorder
+      - BorderThickness=1.3
+      - CornerRadius=15
   - target: ScrollViewer > ScrollContentPresenter > Border > SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid > ItemsControl > ItemsPresenter > WrapGrid > ContentPresenter > SystemTray.NotifyIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid
     styles:
       - Background:=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
