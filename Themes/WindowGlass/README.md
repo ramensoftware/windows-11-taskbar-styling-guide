@@ -55,6 +55,8 @@ For a complete WindowGlass-themed UI, download the following mods and use the 'W
 - Windows 11 Notification Center Styler - for styling the Notification Center and Action Center.
 - Windows 11 File Explorer Styler - for styling Windows Explorer windows.
 
+For more consistency, download the **Custom Window Corner Radius** mod for DWM and set it to 25 (may cause artifacts).
+
 ---
 
 ## Theme selection
