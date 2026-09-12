@@ -209,7 +209,8 @@ controlStyles:
       - HorizontalAlignment=Stretch
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Height=>taskbarFrameHeight
+      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
       - HorizontalAlignment=Center
       - MinWidth=100
       - MaxWidth={{containerGridWidth>0?max(containerGridWidth-250,100):`Infinity`}}

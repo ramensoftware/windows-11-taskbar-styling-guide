@@ -89,11 +89,18 @@ controlStyles:
     styles:
       - CornerRadius=0
       - Margin=0,5.5,0,5.5
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag@DockedBottom=horizontal
+      - Tag@DockedTop=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Width={{taskbarDock==`horizontal`?`Auto`:skip()}}
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
-      - Height=70
+      - Height={{taskbarDock==`horizontal`?70:skip()}}
 
       - MinWidth:=100
       - Grid.Column=1

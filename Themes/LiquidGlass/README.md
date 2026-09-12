@@ -346,7 +346,8 @@ styleConstants:
 controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Height=>taskbarFrameHeight
+      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
       - MinWidth:=100
       - MaxWidth:=1200
       - HorizontalAlignment=Center

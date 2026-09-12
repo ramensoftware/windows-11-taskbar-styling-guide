@@ -131,7 +131,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
 controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Height=>taskbarFrameHeight
+      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
       - HorizontalAlignment=Center
       - Margin=250,0,250,0
   - target: Taskbar.TaskbarFrame > Grid#RootGrid

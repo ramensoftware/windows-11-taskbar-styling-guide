@@ -591,9 +591,16 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Visibility=Collapsed
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag@DockedBottom=horizontal
+      - Tag@DockedTop=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Width={{taskbarDock==`horizontal`?`Auto`:skip()}}
       - HorizontalAlignment=Stretch
       - Margin=$DockMargin,0,$DockMargin,0
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
@@ -621,7 +628,7 @@ controlStyles:
       - Margin=0,$DockTopGap,$DockMargin,$DockBottomGap
   - target: Taskbar.TaskbarFrame
     styles:
-      - Height=$DockHeight
+      - Height={{taskbarDock==`horizontal`?$DockHeight:skip()}}
 ```
 </details>
 

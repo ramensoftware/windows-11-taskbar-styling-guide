@@ -93,7 +93,8 @@ controlStyles:
       - ActualWidth=>containerGridWidth
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Height=>taskbarFrameHeight
+      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
       - MinWidth:=100
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Margin=0

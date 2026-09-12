@@ -433,7 +433,8 @@ controlStyles:
       - // Taskbar Task list > Hover Over Window Thumbnails Region > Thumbnail Window Names Textblock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Height=>taskbarFrameHeight
+      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
       - // Taskbar Task Region Frame(Task list + search area + Start button Region grid)
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:

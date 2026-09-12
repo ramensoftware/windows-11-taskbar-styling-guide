@@ -315,7 +315,8 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - HorizontalAlignment=Center
-      - Width=Auto
+      - Height=>taskbarFrameHeight
+      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
       - Padding=1,0,1,0
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
@@ -376,7 +377,7 @@ controlStyles:
       - CornerRadius:=$CornerRadius
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
       - HorizontalAlignment=Center
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:

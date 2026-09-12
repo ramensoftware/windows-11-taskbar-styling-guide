@@ -93,7 +93,8 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Grid.Column=1
-      - Width=Auto
+      - Height=>taskbarFrameHeight
+      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
       - HorizontalAlignment=Right
       - Margin=0,0,$IslandHorizontalMargin,0
       - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth}}

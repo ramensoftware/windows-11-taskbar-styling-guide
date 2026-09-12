@@ -52,7 +52,8 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Grid.Column=1
-      - Width=$TaskbarFrameWidth
+      - Height=>taskbarFrameHeight
+      - Width={{taskbarFrameHeight>0?$TaskbarFrameWidth:skip()}}
       - Margin=0
       - MaxWidth=$TaskbarFrameWidth
   - target: SystemTray.SystemTrayFrame
