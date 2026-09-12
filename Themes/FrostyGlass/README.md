@@ -375,10 +375,6 @@ controlStyles:
       - BorderThickness:=$BorderThickness
       - BorderBrush:=$BorderBrush
       - CornerRadius:=$CornerRadius
-  - target: Taskbar.TaskbarFrame
-    styles:
-      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
-      - HorizontalAlignment=Center
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Background:=$Background
