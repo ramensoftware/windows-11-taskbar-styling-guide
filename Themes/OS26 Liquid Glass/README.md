@@ -111,19 +111,18 @@ styleConstants:
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
-      - Tag@DockedBottom=horizontal
-      - Tag@DockedTop=horizontal
+      - Tag=horizontal
       - Tag@DockedLeft=vertical
       - Tag@DockedRight=vertical
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width={{taskbarDock==`horizontal`?`Auto`:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
-      - Height={{taskbarDock==`horizontal`?80:skip()}}
+      - Height={{taskbarDock==`vertical`?skip():80}}
       - MaxHeight=80
       - HorizontalAlignment=Center
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
@@ -576,19 +575,18 @@ styleConstants:
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
-      - Tag@DockedBottom=horizontal
-      - Tag@DockedTop=horizontal
+      - Tag=horizontal
       - Tag@DockedLeft=vertical
       - Tag@DockedRight=vertical
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width={{taskbarDock==`horizontal`?`Auto`:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
-      - Height={{taskbarDock==`horizontal`?70:skip()}}
+      - Height={{taskbarDock==`vertical`?skip():70}}
       - MaxHeight=80
       - HorizontalAlignment=Center
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
@@ -1383,19 +1381,18 @@ styleConstants:
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
-      - Tag@DockedBottom=horizontal
-      - Tag@DockedTop=horizontal
+      - Tag=horizontal
       - Tag@DockedLeft=vertical
       - Tag@DockedRight=vertical
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width={{taskbarDock==`horizontal`?`Auto`:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
-      - Height={{taskbarDock==`horizontal`?80:skip()}}
+      - Height={{taskbarDock==`vertical`?skip():80}}
       - MaxHeight=80
       - HorizontalAlignment=Center
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
@@ -1848,19 +1845,18 @@ styleConstants:
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
-      - Tag@DockedBottom=horizontal
-      - Tag@DockedTop=horizontal
+      - Tag=horizontal
       - Tag@DockedLeft=vertical
       - Tag@DockedRight=vertical
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width={{taskbarDock==`horizontal`?`Auto`:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
-      - Height={{taskbarDock==`horizontal`?70:skip()}}
+      - Height={{taskbarDock==`vertical`?skip():70}}
       - MaxHeight=80
       - HorizontalAlignment=Center
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon

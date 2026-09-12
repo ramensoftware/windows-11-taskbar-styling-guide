@@ -101,16 +101,15 @@ controlStyles:
       - HorizontalAlignment=Stretch
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
-      - Tag@DockedBottom=horizontal
-      - Tag@DockedTop=horizontal
+      - Tag=horizontal
       - Tag@DockedLeft=vertical
       - Tag@DockedRight=vertical
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
       - Grid.Column=1
-      - Width={{taskbarDock==`horizontal`?$TaskbarFrameWidth:skip()}}
-      - Height={{taskbarDock==`horizontal`?$TaskbarHeight:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():$TaskbarFrameWidth}}
+      - Height={{taskbarDock==`vertical`?skip():$TaskbarHeight}}
       - MinHeight=62
       - HorizontalAlignment=Center
       - VerticalAlignment=Center

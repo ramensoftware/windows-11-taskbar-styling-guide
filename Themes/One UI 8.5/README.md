@@ -465,18 +465,17 @@ controlStyles:
 # Taskbar frame styles
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
-      - Tag@DockedBottom=horizontal
-      - Tag@DockedTop=horizontal
+      - Tag=horizontal
       - Tag@DockedLeft=vertical
       - Tag@DockedRight=vertical
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width={{taskbarDock==`horizontal`?`Auto`:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
-      - Height={{taskbarDock==`horizontal`?70:skip()}}
+      - Height={{taskbarDock==`vertical`?skip():70}}
       - MaxHeight=70
       - HorizontalAlignment=Center
   - target: Taskbar.TaskbarFrame > Grid#RootGrid

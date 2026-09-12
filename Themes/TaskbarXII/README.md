@@ -36,16 +36,15 @@ controlStyles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemListLowColor}" TintOpacity="0.1" FallbackColor="{ThemeResource SystemChromeHighColor}" />
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
-      - Tag@DockedBottom=horizontal
-      - Tag@DockedTop=horizontal
+      - Tag=horizontal
       - Tag@DockedLeft=vertical
       - Tag@DockedRight=vertical
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
       - HorizontalAlignment=Right
-      - Width={{taskbarDock==`horizontal`?`Auto`:skip()}}
-      - Height={{taskbarDock==`horizontal`?56:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
+      - Height={{taskbarDock==`vertical`?skip():56}}
       - Grid.Column=0
       - Margin=0,0,2,0
   - target: Taskbar.TaskbarFrame > Grid
