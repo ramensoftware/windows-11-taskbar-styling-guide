@@ -1,0 +1,28 @@
+theme: 'ModernizedAreo'
+styleConstants:
+  - ''
+controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill:=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.35" NoiseOpacity="0.04" />
+  - target: Rectangle#BackgroundStroke
+    styles:
+      - Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}" Opacity="0.4" />
+  - target: Taskbar.ExperienceToggleButton
+    styles:
+      - CornerRadius=8
+  - target: Taskbar.TaskListButton
+    styles:
+      - CornerRadius=8
+  - target: Taskbar.SearchBoxButton
+    styles:
+      - CornerRadius=8
+  - target: Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.35" NoiseOpacity="0.04" />
+  - target: TextBlock#LabelControl
+    styles:
+      - FontFamily=Segoe UI Variable Display
+themeResourceVariables:
+  - ''
+xamlDiagnosticsHandling: alert
