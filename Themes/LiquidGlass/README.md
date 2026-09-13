@@ -184,13 +184,15 @@ controlStyles:
       - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
-      - BorderThickness=$BorderThickness
-      - BorderBrush:=$BorderBrush
+      - BorderThickness=0
       - Background=Transparent
       - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$Background
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
     styles:
       - CornerRadius=$CornerRadius
@@ -342,9 +344,15 @@ styleConstants:
   - CornerRadius=12
   - ElementCornerRadius=8
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - MaxWidth:=1200
       - HorizontalAlignment=Center
@@ -416,13 +424,15 @@ controlStyles:
       - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
-      - BorderThickness=$BorderThickness
-      - BorderBrush:=$BorderBrush
+      - BorderThickness=0
       - Background=Transparent
       - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$Background
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
     styles:
       - CornerRadius=$CornerRadius

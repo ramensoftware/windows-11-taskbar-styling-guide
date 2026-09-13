@@ -147,7 +147,6 @@ controlStyles:
     styles:
       - Padding=$TrayPadding
       - CornerRadius=7
-      - MaxWidth=Auto
   - target: SystemTray.OmniButton#NotificationCenterButton
     styles:
       - Padding=2,4,4.5,4
@@ -171,7 +170,6 @@ controlStyles:
   - target: Taskbar.Gripper#GripperControl
     styles:
       - Width=Auto
-      - MinWidth=Auto
   - target: SystemTray.SystemTrayFrame
     styles:
       - HorizontalAlignment=Right
@@ -180,7 +178,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid
     styles:
       - Margin=4,0,0,0
-      - HorizontalAlignment=Auto
+      - HorizontalAlignment=Center
   - target: TextBlock#TimeInnerTextBlock
     styles:
       - FontSize=13
@@ -189,7 +187,6 @@ controlStyles:
       - Padding=0
       - RenderTransform:=<TranslateTransform X="5" Y="2" />
       - Width=Auto
-      - MinWidth=Auto
   - target: TextBlock#DateInnerTextBlock
     styles:
       - Visibility=1
@@ -267,7 +264,7 @@ controlStyles:
       - CornerRadius:=$CornerRadius
   - target: SearchUx.SearchUI.SearchButtonControl
     styles:
-      - MaxWidth=Auto
+      - Width=Auto
       - Margin=-1,0,-1,0
       - Padding=$TrayPadding
       - CornerRadius=7
@@ -315,12 +312,16 @@ controlStyles:
       - CornerRadius=7
       - Padding=$TrayPadding
       - Visibility=0
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - HorizontalAlignment=Auto
-      - Width=Auto
-      - MinWidth:=500
-      - MaxWidth:=900
+      - HorizontalAlignment=Center
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - Padding=1,0,1,0
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
@@ -371,17 +372,14 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - Background=Transparent
-      - BorderThickness:=$BorderThickness
-      - BorderBrush:=$BorderBrush
+      - BorderThickness=0
       - CornerRadius:=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$Background
-  - target: Taskbar.TaskbarFrame
-    styles:
-      - Width=Auto
-      - HorizontalAlignment=Center
-      - Margin=Auto
+      - BorderThickness:=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius:=$CornerRadius
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Background:=$Background

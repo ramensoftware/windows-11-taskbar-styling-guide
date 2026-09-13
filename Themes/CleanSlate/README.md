@@ -42,7 +42,7 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark1}" />
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=100
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.4" FallbackColor="{ThemeResource SystemAccentColorDark2}" />
@@ -118,7 +118,7 @@ controlStyles:
   - target: SystemTray.Stack#ShowDesktopStack
     styles:
       - Width=12
-  - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButtonPanel
     styles:
       - Margin=-3,0,0,0
   - target: Grid#OverflowRootGrid > Border

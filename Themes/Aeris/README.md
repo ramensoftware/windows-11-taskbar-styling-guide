@@ -87,14 +87,14 @@ controlStyles:
     styles:
       - Visibility=Collapsed
       - Fill:=<SolidColorBrush Color="$primaryColor" Opacity="0.05"/>
-  - target: Grid#IconPanel@CommonStates, Taskbar.TaskListButtonPanel@CommonStates
+  - target: Taskbar.TaskListButtonPanel@CommonStates
     styles:
       - Padding=0
       - Margin=$taskListMargin,0,$taskListMargin,0
       - Background@ActiveNormal:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background@ActivePointerOver:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
       - Background@ActivePressed:=<SolidColorBrush Color="$activeColor" Opacity="0.5"/>
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background:=$transparent
       - Background@InactivePointerOver:=$pointerOver

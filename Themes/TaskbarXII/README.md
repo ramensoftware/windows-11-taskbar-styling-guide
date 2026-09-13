@@ -34,11 +34,17 @@ controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemListLowColor}" TintOpacity="0.1" FallbackColor="{ThemeResource SystemChromeHighColor}" />
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
       - HorizontalAlignment=Right
-      - Width=Auto
-      - Height=56
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
+      - Height={{taskbarDock==`vertical`?skip():56}}
       - Grid.Column=0
       - Margin=0,0,2,0
   - target: Taskbar.TaskbarFrame > Grid

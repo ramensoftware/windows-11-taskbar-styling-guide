@@ -81,7 +81,7 @@ controlStyles:
       - Padding=3,0,-8,0
   - target: Grid#IconPanel@CommonStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@CommonStates > Rectangle#RunningIndicator
     styles:
-      - Height=27
+      - Height=Auto
       - RadiusX=5
       - RadiusY=5
       - StrokeThickness=2
@@ -92,7 +92,7 @@ controlStyles:
       - Stroke@ActivePressed=#ebbcba
       - Fill=Transparent
       - Width=37
-      - VerticalAlignment=1
+      - VerticalAlignment=Stretch
       - Canvas.ZIndex=1
   - target: SystemTray.ImageIconContent > Grid#ContainerGrid > Image
     styles:

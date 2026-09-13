@@ -207,9 +207,15 @@ controlStyles:
       - ActualWidth=>containerGridWidth
       - ActualHeight=>TaskHeight
       - HorizontalAlignment=Stretch
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - HorizontalAlignment=Center
       - MinWidth=100
       - MaxWidth={{containerGridWidth>0?max(containerGridWidth-250,100):`Infinity`}}
@@ -387,12 +393,14 @@ controlStyles:
     styles:
       - CornerRadius={{ max(68, min(90, (AltTabHeight / 5) * 1.75)) }}
       - ActualHeight=>AltTabHeight
-      - BorderThickness=1
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69D3D3D3" Offset="0.0" /><GradientStop Color="#5F303030" Offset="0.1" /><GradientStop Color="#70303030" Offset="0.5" /><GradientStop Color="#5F303030" Offset="0.9" /><GradientStop Color="#69D3D3D3" Offset="1" /></LinearGradientBrush>
+      - BorderThickness=0
       - Background=Transparent
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=<WindhawkBlur BlurAmount="6" TintColor="#20000000" TintSaturation="1.2"/>
+      - CornerRadius={{ max(68, min(90, (AltTabHeight / 5) * 1.75)) }}
+      - BorderThickness=1
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69D3D3D3" Offset="0.0" /><GradientStop Color="#5F303030" Offset="0.1" /><GradientStop Color="#70303030" Offset="0.5" /><GradientStop Color="#5F303030" Offset="0.9" /><GradientStop Color="#69D3D3D3" Offset="1" /></LinearGradientBrush>
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid > Border
     styles:
       - CornerRadius=25,25,12,12
@@ -478,7 +486,7 @@ controlStyles:
     styles:
       - Background=Transparent
       - BorderBrush=Transparent
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - BorderBrush=Transparent
       - Background=Transparent

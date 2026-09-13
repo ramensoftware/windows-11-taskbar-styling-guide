@@ -99,11 +99,17 @@ controlStyles:
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
       - HorizontalAlignment=Stretch
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
       - Grid.Column=1
-      - Width=$TaskbarFrameWidth
-      - Height=$TaskbarHeight
+      - Width={{taskbarDock==`vertical`?skip():$TaskbarFrameWidth}}
+      - Height={{taskbarDock==`vertical`?skip():$TaskbarHeight}}
       - MinHeight=62
       - HorizontalAlignment=Center
       - VerticalAlignment=Center

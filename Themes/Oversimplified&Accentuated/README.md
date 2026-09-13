@@ -193,7 +193,7 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=Transparent
-      - BorderBrush=Transparent
+      - BorderThickness=0
       - CornerRadius=20
       - Shadow:=
       - //Target= Alt+Tab Window Outer Background

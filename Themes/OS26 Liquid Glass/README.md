@@ -109,14 +109,20 @@ styleConstants:
   - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
-      - Height=80
+      - Height={{taskbarDock==`vertical`?skip():80}}
       - MaxHeight=80
       - HorizontalAlignment=Center
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
@@ -124,7 +130,7 @@ controlStyles:
       - Height=24
       - Width=24
       - Margin=5,0,-5,0
-  - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=55
       - Height=70
@@ -173,12 +179,14 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=Transparent
-      - BorderThickness=2
-      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - BorderThickness=0
       - CornerRadius=50
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - BorderThickness=2
+      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - CornerRadius=50
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20
@@ -358,7 +366,7 @@ controlStyles:
   - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock
     styles:
       - Foreground=white
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=15
       - Margin=0,5.5,0,5.5
@@ -565,14 +573,20 @@ styleConstants:
   - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
-      - Height=70
+      - Height={{taskbarDock==`vertical`?skip():70}}
       - MaxHeight=80
       - HorizontalAlignment=Center
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
@@ -580,7 +594,7 @@ controlStyles:
       - Height=24
       - Width=24
       - Margin=3,0,-3,0
-  - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=50
       - Height=65
@@ -632,12 +646,14 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=Transparent
-      - BorderThickness=2
-      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - BorderThickness=0
       - CornerRadius=50
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - BorderThickness=2
+      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - CornerRadius=50
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20
@@ -817,7 +833,7 @@ controlStyles:
   - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock
     styles:
       - Foreground=white
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=13
       - Margin=0,5.5,0,5.5
@@ -1038,7 +1054,7 @@ controlStyles:
       - Height=24
       - Width=24
       - Margin=5,0,-5,0
-  - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=55
       - Height=70
@@ -1086,12 +1102,14 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=Transparent
-      - BorderThickness=2
-      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - BorderThickness=0
       - CornerRadius=50
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - BorderThickness=2
+      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - CornerRadius=50
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20
@@ -1119,7 +1137,7 @@ controlStyles:
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#50ffffff" Offset="0.0"/><GradientStop Color="#10ffffff" Offset="0.5"/><GradientStop Color="#30ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=2
       - Visibility=Visible
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=15
       - Margin=0,5.5,0,5.5
@@ -1361,14 +1379,20 @@ styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.04,-0.14" EndPoint="1.22,1.10"><GradientStop Offset="0.18" Color="#4FFFFFFF"/><GradientStop Offset="0.34" Color="#661D1D1D"/><GradientStop Offset="0.63" Color="#00000000"/><GradientStop Offset="0.72" Color="#662D2D2D"/><GradientStop Offset="0.84" Color="#4FFFFFFF"/></LinearGradientBrush>
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
-      - Height=80
+      - Height={{taskbarDock==`vertical`?skip():80}}
       - MaxHeight=80
       - HorizontalAlignment=Center
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
@@ -1376,7 +1400,7 @@ controlStyles:
       - Height=24
       - Width=24
       - Margin=5,0,-5,0
-  - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=55
       - Height=70
@@ -1425,12 +1449,14 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=Transparent
-      - BorderThickness=2
-      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - BorderThickness=0
       - CornerRadius=50
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - BorderThickness=2
+      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - CornerRadius=50
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20
@@ -1610,7 +1636,7 @@ controlStyles:
   - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock
     styles:
       - Foreground=white
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=15
       - Margin=0,5.5,0,5.5
@@ -1817,14 +1843,20 @@ styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.04,-0.14" EndPoint="1.22,1.10"><GradientStop Offset="0.18" Color="#4FFFFFFF"/><GradientStop Offset="0.34" Color="#661D1D1D"/><GradientStop Offset="0.63" Color="#00000000"/><GradientStop Offset="0.72" Color="#662D2D2D"/><GradientStop Offset="0.84" Color="#4FFFFFFF"/></LinearGradientBrush>
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
-      - Height=70
+      - Height={{taskbarDock==`vertical`?skip():70}}
       - MaxHeight=80
       - HorizontalAlignment=Center
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
@@ -1832,7 +1864,7 @@ controlStyles:
       - Height=24
       - Width=24
       - Margin=3,0,-3,0
-  - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=50
       - Height=65
@@ -1884,12 +1916,14 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=Transparent
-      - BorderThickness=2
-      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - BorderThickness=0
       - CornerRadius=50
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - BorderThickness=2
+      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - CornerRadius=50
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20
@@ -2069,7 +2103,7 @@ controlStyles:
   - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Underlay > TextBlock#InnerTextBlock
     styles:
       - Foreground=white
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=13
       - Margin=0,5.5,0,5.5
@@ -2290,7 +2324,7 @@ controlStyles:
       - Height=24
       - Width=24
       - Margin=5,0,-5,0
-  - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=55
       - Height=70
@@ -2338,12 +2372,14 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=Transparent
-      - BorderThickness=2
-      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - BorderThickness=0
       - CornerRadius=50
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
+      - BorderThickness=2
+      - BorderBrush:=<WindhawkBlur BlurAmount="8" TintColor="#30ffffff"/>
+      - CornerRadius=50
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20
@@ -2371,7 +2407,7 @@ controlStyles:
       - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#50ffffff" Offset="0.0"/><GradientStop Color="#10ffffff" Offset="0.5"/><GradientStop Color="#30ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=2
       - Visibility=Visible
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=15
       - Margin=0,5.5,0,5.5

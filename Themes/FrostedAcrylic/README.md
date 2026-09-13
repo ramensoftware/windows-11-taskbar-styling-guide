@@ -91,9 +91,15 @@ controlStyles:
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
       - ActualWidth=>containerGridWidth
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Margin=0
@@ -147,7 +153,7 @@ controlStyles:
       - Margin=0
       - HorizontalAlignment=Center
       - VerticalAlignment=Center
-  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel
     styles:
       - Height=60
       - MinHeight=60
@@ -156,7 +162,7 @@ controlStyles:
       - Margin=0
       - HorizontalAlignment=Center
       - VerticalAlignment=Center
-  - target: Grid#IconPanel > TextBlock, Taskbar.TaskListButtonPanel > Grid > TextBlock, Taskbar.TaskListButtonPanel > TextBlock, SearchUx.SearchUI.SearchButtonRootGrid > Grid > TextBlock, SearchUx.SearchUI.SearchButtonRootGrid > TextBlock
+  - target: Grid#IconPanel > TextBlock, Taskbar.TaskListLabeledButtonPanel > TextBlock, Taskbar.TaskListButtonPanel > Grid > TextBlock, Taskbar.TaskListButtonPanel > TextBlock, SearchUx.SearchUI.SearchButtonRootGrid > Grid > TextBlock, SearchUx.SearchUI.SearchButtonRootGrid > TextBlock
     styles:
       - Visibility=Collapsed
       - Margin=0
@@ -275,12 +281,14 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=Transparent
-      - BorderBrush:=$BorderBrush
-      - BorderThickness=$BorderThickness
+      - BorderThickness=0
       - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$Background
+      - BorderBrush:=$BorderBrush
+      - BorderThickness=$BorderThickness
+      - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher
     styles:
       - Background:=$Background

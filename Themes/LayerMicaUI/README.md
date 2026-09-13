@@ -277,11 +277,14 @@ controlStyles:
     styles:
       - Background=Transparent
       - CornerRadius=$OuterRadius
-      - BorderBrush:=$ThemeOutBorder
+      - BorderThickness=0
       - // Alt + Tab View Outer Background
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$ThemeBlur
+      - CornerRadius=$OuterRadius
+      - BorderThickness=1
+      - BorderBrush:=$ThemeOutBorder
       - // Alt + Tab View Inner Background
   - target: Grid#ConfirmatorMainGrid
     styles:
@@ -428,9 +431,15 @@ controlStyles:
     styles:
       - FontFamily=$ThFnt
       - // Taskbar Task list > Hover Over Window Thumbnails Region > Thumbnail Window Names Textblock
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - // Taskbar Task Region Frame(Task list + search area + Start button Region grid)
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:

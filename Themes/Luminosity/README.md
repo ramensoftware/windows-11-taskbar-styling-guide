@@ -447,12 +447,14 @@ controlStyles:
     styles:
       - Background=$t
       - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
+      - BorderThickness=0
       - Shadow:=
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$mbg
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Windows.UI.Xaml.Controls.Grid#Root@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
     styles:
       - Background:=#09FFFFFF
@@ -589,9 +591,15 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Visibility=Collapsed
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=Auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - HorizontalAlignment=Stretch
       - Margin=$DockMargin,0,$DockMargin,0
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
@@ -619,7 +627,7 @@ controlStyles:
       - Margin=0,$DockTopGap,$DockMargin,$DockBottomGap
   - target: Taskbar.TaskbarFrame
     styles:
-      - Height=$DockHeight
+      - Height={{taskbarDock==`vertical`?skip():$DockHeight}}
 ```
 </details>
 
@@ -757,12 +765,14 @@ controlStyles:
     styles:
       - Background=$t
       - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
+      - BorderThickness=0
       - Shadow:=
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$mbg
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Windows.UI.Xaml.Controls.Grid#Root@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
     styles:
       - Background:=#09FFFFFF
@@ -1037,12 +1047,14 @@ controlStyles:
     styles:
       - Background=$t
       - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
+      - BorderThickness=0
       - Shadow:=
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$mbg
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Windows.UI.Xaml.Controls.Grid#Root@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
     styles:
       - Background:=#09FFFFFF

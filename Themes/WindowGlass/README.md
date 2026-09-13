@@ -100,10 +100,16 @@ styleConstants:
   - Height=70
   - TaskbarFrameMaxWidth=1895
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
       - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth}}
-      - Width=Auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - Grid.Column=1
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
@@ -221,13 +227,15 @@ controlStyles:
       - BorderThickness=$BorderThickness
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
-      - BorderThickness=$BorderThickness
-      - BorderBrush:=$BorderBrush
+      - BorderThickness=0
       - Background=Transparent
       - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$Background
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
     styles:
       - BorderThickness=$BorderThickness
@@ -345,11 +353,17 @@ styleConstants:
   - Height=70
   - TaskbarFrameMaxWidth=1895
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
       - Grid.Column=1
       - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth}}
-      - Width=Auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
@@ -454,13 +468,15 @@ controlStyles:
       - BorderThickness=$BorderThickness
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
-      - BorderThickness=$BorderThickness
-      - BorderBrush:=$BorderBrush
+      - BorderThickness=0
       - Background=Transparent
       - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$Background
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
     styles:
       - BorderThickness=$BorderThickness
@@ -588,10 +604,16 @@ styleConstants:
   - TrayPadding=2,4,2,4
   - Height=70
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
       - //MaxWidth:=1895
-      - Width=Auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
@@ -699,13 +721,15 @@ controlStyles:
       - BorderThickness=$BorderThickness
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
-      - BorderThickness=$BorderThickness
-      - BorderBrush:=$BorderBrush
+      - BorderThickness=0
       - Background=Transparent
       - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
       - Background:=$Background
+      - BorderThickness=$BorderThickness
+      - BorderBrush:=$BorderBrush
+      - CornerRadius=$CornerRadius
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
     styles:
       - BorderThickness=$BorderThickness

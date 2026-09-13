@@ -293,8 +293,8 @@ styleConstants:
   - taskbarSidesRounded = 1
   - buttonFill = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
   - buttonBorderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="1"/>
-  - taskbarFill = {{__unset}}
-  - taskbarStrokeColor = {{__unset}}
+  - taskbarFill = {{skip()}}
+  - taskbarStrokeColor = {{skip()}}
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
@@ -306,14 +306,14 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill := $taskbarFill
-      - // Taskbar background. $taskbarFill is {{__unset}} on purpose, which will bind it to a variable that is unset,
-      - // and so only this style will be skipped leaving the background color as native Windows.
+      - // Taskbar background. $taskbarFill is {{skip()}} on purpose
+      - // so only this style will be skipped leaving the background color as native Windows.
       - // Set the constant to a brush to give the taskbar background its own fill.
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundStroke
     styles:
       - Fill := $taskbarStrokeColor
-      - // Taskbar Stroke. $taskbarStrokeColor is {{__unset}} on purpose, which will bind it to a variable that is unset,
-      - // and so only this style will be skipped leaving the stroke color as native Windows.
+      - // Taskbar Stroke. $taskbarStrokeColor is {{skip()}} on purpose
+      - // so only this style will be skipped leaving the stroke color as native Windows.
       - // Set the constant to a brush to give the stroke background its own fill.
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame
     styles:

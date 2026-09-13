@@ -105,7 +105,7 @@ controlStyles:
       - BorderThickness=0
       - Margin=-2,-4,-2,-4
       - CornerRadius=0
-  - target: Grid#IconPanel@CommonStates > Border, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border, Taskbar.TaskListButtonPanel@CommonStates > Border
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Grid > Border, Taskbar.TaskListButtonPanel@CommonStates > Border
     styles:
       - CornerRadius=0
       - Background@InactivePointerOver:=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight3}"/>
@@ -272,7 +272,7 @@ controlStyles:
       - BorderThickness=0
       - Margin=-2,-4,-2,-4
       - CornerRadius=0
-  - target: Grid#IconPanel@CommonStates > Border, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border, Taskbar.TaskListButtonPanel@CommonStates > Border
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Grid > Border, Taskbar.TaskListButtonPanel@CommonStates > Border
     styles:
       - CornerRadius=0
       - Background@InactivePointerOver=#BBBBBB

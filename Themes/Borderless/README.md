@@ -49,10 +49,16 @@ controlStyles:
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
       - HorizontalAlignment=Stretch
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
       - Grid.Column=1
-      - Width=$TaskbarFrameWidth
+      - Width={{taskbarDock==`vertical`?skip():$TaskbarFrameWidth}}
       - Margin=0
       - MaxWidth=$TaskbarFrameWidth
   - target: SystemTray.SystemTrayFrame

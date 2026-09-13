@@ -416,7 +416,7 @@ controlStyles:
     styles:
       - Visibility=Collapsed
 # Taskbar icon styles
-  - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=45
       - Height=60
@@ -463,13 +463,19 @@ controlStyles:
     styles:
       - Fill=white
 # Taskbar frame styles
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width=auto
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
-      - Height=70
+      - Height={{taskbarDock==`vertical`?skip():70}}
       - MaxHeight=70
       - HorizontalAlignment=Center
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
@@ -1135,7 +1141,7 @@ controlStyles:
     styles:
       - Visibility=Collapsed
 # Taskbar icon styles
-  - target: Grid#IconPanel, Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=45
       - Height=60
