@@ -27,19 +27,19 @@ Click each to expand settings:
   <summary>Taskbar Blob Shape</summary>
 
   ```yaml
-BlobShape:
-  Dimensions: auto, 18
-  Margins: 0, 4, 0, 0
-  TopRadius: '10'
-  BottomRadius: '8'
-Colors:
-  BgOpacity: ''
-  CustomColor: '#FFFFFF | #09131E'
-SystemButtons:
-  SystemButtonsBlob: 1
-  WidgetsBlob: 1
-  DateTimeBlob: 1
-  TrayButtonsBlob: 1
+  BlobShape:
+    Dimensions: auto, 18
+    Margins: 0, 4, 0, 0
+    TopRadius: '10'
+    BottomRadius: '8'
+  Colors:
+    BgOpacity: ''
+    CustomColor: '#FFFFFF | #09131E'
+  SystemButtons:
+    SystemButtonsBlob: 1
+    WidgetsBlob: 1
+    DateTimeBlob: 1
+    TrayButtonsBlob: 1
   ```
   </details>
 
