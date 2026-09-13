@@ -100,11 +100,16 @@ styleConstants:
   - Height=70
   - TaskbarFrameMaxWidth=1895
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
       - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth}}
-      - Height=>taskbarFrameHeight
-      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - Grid.Column=1
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
@@ -348,12 +353,17 @@ styleConstants:
   - Height=70
   - TaskbarFrameMaxWidth=1895
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
       - Grid.Column=1
       - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth}}
-      - Height=>taskbarFrameHeight
-      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
@@ -594,11 +604,16 @@ styleConstants:
   - TrayPadding=2,4,2,4
   - Height=70
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
       - //MaxWidth:=1895
-      - Height=>taskbarFrameHeight
-      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:

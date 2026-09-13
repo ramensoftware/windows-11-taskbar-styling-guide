@@ -91,10 +91,15 @@ controlStyles:
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
       - ActualWidth=>containerGridWidth
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Height=>taskbarFrameHeight
-      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Margin=0

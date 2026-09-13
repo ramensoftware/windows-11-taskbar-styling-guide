@@ -344,10 +344,15 @@ styleConstants:
   - CornerRadius=12
   - ElementCornerRadius=8
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Height=>taskbarFrameHeight
-      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MinWidth:=100
       - MaxWidth:=1200
       - HorizontalAlignment=Center

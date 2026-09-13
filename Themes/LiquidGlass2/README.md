@@ -207,10 +207,15 @@ controlStyles:
       - ActualWidth=>containerGridWidth
       - ActualHeight=>TaskHeight
       - HorizontalAlignment=Stretch
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Height=>taskbarFrameHeight
-      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - HorizontalAlignment=Center
       - MinWidth=100
       - MaxWidth={{containerGridWidth>0?max(containerGridWidth-250,100):`Infinity`}}

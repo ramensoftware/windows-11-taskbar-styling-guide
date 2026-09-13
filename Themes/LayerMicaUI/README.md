@@ -431,10 +431,15 @@ controlStyles:
     styles:
       - FontFamily=$ThFnt
       - // Taskbar Task list > Hover Over Window Thumbnails Region > Thumbnail Window Names Textblock
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Height=>taskbarFrameHeight
-      - Width={{taskbarFrameHeight>0?`Auto`:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - // Taskbar Task Region Frame(Task list + search area + Start button Region grid)
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
