@@ -210,7 +210,7 @@ styleConstants:
   - showStartButton = 1
   - blobFill = <SolidColorBrush Color="{ThemeResource AdaptiveBlob}"/>
   - taskbarStrokeColor = <SolidColorBrush Color="{ThemeResource AdaptiveBlob}"/>
-  - taskbarFill = <SolidColorBrush Color="{ThemeResource Default}"/>
+  - taskbarFill = {{skip()}}
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
   - progressPausedColor = <SolidColorBrush Color="orange" Opacity="0.2"/>
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
@@ -235,9 +235,9 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill := $taskbarFill
-      - // Taskbar background fill (the surface everything else sits on).
-      - // $taskbarFill deliberately points at an undefined ThemeResource, which makes it an empty
-      - // placeholder. Leave it as is to keep the stock background, or swap in your own brush.
+      - // Taskbar background. $taskbarFill is {{skip()}} on purpose
+      - // so only this style will be skipped leaving the background color as native Windows.
+      - // Set the constant to a brush to give the taskbar background its own fill.
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundStroke
     styles:
       - Height := $taskbarStrokeHeight
