@@ -206,7 +206,7 @@ styleConstants:
   - iconLabelSpacing = 4
   - leftRightPadding = 4
   - badgeSize = 12
-  - badgeNudge = 4,6,0,0
+  - badgeNudge = 0,2,2,0
   - showStartButton = 1
   - blobFill = <SolidColorBrush Color="{ThemeResource AdaptiveBlob}"/>
   - taskbarStrokeColor = <SolidColorBrush Color="{ThemeResource AdaptiveBlob}"/>
@@ -414,21 +414,14 @@ controlStyles:
       - // Start / Task View visibility. $showStartButton = 1 shows them, 0 collapses them
       - // (the expression inverts because Visibility 0 = Visible, 1 = Collapsed).
       - // The constant is named for Start, but this selector covers Task View as well.
-  - target: Grid#IconPanel > Image#OverlayIcon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
+  - target: Grid#IconPanel > Image#OverlayIcon, Grid#IconPanel > Taskbar.Badge#BadgeControl, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
     styles:
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
+      - RenderTransform := <TranslateTransform X="6" Y="0" />
       - Canvas.ZIndex = 3
-      - // Overlay badge (e.g. Teams status), resized and nudged onto the icon corner.
-  - target: Grid#IconPanel > Taskbar.Badge#BadgeControl, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
-    styles:
-      - MinWidth := $badgeSize
-      - Width := $badgeSize
-      - Height := $badgeSize
-      - Margin := $badgeNudge
-      - Canvas.ZIndex = 3
-      - // Counter badge, matched to the overlay badge size and position.
+      - // Overlay badge | Counter badge, matched to the overlay badge size and position.
   - target: Grid#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText
     styles:
       - FontSize = 8
