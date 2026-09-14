@@ -27,19 +27,19 @@ Click each to expand settings:
   <summary>Taskbar Blob Shape</summary>
 
   ```yaml
-BlobShape:
-  Dimensions: auto, 18
-  Margins: 0, 4, 0, 0
-  TopRadius: '10'
-  BottomRadius: '8'
-Colors:
-  BgOpacity: ''
-  CustomColor: '#FFFFFF | #09131E'
-SystemButtons:
-  SystemButtonsBlob: 1
-  WidgetsBlob: 1
-  DateTimeBlob: 1
-  TrayButtonsBlob: 1
+  BlobShape:
+    Dimensions: auto, 18
+    Margins: 0, 4, 0, 0
+    TopRadius: '10'
+    BottomRadius: '8'
+  Colors:
+    BgOpacity: ''
+    CustomColor: '#FFFFFF | #09131E'
+  SystemButtons:
+    SystemButtonsBlob: 1
+    WidgetsBlob: 1
+    DateTimeBlob: 1
+    TrayButtonsBlob: 1
   ```
   </details>
 
@@ -195,8 +195,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
 styleConstants:
   - taskbarLeftOffset = 12
   - taskbarRightOffset = 12
-  - taskbarTopOffset = 8
-  - taskbarBottomOffset = 4
+  - taskbarInwardOffset = 8
+  - taskbarOutwardOffset = 4
   - taskbarStrokeHeight = 4
   - taskbarContentOffset = 4
   - highlightRadius = 8
@@ -206,17 +206,27 @@ styleConstants:
   - iconLabelSpacing = 4
   - leftRightPadding = 4
   - badgeSize = 12
-  - badgeNudge = 4,6,0,0
+  - badgeNudge = 0,2,2,0
   - showStartButton = 1
   - blobFill = <SolidColorBrush Color="{ThemeResource AdaptiveBlob}"/>
   - taskbarStrokeColor = <SolidColorBrush Color="{ThemeResource AdaptiveBlob}"/>
-  - taskbarFill = <SolidColorBrush Color="{ThemeResource Default}"/>
+  - taskbarFill = {{skip()}}
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
   - progressPausedColor = <SolidColorBrush Color="orange" Opacity="0.2"/>
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
   - separatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.15"/>
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag = bottom
+      - Tag@DockedTop = top
+      - Tag => TaskbarPosition
+      - // Docking probe. RootGrid owns the DockingStates group, so the styler writes a marker
+      - // into its otherwise unused Tag per state, and the capture republishes that marker as
+      - // TaskbarPosition. Tag is an object property, so the value is captured as a STRING;
+      - // compare it with backtick literals (`top`), never with numbers. Left/Right fall back
+      - // to the base value, and so does an undefined variable (empty string != `top`).
   - target: Taskbar.TaskbarFrame
     styles:
       - Height => TaskbarHeight
@@ -225,9 +235,9 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill := $taskbarFill
-      - // Taskbar background fill (the surface everything else sits on).
-      - // $taskbarFill deliberately points at an undefined ThemeResource, which makes it an empty
-      - // placeholder. Leave it as is to keep the stock background, or swap in your own brush.
+      - // Taskbar background. $taskbarFill is {{skip()}} on purpose
+      - // so only this style will be skipped leaving the background color as native Windows.
+      - // Set the constant to a brush to give the taskbar background its own fill.
   - target: Taskbar.TaskbarBackground#BackgroundControl > Grid > Rectangle#BackgroundStroke
     styles:
       - Height := $taskbarStrokeHeight
@@ -236,21 +246,24 @@ controlStyles:
       - // blob's flat top edge reads as continuous with the taskbar edge (the tab-strip look).
   - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
-      - Padding := {{$buttonSpacing-2}},{{$taskbarTopOffset}},{{$buttonSpacing-2}},{{$taskbarBottomOffset}}
+      - Padding := {{$buttonSpacing-2}},{{TaskbarPosition==`bottom`?$taskbarInwardOffset:$taskbarOutwardOffset}},{{$buttonSpacing-2}},{{TaskbarPosition==`bottom`?$taskbarOutwardOffset:$taskbarInwardOffset}}
       - MinWidth := $buttonMinWidth
       - // Taskbar button box. Horizontal padding is half of $buttonSpacing per side, so the visible
       - // gap between two neighbouring buttons adds up to $buttonSpacing. Vertical padding sets how
       - // far the highlight is inset from the top/bottom taskbar edges.
+      - // Inward/outward offsets swap when the taskbar is docked at the top.
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
-      - Padding := {{$buttonSpacing-2}},{{$taskbarTopOffset}},{{$buttonSpacing-2}},{{$taskbarBottomOffset}}
+      - Padding := {{$buttonSpacing-2}},{{TaskbarPosition==`bottom`?$taskbarInwardOffset:$taskbarOutwardOffset}},{{$buttonSpacing-2}},{{TaskbarPosition==`bottom`?$taskbarOutwardOffset:$taskbarInwardOffset}}
       - MinWidth := $buttonMinWidth
       - // Start and Task View buttons. Same padding/min-width recipe as task buttons so all three align.
+      - // Inward/outward offsets swap when the taskbar is docked at the top.
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement > ContentPresenter > SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
-      - Padding := {{$buttonSpacing-2}},{{$taskbarTopOffset}},{{$buttonSpacing-2}},{{$taskbarBottomOffset}}
+      - Padding := {{$buttonSpacing-2}},{{TaskbarPosition==`bottom`?$taskbarInwardOffset:$taskbarOutwardOffset}},{{$buttonSpacing-2}},{{TaskbarPosition==`bottom`?$taskbarOutwardOffset:$taskbarInwardOffset}}
       - MinWidth := $buttonMinWidth
       - // Search button (icon mode). Same padding/min-width recipe as task buttons.
+      - // Inward/outward offsets swap when the taskbar is docked at the top.
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel@CommonStates > Grid > Border#BackgroundElement, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background@ActiveNormal := $blobFill
@@ -332,7 +345,7 @@ controlStyles:
       - // Drawn as a square rather than a dot (RadiusX/RadiusY = 0), on top of everything else.
   - target: Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
     styles:
-      - Height := {{TaskbarHeight-($taskbarBottomOffset+$taskbarTopOffset)}}
+      - Height := {{TaskbarHeight-($taskbarOutwardOffset+$taskbarInwardOffset)}}
       - Margin = 1,0,0,0
       - CornerRadius := $highlightRadius
       - // Progress indicator, sized to the button highlight (taskbar height minus the vertical offsets)
@@ -401,21 +414,14 @@ controlStyles:
       - // Start / Task View visibility. $showStartButton = 1 shows them, 0 collapses them
       - // (the expression inverts because Visibility 0 = Visible, 1 = Collapsed).
       - // The constant is named for Start, but this selector covers Task View as well.
-  - target: Grid#IconPanel > Image#OverlayIcon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon
+  - target: Grid#IconPanel > Image#OverlayIcon, Grid#IconPanel > Taskbar.Badge#BadgeControl, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#OverlayIcon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
     styles:
       - Width := $badgeSize
       - Height := $badgeSize
       - Margin := $badgeNudge
+      - RenderTransform := <TranslateTransform X="6" Y="0" />
       - Canvas.ZIndex = 3
-      - // Overlay badge (e.g. Teams status), resized and nudged onto the icon corner.
-  - target: Grid#IconPanel > Taskbar.Badge#BadgeControl, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl
-    styles:
-      - MinWidth := $badgeSize
-      - Width := $badgeSize
-      - Height := $badgeSize
-      - Margin := $badgeNudge
-      - Canvas.ZIndex = 3
-      - // Counter badge, matched to the overlay badge size and position.
+      - // Overlay badge | Counter badge, matched to the overlay badge size and position.
   - target: Grid#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText, Taskbar.TaskListLabeledButtonPanel#IconPanel > Taskbar.Badge#BadgeControl > Grid > TextBlock#BadgeText
     styles:
       - FontSize = 8
@@ -427,7 +433,7 @@ controlStyles:
       - // indicator width, so $taskbarRightOffset = 12 means "flush with the stock edge".
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid@CommonStates > Border#BackgroundBorder
     styles:
-      - Margin := 2,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 2,{{TaskbarPosition==`bottom`?$taskbarInwardOffset:$taskbarOutwardOffset}},0,{{TaskbarPosition==`bottom`?$taskbarOutwardOffset:$taskbarInwardOffset}}
       - Background@PointerOver := $blobFill
       - Background@Pressed := $blobFill
       - Background@Checked := $blobFill
@@ -440,7 +446,7 @@ controlStyles:
       - // Clock / notification center highlight.
   - target: SystemTray.OmniButton#ControlCenterButton > Grid@CommonStates > Border#BackgroundBorder
     styles:
-      - Margin := 2,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
+      - Margin := 2,{{TaskbarPosition==`bottom`?$taskbarInwardOffset:$taskbarOutwardOffset}},2,{{TaskbarPosition==`bottom`?$taskbarOutwardOffset:$taskbarInwardOffset}}
       - Background@PointerOver := $blobFill
       - Background@Pressed := $blobFill
       - Background@Checked := $blobFill
@@ -453,7 +459,7 @@ controlStyles:
       - // Control center highlight.
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid@ > Border#BackgroundBorder
     styles:
-      - Margin := 2,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
+      - Margin := 2,{{TaskbarPosition==`bottom`?$taskbarInwardOffset:$taskbarOutwardOffset}},2,{{TaskbarPosition==`bottom`?$taskbarOutwardOffset:$taskbarInwardOffset}}
       - Background@CheckedNormal := $blobFill
       - Background@CheckedPressed := $blobFill
       - Background@Pressed := $blobFill
@@ -465,7 +471,7 @@ controlStyles:
       - // Language indicator and system tray icon highlights.
   - target: SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid@ > Border#BackgroundBorder
     styles:
-      - Margin := 2,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
+      - Margin := 2,{{TaskbarPosition==`bottom`?$taskbarInwardOffset:$taskbarOutwardOffset}},2,{{TaskbarPosition==`bottom`?$taskbarOutwardOffset:$taskbarInwardOffset}}
       - Background@CheckedNormal := $blobFill
       - Background@CheckedPressed := $blobFill
       - Background@Pressed := $blobFill
@@ -477,7 +483,7 @@ controlStyles:
       - // Notification area (tray) icon highlights.
   - target: SystemTray.ChevronIconView > Grid#ContainerGrid@ > Border#BackgroundBorder
     styles:
-      - Margin := 2,{{$taskbarTopOffset}},2,{{$taskbarBottomOffset}}
+      - Margin := 2,{{TaskbarPosition==`bottom`?$taskbarInwardOffset:$taskbarOutwardOffset}},2,{{TaskbarPosition==`bottom`?$taskbarOutwardOffset:$taskbarInwardOffset}}
       - Background@CheckedNormal := $blobFill
       - Background@CheckedPressed := $blobFill
       - Background@Pressed := $blobFill
@@ -489,29 +495,29 @@ controlStyles:
       - // Tray overflow chevron highlight.
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel
     styles:
-      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset}}
+      - Margin := 0,0,0,{{TaskbarPosition==`bottom`?($taskbarOutwardOffset-$taskbarInwardOffset+$taskbarContentOffset):($taskbarInwardOffset-$taskbarOutwardOffset+$taskbarContentOffset)}}
       - // Clock text. The bottom-minus-top term cancels the asymmetric button padding, then
       - // $taskbarContentOffset applies the same optical lift used on the task buttons.
   - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter
     styles:
-      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset-2}}
+      - Margin := 0,0,0,{{TaskbarPosition==`bottom`?($taskbarOutwardOffset-$taskbarInwardOffset+$taskbarContentOffset-2):($taskbarInwardOffset-$taskbarOutwardOffset+$taskbarContentOffset-2)}}
       - // Control center glyphs; -2 because glyphs sit two pixels lower than text.
   - target: SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
     styles:
       - MaxLines = 1
-      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset}}
+      - Margin := 0,0,0,{{TaskbarPosition==`bottom`?($taskbarOutwardOffset-$taskbarInwardOffset+$taskbarContentOffset-2):($taskbarInwardOffset-$taskbarOutwardOffset+$taskbarContentOffset-2)}}
       - // Language indicator forced to one line (otherwise it wraps to "ENG / US"), lifted like the clock.
   - target: SystemTray.Stack#MainStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base, SystemTray.Stack#MainStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base
     styles:
-      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset-2}}
+      - Margin := 0,0,0,{{TaskbarPosition==`bottom`?($taskbarOutwardOffset-$taskbarInwardOffset+$taskbarContentOffset-2):($taskbarInwardOffset-$taskbarOutwardOffset+$taskbarContentOffset-2)}}
       - // Main stack glyph icons (privacy indicators such as microphone in use), lifted to the shared glyph baseline.
   - target: SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid > Image
     styles:
-      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset-2}}
+      - Margin := 0,0,0,{{TaskbarPosition==`bottom`?($taskbarOutwardOffset-$taskbarInwardOffset+$taskbarContentOffset-2):($taskbarInwardOffset-$taskbarOutwardOffset+$taskbarContentOffset-2)}}
       - // Third-party notification area icons, lifted to the shared glyph baseline.
   - target: SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter
     styles:
-      - Margin := 0,0,0,{{$taskbarBottomOffset-$taskbarTopOffset+$taskbarContentOffset-2}}
+      - Margin := 0,0,0,{{TaskbarPosition==`bottom`?($taskbarOutwardOffset-$taskbarInwardOffset+$taskbarContentOffset-2):($taskbarInwardOffset-$taskbarOutwardOffset+$taskbarContentOffset-2)}}
       - // Tray overflow chevron, lifted to the shared glyph baseline.
   - target: Grid#OverflowRootGrid > Border
     styles:
@@ -543,7 +549,7 @@ controlStyles:
     styles:
       - Width := {{WeatherCondWidth+WeatherTempWidth+62}}
       - Margin := {{$taskbarLeftOffset-12}},0,56,0
-      - Padding := 12,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Padding := 12,{{TaskbarPosition==`bottom`?$taskbarInwardOffset:$taskbarOutwardOffset}},0,{{TaskbarPosition==`bottom`?$taskbarOutwardOffset:$taskbarInwardOffset}}
       - // Weather widget root, kept the same width as its content grid.
       - // Leading margin subtracts 12 so $taskbarLeftOffset = 12 means "flush with the stock edge";
       - // the trailing 56 reserves room before the first task button.
@@ -598,13 +604,13 @@ controlStyles:
       - Height@Pressed = 6
       - RadiusX = 2
       - RadiusY = 2
-      - Margin := 0,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset+$taskbarContentOffset-4}}
+      - Margin := 0,{{TaskbarPosition==`bottom`?($taskbarInwardOffset):($taskbarOutwardOffset-$taskbarContentOffset+4)}},0,{{TaskbarPosition==`bottom`?($taskbarOutwardOffset+$taskbarContentOffset-4):($taskbarInwardOffset)}}
       - Fill := $showDesktopIndicatorColor
       - // "Show desktop" corner control, reshaped from a bar into a dot that grows on hover.
       - // The bare @ attaches to the element's default visual state group (it has only one).
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel
     styles:
-      - Margin := 8,{{$taskbarTopOffset}},0,{{$taskbarBottomOffset}}
+      - Margin := 8,{{TaskbarPosition==`bottom`?$taskbarInwardOffset:$taskbarOutwardOffset}},0,{{TaskbarPosition==`bottom`?$taskbarOutwardOffset:$taskbarInwardOffset}}
       - Padding = 0
       - // Overflow ("show hidden icons") button, separated from the tray stack by a fixed leading margin.
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Border#BackgroundElement
@@ -620,7 +626,7 @@ controlStyles:
       - MinWidth = 28
       - Padding := {{$buttonSpacing-2}},4
       - // Buttons inside the overflow flyout. Padding is reset to a uniform value, because the
-      - // asymmetric $taskbarTopOffset / $taskbarBottomOffset inherited from the main rule is meant
+      - // asymmetric $taskbarInwardOffset / $taskbarOutwardOffset inherited from the main rule is meant
       - // for the taskbar edges and has nothing to align to inside a flyout.
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Image#Icon, Microsoft.UI.Xaml.Controls.ItemsRepeater#OverflowFlyoutListRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
