@@ -1,5 +1,4 @@
 # LiquidGlass theme for Windows 11 Taskbar Styler
-
 **Author**: [mohsinhasanpc](https://github.com/mohsinhasanpc)
 
 ![Screenshot](screenshot.png)
