@@ -323,7 +323,7 @@ controlStyles:
   - target: Grid#DynamicSearchBoxGleamContainer
     styles:
       - Visibility=1
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
 ```

@@ -123,7 +123,7 @@ controlStyles:
     styles:
       - Orientation=Horizontal
       - Spacing=12
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
   - target: TextBlock#TimeInnerTextBlock

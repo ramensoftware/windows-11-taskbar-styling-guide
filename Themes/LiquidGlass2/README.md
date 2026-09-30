@@ -564,7 +564,7 @@ controlStyles:
     styles:
       - Background:=Transparent
       - BorderBrush:=Transparent
-  - target: SystemTray.ChevronIconView > * > TextBlock#InnerTextBlock[Text=]
+  - target: SystemTray.ChevronIconView > * > TextBlock#InnerTextBlock[Text=], SystemTray.ChevronIconView > * > TextBlock#InnerTextBlock[Text=]
     styles:
       - Text:=&#xED14;
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
