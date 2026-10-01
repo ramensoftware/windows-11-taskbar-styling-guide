@@ -193,7 +193,7 @@ controlStyles:
       - RenderTransform:=<TranslateTransform X="4" Y="0" />
       - FontSize=11
       - FontFamily=Segoe UI VF
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
   - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid

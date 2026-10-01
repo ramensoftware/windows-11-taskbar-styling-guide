@@ -166,7 +166,7 @@ controlStyles:
   - target: TextBlock#DateInnerTextBlock
     styles:
       - Visibility=1
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
   - target: TextBlock#SearchBoxTextBlock
@@ -406,7 +406,7 @@ controlStyles:
   - target: TextBlock#DateInnerTextBlock
     styles:
       - Visibility=1
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
   - target: TextBlock#SearchBoxTextBlock
