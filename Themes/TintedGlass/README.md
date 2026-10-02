@@ -1,11 +1,27 @@
 # TintedGlass theme for Windows 11 Taskbar Styler
 
 **Author**: [TheRealCisWhiteMale](https://github.com/TheRealCisWhiteMale)
+**Contributor**: [benjaminfberger](https://github.com/benjaminfberger)
 
 ![Screenshot](screenshot.png)
 
 ## Notes
 * This taskbar theme is designed to be used in dark mode.
+* If you would like the System Tray to be qr code glyph to match [TaskbarXII theme for Windows 11 Taskbar Styler](https://github.com/ramensoftware/windows-11-taskbar-styling-guide/blob/main/Themes/TaskbarXII/README.md) add this at the end of the settings.
+
+![Screenshot](QR.png)
+
+<details>
+<summary>Click to expand mod settings</summary>
+
+```yaml
+  - target: TextBlock#InnerTextBlock[Text=]
+    styles:
+      - Text=
+```
+</details>
+
+---
 
 ## Required Windhawk Mods for similar results
 To achieve similar results, install and configure the following Windhawk mods in addition to Windows 11 Taskbar Styler:
@@ -19,13 +35,14 @@ To achieve similar results, install and configure the following Windhawk mods in
 ShowSeconds: 1
 TimeFormat: HH':'mm':'ss
 DateFormat: ddd',' dd MMM yyyy
+DateLocale: ''
 WeekdayFormat: custom
 WeekdayFormatCustom: Mon, Tue, Wed, Thu, Fri, Sat, Sun
 TopLine: '%time%'
 BottomLine: '%date%'
 MiddleLine: '%weekday%'
 TooltipLine: '%weather%'
-TooltipLineMode: append
+TooltipLineMode: replace
 Width: 180
 Height: 60
 MaxWidth: 0
@@ -33,6 +50,8 @@ TextSpacing: -4
 DataCollection:
   NetworkMetricsFormat: mbs
   NetworkMetricsFixedDecimals: -1
+  DiskMetricsFormat: sameAsNetwork
+  DiskMetricsFixedDecimals: -1
   PercentageFormat: spacePaddingAndSymbol
   UpdateInterval: 1
   NetworkAdapterName: ''
@@ -40,10 +59,11 @@ DataCollection:
 MediaPlayer:
   IgnoredPlayers:
     - ''
-  MaxLength: 28
+  MaxLength: 0
+  MediaInfoFormat: '%media_artist% - %media_title%'
   NoMediaText: No media
   RemoveBrackets: 0
-WebContentWeatherLocation: ''
+WebContentWeatherLocation: (insert your city here)
 WebContentWeatherFormat: '%c 🌡️%t 🌬️%w'
 WebContentWeatherUnits: autoDetect
 WebContentsItems:
@@ -69,6 +89,7 @@ TimeStyle:
   FontStyle: ''
   FontStretch: ''
   CharacterSpacing: 70
+  LineHeight: 0
 DateStyle:
   Hidden: 0
   TextColor: ''
@@ -79,6 +100,7 @@ DateStyle:
   FontStyle: ''
   FontStretch: ''
   CharacterSpacing: 0
+  LineHeight: 0
 oldTaskbarOnWin11: 0
 DataCollectionUpdateInterval: 1
 ```
@@ -113,7 +135,7 @@ taskbarItemWidth: 0
 runningIndicatorStyle: centerFixed
 progressIndicatorStyle: sameAsRunningIndicatorStyle
 excludedPrograms:
-  - excluded1.exe
+  - ''
 minimumTaskbarItemWidth: 43
 maximumTaskbarItemWidth: 300
 fontSize: 13
@@ -163,12 +185,92 @@ RenderingMod:
   SysColors: 1
   AccentColorControls: 1
   TextAlphaBlend: 1
-type: acrylicblur
+BackgroundEffects:
+  type: acrylicblur
+  AccentBlurBehind: '80000000'
+FlyoutsEffects: 0
+RuledPrograms:
+  - target: notepad.exe
+    RenderingMod:
+      ThemeBackground: 1
+      AccentColorControls: 1
+    BackgroundEffects:
+      type: ''
+      AccentBlurBehind: ''
+    AccentBlurBehind: '80000000'
+    BorderColor:
+      ColorBorder: 0
+      RainbowBorder: 0
+      borderstyles_active: '000000'
+      borderstyles_inactive: '000000'
+    CornerOption: smallround
+    ExtendFrame: 0
+    ImmersiveDarkTitle: 1
+    RainbowSpeed: 1
+    TitlebarColor:
+      ColorTitlebar: 0
+      RainbowTitlebar: 0
+      titlerbarstyles_active: FF0000
+      titlerbarstyles_inactive: 00FFFF
+    TitlebarTextColor:
+      ColorTitlebarText: 0
+      RainbowTextColor: 0
+      titlerbarcolorstyles_active: FFFFFF
+      titlerbarcolorstyles_inactive: FFFFFF
+    type: acrylicsystem
+  - target: notepad++.exe
+    RenderingMod:
+      ThemeBackground: 1
+      AccentColorControls: 1
+    BackgroundEffects:
+      type: ''
+      AccentBlurBehind: ''
+    AccentBlurBehind: '80000000'
+    BorderColor:
+      ColorBorder: 0
+      borderstyles_active: '0'
+      borderstyles_inactive: '0'
+    CornerOption: smallround
+    ExtendFrame: 0
+    ImmersiveDarkTitle: 1
+    TitlebarTextColor:
+      ColorTitlebarText: 0
+      titlerbarcolorstyles_active: FFFFFF
+      titlerbarcolorstyles_inactive: FFFFFF
+    type: acrylicsystem
+  - target: chrome.exe
+    RenderingMod:
+      ThemeBackground: 1
+      AccentColorControls: 1
+    BackgroundEffects:
+      type: ''
+      AccentBlurBehind: ''
+    AccentBlurBehind: '80000000'
+    BorderColor:
+      borderstyles_active: '000000'
+      borderstyles_inactive: '000000'
+      ColorBorder: 0
+    CornerOption: smallround
+    ExtendFrame: 1
+    ImmersiveDarkTitle: 1
+    type: acrylicblur
+  - target: vlc.exe
+    RenderingMod:
+      ThemeBackground: 1
+      AccentColorControls: 1
+    BackgroundEffects:
+      type: none
+      AccentBlurBehind: ''
 AccentBlurBehind: '80000000'
-FlyoutsEffects: 1
-ImmersiveDarkTitle: 1
-ExtendFrame: 1
+BorderColor:
+  ColorBorder: 0
+  RainbowBorder: 0
+  borderstyles_active: '0'
+  borderstyles_inactive: '0'
+  MenuBorderColor: 1
 CornerOption: smallround
+ExtendFrame: 1
+ImmersiveDarkTitle: 1
 RainbowSpeed: 1
 TitlebarColor:
   ColorTitlebar: 0
@@ -176,97 +278,92 @@ TitlebarColor:
   titlerbarstyles_active: '0'
   titlerbarstyles_inactive: '0'
 TitlebarTextColor:
-  ColorTitlebarText: 0
+  ColorTitlebarText: 1
   RainbowTextColor: 0
   titlerbarcolorstyles_active: FFFFFF
   titlerbarcolorstyles_inactive: FFFFFF
-BorderColor:
-  ColorBorder: 1
-  RainbowBorder: 0
-  borderstyles_active: '0'
-  borderstyles_inactive: '0'
-  MenuBorderColor: 1
-RuledPrograms:
-  - target: notepad.exe
-    RenderingMod:
-      ThemeBackground: 0
-      AccentColorControls: 0
-    type: acrylicsystem
-    AccentBlurBehind: '80000000'
-    ImmersiveDarkTitle: 1
-    ExtendFrame: 0
-    CornerOption: smallround
-    RainbowSpeed: 1
-    TitlebarColor:
-      ColorTitlebar: 0
-      RainbowTitlebar: 0
-      titlerbarstyles_active: FF0000
-      titlerbarstyles_inactive: 00FFFF
-    TitlebarTextColor:
-      ColorTitlebarText: 0
-      RainbowTextColor: 0
-      titlerbarcolorstyles_active: FFFFFF
-      titlerbarcolorstyles_inactive: FFFFFF
-    BorderColor:
-      ColorBorder: 1
-      RainbowBorder: 0
-      borderstyles_active: '0'
-      borderstyles_inactive: '0'
-  - target: notepad++.exe
-    RenderingMod:
-      ThemeBackground: 0
-      AccentColorControls: 0
-    type: acrylicsystem
-    AccentBlurBehind: '80000000'
-    ImmersiveDarkTitle: 1
-    ExtendFrame: 0
-    CornerOption: smallround
-    RainbowSpeed: 1
-    TitlebarColor:
-      ColorTitlebar: 0
-      RainbowTitlebar: 0
-      titlerbarstyles_active: FF0000
-      titlerbarstyles_inactive: 00FFFF
-    TitlebarTextColor:
-      ColorTitlebarText: 0
-      RainbowTextColor: 0
-      titlerbarcolorstyles_active: FFFFFF
-      titlerbarcolorstyles_inactive: FFFFFF
-    BorderColor:
-      ColorBorder: 1
-      RainbowBorder: 0
-      borderstyles_active: '0'
-      borderstyles_inactive: '0'
+type: acrylicblur
 ```
 </details>
 
 ---
 
-- Taskbar Background Helper
+- Win32 UI Modernizer
 
 <details>
 <summary>Click to expand mod settings</summary>
 
 ```yaml
-backgroundStyle: blur
-color:
-  red: 255
-  green: 127
-  blue: 39
-  accentColor: 0
-  transparency: 128
-onlyWhenMaximized: 1
-excludedPrograms:
-  - ''
-styleForDarkMode:
-  use: 0
-  backgroundStyle: blur
-  color:
-    red: 255
-    green: 127
-    blue: 39
-    accentColor: 0
-    transparency: 128
+TreeViewSection:
+  Enabled: 1
+  ModernInsertMark: 1
+  InsertMarkColor: accent
+  RemoveTreeLines: 1
+  AnimatedArrows: 0
+GeneralSection:
+  Enabled: 1
+  CustomAccentColor: ''
+  TransparencyCompat: 1
+  ModernTooltips: 1
+  ModernLightScrollbars: 1
+  DisableTextPipeline: 1
+  EnableDarkMode: 1
+  ModernContextMenus: 1
+  MenuCornerStyle: smallround
+  MenuHoverRadius: 6
+  RoundedButtons: 1
+  CheckBoxAnim: 1
+  AccentRadioButtons: 1
+  EditFocusLine: 1
+  ModernGroupBox: 1
+  ModernSeparators: 1
+  ModernFocusRect: hidden
+  ProgressBars: 1
+  RoundedTabPane: 1
+  NormalizeDragDrop: 1
+  TabPill: 1
+ExplorerSection:
+  Enabled: 1
+  AccentColorize: 1
+  AccentMarquee: 1
+  RoundedSelection: 1
+  NavPaneHoverFade: 1
+  NeutralSelection: 0
+  RemoveNavDivider: 0
+  RemoveNavDividerTW: 1
+  NavDividerHoverReveal: 0
+  NavPaneWinUIMetrics: 0
+  LegacyRebarControls: 1
+  RebarMicaTint: 0
+  NavPanePill: 1
+  NavPillStyle: winui_top
+  NavPillGradient: 0
+  AccentButtonGradient: 0
+  EditFocusGradient: 0
+  NavPillNoClip: 1
+  ListViewPill: 1
+  RoundedGroupHeaders: 1
+  FluentPinIcon: 1
+  PinIconStyle: outline
+  PinIconColor: accent
+  PinMarginRight: 10
+  GlyphIcons: disabled
+  ModernizeShellIcons: 1
+  GlyphColor: ''
+  DiskChartAccentColor: 1
+  AutoPlayReplacement: 1
+RegeditSection:
+  Enabled: 1
+  TransparentBg: 1
+  GlyphIcons: 1
+WinverSection:
+  Enabled: 1
+  Background: black
+ComboBoxDWMSection:
+  Enabled: 1
+  CornerStyle: small
+DarkModeExcludeList:
+  - target: ''
 ```
 </details>
 
@@ -302,6 +399,9 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=$CommonBgBrush
+											  
+		   
+				
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - Background=Transparent
@@ -330,17 +430,10 @@ controlStyles:
     styles:
       - Width=18
       - Height=18
-  - target: SystemTray.Stack#ShowDesktopStack
-    styles:
-      - Visibility=Collapsed
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
-    styles:
-      - Height=32
-      - Width=32
   - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - Padding=2,2,2,2
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Padding=2,2,2,2
   - target: Grid#ContainerGrid
