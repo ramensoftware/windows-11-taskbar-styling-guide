@@ -149,6 +149,12 @@ controlStyles:
   - target: StackPanel#SystemTrayStack
     styles:
       - VerticalAlignment=Center
+  - target: Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Background:=$LiquidBackground
+      - BorderBrush:=$LiquidBorder
+      - BorderThickness=0.5,1,0.5,1
+      - CornerRadius=$GlobalRadius
   - target: Taskbar.TaskListButton
     styles:
       - Margin=$ItemMargin
