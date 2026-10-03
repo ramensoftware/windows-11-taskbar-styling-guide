@@ -294,11 +294,16 @@ styleConstants:
   - buttonFill = <WindhawkBlur BlurAmount="7" TintColor="{ThemeResource AdaptiveFill}" TintOpacity="0.2" TintLuminosityOpacity="0.2"/>
   - buttonBorderColor = <SolidColorBrush Color="{ThemeResource AdaptiveBorder}" Opacity="1"/>
   - taskbarFill = {{skip()}}
-  - taskbarStrokeColor = {{skip()}}
+  - taskbarStrokeColor = Transparent
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
   - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
 controlStyles:
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground#BackgroundControl > Grid
+    styles:
+      - Margin = 2
+      - CornerRadius = 10
+      - Opacity = 0.9
   - target: Taskbar.TaskListButton#TaskListButton
     styles:
       - ActualWidth => BtnW
