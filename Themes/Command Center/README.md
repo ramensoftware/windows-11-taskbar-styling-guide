@@ -10,14 +10,14 @@ Command Center theme inspired by the command centers from various mobile operati
 > If for any reason some elements don't load, simply refresh explorer by restarting the `explorer.exe` process.
 
 
-> [!NOTE]
-> This theme consists of the following backgrounds:
-> - Translucent
-> - Glass
-> - Frosted
-> - Acrylic
-> 
-> To switch between these backgrounds, set the value `Background=$Translucent`, `Background=$Glass`, `Background=$Frosted` or `Background=$Acrylic` in the "Style constants" section of the mod's settings.
+## Notes
+- This theme consists of the following backgrounds:
+  - Translucent
+  - Glass
+  - Frosted
+  - Acrylic
+
+  In order to switch between these backgrounds, set the value `Background=$Translucent`, `Background=$Glass`, `Background=$Frosted` or `Background=$Acrylic` in the "Style constants" section of the mod's settings.
 
 ## Additional Extras
 
