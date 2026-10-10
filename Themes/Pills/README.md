@@ -44,7 +44,7 @@ Click each to expand settings:
   WeekdayFormat: custom
   WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
   TopLine: ''
-  BottomLine: ' 📅 %date% 〡 %time% '
+  BottomLine: ' 📅 %date% 〡 %time% '
   MiddleLine: '%weekday%'
   TooltipLine: '%web1_full%'
   TooltipLineMode: append
@@ -204,42 +204,57 @@ Click each to expand settings:
   <summary>Taskbar Virtual Desktop Switcher</summary>
 
   ```yaml
-  position: nextToStart
-  gridMode: singleRow
-  smartLayout: packHorizontal
-  fillOrder: rowFirst
-  buttonRows: 0
-  buttonColumns: 0
-  shortGroupAlign: center
-  buttonWidth: 16
-  buttonHeight: 16
-  buttonSpacing: 5
-  labelFormat: roman
-  customLabels: ''
-  fontSize: 12
-  activeTextColor: ''
-  inactiveTextColor: ''
-  activeColor: ''
-  inactiveColor: transparent
-  hoverBackgroundColor: ''
-  pressedBackgroundColor: ''
-  borderColor: '#454545'
-  borderThickness: 0
-  cornerRadius: 10
-  buttonOpacity: 100
-  shineEffect: 0
-  activeBold: 1
-  paddingLeft: 12
-  paddingRight: 8
-  gridVerticalOffset: -4
-  hideWhenSingle: 0
-  multiMonitor: 1
-  showMasterButton: 1
-  masterButtonLabel: 🪟
-  masterButtonPosition: before
-  masterButtonHeight: 16
-  masterButtonWidth: 18
-  masterButtonSpacing: 0
+  Placement:
+    Position: leftOfStart
+    AllTaskbars: 0
+    Win10Position: beforeIcons
+  Content:
+    LabelFormat: roman
+    CustomLabels: ''
+    ActiveSymbol: ●
+    InactiveSymbol: ○
+    TaskViewButton: 1
+    TaskViewLabel: 🪟
+    TaskViewPlacement: before
+  Layout:
+    Arrangement: auto
+    FillOrder: rows
+    Justify: center
+    NewItems: append
+  Size:
+    ItemWidth: 16
+    ItemHeight: 16
+    ItemSpacing: 6
+    TaskViewSize: 14
+    TaskViewSpan: 0
+    TaskViewGap: 4
+  Adjust:
+    PadX: 12
+    PadY: 0
+    OffsetX: 12
+    OffsetY: -4
+  Surface:
+    FontSize: 12
+    FontFamily: ''
+    HoverBackgroundColor: ''
+    PressedBackgroundColor: ''
+    BorderColor: ''
+    BorderThickness: 0
+    CornerRadius: 10
+    Opacity: 100
+    ShineEffect: 0
+    TaskViewFontFamily: ''
+  State:
+    ActiveTextColor: ''
+    InactiveTextColor: ''
+    ActiveBackgroundColor: ''
+    InactiveBackgroundColor: transparent
+    ActiveBold: 0
+  Behavior:
+    HoverPreview: 0
+    PreviewDelay: 400
+    PreviewWidth: 800
+    HideWhenSingle: 0
   ```
   </details>
 
@@ -298,7 +313,7 @@ styleConstants:
   - taskbarFill = {{skip()}}
   - taskbarStrokeColor = {{skip()}}
   - progressColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.2"/>
-  - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="0.7"/>
+  - showDesktopIndicatorColor = <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="1"/>
   - multiWinIndicatorColor = <SolidColorBrush Color="{ThemeResource AdaptiveIndicator}" Opacity="0.7"/>
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground#BackgroundControl > Grid
@@ -688,20 +703,6 @@ controlStyles:
       - BorderThickness = 0
       - CornerRadius := $highlightRadius
       - // Overflow button highlight.
-  - target: Grid#VdSwitcherBar
-    styles:
-      - Padding = 8,1,6,0
-      - Height = 24
-      - BorderThickness := $borderThickness
-      - CornerRadius := $buttonRadius
-      - Background := $buttonFill
-      - BorderBrush := $buttonBorderColor
-      - // Virtual desktop switcher, styled to match the tray pill. This element comes from a separate
-      - // Windhawk mod and simply matches nothing when that mod is not installed.
-  - target: Grid#VdSwitcherBar > Button > ContentPresenter
-    styles:
-      - BorderThickness = 0
-      - // Virtual desktop switcher buttons.
   - target: ScrollViewer > ScrollContentPresenter > Border > Taskbar.FlyoutFrame > Canvas#HoverFlyoutCanvas > Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground, WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid, Grid#OverflowRootGrid > Border
     styles:
       - Shadow :=
@@ -726,6 +727,20 @@ controlStyles:
     styles:
       - Opacity = 0
       - // Pill hidden inside the flyout, where the buttons are too small for it to read.
+  - target: Grid#VdSwitcherBar
+    styles:
+      - Padding := {{4-$borderThickness}},{{3-$borderThickness}},0,0
+      - Height = 24
+      - BorderThickness := $borderThickness
+      - CornerRadius := $buttonRadius
+      - Background := $buttonFill
+      - BorderBrush := $buttonBorderColor
+      - // Virtual desktop switcher, styled to match the tray pill. This element comes from a separate
+      - // Windhawk mod and simply matches nothing when that mod is not installed.
+  - target: Grid#VdSwitcherBar > Button > ContentPresenter
+    styles:
+      - BorderThickness = 0
+      - // Virtual desktop switcher buttons.
 themeResourceVariables:
   - AdaptiveFill@Light =#FFFFFF
   - AdaptiveFill@Dark =#000000
