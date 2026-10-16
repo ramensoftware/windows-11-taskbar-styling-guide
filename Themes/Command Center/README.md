@@ -54,6 +54,8 @@ styleConstants:
   - BorderThickness=0.3,1,0.3,1
   - R1=6
   - R2=20
+  - Height=42
+  - Width=42
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
@@ -88,15 +90,15 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$R1
-      - Width=38
-      - Height=38
+      - Height=$Width
+      - Height=$Height
   - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Visibility=1
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - Width=38
-      - Height=38
+      - Width=$Width
+      - Height=$Height
       - Background@ActiveNormal:=$ActiveColor
       - Background@ActivePointerOver:=$OverlayColor
       - Background@ActivePressed:=$OverlayColor
@@ -119,7 +121,7 @@ controlStyles:
       - Width@ActiveRunningIndicator=21
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
-      - Height=38
+      - Height=$Height
       - Background:=Transparent
       - BorderBrush:=Transparent
       - BorderThickness=0
@@ -302,7 +304,7 @@ controlStyles:
       - BorderThickness=0
       - CornerRadius=$R1
       - MaxWidth=150
-      - MaxHeight=38
+      - MaxHeight=$Height
       - Width=Auto
       - Height=Auto
   - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#SearchPillBackgroundElement
@@ -311,7 +313,7 @@ controlStyles:
       - CornerRadius=$R1
       - BorderThickness=$BorderThickness
       - MaxWidth=150
-      - MaxHeight=38
+      - MaxHeight=$Height
       - Width=Auto
       - Height=Auto
       - Margin=-4,-5,-6,-5
