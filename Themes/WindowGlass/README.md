@@ -4,7 +4,7 @@ A theme that adds a modern, glassy aesthetic with a compact, floating layout to 
 
 **Author**: [Nathaniel4JC](https://github.com/Nathaniel4JC)
 
-![Screenshot](screenshot_large.png)
+![Screenshot](screenshot_large.png)			
 
 ## Note
 - This theme consists of the following backgrounds:
