@@ -43,6 +43,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 ```yaml
 styleConstants:
   - TaskbarFrameWidth=800
+  - TaskbarFrameHeight=56
   - Shadows=
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid
@@ -59,20 +60,20 @@ controlStyles:
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width={{taskbarDock==`vertical`?56:$TaskbarFrameWidth}}
+      - Width={{taskbarDock==`vertical`?$TaskbarFrameHeight:$TaskbarFrameWidth}}
       - MaxWidth={{taskbarDock==`vertical`?skip():$TaskbarFrameWidth}}
-      - Height={{taskbarDock==`horizontal`?56:$TaskbarFrameWidth}}
+      - Height={{taskbarDock==`horizontal`?$TaskbarFrameHeight:$TaskbarFrameWidth}}
       - MaxHeight={{taskbarDock==`horizontal`?skip():$TaskbarFrameWidth}}
       - Grid.Column=1
       - Grid.Row=1
   - target: SystemTray.SystemTrayFrame
     styles:
-      - Grid.Column=1
-      - HorizontalAlignment={{taskbarDock==`vertical`?skip():2}}
       - Height={{taskbarDock==`vertical`?skip():40}}
-      - VerticalAlignment={{taskbarDock==`vertical`?skip():1}}
-      - Grid.Row=1
       - Width={{taskbarDock==`horizontal`?skip():50}}
+      - HorizontalAlignment={{taskbarDock==`vertical`?skip():2}}
+      - VerticalAlignment={{taskbarDock==`vertical`?skip():1}}
+      - Grid.Column=1
+      - Grid.Row=1
   - target: Taskbar.TaskbarFrame > Windows.UI.Xaml.Controls.Grid#RootGrid > Taskbar.TaskbarBackground#BackgroundControl
     styles:
       - CornerRadius=6
@@ -82,7 +83,7 @@ controlStyles:
       - Visibility=Collapsed
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - Margin=0,2,0,2
+      - Margin=4
   - target: Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder
     styles:
       - Shadow:=$Shadows
@@ -120,5 +121,11 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher
     styles:
       - Width=960
+  - target: Windows.UI.Xaml.Controls.Border#VirtualDesktopSwitcherBackground
+    styles:
+      - BorderThickness=0
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement
+    styles:
+      - Margin=210,0,210,12
 ```
 </details>
