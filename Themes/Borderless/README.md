@@ -14,7 +14,11 @@ To apply the customizations below, set the corresponding style constants in the 
 
 ### Taskbar frame width
 
-By default, the taskbar frame is set to 800px. Set `TaskbarFrameWidth` to adjust the width. For example, use `TaskbarFrameWidth=1000` for a wider 1000px taskbar.
+By default, the taskbar frame width is set to 800px. Set `TaskbarFrameWidth` to adjust the width. For example, use `TaskbarFrameWidth=1000` for a wider 1000px taskbar, this also applies to the height of the vertical taskbar.
+
+### Taskbar frame height
+
+By default, the taskbar frame height is set to 56px. Set `TaskbarFrameHeight` to adjust the height. For example, use `TaskbarFrameHeight=60` for a higher 60px taskbar, this also applies to the Width of the vertical taskbar.
 
 ### Re-enabling drop shadows
 
@@ -118,6 +122,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground
     styles:
       - Shadow:=$Shadows
+      - BorderThickness=0
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher
     styles:
       - Width=960
