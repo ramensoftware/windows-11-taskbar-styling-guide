@@ -341,7 +341,7 @@ controlStyles:
       - Background:=<WindhawkBlur BlurAmount="5" TintColor="#1C101010"/>
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
     styles:
-      - Background:=Red
+      - Background=Transparent
   - target: Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot
     styles:
       - Background:=<WindhawkBlur BlurAmount="4" TintColor="#20000000"/>
@@ -622,9 +622,6 @@ controlStyles:
       - BorderThickness=1
       - BorderBrush:=<SolidColorBrush Color="#50FFFFFF"/>
       - CornerRadius=12
-  - target: SnapLayout.SnapLayoutControl#SuggestionSnapLayout Windows.UI.Xaml.Controls.Border#LayoutBorder
-    styles:
-      - Background:=Red
   - target: Windows.UI.Xaml.Controls.Grid#LayoutGrid > Windows.UI.Xaml.Controls.Button
     styles:
       - BorderBrush:=<SolidColorBrush Color="#70BBBBBB"/>
