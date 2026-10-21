@@ -10,7 +10,7 @@
 
 It's meant to be used with **Mica** or **MicaAlt** backdrops, with or without the **Translucent Windows** mod.
 
----
+<br>
 
 ## Variants
 
@@ -290,7 +290,7 @@ I didn't know how to fix these. I couldn't find the correct target names, or I'm
 - **Widget/Weather (Compact):** Long text might not render fully.
 - Virtual Desktop Right-Click Menu items doesn't match the theme.
 
----
+<br>
 
 ## Theme selection
 
