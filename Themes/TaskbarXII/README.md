@@ -29,7 +29,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ## With Widget Separated
 
-The Widget should be always enabled in taskbar setting.
+The widget, if enabled, is shown separately from the taskbar.
 
 ![Demonstration](screenshot_dark_with_widget.png)
 ![Demonstration](screenshot_light_with_widget.png)
@@ -63,7 +63,7 @@ controlStyles:
       - CornerRadius=4
   - target: Taskbar.TaskbarBackground#BackgroundControl
     styles:
-      - Transform3D:=<CompositeTransform3D TranslateX="156.5"/>
+      - Transform3D:=<CompositeTransform3D TranslateX="{{widgetWidth==``?skip():widgetWidth+4.5}}"/>
       - Opacity=0.7
       - Height=48
   - target: Taskbar.TaskbarBackground > Grid
@@ -75,13 +75,14 @@ controlStyles:
       - Height=0
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - Margin=0,0,3,0
+      - Margin=3,0,3,0
   - target: Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel
     styles:
       - Background:=<SolidColorBrush Color="{ThemeResource SystemChromeAltHighColor}" Opacity="0.6" />
       - CornerRadius=4
       - Padding=0
-      - Margin=0,0,8,0
+      - Margin=-3,0,8,0
+      - ActualWidth=>widgetWidth
   - target: Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel > Grid
     styles:
       - Margin=8,0,0,0
