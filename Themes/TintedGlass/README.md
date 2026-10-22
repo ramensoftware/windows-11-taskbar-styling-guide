@@ -340,7 +340,7 @@ controlStyles:
   - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - Padding=2,2,2,2
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Padding=2,2,2,2
   - target: Grid#ContainerGrid
