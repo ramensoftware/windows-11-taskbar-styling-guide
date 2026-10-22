@@ -8,7 +8,7 @@
 
 - Use the default taskbar alignment (center).
 - You can hide the bell icon via Notifications in Settings.
-- This theme is not compatible with **Vertcal Taskbar**.
+- This theme is not compatible with the vertical taskbar.
 
 ## Theme selection
 
@@ -17,7 +17,7 @@ settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
-* Select TaskbarXII theme and save the settings.
+* Select the theme and save the settings.
 
 ## Manual installation
 
@@ -27,7 +27,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
 
-## With Widget Separated
+### With Widget Separated
 
 The widget, if enabled, is shown separately from the taskbar.
 
@@ -131,9 +131,9 @@ controlStyles:
 ```
 </details>
 
-## Without Widget Separated
+### Without Widget Separated
 
-The Widget no need to be enabled in taskbar setting.
+The widget, if enabled, is shown as part of the taskbar.
 
 ![Demonstration](screenshot_dark_no_widget.png)
 
