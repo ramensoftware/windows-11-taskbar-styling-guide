@@ -43,6 +43,7 @@ controlStyles:
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemListLowColor}" TintOpacity="0.1" FallbackColor="{ThemeResource SystemChromeHighColor}" />
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="4"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+      - ActualWidth=>containerGridWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
       - Tag=horizontal
@@ -55,6 +56,7 @@ controlStyles:
       - HorizontalAlignment=Right
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - Height={{taskbarDock==`vertical`?skip():56}}
+      - MaxWidth={{taskbarDock==`vertical`?skip():(containerGridWidth>0?containerGridWidth:skip())}}
   - target: Taskbar.TaskbarFrame > Grid
     styles:
       - Height=48
@@ -143,6 +145,7 @@ controlStyles:
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemListLowColor}" TintOpacity="0.1" FallbackColor="{ThemeResource SystemChromeHighColor}" />
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="4"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+      - ActualWidth=>containerGridWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
       - Tag=horizontal
@@ -155,6 +158,7 @@ controlStyles:
       - HorizontalAlignment=Right
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - Height={{taskbarDock==`vertical`?skip():56}}
+      - MaxWidth={{taskbarDock==`vertical`?skip():(containerGridWidth>0?containerGridWidth:skip())}}
   - target: Taskbar.TaskbarFrame > Grid
     styles:
       - Height=48
