@@ -80,12 +80,11 @@ controlStyles:
     styles:
       - Background:=<SolidColorBrush Color="{ThemeResource SystemChromeAltHighColor}" Opacity="0.6" />
       - CornerRadius=4
-      - Padding=0
+      - Padding=6,0,6,0
       - Margin=-3,0,8,0
+      - Width=>widgetBaseWidth
+      - MinWidth={{widgetBaseWidth>0?widgetBaseWidth+8:skip()}}
       - ActualWidth=>widgetWidth
-  - target: Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel > Grid
-    styles:
-      - Margin=8,0,0,0
   - target: Border#LargeTicker1
     styles:
       - Margin=0,2,4,0
@@ -180,7 +179,7 @@ controlStyles:
       - Margin=3,0,3,0
   - target: Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel
     styles:
-      - Margin=-4,0,0,0
+      - Margin=-4,0,8,0
   - target: Border#LargeTicker1
     styles:
       - Margin=0,2,4,0
