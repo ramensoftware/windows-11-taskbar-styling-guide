@@ -205,7 +205,7 @@ controlStyles:
       - RenderTransform:=<TranslateTransform X="0" Y="-9" />
       - FontSize=11
       - FontFamily=vivo Sans EN VF
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
   - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
@@ -446,7 +446,7 @@ controlStyles:
       - RenderTransform:=<TranslateTransform X="0" Y="-9" />
       - FontSize=11
       - FontFamily=vivo Sans EN VF
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
   - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
@@ -699,7 +699,7 @@ controlStyles:
       - RenderTransform:=<TranslateTransform X="0" Y="-9" />
       - FontSize=11
       - FontFamily=vivo Sans EN VF
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
   - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid

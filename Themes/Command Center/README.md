@@ -189,7 +189,7 @@ controlStyles:
       - MinWidth=14
       - Margin=0,0,0,0
       - CornerRadius=$R2
-  - target: Windows.UI.Xaml.Shapes.Rectangle#BackgroundRect
+  - target: Taskbar.Badge > Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundRect
     styles:
       - RadiusX=4
       - RadiusY=4
@@ -323,7 +323,7 @@ controlStyles:
   - target: Grid#DynamicSearchBoxGleamContainer
     styles:
       - Visibility=1
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
 ```

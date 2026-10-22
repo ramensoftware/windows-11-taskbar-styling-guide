@@ -123,7 +123,7 @@ controlStyles:
   - target: Rectangle#RunningIndicator
     styles:
       - Fill:=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltMedColor}" TintOpacity="0.5" />
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
   - target: Border#BackgroundElement

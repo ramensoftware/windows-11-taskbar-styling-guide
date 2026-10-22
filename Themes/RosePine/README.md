@@ -108,7 +108,7 @@ controlStyles:
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
     styles:
       - Visibility=Collapsed
-  - target: Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill

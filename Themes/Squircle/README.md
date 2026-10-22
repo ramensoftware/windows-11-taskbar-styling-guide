@@ -124,7 +124,6 @@ controlStyles:
     styles:
       - Background@ActiveRunningIndicator:=<AcrylicBrush TintOpacity="0.8" TintColor="Black" />
       - Background@InactiveRunningIndicator:=<AcrylicBrush TintOpacity="0.8" TintColor="Black" />
-      - Background@InactiveRunningIndicatorPointerOver:=<AcrylicBrush TintOpacity="0.8" TintColor="Black" />
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background@InactivePointerOver:=<AcrylicBrush TintOpacity="0.8" TintColor="Black" FallbackColor="#DD222222"/>

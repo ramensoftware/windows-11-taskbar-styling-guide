@@ -135,7 +135,7 @@ controlStyles:
     styles:
       - Background:=Transparent
       - CornerRadius=6
-  - target: SearchUx.SearchUI.SearchButtonControl
+  - target: SearchUx.SearchUI.SearchIconButton
     styles:
       - Width=48
       - MinWidth=48
@@ -162,7 +162,7 @@ controlStyles:
       - Margin=0
       - HorizontalAlignment=Center
       - VerticalAlignment=Center
-  - target: Grid#IconPanel > TextBlock, Taskbar.TaskListLabeledButtonPanel > TextBlock, Taskbar.TaskListButtonPanel > Grid > TextBlock, Taskbar.TaskListButtonPanel > TextBlock, SearchUx.SearchUI.SearchButtonRootGrid > Grid > TextBlock, SearchUx.SearchUI.SearchButtonRootGrid > TextBlock
+  - target: Grid#IconPanel > TextBlock, Taskbar.TaskListLabeledButtonPanel > TextBlock, Taskbar.TaskListButtonPanel > Grid > TextBlock, Taskbar.TaskListButtonPanel > TextBlock, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > TextBlock, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > TextBlock
     styles:
       - Visibility=Collapsed
       - Margin=0

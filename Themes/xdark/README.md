@@ -246,7 +246,7 @@ controlStyles:
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
     styles:
       - Visibility=Visible
-  - target: Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
       - Foreground=#facc15

@@ -451,7 +451,7 @@ controlStyles:
       - HorizontalAlignment=Left
       - // BorderBrush:=$ThemeOutBorder
       - // Taskbar Task Region Frame(Task list + search area + Start button Region grid) > Background
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
       - // System Tray Hidden Icons Button TextBlock

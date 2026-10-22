@@ -476,13 +476,6 @@ controlStyles:
   - target: Grid
     styles:
       - RequestedTheme=2
-  - target: Taskbar.StartButton#StartButton
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
-      - CornerRadius=20
-      - Margin=2,6,2,6
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
-      - BorderThickness=1.2
   - target: Border#MultiWindowElement
     styles:
       - Visibility=Collapsed
@@ -498,18 +491,7 @@ controlStyles:
       - CornerRadius=15
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
-      - CornerRadius=20
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
-    styles:
-      - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff"/>
-      - CornerRadius=12
-      - BorderBrush@InactiveRunningIndicatorPointerOver:=<LinearGradientBrush EndPoint="1,0" StartPoint="0,0"><GradientStop Color="#80ffffff" Offset="0.0"/><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55"/><GradientStop Color="#80ffffff" Offset="1"/></LinearGradientBrush>
-      - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=15
@@ -943,13 +925,6 @@ controlStyles:
   - target: Grid
     styles:
       - RequestedTheme=2
-  - target: Taskbar.StartButton#StartButton
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
-      - CornerRadius=20
-      - Margin=2,6,2,6
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
-      - BorderThickness=1.2
   - target: Border#MultiWindowElement
     styles:
       - Visibility=Collapsed
@@ -965,18 +940,7 @@ controlStyles:
       - CornerRadius=13
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
-      - CornerRadius=20
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
-    styles:
-      - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff"/>
-      - CornerRadius=12
-      - BorderBrush@InactiveRunningIndicatorPointerOver:=<LinearGradientBrush EndPoint="1,0" StartPoint="0,0"><GradientStop Color="#80ffffff" Offset="0.0"/><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55"/><GradientStop Color="#80ffffff" Offset="1"/></LinearGradientBrush>
-      - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=13
@@ -1261,13 +1225,6 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - Background:=$IconBackground
-  - target: Taskbar.StartButton#StartButton
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
-      - CornerRadius=20
-      - Margin=2,6,2,6
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
-      - BorderThickness=1.2
   - target: Border#MultiWindowElement
     styles:
       - Visibility=Collapsed
@@ -1298,18 +1255,7 @@ controlStyles:
       - CornerRadius=15
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
-      - CornerRadius=20
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
-    styles:
-      - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff"/>
-      - CornerRadius=12
-      - BorderBrush@InactiveRunningIndicatorPointerOver:=<LinearGradientBrush EndPoint="1,0" StartPoint="0,0"><GradientStop Color="#80ffffff" Offset="0.0"/><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55"/><GradientStop Color="#80ffffff" Offset="1"/></LinearGradientBrush>
-      - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=15
@@ -1746,13 +1692,6 @@ controlStyles:
   - target: Grid
     styles:
       - RequestedTheme=2
-  - target: Taskbar.StartButton#StartButton
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
-      - CornerRadius=20
-      - Margin=2,6,2,6
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
-      - BorderThickness=1.2
   - target: Border#MultiWindowElement
     styles:
       - Visibility=Collapsed
@@ -1768,18 +1707,7 @@ controlStyles:
       - CornerRadius=15
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
-      - CornerRadius=20
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
-    styles:
-      - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff"/>
-      - CornerRadius=12
-      - BorderBrush@InactiveRunningIndicatorPointerOver:=<LinearGradientBrush EndPoint="1,0" StartPoint="0,0"><GradientStop Color="#80ffffff" Offset="0.0"/><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55"/><GradientStop Color="#80ffffff" Offset="1"/></LinearGradientBrush>
-      - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=15
@@ -2213,13 +2141,6 @@ controlStyles:
   - target: Grid
     styles:
       - RequestedTheme=2
-  - target: Taskbar.StartButton#StartButton
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
-      - CornerRadius=20
-      - Margin=2,6,2,6
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
-      - BorderThickness=1.2
   - target: Border#MultiWindowElement
     styles:
       - Visibility=Collapsed
@@ -2235,18 +2156,7 @@ controlStyles:
       - CornerRadius=13
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
-      - CornerRadius=20
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
-    styles:
-      - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff"/>
-      - CornerRadius=13
-      - BorderBrush@InactiveRunningIndicatorPointerOver:=<LinearGradientBrush EndPoint="1,0" StartPoint="0,0"><GradientStop Color="#80ffffff" Offset="0.0"/><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55"/><GradientStop Color="#80ffffff" Offset="1"/></LinearGradientBrush>
-      - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=13
@@ -2532,13 +2442,6 @@ controlStyles:
   - target: Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton#TaskListButton[AutomationProperties.Name=Copilot] > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - Background:=$IconBackground
-  - target: Taskbar.StartButton#StartButton
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
-      - CornerRadius=20
-      - Margin=2,6,2,6
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
-      - BorderThickness=1.2
   - target: Border#MultiWindowElement
     styles:
       - Visibility=Collapsed
@@ -2569,18 +2472,7 @@ controlStyles:
       - CornerRadius=15
       - Background:=$IconBackground
       - BorderBrush:=$IconBorder
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.Name=Task View]
-    styles:
-      - Background:=<WindhawkBlur BlurAmount="60" TintColor="#35ffffff"/>
-      - CornerRadius=20
-      - BorderBrush:=<LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#E0ffffff" Offset="0.0"/><GradientStop Color="#20ffffff" Offset="0.5"/><GradientStop Color="#A0ffffff" Offset="1.0"/></LinearGradientBrush>
       - BorderThickness=1.2
-  - target: Grid#IconPanel@RunningIndicatorStates > Border, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border
-    styles:
-      - Background@InactiveRunningIndicatorPointerOver:=<WindhawkBlur BlurAmount="40" TintColor="#10ffffff"/>
-      - CornerRadius=12
-      - BorderBrush@InactiveRunningIndicatorPointerOver:=<LinearGradientBrush EndPoint="1,0" StartPoint="0,0"><GradientStop Color="#80ffffff" Offset="0.0"/><GradientStop Color="{ThemeResource SurfaceStrokeColorDefault}" Offset="0.55"/><GradientStop Color="#80ffffff" Offset="1"/></LinearGradientBrush>
-      - BorderThickness@InactiveRunningIndicatorPointerOver=1
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=15

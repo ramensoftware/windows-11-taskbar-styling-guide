@@ -399,9 +399,6 @@ controlStyles:
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=$CommonBgBrush
-											  
-		   
-				
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
       - Background=Transparent
@@ -433,7 +430,7 @@ controlStyles:
   - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel#IconPanel
     styles:
       - Padding=2,2,2,2
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Padding=2,2,2,2
   - target: Grid#ContainerGrid

@@ -28,6 +28,9 @@ Inspired by Microsoft’s Fluent Design System, this theme focuses on clarity, s
 
 - Use the default taskbar alignment (center).
 - Works out-of-the-box with both Windows light and dark system modes.
+- The theme sets the taskbar height itself (`TaskbarHeight` + `BottomGap`), so
+  the [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size)
+  mod isn't needed.
 
 ## Customization
 
@@ -39,8 +42,9 @@ Set `TaskbarFrameWidth` to match your screen real estate or layout preferences:
 * `TaskbarFrameWidth=1000` → Tighter, compact dock layout for smaller screens
 
 ### Taskbar Sizing
-Modify `TaskbarHeight` and `IconHeight` to change the vertical sizing:
-* `TaskbarHeight=62` → Custom taller height for the glass bar (default)
+Modify `TaskbarHeight`, `BottomGap` and `IconHeight` to change the vertical sizing:
+* `TaskbarHeight=50` → Custom taller height for the glass bar (default)
+* `BottomGap=12` → Space between the glass bar and the bottom of the screen (default)
 * `IconHeight=54` → Sizing constraint variable for the taskbar icons (default)
 
 ### Icon Spacing & Margins
@@ -87,7 +91,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
 ```yaml
 styleConstants:
   - TaskbarFrameWidth=1280
-  - TaskbarHeight=62
+  - TaskbarHeight=50
+  - BottomGap=12
   - IconHeight=54
   - GlobalRadius=8
   - ItemMargin=4,2,4,2
@@ -109,11 +114,10 @@ controlStyles:
     styles:
       - Grid.Column=1
       - Width={{taskbarDock==`vertical`?skip():$TaskbarFrameWidth}}
-      - Height={{taskbarDock==`vertical`?skip():$TaskbarHeight}}
-      - MinHeight=62
+      - Height={{taskbarDock==`vertical`?skip():($TaskbarHeight+$BottomGap)}}
+      - MinHeight={{$TaskbarHeight+$BottomGap}}
       - HorizontalAlignment=Center
       - VerticalAlignment=Center
-      - Margin=0,0,0,12
       - Padding=0
   - target: Taskbar.TaskbarBackground#BackgroundControl
     styles:
@@ -124,6 +128,7 @@ controlStyles:
       - BorderBrush:=$LiquidBorder
       - BorderThickness=0.5,1,0.5,1
       - CornerRadius=$GlobalRadius
+      - Margin=0,0,0,$BottomGap
       - Padding=0
   - target: SystemTray.SystemTrayFrame
     styles:
@@ -132,7 +137,7 @@ controlStyles:
       - VerticalAlignment=Center
       - Height=$TaskbarHeight
       - MinWidth=250
-      - Margin=0,0,0,12
+      - Margin=0,0,0,$BottomGap
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background=Transparent
@@ -144,49 +149,32 @@ controlStyles:
   - target: StackPanel#SystemTrayStack
     styles:
       - VerticalAlignment=Center
-  - target: Taskbar.TaskListButton
+  - target: Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Background:=$LiquidBackground
+      - BorderBrush:=$LiquidBorder
+      - BorderThickness=0.5,1,0.5,1
+      - CornerRadius=$GlobalRadius
+  - target: Taskbar.TaskListButton, Taskbar.ExperienceToggleButton, Taskbar.AugmentedEntryPointButton, Taskbar.SearchBoxButton, SearchUx.SearchUI.SearchButtonControl
     styles:
       - Margin=$ItemMargin
       - Padding=$ItemPadding
       - VerticalAlignment=Center
       - Height=$IconHeight
-  - target: Taskbar.StartButton
-    styles:
-      - Margin=$ItemMargin
-      - Padding=$ItemPadding
-      - VerticalAlignment=Center
-      - Height=$IconHeight
-  - target: Taskbar.SearchBoxButton
-    styles:
-      - Margin=$ItemMargin
-      - Padding=$ItemPadding
-      - VerticalAlignment=Center
-      - Height=$IconHeight
-  - target: SearchUx.SearchUI.SearchButtonControl
-    styles:
-      - Margin=$ItemMargin
-      - Padding=$ItemPadding
-      - VerticalAlignment=Center
-      - Height=$IconHeight
-  - target: Taskbar.TaskViewButton
-    styles:
-      - Margin=$ItemMargin
-      - Padding=$ItemPadding
-      - VerticalAlignment=Center
-      - Height=$IconHeight
-  - target: Taskbar.TaskListButtonPanel, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
-    styles:
-      - VerticalAlignment=Center
-  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+  - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=$GlobalRadius
       - BorderThickness=0
       - VerticalAlignment=Stretch
       - HorizontalAlignment=Stretch
-      - Background@PointerOver:=<WindhawkBlur BlurAmount="10" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.18" />
-      - Background@Pressed:=<WindhawkBlur BlurAmount="15" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.25" />
+      - Background@InactivePointerOver:=<WindhawkBlur BlurAmount="10" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.18" />
+      - Background@InactivePressed:=<WindhawkBlur BlurAmount="15" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.25" />
+      - Background@ActivePressed:=<WindhawkBlur BlurAmount="15" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.25" />
       - Background@ActiveNormal:=<WindhawkBlur BlurAmount="4" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.32" />
       - Background@ActivePointerOver:=<WindhawkBlur BlurAmount="4" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.4" />
+      - Background@MultiWindowPointerOver:=<WindhawkBlur BlurAmount="10" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.18" />
+      - Background@MultiWindowPressed:=<WindhawkBlur BlurAmount="15" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.25" />
+      - Background@MultiWindowActive:=<WindhawkBlur BlurAmount="4" TintColor="{ThemeResource SystemAccentColor}" TintOpacity="0.32" />
   - target: Rectangle#RunningIndicator
     styles:
       - Visibility=Visible
