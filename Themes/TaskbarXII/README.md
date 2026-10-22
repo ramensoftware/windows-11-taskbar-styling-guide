@@ -103,7 +103,7 @@ controlStyles:
       - Background:=<SolidColorBrush Color="{ThemeResource SystemChromeAltHighColor}" Opacity="0.6" />
       - CornerRadius=4
       - Padding=8,3,0,3
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
   - target: SystemTray.DateTimeIconContent > Grid > StackPanel
@@ -189,7 +189,7 @@ controlStyles:
       - Background:=<SolidColorBrush Color="{ThemeResource SystemChromeAltHighColor}" Opacity="0.6" />
       - CornerRadius=4
       - Padding=8,3,0,3
-  - target: TextBlock#InnerTextBlock[Text=]
+  - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
     styles:
       - Text=
   - target: SystemTray.DateTimeIconContent > Grid > StackPanel
