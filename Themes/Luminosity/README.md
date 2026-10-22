@@ -753,6 +753,18 @@ controlStyles:
       - BorderBrush=$bb
       - Shadow:=
       - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Snap Assist Suggestions List Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SnapAssistList > Grid > Border
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$mcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Scroll Bar Background
+  - target: Windows.UI.Xaml.Controls.Primitives.ScrollBar#VerticalScrollBar > Grid#Root > Grid#VerticalRoot > Rectangle#VerticalTrackRect
+    styles:
+      - Fill:=$lumiBackground
 # Right-Click Menu Drop Shadow
   - target: MenuFlyoutPresenter
     styles:
@@ -1292,6 +1304,18 @@ controlStyles:
       - BorderBrush=$bb
       - Shadow:=
       - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Snap Assist Suggestions List Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SnapAssistList > Grid > Border
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$mcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Scroll Bar Background
+  - target: Windows.UI.Xaml.Controls.Primitives.ScrollBar#VerticalScrollBar > Grid#Root > Grid#VerticalRoot > Rectangle#VerticalTrackRect
+    styles:
+      - Fill:=$lumiBackground
 # Right-Click Menu Drop Shadow
   - target: MenuFlyoutPresenter
     styles:
@@ -1783,6 +1807,18 @@ controlStyles:
       - BorderBrush=$bb
       - Shadow:=
       - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Snap Assist Suggestions List Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SnapAssistList > Grid > Border
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$mcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Scroll Bar Background
+  - target: Windows.UI.Xaml.Controls.Primitives.ScrollBar#VerticalScrollBar > Grid#Root > Grid#VerticalRoot > Rectangle#VerticalTrackRect
+    styles:
+      - Fill:=$lumiBackground
 # Right-Click Menu Drop Shadow
   - target: MenuFlyoutPresenter
     styles:
