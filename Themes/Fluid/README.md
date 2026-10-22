@@ -147,9 +147,9 @@ controlStyles:
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement@CommonStates, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement@CommonStates
     styles:
       - Background@ActiveNormal:=$NormalBG
-      - Background@ActivePointerOver:=$Hover
+      - Background@ActivePointerOver:=$HoverBG
       - Background@ActivePressed:=$PressedBG
-      - Background@InactivePointerOver:=$Hover
+      - Background@InactivePointerOver:=$HoverBG
       - Background@InactivePressed:=$PressedBG
       - BorderBrush@ActiveNormal:=$BorderBrush
       - BorderBrush@ActivePointerOver:=$BorderBrush
@@ -164,13 +164,13 @@ controlStyles:
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background@ActiveNormal:=$NormalBG
-      - Background@ActivePointerOver:=$Hover
+      - Background@ActivePointerOver:=$HoverBG
       - Background@ActivePressed:=$PressedBG
-      - Background@InactivePointerOver:=$Hover
+      - Background@InactivePointerOver:=$HoverBG
       - Background@InactivePressed:=$PressedBG
       - Background@MultiWindowNormal:=$NormalBG
       - Background@MultiWindowActive:=$NormalBG
-      - Background@MultiWindowPointerOver:=$Hover
+      - Background@MultiWindowPointerOver:=$HoverBG
       - Background@MultiWindowPressed:=$PressedBG
       - BorderBrush@ActiveNormal:=$BorderBrush
       - BorderBrush@ActivePointerOver:=$BorderBrush
@@ -197,9 +197,9 @@ controlStyles:
   - target: ContentPresenter#ContentPresenter@CommonStates
     styles:
       - Background@ActiveNormal:=$NormalBG
-      - Background@ActivePointerOver:=$Hover
+      - Background@ActivePointerOver:=$HoverBG
       - Background@ActivePressed:=$PressedBG
-      - Background@InactivePointerOver:=$Hover
+      - Background@InactivePointerOver:=$HoverBG
       - Background@InactivePressed:=$PressedBG
       - BorderBrush@ActiveNormal:=$BorderBrush
       - BorderBrush@ActivePointerOver:=$BorderBrush
