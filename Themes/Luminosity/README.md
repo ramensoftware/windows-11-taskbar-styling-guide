@@ -483,7 +483,7 @@ controlStyles:
       - BorderBrush@Disabled:=$bn
       - BackgroundSizing=InnerBorderEdge
       - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
-# System Tray Frame (Self Adjusts To Taskbar Height) Plus Animation
+# System Tray Frame (Self Adjusts To Taskbar Height) + Animation
   - target: SystemTray.SystemTrayFrame
     styles:
       - Height=Auto
@@ -744,7 +744,7 @@ controlStyles:
   - target: FlyoutPresenter > Border
     styles:
       - Shadow:=
-# Snap Picker Background and Border Plus Entrance Animation
+# Snap Picker Background and Border + Entrance Animation
   - target: Border#SnapPickerBorder
     styles:
       - Background:=$lumiBackground
@@ -770,7 +770,7 @@ controlStyles:
     styles:
       - CornerRadius:=$wcr
       - Shadow:=
-# Right-click Menu Background And Pop-up Animation
+# Right-click Menu Background and Border + Pop-up Animation
   - target: MenuFlyoutPresenter > Border
     styles:
       - Background:=$lumiBackground
@@ -1034,7 +1034,7 @@ controlStyles:
       - BorderBrush@Disabled:=$bn
       - BackgroundSizing=InnerBorderEdge
       - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
-# System Tray Frame (Self Adjusts To Taskbar Height) Plus Animation
+# System Tray Frame (Self Adjusts To Taskbar Height) + Animation
   - target: SystemTray.SystemTrayFrame
     styles:
       - Height=Auto
@@ -1295,7 +1295,7 @@ controlStyles:
   - target: FlyoutPresenter > Border
     styles:
       - Shadow:=
-# Snap Picker Background and Border Plus Entrance Animation
+# Snap Picker Background and Border + Entrance Animation
   - target: Border#SnapPickerBorder
     styles:
       - Background:=$lumiBackground
@@ -1321,7 +1321,7 @@ controlStyles:
     styles:
       - CornerRadius:=$wcr
       - Shadow:=
-# Right-click Menu Background And Pop-up Animation
+# Right-click Menu Background and Border + Pop-up Animation
   - target: MenuFlyoutPresenter > Border
     styles:
       - Background:=$lumiBackground
@@ -1537,7 +1537,7 @@ controlStyles:
       - BorderBrush@Disabled:=$bn
       - BackgroundSizing=InnerBorderEdge
       - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
-# System Tray Frame (Self Adjusts To Taskbar Height) Plus Animation
+# System Tray Frame (Self Adjusts To Taskbar Height) + Animation
   - target: SystemTray.SystemTrayFrame
     styles:
       - Height=Auto
@@ -1798,7 +1798,7 @@ controlStyles:
   - target: FlyoutPresenter > Border
     styles:
       - Shadow:=
-# Snap Picker Background and Border Plus Entrance Animation
+# Snap Picker Background and Border + Entrance Animation
   - target: Border#SnapPickerBorder
     styles:
       - Background:=$lumiBackground
@@ -1824,7 +1824,7 @@ controlStyles:
     styles:
       - CornerRadius:=$wcr
       - Shadow:=
-# Right-click Menu Background And Pop-up Animation
+# Right-click Menu Background and Border + Pop-up Animation
   - target: MenuFlyoutPresenter > Border
     styles:
       - Background:=$lumiBackground
