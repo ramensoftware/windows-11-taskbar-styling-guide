@@ -777,7 +777,7 @@ controlStyles:
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
-      - Transitions:=<TransitionCollection><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+      - Transitions:=<TransitionCollection><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="50" /></TransitionCollection>
 # Right-Click Menu Item Border
   - target: MenuFlyoutItem > Grid@CommonStates
     styles:
@@ -1328,7 +1328,7 @@ controlStyles:
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
-      - Transitions:=<TransitionCollection><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+      - Transitions:=<TransitionCollection><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="50" /></TransitionCollection>
 # Right-Click Menu Item Border
   - target: MenuFlyoutItem > Grid@CommonStates
     styles:
@@ -1831,7 +1831,7 @@ controlStyles:
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
-      - Transitions:=<TransitionCollection><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+      - Transitions:=<TransitionCollection><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="50" /></TransitionCollection>
 # Right-Click Menu Item Border
   - target: MenuFlyoutItem > Grid@CommonStates
     styles:
