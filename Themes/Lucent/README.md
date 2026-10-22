@@ -185,14 +185,14 @@ controlStyles:
       - Background@ActiveNormal_SearchIcon=#BEBEBE
       - Background@ActivePointerOver_SearchIcon=#DDDDDD
       - Background@ActivePressed_SearchIcon=#EEEEEE
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates
     styles:
       - Background@InactivePointerOver=#BEBEBE
       - Background@InactivePressed=#DDDDDD
       - Background@ActiveNormal=#BEBEBE
       - Background@ActivePointerOver=#DDDDDD
       - Background@ActivePressed=#EEEEEE
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border
     styles:
       - CornerRadius=0
       - Margin=-3,-10,-3,-10
@@ -349,12 +349,12 @@ controlStyles:
       - Background@InactivePointerOver_SearchIcon=#BEBEBE
       - Background@ActiveNormal_SearchIcon=#BEBEBE
       - Background@ActivePointerOver_SearchIcon=#EBEBEB
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates
     styles:
       - Background@InactivePointerOver=#BEBEBE
       - Background@ActiveNormal=#BEBEBE
       - Background@ActivePointerOver=#EBEBEB
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border
+  - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border
     styles:
       - CornerRadius=0
       - Margin=-3,-10,-3,-10
