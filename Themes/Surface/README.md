@@ -13,22 +13,6 @@
 * This theme is intended to be used with a status bar program such as "MyDockFinder", but it can also be used without it.
 * "MyDockFinder" has a dock built in, but it has certain limitations. This theme acts as an alternative to its dock.
 
-## Required additional mod configuration
-
-Mod: [Taskbar Height and Icon Size](https://windhawk.net/mods/taskbar-icon-size)
-
-<details>
-<summary>Content to import (click to expand)</summary>
-
-```yaml
-TaskbarHeight: 70
-IconSize: 24
-TaskbarButtonWidth: 47
-IconSizeSmall: 16
-TaskbarButtonWidthSmall: 32
-```
-</details>
-
 ## Removing system tray
 
 If you are using "MyDockFinder", you can hide the system tray with this style:
@@ -104,12 +88,16 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
+      - Height={{taskbarDock==`vertical`?skip():70}}
       - HorizontalAlignment=Center
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Visibility=Visible
       - Margin=0,0,0,10
       - Padding=20,0,20,0
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Height={{taskbarDock==`vertical`?skip():70}}
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,0,0,10
