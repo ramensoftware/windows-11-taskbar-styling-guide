@@ -87,7 +87,7 @@ controlStyles:
     styles:
       - MaxHeight=27
       - MaxWidth=27
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Margin=4,0,8,0
   - target: TextBlock#SearchBoxTextBlock
@@ -98,7 +98,7 @@ controlStyles:
       - Grid.Column=3
       - HorizontalAlignment=Left
       - VerticalAlignment=Center
-  - target: StackPanel#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<SolidColorBrush Color="{ThemeResource SystemChromeAltHighColor}" Opacity="0.6" />
       - CornerRadius=4
@@ -173,7 +173,7 @@ controlStyles:
     styles:
       - MaxHeight=27
       - MaxWidth=27
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
+  - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Margin=4,0,8,0
   - target: TextBlock#SearchBoxTextBlock
@@ -184,7 +184,7 @@ controlStyles:
       - Grid.Column=3
       - HorizontalAlignment=Left
       - VerticalAlignment=Center
-  - target: StackPanel#SystemTrayFrameGrid
+  - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<SolidColorBrush Color="{ThemeResource SystemChromeAltHighColor}" Opacity="0.6" />
       - CornerRadius=4
