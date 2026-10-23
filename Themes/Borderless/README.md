@@ -8,18 +8,21 @@ Taskbar dock-like theme with removal of borders and drop shadows from hover flyo
 
 ![Screenshot](screenshot.png)
 
-## Notice
-The theme might look different with the default taskbar height. To solve this, install the "Taskbar height and icon size" mod and set the taskbar height to a minimum of 56 (as opposed to the default height being 48).
-
-![Screenshot with default height](screenshot-default-height.png)
-
 ## Customization
 
 To apply the customizations below, set the corresponding style constants in the mod settings under "Style constants".
 
 ### Taskbar frame width
 
-By default, the taskbar frame is set to 800px. Set `TaskbarFrameWidth` to adjust the width. For example, use `TaskbarFrameWidth=1000` for a wider 1000px taskbar.
+By default, the taskbar frame width is set to 800px. Set `TaskbarFrameWidth` to adjust the width. For example, use `TaskbarFrameWidth=1000` for a wider 1000px taskbar, this also applies to the height of the vertical taskbar.
+
+### Taskbar frame height
+
+By default, the taskbar frame height is set to 56px. Set `TaskbarFrameHeight` to adjust the height. For example, use `TaskbarFrameHeight=60` for a higher 60px taskbar, this also applies to the Width of the vertical taskbar.
+
+### Re-enabling drop shadows
+
+By default, the theme disables drop shadows from hover popouts and language switcher etc., to re-enable them, set ``Shadows`` to ``<ThemeShadow />``.
 
 ## Theme selection
 
@@ -44,11 +47,15 @@ The theme styles can also be imported manually. To do that, follow these steps:
 ```yaml
 styleConstants:
   - TaskbarFrameWidth=800
+  - TaskbarFrameHeight=56
+  - Shadows=
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
       - HorizontalAlignment=Stretch
+      - RowDefinitions:=<RowDefinitionCollection><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></RowDefinitionCollection>
+      - VerticalAlignment=Stretch
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
       - Tag=horizontal
@@ -57,35 +64,38 @@ controlStyles:
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
+      - Width={{taskbarDock==`vertical`?$TaskbarFrameHeight:$TaskbarFrameWidth}}
+      - MaxWidth={{taskbarDock==`vertical`?skip():$TaskbarFrameWidth}}
+      - Height={{taskbarDock==`horizontal`?$TaskbarFrameHeight:$TaskbarFrameWidth}}
+      - MaxHeight={{taskbarDock==`horizontal`?skip():$TaskbarFrameWidth}}
       - Grid.Column=1
-      - Width={{taskbarDock==`vertical`?skip():$TaskbarFrameWidth}}
-      - Margin=0
-      - MaxWidth=$TaskbarFrameWidth
+      - Grid.Row=1
   - target: SystemTray.SystemTrayFrame
     styles:
+      - Height={{taskbarDock==`vertical`?skip():40}}
+      - Width={{taskbarDock==`horizontal`?skip():50}}
+      - HorizontalAlignment={{taskbarDock==`vertical`?skip():2}}
+      - VerticalAlignment={{taskbarDock==`vertical`?skip():1}}
       - Grid.Column=1
-      - Width=Auto
-      - HorizontalAlignment=Right
-      - Height=40
-      - VerticalAlignment=Center
+      - Grid.Row=1
   - target: Taskbar.TaskbarFrame > Windows.UI.Xaml.Controls.Grid#RootGrid > Taskbar.TaskbarBackground#BackgroundControl
     styles:
       - CornerRadius=6
-      - Margin=0,2,0,2
+      - Margin=2
   - target: Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - Margin=0,4,0,4
+      - Margin=4
   - target: Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder
     styles:
-      - Shadow:=
-      - BorderThickness:=
+      - Shadow:=$Shadows
+      - BorderThickness=0
   - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
     styles:
-      - Shadow:=
-      - BorderThickness:=
+      - Shadow:=$Shadows
+      - BorderThickness=0
   - target: Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.FontIcon#FontIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock, Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.FontIcon#FontIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.TextBlock
     styles:
       - Text=
@@ -107,11 +117,20 @@ controlStyles:
       - Background:=
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
     styles:
-      - Margin=390,0,574,12
-      - Shadow:=
-      - BorderThickness:=
+      - Shadow:=$Shadows
+      - BorderThickness=0
   - target: Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground
     styles:
-      - Shadow:=
+      - Shadow:=$Shadows
+      - BorderThickness=0
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher
+    styles:
+      - Width=960
+  - target: Windows.UI.Xaml.Controls.Border#VirtualDesktopSwitcherBackground
+    styles:
+      - BorderThickness=0
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement
+    styles:
+      - Margin=210,0,210,12
 ```
 </details>
