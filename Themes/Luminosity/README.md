@@ -2,34 +2,43 @@
 
 **Author**: [mendes.image](https://github.com/mendesimage)
 
-![Demonstration](dock.png)
+![Demonstration](screenshot.png)
 
 ## Intro
-**Luminosity** is based on native Acrylic, using the maximum **TintLuminosityOpacity** value as its backdrop.
+
+**Luminosity** is inspired on native Acrylic, using the maximum **TintLuminosityOpacity** value as its backdrop.
 
 It's meant to be used with **Mica** or **MicaAlt** backdrops, with or without the **Translucent Windows** mod.
 
----
+<br>
 
-## Options
+## Variants
 
 ### Dock
 
-![Dock](dock.png)
+![Dock Preview](dock.png)
 
 - Docks are cool.
 
-### Classic
+<br>
 
-![Classic](classic.png)
+### Normal
 
-- Meant to cause minimal disruption for users who prefer the classic Taskbar placement.
+![Normal Preview](normal.png)
+
+- Meant to cause minimal disruption for users who prefer the normal Taskbar layout.
+
+<br>
 
 ### Compact
 
-![Compact](compact.png)
+![Compact Preview](compact.png)
 
 - Meant to be used with **Taskbar Labels for Windows 11**, using the **Centered Running Indicator** style, and **Taskbar Clock Customization**. Otherwise, you will experience visual issues.
+
+<br>
+
+---
 
 ### Mods Guide
 
@@ -38,6 +47,8 @@ To apply the same settings as mine, follow these steps:
 * Open the **Taskbar Labels for Windows 11** and **Taskbar Clock Customization** mods in Windhawk.
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
+
+<br>
 
 **Taskbar Labels for Windows 11**
 <details>
@@ -50,12 +61,12 @@ runningIndicatorStyle: centerDynamic
 progressIndicatorStyle: centerDynamic
 excludedPrograms:
   - excluded1.exe
-minimumTaskbarItemWidth: 50
-maximumTaskbarItemWidth: 176
+minimumTaskbarItemWidth: 44
+maximumTaskbarItemWidth: 150
 fontSize: 12
 fontFamily: ''
 textTrimming: characterEllipsis
-leftAndRightPaddingSize: 8
+leftAndRightPaddingSize: 10
 spaceBetweenIconAndLabel: 8
 runningIndicatorHeight: 0
 runningIndicatorVerticalOffset: 0
@@ -65,134 +76,104 @@ labelForMultipleItems: '[%amount%] %name%'
 ```
 </details>
 
+<br>
+<br>
+
 **Taskbar Clock Customization**
 <details>
 <summary>Click to expand mod settings</summary>
 
-```yaml
-ShowSeconds: 1
-TimeFormat: ''
-DateFormat: ''
-WeekdayFormat: dddd
-WeekdayFormatCustom: Sun, Mon, Tue, Wed, Thu, Fri, Sat
-TopLine: '%date%   %time%'
-BottomLine: ''
-MiddleLine: '%weekday%'
-TooltipLine: ''
-TooltipLineMode: append
-Width: 180
-Height: 60
-MaxWidth: 0
-TextSpacing: 0
-DataCollection:
-  NetworkMetricsFormat: mbs
-  NetworkMetricsFixedDecimals: -1
-  PercentageFormat: spacePaddingAndSymbol
-  UpdateInterval: 1
-  NetworkAdapterName: ''
-  GpuAdapterName: ''
-MediaPlayer:
-  IgnoredPlayers:
-    - ''
-  MaxLength: 28
-  NoMediaText: No media
-  RemoveBrackets: 0
-WebContentWeatherLocation: ''
-WebContentWeatherFormat: '%c 🌡️%t 🌬️%w'
-WebContentWeatherUnits: autoDetect
-WebContentsItems:
-  - Url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
-    BlockStart: <item>
-    Start: <title>
-    End: </title>
-    ContentMode: xmlHtml
-    SearchReplace:
-      - Search: ''
-        Replace: ''
-    MaxLength: 28
-WebContentsUpdateInterval: 10
-TimeZones:
-  - Eastern Standard Time
-TimeStyle:
-  Hidden: 0
-  TextColor: ''
-  TextAlignment: ''
-  FontSize: 0
-  FontFamily: ''
-  FontWeight: ''
-  FontStyle: ''
-  FontStretch: ''
-  CharacterSpacing: 0
-DateStyle:
-  Hidden: 1
-  TextColor: ''
-  TextAlignment: ''
-  FontSize: 0
-  FontFamily: ''
-  FontWeight: ''
-  FontStyle: ''
-  FontStretch: ''
-  CharacterSpacing: 0
-oldTaskbarOnWin11: 0
-DataCollectionUpdateInterval: 1
-```
+Set `Top line` to `%date%  %time%`.
+
+Leave `Bottom line` blank.
+
 </details>
 
----
+<br>
 
 ## General Information
 
-The theme changes the following elements:
+The theme changes the following things:
 
-- Taskbar Frame
+<Details>
+<summary>List (Click to expand)</summary>
+
+- Taskbar background
 - Taskbar icon borders
-- Taskbar icon sizes (compact version)
+- Widget text placement (compact variant)
+- Taskbar icon sizes (compact variant)
 - Search icon with label
 - Search box
 - Taskbar Overflow Flyout
 - System Tray
-    - Chevron icon border
-    - Software icon border
-    - Microphone icon border
-    - Spacing between element groups
+    - Chevron button
+    - Program buttons
+    - Microphone buttons
+    - Spacing on buttons
     - Tray Overflow Flyout
-- Volume bar
 - Window Preview Flyout
-- Alt+Tab
+- Input Switcher (basic styling)
+- Volume bar
 - Task View
+- Task View Entrance animation
+- Alt+Tab
+- Alt+Tab Entrance animation
 - Snap Bar and Picker
-- Context menus (with animations)
+- Snap Picker Entrance animation
+- Adds effects to many buttons
+- Right-Click Menu
+- Right-Click Menu Entrance animations
 - Tooltips
-- Removed drop shadows
+- Removes drop shadows
+
+</details>
 
 <details>
 <summary>Screenshots (Click to expand)</summary>
 
-  ![Alt+Tab](alttab.png)
+  ![Window Preview Flyout](wpf.png)
 
+  ![Alt+Tab](alttab.png)
 
   ![Task View](taskview.png)
 
-
-  ![Virtual Desktops Bar](virtualdesktopsbar.png)
-
-
-  ![Window Preview Flyout](wpf.png)
-
-
-  ![Menus](menu.png)
-
 </details>
 
+<br>
 
 ## Guides
 
-### Custom Dock Width
-
-The dock's width changes depending on your **screen resolution** using **horizontal margins**. If you want a custom width, follow this guide.
+### Clear Background Guide
 
 <details>
 <summary>(Click to expand guide)</summary>
+
+To customize the background, locate one of these lines depending on your version:
+
+Locate this style constant:
+
+```yaml
+  - lumiBackground=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
+```
+
+`TintLuminosityOpacity`: Lowering this value makes it clearer. Range: `0.0` to `1.0`.
+
+**Or** simply replace the full constant with:
+
+```
+  - lumiBackground=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="0.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
+```
+
+</details>
+
+<br>
+
+### Custom Dock Width
+
+<details>
+<summary>(Click to expand guide)</summary>
+
+The dock's width changes depending on your **screen resolution** using **horizontal margins**. If you want a custom width, follow this guide.
 
 Locate and edit this `styleConstants` value:
 
@@ -207,14 +188,14 @@ stays aligned with the dock's right edge.
 Example: `DockMargin=5` for a **full length dock** (corner to corner).
 </details>
 
----
+<br>
 
 ### Disabling Dock Top Gap
 
-Set the following style constants to these values:
-
 <details>
 <summary>(Click to expand guide)</summary>
+
+Set the following style constants to these values:
 
 ```yaml
   - DockHeight=53
@@ -222,7 +203,7 @@ Set the following style constants to these values:
 ```
 </details>
 
----
+<br>
 
 ### Left Taskbar Alignment Fix
 
@@ -233,68 +214,87 @@ When using **Left Taskbar Alignment** with Widget, remove the **minus sign** (`-
 
 Like this: `WidgetGap=`
 
-**Note:** The **Classic** variant is compatible by default.
+**Note:** The **Normal** variant is compatible by default.
+
 </details>
 
----
+<br>
 
 ### Taskbar height and icon size Compatibility
 
 <details>
 <summary>Click to expand guide</summary>
 
-You can edit the `DockHeight` constant's value. The system tray follows the dock's vertical position on its own.
+You can edit the `DockHeight` constant's value.
+
+Default value: `58`
 
 Removing the last target allows external mods to change the height:
 
 ```yaml
   - target: Taskbar.TaskbarFrame
     styles:
-      - Height=$DockHeight
+      - Height={{taskbarDock==`vertical`?skip():$DockHeight}}
 ```
 
 </details>
 
----
+<br>
 
-### Custom Menu Animation Settings
+### Faster Right-Click Menu (Disable Animation)
 
-Follow this guide to customize the animation behavior.
+Set style constant `MenuAnimation` from `True` to `False`.
+
+<br>
+
+### Change Button Fade Speed
 
 <details>
 <summary>(Click to expand guide)</summary>
 
-To customize the animations, look for this style constant:
-```
-AnimationSettings=IsStaggeringEnabled="True" FromHorizontalOffset="-50" FromVerticalOffset="50"
-```
+You can edit the `FadeSpeed` constant's value. Its value is in milliseconds.
 
-- For all items to display immediately, set `IsStaggeringEnabled=` from `"True"` to `"False"`.
+Default value: `200`
 
-- `FromHorizontalOffset` and `FromVerticalOffset` are the directions where the items come from.
-  - Horizontal **Positive** values is **Right**, **Negative** is **Left**.
-  - Vertical **Positive** values is **Down**, **Negative** is **Up**.
 </details>
 
----
+<br>
+
+### Disable Alt+Tab Animations
+
+<details>
+<summary>(Click to expand guide)</summary>
+
+Remove target below to remove Alt+Tab entrance animation:
+
+```yaml
+# Alt+Tab Entrance Animation
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab
+    styles:
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+```
+[a](#disable-alttab-animations)
+</details> 
+
+<br>
 
 ## Known Issues
 
 I didn't know how to fix these. I couldn't find the correct target names, or I'm not sure if they can even be changed/fixed.
 
+- **Native Vertical Taskbar:** Luminosity is currently **incompatible** with vertical taskbar placements.
+- **Native Windows' Small Taskbar:** **Dock** and **Compact** have the most issues with it; **Normal** have Microsoft's weird spacings. Compact does a better job on spacings (in my opinion) :p
 - **Left Taskbar Alignment (Dock/Compact):** **Left Taskbar Alignment** is not compatible by default. Refer to the [Left Taskbar Alignment Fix Guide](#left-taskbar-alignment-fix).
 - **Taskbar height and icon size Mod (Dock):** The dock pins its own height, so `Taskbar height and icon size` has no effect until that is removed. Refer to [Taskbar height and icon size Compatibility Guide](#taskbar-height-and-icon-size-compatibility).
-- **Icon Hitboxes (Dock):** The Taskbar's rounded corners slightly limit the icon hitbox on the **top and bottom**, which makes it **impossible to minimize windows by clicking in those areas**.
-- **SearchBox (Dock/Classic):** Has **mismatched look and position** when typing.
-- **SearchBox (Compact):** Has incorrect styling and positioning in the Compact version.
-- **Widget/Weather (Compact):** The bottom text line has incorrect placement (renders off-screen).
+- **Search Box (Dock/Compact):** Have **incorrect look and position** when typing.
+- **Widget/Weather (Compact):** Long text might not render fully.
+- Virtual Desktop Right-Click Menu items doesn't match the theme.
 
----
+<br>
 
 ## Theme selection
 
-The theme is integrated into the mod and can be selected directly from the mod's
-settings:
+The theme is integrated into the mod and can be selected directly from the mod's settings:
 
 * Open the Windows 11 Taskbar Styler mod in Windhawk.
 * Go to the "Settings" tab.
@@ -312,111 +312,143 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ### Dock
 
+![Dock](dock.png)
+
 <details>
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
 styleConstants:
+# Variant Settings
   - DockMargin=250
   - DockHeight=58
   - DockTopGap=5
   - DockBottomGap=5
   - WidgetGap=-
-  - AccentColor=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}" Opacity="1.0" />
-  - AnimationSettings=IsStaggeringEnabled="True" FromHorizontalOffset="-50" FromVerticalOffset="50"
-  - mbg=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
-  - bcr=10
+# General Settings
+  - MenuAnimation=True
+  - FadeSpeed=200
+  - lumiBackground=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
+  - lumiAccentColor=<SolidColorBrush Color="{ThemeResource LumiAccent}" />
   - wcr=20
   - mcr=15
+  - bcr=10
   - t=Transparent
   - bb=#20FFFFFF
   - bt=1
-  - nbb=<LinearGradientBrush x:Key="ShellTaskbarItemGradientStrokeColorSecondaryBrush" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,3"><LinearGradientBrush.GradientStops><GradientStop Offset="0.33" Color="#1AFFFFFF" /><GradientStop Offset="1" Color="#0FFFFFFF" /></LinearGradientBrush.GradientStops></LinearGradientBrush>
-  - nbt=<SolidColorBrush Color="{ThemeResource ControlFillColorDefault}" />
-  - nbth=<SolidColorBrush Color="{ThemeResource ControlFillColorSecondary}" />
-  - nbtp=<SolidColorBrush Color="{ThemeResource ControlFillColorTertiary}" />
+  - bbb=<LinearGradientBrush x:Key="ShellTaskbarItemGradientStrokeColorSecondaryBrush" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,3"><LinearGradientBrush.GradientStops><GradientStop Offset="0.33" Color="#1AFFFFFF" /><GradientStop Offset="1" Color="#0FFFFFFF" /></LinearGradientBrush.GradientStops></LinearGradientBrush>
+  - bbt=2
+  - bso=<SolidColorBrush Color="{ThemeResource ControlFillColorDefault}" />
+  - bn=Transparent
+  - bh=<SolidColorBrush Color="{ThemeResource ControlFillColorSecondary}" />
+  - bp=<SolidColorBrush Color="{ThemeResource ControlFillColorTertiary}" />
 controlStyles:
+# =====================================
+# HOW TO NAVIGATE THIS FILE           |
+#                                     |
+# 1. # Target Name / Description      |
+# 2. # NOTE: Additional Information   |
+# 3. Target and Styling               |
+# (Target always below Name and Note) |
+#                                     |
+# That's all! :3                      |
+# =====================================
+# Taskbar Background
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
-      - Fill:=$mbg
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+      - Fill:=$lumiBackground
+# Widget Button
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
-  - target: Taskbar.ExperienceToggleButton
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Start Button / Task View Button
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border
     styles:
       - CornerRadius=$bcr
-  - target: Taskbar.TaskListButton
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Search Button
+# NOTE: Must come before the Search Bar, otherwise it'll override this (they're the same target)
+  - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid > Border
     styles:
       - CornerRadius=$bcr
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Search Pill / Search Button With Label
+  - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid > Border#SearchPillBackgroundElement
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Border#SearchPillBackgroundElement
+# Search Pill / Search Button With Label Icon Fix
+# NOTE: Moves it left, separating it from its label; First target is a guess just in case
+  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > Grid > FontIcon > Grid > TextBlock, SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > FontIcon > Grid > TextBlock
+    styles:
+      - Margin=-2,0,8,0
+# Search Bar / Search Box Border
+# NOTE: Must come after the Search Button, otherwise it'll override it (they're the same target) 
+  - target: SearchUx.SearchUI.SearchButtonRootGrid[Width=220] > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid[Width=220] > Border
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Border#MultiWindowElement
+# Search Bar Background and Border / Search Box Background and Border / ThemeColorStates
+# NOTE: When search is active, the search bar that appears is from SearchHost.exe
+  - target: SearchUx.SearchUI.SearchButtonRootGrid@ThemeColorStates > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid@ThemeColorStates > Border
+    styles:
+      - Background@Wave3_InactiveNormal:=$bso
+      - Background@Wave3_InactivePointerOver:=$bh
+      - Background@Wave3_Focused:=$bp
+      - Background@CustomTheme_InactiveNormal:=$bso
+      - Background@CustomTheme_InactivePointerOver:=$bh
+      - Background@CustomTheme_InactivePointerOver_BrighterBackground:=$bh
+      - Background@CustomTheme_Focused:=$bp
+      - Background@SearchActive_Transparent:=$t
+      - BorderThickness=$bbt
+      - BorderBrush@Wave3_InactiveNormal:=$bbb
+      - BorderBrush@Wave3_InactivePointerOver:=$bbb
+      - BorderBrush@Wave3_Focused:=$bbb
+      - BorderBrush@CustomTheme_InactiveNormal:=$bbb
+      - BorderBrush@CustomTheme_InactivePointerOver:=$bbb
+      - BorderBrush@CustomTheme_InactivePointerOver_BrighterBackground:=$bbb
+      - BorderBrush@CustomTheme_Focused:=$bbb
+      - BorderBrush@SearchActive_Transparent:=$t
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Program Window Button / Program Icon Button
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
-  - target: SystemTray.ChevronIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Multi Window Element
+  - target: Border#MultiWindowElement
     styles:
       - CornerRadius=$bcr
-      - Margin=0,4,2,4
-  - target: SystemTray.NotifyIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Taskbar Overflow Button / Taskbar Icons Overflow Button / Taskbar Programs Overflow Button
+  - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
-      - Margin=2,4,2,4
-  - target: SystemTray.IconView#SystemTrayIcon > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - CornerRadius=$bcr
-      - Margin=2,4,2,4
-  - target: SystemTray.OmniButton#ControlCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - CornerRadius=$bcr
-      - Margin=2,4,2,4
-  - target: SystemTray.OmniButton#NotificationCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - CornerRadius=$bcr
-      - Margin=2,4,2,4
-  - target: Border#OverflowFlyoutBackgroundBorder
-    styles:
-      - Background:=$mbg
-      - CornerRadius:=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Shadow:=
-  - target: Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
-    styles:
-      - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
-    styles:
-      - Background:=$mbg
-      - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Shadow:=
-  - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect
-    styles:
-      - Fill:=#10FFFFFF
-  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
-    styles:
-      - Background:=$mbg
-      - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Shadow:=
-  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
-    styles:
-      - Background:=$t
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Window Preview and Taskbar Overflow Flyout Original Background
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=$t
-  - target: Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground
+# Window Preview and Taskbar Overflow Flyout Background and Border
+  - target: Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground
     styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
       - Shadow:=
+# Window Preview Flyout Custom Hover Look
   - target: Taskbar.TaskItemThumbnailView > Grid@CommonStates > Border#BackgroundBorder
     styles:
       - Background=$t
@@ -424,317 +456,550 @@ controlStyles:
       - BorderThickness@Normal=0
       - BorderThickness@PointerOver=0.05,0,0.05,1
       - BorderBrush@Normal=$t
-      - BorderBrush@PointerOver:=$AccentColor
+      - BorderBrush@PointerOver:=$lumiAccentColor
+# Window Preview Close Button Flicker Fix
   - target: Taskbar.TaskItemThumbnailView > Grid > Button#CloseButton
     styles:
       - CornerRadius=$mcr
-  - target: Taskbar.ThumbBarButton#ThumbBarButton > Windows.UI.Xaml.Controls.ContentPresenter#BorderElement@CommonStates
+      - Background:=#00000000
+# Window Preview Close Button Fade
+  - target: Taskbar.TaskItemThumbnailView > Grid > Button#CloseButton > ContentPresenter
+    styles:
+      - BorderBrush=$t
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Window Preview Bottom Buttons
+  - target: Taskbar.ThumbBarButton#ThumbBarButton > ContentPresenter#BorderElement@CommonStates
     styles:
       - CornerRadius=16
       - Margin=-1.5
-      - Background@Disabled:=$t
-      - Background@Normal:=$t
-      - Background@PointerOver:=$nbth
-      - Background@Pressed:=$nbtp
-      - BorderThickness=2
-      - BorderBrush@Disabled:=$t
-      - BorderBrush@Normal:=$t
-      - BorderBrush@PointerOver:=$nbb
-      - BorderBrush@Pressed:=$nbb
+      - Background@Normal:=$bn
+      - Background@PointerOver:=$bh
+      - Background@Pressed:=$bp
+      - Background@Disabled:=$bn
+      - BorderThickness=$bbt
+      - BorderBrush@Normal:=$bn
+      - BorderBrush@PointerOver:=$bbb
+      - BorderBrush@Pressed:=$bbb
+      - BorderBrush@Disabled:=$bn
       - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# System Tray Frame (Self Adjusts To Taskbar Height) + Animation
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Height=Auto
+      - VerticalAlignment=Stretch
+      - Transitions:=<TransitionCollection><RepositionThemeTransition /></TransitionCollection>
+# Chevron Spacing / Hidden Apps Button Spacing
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid
+    styles:
+      - Margin=2,0,2,0
+# Chevron / Hidden Apps Button
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Tray Program Icon Buttons Spacing / Tray Notification Icon Buttons Spacing
+  - target: SystemTray.NotifyIconView > Grid#ContainerGrid
+    styles:
+      - Margin=2,0,2,0
+# Tray Program Icon Buttons / Tray Notification Icon Buttons
+  - target: SystemTray.NotifyIconView > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Other System Buttons (e.g. Microphone, Touch Keyboard, etc.) Spacing
+  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid
+    styles:
+      - Margin=2,0,2,0
+# Other System Buttons (e.g. Microphone Touch Keyboard, etc.)
+  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Internet Button / Sound Button / Omni Button Spacing
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid
+    styles:
+      - Margin=2,0,2,0
+# Internet Button / Sound Button / Omni Button Button
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Clock Button / Calendar Button / Notification Center Button Spacing
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid
+    styles:
+      - Margin=2,0,2,0
+# Clock Button / Calendar Button / Notification Center Button
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# System Tray Overflow Flyout Background and Border
+  - target: Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius:=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Volume Flyout Background and Border
+  - target: Grid#ConfirmatorMainGrid
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Volume Bar / Volume Track
+  - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect
+    styles:
+      - Fill:=<SolidColorBrush Color="{ThemeResource TrackRect}" />
+# Input Switcher Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Input Switcher Background Overlay
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
+    styles:
+      - Background:=$t
+      - BorderBrush=$t
+# Virtual Desktops Bar Background and Drop Shadow
+# NOTE: Background and Drop Shadow removal affects both taskbar's and Task View's bars.
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid > Border
+    styles:
+      - Background:=$lumiBackground
+      - Shadow:=
+# Taskbar Virtual Desktops Bar Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid#GridElement > Border#VirtualDesktopSwitcherBackground
+    styles:
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Margin=-2,1,-1,1
+# Task View Background Blur
+  - target: Border#BackgroundDimmingLayer
+    styles:
+      - Background:=$t
+# Task View Virtual Desktops Bar Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
+    styles:
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Margin=-1,2,1,-2
+# Task View Virtual Desktops Width
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
+    styles:
+      - Width=Auto
+      - HorizontalAlignment=1
+# Virtual Desktop Roundness
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopListViewItem > Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter#Root
+    styles:
+      - CornerRadius=$mcr
+# Selected Virtual Desktop and Hover Overlay
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#MainBorder
+    styles:
+      - CornerRadius=$mcr
+# Virtual Desktop Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#BorderHighlight
+    styles:
+      - CornerRadius=$mcr
+# Add Virtual Desktop Hover Overlay
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Grid#MainGrid > Border#MainBorder
+    styles:
+      - CornerRadius=$mcr
+# Add Virtual Desktop Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Grid#MainGrid > Border#BorderHighlight
+    styles:
+      - CornerRadius=$mcr
+# Virtual Desktop Thumbnail
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopThumbnailButton#ThumbnailButtonElement
+    styles:
+      - CornerRadius=$bcr
+# Virtual Desktop Close Button
+  - target: Button#VirtualDesktopElementCloseButton
+    styles:
+      - CornerRadius=$bcr
+      - Background:=#00000000
+# Virtual Desktop Close Button Fade
+  - target: Button#VirtualDesktopElementCloseButton > ContentPresenter
+    styles:
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Task View Program Window / Task View Window Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root@CommonStates > Border#BackgroundBorder
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$mcr,$mcr,$bcr,$bcr
+      - Margin:=-5,0,-5,-5
+      - BorderThickness=$bt
+      - BorderBrush@Normal:=$bb
+      - BorderBrush@PointerOver:=$lumiAccentColor
+# Task View Program Windows / Task View Windows Entrance Animation
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel
+    styles:
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Task View Window Icon
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > Image#IconImage
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="1" />
+# Task View Window Title
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > TextBlock#DisplayName
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="1" />
+# Task View Window Close Button
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > Button#SwitchItemElementCloseButton
+    styles:
+      - Background:=#00000000
+      - RenderTransform:=<TranslateTransform X="5" Y="0" />
+# Task View Window Close Button Fade 
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter
+    styles:
+      - CornerRadius=$mcr
+      - Margin=5
       - BackgroundTransition:=<BrushTransition Duration="0:0:0.200" />
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+# Task View Window Close Button Symbol / Close Button Cross Position Fix
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter > TextBlock
+    styles:
+      - RenderTransform:=<TranslateTransform X="-0.8" Y="-0.6" />
+# Task View Window Thumbnail
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemThumbnailButton#ThumbnailHost > Grid#RootGrid
+    styles:
+      - CornerRadius=$bcr
+# Alt+Tab Original Background
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=$t
       - CornerRadius=$wcr
       - BorderThickness=0
       - Shadow:=
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+# Alt+Tab Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$wcr
       - BorderThickness=$bt
       - BorderBrush=$bb
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Windows.UI.Xaml.Controls.Grid#Root@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+# Alt+Tab Entrance Animation
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab
     styles:
-      - Background:=#09FFFFFF
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Alt+Tab Program Background and Border / Alt+Tab Window Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root@CommonStates > Border#BackgroundBorder
+    styles:
+      - Background:=<SolidColorBrush Color="{ThemeResource SolidBg}" />
       - CornerRadius=$mcr
-      - BorderThickness=0.05,1,0.05,0
-      - BorderBrush@Normal=$t
-      - BorderBrush@PointerOver:=$AccentColor
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemThumbnailButton#ThumbnailHost > Windows.UI.Xaml.Controls.Grid#RootGrid
+      - BorderThickness@Normal=$bbt
+      - BorderThickness@PointerOver=$bt
+      - BorderBrush@Normal:=$bbb
+      - BorderBrush@PointerOver:=$lumiAccentColor
+# Alt+Tab Program Close Button / Alt+Tab Window Close Button
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > Button#SwitchItemElementCloseButton
     styles:
-      - CornerRadius=$bcr
-      - Margin=5
-  - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
-    styles:
-      - Background:=$t
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Windows.UI.Xaml.Controls.Grid#GridElement > Windows.UI.Xaml.Controls.Border#VirtualDesktopSwitcherBackground
-    styles:
-      - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Margin=-2,1,-1,2
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Windows.UI.Xaml.Controls.Grid#Root@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - Background:=$mbg
-      - CornerRadius=$wcr,$wcr,$bcr,$bcr
-      - Margin:=-5,0,-5,-5
-      - BorderThickness=0.05,1,0.05,0
-      - BorderBrush@Normal=$t
-      - BorderBrush@PointerOver:=$AccentColor
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - Background:=$t
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid > Image#IconImage
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="1" />
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid > TextBlock#DisplayName
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="1" />
-  - target: Windows.UI.Xaml.Controls.Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter
+      - Background:=#00000000
+# Alt+Tab Program Close Button Margin / Alt+Tab Window Close Button Margin (fade was strange here, so not added)
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter
     styles:
       - CornerRadius=$mcr
       - Margin=5
-  - target: Windows.UI.Xaml.Controls.Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter > TextBlock
+# Alt+Tab Program Close Button Symbol / Alt+Tab Window Close Button Symbol / Close Button Cross Position Fix
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter > TextBlock
     styles:
       - RenderTransform:=<TranslateTransform X="-0.8" Y="-0.6" />
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemThumbnailButton#ThumbnailHost > Grid#RootGrid
-    styles:
-      - CornerRadius=0
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
-    styles:
-      - Background:=$mbg
-      - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Margin=-1,2,0,0
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
-    styles:
-      - Width=Auto
-      - HorizontalAlignment=1
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid > Border
-    styles:
-      - Background:=$mbg
-      - Shadow:=
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#MainBorder
-    styles:
-      - CornerRadius=$mcr
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#BorderHighlight
-    styles:
-      - CornerRadius=$mcr
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Windows.UI.Xaml.Controls.Grid#MainGrid
-    styles:
-      - CornerRadius=$mcr
-      - BorderThickness=$bt
-      - Margin=2
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#MainBorder
-    styles:
-      - CornerRadius=$mcr
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#BorderHighlight
-    styles:
-      - CornerRadius=$mcr
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopThumbnailButton#ThumbnailButtonElement
+# Alt+Tab Program Thumbnail / Alt+Tab Window Thumbnail
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemThumbnailButton#ThumbnailHost > Grid#RootGrid
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Button#VirtualDesktopElementCloseButton
+      - Margin=5
+# Snap Bar Background and Border
+  - target: Border#SnapBarBorder
     styles:
-      - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
-    styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
       - Shadow:=
-  - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Snap Picker Drop Shadow
+  - target: FlyoutPresenter > Border
     styles:
-      - Background:=$mbg
+      - Shadow:=
+# Snap Picker Background and Border + Entrance Animation
+  - target: Border#SnapPickerBorder
+    styles:
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
-  - target: Windows.UI.Xaml.Controls.FlyoutPresenter > Border
-    styles:
       - Shadow:=
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Snap Assist Suggestions List Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SnapAssistList > Grid > Border
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$mcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Scroll Bar Background
+  - target: Windows.UI.Xaml.Controls.Primitives.ScrollBar#VerticalScrollBar > Grid#Root > Grid#VerticalRoot > Rectangle#VerticalTrackRect
+    styles:
+      - Fill:=$lumiBackground
+# Right-Click Menu Drop Shadow
   - target: MenuFlyoutPresenter
     styles:
-      - CornerRadius=$mcr
+      - CornerRadius:=$wcr
       - Shadow:=
+# Right-click Menu Background and Border + Pop-up Animation
   - target: MenuFlyoutPresenter > Border
     styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
-  - target: Windows.UI.Xaml.Controls.MenuFlyoutItem
+      - Transitions:=<TransitionCollection><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="50" /></TransitionCollection>
+# Right-Click Menu Item Border
+  - target: MenuFlyoutItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.MenuFlyoutSubItem
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Right-Click Menu Subitem Border
+  - target: MenuFlyoutSubItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Tooltip Background and Border
+  - target: ToolTip > ContentPresenter#LayoutRoot
     styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
       - Shadow:=
+# Right-Click Menu Items Entrance Animation
   - target: ScrollViewer#MenuFlyoutPresenterScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > StackPanel
     styles:
-      - ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition $AnimationSettings /></TransitionCollection>
-  - target: Grid#LayoutRoot
+      - ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled="$MenuAnimation" FromHorizontalOffset="-50" FromVerticalOffset="50" /></TransitionCollection>
+# Virtual Desktops Bar Right-Click Menu Items and Subitems / Task View Window Right-Click Menu Items and Subitems
+  - target: ToggleMenuFlyoutItem > Grid@CommonStates
     styles:
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.100" />
-  - target: Border#BackgroundBorder
-    styles:
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.100" />
+      - CornerRadius=$bcr
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# ==========================
+# Dock Styling Begins Here |
+# ==========================
+# Taskbar Original Background
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Visibility=Collapsed
+# Uh... I uh... I don't know how to explain this yet, not my fix xP (It avoids bigger issues with vertical taskbar, something like that, from what I understood)
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
       - Tag=horizontal
       - Tag@DockedLeft=vertical
       - Tag@DockedRight=vertical
       - Tag=>taskbarDock
+# Taskbar Original Top Border
+  - target: Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
+    styles:
+      - Visibility=Collapsed
+# Dock Width/Taskbar Width
   - target: Taskbar.TaskbarFrame
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - HorizontalAlignment=Stretch
       - Margin=$DockMargin,0,$DockMargin,0
+# Dock Top and Bottom Gap
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
-      - Background:=$mbg
+      - Margin=0,$DockTopGap,0,$DockBottomGap
+# Dock Background and Border
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
+    styles:
+      - Background:=$lumiBackground
       - BorderThickness=$bt
       - BorderBrush=$bb
       - CornerRadius=$mcr
-      - Margin=0,$DockTopGap,0,$DockBottomGap
-  - target: Taskbar.TaskbarBackground#BackgroundControl > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
-    styles:
-      - Visibility=Collapsed
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="-1" />
-  - target: Windows.UI.Xaml.Controls.Border#LargeTicker1
-    styles:
-      - Margin=0,0,0,-2
+# Widget To Program Window Buttons Gap Remove
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
     styles:
       - Margin=0,0,$WidgetGap57,0
+# System Tray Dock Alignment
   - target: SystemTray.SystemTrayFrame
     styles:
-      - VerticalAlignment=Center
-      - Margin=0,$DockTopGap,$DockMargin,$DockBottomGap
+     - Margin=0,$DockTopGap,$DockMargin,$DockBottomGap
+# Matches Window Preview and Taskbar Overflow Flyout Height With Flyouts
+  - target: Grid#HoverFlyoutGrid
+    styles:
+      - Margin=0,0,0,$DockTopGap
+# Dock Height (Delete to Unlock Height)
   - target: Taskbar.TaskbarFrame
     styles:
       - Height={{taskbarDock==`vertical`?skip():$DockHeight}}
+themeResourceVariables:
+  - LumiAccent@Dark={ThemeResource SystemAccentColorLight2}
+  - LumiAccent@Light={ThemeResource SystemAccentColorDark1}
+  - TrackRect@Dark=#10FFFFFF
+  - TrackRect@Light=#30202020
+  - SolidBg@Dark=#10FFFFFF
+  - SolidBg@Light=#90FFFFFF
 ```
 </details>
 
----
+<br>
 
-### Classic
+### Normal
+
+![Normal](normal.png)
 
 <details>
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
 styleConstants:
-  - AccentColor=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}" Opacity="1.0" />
-  - AnimationSettings=IsStaggeringEnabled="True" FromHorizontalOffset="-50" FromVerticalOffset="50"
-  - mbg=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
-  - bcr=10
+  - MenuAnimation=True
+  - FadeSpeed=200
+  - lumiBackground=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
+  - lumiAccentColor=<SolidColorBrush Color="{ThemeResource LumiAccent}" />
   - wcr=20
   - mcr=15
+  - bcr=10
   - t=Transparent
   - bb=#20FFFFFF
   - bt=1
-  - nbb=<LinearGradientBrush x:Key="ShellTaskbarItemGradientStrokeColorSecondaryBrush" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,3"><LinearGradientBrush.GradientStops><GradientStop Offset="0.33" Color="#1AFFFFFF" /><GradientStop Offset="1" Color="#0FFFFFFF" /></LinearGradientBrush.GradientStops></LinearGradientBrush>
-  - nbt=<SolidColorBrush Color="{ThemeResource ControlFillColorDefault}" />
-  - nbth=<SolidColorBrush Color="{ThemeResource ControlFillColorSecondary}" />
-  - nbtp=<SolidColorBrush Color="{ThemeResource ControlFillColorTertiary}" />
+  - bbb=<LinearGradientBrush x:Key="ShellTaskbarItemGradientStrokeColorSecondaryBrush" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,3"><LinearGradientBrush.GradientStops><GradientStop Offset="0.33" Color="#1AFFFFFF" /><GradientStop Offset="1" Color="#0FFFFFFF" /></LinearGradientBrush.GradientStops></LinearGradientBrush>
+  - bbt=2
+  - bso=<SolidColorBrush Color="{ThemeResource ControlFillColorDefault}" />
+  - bn=Transparent
+  - bh=<SolidColorBrush Color="{ThemeResource ControlFillColorSecondary}" />
+  - bp=<SolidColorBrush Color="{ThemeResource ControlFillColorTertiary}" />
 controlStyles:
+# =====================================
+# HOW TO NAVIGATE THIS FILE           |
+#                                     |
+# 1. # Target Name / Description      |
+# 2. # NOTE: Additional Information   |
+# 3. Target and Styling               |
+# (Target always below Name and Note) |
+#                                     |
+# That's all! :3                      |
+# =====================================
+# Taskbar Background
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
-      - Fill:=$mbg
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+      - Fill:=$lumiBackground
+# Widget Button
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
-  - target: Taskbar.ExperienceToggleButton
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Start Button / Task View Button
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border
     styles:
       - CornerRadius=$bcr
-  - target: Taskbar.TaskListButton
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Search Button
+# NOTE: Must come before the Search Bar, otherwise it'll override this (they're the same target)
+  - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid > Border
     styles:
       - CornerRadius=$bcr
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Search Pill / Search Button With Label
+  - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid > Border#SearchPillBackgroundElement
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Border#SearchPillBackgroundElement
+# Search Pill / Search Button With Label Icon Fix
+# NOTE: Moves it left, separating it from its label; First target is a guess just in case
+  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > Grid > FontIcon > Grid > TextBlock, SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > FontIcon > Grid > TextBlock
+    styles:
+      - Margin=-2,0,8,0
+# Search Bar / Search Box Border
+# NOTE: Must come after the Search Button, otherwise it'll override it (they're the same target) 
+  - target: SearchUx.SearchUI.SearchButtonRootGrid[Width=220] > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid[Width=220] > Border
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Border#MultiWindowElement
+# Search Bar Background and Border / Search Box Background and Border / ThemeColorStates
+# NOTE: When search is active, the search bar that appears is from SearchHost.exe
+  - target: SearchUx.SearchUI.SearchButtonRootGrid@ThemeColorStates > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid@ThemeColorStates > Border
+    styles:
+      - Background@Wave3_InactiveNormal:=$bso
+      - Background@Wave3_InactivePointerOver:=$bh
+      - Background@Wave3_Focused:=$bp
+      - Background@CustomTheme_InactiveNormal:=$bso
+      - Background@CustomTheme_InactivePointerOver:=$bh
+      - Background@CustomTheme_InactivePointerOver_BrighterBackground:=$bh
+      - Background@CustomTheme_Focused:=$bp
+      - Background@SearchActive_Transparent:=$t
+      - BorderThickness=$bbt
+      - BorderBrush@Wave3_InactiveNormal:=$bbb
+      - BorderBrush@Wave3_InactivePointerOver:=$bbb
+      - BorderBrush@Wave3_Focused:=$bbb
+      - BorderBrush@CustomTheme_InactiveNormal:=$bbb
+      - BorderBrush@CustomTheme_InactivePointerOver:=$bbb
+      - BorderBrush@CustomTheme_InactivePointerOver_BrighterBackground:=$bbb
+      - BorderBrush@CustomTheme_Focused:=$bbb
+      - BorderBrush@SearchActive_Transparent:=$t
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Program Window Button / Program Icon Button
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
-  - target: SystemTray.ChevronIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Multi Window Element
+  - target: Border#MultiWindowElement
     styles:
       - CornerRadius=$bcr
-      - Margin=0,4,2,4
-  - target: SystemTray.NotifyIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Taskbar Overflow Button / Taskbar Icons Overflow Button / Taskbar Programs Overflow Button
+  - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
-      - Margin=2,4,2,4
-  - target: SystemTray.IconView#SystemTrayIcon > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - CornerRadius=$bcr
-      - Margin=2,4,2,4
-  - target: SystemTray.OmniButton#ControlCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - CornerRadius=$bcr
-      - Margin=2,4,2,4
-  - target: SystemTray.OmniButton#NotificationCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - CornerRadius=$bcr
-      - Margin=2,4,2,4
-  - target: Border#OverflowFlyoutBackgroundBorder
-    styles:
-      - Background:=$mbg
-      - CornerRadius:=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Shadow:=
-  - target: Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
-    styles:
-      - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
-    styles:
-      - Background:=$mbg
-      - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Shadow:=
-  - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect
-    styles:
-      - Fill:=#10FFFFFF
-  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
-    styles:
-      - Background:=$mbg
-      - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Shadow:=
-  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
-    styles:
-      - Background:=$t
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Window Preview and Taskbar Overflow Flyout Original Background
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=$t
-  - target: Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground
+# Window Preview and Taskbar Overflow Flyout Background and Border
+  - target: Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground
     styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
       - Shadow:=
+# Window Preview Flyout Custom Hover Look
   - target: Taskbar.TaskItemThumbnailView > Grid@CommonStates > Border#BackgroundBorder
     styles:
       - Background=$t
@@ -742,281 +1007,502 @@ controlStyles:
       - BorderThickness@Normal=0
       - BorderThickness@PointerOver=0.05,0,0.05,1
       - BorderBrush@Normal=$t
-      - BorderBrush@PointerOver:=$AccentColor
+      - BorderBrush@PointerOver:=$lumiAccentColor
+# Window Preview Close Button Flicker Fix
   - target: Taskbar.TaskItemThumbnailView > Grid > Button#CloseButton
     styles:
       - CornerRadius=$mcr
-  - target: Taskbar.ThumbBarButton#ThumbBarButton > Windows.UI.Xaml.Controls.ContentPresenter#BorderElement@CommonStates
+      - Background:=#00000000
+# Window Preview Close Button Fade
+  - target: Taskbar.TaskItemThumbnailView > Grid > Button#CloseButton > ContentPresenter
+    styles:
+      - BorderBrush=$t
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Window Preview Bottom Buttons
+  - target: Taskbar.ThumbBarButton#ThumbBarButton > ContentPresenter#BorderElement@CommonStates
     styles:
       - CornerRadius=16
       - Margin=-1.5
-      - Background@Disabled:=$t
-      - Background@Normal:=$t
-      - Background@PointerOver:=$nbth
-      - Background@Pressed:=$nbtp
-      - BorderThickness=2
-      - BorderBrush@Disabled:=$t
-      - BorderBrush@Normal:=$t
-      - BorderBrush@PointerOver:=$nbb
-      - BorderBrush@Pressed:=$nbb
+      - Background@Normal:=$bn
+      - Background@PointerOver:=$bh
+      - Background@Pressed:=$bp
+      - Background@Disabled:=$bn
+      - BorderThickness=$bbt
+      - BorderBrush@Normal:=$bn
+      - BorderBrush@PointerOver:=$bbb
+      - BorderBrush@Pressed:=$bbb
+      - BorderBrush@Disabled:=$bn
       - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# System Tray Frame (Self Adjusts To Taskbar Height) + Animation
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Height=Auto
+      - VerticalAlignment=Stretch
+      - Transitions:=<TransitionCollection><RepositionThemeTransition /></TransitionCollection>
+# Chevron Spacing / Hidden Apps Button Spacing
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid
+    styles:
+      - Margin=2,0,2,0
+# Chevron / Hidden Apps Button
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Tray Program Icon Buttons Spacing / Tray Notification Icon Buttons Spacing
+  - target: SystemTray.NotifyIconView > Grid#ContainerGrid
+    styles:
+      - Margin=2,0,2,0
+# Tray Program Icon Buttons / Tray Notification Icon Buttons
+  - target: SystemTray.NotifyIconView > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Other System Buttons (e.g. Microphone, Touch Keyboard, etc.) Spacing
+  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid
+    styles:
+      - Margin=2,0,2,0
+# Other System Buttons (e.g. Microphone Touch Keyboard, etc.)
+  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Internet Button / Sound Button / Omni Button Spacing
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid
+    styles:
+      - Margin=2,0,2,0
+# Internet Button / Sound Button / Omni Button Button
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Clock Button / Calendar Button / Notification Center Button Spacing
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid
+    styles:
+      - Margin=2,0,2,0
+# Clock Button / Calendar Button / Notification Center Button
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# System Tray Overflow Flyout Background and Border
+  - target: Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius:=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Volume Flyout Background and Border
+  - target: Grid#ConfirmatorMainGrid
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Volume Bar / Volume Track
+  - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect
+    styles:
+      - Fill:=<SolidColorBrush Color="{ThemeResource TrackRect}" />
+# Input Switcher Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Input Switcher Background Overlay
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
+    styles:
+      - Background:=$t
+      - BorderBrush=$t
+# Virtual Desktops Bar Background and Drop Shadow
+# NOTE: Background and Drop Shadow removal affects both taskbar's and Task View's bars.
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid > Border
+    styles:
+      - Background:=$lumiBackground
+      - Shadow:=
+# Taskbar Virtual Desktops Bar Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid#GridElement > Border#VirtualDesktopSwitcherBackground
+    styles:
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Margin=-2,1,-1,1
+# Task View Background Blur
+  - target: Border#BackgroundDimmingLayer
+    styles:
+      - Background:=$t
+# Task View Virtual Desktops Bar Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
+    styles:
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Margin=-1,2,1,-2
+# Task View Virtual Desktops Width
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
+    styles:
+      - Width=Auto
+      - HorizontalAlignment=1
+# Virtual Desktop Roundness
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopListViewItem > Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter#Root
+    styles:
+      - CornerRadius=$mcr
+# Selected Virtual Desktop and Hover Overlay
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#MainBorder
+    styles:
+      - CornerRadius=$mcr
+# Virtual Desktop Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#BorderHighlight
+    styles:
+      - CornerRadius=$mcr
+# Add Virtual Desktop Hover Overlay
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Grid#MainGrid > Border#MainBorder
+    styles:
+      - CornerRadius=$mcr
+# Add Virtual Desktop Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Grid#MainGrid > Border#BorderHighlight
+    styles:
+      - CornerRadius=$mcr
+# Virtual Desktop Thumbnail
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopThumbnailButton#ThumbnailButtonElement
+    styles:
+      - CornerRadius=$bcr
+# Virtual Desktop Close Button
+  - target: Button#VirtualDesktopElementCloseButton
+    styles:
+      - CornerRadius=$bcr
+      - Background:=#00000000
+# Virtual Desktop Close Button Fade
+  - target: Button#VirtualDesktopElementCloseButton > ContentPresenter
+    styles:
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Task View Program Window / Task View Window Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root@CommonStates > Border#BackgroundBorder
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$mcr,$mcr,$bcr,$bcr
+      - Margin:=-5,0,-5,-5
+      - BorderThickness=$bt
+      - BorderBrush@Normal:=$bb
+      - BorderBrush@PointerOver:=$lumiAccentColor
+# Task View Program Windows / Task View Windows Entrance Animation
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel
+    styles:
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Task View Window Icon
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > Image#IconImage
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="1" />
+# Task View Window Title
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > TextBlock#DisplayName
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="1" />
+# Task View Window Close Button
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > Button#SwitchItemElementCloseButton
+    styles:
+      - Background:=#00000000
+      - RenderTransform:=<TranslateTransform X="5" Y="0" />
+# Task View Window Close Button Fade 
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter
+    styles:
+      - CornerRadius=$mcr
+      - Margin=5
       - BackgroundTransition:=<BrushTransition Duration="0:0:0.200" />
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+# Task View Window Close Button Symbol / Close Button Cross Position Fix
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter > TextBlock
+    styles:
+      - RenderTransform:=<TranslateTransform X="-0.8" Y="-0.6" />
+# Task View Window Thumbnail
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemThumbnailButton#ThumbnailHost > Grid#RootGrid
+    styles:
+      - CornerRadius=$bcr
+# Alt+Tab Original Background
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=$t
       - CornerRadius=$wcr
       - BorderThickness=0
       - Shadow:=
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+# Alt+Tab Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$wcr
       - BorderThickness=$bt
       - BorderBrush=$bb
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Windows.UI.Xaml.Controls.Grid#Root@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+# Alt+Tab Entrance Animation
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab
     styles:
-      - Background:=#09FFFFFF
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Alt+Tab Program Background and Border / Alt+Tab Window Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root@CommonStates > Border#BackgroundBorder
+    styles:
+      - Background:=<SolidColorBrush Color="{ThemeResource SolidBg}" />
       - CornerRadius=$mcr
-      - BorderThickness=0.05,1,0.05,0
-      - BorderBrush@Normal=$t
-      - BorderBrush@PointerOver:=$AccentColor
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemThumbnailButton#ThumbnailHost > Windows.UI.Xaml.Controls.Grid#RootGrid
+      - BorderThickness@Normal=$bbt
+      - BorderThickness@PointerOver=$bt
+      - BorderBrush@Normal:=$bbb
+      - BorderBrush@PointerOver:=$lumiAccentColor
+# Alt+Tab Program Close Button / Alt+Tab Window Close Button
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > Button#SwitchItemElementCloseButton
     styles:
-      - CornerRadius=$bcr
-      - Margin=5
-  - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
-    styles:
-      - Background:=$t
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Windows.UI.Xaml.Controls.Grid#GridElement > Windows.UI.Xaml.Controls.Border#VirtualDesktopSwitcherBackground
-    styles:
-      - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Margin=-2,1,-1,2
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Windows.UI.Xaml.Controls.Grid#Root@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - Background:=$mbg
-      - CornerRadius=$wcr,$wcr,$bcr,$bcr
-      - Margin:=-5,0,-5,-5
-      - BorderThickness=0.05,1,0.05,0
-      - BorderBrush@Normal=$t
-      - BorderBrush@PointerOver:=$AccentColor
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - Background:=$t
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid > Image#IconImage
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="1" />
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid > TextBlock#DisplayName
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="1" />
-  - target: Windows.UI.Xaml.Controls.Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter
+      - Background:=#00000000
+# Alt+Tab Program Close Button Margin / Alt+Tab Window Close Button Margin (fade was strange here, so not added)
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter
     styles:
       - CornerRadius=$mcr
       - Margin=5
-  - target: Windows.UI.Xaml.Controls.Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter > TextBlock
+# Alt+Tab Program Close Button Symbol / Alt+Tab Window Close Button Symbol / Close Button Cross Position Fix
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter > TextBlock
     styles:
       - RenderTransform:=<TranslateTransform X="-0.8" Y="-0.6" />
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemThumbnailButton#ThumbnailHost > Grid#RootGrid
-    styles:
-      - CornerRadius=0
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
-    styles:
-      - Background:=$mbg
-      - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Margin=-1,2,0,0
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
-    styles:
-      - Width=Auto
-      - HorizontalAlignment=1
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid > Border
-    styles:
-      - Background:=$mbg
-      - Shadow:=
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#MainBorder
-    styles:
-      - CornerRadius=$mcr
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#BorderHighlight
-    styles:
-      - CornerRadius=$mcr
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Windows.UI.Xaml.Controls.Grid#MainGrid
-    styles:
-      - CornerRadius=$mcr
-      - BorderThickness=$bt
-      - Margin=2
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#MainBorder
-    styles:
-      - CornerRadius=$mcr
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#BorderHighlight
-    styles:
-      - CornerRadius=$mcr
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopThumbnailButton#ThumbnailButtonElement
+# Alt+Tab Program Thumbnail / Alt+Tab Window Thumbnail
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemThumbnailButton#ThumbnailHost > Grid#RootGrid
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Button#VirtualDesktopElementCloseButton
+      - Margin=5
+# Snap Bar Background and Border
+  - target: Border#SnapBarBorder
     styles:
-      - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
-    styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
       - Shadow:=
-  - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Snap Picker Drop Shadow
+  - target: FlyoutPresenter > Border
     styles:
-      - Background:=$mbg
+      - Shadow:=
+# Snap Picker Background and Border + Entrance Animation
+  - target: Border#SnapPickerBorder
+    styles:
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
-  - target: Windows.UI.Xaml.Controls.FlyoutPresenter > Border
-    styles:
       - Shadow:=
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Snap Assist Suggestions List Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SnapAssistList > Grid > Border
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$mcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Scroll Bar Background
+  - target: Windows.UI.Xaml.Controls.Primitives.ScrollBar#VerticalScrollBar > Grid#Root > Grid#VerticalRoot > Rectangle#VerticalTrackRect
+    styles:
+      - Fill:=$lumiBackground
+# Right-Click Menu Drop Shadow
   - target: MenuFlyoutPresenter
     styles:
-      - CornerRadius=$mcr
+      - CornerRadius:=$wcr
       - Shadow:=
+# Right-click Menu Background and Border + Pop-up Animation
   - target: MenuFlyoutPresenter > Border
     styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
-  - target: Windows.UI.Xaml.Controls.MenuFlyoutItem
+      - Transitions:=<TransitionCollection><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="50" /></TransitionCollection>
+# Right-Click Menu Item Border
+  - target: MenuFlyoutItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.MenuFlyoutSubItem
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Right-Click Menu Subitem Border
+  - target: MenuFlyoutSubItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Tooltip Background and Border
+  - target: ToolTip > ContentPresenter#LayoutRoot
     styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
       - Shadow:=
+# Right-Click Menu Items Entrance Animation
   - target: ScrollViewer#MenuFlyoutPresenterScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > StackPanel
     styles:
-      - ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition $AnimationSettings /></TransitionCollection>
-  - target: Grid#LayoutRoot
+      - ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled="$MenuAnimation" FromHorizontalOffset="-50" FromVerticalOffset="50" /></TransitionCollection>
+# Virtual Desktops Bar Right-Click Menu Items and Subitems / Task View Window Right-Click Menu Items and Subitems
+  - target: ToggleMenuFlyoutItem > Grid@CommonStates
     styles:
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.100" />
-  - target: Border#BackgroundBorder
-    styles:
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.100" />
+      - CornerRadius=$bcr
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+themeResourceVariables:
+  - LumiAccent@Dark={ThemeResource SystemAccentColorLight2}
+  - LumiAccent@Light={ThemeResource SystemAccentColorDark1}
+  - TrackRect@Dark=#10FFFFFF
+  - TrackRect@Light=#30202020
+  - SolidBg@Dark=#10FFFFFF
+  - SolidBg@Light=#90FFFFFF
 ```
 </details>
 
----
+<br>
 
 ### Compact
 
+![Compact](compact.png)
+
 <details>
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
 styleConstants:
+# Variant Settings
   - WidgetGap=-
-  - AccentColor=<SolidColorBrush Color="{ThemeResource SystemAccentColorLight2}" Opacity="1.0" />
-  - AnimationSettings=IsStaggeringEnabled="True" FromHorizontalOffset="-50" FromVerticalOffset="50"
-  - mbg=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
-  - bcr=10
+# General Settings
+  - MenuAnimation=True
+  - FadeSpeed=200
+  - lumiBackground=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
+  - lumiAccentColor=<SolidColorBrush Color="{ThemeResource LumiAccent}" />
   - wcr=20
   - mcr=15
+  - bcr=10
   - t=Transparent
   - bb=#20FFFFFF
   - bt=1
-  - nbb=<LinearGradientBrush x:Key="ShellTaskbarItemGradientStrokeColorSecondaryBrush" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,3"><LinearGradientBrush.GradientStops><GradientStop Offset="0.33" Color="#1AFFFFFF" /><GradientStop Offset="1" Color="#0FFFFFFF" /></LinearGradientBrush.GradientStops></LinearGradientBrush>
-  - nbt=<SolidColorBrush Color="{ThemeResource ControlFillColorDefault}" />
-  - nbth=<SolidColorBrush Color="{ThemeResource ControlFillColorSecondary}" />
-  - nbtp=<SolidColorBrush Color="{ThemeResource ControlFillColorTertiary}" />
+  - bbb=<LinearGradientBrush x:Key="ShellTaskbarItemGradientStrokeColorSecondaryBrush" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,3"><LinearGradientBrush.GradientStops><GradientStop Offset="0.33" Color="#1AFFFFFF" /><GradientStop Offset="1" Color="#0FFFFFFF" /></LinearGradientBrush.GradientStops></LinearGradientBrush>
+  - bbt=2
+  - bso=<SolidColorBrush Color="{ThemeResource ControlFillColorDefault}" />
+  - bn=Transparent
+  - bh=<SolidColorBrush Color="{ThemeResource ControlFillColorSecondary}" />
+  - bp=<SolidColorBrush Color="{ThemeResource ControlFillColorTertiary}" />
 controlStyles:
+# =====================================
+# HOW TO NAVIGATE THIS FILE           |
+#                                     |
+# 1. # Target Name / Description      |
+# 2. # NOTE: Additional Information   |
+# 3. Target and Styling               |
+# (Target always below Name and Note) |
+#                                     |
+# That's all! :3                      |
+# =====================================
+# Taskbar Background
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
-      - Fill:=$mbg
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
-    styles:
-      - Margin=0,0,$WidgetGap57,0
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+      - Fill:=$lumiBackground
+# Widget Button
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
-  - target: Taskbar.ExperienceToggleButton
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Start Button / Task View Button
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border
     styles:
       - CornerRadius=$bcr
-  - target: Taskbar.TaskListButton
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Search Button
+# NOTE: Must come before the Search Bar, otherwise it'll override this (they're the same target)
+  - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid > Border
     styles:
       - CornerRadius=$bcr
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Search Pill / Search Button With Label
+  - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid > Border#SearchPillBackgroundElement
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Border#SearchPillBackgroundElement
+# Search Pill / Search Button With Label Icon Fix
+# NOTE: Moves it left, separating it from its label; First target is a guess just in case
+  - target: SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > Grid > FontIcon > Grid > TextBlock, SearchUx.SearchUI.SearchPillButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > FontIcon > Grid > TextBlock
+    styles:
+      - Margin=-2,0,8,0
+# Search Bar / Search Box Border
+# NOTE: Must come after the Search Button, otherwise it'll override it (they're the same target) 
+  - target: SearchUx.SearchUI.SearchButtonRootGrid[Width=220] > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid[Width=220] > Border
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Border#MultiWindowElement
+# Search Bar Background and Border / Search Box Background and Border / ThemeColorStates
+# NOTE: When search is active, the search bar that appears is from SearchHost.exe
+  - target: SearchUx.SearchUI.SearchButtonRootGrid@ThemeColorStates > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid@ThemeColorStates > Border
+    styles:
+      - Background@Wave3_InactiveNormal:=$bso
+      - Background@Wave3_InactivePointerOver:=$bh
+      - Background@Wave3_Focused:=$bp
+      - Background@CustomTheme_InactiveNormal:=$bso
+      - Background@CustomTheme_InactivePointerOver:=$bh
+      - Background@CustomTheme_InactivePointerOver_BrighterBackground:=$bh
+      - Background@CustomTheme_Focused:=$bp
+      - Background@SearchActive_Transparent:=$t
+      - BorderThickness=$bbt
+      - BorderBrush@Wave3_InactiveNormal:=$bbb
+      - BorderBrush@Wave3_InactivePointerOver:=$bbb
+      - BorderBrush@Wave3_Focused:=$bbb
+      - BorderBrush@CustomTheme_InactiveNormal:=$bbb
+      - BorderBrush@CustomTheme_InactivePointerOver:=$bbb
+      - BorderBrush@CustomTheme_InactivePointerOver_BrighterBackground:=$bbb
+      - BorderBrush@CustomTheme_Focused:=$bbb
+      - BorderBrush@SearchActive_Transparent:=$t
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Program Window Button / Program Icon Button
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
-  - target: SystemTray.ChevronIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Multi Window Element
+  - target: Border#MultiWindowElement
     styles:
       - CornerRadius=$bcr
-      - Margin=0,4,2,4
-  - target: SystemTray.NotifyIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Taskbar Overflow Button / Taskbar Icons Overflow Button / Taskbar Programs Overflow Button
+  - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
-      - Margin=2,4,2,4
-  - target: SystemTray.IconView#SystemTrayIcon > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - CornerRadius=$bcr
-      - Margin=2,4,2,4
-  - target: SystemTray.OmniButton#ControlCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - CornerRadius=$bcr
-      - Margin=2,4,2,4
-  - target: SystemTray.OmniButton#NotificationCenterButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - CornerRadius=$bcr
-      - Margin=2,4,2,4
-  - target: Border#OverflowFlyoutBackgroundBorder
-    styles:
-      - Background:=$mbg
-      - CornerRadius:=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Shadow:=
-  - target: Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, Taskbar.OverflowToggleButton#OverflowButton > Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
-    styles:
-      - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Grid#ConfirmatorMainGrid
-    styles:
-      - Background:=$mbg
-      - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Shadow:=
-  - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect
-    styles:
-      - Fill:=#10FFFFFF
-  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
-    styles:
-      - Background:=$mbg
-      - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Shadow:=
-  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
-    styles:
-      - Background:=$t
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Window Preview and Taskbar Overflow Flyout Original Background
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=$t
-  - target: Windows.UI.Xaml.Controls.Grid#HoverFlyoutGrid > Windows.UI.Xaml.Controls.Border#HoverFlyoutBackground
+# Window Preview and Taskbar Overflow Flyout Background and Border
+  - target: Grid#HoverFlyoutGrid > Border#HoverFlyoutBackground
     styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
       - Shadow:=
+# Window Preview Flyout Custom Hover Look
   - target: Taskbar.TaskItemThumbnailView > Grid@CommonStates > Border#BackgroundBorder
     styles:
       - Background=$t
@@ -1024,209 +1510,427 @@ controlStyles:
       - BorderThickness@Normal=0
       - BorderThickness@PointerOver=0.05,0,0.05,1
       - BorderBrush@Normal=$t
-      - BorderBrush@PointerOver:=$AccentColor
+      - BorderBrush@PointerOver:=$lumiAccentColor
+# Window Preview Close Button Flicker Fix
   - target: Taskbar.TaskItemThumbnailView > Grid > Button#CloseButton
     styles:
       - CornerRadius=$mcr
-  - target: Taskbar.ThumbBarButton#ThumbBarButton > Windows.UI.Xaml.Controls.ContentPresenter#BorderElement@CommonStates
+      - Background:=#00000000
+# Window Preview Close Button Fade
+  - target: Taskbar.TaskItemThumbnailView > Grid > Button#CloseButton > ContentPresenter
+    styles:
+      - BorderBrush=$t
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Window Preview Bottom Buttons
+  - target: Taskbar.ThumbBarButton#ThumbBarButton > ContentPresenter#BorderElement@CommonStates
     styles:
       - CornerRadius=16
       - Margin=-1.5
-      - Background@Disabled:=$t
-      - Background@Normal:=$t
-      - Background@PointerOver:=$nbth
-      - Background@Pressed:=$nbtp
-      - BorderThickness=2
-      - BorderBrush@Disabled:=$t
-      - BorderBrush@Normal:=$t
-      - BorderBrush@PointerOver:=$nbb
-      - BorderBrush@Pressed:=$nbb
+      - Background@Normal:=$bn
+      - Background@PointerOver:=$bh
+      - Background@Pressed:=$bp
+      - Background@Disabled:=$bn
+      - BorderThickness=$bbt
+      - BorderBrush@Normal:=$bn
+      - BorderBrush@PointerOver:=$bbb
+      - BorderBrush@Pressed:=$bbb
+      - BorderBrush@Disabled:=$bn
       - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# System Tray Frame (Self Adjusts To Taskbar Height) + Animation
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Height=Auto
+      - VerticalAlignment=Stretch
+      - Transitions:=<TransitionCollection><RepositionThemeTransition /></TransitionCollection>
+# Chevron Spacing / Hidden Apps Button Spacing
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid
+    styles:
+      - Margin=2,0,2,0
+# Chevron / Hidden Apps Button
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Tray Program Icon Buttons Spacing / Tray Notification Icon Buttons Spacing
+  - target: SystemTray.NotifyIconView > Grid#ContainerGrid
+    styles:
+      - Margin=2,0,2,0
+# Tray Program Icon Buttons / Tray Notification Icon Buttons
+  - target: SystemTray.NotifyIconView > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Other System Buttons (e.g. Microphone, Touch Keyboard, etc.) Spacing
+  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid
+    styles:
+      - Margin=2,0,2,0
+# Other System Buttons (e.g. Microphone Touch Keyboard, etc.)
+  - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Internet Button / Sound Button / Omni Button Spacing
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid
+    styles:
+      - Margin=2,0,2,0
+# Internet Button / Sound Button / Omni Button Button
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Clock Button / Calendar Button / Notification Center Button Spacing
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid
+    styles:
+      - Margin=2,0,2,0
+# Clock Button / Calendar Button / Notification Center Button
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid > Border#BackgroundBorder
+    styles:
+      - CornerRadius=$bcr
+      - Margin=0,4,0,4
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# System Tray Overflow Flyout Background and Border
+  - target: Border#OverflowFlyoutBackgroundBorder
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius:=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Volume Flyout Background and Border
+  - target: Grid#ConfirmatorMainGrid
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Volume Bar / Volume Track
+  - target: Windows.UI.Xaml.Shapes.Rectangle#HorizontalTrackRect
+    styles:
+      - Fill:=<SolidColorBrush Color="{ThemeResource TrackRect}" />
+# Input Switcher Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Input Switcher Background Overlay
+  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
+    styles:
+      - Background:=$t
+      - BorderBrush=$t
+# Virtual Desktops Bar Background and Drop Shadow
+# NOTE: Background and Drop Shadow removal affects both taskbar's and Task View's bars.
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid > Border
+    styles:
+      - Background:=$lumiBackground
+      - Shadow:=
+# Taskbar Virtual Desktops Bar Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid#GridElement > Border#VirtualDesktopSwitcherBackground
+    styles:
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Margin=-2,1,-1,1
+# Task View Background Blur
+  - target: Border#BackgroundDimmingLayer
+    styles:
+      - Background:=$t
+# Task View Virtual Desktops Bar Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
+    styles:
+      - CornerRadius=$wcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Margin=-1,2,1,-2
+# Task View Virtual Desktops Width
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
+    styles:
+      - Width=Auto
+      - HorizontalAlignment=1
+# Virtual Desktop Roundness
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopListViewItem > Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter#Root
+    styles:
+      - CornerRadius=$mcr
+# Selected Virtual Desktop and Hover Overlay
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#MainBorder
+    styles:
+      - CornerRadius=$mcr
+# Virtual Desktop Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#BorderHighlight
+    styles:
+      - CornerRadius=$mcr
+# Add Virtual Desktop Hover Overlay
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Grid#MainGrid > Border#MainBorder
+    styles:
+      - CornerRadius=$mcr
+# Add Virtual Desktop Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Grid#MainGrid > Border#BorderHighlight
+    styles:
+      - CornerRadius=$mcr
+# Virtual Desktop Thumbnail
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopThumbnailButton#ThumbnailButtonElement
+    styles:
+      - CornerRadius=$bcr
+# Virtual Desktop Close Button
+  - target: Button#VirtualDesktopElementCloseButton
+    styles:
+      - CornerRadius=$bcr
+      - Background:=#00000000
+# Virtual Desktop Close Button Fade
+  - target: Button#VirtualDesktopElementCloseButton > ContentPresenter
+    styles:
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Task View Program Window / Task View Window Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root@CommonStates > Border#BackgroundBorder
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$mcr,$mcr,$bcr,$bcr
+      - Margin:=-5,0,-5,-5
+      - BorderThickness=$bt
+      - BorderBrush@Normal:=$bb
+      - BorderBrush@PointerOver:=$lumiAccentColor
+# Task View Program Windows / Task View Windows Entrance Animation
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel
+    styles:
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Task View Window Icon
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > Image#IconImage
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="1" />
+# Task View Window Title
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > TextBlock#DisplayName
+    styles:
+      - RenderTransform:=<TranslateTransform X="0" Y="1" />
+# Task View Window Close Button
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > Button#SwitchItemElementCloseButton
+    styles:
+      - Background:=#00000000
+      - RenderTransform:=<TranslateTransform X="5" Y="0" />
+# Task View Window Close Button Fade 
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter
+    styles:
+      - CornerRadius=$mcr
+      - Margin=5
       - BackgroundTransition:=<BrushTransition Duration="0:0:0.200" />
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
+# Task View Window Close Button Symbol / Close Button Cross Position Fix
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > Grid#TitleGrid > Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter > TextBlock
+    styles:
+      - RenderTransform:=<TranslateTransform X="-0.8" Y="-0.6" />
+# Task View Window Thumbnail
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemThumbnailButton#ThumbnailHost > Grid#RootGrid
+    styles:
+      - CornerRadius=$bcr
+# Alt+Tab Original Background
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - Background=$t
       - CornerRadius=$wcr
       - BorderThickness=0
       - Shadow:=
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
+# Alt+Tab Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$wcr
       - BorderThickness=$bt
       - BorderBrush=$bb
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Windows.UI.Xaml.Controls.Grid#Root@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+# Alt+Tab Entrance Animation
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab
     styles:
-      - Background:=#09FFFFFF
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Alt+Tab Program Background and Border / Alt+Tab Window Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root@CommonStates > Border#BackgroundBorder
+    styles:
+      - Background:=<SolidColorBrush Color="{ThemeResource SolidBg}" />
       - CornerRadius=$mcr
-      - BorderThickness=0.05,1,0.05,0
-      - BorderBrush@Normal=$t
-      - BorderBrush@PointerOver:=$AccentColor
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemThumbnailButton#ThumbnailHost > Windows.UI.Xaml.Controls.Grid#RootGrid
+      - BorderThickness@Normal=$bbt
+      - BorderThickness@PointerOver=$bt
+      - BorderBrush@Normal:=$bbb
+      - BorderBrush@PointerOver:=$lumiAccentColor
+# Alt+Tab Program Close Button / Alt+Tab Window Close Button
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > Button#SwitchItemElementCloseButton
     styles:
-      - CornerRadius=$bcr
-      - Margin=5
-  - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
-    styles:
-      - Background:=$t
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Windows.UI.Xaml.Controls.Grid#GridElement > Windows.UI.Xaml.Controls.Border#VirtualDesktopSwitcherBackground
-    styles:
-      - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Margin=-2,1,-1,2
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Windows.UI.Xaml.Controls.Grid#Root@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - Background:=$mbg
-      - CornerRadius=$wcr,$wcr,$bcr,$bcr
-      - Margin:=-5,0,-5,-5
-      - BorderThickness=0.05,1,0.05,0
-      - BorderBrush@Normal=$t
-      - BorderBrush@PointerOver:=$AccentColor
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
-    styles:
-      - Background:=$t
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid > Image#IconImage
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="1" />
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid > TextBlock#DisplayName
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="1" />
-  - target: Windows.UI.Xaml.Controls.Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter
+      - Background:=#00000000
+# Alt+Tab Program Close Button Margin / Alt+Tab Window Close Button Margin (fade was strange here, so not added)
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter
     styles:
       - CornerRadius=$mcr
       - Margin=5
-  - target: Windows.UI.Xaml.Controls.Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter > TextBlock
+# Alt+Tab Program Close Button Symbol / Alt+Tab Window Close Button Symbol / Close Button Cross Position Fix
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root > ContentPresenter > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > Button#SwitchItemElementCloseButton > ContentPresenter#ContentPresenter > TextBlock
     styles:
       - RenderTransform:=<TranslateTransform X="-0.8" Y="-0.6" />
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Grid#RootGrid > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemThumbnailButton#ThumbnailHost > Grid#RootGrid
-    styles:
-      - CornerRadius=0
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar > Grid > Border
-    styles:
-      - Background:=$mbg
-      - CornerRadius=$wcr
-      - BorderThickness=$bt
-      - BorderBrush=$bb
-      - Margin=-1,2,0,0
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
-    styles:
-      - Width=Auto
-      - HorizontalAlignment=1
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid > Border
-    styles:
-      - Background:=$mbg
-      - Shadow:=
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#MainBorder
-    styles:
-      - CornerRadius=$mcr
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#BorderHighlight
-    styles:
-      - CornerRadius=$mcr
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Windows.UI.Xaml.Controls.Grid#MainGrid
-    styles:
-      - CornerRadius=$mcr
-      - BorderThickness=$bt
-      - Margin=2
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#MainBorder
-    styles:
-      - CornerRadius=$mcr
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed#NewVirtualDesktopButtonThemed > Windows.UI.Xaml.Controls.Grid#MainGrid > Windows.UI.Xaml.Controls.Border#BorderHighlight
-    styles:
-      - CornerRadius=$mcr
-  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopThumbnailButton#ThumbnailButtonElement
+# Alt+Tab Program Thumbnail / Alt+Tab Window Thumbnail
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Grid#Root > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemThumbnailButton#ThumbnailHost > Grid#RootGrid
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Button#VirtualDesktopElementCloseButton
+      - Margin=5
+# Snap Bar Background and Border
+  - target: Border#SnapBarBorder
     styles:
-      - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
-    styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
       - Shadow:=
-  - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Snap Picker Drop Shadow
+  - target: FlyoutPresenter > Border
     styles:
-      - Background:=$mbg
+      - Shadow:=
+# Snap Picker Background and Border + Entrance Animation
+  - target: Border#SnapPickerBorder
+    styles:
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
-  - target: Windows.UI.Xaml.Controls.FlyoutPresenter > Border
-    styles:
       - Shadow:=
+      - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
+# Snap Assist Suggestions List Background and Border
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SnapAssistList > Grid > Border
+    styles:
+      - Background:=$lumiBackground
+      - CornerRadius=$mcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+      - Shadow:=
+# Scroll Bar Background
+  - target: Windows.UI.Xaml.Controls.Primitives.ScrollBar#VerticalScrollBar > Grid#Root > Grid#VerticalRoot > Rectangle#VerticalTrackRect
+    styles:
+      - Fill:=$lumiBackground
+# Right-Click Menu Drop Shadow
   - target: MenuFlyoutPresenter
     styles:
-      - CornerRadius=$mcr
+      - CornerRadius:=$wcr
       - Shadow:=
+# Right-click Menu Background and Border + Pop-up Animation
   - target: MenuFlyoutPresenter > Border
     styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
-  - target: Windows.UI.Xaml.Controls.MenuFlyoutItem
+      - Transitions:=<TransitionCollection><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="50" /></TransitionCollection>
+# Right-Click Menu Item Border
+  - target: MenuFlyoutItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.MenuFlyoutSubItem
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Right-Click Menu Subitem Border
+  - target: MenuFlyoutSubItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-  - target: Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Tooltip Background and Border
+  - target: ToolTip > ContentPresenter#LayoutRoot
     styles:
-      - Background:=$mbg
+      - Background:=$lumiBackground
       - CornerRadius=$mcr
       - BorderThickness=$bt
       - BorderBrush=$bb
       - Shadow:=
+# Right-Click Menu Items Entrance Animation
   - target: ScrollViewer#MenuFlyoutPresenterScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > StackPanel
     styles:
-      - ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition $AnimationSettings /></TransitionCollection>
-  - target: Grid#LayoutRoot
+      - ChildrenTransitions:=<TransitionCollection><EntranceThemeTransition IsStaggeringEnabled="$MenuAnimation" FromHorizontalOffset="-50" FromVerticalOffset="50" /></TransitionCollection>
+# Virtual Desktops Bar Right-Click Menu Items and Subitems / Task View Window Right-Click Menu Items and Subitems
+  - target: ToggleMenuFlyoutItem > Grid@CommonStates
     styles:
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.100" />
-  - target: Border#BackgroundBorder
-    styles:
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.100" />
+      - CornerRadius=$bcr
+      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# =============================
+# Compact Styling Begins Here |
+# =============================
+# Custom Taskbar Height
   - target: Taskbar.TaskbarFrame
     styles:
-      - Height=30
-  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid, Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid
+      - Height={{taskbarDock==`vertical`?skip():36}}
+# Uh... I uh... I don't know how to explain this yet, not my fix xP (It avoids bigger issues with vertical taskbar, something like that, from what I understood)
+# NOTE: Roughly, Luminosity doesn't work when vertical, and when switched back to horizontal, it remained broken. This fixes that. (vertical still doesn't work) 
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="-1" />
-  - target: Windows.UI.Xaml.Controls.Border#LargeTicker1
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
+# Widget Icon
+# NOTE: SmallTicker appears when offline
+  - target: Border#LargeTicker1, Border#SmallTicker1
     styles:
-      - Margin=1,-5,0,0
+      - Margin=0,-2,-7,0
       - RenderTransform:=<ScaleTransform ScaleX="0.75" ScaleY="0.75" />
-  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Windows.UI.Xaml.Controls.Border#BackgroundElement
+# Moves Widget Text Down (Credits to Deen, author of Blob and Pills)
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2], Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[1]
     styles:
-      - Margin=0,4,0,4
-  - target: SearchUx.SearchUI.SearchButtonControl
+      - ActualWidth => WeatherTempWidth
+      - RenderTransform := <TranslateTransform X="0" Y="2" />
+# Places Second Widget's Text Beside The First (Credits to Deen, author of Blob and Pills)
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2], Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid#AugmentedEntryPointContentGrid > Grid > Grid > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Border > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > Grid > Border#LargeTicker2 > AdaptiveCards.Rendering.Uwp.WholeItemsPanel > TextBlock[2]
     styles:
-      - Margin=0,-4,0,-4
+      - ActualWidth => WeatherCondWidth
+      - RenderTransform := <TranslateTransform X="{{WeatherTempWidth+8}}" Y="-14" />
+# Widget To Window Icons Space Removal
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
+    styles:
+      - Margin=0,0,$WidgetGap57,0
+# Start Menu/Seearch/Task View Button Icons
   - target: Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Width=16
       - Height=16
-  - target: Windows.UI.Xaml.Controls.Image#Icon
+# Search Bar / Search Box Height Fix (not when typing)
+  - target: SearchUx.SearchUI.SearchButtonRootGrid[Width=220] > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid[Width=220] > Border
+    styles:
+      - Margin=0,-4,0,-4
+# Search Pill Height Fix
+  - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#SearchPillBackgroundElement
+    styles:
+      - Margin=0
+# Program Icons
+  - target: Image#Icon
     styles:
       - Width=16
       - Height=16
-  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Windows.UI.Xaml.Controls.TextBlock#LabelControl, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Windows.UI.Xaml.Controls.TextBlock#LabelControl
+# Moves Program Window Labels Up
+  - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > TextBlock#LabelControl, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > TextBlock#LabelControl
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="-1" />
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
-    styles:
-      - Margin=0,0,$WidgetGap57,0
-  - target: SystemTray.SystemTrayFrame
-    styles:
-      - Height=30
+# System Tray System Icons (Chevron, Internet, Sound, etc.)
   - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
     styles:
       - FontSize=14
+# System tray Program Icons
   - target: SystemTray.ImageIconContent > Grid#ContainerGrid > Image
     styles:
       - Width=14
       - Height=14
+themeResourceVariables:
+  - LumiAccent@Dark={ThemeResource SystemAccentColorLight2}
+  - LumiAccent@Light={ThemeResource SystemAccentColorDark1}
+  - TrackRect@Dark=#10FFFFFF
+  - TrackRect@Light=#30202020
+  - SolidBg@Dark=#10FFFFFF
+  - SolidBg@Light=#90FFFFFF
 ```
 </details>
