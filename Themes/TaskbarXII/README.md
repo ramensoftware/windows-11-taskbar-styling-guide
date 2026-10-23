@@ -7,8 +7,7 @@
 ## Suggested Windows settings
 
 - Use the default taskbar alignment (center).
-- You can hide the bell icon via Notifications in Settings.
-- This theme is not compatible with the vertical taskbar.
+- This theme is not compatible with the vertical taskbar and small taskbar size.
 
 ## Theme selection
 
