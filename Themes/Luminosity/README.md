@@ -252,9 +252,9 @@ Set style constant `MenuAnimation` from `True` to `False`.
 <details>
 <summary>(Click to expand guide)</summary>
 
-You can edit the `FadeSpeed` constant's value. Its value is in milliseconds.
+You can edit the `FadeSpeed` constant's value. Its value is a duration in `hours:minutes:seconds` format.
 
-Default value: `200`
+Default value: `0:0:0.200` (200 milliseconds)
 
 </details>
 
@@ -327,7 +327,7 @@ styleConstants:
   - WidgetGap=-
 # General Settings
   - MenuAnimation=True
-  - FadeSpeed=200
+  - FadeSpeed=0:0:0.200
   - lumiBackground=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
   - lumiAccentColor=<SolidColorBrush Color="{ThemeResource LumiAccent}" />
   - wcr=20
@@ -363,14 +363,14 @@ controlStyles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Start Button / Task View Button
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border
     styles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Search Button
 # NOTE: Must come before the Search Bar, otherwise it'll override this (they're the same target)
   - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid > Border
@@ -378,7 +378,7 @@ controlStyles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Search Pill / Search Button With Label
   - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid > Border#SearchPillBackgroundElement
     styles:
@@ -415,27 +415,27 @@ controlStyles:
       - BorderBrush@CustomTheme_Focused:=$bbb
       - BorderBrush@SearchActive_Transparent:=$t
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Program Window Button / Program Icon Button
   - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Multi Window Element
   - target: Border#MultiWindowElement
     styles:
       - CornerRadius=$bcr
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Taskbar Overflow Button / Taskbar Icons Overflow Button / Taskbar Programs Overflow Button
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Window Preview and Taskbar Overflow Flyout Original Background
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
@@ -466,7 +466,7 @@ controlStyles:
   - target: Taskbar.TaskItemThumbnailView > Grid > Button#CloseButton > ContentPresenter
     styles:
       - BorderBrush=$t
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Window Preview Bottom Buttons
   - target: Taskbar.ThumbBarButton#ThumbBarButton > ContentPresenter#BorderElement@CommonStates
     styles:
@@ -482,7 +482,7 @@ controlStyles:
       - BorderBrush@Pressed:=$bbb
       - BorderBrush@Disabled:=$bn
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # System Tray Frame (Self Adjusts To Taskbar Height) + Animation
   - target: SystemTray.SystemTrayFrame
     styles:
@@ -500,7 +500,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Tray Program Icon Buttons Spacing / Tray Notification Icon Buttons Spacing
   - target: SystemTray.NotifyIconView > Grid#ContainerGrid
     styles:
@@ -514,7 +514,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Other System Buttons (e.g. Microphone, Touch Keyboard, etc.) Spacing
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid
     styles:
@@ -526,7 +526,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Internet Button / Sound Button / Omni Button Spacing
   - target: SystemTray.OmniButton#ControlCenterButton > Grid
     styles:
@@ -538,7 +538,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Clock Button / Calendar Button / Notification Center Button Spacing
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid
     styles:
@@ -550,7 +550,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # System Tray Overflow Flyout Background and Border
   - target: Border#OverflowFlyoutBackgroundBorder
     styles:
@@ -645,7 +645,7 @@ controlStyles:
 # Virtual Desktop Close Button Fade
   - target: Button#VirtualDesktopElementCloseButton > ContentPresenter
     styles:
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Task View Program Window / Task View Window Background and Border
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root@CommonStates > Border#BackgroundBorder
     styles:
@@ -782,12 +782,12 @@ controlStyles:
   - target: MenuFlyoutItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Right-Click Menu Subitem Border
   - target: MenuFlyoutSubItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Tooltip Background and Border
   - target: ToolTip > ContentPresenter#LayoutRoot
     styles:
@@ -804,7 +804,7 @@ controlStyles:
   - target: ToggleMenuFlyoutItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # ==========================
 # Dock Styling Begins Here |
 # ==========================
@@ -878,7 +878,7 @@ themeResourceVariables:
 ```yaml
 styleConstants:
   - MenuAnimation=True
-  - FadeSpeed=200
+  - FadeSpeed=0:0:0.200
   - lumiBackground=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
   - lumiAccentColor=<SolidColorBrush Color="{ThemeResource LumiAccent}" />
   - wcr=20
@@ -914,14 +914,14 @@ controlStyles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Start Button / Task View Button
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border
     styles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Search Button
 # NOTE: Must come before the Search Bar, otherwise it'll override this (they're the same target)
   - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid > Border
@@ -929,7 +929,7 @@ controlStyles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Search Pill / Search Button With Label
   - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid > Border#SearchPillBackgroundElement
     styles:
@@ -966,27 +966,27 @@ controlStyles:
       - BorderBrush@CustomTheme_Focused:=$bbb
       - BorderBrush@SearchActive_Transparent:=$t
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Program Window Button / Program Icon Button
   - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Multi Window Element
   - target: Border#MultiWindowElement
     styles:
       - CornerRadius=$bcr
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Taskbar Overflow Button / Taskbar Icons Overflow Button / Taskbar Programs Overflow Button
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Window Preview and Taskbar Overflow Flyout Original Background
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
@@ -1017,7 +1017,7 @@ controlStyles:
   - target: Taskbar.TaskItemThumbnailView > Grid > Button#CloseButton > ContentPresenter
     styles:
       - BorderBrush=$t
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Window Preview Bottom Buttons
   - target: Taskbar.ThumbBarButton#ThumbBarButton > ContentPresenter#BorderElement@CommonStates
     styles:
@@ -1033,7 +1033,7 @@ controlStyles:
       - BorderBrush@Pressed:=$bbb
       - BorderBrush@Disabled:=$bn
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Taskbar Orientation Detection
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
@@ -1058,7 +1058,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Tray Program Icon Buttons Spacing / Tray Notification Icon Buttons Spacing
   - target: SystemTray.NotifyIconView > Grid#ContainerGrid
     styles:
@@ -1072,7 +1072,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Other System Buttons (e.g. Microphone, Touch Keyboard, etc.) Spacing
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid
     styles:
@@ -1084,7 +1084,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Internet Button / Sound Button / Omni Button Spacing
   - target: SystemTray.OmniButton#ControlCenterButton > Grid
     styles:
@@ -1096,7 +1096,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Clock Button / Calendar Button / Notification Center Button Spacing
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid
     styles:
@@ -1108,7 +1108,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # System Tray Overflow Flyout Background and Border
   - target: Border#OverflowFlyoutBackgroundBorder
     styles:
@@ -1203,7 +1203,7 @@ controlStyles:
 # Virtual Desktop Close Button Fade
   - target: Button#VirtualDesktopElementCloseButton > ContentPresenter
     styles:
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Task View Program Window / Task View Window Background and Border
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root@CommonStates > Border#BackgroundBorder
     styles:
@@ -1340,12 +1340,12 @@ controlStyles:
   - target: MenuFlyoutItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Right-Click Menu Subitem Border
   - target: MenuFlyoutSubItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Tooltip Background and Border
   - target: ToolTip > ContentPresenter#LayoutRoot
     styles:
@@ -1362,7 +1362,7 @@ controlStyles:
   - target: ToggleMenuFlyoutItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 themeResourceVariables:
   - LumiAccent@Dark={ThemeResource SystemAccentColorLight2}
   - LumiAccent@Light={ThemeResource SystemAccentColorDark1}
@@ -1388,7 +1388,7 @@ styleConstants:
   - WidgetGap=-
 # General Settings
   - MenuAnimation=True
-  - FadeSpeed=200
+  - FadeSpeed=0:0:0.200
   - lumiBackground=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
   - lumiAccentColor=<SolidColorBrush Color="{ThemeResource LumiAccent}" />
   - wcr=20
@@ -1424,14 +1424,14 @@ controlStyles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Start Button / Task View Button
   - target: Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Grid > Border, Taskbar.ExperienceToggleButton#LaunchListButton > Taskbar.TaskListButtonPanel > Border
     styles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Search Button
 # NOTE: Must come before the Search Bar, otherwise it'll override this (they're the same target)
   - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border, SearchUx.SearchUI.SearchButtonRootGrid > Border
@@ -1439,7 +1439,7 @@ controlStyles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Search Pill / Search Button With Label
   - target: SearchUx.SearchUI.SearchButtonRootGrid > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid > Border#SearchPillBackgroundElement
     styles:
@@ -1476,27 +1476,27 @@ controlStyles:
       - BorderBrush@CustomTheme_Focused:=$bbb
       - BorderBrush@SearchActive_Transparent:=$t
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Program Window Button / Program Icon Button
   - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Multi Window Element
   - target: Border#MultiWindowElement
     styles:
       - CornerRadius=$bcr
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Taskbar Overflow Button / Taskbar Icons Overflow Button / Taskbar Programs Overflow Button
   - target: Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel#OverflowToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - CornerRadius=$bcr
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Window Preview and Taskbar Overflow Flyout Original Background
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
@@ -1527,7 +1527,7 @@ controlStyles:
   - target: Taskbar.TaskItemThumbnailView > Grid > Button#CloseButton > ContentPresenter
     styles:
       - BorderBrush=$t
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Window Preview Bottom Buttons
   - target: Taskbar.ThumbBarButton#ThumbBarButton > ContentPresenter#BorderElement@CommonStates
     styles:
@@ -1543,7 +1543,7 @@ controlStyles:
       - BorderBrush@Pressed:=$bbb
       - BorderBrush@Disabled:=$bn
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # System Tray Frame (Self Adjusts To Taskbar Height) + Animation
   - target: SystemTray.SystemTrayFrame
     styles:
@@ -1561,7 +1561,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Tray Program Icon Buttons Spacing / Tray Notification Icon Buttons Spacing
   - target: SystemTray.NotifyIconView > Grid#ContainerGrid
     styles:
@@ -1575,7 +1575,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Other System Buttons (e.g. Microphone, Touch Keyboard, etc.) Spacing
   - target: SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid
     styles:
@@ -1587,7 +1587,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Internet Button / Sound Button / Omni Button Spacing
   - target: SystemTray.OmniButton#ControlCenterButton > Grid
     styles:
@@ -1599,7 +1599,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Clock Button / Calendar Button / Notification Center Button Spacing
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid
     styles:
@@ -1611,7 +1611,7 @@ controlStyles:
       - Margin=0,4,0,4
       - BorderThickness=$bbt
       - BackgroundSizing=InnerBorderEdge
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # System Tray Overflow Flyout Background and Border
   - target: Border#OverflowFlyoutBackgroundBorder
     styles:
@@ -1706,7 +1706,7 @@ controlStyles:
 # Virtual Desktop Close Button Fade
   - target: Button#VirtualDesktopElementCloseButton > ContentPresenter
     styles:
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Task View Program Window / Task View Window Background and Border
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.DynamicFlowPanel#DFCPanel > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemListViewItem > Grid#Root@CommonStates > Border#BackgroundBorder
     styles:
@@ -1843,12 +1843,12 @@ controlStyles:
   - target: MenuFlyoutItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Right-Click Menu Subitem Border
   - target: MenuFlyoutSubItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # Tooltip Background and Border
   - target: ToolTip > ContentPresenter#LayoutRoot
     styles:
@@ -1865,7 +1865,7 @@ controlStyles:
   - target: ToggleMenuFlyoutItem > Grid@CommonStates
     styles:
       - CornerRadius=$bcr
-      - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
 # =============================
 # Compact Styling Begins Here |
 # =============================
