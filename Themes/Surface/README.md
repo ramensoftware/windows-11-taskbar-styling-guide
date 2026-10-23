@@ -18,7 +18,7 @@
 If you are using "MyDockFinder", you can hide the system tray with this style:
 
 Target: `StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid`
-Style: `Visibility=Collapsed`
+Style: `MaxWidth=0`
 
 ## Customization
 

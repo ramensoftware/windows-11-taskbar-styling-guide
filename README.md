@@ -544,8 +544,11 @@ StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
 ```
 Style:
 ```
-Visibility=Collapsed
+MaxWidth=0
 ```
+
+> [!NOTE]
+> `Visibility=Collapsed` isn't used here because on recent Windows 11 versions it crashes Explorer if it's applied when Explorer starts.
 
 ## Alt+Tab
 
