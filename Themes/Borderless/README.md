@@ -56,6 +56,7 @@ controlStyles:
       - HorizontalAlignment=Stretch
       - RowDefinitions:=<RowDefinitionCollection><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></RowDefinitionCollection>
       - VerticalAlignment=Stretch
+      - ActualHeight=>containerGridHeight
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
       - Tag=horizontal
@@ -66,14 +67,13 @@ controlStyles:
     styles:
       - Width={{taskbarDock==`vertical`?$TaskbarFrameHeight:$TaskbarFrameWidth}}
       - MaxWidth={{taskbarDock==`vertical`?skip():$TaskbarFrameWidth}}
-      - Height={{taskbarDock==`horizontal`?$TaskbarFrameHeight:$TaskbarFrameWidth}}
-      - MaxHeight={{taskbarDock==`horizontal`?skip():$TaskbarFrameWidth}}
+      - Height={{taskbarDock==`vertical`?min($TaskbarFrameWidth,containerGridHeight):$TaskbarFrameHeight}}
       - Grid.Column=1
       - Grid.Row=1
   - target: SystemTray.SystemTrayFrame
     styles:
       - Height={{taskbarDock==`vertical`?skip():40}}
-      - Width={{taskbarDock==`horizontal`?skip():50}}
+      - Width={{taskbarDock==`vertical`?50:skip()}}
       - HorizontalAlignment={{taskbarDock==`vertical`?skip():2}}
       - VerticalAlignment={{taskbarDock==`vertical`?skip():1}}
       - Grid.Column=1
