@@ -486,8 +486,8 @@ controlStyles:
 # System Tray Frame (Self Adjusts To Taskbar Height) + Animation
   - target: SystemTray.SystemTrayFrame
     styles:
-      - Height=Auto
-      - VerticalAlignment=Stretch
+      - Height={{taskbarDock==`vertical`?skip():`Auto`}}
+      - VerticalAlignment={{taskbarDock==`vertical`?skip():`Stretch`}}
       - Transitions:=<TransitionCollection><RepositionThemeTransition /></TransitionCollection>
 # Chevron Spacing / Hidden Apps Button Spacing
   - target: SystemTray.ChevronIconView > Grid#ContainerGrid
@@ -1034,11 +1034,18 @@ controlStyles:
       - BorderBrush@Disabled:=$bn
       - BackgroundSizing=InnerBorderEdge
       - BackgroundTransition:=<BrushTransition Duration="0:0:0.$FadeSpeed" />
+# Taskbar Orientation Detection
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
 # System Tray Frame (Self Adjusts To Taskbar Height) + Animation
   - target: SystemTray.SystemTrayFrame
     styles:
-      - Height=Auto
-      - VerticalAlignment=Stretch
+      - Height={{taskbarDock==`vertical`?skip():`Auto`}}
+      - VerticalAlignment={{taskbarDock==`vertical`?skip():`Stretch`}}
       - Transitions:=<TransitionCollection><RepositionThemeTransition /></TransitionCollection>
 # Chevron Spacing / Hidden Apps Button Spacing
   - target: SystemTray.ChevronIconView > Grid#ContainerGrid
@@ -1540,8 +1547,8 @@ controlStyles:
 # System Tray Frame (Self Adjusts To Taskbar Height) + Animation
   - target: SystemTray.SystemTrayFrame
     styles:
-      - Height=Auto
-      - VerticalAlignment=Stretch
+      - Height={{taskbarDock==`vertical`?skip():`Auto`}}
+      - VerticalAlignment={{taskbarDock==`vertical`?skip():`Stretch`}}
       - Transitions:=<TransitionCollection><RepositionThemeTransition /></TransitionCollection>
 # Chevron Spacing / Hidden Apps Button Spacing
   - target: SystemTray.ChevronIconView > Grid#ContainerGrid
