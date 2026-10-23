@@ -101,8 +101,8 @@ controlStyles:
       - Text=
   - target: Windows.UI.Xaml.Shapes.Rectangle#MostRecentlyUsedDivider
     styles:
-      - Height=32
-      - Width=2
+      - Height={{taskbarDock==`vertical`?2:32}}
+      - Width={{taskbarDock==`vertical`?32:2}}
   - target: Windows.UI.Xaml.Shapes.Rectangle#LeftOverflowButtonDivider
     styles:
       - Visibility=Collapsed
