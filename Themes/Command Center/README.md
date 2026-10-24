@@ -90,7 +90,7 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$R1
-      - Height=$Width
+      - Width=$Width
       - Height=$Height
   - target: SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
