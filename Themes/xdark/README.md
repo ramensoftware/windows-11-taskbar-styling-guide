@@ -219,7 +219,10 @@ controlStyles:
       - Background=#000000
       - CornerRadius=13
       - Margin=0,5,4,5
-      - Padding=2,0,-18,0
+      - Padding=2,0,-6,0
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Visibility=Collapsed
   - target: Taskbar.TaskListButton > Grid > Rectangle#RunningIndicator
     styles:
       - Height=3
