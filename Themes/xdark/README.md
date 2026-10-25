@@ -1,6 +1,6 @@
 # ✦ xdark theme for Windows 11 Taskbar Styler
 
-**Author**: [xscriptorcode](https://github.com/xscriptorcode)
+**Author**: [xscriptor](https://github.com/xscriptor)
 
 ![Demonstration](screenshot.png)
 
