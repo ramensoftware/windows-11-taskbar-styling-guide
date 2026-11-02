@@ -97,7 +97,6 @@ controlStyles:
       - Visibility=1
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - Width=$Width
       - Height=$Height
       - Background@ActiveNormal:=$ActiveColor
       - Background@ActivePointerOver:=$OverlayColor
@@ -109,6 +108,9 @@ controlStyles:
       - Background@MultiWindowPointerOver:=$OverlayColor2
       - Background@MultiWindowActive:=$ActiveColor
       - Background@MultiWindowPressed:=$OverlayColor
+      - Margin@MultiWindowNormal=0
+      - Margin@MultiWindowPointerOver=0
+      - Margin@MultiWindowPressed=0
       - CornerRadius=$R1
   - target: Grid#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
     styles:
@@ -186,6 +188,15 @@ controlStyles:
       - Background:=$Background
       - CornerRadius=$R1
       - Shadow:=
+  - target: SystemTray.NotifyIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter
+    styles:
+      - Padding=6,4
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid
+    styles:
+      - Margin=2
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter
+    styles:
+      - Margin=0
   - target: Taskbar.Badge#BadgeControl
     styles:
       - Height=14
