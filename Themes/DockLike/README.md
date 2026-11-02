@@ -16,13 +16,18 @@ This theme is meant as a fairly vanilla implementation of a dock-like taskbar. I
 
 ### Taskbar alignment
 
-Change **Taskbar icon alignment** in Windows settings to switch the dock between Left and Center.
+Change **Taskbar icon alignment** in Windows settings to switch the dock between Left and Center. With Left alignment, the widgets button is placed next to the system tray, as in the default Windows layout.
 
-The theme detects alignment from the Start button's native padding, using the difference between its panel width and its inner grid width. This has been tested with the default and small taskbar sizes. Customizations that replace the Start button template or override these widths or padding can interfere with detection. If the native layout changes in a future Windows build, the detection may need updating.
+The theme detects alignment from the Start button's native padding, which has extra space on the left when icons are left-aligned. This has been tested with the default and small taskbar sizes. Known limitations:
+
+- On some Windows builds, Explorer doesn't add this padding when switching from Center to Left if it was started with Center, so the dock stays centered. Restart Explorer after changing the setting.
+- If the Start button is hidden, the dock stays centered. Use the tweak below to left-align it.
+- The [Start button always on the left](https://windhawk.net/mods/taskbar-start-button-position) mod adds this padding in both modes, so the dock is always left-aligned with it.
+- Other customizations that replace the Start button template or override its width or padding can also interfere with detection.
 
 ### Force left alignment (tweak)
 
-To keep the dock on the left independently of the Windows setting, add the following control styles:
+To keep the dock on the left regardless of the Windows setting, add the following control styles:
 
 Target:
 ```
@@ -30,17 +35,17 @@ Taskbar.TaskbarFrame
 ```
 Styles:
 ```
-HorizontalAlignment=Left
-Margin=0,0,250,0
+HorizontalAlignment={{taskbarDock==`vertical`?skip():`Left`}}
+Margin={{taskbarDock==`vertical`?skip():`0,0,250,0`}}
 ```
 
 Target:
 ```
-Taskbar.TaskbarFrame > Grid#RootGrid
+Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
 ```
 Style:
 ```
-CornerRadius=0,8,0,0
+CornerRadius={{taskbarDock==`vertical`?`8,8,0,0`:`0,8,0,0`}}
 ```
 
 ### Make the taskbar float (tweak)
@@ -57,10 +62,16 @@ Target:
 ```
 Taskbar.TaskbarFrame > Grid#RootGrid
 ```
-Styles:
+Style:
 ```
 Margin=0,1,0,3
 ```
+
+Target:
+```
+Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
+```
+Style:
 ```
 CornerRadius=8
 ```
@@ -80,7 +91,7 @@ Margin=8,1,8,3
 
 Target:
 ```
-Taskbar.TaskbarFrame > Grid#RootGrid
+Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
 ```
 Styles:
 ```
@@ -102,16 +113,19 @@ BorderThickness=1
 BorderBrush:=<SolidColorBrush Color="{ThemeResource SurfaceStrokeColorDefault}" />
 ```
 
-2. If you haven't applied the floating taskbar tweak, add the following control style:
-
 Target:
 ```
-Taskbar.TaskbarFrame > Grid#RootGrid
+Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
 ```
-Style:
+Styles:
 ```
-Margin=0,0,0,-2
+BorderThickness={{DockNativeAlignment==`Left`?1:skip()}}
 ```
+```
+BorderBrush:=<SolidColorBrush Color="{ThemeResource SurfaceStrokeColorDefault}" />
+```
+
+2. If you haven't applied the floating taskbar tweak, use `BorderThickness=1,1,1,0` instead of `BorderThickness=1` for the `Taskbar.TaskbarBackground > Grid` target, so that the border isn't drawn along the screen edge.
 
 ## Theme selection
 
@@ -134,6 +148,8 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
+styleConstants:
+  - DockBackground=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.8" FallbackColor="{ThemeResource SystemChromeLowColor}" />
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
@@ -146,19 +162,37 @@ controlStyles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - HorizontalAlignment={{taskbarDock==`vertical`?skip():DockNativeAlignment==`Left`?`Left`:`Center`}}
       - Margin={{taskbarDock==`vertical`?skip():DockNativeAlignment==`Left`?0:250}},0,250,0
+      - ActualWidth=>DockFrameWidth
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border > Grid
+    styles:
+      - ActualWidth=>DockContainerWidth
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
+    styles:
+      - Margin={{DockNativeAlignment==`Left`?-DockWidgetsWidth:skip()}},0,0,0
+      - RenderTransform:=<TranslateTransform X="{{DockNativeAlignment==`Left`?DockContainerWidth-DockFrameWidth:skip()}}" />
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - ActualWidth=>DockWidgetsWidth
+      - Margin={{DockNativeAlignment==`Left`?`0,4,0,4`:0}}
+      - Padding={{DockNativeAlignment==`Left`?`6,0,2,0`:skip()}}
+      - Background:={{DockNativeAlignment==`Left`?`$DockBackground`:skip()}}
+      - CornerRadius={{DockNativeAlignment==`Left`?8:skip()}}
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Width=>DockStartWidth
-      - Tag={{taskbarDock==`vertical`?skip():DockStartWidth==``?`Center`:DockStartInnerWidth==``?`Center`:DockStartInnerWidth<=0?`Center`:DockStartWidth-DockStartInnerWidth>8?`Left`:`Center`}}
+      - Tag={{taskbarDock==`vertical`?`Center`:DockStartWidth==``?`Center`:DockStartInnerWidth==``?`Center`:DockStartInnerWidth<=0?`Center`:DockStartWidth-DockStartInnerWidth>8?`Left`:`Center`}}
       - Tag=>DockNativeAlignment
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid[1]
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - ActualWidth=>DockStartInnerWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
-      - Background:=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.8" FallbackColor="{ThemeResource SystemChromeLowColor}" />
       - Padding=6,0,6,0
-      - CornerRadius=8,8,0,0
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
+    styles:
+      - Background:=$DockBackground
+      - Margin=-6,0,-6,0
+      - CornerRadius={{DockNativeAlignment==`Left`?`0,8,0,0`:`8,8,0,0`}}
       - BorderBrush:=<SolidColorBrush Color="{ThemeResource SurfaceStrokeColorDefault}" />
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
@@ -166,12 +200,9 @@ controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
-    styles:
-      - Margin=0
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
-      - Background:=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.8" FallbackColor="{ThemeResource SystemChromeLowColor}" />
+      - Background:=$DockBackground
       - Margin=-4,-8,-4,-8
       - CornerRadius=10
       - BorderThickness=12,12,12,12
