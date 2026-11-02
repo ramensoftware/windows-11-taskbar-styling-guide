@@ -4,8 +4,7 @@
 
 ![Screenshot](screenshot.png)
 ![Screenshot](screenshothoverflyout.png)
-![Screenshot](ScreenshotAltTabBar.png)
-![Screenshot](SnapbarFlyout.png)
+![Screenshot](ScreenshotAltTabBar.png)MMMM M
 ![Screenshot](SnapLayout.png)
 ![Screenshot](ScreenshotBrightnessFlyout.png)
 ![Screenshot](VolumeFlyout.png)
