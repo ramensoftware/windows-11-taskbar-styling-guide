@@ -10,13 +10,19 @@ This theme is meant as a fairly vanilla implementation of a dock-like taskbar. I
 
 ### Suggested Windows settings
 
-- Set taskbar alignment to center
+- Choose Left or Center for taskbar icon alignment in Windows settings; the dock follows that setting automatically
 - Hide the widgets button
 - If you have another clock, for example from a Rainmeter skin or an application like ElevenClock, you can hide the taskbar clock in Windows date & time settings
 
-### Left align the taskbar (tweak)
+### Taskbar alignment
 
-Do not use the Windows taskbar setting to left align. Instead, add the following control styles:
+Change **Taskbar icon alignment** in Windows settings to switch the dock between Left and Center.
+
+The theme detects alignment from the Start button's native padding, using the difference between its panel width and its inner grid width. This has been tested with the default and small taskbar sizes. Customizations that replace the Start button template or override these widths or padding can interfere with detection. If the native layout changes in a future Windows build, the detection may need updating.
+
+### Force left alignment (tweak)
+
+To keep the dock on the left independently of the Windows setting, add the following control styles:
 
 Target:
 ```
@@ -138,8 +144,16 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - HorizontalAlignment=Center
-      - Margin=250,0,250,0
+      - HorizontalAlignment={{taskbarDock==`vertical`?skip():DockNativeAlignment==`Left`?`Left`:`Center`}}
+      - Margin={{taskbarDock==`vertical`?skip():DockNativeAlignment==`Left`?0:250}},0,250,0
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Width=>DockStartWidth
+      - Tag={{taskbarDock==`vertical`?skip():DockStartWidth==``?`Center`:DockStartInnerWidth==``?`Center`:DockStartInnerWidth<=0?`Center`:DockStartWidth-DockStartInnerWidth>8?`Left`:`Center`}}
+      - Tag=>DockNativeAlignment
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid[1]
+    styles:
+      - ActualWidth=>DockStartInnerWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.8" FallbackColor="{ThemeResource SystemChromeLowColor}" />
