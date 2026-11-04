@@ -177,11 +177,6 @@ Replace `<color>` with the desired color. See [colors section](#colors) for all
 options (e.g. if you want blurred background effect).
 
 > [!NOTE]
-> There's a known limitation with `AcrylicBrush` which only works if there's a
-> single taskbar. For details, refer to [Acrylic effect as
-> color](#acrylic-effect-as-color).
-
-> [!NOTE]
 > For some themes, a different target has to be used to customize the taskbar
 > background:
 > * The [WinXP](Themes/WinXP/README.md) theme spans the taskbar border over the
@@ -762,16 +757,17 @@ Fill:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpaci
 
 ### WindhawkBlur effect as color
 
-An alternative to Acrylic is the mod's own blur implementation called `WindhawkBlur`. It differs from Acrylic because it has a customizable blur radius and has fewer bugs (e.g. https://github.com/ramensoftware/windhawk-mods/issues/742).
+An alternative to Acrylic is the mod's own blur implementation called `WindhawkBlur`. It differs from Acrylic in that its blur radius, saturation and noise are customizable, and it keeps blurring when battery saver is on or transparency effects are off, unless `FallbackColor` is set.
 
 > [!NOTE]
-> WindhawkBlur does not currently support color names (e.g. `Red`) or the `FallbackColor` property.
+> WindhawkBlur does not currently support color names (e.g. `Red`).
 
 - `BlurAmount`: Radius of blur effect (set to 30 to mimic Acrylic).
 - `TintLuminosityOpacity`: Shifts pixel luminance towards the tint color's luminance. Range: 0.0 to 1.0.
 - `TintSaturation`: Controls the saturation of the blurred content. 1.0 is unchanged, 0.0 is fully desaturated (grayscale).
 - `NoiseOpacity`: Adds a procedural noise texture overlay. Controls how visible the noise is (0.0 to 1.0).
 - `NoiseDensity`: Controls the granularity of the noise texture (defaults to 1.0).
+- `FallbackColor`: Color used in place of the blur effect when battery saver is on or when transparency effects are disabled in the system settings. Accepts a hex color or a `ThemeResource`. If omitted, the blur effect is used regardless of those settings.
 
 #### Hex color
 
