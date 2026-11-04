@@ -13,37 +13,59 @@
   * [Taskbar background](#taskbar-background)
   * [Taskbar border](#taskbar-border)
   * [Thumbnail preview background](#thumbnail-preview-background)
+  * [Thumbnail preview frame](#thumbnail-preview-frame)
+  * [Thumbnail preview items](#thumbnail-preview-items)
+  * [Text color](#text-color)
+  * [Context menus](#context-menus)
+  * [Tooltips](#tooltips)
   * [Tasklist + System tray grouped alignment](#Tasklist--System-tray-grouped-alignment)
 * [Task list](#task-list)
   * [Start button image](#start-button-image)
   * [Hide the start button](#hide-the-start-button)
   * [Task list buttons size](#task-list-buttons-size)
+  * [Task list buttons background](#task-list-buttons-background)
   * [Task list buttons corner radius](#task-list-buttons-corner-radius)
   * [Task list labels](#task-list-labels)
-  * [Task list labels font](#task-list-labels-font)
+  * [Task list labels font and color](#task-list-labels-font-and-color)
   * [Task list running indicator](#task-list-running-indicator)
+  * [Multi-window indicator](#multi-window-indicator)
+  * [Progress bar](#progress-bar)
+* [Search box](#search-box)
+  * [Search box background](#search-box-background)
+  * [Search box text](#search-box-text)
+  * [Hide the search box image](#hide-the-search-box-image)
+* [Widgets](#widgets)
+  * [Widgets button background](#widgets-button-background)
+  * [Widgets button size and content](#widgets-button-size-and-content)
 * [Notification area (system tray)](#notification-area-system-tray)
+  * [System tray background](#system-tray-background)
+  * [Tray buttons hover background](#tray-buttons-hover-background)
   * [Tray overflow background](#tray-overflow-background)
   * [Tray icons size](#tray-icons-size)
   * [Tray icons size (system icons)](#tray-icons-size-system-icons)
   * [Tray icons spacing](#tray-icons-spacing)
-  * [Tray icons padding](#tray-icons-padding)
-  * [Tray icons padding (system icons)](#tray-icons-padding-system-icons)
   * [Hide the network icon](#hide-the-network-icon)
   * [Hide the volume icon](#hide-the-volume-icon)
-  * [Chevron icon width](#chevron-icon-width)
+  * [Hide the battery icon](#hide-the-battery-icon)
+  * [Chevron icon](#chevron-icon)
   * [Clock](#clock)
+  * [Language indicator](#language-indicator)
   * [Hide the notification bell icon](#hide-the-notification-bell-icon)
-  * [Copilot button image](#copilot-button-image)
+  * ["Show Desktop" line](#show-desktop-line)
   * [Hide the "Show Desktop" button](#hide-the-show-desktop-button)
   * [Hide the entire system tray](#hide-the-entire-system-tray)
 * [Alt+Tab](#alttab)
   * [Alt+Tab background](#alttab-background)
 * [Task view](#task-view)
   * [Task view background](#task-view-background)
-  * [Hide virtual desktops](#hide-virtual-desktops)
+  * [Virtual desktops bar](#virtual-desktops-bar)
 * [Volume popup](#volume-popup)
+  * [Volume popup background](#volume-popup-background)
   * [Slider thickness](#slider-thickness)
+* [Language popup](#language-popup)
+  * [Language popup background](#language-popup-background)
+* [Snap layout popups](#snap-layout-popups)
+  * [Snap layout popups background](#snap-layout-popups-background)
 * [Transforms](#transforms)
   * [Translate](#translate)
   * [Rotate](#rotate)
@@ -208,6 +230,119 @@ Style:
 Fill=<color>
 ```
 
+### Thumbnail preview frame
+
+To also set the corner radius and the border of the thumbnail preview, make its
+default background transparent and style the frame instead.
+
+Target:
+```
+Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
+```
+Style:
+```
+Fill=Transparent
+```
+Target:
+```
+Border#HoverFlyoutBackground
+```
+Styles:
+```
+Background=<color>
+```
+```
+BorderBrush=<color>
+```
+```
+BorderThickness=<thickness>
+```
+```
+CornerRadius=<radius>
+```
+
+### Thumbnail preview items
+
+The highlight of a window's thumbnail in the thumbnail preview.
+
+Target:
+```
+Taskbar.TaskItemThumbnailView > Grid@CommonStates > Border#BackgroundBorder
+```
+Styles:
+```
+Background@PointerOver=<color>
+```
+```
+CornerRadius=<radius>
+```
+
+### Text color
+
+Targets:
+* Task list labels: `TextBlock#LabelControl`
+* Clock: `TextBlock#TimeInnerTextBlock`, `TextBlock#DateInnerTextBlock`
+* System tray icons: `SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock`
+* Language indicator: `SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock`
+* Battery level: `TextBlock#BatteryTextBlock`
+* Search box: `TextBlock#SearchBoxTextBlock`
+* Thumbnail preview titles: `TextBlock#DisplayNameTextBlock`
+* Alt+Tab window titles: `TextBlock#DisplayName`
+* Volume popup level: `TextBlock#volumeLevelText`
+
+Style:
+```
+Foreground=<color>
+```
+
+### Context menus
+
+Target:
+```
+MenuFlyoutPresenter
+```
+Style:
+```
+CornerRadius=<radius>
+```
+Target:
+```
+MenuFlyoutPresenter > Border
+```
+Styles:
+```
+Background=<color>
+```
+```
+BorderBrush=<color>
+```
+```
+BorderThickness=<thickness>
+```
+```
+CornerRadius=<radius>
+```
+
+### Tooltips
+
+Target:
+```
+ToolTip > ContentPresenter#LayoutRoot
+```
+Styles:
+```
+Background=<color>
+```
+```
+BorderBrush=<color>
+```
+```
+BorderThickness=<thickness>
+```
+```
+CornerRadius=<radius>
+```
+
 ### Tasklist + System tray grouped alignment
 **Original Author**: [CryptoProgenitor](https://github.com/CryptoProgenitor)
 
@@ -267,9 +402,34 @@ Replace `<image>` with your own image, a local file path or a URL, for example:
   `https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Assets/OrbWinXP.png`
   (use with `Stretch="None"`).
 
-To set a different image for each Start button state - normal, hovered, pressed -
-refer to [this
-comment](https://github.com/ramensoftware/windows-11-taskbar-styling-guide/issues/153#issuecomment-2569892017).
+To set a different image for each Start button state, replace the first target
+above with the following target and styles. The `Active` states apply while the
+Start menu is open. For an example, see the
+[Windows7](Themes/Windows7/README.md) theme.
+
+Target:
+```
+Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+```
+Styles:
+```
+Background@InactiveNormal:=<ImageBrush Stretch="Uniform" ImageSource="<image>" />
+```
+```
+Background@InactivePointerOver:=<ImageBrush Stretch="Uniform" ImageSource="<image>" />
+```
+```
+Background@InactivePressed:=<ImageBrush Stretch="Uniform" ImageSource="<image>" />
+```
+```
+Background@ActiveNormal:=<ImageBrush Stretch="Uniform" ImageSource="<image>" />
+```
+```
+Background@ActivePointerOver:=<ImageBrush Stretch="Uniform" ImageSource="<image>" />
+```
+```
+Background@ActivePressed:=<ImageBrush Stretch="Uniform" ImageSource="<image>" />
+```
 
 ### Hide the start button
 
@@ -287,6 +447,49 @@ Visibility=Collapsed
 Use the [Taskbar height and icon
 size](https://windhawk.net/mods/taskbar-icon-size) mod.
 
+### Task list buttons background
+
+Target for running apps:
+```
+Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
+```
+Target for the Start, Task view and Widgets buttons:
+```
+Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+```
+Styles:
+```
+Background=<color>
+```
+```
+Background@InactivePointerOver=<color>
+```
+```
+Background@ActiveNormal=<color>
+```
+```
+CornerRadius=<radius>
+```
+
+See [colors section](#colors) for all color options.
+
+The following visual states[^1] can be used:
+* `InactiveNormal`
+* `InactivePointerOver`
+* `InactivePressed`
+* `ActiveNormal`
+* `ActivePointerOver`
+* `ActivePressed`
+
+The following visual states can only be used for running apps:
+* `MultiWindowNormal`
+* `MultiWindowActive`
+* `MultiWindowPointerOver`
+* `MultiWindowPressed`
+* `RequestingAttention`
+* `RequestingAttentionPointerOver`
+* `RequestingAttentionPressed`
+
 ### Task list buttons corner radius
 
 Targets:
@@ -294,10 +497,10 @@ Targets:
 Taskbar.ExperienceToggleButton
 ```
 ```
-Taskbar.SearchBoxButton
-```
-```
 Taskbar.TaskListButton
+```
+```
+SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
 ```
 Style:
 ```
@@ -312,15 +515,18 @@ more rounded. Default: 4.
 Various task list label customizations are available in the [Taskbar Labels for
 Windows 11](https://windhawk.net/mods/taskbar-labels) mod.
 
-### Task list labels font
+### Task list labels font and color
 
 Target:
 ```
 TextBlock#LabelControl
 ```
-Style:
+Styles:
 ```
 FontFamily=<font>
+```
+```
+Foreground=<color>
 ```
 
 Replace `<font>` with the desired font. For a list of fonts that are shipped
@@ -361,7 +567,232 @@ The following visual states[^1] can be used:
 Some customizations for the running indicator are available in the [Taskbar
 Labels for Windows 11](https://windhawk.net/mods/taskbar-labels) mod.
 
+### Multi-window indicator
+
+The second plate behind a task list button of an app that has multiple windows.
+
+Target:
+```
+Border#MultiWindowElement
+```
+Styles:
+```
+Visibility=Collapsed
+```
+```
+Background=<color>
+```
+
+### Progress bar
+
+The progress bar of a task list button, for example during a file copy.
+
+Targets:
+```
+Rectangle#DeterminateProgressBarIndicator
+```
+```
+Rectangle#IndeterminateProgressBarIndicator, Rectangle#IndeterminateProgressBarIndicator2
+```
+```
+Rectangle#ProgressBarTrack
+```
+Style:
+```
+Fill=<color>
+```
+
+> [!WARNING]
+> Don't use `AcrylicBrush` with `Rectangle#DeterminateProgressBarIndicator`.
+> Explorer can crash when the progress of a grouped button switches to the paused
+> or error state.
+
+To change the size of the progress bar, use the following target:
+```
+Microsoft.UI.Xaml.Controls.ProgressBar#ProgressIndicator
+```
+Styles:
+```
+Width=<width>
+```
+```
+MinHeight=<height>
+```
+
+## Search box
+
+### Search box background
+
+Target:
+```
+SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Border#BackgroundElement
+```
+Styles:
+```
+Background=<color>
+```
+```
+Background@InactivePointerOver=<color>
+```
+```
+CornerRadius=<radius>
+```
+
+The following visual states[^1] can be used:
+* `InactiveNormal`
+* `InactivePointerOver`
+* `InactivePressed`
+* `ActiveNormal`
+* `ActivePointerOver`
+* `ActivePressed`
+
+The pill-shaped search button has a separate background element:
+```
+Border#SearchPillBackgroundElement
+```
+Styles:
+```
+Background=<color>
+```
+```
+BorderBrush=<color>
+```
+```
+BorderThickness=<thickness>
+```
+```
+CornerRadius=<radius>
+```
+
+### Search box text
+
+Target:
+```
+TextBlock#SearchBoxTextBlock
+```
+Styles:
+```
+Text=<text>
+```
+```
+Foreground=<color>
+```
+```
+FontFamily=<font>
+```
+```
+FontSize=<size>
+```
+
+### Hide the search box image
+
+Target:
+```
+Grid#DynamicSearchBoxGleamContainer
+```
+Style:
+```
+Visibility=Collapsed
+```
+
+## Widgets
+
+The Widgets button also shows the weather.
+
+### Widgets button background
+
+Target:
+```
+Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+```
+Styles:
+```
+Background=<color>
+```
+```
+Background@InactivePointerOver=<color>
+```
+```
+CornerRadius=<radius>
+```
+
+The visual states[^1] are the same as for the [search box
+background](#search-box-background).
+
+### Widgets button size and content
+
+Target:
+```
+Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel
+```
+Style:
+```
+MaxWidth=<width>
+```
+Target:
+```
+Grid#AugmentedEntryPointContentGrid
+```
+Styles:
+```
+HorizontalAlignment=Left
+```
+```
+Margin=<margin>
+```
+
 ## Notification area (system tray)
+
+### System tray background
+
+Target:
+```
+StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
+```
+Styles:
+```
+Background=<color>
+```
+```
+CornerRadius=<radius>
+```
+
+### Tray buttons hover background
+
+Target for the network, volume and battery button, and for the clock and
+notifications button:
+```
+SystemTray.OmniButton > Grid@CommonStates > Border#BackgroundBorder
+```
+The following visual states[^1] can be used:
+* `PointerOver`
+* `Pressed`
+* `Checked`
+* `CheckedPointerOver`
+* `CheckedPressed`
+
+Target for the other tray icons:
+```
+SystemTray.NotifyIconView > Grid#ContainerGrid@ > Border#BackgroundBorder, SystemTray.IconView > Grid#ContainerGrid@ > Border#BackgroundBorder, SystemTray.ChevronIconView > Grid#ContainerGrid@ > Border#BackgroundBorder
+```
+The visual state group of these icons has no name, so nothing follows the `@`.
+The following visual states[^1] can be used:
+* `PointerOver`
+* `Pressed`
+* `CheckedNormal`
+* `CheckedPointerOver`
+* `CheckedPressed`
+
+Styles:
+```
+Background@PointerOver=<color>
+```
+```
+Background@Pressed=<color>
+```
+```
+CornerRadius=<radius>
+```
 
 ### Tray overflow background
 
@@ -402,13 +833,16 @@ Style:
 FontSize=<size>
 ```
 
-Replace `<size>` with the desired size. Default: 32.
+Replace `<size>` with the desired size. Default: 16.
 
 ### Tray icons spacing
 
-Target:
+Targets:
 ```
 SystemTray.NotifyIconView#NotifyItemIcon
+```
+```
+SystemTray.ChevronIconView
 ```
 Style:
 ```
@@ -418,23 +852,11 @@ MinWidth=<width>
 Replace `<width>` with the desired width for the icon and the spacing. Default:
 32.
 
-### Tray icons padding
-
-Target:
+To reduce the spacing even more, use the following targets for tray icons and
+system icons, respectively:
 ```
 SystemTray.ImageIconContent > Grid#ContainerGrid
 ```
-Style:
-```
-Padding=<padding>
-```
-
-To reduce the spacing even more, replace `<padding>` with the desired padding.
-Default: `4,0`.
-
-### Tray icons padding (system icons)
-
-Target:
 ```
 SystemTray.TextIconContent > Grid#ContainerGrid
 ```
@@ -443,47 +865,114 @@ Style:
 Padding=<padding>
 ```
 
-Replace `<padding>` with the desired padding. Default: `4,0`.
+Replace `<padding>` with the desired padding. Default: `4,4,4,4` on recent
+Windows 11 builds, older builds use smaller values.
 
 ### Hide the network icon
 
 Target:
 ```
-SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
+SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[1] > SystemTray.IconView > Grid > Grid, SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > WrapGrid > ContentPresenter[1] > SystemTray.IconView > Grid > Grid
 ```
 Style:
 ```
 Visibility=Collapsed
 ```
+
+The `StackPanel` part of the target applies to a horizontal taskbar, and the
+`WrapGrid` part applies to a vertical taskbar.
 
 ### Hide the volume icon
 
 Target:
 ```
-SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[2] > SystemTray.IconView > Grid > Grid
+SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[2] > SystemTray.IconView > Grid > Grid, SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > WrapGrid > ContentPresenter[2] > SystemTray.IconView > Grid > Grid
 ```
 Style:
 ```
 Visibility=Collapsed
 ```
 
-### Chevron icon width
+### Hide the battery icon
 
 Target:
 ```
-SystemTray.ChevronIconView
+SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter[3] > SystemTray.IconView > Grid > Grid, SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter > ItemsPresenter > WrapGrid > ContentPresenter[3] > SystemTray.IconView > Grid > Grid
 ```
 Style:
 ```
-MinWidth=<width>
+Visibility=Collapsed
 ```
 
-Replace `<width>` with the desired width. Default: 32.
+### Chevron icon
+
+Target:
+```
+SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+```
+Style:
+```
+Text:=&#xED14;
+```
+
+Replace `ED14` with the code of the desired glyph from the [Segoe Fluent
+Icons](https://learn.microsoft.com/en-us/windows/apps/design/style/segoe-fluent-icons-font)
+font. To change the chevron's width, see [Tray icons
+spacing](#tray-icons-spacing).
 
 ### Clock
 
 Clock customizations are available in the [Taskbar Clock
 Customization](https://windhawk.net/mods/taskbar-clock-customization) mod.
+
+The time and the date can also be styled directly.
+
+Targets:
+```
+TextBlock#TimeInnerTextBlock
+```
+```
+TextBlock#DateInnerTextBlock
+```
+Styles:
+```
+Foreground=<color>
+```
+```
+FontFamily=<font>
+```
+```
+FontSize=<size>
+```
+
+To hide the date, use the following target:
+```
+TextBlock#DateInnerTextBlock
+```
+Style:
+```
+Visibility=Collapsed
+```
+
+### Language indicator
+
+Target:
+```
+SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > TextBlock#InnerTextBlock
+```
+Styles:
+```
+Foreground=<color>
+```
+```
+FontFamily=<font>
+```
+```
+FontSize=<size>
+```
+```
+FontWeight=<weight>
+```
 
 ### Hide the notification bell icon
 
@@ -496,29 +985,39 @@ Style:
 Visibility=Collapsed
 ```
 
-### Copilot button image
+### "Show Desktop" line
+
+The thin line of the "Show Desktop" button, which is visible when hovering over
+the button.
 
 Target:
 ```
-ContentPresenter#ContentPresenter > Grid#ContentGrid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#LottieIcon
+Grid#ContainerGrid@ > Rectangle#ShowDesktopPipe
 ```
-Style:
+Styles:
 ```
-Visibility=Collapsed
+Fill@PointerOver=<color>
 ```
-Target:
 ```
-SystemTray.CopilotIcon#CopilotIcon > Grid#ContainerGrid > Border#BackgroundBorder
+Width=<width>
 ```
-Style:
 ```
-Background:=<ImageBrush Stretch="None" ImageSource="<image>" />
+Height=<height>
 ```
 
-* Copilot icon without preview label:
-  `https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Assets/CopilotWithoutPreview.png`.
-* Old Copilot icon:
-  `https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Assets/CopilotOld.png`.
+To let the line take up the whole button, add the following styles:
+```
+Grid.Row=0
+```
+```
+Grid.RowSpan=3
+```
+```
+Grid.Column=0
+```
+```
+Grid.ColumnSpan=3
+```
 
 ### Hide the "Show Desktop" button
 
@@ -582,18 +1081,65 @@ Style:
 ```
 Background=<color>
 ```
-### Hide virtual desktops
 
-Target:
+### Virtual desktops bar
+
+Targets:
 ```
-WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
+Border#VirtualDesktopBarBackground
 ```
-Style:
 ```
-Visibility=Collapsed
+WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid#GridElement > Border#VirtualDesktopSwitcherBackground
+```
+Styles:
+```
+Background=<color>
+```
+```
+BorderBrush=<color>
+```
+```
+BorderThickness=<thickness>
+```
+```
+CornerRadius=<radius>
+```
+
+To style the desktops in the bar, use the following target:
+```
+WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#MainBorder
+```
+Styles:
+```
+Background=<color>
+```
+```
+CornerRadius=<radius>
 ```
 
 ## Volume popup
+
+### Volume popup background
+
+The brightness popup uses the same element.
+
+Target:
+```
+Grid#ConfirmatorMainGrid
+```
+Styles:
+```
+Background=<color>
+```
+```
+BorderBrush=<color>
+```
+```
+BorderThickness=<thickness>
+```
+```
+CornerRadius=<radius>
+```
 
 ### Slider thickness
 
@@ -605,6 +1151,69 @@ Style:
 ```
 Height=<value>
 ```
+
+## Language popup
+
+### Language popup background
+
+Target:
+```
+WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
+```
+Styles:
+```
+Background=<color>
+```
+```
+BorderBrush=<color>
+```
+```
+BorderThickness=<thickness>
+```
+```
+CornerRadius=<radius>
+```
+Target:
+```
+WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
+```
+Styles:
+```
+Background=Transparent
+```
+```
+BorderBrush=Transparent
+```
+
+## Snap layout popups
+
+### Snap layout popups background
+
+The first target is for the popup that appears when hovering over a window's
+maximize button, and the second target is for the popup that appears when moving
+a window to the top of the screen.
+
+Targets:
+```
+Border#SnapPickerBorder
+```
+```
+Border#SnapBarBorder
+```
+Styles:
+```
+Background=<color>
+```
+```
+BorderBrush=<color>
+```
+```
+BorderThickness=<thickness>
+```
+```
+CornerRadius=<radius>
+```
+
 ## Transforms
 
 You can use transformation styles to translate, rotate, scale, or skew elements.
