@@ -257,7 +257,7 @@ Set the style constant `MenuAnimation` to `False`.
 
 Edit this Style constant: `FadeSpeed`. Its value is a duration in `hours:minutes:seconds` format.
 
-Default value: `0:0:0.200` (200 milliseconds)
+**Default value:** `0:0:0.200` (200 milliseconds)
 
 </details>
 
