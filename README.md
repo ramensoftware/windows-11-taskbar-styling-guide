@@ -745,15 +745,6 @@ Fill=Transparent
 
 ### Acrylic effect as color
 
-> [!NOTE]
-> There's [a known
-> limitation](https://github.com/ramensoftware/windhawk-mods/issues/742) with
-> `AcrylicBrush` which only works if there's a single taskbar. The following
-> workarounds are available for multiple taskbars:
-> * Use `WindhawkBlur` instead of `AcrylicBrush`.
-> * Use a transparent background together with the [Taskbar Background
-Helper](https://windhawk.net/mods/taskbar-background-helper) mod.
-
 In order to have an acrylic effect (a blurred background), you can use
 `AcrylicBrush`. It comes with `TintOpacity`, which defines how much of the color
 needs to be applied.
