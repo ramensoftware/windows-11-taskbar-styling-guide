@@ -143,25 +143,17 @@ The theme changes the following things:
 
 ## Guides
 
-### Clear Background Guide
+### Custom Background
 
 <details>
 <summary>(Click to expand guide)</summary>
 
-To customize the background, locate one of these lines depending on your version:
+Edit this Style constant: `lumiBackground`
 
-Locate this style constant:
+**Default value:**
 
 ```yaml
   - lumiBackground=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="1.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
-```
-
-`TintLuminosityOpacity`: Lowering this value makes it clearer. Range: `0.0` to `1.0`.
-
-**Or** simply replace the full constant with:
-
-```
-  - lumiBackground=<WindhawkBlur BlurAmount="30" TintColor="{ThemeResource CardStrokeColorDefaultSolid}" TintOpacity="0.0" TintLuminosityOpacity="0.0" TintSaturation="1.0" NoiseDensity="1.0" NoiseOpacity="0.1" />
 ```
 
 </details>
@@ -173,11 +165,9 @@ Locate this style constant:
 <details>
 <summary>(Click to expand guide)</summary>
 
-The dock's width changes depending on your **screen resolution** using **horizontal margins**. If you want a custom width, follow this guide.
+The dock's width changes depending on your **screen resolution** using **horizontal margins**.
 
-Locate and edit this `styleConstants` value:
-
-`DockMargin=250`
+Edit this Style constant: `DockMargin=250`
 
 This controls the main dock width. The system tray uses the same value, so it
 stays aligned with the dock's right edge.
@@ -186,6 +176,7 @@ stays aligned with the dock's right edge.
 - Larger value = narrower dock
 
 Example: `DockMargin=5` for a **full length dock** (corner to corner).
+
 </details>
 
 <br>
@@ -195,12 +186,13 @@ Example: `DockMargin=5` for a **full length dock** (corner to corner).
 <details>
 <summary>(Click to expand guide)</summary>
 
-Set the following style constants to these values:
+Set the following Style constants to these values:
 
 ```yaml
   - DockHeight=53
   - DockTopGap=0
 ```
+
 </details>
 
 <br>
@@ -210,7 +202,9 @@ Set the following style constants to these values:
 <details>
 <summary>Click to expand guide</summary>
 
-When using **Left Taskbar Alignment** with Widget, remove the **minus sign** (`-`) from `WidgetGap=-`.
+Edit this Style constant: `WidgetGap=-`
+
+When using **Left Taskbar Alignment** with the Widget, remove the **minus sign** (`-`) from its value.
 
 Like this: `WidgetGap=`
 
@@ -225,11 +219,11 @@ Like this: `WidgetGap=`
 <details>
 <summary>Click to expand guide</summary>
 
-You can edit the `DockHeight` constant's value.
+Edit this Style constant: `DockHeight`
 
-Default value: `58`
+**Default value:** `58`
 
-Removing the last target allows external mods to change the height:
+To allow external mods to control the taskbar height, remove the following target:
 
 ```yaml
   - target: Taskbar.TaskbarFrame
@@ -237,13 +231,22 @@ Removing the last target allows external mods to change the height:
       - Height={{taskbarDock==`vertical`?skip():$DockHeight}}
 ```
 
+Alternatively, set `Height` to `{{skip()}}`.
+
 </details>
 
 <br>
 
-### Faster Right-Click Menu (Disable Animation)
+### Faster Right-Click Menu Animation
 
-Set style constant `MenuAnimation` from `True` to `False`.
+<details>
+<summary>(Click to expand guide)</summary>
+
+**Note:** This doesn't fully disable all menu animations.
+
+Set the style constant `MenuAnimation` to `False`.
+
+</details>
 
 <br>
 
@@ -252,7 +255,7 @@ Set style constant `MenuAnimation` from `True` to `False`.
 <details>
 <summary>(Click to expand guide)</summary>
 
-You can edit the `FadeSpeed` constant's value. Its value is a duration in `hours:minutes:seconds` format.
+Edit this Style constant: `FadeSpeed` constant's value. Its value is a duration in `hours:minutes:seconds` format.
 
 Default value: `0:0:0.200` (200 milliseconds)
 
@@ -260,21 +263,22 @@ Default value: `0:0:0.200` (200 milliseconds)
 
 <br>
 
-### Disable Alt+Tab Animations
+### Remove Alt+Tab Animation
 
 <details>
 <summary>(Click to expand guide)</summary>
 
-Remove target below to remove Alt+Tab entrance animation:
+To remove the Alt+Tab entrance animation, remove the following target:
 
 ```yaml
-# Alt+Tab Entrance Animation
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab
     styles:
       - Transitions:=<TransitionCollection><AddDeleteThemeTransition /><EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="0" /></TransitionCollection>
 ```
-[a](#disable-alttab-animations)
-</details> 
+
+Alternatively, set `Transitions` to `{{skip()}}`.
+
+</details>
 
 <br>
 
