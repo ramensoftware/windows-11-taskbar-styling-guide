@@ -3,15 +3,21 @@
 ## Table of contents
 
 * [Introduction](#introduction)
+  * [Using the styles in this guide](#using-the-styles-in-this-guide)
   * [Supported components](#supported-components)
   * [Finding targets](#finding-targets)
+  * [Troubleshooting](#troubleshooting)
+  * [Known limitations](#known-limitations)
   * [Missing customizations](#missing-customizations)
   * [Contributing](#contributing)
 * [Themes](#themes)
+  * [Customizing a theme](#customizing-a-theme)
 * [General](#general)
   * [Taskbar size](#taskbar-size)
   * [Taskbar background](#taskbar-background)
+  * [Taskbar background for maximized windows](#taskbar-background-for-maximized-windows)
   * [Taskbar border](#taskbar-border)
+  * [Click-through taskbar](#click-through-taskbar)
   * [Thumbnail preview background](#thumbnail-preview-background)
   * [Thumbnail preview frame](#thumbnail-preview-frame)
   * [Thumbnail preview items](#thumbnail-preview-items)
@@ -22,6 +28,7 @@
 * [Task list](#task-list)
   * [Start button image](#start-button-image)
   * [Hide the start button](#hide-the-start-button)
+  * [Start button position](#start-button-position)
   * [Task list buttons size](#task-list-buttons-size)
   * [Task list buttons background](#task-list-buttons-background)
   * [Task list buttons corner radius](#task-list-buttons-corner-radius)
@@ -47,6 +54,9 @@
   * [Hide the network icon](#hide-the-network-icon)
   * [Hide the volume icon](#hide-the-volume-icon)
   * [Hide the battery icon](#hide-the-battery-icon)
+  * [Hide the microphone and location icons](#hide-the-microphone-and-location-icons)
+  * [Hide the language indicator](#hide-the-language-indicator)
+  * [Hide the chevron icon](#hide-the-chevron-icon)
   * [Chevron icon](#chevron-icon)
   * [Clock](#clock)
   * [Language indicator](#language-indicator)
@@ -54,11 +64,13 @@
   * ["Show Desktop" line](#show-desktop-line)
   * [Hide the "Show Desktop" button](#hide-the-show-desktop-button)
   * [Hide the entire system tray](#hide-the-entire-system-tray)
+  * [Notification Center and quick settings position](#notification-center-and-quick-settings-position)
 * [Alt+Tab](#alttab)
   * [Alt+Tab background](#alttab-background)
 * [Task view](#task-view)
   * [Task view background](#task-view-background)
   * [Virtual desktops bar](#virtual-desktops-bar)
+  * [Hide virtual desktops](#hide-virtual-desktops)
 * [Volume popup](#volume-popup)
   * [Volume popup background](#volume-popup-background)
   * [Slider thickness](#slider-thickness)
@@ -75,6 +87,7 @@
 * [Colors](#colors)
   * [Solid color](#solid-color)
   * [Accent colors](#accent-colors)
+  * [Light and dark mode colors](#light-and-dark-mode-colors)
   * [Transparent color](#transparent-color)
   * [Acrylic effect as color](#acrylic-effect-as-color)
   * [WindhawkBlur effect as color](#windhawkblur-effect-as-color)
@@ -105,6 +118,38 @@ guide](https://github.com/ramensoftware/windows-11-start-menu-styling-guide/blob
 [The Windows 11 notification center styling
 guide](https://github.com/ramensoftware/windows-11-notification-center-styling-guide/blob/main/README.md).
 
+### Using the styles in this guide
+
+Each customization below lists a target and one or more styles. To apply it:
+
+* Open the mod's Settings tab and go to **Control styles**.
+* Enter the target under **Target** and the style under **Styles**. Use **Add new
+  item** to add more styles or targets.
+* Click **Save settings**.
+
+You can also select **Textual mode** in the Settings tab and use this format:
+
+```yaml
+controlStyles:
+  - target: Rectangle#BackgroundStroke
+    styles:
+      - Visibility=Collapsed
+```
+
+If a style has no effect, check the following:
+
+* Placeholders such as `<color>` are replaced together with their angle brackets,
+  for example `Fill=Red`. For an image, the result looks like
+  `ImageSource="C:\images\start.png"`.
+* Styles are written as `Style=Value`, with no quotes around the value, for
+  example `FontFamily=Segoe UI`.
+* `Fill` only applies to `Rectangle` targets. For other targets, use `Background`.
+* A visual state in a style, such as `Background@InactivePointerOver`, requires
+  the target to name its visual state group, such as `@CommonStates`. A target can
+  name only one group.
+* The settings JSON in the mod's Advanced tab requires quotes and backslashes to
+  be escaped, and isn't meant to be edited by hand.
+
 ### Supported components
 
 As of version 1.5 of Windows 11 Taskbar Styler, the following components can be styled along with the taskbar:
@@ -117,6 +162,36 @@ As of version 1.5 of Windows 11 Taskbar Styler, the following components can be 
 ### Finding targets
 
 [How to find targets using UWPSpy](https://github.com/bbmaster123/FWFU/blob/main/Guides/uwpspy.md).
+
+### Troubleshooting
+
+If the styles have no effect at all, try the following:
+
+* Restart Explorer, for example from Task Manager. This usually fixes [error
+  8000FFFF](https://github.com/ramensoftware/windhawk-mods/issues/1192).
+* Check your Windows version. The Windows 10 taskbar isn't supported, and the mod
+  often doesn't work on Windows 11 version 21H2.
+* Disable other tools that customize the taskbar, such as ExplorerPatcher,
+  StartAllBack, Start11 or TranslucentTB, to check whether they conflict with the
+  mod.
+* If the problem remains, collect debug logs by following the [Windhawk
+  troubleshooting
+  page](https://github.com/ramensoftware/windhawk/wiki/Troubleshooting#some-or-all-windhawk-mods-dont-work),
+  and include them when you open an issue.
+
+### Known limitations
+
+Some things can't be done with styles alone:
+
+* Styling the taskbar of a specific monitor. There's no general way to do it, so
+  styles apply to the taskbars of all monitors.
+* Matching the taskbar color to the active window. To change the taskbar
+  background when a window is maximized, see [Taskbar background for maximized
+  windows](#taskbar-background-for-maximized-windows).
+* Making all icons monochrome. Icons can only be replaced one at a time.
+* Keeping the Start button animation with a custom image. The animation is part of
+  the original icon.
+* Tiling a background image, which `ImageBrush` doesn't support on the taskbar.
 
 ### Missing customizations
 
@@ -176,6 +251,21 @@ Taskbar Styler mod. The following themes are available:
 | [Minecraft Hotbar](Themes/Minecraft%20Hotbar/README.md) | [![Minecraft Hotbar](Themes/Minecraft%20Hotbar/screenshot.png)](Themes/Minecraft%20Hotbar/screenshot.png)
 | [One UI 8.5](Themes/One%20UI%208.5/README.md) | [![One UI 8.5](Themes/One%20UI%208.5/screenshot.png)](Themes/One%20UI%208.5/screenshot.png)
 
+### Customizing a theme
+
+A theme can be customized in the following ways:
+
+* **Style constants**: Many themes define constants for values such as colors and
+  sizes. Find them under `styleConstants` on the theme's page, and set the ones you
+  want to change under **Style constants** in the mod's settings, for example
+  `DockBackground=<SolidColorBrush Color="#80000000" />`.
+* **Control styles**: Keep the theme selected and add your own targets and styles
+  under **Control styles**. They're applied after the theme's styles, so they can
+  override them. A theme might not use the targets listed in this guide, so check
+  which targets it uses on its page.
+* **Manual installation**: Follow the manual installation steps on the theme's
+  page to import its styles into the mod's settings, then edit them directly.
+
 ## General
 
 ### Taskbar size
@@ -199,14 +289,28 @@ Replace `<color>` with the desired color. See [colors section](#colors) for all
 options (e.g. if you want blurred background effect).
 
 > [!NOTE]
-> For some themes, a different target has to be used to customize the taskbar
+> For some themes, a different approach has to be used to customize the taskbar
 > background:
 > * The [WinXP](Themes/WinXP/README.md) theme spans the taskbar border over the
 >   full taskbar height. To customize the background, use the
 >   `Rectangle#BackgroundStroke` target.
-> * The [DockLike](Themes/DockLike/README.md) theme hides the standard taskbar
->   background element. To customize the background, use the `Grid#RootGrid`
->   target and the `Background=<color>` style.
+> * The following themes set the background with a [style
+>   constant](#customizing-a-theme) that also applies to other parts of the theme:
+>   * [DockLike](Themes/DockLike/README.md): `DockBackground`
+>   * [Luminosity](Themes/Luminosity/README.md): `lumiBackground`
+>   * [FrostyGlass](Themes/FrostyGlass/README.md): `Background`
+>   * [LiquidGlass (Legacy)](Themes/LiquidGlass/README.md): `Background`
+
+### Taskbar background for maximized windows
+
+To fill the transparent parts of the taskbar when there's a maximized window, use
+the [Taskbar Background
+Helper](https://windhawk.net/mods/taskbar-background-helper) mod.
+
+To let maximized windows extend under the taskbar, turn on taskbar auto-hide in the
+Windows settings, and use the [Taskbar auto-hide when
+maximized](https://windhawk.net/mods/taskbar-auto-hide-when-maximized) mod with its
+mode set to **Never auto-hide**.
 
 ### Taskbar border
 
@@ -217,6 +321,17 @@ Rectangle#BackgroundStroke
 
 It can be customized in the same way as the background, see [Taskbar
 background](#taskbar-background).
+
+To remove the border, use the following style:
+```
+Visibility=Collapsed
+```
+
+### Click-through taskbar
+
+To make the empty parts of the taskbar click-through, enable the **Click-through
+taskbar** option in the mod's settings. This is mainly useful for dock themes such
+as [DockLike](Themes/DockLike/README.md).
 
 ### Thumbnail preview background
 
@@ -442,6 +557,12 @@ Style:
 Visibility=Collapsed
 ```
 
+### Start button position
+
+To keep the Start button on the left while the taskbar icons are centered, use the
+[Start button always on the
+left](https://windhawk.net/mods/taskbar-start-button-position) mod.
+
 ### Task list buttons size
 
 Use the [Taskbar height and icon
@@ -526,6 +647,9 @@ Styles:
 FontFamily=<font>
 ```
 ```
+FontWeight=<weight>
+```
+```
 Foreground=<color>
 ```
 
@@ -563,6 +687,15 @@ The following visual states[^1] can be used:
 * `ActiveRunningIndicator`
 * `InactiveRunningIndicator`
 * `RequestingAttentionRunningIndicator`
+* `NoRunningIndicator`
+
+To move the running indicator, use a [transform](#transforms), for example:
+```
+RenderTransform:=<TranslateTransform Y="1" />
+```
+
+Don't use `Margin` for this, since the taskbar adjusts the indicator's margin to
+position it.
 
 Some customizations for the running indicator are available in the [Taskbar
 Labels for Windows 11](https://windhawk.net/mods/taskbar-labels) mod.
@@ -743,6 +876,11 @@ Margin=<margin>
 
 ## Notification area (system tray)
 
+The [Taskbar tray system icon
+tweaks](https://windhawk.net/mods/taskbar-tray-system-icon-tweaks) mod can also
+hide system icons such as volume, network, battery, microphone, location and the
+language bar.
+
 ### System tray background
 
 Target:
@@ -904,6 +1042,39 @@ Style:
 Visibility=Collapsed
 ```
 
+### Hide the microphone and location icons
+
+Target:
+```
+SystemTray.Stack#MainStack
+```
+Style:
+```
+Visibility=Collapsed
+```
+
+### Hide the language indicator
+
+Target:
+```
+SystemTray.Stack#NonActivatableStack
+```
+Style:
+```
+Visibility=Collapsed
+```
+
+### Hide the chevron icon
+
+Target:
+```
+SystemTray.Stack#NotifyIconStack
+```
+Style:
+```
+Visibility=Collapsed
+```
+
 ### Chevron icon
 
 Target:
@@ -1019,6 +1190,10 @@ Grid.Column=0
 Grid.ColumnSpan=3
 ```
 
+The "Show Desktop" button can't be moved outside of the system tray. If a theme
+leaves a gap between the button and the corner of the screen, extend the system
+tray to the edge of the screen instead.
+
 ### Hide the "Show Desktop" button
 
 Target:
@@ -1043,6 +1218,11 @@ MaxWidth=0
 
 > [!NOTE]
 > `Visibility=Collapsed` isn't used here because on recent Windows 11 versions it crashes Explorer if it's applied when Explorer starts.
+
+### Notification Center and quick settings position
+
+Use the [Shell Flyout Positions](https://windhawk.net/mods/shell-flyout-positions)
+mod.
 
 ## Alt+Tab
 
@@ -1115,6 +1295,17 @@ Background=<color>
 ```
 ```
 CornerRadius=<radius>
+```
+
+### Hide virtual desktops
+
+Target:
+```
+WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement#VirtualDesktopBar
+```
+Style:
+```
+Visibility=Collapsed
 ```
 
 ## Volume popup
@@ -1339,6 +1530,24 @@ for all variations.
 Fill:=<SolidColorBrush Color="{ThemeResource SystemAccentColorDark2}" Opacity="0.5" />
 ```
 
+### Light and dark mode colors
+
+To use different colors in light and dark mode, define a theme-aware resource under
+**Resource variables** in the mod's settings:
+
+```
+MyColor@Dark=#18181B
+```
+```
+MyColor@Light=#E5E7EB
+```
+
+Then use it in a style:
+
+```
+Fill:=<SolidColorBrush Color="{ThemeResource MyColor}" />
+```
+
 ### Transparent color
 
 To have a fully transparent background, use the following style:
@@ -1363,6 +1572,15 @@ look that fits the current theme.
 ```
 Fill:=<AcrylicBrush TintColor="{ThemeResource SystemAccentColorDark2}" TintOpacity="0.3" />
 ```
+
+> [!NOTE]
+> Acrylic requires transparency effects to be turned on in the Windows settings,
+> under Personalization > Colors, and doesn't apply when battery saver is on. In
+> these cases `FallbackColor` is used instead, and without it the element is
+> invisible:
+> ```
+> Fill:=<AcrylicBrush TintColor="Black" TintOpacity="0.8" FallbackColor="#202020" />
+> ```
 
 ### WindhawkBlur effect as color
 
@@ -1426,5 +1644,11 @@ Fill:=<ImageBrush Stretch="UniformToFill" ImageSource="<image>" />
 ```
 
 Replace `<image>` with your own image, a URL or a local file path.
+
+> [!NOTE]
+> An image URL needs an internet connection when the image is loaded, for example
+> when Explorer starts. To avoid this, download the image and use a local file
+> path. For a theme that uses online images, follow the manual installation steps
+> on its page, then replace the URLs with local paths in the mod's settings.
 
 [^1]: See [Finding targets](#finding-targets) on how to use UWPSpy to find all of the available visual states for an element
