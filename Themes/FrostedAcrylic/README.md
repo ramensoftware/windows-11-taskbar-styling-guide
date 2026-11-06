@@ -100,7 +100,6 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - MinWidth:=100
       - MaxWidth={{containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Margin=0
       - Background:=Transparent
@@ -109,7 +108,6 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Width=Auto
-      - MinWidth=100
       - HorizontalAlignment=Stretch
       - Margin=$SideMargin,2,$SideMargin,3
       - BorderThickness=$BorderThickness

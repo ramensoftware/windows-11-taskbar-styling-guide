@@ -110,7 +110,6 @@ controlStyles:
     styles:
       - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth}}
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - MinWidth:=100
       - Grid.Column=1
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
@@ -364,7 +363,6 @@ controlStyles:
       - Grid.Column=1
       - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth}}
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - MinWidth:=100
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Margin=10,2,3,2
@@ -614,7 +612,6 @@ controlStyles:
     styles:
       - //MaxWidth:=1895
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - MinWidth:=100
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Margin=10,2,10,2

@@ -217,7 +217,6 @@ controlStyles:
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - HorizontalAlignment=Center
-      - MinWidth=100
       - MaxWidth={{containerGridWidth>0?max(containerGridWidth-2*(trayWidth+50),100):`Infinity`}}
       - Grid.Column=1
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
