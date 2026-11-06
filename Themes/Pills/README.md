@@ -748,5 +748,6 @@ themeResourceVariables:
   - AdaptiveBorder@Dark =#90454545
   - AdaptiveIndicator@Light =#000000
   - AdaptiveIndicator@Dark =#FFFFFF
+  - MediumTaskbarButtonExtent=50
 ```
 </details>

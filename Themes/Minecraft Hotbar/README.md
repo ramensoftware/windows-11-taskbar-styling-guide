@@ -57,11 +57,11 @@ styleConstants:
 controlStyles:
   - target: Grid#IconPanel@CommonStates > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
-      - Margin=5.5,0,-5.5,0 
-      - Margin@ActiveNormal=9,0,-10,0
-      - Margin@ActivePointerOver=9,0,-10,0
-      - Margin@InactivePointerOver=7,0,-7,0
-      - Margin@ActivePressed=9,0,-10,0
+      - Margin=0
+      - Margin@ActiveNormal=3.5,0,-4.5,0
+      - Margin@ActivePointerOver=3.5,0,-4.5,0
+      - Margin@InactivePointerOver=1.5,0,-1.5,0
+      - Margin@ActivePressed=3.5,0,-4.5,0
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=transparent
@@ -139,8 +139,8 @@ controlStyles:
       - Width=4
       - Width@ActiveRunningIndicator=8
       - Fill@ActiveRunningIndicator=#60CDFF
-      - Margin=6,0,-6,0
-      - Margin@ActiveRunning=20,0,-20,0
+      - Margin=0.5,0,-0.5,0
+      - Margin@ActiveRunning=14.5,0,-14.5,0
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Visibility=0
@@ -401,5 +401,8 @@ controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton#TaskListButton > Grid#IconPanel > TextBlock#LabelControl, ScrollViewer > ScrollContentPresenter > Border > Grid > Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel > TextBlock#LabelControl
     styles:
       - Visibility=1
+themeResourceVariables:
+  - MediumTaskbarButtonExtent=55
+  - SmallTaskbarButtonExtent=55
 ```
 </details>

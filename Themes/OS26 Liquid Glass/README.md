@@ -128,7 +128,7 @@ controlStyles:
     styles:
       - Height=24
       - Width=24
-      - Margin=5,0,-5,0
+      - Margin=-1,0,0,0
   - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=55
@@ -454,7 +454,7 @@ controlStyles:
       - Margin=-2
       - Height=6
       - Width=6
-      - Margin=10,0,0,-2
+      - Margin=-1,0,0,-2
       - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Grid#IconPanel > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
@@ -541,6 +541,9 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
+themeResourceVariables:
+  - MediumTaskbarButtonExtent=55
+  - SmallTaskbarButtonExtent=55
 ```
 </details>
 
@@ -573,7 +576,6 @@ controlStyles:
     styles:
       - Height=24
       - Width=24
-      - Margin=3,0,-3,0
   - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=50
@@ -902,7 +904,7 @@ controlStyles:
       - Margin=-2
       - Height=4
       - Width=4
-      - Margin=8,0,0,1
+      - Margin=2,0,0,1
       - Width@ActiveRunningIndicator=8
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Grid#IconPanel > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
@@ -989,6 +991,9 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
+themeResourceVariables:
+  - MediumTaskbarButtonExtent=50
+  - SmallTaskbarButtonExtent=50
 ```
 </details>
 
@@ -1015,7 +1020,7 @@ controlStyles:
     styles:
       - Height=24
       - Width=24
-      - Margin=5,0,-5,0
+      - Margin=-1,0,0,0
   - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=55
@@ -1199,7 +1204,7 @@ controlStyles:
       - Margin=-2
       - Height=6
       - Width=6
-      - Margin=10,0,0,-2 
+      - Margin=-1,0,0,-2
       - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Grid#IconPanel > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
@@ -1307,6 +1312,9 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
+themeResourceVariables:
+  - MediumTaskbarButtonExtent=55
+  - SmallTaskbarButtonExtent=55
 ```
 </details>
 
@@ -1342,7 +1350,7 @@ controlStyles:
     styles:
       - Height=24
       - Width=24
-      - Margin=5,0,-5,0
+      - Margin=-1,0,0,0
   - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=55
@@ -1668,7 +1676,7 @@ controlStyles:
       - Margin=-2
       - Height=6
       - Width=6
-      - Margin=10,0,0,-2
+      - Margin=-1,0,0,-2
       - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Grid#IconPanel > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
@@ -1755,6 +1763,9 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
+themeResourceVariables:
+  - MediumTaskbarButtonExtent=55
+  - SmallTaskbarButtonExtent=55
 ```
 </details>
 
@@ -1787,7 +1798,6 @@ controlStyles:
     styles:
       - Height=24
       - Width=24
-      - Margin=3,0,-3,0
   - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=50
@@ -2116,7 +2126,7 @@ controlStyles:
       - Margin=-2
       - Height=4
       - Width=4
-      - Margin=8,0,0,1
+      - Margin=2,0,0,1
       - Width@ActiveRunningIndicator=8
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Grid#IconPanel > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
@@ -2203,6 +2213,9 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
+themeResourceVariables:
+  - MediumTaskbarButtonExtent=50
+  - SmallTaskbarButtonExtent=50
 ```
 </details>
 
@@ -2229,7 +2242,7 @@ controlStyles:
     styles:
       - Height=24
       - Width=24
-      - Margin=5,0,-5,0
+      - Margin=-1,0,0,0
   - target: Taskbar.TaskListButtonPanel
     styles:
       - Width=55
@@ -2414,7 +2427,7 @@ controlStyles:
       - Margin=-2
       - Height=6
       - Width=6
-      - Margin=10,0,0,-2      
+      - Margin=-1,0,0,-2
       - Width@ActiveRunningIndicator=12
       - Fill@ActiveRunningIndicator=#60CDFF
   - target: Grid#IconPanel > TextBlock#LabelControl, Taskbar.TaskListLabeledButtonPanel > TextBlock#LabelControl
@@ -2522,5 +2535,8 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
+themeResourceVariables:
+  - MediumTaskbarButtonExtent=55
+  - SmallTaskbarButtonExtent=55
 ```
 </details>

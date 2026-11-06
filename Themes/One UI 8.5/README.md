@@ -785,6 +785,8 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
+themeResourceVariables:
+  - MediumTaskbarButtonExtent=45
 ```
 </details>
 
@@ -1360,5 +1362,7 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
+themeResourceVariables:
+  - MediumTaskbarButtonExtent=45
 ```
 </details>

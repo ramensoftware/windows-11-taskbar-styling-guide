@@ -160,6 +160,9 @@ controlStyles:
       - Margin=0
       - HorizontalAlignment=Center
       - VerticalAlignment=Center
+  - target: Taskbar.TaskListButton > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
+    styles:
+      - Margin=2,0,2,0
   - target: Grid#IconPanel > TextBlock, Taskbar.TaskListLabeledButtonPanel > TextBlock, Taskbar.TaskListButtonPanel > Grid > TextBlock, Taskbar.TaskListButtonPanel > TextBlock, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > TextBlock, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > TextBlock
     styles:
       - Visibility=Collapsed
@@ -316,5 +319,7 @@ controlStyles:
     styles:
       - Fill:=$Background
       - Visibility=Visible
+themeResourceVariables:
+  - MediumTaskbarButtonExtent=48
 ```
 </details>
