@@ -146,7 +146,7 @@ controlStyles:
       - Margin=0,-1,0,2
   - target: Grid#ContainerGrid@ > Border#BackgroundBorder
     styles:
-      - Background@PointerOver:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.2" Color="{ThemeResource SearchPillButtonForeground}" />
+      - Background@PointerOver:=<SolidColorBrush Color="{ThemeResource BubblesPointerOverStrongColor}" />
       - CornerRadius=20
       - Margin=-1
       - Height=28
@@ -155,7 +155,7 @@ controlStyles:
   - target: SystemTray.IconView > Grid#ContainerGrid@ > Border#BackgroundBorder
     styles:
       - CornerRadius=20
-      - Background@PointerOver:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />
+      - Background@PointerOver:=<SolidColorBrush Color="{ThemeResource BubblesPointerOverColor}" />
       - Height=34
       - Width=34
   - target: SystemTray.OmniButton#NotificationCenterButton > Grid@CommonStates > Border#BackgroundBorder
@@ -163,11 +163,11 @@ controlStyles:
       - CornerRadius=20
       - Width=75
       - Margin=-2,1,-2,1
-      - Background@PointerOver:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />
+      - Background@PointerOver:=<SolidColorBrush Color="{ThemeResource BubblesPointerOverColor}" />
   - target: SystemTray.OmniButton#ControlCenterButton > Grid@CommonStates > Border#BackgroundBorder
     styles:
       - CornerRadius=20
-      - Background@PointerOver:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />
+      - Background@PointerOver:=<SolidColorBrush Color="{ThemeResource BubblesPointerOverColor}" />
       - Margin=1
   - target: Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel@CommonStates
     styles:
@@ -195,5 +195,10 @@ controlStyles:
       - CornerRadius=20
       - Background:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.15" Color="{ThemeResource SearchPillButtonForeground}" />
       - BorderBrush:=<SolidColorBrush x:Name="SearchBoxTextBlock" Opacity="0.25" Color="{ThemeResource SearchPillButtonForeground}" />
+themeResourceVariables:
+  - BubblesPointerOverColor@Dark=#26FFFFFF
+  - BubblesPointerOverColor@Light=#22000000
+  - BubblesPointerOverStrongColor@Dark=#33FFFFFF
+  - BubblesPointerOverStrongColor@Light=#2E000000
 ```
 </details>
