@@ -872,43 +872,6 @@ themeResourceVariables:
 
 <br>
 
-### Separated Dock and System Tray
-<details>
-<summary>(Click to expand guide)</summary>
-The **Dock** variant paints a single pill that also contains the system tray. To split it into
-two independent pills — Start and programs in the middle, tray and clock on their own pill at the
-right edge of the screen — keep the theme selected and add these targets under **Control styles**:
-
-```yaml
-controlStyles:
-# System Tray Pill Position
-- target: SystemTray.SystemTrayFrame
-styles:
-- Margin=0,$DockTopGap,8,$DockBottomGap
-# System Tray Pill Background and Border
-- target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid
-styles:
-- Background:=$lumiBackground
-- CornerRadius=$mcr
-- BorderThickness=$bt
-- BorderBrush=$bb
-```
-
-Both `StackPanel#SystemTrayFrameGrid` and `Grid#SystemTrayFrameGrid` are listed because the
-container type differs between Windows 11 builds; the one that doesn't exist is simply ignored.
-
-`DockMargin` keeps controlling the width of the main dock, so it also sets the gap between the
-two pills. The `8` at the end of the `Margin` is the distance of the tray pill from the screen
-edge. `DockTopGap` and `DockBottomGap` are reused so both pills stay aligned and share the same
-height.
-
-**Note:** The task list is centered only while it fits into the dock. If `DockMargin` is set so
-high that Start and the program buttons no longer fit, they are pushed to the left edge, which is
-stock Windows behavior. As a rule of thumb, the dock needs `48 + 46 × number of buttons + 32`
-pixels, i.e. `DockMargin` should stay below `(screen width - that value) / 2`.
-</details>
-
-
 ### Normal
 
 ![Normal](normal.png)
@@ -1981,4 +1944,50 @@ themeResourceVariables:
   - SolidBg@Dark=#10FFFFFF
   - SolidBg@Light=#90FFFFFF
 ```
+</details>
+
+<br>
+
+## Community Additions
+
+Community Additions are not made by me; each addition credits its submitter. c:
+
+### Separated Dock and System Tray Guide - By [M3ragon](https://github.com/M3ragon)
+
+<details>
+<summary>(Click to expand guide)</summary>
+
+The **Dock** variant paints a single pill that also contains the system tray. To split it into
+two independent pills — Start and programs in the middle, tray and clock on their own pill at the
+right edge of the screen — keep the theme selected and add these targets under **Control styles**:
+
+```yaml
+controlStyles:
+# System Tray Pill Position
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Margin=0,$DockTopGap,8,$DockBottomGap
+# System Tray Pill Background and Border
+  - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid
+    styles:
+      - Padding=3,0,0,0
+      - Background:=$lumiBackground
+      - CornerRadius=$mcr
+      - BorderThickness=$bt
+      - BorderBrush=$bb
+```
+
+Both `StackPanel#SystemTrayFrameGrid` and `Grid#SystemTrayFrameGrid` are listed because the
+container type differs between Windows 11 builds; the one that doesn't exist is simply ignored.
+
+`DockMargin` keeps controlling the width of the main dock, so it also sets the gap between the
+two pills. The `8` at the end of the `Margin` is the distance of the tray pill from the screen
+edge. `DockTopGap` and `DockBottomGap` are reused so both pills stay aligned and share the same
+height.
+
+**Note:** The task list is centered only while it fits into the dock. If `DockMargin` is set so
+high that Start and the program buttons no longer fit, they are pushed to the left edge, which is
+stock Windows behavior. As a rule of thumb, the dock needs `48 + 46 × number of buttons + 32`
+pixels, i.e. `DockMargin` should stay below `(screen width - that value) / 2`.
+
 </details>
