@@ -70,9 +70,9 @@ styleConstants:
   - taskbarBlurIncreace=0
   - taskListMargin=2
   - showDesktopWidth=10
-  - transparent=<SolidColorBrush Color="{ThemeResource TextFillColorPrimary}" Opacity="0"/>
-  - pointerOver=<SolidColorBrush Color="{ThemeResource TextFillColorPrimary}" Opacity="0.075"/>
-  - pressed=<SolidColorBrush Color="{ThemeResource TextFillColorPrimary}" Opacity="0.05"/>
+  - transparent=<SolidColorBrush Color="{ThemeResource AerisTransparentColor}"/>
+  - pointerOver=<SolidColorBrush Color="{ThemeResource AerisPointerOverColor}"/>
+  - pressed=<SolidColorBrush Color="{ThemeResource AerisPressedColor}"/>
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
@@ -268,5 +268,12 @@ controlStyles:
       - Width=Auto
       - Fill@PointerOver:=$pointerOver
       - Fill@Pressed:=$pressed
+themeResourceVariables:
+  - AerisTransparentColor@Dark=#00FFFFFF
+  - AerisTransparentColor@Light=#00000000
+  - AerisPointerOverColor@Dark=#13FFFFFF
+  - AerisPointerOverColor@Light=#11000000
+  - AerisPressedColor@Dark=#0DFFFFFF
+  - AerisPressedColor@Light=#0B000000
 ```
 </details>
