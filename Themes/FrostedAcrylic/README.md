@@ -160,6 +160,9 @@ controlStyles:
       - Margin=0
       - HorizontalAlignment=Center
       - VerticalAlignment=Center
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="0"/></ColumnDefinitionCollection>
   - target: Taskbar.TaskListButton > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
     styles:
       - Margin=2,0,2,0

@@ -137,6 +137,9 @@ controlStyles:
     styles:
       - Width=55
       - Height=70
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="0"/></ColumnDefinitionCollection>
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Width=55
@@ -586,6 +589,9 @@ controlStyles:
       - Width=50
       - Height=65
       - Margin=0,-2,0,2
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="0"/></ColumnDefinitionCollection>
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Width=50
@@ -1029,6 +1035,9 @@ controlStyles:
     styles:
       - Width=55
       - Height=70
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="0"/></ColumnDefinitionCollection>
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Width=55
@@ -1359,6 +1368,9 @@ controlStyles:
     styles:
       - Width=55
       - Height=70
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="0"/></ColumnDefinitionCollection>
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Width=55
@@ -1808,6 +1820,9 @@ controlStyles:
       - Width=50
       - Height=65
       - Margin=0,-2,0,2
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="0"/></ColumnDefinitionCollection>
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Width=50
@@ -2251,6 +2266,9 @@ controlStyles:
     styles:
       - Width=55
       - Height=70
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="0"/></ColumnDefinitionCollection>
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Width=55

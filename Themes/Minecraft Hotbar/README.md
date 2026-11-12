@@ -58,10 +58,6 @@ controlStyles:
   - target: Grid#IconPanel@CommonStates > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel@CommonStates > Image#Icon
     styles:
       - Margin=0
-      - Margin@ActiveNormal=3.5,0,-4.5,0
-      - Margin@ActivePointerOver=3.5,0,-4.5,0
-      - Margin@InactivePointerOver=1.5,0,-1.5,0
-      - Margin@ActivePressed=3.5,0,-4.5,0
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=transparent
@@ -82,6 +78,9 @@ controlStyles:
   - target: Grid#IconPanel, Taskbar.TaskListLabeledButtonPanel
     styles:
       - MinWidth=55
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></ColumnDefinitionCollection>
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - MinWidth=55
