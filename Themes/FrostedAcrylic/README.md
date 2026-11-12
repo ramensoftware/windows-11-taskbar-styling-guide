@@ -141,15 +141,11 @@ controlStyles:
       - Margin=0
   - target: Taskbar.TaskListButton
     styles:
-      - Width=48
-      - MinWidth=48
-      - MaxWidth=48
       - Height=60
       - MinHeight=60
       - MaxHeight=60
       - Padding=0
       - Margin=0
-      - HorizontalAlignment=Center
       - VerticalAlignment=Center
   - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel
     styles:
@@ -158,15 +154,17 @@ controlStyles:
       - MaxHeight=60
       - Padding=2,4,2,4
       - Margin=0
-      - HorizontalAlignment=Center
       - VerticalAlignment=Center
-  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+  - target: Taskbar.TaskListButton > Grid#IconPanel
     styles:
-      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="0"/></ColumnDefinitionCollection>
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="44"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="44"/><ColumnDefinition Width="Auto"/></ColumnDefinitionCollection>
   - target: Taskbar.TaskListButton > Grid#IconPanel > Border#BackgroundElement, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel > Border#BackgroundElement
     styles:
       - Margin=2,0,2,0
-  - target: Grid#IconPanel > TextBlock, Taskbar.TaskListLabeledButtonPanel > TextBlock, Taskbar.TaskListButtonPanel > Grid > TextBlock, Taskbar.TaskListButtonPanel > TextBlock, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > TextBlock, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > TextBlock
+  - target: Taskbar.TaskListButtonPanel > Grid > TextBlock, Taskbar.TaskListButtonPanel > TextBlock, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > Grid > TextBlock, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid > TextBlock
     styles:
       - Visibility=Collapsed
       - Margin=0
