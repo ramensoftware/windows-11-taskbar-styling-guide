@@ -70,6 +70,8 @@ controlStyles:
       - Height={{taskbarDock==`vertical`?min($TaskbarFrameWidth,containerGridHeight):$TaskbarFrameHeight}}
       - Grid.Column=1
       - Grid.Row=1
+      - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
+      - ActualWidth=>FrameActualWidth
   - target: SystemTray.SystemTrayFrame
     styles:
       - Height={{taskbarDock==`vertical`?skip():40}}
@@ -132,5 +134,15 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement
     styles:
       - Margin=210,0,210,12
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid
+    styles:
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth)/2,0)}}" />
+      - // Builds where the tray is an item of the taskbar frame. The frame stays at the left edge, since tray flyouts are positioned relative to it.
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
+      - ActualWidth=>containerGridWidth
 ```
 </details>

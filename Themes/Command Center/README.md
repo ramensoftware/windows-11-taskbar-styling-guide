@@ -225,9 +225,6 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$R1
-  - target: Taskbar.TaskbarExtensionElement
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="0" />
   - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
     styles:
       - Background:=$Background

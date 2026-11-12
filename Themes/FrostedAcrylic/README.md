@@ -129,6 +129,9 @@ controlStyles:
       - VerticalAlignment=Center
       - Margin=0,0,$TrayRightMargin,0
       - Background:=$Background
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - Margin=0
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=Transparent

@@ -55,6 +55,8 @@ controlStyles:
     styles:
       - Width=Auto
       - HorizontalAlignment=Left
+      - MaxWidth={{TrayInFrameWidth==``?skip():(containerGridWidth+TrayInFrameWidth)/2}}
+      - ActualWidth=>StatusbarRepeaterWidth
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Width=3840
@@ -68,7 +70,7 @@ controlStyles:
   - target: Taskbar.SearchBoxButton#SearchBoxButton[AutomationProperties.AutomationId=SearchButton] > Taskbar.TaskListButtonPanel
     styles:
       - Visibility=Collapsed
-  - target: Taskbar.TaskbarExtensionElement
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SearchUx.SearchUI.SearchButtonControl
     styles:
       - Visibility=Collapsed
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
@@ -126,5 +128,17 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background=Black
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():(containerGridWidth+TrayInFrameWidth)/2-StatusbarRepeaterWidth}}" />
+      - // Builds where the tray is the last item of the task list. The transform centers it.
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():0}}
+      - // Explorer's gap before the tray. The search item's margin is already 0.
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
+      - ActualWidth=>containerGridWidth
 ```
 </details>

@@ -448,13 +448,13 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Visibility=1
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[3] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[3] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
       - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
       - BorderThickness=0
       - CornerRadius=0
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[1] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[1] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
       - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Start.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
@@ -480,15 +480,18 @@ controlStyles:
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height={{taskbarDock==`vertical`?skip():70}}
       - MaxHeight=70
-      - HorizontalAlignment=Center
+      - HorizontalAlignment={{TrayInFrameWidth==``?`Center`:taskbarDock==`vertical`?`Center`:`Left`}}
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Margin=0,8,0,2
-      - Padding=20,0,20,0
+      - Padding={{TrayInFrameWidth==``?`20,0,20,0`:taskbarDock==`vertical`?`20,0,20,0`:`20,0,0,0`}}
       - BorderBrush=#40FFFFFF
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-DockBgWidth-TrayInFrameWidth)/2,0)}}" />
+      - // Builds where the tray is an item of the taskbar frame. The frame stays at the left edge, since tray flyouts are positioned relative to it. The transform centers the dock without affecting layout.
   - target: Grid#RootGrid > Taskbar.TaskbarBackground
     styles:
-      - Margin=-20,0,-20,0
+      - Margin=-20,0,{{TrayInFrameWidth==``?-20:taskbarDock==`vertical`?-20:TrayInFrameWidth}},0
+      - ActualWidth=>DockBgWidth
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
@@ -506,11 +509,11 @@ controlStyles:
 # Tray frame styles
   - target: SystemTray.SystemTrayFrame
     styles:
-      - Height=70
+      - Height={{TrayInFrameWidth==``?70:taskbarDock==`vertical`?70:60}}
       - Grid.Column=2
       - Width=Auto
       - HorizontalAlignment=Left
-      - Margin=0,-2,0.5,2
+      - Margin={{TrayInFrameWidth==``?`0,-2,0.5,2`:taskbarDock==`vertical`?`0,-2,0.5,2`:`20,0,0,0`}}
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,0,0.5,0
@@ -523,9 +526,19 @@ controlStyles:
       - CornerRadius=0,25,25,0
       - Visibility=Visible
       - BorderBrush=#40FFFFFF
+# Builds where the tray is an item of the taskbar frame
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
+      - // Explorer's gap before the tray. The search item's margin is already 0.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
       - ActualWidth=>containerGridWidth
 
 # Tray Icons Styles
@@ -611,7 +624,7 @@ controlStyles:
       - Background:=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
       - Width=35
       - Height=35
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid, ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid
+  - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.NotificationAreaIcons#NotificationAreaIcons > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.NotifyIconView#NotifyItemIcon > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.ImageIconContent > Grid#ContainerGrid
     styles:
       - Background:=$IconBackground
       - Height=40
@@ -1178,13 +1191,13 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon, SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Visibility=1
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[3] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[3] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=TaskViewButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
       - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/darkbg.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
       - BorderThickness=0
       - CornerRadius=0
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[1] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[1] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
     styles:
       - Margin=0,5.5,0,5.5
       - Background:=<ImageBrush Stretch="Uniform"><ImageBrush.ImageSource><BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/Start.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64"/></ImageBrush.ImageSource></ImageBrush>
@@ -1223,7 +1236,7 @@ controlStyles:
   - target: SystemTray.SystemTrayFrame
     styles:
       - Height=70
-      - Margin=0,-2,0.5,2
+      - Margin={{TrayInFrameWidth==``?`0,-2,0.5,2`:`0,-10,0.5,0`}}
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - VerticalAlignment=bottom
@@ -1368,6 +1381,9 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.TextBlock#volumeLevelText
     styles:
       - Foreground=White
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
 themeResourceVariables:
   - MediumTaskbarButtonExtent=45
 ```

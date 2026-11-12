@@ -49,7 +49,6 @@ controlStyles:
     styles:
       - Background:=<AcrylicBrush TintColor="{ThemeResource SystemListLowColor}" TintOpacity="0.1" FallbackColor="{ThemeResource SystemChromeHighColor}" />
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="4"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
-      - ActualWidth=>containerGridWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
       - Tag=horizontal
@@ -59,14 +58,16 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Grid.Column=1
-      - HorizontalAlignment=Right
+      - HorizontalAlignment={{TrayInFrameWidth==``?`Right`:taskbarDock==`vertical`?`Right`:`Left`}}
+      - ActualWidth=>FrameActualWidth
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - Height={{taskbarDock==`vertical`?skip():56}}
-      - MaxWidth={{taskbarDock==`vertical`?skip():(containerGridWidth>0?containerGridWidth:skip())}}
+      - MaxWidth={{taskbarDock==`vertical`?skip():(containerGridWidth>0?(TrayInFrameWidth==``?containerGridWidth:containerGridWidth-TrayInFrameWidth-4):skip())}}
   - target: Taskbar.TaskbarFrame > Grid
     styles:
       - Height=48
       - CornerRadius=4
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth-TrayInFrameWidth-4)/2,0)}}" />
   - target: Taskbar.TaskbarBackground#BackgroundControl
     styles:
       - Transform3D:=<CompositeTransform3D TranslateX="{{$separateWidget?(widgetWidth==``?skip():widgetWidth+4.5):skip()}}"/>
@@ -81,7 +82,8 @@ controlStyles:
       - Height=0
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - Margin=3,0,3,0
+      - Margin=3,0,{{TrayInFrameWidth==``?3:taskbarDock==`vertical`?3:-TrayInFrameWidth-4}},0
+      - // Builds where the tray is an item of the taskbar frame. The tray is kept out of the dock's measured width, and the frame stays at the left edge, since tray flyouts are positioned relative to it.
   - target: Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel
     styles:
       - Background:={{$separateWidget?`<SolidColorBrush Color="{ThemeResource SystemChromeAltHighColor}" Opacity="0.6" />`:skip()}}
@@ -133,5 +135,17 @@ controlStyles:
     styles:
       - FontSize=15
       - FontWeight=SemiBold
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`7,-4,0,-4`}}
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
+      - // Explorer's gap before the tray. The search item's margin is already 0.
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
+      - ActualWidth=>containerGridWidth
+      - Background:={{TrayInFrameWidth==``?skip():`<AcrylicBrush TintColor="{ThemeResource SystemListLowColor}" TintOpacity="0.1" FallbackColor="{ThemeResource SystemChromeHighColor}" />`}}
 ```
 </details>

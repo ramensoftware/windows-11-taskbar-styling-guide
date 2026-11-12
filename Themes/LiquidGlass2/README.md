@@ -204,8 +204,6 @@ controlStyles:
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/></ColumnDefinitionCollection>
-      - ActualWidth=>containerGridWidth
-      - ActualHeight=>TaskHeight
       - HorizontalAlignment=Stretch
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
@@ -216,7 +214,8 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - HorizontalAlignment=Center
+      - HorizontalAlignment={{TrayInFrameWidth==``?`Center`:taskbarDock==`vertical`?`Center`:`Left`}}
+      - ActualWidth=>FrameActualWidth
       - MaxWidth={{containerGridWidth>0?max(containerGridWidth-2*(trayWidth+50),100):`Infinity`}}
       - Grid.Column=1
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
@@ -226,6 +225,7 @@ controlStyles:
       - Background:=Transparent
       - HorizontalAlignment=Center
       - Width=Auto
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth)/2,0)}}" />
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground
     styles:
       - Margin=-40,0,-40,0
@@ -263,7 +263,7 @@ controlStyles:
   - target: SystemTray.SystemTrayFrame
     styles:
       - HorizontalAlignment=Left
-      - Margin=50,0,0,0
+      - Margin={{TrayInFrameWidth==``?`50,0,0,0`:taskbarDock==`vertical`?`50,0,0,0`:`91,0,0,-4`}}
       - Grid.Column=2
   - target: Taskbar.Gripper#GripperControl
     styles:
@@ -552,7 +552,7 @@ controlStyles:
       - RenderTransform@CheckedNormal:=<ScaleTransform ScaleX="1.37" ScaleY="1.37" />
       - RenderTransform@CheckedPointerOver:=<ScaleTransform ScaleX="1.37" ScaleY="1.37" />
       - RenderTransform@CheckedPressed:=<ScaleTransform ScaleX="1.1" ScaleY="1.1" />
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock, ScrollViewer > ScrollContentPresenter > Border > Grid > SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+  - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
     styles:
       - Margin=2,0,3,0
   - target: SystemTray.OmniButton#NotificationCenterButton@CommonStates > Grid > Border#BackgroundBorder
@@ -661,5 +661,20 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#SearchPillBackgroundElement
     styles:
       - Visibility=1
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
+      - // Explorer's gap before the tray. The search item's margin is already 0.
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
+    styles:
+      - Margin=0,0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(TrayInFrameWidth+91)}},0
+      - // Builds where the tray is an item of the taskbar frame. The tray is kept out of the dock's measured width, and the frame stays at the left edge, since tray flyouts are positioned relative to it.
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
+      - ActualWidth=>containerGridWidth
+      - ActualHeight=>TaskHeight
 ```
 </details>

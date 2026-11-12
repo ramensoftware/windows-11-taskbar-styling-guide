@@ -89,12 +89,15 @@ controlStyles:
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - Height={{taskbarDock==`vertical`?skip():70}}
-      - HorizontalAlignment=Center
+      - HorizontalAlignment={{TrayInFrameWidth==``?`Center`:taskbarDock==`vertical`?`Center`:`Left`}}
+      - MaxWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():containerGridWidth-2*TrayInFrameWidth}}
+      - ActualWidth=>FrameActualWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Visibility=Visible
       - Margin=0,0,0,10
       - Padding=20,0,20,0
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth)/2,0)}}" />
   - target: SystemTray.SystemTrayFrame
     styles:
       - Height={{taskbarDock==`vertical`?skip():70}}
@@ -130,5 +133,21 @@ controlStyles:
   - target: Border#MultiWindowElement
     styles:
       - Height=0
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`20,0,0,-10`}}
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth)/2-TrayInFrameWidth,0)}}" />
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
+      - // Explorer's gap before the tray. The search item's margin is already 0.
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
+    styles:
+      - Margin=0,0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(TrayInFrameWidth+20)}},0
+      - // Builds where the tray is an item of the taskbar frame. The tray is kept out of the dock's measured width, and the frame stays at the left edge, since tray flyouts are positioned relative to it.
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
+      - ActualWidth=>containerGridWidth
 ```
 </details>

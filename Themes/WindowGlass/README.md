@@ -108,12 +108,15 @@ controlStyles:
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth}}
+      - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,(TrayInFrameWidth==``?containerGridWidth:taskbarDock==`vertical`?containerGridWidth:containerGridWidth-TrayInFrameWidth)):$TaskbarFrameMaxWidth}}
+      - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
+      - ActualWidth=>FrameActualWidth
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - Grid.Column=1
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Margin=10,2,0,2
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth-TrayInFrameWidth)/2,0)}}" />
       - BorderThickness=0.5,1,0,1
       - //BorderBrush:=$BorderBrush
       - CornerRadius=$CornerRadius,0,0,$CornerRadius
@@ -139,7 +142,7 @@ controlStyles:
       - Grid.Column=2
       - Width=Auto
       - HorizontalAlignment=Left
-      - Margin=0
+      - Margin={{TrayInFrameWidth==``?0:taskbarDock==`vertical`?0:`0,-2,0,-2`}}
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,2,0,2
@@ -151,7 +154,6 @@ controlStyles:
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
-      - ActualWidth=>containerGridWidth
   - target: SystemTray.ChevronIconView
     styles:
       - Padding=6,0,6,0
@@ -273,9 +275,6 @@ controlStyles:
       - BorderThickness=$ElementBorderThickness
       - MaxWidth:=100
       - Width=Auto
-  - target: Taskbar.TaskbarExtensionElement
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="0" />
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="0" />
@@ -318,6 +317,20 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$CornerRadius
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
+      - // Explorer's gap before the tray. The search item's margin is already 0.
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
+    styles:
+      - Margin=0,0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(TrayInFrameWidth+0)}},0
+      - // Builds where the tray is an item of the taskbar frame. The tray is kept out of the dock's measured width, and the frame stays at the left edge, since tray flyouts are positioned relative to it.
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
+      - ActualWidth=>containerGridWidth
 ```
 </details>
 
@@ -361,11 +374,14 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Grid.Column=1
-      - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth}}
+      - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,(TrayInFrameWidth==``?containerGridWidth:taskbarDock==`vertical`?containerGridWidth:containerGridWidth-TrayInFrameWidth)):$TaskbarFrameMaxWidth}}
+      - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
+      - ActualWidth=>FrameActualWidth
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Margin=10,2,3,2
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth-TrayInFrameWidth)/2,0)}}" />
       - BorderThickness=$BorderThickness
       - //BorderBrush:=$BorderBrush
       - CornerRadius=25,5,5,25
@@ -516,9 +532,6 @@ controlStyles:
       - BorderThickness=$ElementBorderThickness
       - MaxWidth:=100
       - Width=Auto
-  - target: Taskbar.TaskbarExtensionElement
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="0" />
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="0" />
@@ -567,6 +580,20 @@ controlStyles:
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`3,-2,0,-2`}}
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
+      - // Explorer's gap before the tray. The search item's margin is already 0.
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
+    styles:
+      - Margin=0,0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(TrayInFrameWidth+3)}},0
+      - // Builds where the tray is an item of the taskbar frame. The tray is kept out of the dock's measured width, and the frame stays at the left edge, since tray flyouts are positioned relative to it.
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
       - ActualWidth=>containerGridWidth
 ```
 </details>
@@ -768,9 +795,6 @@ controlStyles:
       - BorderThickness=$ElementBorderThickness
       - MaxWidth:=100
       - Width=Auto
-  - target: Taskbar.TaskbarExtensionElement
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="0" />
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="0" />
@@ -813,5 +837,10 @@ controlStyles:
       - BorderBrush:=$BorderBrush
       - BorderThickness=$BorderThickness
       - CornerRadius=$CornerRadius
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`0,-2,-10,-2`}}
+      - // Builds where the tray is an item of the taskbar frame. Cancels RootGrid's margin, so the tray keeps its place at the screen edge.
 ```
 </details>

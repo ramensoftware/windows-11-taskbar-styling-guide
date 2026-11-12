@@ -27,25 +27,15 @@ The theme detects alignment from the Start button's native padding, which has ex
 
 ### Force left alignment (tweak)
 
-To keep the dock on the left regardless of the Windows setting, add the following control styles:
+To keep the dock on the left regardless of the Windows setting, add the following control style. It overrides the detected alignment, so the dock is laid out as with Left alignment in Windows settings, including the widgets button placement:
 
 Target:
 ```
-Taskbar.TaskbarFrame
-```
-Styles:
-```
-HorizontalAlignment={{taskbarDock==`vertical`?skip():`Left`}}
-Margin={{taskbarDock==`vertical`?skip():`0,0,250,0`}}
-```
-
-Target:
-```
-Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
+Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
 ```
 Style:
 ```
-CornerRadius={{taskbarDock==`vertical`?`8,8,0,0`:`0,8,0,0`}}
+Tag={{taskbarDock==`vertical`?`Center`:`Left`}}
 ```
 
 ### Make the taskbar float (tweak)
@@ -160,10 +150,10 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - HorizontalAlignment={{taskbarDock==`vertical`?skip():DockNativeAlignment==`Left`?`Left`:`Center`}}
-      - Margin={{taskbarDock==`vertical`?skip():DockNativeAlignment==`Left`?0:250}},0,250,0
+      - HorizontalAlignment={{taskbarDock==`vertical`?skip():TrayInFrameWidth!=``?`Left`:DockNativeAlignment==`Left`?`Left`:`Center`}}
+      - Margin={{taskbarDock==`vertical`?skip():TrayInFrameWidth!=``?0:DockNativeAlignment==`Left`?0:250}},0,{{TrayInFrameWidth==``?250:0}},0
       - ActualWidth=>DockFrameWidth
-  - target: :root > ScrollViewer > ScrollContentPresenter > Border > Grid
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:
       - ActualWidth=>DockContainerWidth
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
@@ -187,11 +177,16 @@ controlStyles:
       - ActualWidth=>DockStartInnerWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
-      - Padding=6,0,6,0
+      - Padding={{TrayInFrameWidth==``?`6,0,6,0`:taskbarDock==`vertical`?`6,0,6,0`:0}}
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():6+(DockNativeAlignment==`Left`?0:max(min((DockContainerWidth-DockBgWidth)/2,DockContainerWidth-DockBgWidth-TrayInFrameWidth),0))}},0,0,0
+      - // Builds where the tray is an item of the taskbar frame. The frame stays at the left edge, since the tray positions its flyouts relative to the frame.
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=$DockBackground
-      - Margin=-6,0,-6,0
+      - Margin={{TrayInFrameWidth==``?-6:taskbarDock==`vertical`?-6:DockNativeAlignment==`Left`?0:max(min((DockContainerWidth-DockBgWidth)/2,DockContainerWidth-DockBgWidth-TrayInFrameWidth),0)}},0,{{TrayInFrameWidth==``?-6:taskbarDock==`vertical`?-6:TrayInFrameWidth}},0
+      - ActualWidth=>DockBgWidth
       - CornerRadius={{DockNativeAlignment==`Left`?`0,8,0,0`:`8,8,0,0`}}
       - BorderBrush:=<SolidColorBrush Color="{ThemeResource SurfaceStrokeColorDefault}" />
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
@@ -200,6 +195,15 @@ controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+      - Margin={{taskbarDock==`vertical`?skip():6+max(DockNativeAlignment==`Left`?DockContainerWidth-DockBgWidth-TrayInFrameWidth:(DockContainerWidth-DockBgWidth)/2-TrayInFrameWidth,0)}},0,{{taskbarDock==`vertical`?skip():-max(DockNativeAlignment==`Left`?DockContainerWidth-DockBgWidth-TrayInFrameWidth:(DockContainerWidth-DockBgWidth)/2-TrayInFrameWidth,0)}},0
+      - // Moves the tray to the screen edge. The negative right margin keeps the gap out of the space the taskbar uses to decide what fits.
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
+      - // Explorer's gap before the tray. The search item's margin is already 0.
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=$DockBackground

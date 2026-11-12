@@ -449,6 +449,8 @@ controlStyles:
       - Background:=$ThemeLayer
       - BorderThickness=1
       - HorizontalAlignment=Left
+      - MaxWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():containerGridWidth-TrayInFrameWidth-16}}
+      - ActualWidth=>DockRootWidth
       - // BorderBrush:=$ThemeOutBorder
       - // Taskbar Task Region Frame(Task list + search area + Start button Region grid) > Background
   - target: TextBlock#InnerTextBlock[Text=], TextBlock#InnerTextBlock[Text=]
@@ -553,16 +555,16 @@ controlStyles:
       - // Menu Flyouts Root (Background + TextBlock Styles)
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - Margin=0,0,2,0
+      - Margin=0,0,{{TrayInFrameWidth==``?2:taskbarDock==`vertical`?2:2-TrayInFrameWidth}},0
       - // IDR what this was for
   - target: Rectangle#BackgroundStroke
     styles:
       - Visibility=1
       - // Thin Line running along the top of the Taskbar (edge)
-  - target: ScrollViewer > ScrollContentPresenter > Border > Grid
+  - target: ScrollViewer > ScrollContentPresenter > Border
     styles:
       - Background:=<WindhawkBlur BlurAmount="5" TintColor="{ThemeResource SystemChromeMediumColor}" TintSaturation="2" NoiseOpacity="0.19" NoiseDensity="0.8" TintOpacity="0.2" TintLuminosityOpacity="0" />
-      - // Taskbar Root > Base Presenter > Base Grid (Usually transparent, Styled by this theme)
+      - // Taskbar Root > Base Presenter > Base Border (Usually transparent, Styled by this theme)
   - target: SearchUx.SearchUI.SearchBoxButton#SearchBox
     styles:
       - Margin=0,-1,0,0
@@ -603,6 +605,19 @@ controlStyles:
     styles:
       - Background:=$ThemeLayer
       - // Virtual Desktop Switcher Bar Background
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`0,-4,0,-4`}}
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max(containerGridWidth-TrayInFrameWidth-DockRootWidth-5,0)}}" />
+      - // Builds where the tray is an item of the taskbar frame. Kept out of the pill's measured width by the repeater margin, and moved to the screen edge.
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
+      - // Explorer's gap before the tray. The search item's margin is already 0.
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
+      - ActualWidth=>containerGridWidth
 themeResourceVariables:
   - Accent1@Dark={ThemeResource SystemAccentColorLight3}
   - Accent1@Light={ThemeResource SystemAccentColorDark2}

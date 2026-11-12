@@ -122,6 +122,7 @@ controlStyles:
       - CornerRadius=$CornerRadius
       - Background:=$Background
       - Padding=2,0,1.5,0
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth)/2,0)}}" />
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - Margin=3.5
@@ -249,9 +250,6 @@ controlStyles:
       - CornerRadius=$ElementCornerRadius
       - BorderThickness=$ElementBorderThickness
       - Margin=0
-  - target: Taskbar.TaskbarExtensionElement
-    styles:
-      - RenderTransform:=<TranslateTransform X="0" Y="0" />
   - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="0" />
@@ -320,9 +318,11 @@ controlStyles:
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - HorizontalAlignment=Center
+      - HorizontalAlignment={{TrayInFrameWidth==``?`Center`:taskbarDock==`vertical`?`Center`:`Left`}}
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - Padding=1,0,1,0
+      - MaxWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():containerGridWidth-2*TrayInFrameWidth}}
+      - ActualWidth=>FrameActualWidth
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Visibility=0
@@ -423,5 +423,21 @@ controlStyles:
   - target: SystemTray.NotifyIconView > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - CornerRadius=7
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`1.5,0,0,-4`}}
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth)/2-TrayInFrameWidth,0)}}" />
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
+      - // Explorer's gap before the tray. The search item's margin is already 0.
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
+    styles:
+      - Margin=0,0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(TrayInFrameWidth+1.5)}},0
+      - // Builds where the tray is an item of the taskbar frame. The tray is kept out of the dock's measured width, and the frame stays at the left edge, since tray flyouts are positioned relative to it.
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
+      - ActualWidth=>containerGridWidth
 ```
 </details>

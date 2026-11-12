@@ -489,6 +489,9 @@ Style:
 Grid.Column=1
 ```
 
+> [!NOTE]
+> On Windows builds where the system tray is part of the taskbar frame (`Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame`), the `Grid` targeted above doesn't exist, and the system tray is positioned together with the task list as part of `Taskbar.TaskbarFrame`.
+
 ## Task list
 
 ### Start button image

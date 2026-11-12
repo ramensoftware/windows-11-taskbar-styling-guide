@@ -878,11 +878,12 @@ controlStyles:
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - HorizontalAlignment=Stretch
-      - Margin=$DockMargin,0,$DockMargin,0
+      - Margin={{TrayInFrameWidth==``?`$DockMargin,0,$DockMargin,0`:taskbarDock==`vertical`?`$DockMargin,0,$DockMargin,0`:0}}
+      - // Builds where the tray is an item of the taskbar frame. The side margins are on RootGrid, since the frame has to stay at the left edge for tray flyouts to be positioned correctly.
 # Dock Top and Bottom Gap
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
-      - Margin=0,$DockTopGap,0,$DockBottomGap
+      - Margin={{TrayInFrameWidth==``?`0,$DockTopGap,0,$DockBottomGap`:taskbarDock==`vertical`?`0,$DockTopGap,0,$DockBottomGap`:`$DockMargin,$DockTopGap,$DockMargin,$DockBottomGap`}}
 # Dock Background and Border
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
@@ -898,6 +899,11 @@ controlStyles:
   - target: SystemTray.SystemTrayFrame
     styles:
      - Margin=0,$DockTopGap,$DockMargin,$DockBottomGap
+# System Tray Dock Alignment (Builds Where the Tray Is Inside the Dock, Which Already Applies the Gaps)
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - Margin=0
+      - ActualWidth=>TrayInFrameWidth
 # Matches Window Preview and Taskbar Overflow Flyout Height With Flyouts
   - target: Grid#HoverFlyoutGrid
     styles:

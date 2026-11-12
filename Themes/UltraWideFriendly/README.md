@@ -89,7 +89,6 @@ controlStyles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></ColumnDefinitionCollection>
       - HorizontalAlignment=Stretch
       - Background:=<SolidColorBrush Color="$GhostBarBackgroundColor"/>
-      - ActualWidth=>containerGridWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
       - Tag=horizontal
@@ -100,21 +99,23 @@ controlStyles:
     styles:
       - Grid.Column=1
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - HorizontalAlignment=Right
+      - HorizontalAlignment={{TrayInFrameWidth==``?`Right`:taskbarDock==`vertical`?`Right`:`Left`}}
       - Margin=0,0,$IslandHorizontalMargin,0
-      - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth}}
+      - ActualWidth=>FrameActualWidth
+      - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,(TrayInFrameWidth==``?containerGridWidth:taskbarDock==`vertical`?containerGridWidth:containerGridWidth-TrayInFrameWidth-2*$IslandHorizontalMargin)):$TaskbarFrameMaxWidth}}
   - target: Taskbar.TaskbarFrame > Grid
     styles:
       - Background:=<SolidColorBrush Color="$IslandBackgroundColor"/>
       - CornerRadius=10
       - Padding=25,0,25,0
       - Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth-TrayInFrameWidth-2*$IslandHorizontalMargin)/2,0)}}" />
   - target: SystemTray.SystemTrayFrame
     styles:
       - Grid.Column=2
       - Width=Auto
       - HorizontalAlignment=Left
-      - Margin=$IslandHorizontalMargin,0,0,0
+      - Margin={{TrayInFrameWidth==``?$IslandHorizontalMargin:taskbarDock==`vertical`?$IslandHorizontalMargin:25+2*$IslandHorizontalMargin}},{{TrayInFrameWidth==``?0:taskbarDock==`vertical`?0:-$IslandVerticalMargin}},0,{{TrayInFrameWidth==``?0:taskbarDock==`vertical`?0:-$IslandVerticalMargin}}
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<SolidColorBrush Color="$IslandBackgroundColor"/>
@@ -127,5 +128,20 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill=Transparent
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
+      - // Explorer's gap before the tray. The search item's margin is already 0.
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
+    styles:
+      - Margin=0,0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(TrayInFrameWidth+25+2*$IslandHorizontalMargin)}},0
+      - // Builds where the tray is an item of the taskbar frame. The tray is kept out of the dock's measured width, and the frame stays at the left edge, since tray flyouts are positioned relative to it.
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
+      - ActualWidth=>containerGridWidth
+      - Background:={{TrayInFrameWidth==``?skip():`<SolidColorBrush Color="$GhostBarBackgroundColor"/>`}}
 ```
 </details>

@@ -116,9 +116,10 @@ controlStyles:
       - Width={{taskbarDock==`vertical`?skip():$TaskbarFrameWidth}}
       - Height={{taskbarDock==`vertical`?skip():($TaskbarHeight+$BottomGap)}}
       - MinHeight={{$TaskbarHeight+$BottomGap}}
-      - HorizontalAlignment=Center
+      - HorizontalAlignment={{TrayInFrameWidth==``?`Center`:taskbarDock==`vertical`?`Center`:`Left`}}
       - VerticalAlignment=Center
       - Padding=0
+      - ActualWidth=>FrameActualWidth
   - target: Taskbar.TaskbarBackground#BackgroundControl
     styles:
       - Visibility=Collapsed
@@ -137,7 +138,7 @@ controlStyles:
       - VerticalAlignment=Center
       - Height=$TaskbarHeight
       - MinWidth=250
-      - Margin=0,0,0,$BottomGap
+      - Margin={{TrayInFrameWidth==``?`0,0,0,$BottomGap`:taskbarDock==`vertical`?`0,0,0,$BottomGap`:0}}
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background=Transparent
@@ -191,5 +192,15 @@ controlStyles:
     styles:
       - Margin=5,0,0,0
       - VerticalAlignment=Center
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid
+    styles:
+      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth)/2,0)}}" />
+      - // Builds where the tray is an item of the taskbar frame. The frame stays at the left edge, since tray flyouts are positioned relative to it.
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
+      - ActualWidth=>containerGridWidth
 ```
 </details>
