@@ -21,22 +21,9 @@ Change **Taskbar icon alignment** in Windows settings to switch the dock between
 The theme detects alignment from the Start button's native padding, which has extra space on the left when icons are left-aligned. This has been tested with the default and small taskbar sizes. Known limitations:
 
 - On some Windows builds, Explorer doesn't add this padding when switching from Center to Left if it was started with Center, so the dock stays centered. Restart Explorer after changing the setting.
-- If the Start button is hidden, the dock stays centered. Use the tweak below to left-align it.
+- If the Start button is hidden, the dock stays centered.
 - The [Start button always on the left](https://windhawk.net/mods/taskbar-start-button-position) mod adds this padding in both modes, so the dock is always left-aligned with it.
 - Other customizations that replace the Start button template or override its width or padding can also interfere with detection.
-
-### Force left alignment (tweak)
-
-To keep the dock on the left regardless of the Windows setting, add the following control style. It overrides the detected alignment, so the dock is laid out as with Left alignment in Windows settings, including the widgets button placement:
-
-Target:
-```
-Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
-```
-Style:
-```
-Tag={{taskbarDock==`vertical`?`Center`:`Left`}}
-```
 
 ### Make the taskbar float (tweak)
 
