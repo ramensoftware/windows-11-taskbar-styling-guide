@@ -879,14 +879,15 @@ controlStyles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - HorizontalAlignment=Stretch
       - Margin={{TrayInFrameWidth==``?`$DockMargin,0,$DockMargin,0`:taskbarDock==`vertical`?`$DockMargin,0,$DockMargin,0`:0}}
-      - // Builds where the tray is an item of the taskbar frame. The side margins are on RootGrid, since the frame has to stay at the left edge for tray flyouts to be positioned correctly.
+      - // Dock Side Margins. On builds where the tray is an item of the taskbar frame, the frame, RootGrid and the item repeater stay at the screen edges, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock background has the side margins instead, and the first and last items are moved in by the same amount.
 # Dock Top and Bottom Gap
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
-      - Margin={{TrayInFrameWidth==``?`0,$DockTopGap,0,$DockBottomGap`:taskbarDock==`vertical`?`0,$DockTopGap,0,$DockBottomGap`:`$DockMargin,$DockTopGap,$DockMargin,$DockBottomGap`}}
+      - Margin=0,$DockTopGap,0,$DockBottomGap
 # Dock Background and Border
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():$DockMargin}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():$DockMargin}},0
       - Background:=$lumiBackground
       - BorderThickness=$bt
       - BorderBrush=$bb
@@ -894,7 +895,19 @@ controlStyles:
 # Widget To Program Window Buttons Gap Remove
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
     styles:
-      - Margin=0,0,$WidgetGap57,0
+      - Margin={{TrayInFrameWidth==``?0:taskbarDock==`vertical`?0:((LumiStartWidth==``?0:LumiStartInnerWidth==``?0:LumiStartInnerWidth<=0?0:LumiStartWidth-LumiStartInnerWidth>8)?0:$DockMargin)}},0,$WidgetGap57,0
+      - // With Center alignment on builds where the tray is an item of the taskbar frame, the widgets button is the dock's first item, see Dock Side Margins.
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():((LumiStartWidth==``?0:LumiStartInnerWidth==``?0:LumiStartInnerWidth<=0?0:LumiStartWidth-LumiStartInnerWidth>8)?$DockMargin:0)}},0,0,0
+      - // With Left alignment on builds where the tray is an item of the taskbar frame, Start is the dock's first item, see Dock Side Margins.
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Width=>LumiStartWidth
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+    styles:
+      - ActualWidth=>LumiStartInnerWidth
+      - // Left alignment is detected from the Start button's native padding, which has extra space on the left.
 # System Tray Dock Alignment
   - target: SystemTray.SystemTrayFrame
     styles:
@@ -902,7 +915,7 @@ controlStyles:
 # System Tray Dock Alignment (Builds Where the Tray Is Inside the Dock, Which Already Applies the Gaps)
   - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
     styles:
-      - Margin=0
+      - Margin=0,0,{{TrayInFrameWidth==``?0:taskbarDock==`vertical`?0:$DockMargin}},0
       - ActualWidth=>TrayInFrameWidth
 # Matches Window Preview and Taskbar Overflow Flyout Height With Flyouts
   - target: Grid#HoverFlyoutGrid

@@ -97,25 +97,26 @@ controlStyles:
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Grid.Column=1
+      - Grid.Column={{TrayInFrameWidth==``?1:taskbarDock==`vertical`?1:0}}
+      - Grid.ColumnSpan={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():4}}
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - HorizontalAlignment={{TrayInFrameWidth==``?`Right`:taskbarDock==`vertical`?`Right`:`Left`}}
       - Margin=0,0,$IslandHorizontalMargin,0
-      - ActualWidth=>FrameActualWidth
-      - MaxWidth={{containerGridWidth>0?min($TaskbarFrameMaxWidth,(TrayInFrameWidth==``?containerGridWidth:taskbarDock==`vertical`?containerGridWidth:containerGridWidth-TrayInFrameWidth-2*$IslandHorizontalMargin)):$TaskbarFrameMaxWidth}}
+      - MaxWidth={{TrayInFrameWidth==``?(containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth):taskbarDock==`vertical`?(containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth):`Infinity`}}
+      - MinWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-IslandRepeaterWidth-25)/2,0)+IslandRepeaterWidth-TrayInFrameWidth-2*$IslandHorizontalMargin+25}}
+      - // Makes room for the island background on builds where the tray is an item of the taskbar frame, since the item offset below isn't part of the repeater's width.
   - target: Taskbar.TaskbarFrame > Grid
     styles:
-      - Background:=<SolidColorBrush Color="$IslandBackgroundColor"/>
-      - CornerRadius=10
-      - Padding=25,0,25,0
-      - Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin
-      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth-TrayInFrameWidth-2*$IslandHorizontalMargin)/2,0)}}" />
+      - Background:={{TrayInFrameWidth==``?`<SolidColorBrush Color="$IslandBackgroundColor"/>`:taskbarDock==`vertical`?`<SolidColorBrush Color="$IslandBackgroundColor"/>`:skip()}}
+      - CornerRadius={{TrayInFrameWidth==``?10:taskbarDock==`vertical`?10:0}}
+      - Padding={{TrayInFrameWidth==``?`25,0,25,0`:taskbarDock==`vertical`?`25,0,25,0`:0}}
+      - Margin={{TrayInFrameWidth==``?`0,$IslandVerticalMargin,0,$IslandVerticalMargin`:taskbarDock==`vertical`?`0,$IslandVerticalMargin,0,$IslandVerticalMargin`:0}}
   - target: SystemTray.SystemTrayFrame
     styles:
       - Grid.Column=2
       - Width=Auto
       - HorizontalAlignment=Left
-      - Margin={{TrayInFrameWidth==``?$IslandHorizontalMargin:taskbarDock==`vertical`?$IslandHorizontalMargin:25+2*$IslandHorizontalMargin}},{{TrayInFrameWidth==``?0:taskbarDock==`vertical`?0:-$IslandVerticalMargin}},0,{{TrayInFrameWidth==``?0:taskbarDock==`vertical`?0:-$IslandVerticalMargin}}
+      - Margin={{TrayInFrameWidth==``?$IslandHorizontalMargin:taskbarDock==`vertical`?$IslandHorizontalMargin:25+2*$IslandHorizontalMargin}},0,0,0
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=<SolidColorBrush Color="$IslandBackgroundColor"/>
@@ -124,21 +125,31 @@ controlStyles:
       - Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin
   - target: Taskbar.TaskbarBackground#BackgroundControl
     styles:
-      - Visibility=Collapsed
+      - Visibility={{TrayInFrameWidth==``?`Collapsed`:taskbarDock==`vertical`?`Collapsed`:`Visible`}}
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
+    styles:
+      - Background:={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`<SolidColorBrush Color="$IslandBackgroundColor"/>`}}
+      - CornerRadius=10
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-IslandRepeaterWidth-25)/2,0)}},$IslandVerticalMargin,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max(TrayInFrameWidth+2*$IslandHorizontalMargin-25-max((containerGridWidth-IslandRepeaterWidth-25)/2,0),0)}},$IslandVerticalMargin
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill=Transparent
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
+    styles:
+      - Visibility=Collapsed
   - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
     styles:
       - ActualWidth=>TrayInFrameWidth
-  - target: Taskbar.TaskbarExtensionElement
-    styles:
-      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
-      - // Explorer's gap before the tray. The search item's margin is already 0.
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - Margin=0,0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(TrayInFrameWidth+25+2*$IslandHorizontalMargin)}},0
-      - // Builds where the tray is an item of the taskbar frame. The tray is kept out of the dock's measured width, and the frame stays at the left edge, since tray flyouts are positioned relative to it.
+      - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
+      - MaxWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():min($TaskbarFrameMaxWidth-25+TrayInFrameWidth+2*$IslandHorizontalMargin,containerGridWidth-25)}}
+      - ActualWidth=>IslandRepeaterWidth
+      - // Builds where the tray is an item of the taskbar frame. The frame and the repeater stay at the left edge, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The islands are moved by margins on the items instead.
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():25+max((containerGridWidth-IslandRepeaterWidth-25)/2,0)}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(25+max((containerGridWidth-IslandRepeaterWidth-25)/2,0))}},0
+      - // Moves each item by the island offset. The negative right margin keeps the item's width, and so the repeater's, independent of the offset. Also replaces the gap Explorer adds before the tray.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:
       - ActualWidth=>containerGridWidth

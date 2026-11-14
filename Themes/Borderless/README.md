@@ -65,13 +65,15 @@ controlStyles:
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Width={{taskbarDock==`vertical`?$TaskbarFrameHeight:$TaskbarFrameWidth}}
-      - MaxWidth={{taskbarDock==`vertical`?skip():$TaskbarFrameWidth}}
+      - Width={{taskbarDock==`vertical`?$TaskbarFrameHeight:TrayInFrameWidth==``?$TaskbarFrameWidth:`Auto`}}
+      - MaxWidth={{taskbarDock==`vertical`?skip():TrayInFrameWidth==``?$TaskbarFrameWidth:skip()}}
+      - MinWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-$TaskbarFrameWidth)/2,0)+$TaskbarFrameWidth}}
       - Height={{taskbarDock==`vertical`?min($TaskbarFrameWidth,containerGridHeight):$TaskbarFrameHeight}}
-      - Grid.Column=1
+      - Grid.Column={{TrayInFrameWidth==``?1:taskbarDock==`vertical`?1:0}}
+      - Grid.ColumnSpan={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():4}}
       - Grid.Row=1
       - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
-      - ActualWidth=>FrameActualWidth
+      - // Builds where the tray is an item of the taskbar frame. The frame and the repeater stay at the left edge, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The bar is moved by margins on the items instead.
   - target: SystemTray.SystemTrayFrame
     styles:
       - Height={{taskbarDock==`vertical`?skip():40}}
@@ -83,13 +85,20 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Windows.UI.Xaml.Controls.Grid#RootGrid > Taskbar.TaskbarBackground#BackgroundControl
     styles:
       - CornerRadius=6
-      - Margin=2
+      - Margin={{TrayInFrameWidth==``?2:taskbarDock==`vertical`?2:max((containerGridWidth-$TaskbarFrameWidth)/2,0)+2}},2,2,2
   - target: Windows.UI.Xaml.Shapes.Rectangle#BackgroundStroke
     styles:
       - Visibility=Collapsed
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - Margin=4
+      - Margin={{TrayInFrameWidth==``?4:taskbarDock==`vertical`?4:0}},4,{{TrayInFrameWidth==``?4:taskbarDock==`vertical`?4:0}},4
+      - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
+      - MaxWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():$TaskbarFrameWidth-8}}
+      - ActualWidth=>BarRepeaterWidth
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():4+max((containerGridWidth-$TaskbarFrameWidth)/2,0)}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(4+max((containerGridWidth-$TaskbarFrameWidth)/2,0))}},0
+      - // Moves each item by the bar offset. The negative right margin keeps the item's width, and so the repeater's, independent of the offset.
   - target: Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder
     styles:
       - Shadow:=$Shadows
@@ -137,10 +146,8 @@ controlStyles:
   - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
     styles:
       - ActualWidth=>TrayInFrameWidth
-  - target: Taskbar.TaskbarFrame > Grid#RootGrid
-    styles:
-      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth)/2,0)}}" />
-      - // Builds where the tray is an item of the taskbar frame. The frame stays at the left edge, since tray flyouts are positioned relative to it.
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max($TaskbarFrameWidth-8-BarRepeaterWidth,0)}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-max($TaskbarFrameWidth-8-BarRepeaterWidth,0)}},0
+      - // Moves the tray to the bar's right edge. The negative right margin keeps the repeater's width independent of the move.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:
       - ActualWidth=>containerGridWidth

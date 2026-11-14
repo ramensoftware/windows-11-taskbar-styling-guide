@@ -97,18 +97,22 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - MaxWidth={{containerGridWidth>0?(TrayInFrameWidth==``?containerGridWidth:taskbarDock==`vertical`?containerGridWidth:containerGridWidth-TrayInFrameWidth):`Infinity`}}
+      - MaxWidth={{TrayInFrameWidth==``?(containerGridWidth>0?containerGridWidth:`Infinity`):taskbarDock==`vertical`?(containerGridWidth>0?containerGridWidth:`Infinity`):skip()}}
       - Height={{taskbarDock==`vertical`?skip():70}}
 
-      - Grid.Column=1
+      - Grid.Column={{TrayInFrameWidth==``?1:taskbarDock==`vertical`?1:0}}
+      - Grid.ColumnSpan={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():4}}
       - HorizontalAlignment={{TrayInFrameWidth==``?`Center`:taskbarDock==`vertical`?`Center`:`Left`}}
-      - ActualWidth=>FrameActualWidth
+      - MinWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-DockRepeaterWidth-20)/2,0)+DockRepeaterWidth-TrayInFrameWidth+20}}
+      - // Makes room for the hotbar background on builds where the tray is an item of the taskbar frame, since the item offset below isn't part of the repeater's width.
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Transitions:=<TransitionCollection><EntranceThemeTransition HorizontalOffset="0" VerticalOffset="0" /></TransitionCollection>
       - Margin=0,4,0,-4
-      - Padding=20,0,20,0
-      - RenderTransform:=<TranslateTransform X="{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-FrameActualWidth-TrayInFrameWidth)/2,0)}}" />
+      - Padding={{TrayInFrameWidth==``?`20,0,20,0`:taskbarDock==`vertical`?`20,0,20,0`:0}}
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():20+max((containerGridWidth-DockRepeaterWidth-20)/2,0)}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max(TrayInFrameWidth-max((containerGridWidth-DockRepeaterWidth-20)/2,0),0)}},0
   - target: SystemTray.SystemTrayFrame
     styles:
       - Height=70
@@ -405,14 +409,16 @@ controlStyles:
     styles:
       - ActualWidth=>TrayInFrameWidth
       - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`20,-4,0,4`}}
-  - target: Taskbar.TaskbarExtensionElement
-    styles:
-      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
-      - // Explorer's gap before the tray. The search item's margin is already 0.
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - Margin=0,0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(TrayInFrameWidth+20)}},0
-      - // Builds where the tray is an item of the taskbar frame. The tray is kept out of the dock's measured width, and the frame stays at the left edge, since tray flyouts are positioned relative to it.
+      - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
+      - MaxWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():containerGridWidth-20}}
+      - ActualWidth=>DockRepeaterWidth
+      - // Builds where the tray is an item of the taskbar frame. The frame and the repeater stay at the left edge, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The hotbar is moved by margins on the items instead.
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():20+max((containerGridWidth-DockRepeaterWidth-20)/2,0)}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(20+max((containerGridWidth-DockRepeaterWidth-20)/2,0))}},0
+      - // Moves each item by the hotbar offset. The negative right margin keeps the item's width, and so the repeater's, independent of the offset. Also replaces the gap Explorer adds before the tray.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:
       - ActualWidth=>containerGridWidth
