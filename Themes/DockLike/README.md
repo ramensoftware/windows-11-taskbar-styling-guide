@@ -59,7 +59,7 @@ StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
 ```
 Style:
 ```
-Margin=8,1,8,3
+Margin=-4,-11,-4,-9
 ```
 
 ### Add a border (tweak)
