@@ -18,6 +18,8 @@ This theme is meant as a fairly vanilla implementation of a dock-like taskbar. I
 
 Change **Taskbar icon alignment** in Windows settings to switch the dock between Left and Center. With Left alignment, the widgets button is placed next to the system tray, as in the default Windows layout.
 
+With Center alignment, the app dock is centered in the space to the left of the system tray. Its position follows changes to the tray width. The dock can grow within that space before Windows puts additional apps in the overflow menu, instead of being restricted by fixed 250-DIP margins on both sides. Left alignment also reserves room for the separate widgets pill when it is visible.
+
 The theme detects alignment from the Start button's native padding, which has extra space on the left when icons are left-aligned. This has been tested with the default and small taskbar sizes. Known limitations:
 
 - On some Windows builds, Explorer doesn't add this padding when switching from Center to Left if it was started with Center, so the dock stays centered. Restart Explorer after changing the setting.
@@ -161,8 +163,11 @@ controlStyles:
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - HorizontalAlignment={{taskbarDock==`vertical`?skip():DockNativeAlignment==`Left`?`Left`:`Center`}}
-      - Margin={{taskbarDock==`vertical`?skip():DockNativeAlignment==`Left`?0:250}},0,250,0
+      - Margin={{taskbarDock==`vertical`?skip():DockNativeAlignment==`Left`?0:-(DockTrayWidth==``?0:DockTrayWidth)/2}},0,{{taskbarDock==`vertical`?skip():DockNativeAlignment==`Left`?(DockWidgetsWidth==``?0:DockWidgetsWidth):(DockTrayWidth==``?0:DockTrayWidth)/2}},0
       - ActualWidth=>DockFrameWidth
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>DockTrayWidth
   - target: :root > ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
       - ActualWidth=>DockContainerWidth
