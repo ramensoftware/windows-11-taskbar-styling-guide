@@ -238,6 +238,8 @@ styleConstants:
   - ThemeControlBorder=<SolidColorBrush Color="{ThemeResource ControlBorder}" />
   - ThFntWt=Normal
   - ThemeFlyout=<AcrylicBrush BackgroundSource="Backdrop" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.1" TintLuminosityOpacity="0.8" FallbackColor="{ThemeResource SystemChromeMediumColor}" />
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame and the repeater stay at the left edge there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there.
+  - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 controlStyles:
   - target: Border#BackgroundDimmingLayer
     styles:
@@ -421,14 +423,14 @@ controlStyles:
       - // Taskbar Buttons > Main List buttons > Button Background
   - target: Taskbar.TaskbarBackground#BackgroundControl
     styles:
-      - Opacity={{TrayInFrameWidth==``?0:taskbarDock==`vertical`?0:1}}
+      - Opacity={{$TrayInFrame?1:0}}
       - // Default Taskbar Background. Builds where the tray is an item of the taskbar frame draw the pill with it, since the frame's rounded corners would clip the tray.
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
-      - Background:={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`$ThemeLayer`}}
-      - CornerRadius={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():$OuterRadius}}
-      - BorderThickness={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():1}}
-      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():8}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():TrayInFrameWidth-4}},0
+      - Background:={{$TrayInFrame?`$ThemeLayer`:skip()}}
+      - CornerRadius={{$TrayInFrame?$OuterRadius:skip()}}
+      - BorderThickness={{$TrayInFrame?1:skip()}}
+      - Margin={{$TrayInFrame?8:skip()}},0,{{$TrayInFrame?TrayInFrameWidth-4:skip()}},0
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Visibility=Collapsed
@@ -452,11 +454,11 @@ controlStyles:
       - // Taskbar Task Region Frame(Task list + search area + Start button Region grid)
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
-      - Margin={{TrayInFrameWidth==``?8:taskbarDock==`vertical`?8:0}},3,0,3
-      - CornerRadius={{TrayInFrameWidth==``?$OuterRadius:taskbarDock==`vertical`?$OuterRadius:0}}
-      - Padding={{TrayInFrameWidth==``?-8:taskbarDock==`vertical`?-8:0}},0,0,0
-      - Background:={{TrayInFrameWidth==``?`$ThemeLayer`:taskbarDock==`vertical`?`$ThemeLayer`:skip()}}
-      - BorderThickness={{TrayInFrameWidth==``?1:taskbarDock==`vertical`?1:0}}
+      - Margin={{$TrayInFrame?0:8}},3,0,3
+      - CornerRadius={{$TrayInFrame?0:$OuterRadius}}
+      - Padding={{$TrayInFrame?0:-8}},0,0,0
+      - Background:={{$TrayInFrame?skip():`$ThemeLayer`}}
+      - BorderThickness={{$TrayInFrame?0:1}}
       - HorizontalAlignment=Left
       - // BorderBrush:=$ThemeOutBorder
       - // Taskbar Task Region Frame(Task list + search area + Start button Region grid) > Background
@@ -562,12 +564,11 @@ controlStyles:
       - // Menu Flyouts Root (Background + TextBlock Styles)
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - Margin=0,0,{{TrayInFrameWidth==``?2:taskbarDock==`vertical`?2:0}},0
+      - Margin=0,0,{{$TrayInFrame?0:2}},0
       - // IDR what this was for
-      - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
-      - MaxWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():containerGridWidth-16}}
+      - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
+      - MaxWidth={{$TrayInFrame?containerGridWidth-16:skip()}}
       - ActualWidth=>DockRepeaterWidth
-      - // Builds where the tray is an item of the taskbar frame. The frame and the repeater stay at the left edge, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there.
   - target: Rectangle#BackgroundStroke
     styles:
       - Visibility=1
@@ -619,11 +620,11 @@ controlStyles:
   - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
     styles:
       - ActualWidth=>TrayInFrameWidth
-      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():containerGridWidth-DockRepeaterWidth}},-4,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(containerGridWidth-DockRepeaterWidth)}},-4
+      - Margin={{$TrayInFrame?containerGridWidth-DockRepeaterWidth:skip()}},-4,{{$TrayInFrame?-(containerGridWidth-DockRepeaterWidth):skip()}},-4
       - // Builds where the tray is an item of the taskbar frame. Moves the tray to the screen edge. The negative right margin keeps the repeater's width independent of the move.
   - target: Taskbar.TaskbarExtensionElement
     styles:
-      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():0}}
+      - Margin={{$TrayInFrame?0:skip()}}
       - // Explorer's gap before the tray. The search item's margin is already 0.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:

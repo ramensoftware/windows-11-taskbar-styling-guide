@@ -99,6 +99,8 @@ styleConstants:
   - ItemPadding=8,6,8,6
   - LiquidBackground=<WindhawkBlur BlurAmount="22" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.15" />
   - LiquidBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="0.0" /><GradientStop Color="#50404040" Offset="1" /></LinearGradientBrush>
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame and the repeater stay at the left edge there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The bar is moved by margins on the items instead.
+  - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
@@ -112,35 +114,34 @@ controlStyles:
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Grid.Column={{TrayInFrameWidth==``?1:taskbarDock==`vertical`?1:0}}
-      - Grid.ColumnSpan={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():4}}
-      - Width={{taskbarDock==`vertical`?skip():TrayInFrameWidth==``?$TaskbarFrameWidth:`Auto`}}
-      - MinWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-$TaskbarFrameWidth)/2,0)+$TaskbarFrameWidth}}
-      - // Builds where the tray is an item of the taskbar frame. The frame and the repeater stay at the left edge, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The bar is moved by margins on the items instead.
+      - Grid.Column={{$TrayInFrame?0:1}}
+      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
+      - Width={{taskbarDock==`vertical`?skip():$TrayInFrame?`Auto`:$TaskbarFrameWidth}}
+      - MinWidth={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0)+$TaskbarFrameWidth:skip()}}
       - Height={{taskbarDock==`vertical`?skip():($TaskbarHeight+$BottomGap)}}
       - MinHeight={{$TaskbarHeight+$BottomGap}}
-      - HorizontalAlignment={{TrayInFrameWidth==``?`Center`:taskbarDock==`vertical`?`Center`:`Left`}}
+      - HorizontalAlignment={{$TrayInFrame?`Left`:`Center`}}
       - VerticalAlignment=Center
       - Padding=0
   - target: Taskbar.TaskbarBackground#BackgroundControl
     styles:
-      - Visibility={{TrayInFrameWidth==``?`Collapsed`:taskbarDock==`vertical`?`Collapsed`:`Visible`}}
+      - Visibility={{$TrayInFrame?`Visible`:`Collapsed`}}
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
-      - Background:={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`$LiquidBackground`}}
-      - BorderBrush:={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`$LiquidBorder`}}
-      - BorderThickness={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`0.5,1,0.5,1`}}
-      - CornerRadius={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():$GlobalRadius}}
-      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-$TaskbarFrameWidth)/2,0)}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max(FluentRepeaterWidth-max((containerGridWidth-$TaskbarFrameWidth)/2,0)-$TaskbarFrameWidth,0)}},0
+      - Background:={{$TrayInFrame?`$LiquidBackground`:skip()}}
+      - BorderBrush:={{$TrayInFrame?`$LiquidBorder`:skip()}}
+      - BorderThickness={{$TrayInFrame?`0.5,1,0.5,1`:skip()}}
+      - CornerRadius={{$TrayInFrame?$GlobalRadius:skip()}}
+      - Margin={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0):skip()}},0,{{$TrayInFrame?max(FluentRepeaterWidth-max((containerGridWidth-$TaskbarFrameWidth)/2,0)-$TaskbarFrameWidth,0):skip()}},0
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle
     styles:
       - Visibility=Collapsed
   - target: Grid#RootGrid
     styles:
-      - Background:={{TrayInFrameWidth==``?`$LiquidBackground`:taskbarDock==`vertical`?`$LiquidBackground`:skip()}}
-      - BorderBrush:={{TrayInFrameWidth==``?`$LiquidBorder`:taskbarDock==`vertical`?`$LiquidBorder`:skip()}}
-      - BorderThickness={{TrayInFrameWidth==``?`0.5,1,0.5,1`:taskbarDock==`vertical`?`0.5,1,0.5,1`:0}}
-      - CornerRadius={{TrayInFrameWidth==``?$GlobalRadius:taskbarDock==`vertical`?$GlobalRadius:0}}
+      - Background:={{$TrayInFrame?skip():`$LiquidBackground`}}
+      - BorderBrush:={{$TrayInFrame?skip():`$LiquidBorder`}}
+      - BorderThickness={{$TrayInFrame?0:`0.5,1,0.5,1`}}
+      - CornerRadius={{$TrayInFrame?0:$GlobalRadius}}
       - Margin=0,0,0,$BottomGap
       - Padding=0
   - target: SystemTray.SystemTrayFrame
@@ -150,7 +151,7 @@ controlStyles:
       - VerticalAlignment=Center
       - Height=$TaskbarHeight
       - MinWidth=250
-      - Margin={{TrayInFrameWidth==``?`0,0,0,$BottomGap`:taskbarDock==`vertical`?`0,0,0,$BottomGap`:max($TaskbarFrameWidth-FluentRepeaterWidth,0)}}{{TrayInFrameWidth==``?``:taskbarDock==`vertical`?``:`,0,`}}{{TrayInFrameWidth==``?``:taskbarDock==`vertical`?``:-max($TaskbarFrameWidth-FluentRepeaterWidth,0)}}{{TrayInFrameWidth==``?``:taskbarDock==`vertical`?``:`,0`}}
+      - Margin={{$TrayInFrame?max($TaskbarFrameWidth-FluentRepeaterWidth,0):`0,0,0,$BottomGap`}}{{$TrayInFrame?`,0,`:``}}{{$TrayInFrame?-max($TaskbarFrameWidth-FluentRepeaterWidth,0):``}}{{$TrayInFrame?`,0`:``}}
       - // On builds where the tray is an item of the taskbar frame, moves the tray to the bar's right edge. The negative right margin keeps the repeater's width independent of the move.
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
@@ -177,14 +178,14 @@ controlStyles:
       - Height=$IconHeight
   - target: Taskbar.TaskListButton, Taskbar.ExperienceToggleButton, Taskbar.AugmentedEntryPointButton
     styles:
-      - Margin={{TrayInFrameWidth==``?`$ItemMargin`:taskbarDock==`vertical`?`$ItemMargin`:max((containerGridWidth-$TaskbarFrameWidth)/2,0)}}{{TrayInFrameWidth==``?``:taskbarDock==`vertical`?``:`,0,`}}{{TrayInFrameWidth==``?``:taskbarDock==`vertical`?``:-max((containerGridWidth-$TaskbarFrameWidth)/2,0)}}{{TrayInFrameWidth==``?``:taskbarDock==`vertical`?``:`,0`}}
+      - Margin={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0):`$ItemMargin`}}{{$TrayInFrame?`,0,`:``}}{{$TrayInFrame?-max((containerGridWidth-$TaskbarFrameWidth)/2,0):``}}{{$TrayInFrame?`,0`:``}}
       - // On builds where the tray is an item of the taskbar frame, moves each item by the bar offset, with the item margin on its template root below. The negative right margin keeps the item's width, and so the repeater's, independent of the offset.
       - Padding=$ItemPadding
       - VerticalAlignment=Center
       - Height=$IconHeight
   - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel, Taskbar.ExperienceToggleButton > Taskbar.TaskListButtonPanel, Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel
     styles:
-      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`$ItemMargin`}}
+      - Margin={{$TrayInFrame?`$ItemMargin`:skip()}}
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Border#BackgroundElement
     styles:
       - CornerRadius=$GlobalRadius
@@ -211,12 +212,12 @@ controlStyles:
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
       - VerticalAlignment=Center
-      - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
-      - MaxWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():$TaskbarFrameWidth}}
+      - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
+      - MaxWidth={{$TrayInFrame?$TaskbarFrameWidth:skip()}}
       - ActualWidth=>FluentRepeaterWidth
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
     styles:
-      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-$TaskbarFrameWidth)/2,0)}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-max((containerGridWidth-$TaskbarFrameWidth)/2,0)}},0
+      - Margin={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0):skip()}},0,{{$TrayInFrame?-max((containerGridWidth-$TaskbarFrameWidth)/2,0):skip()}},0
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
       - Margin=5,0,0,0

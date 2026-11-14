@@ -108,6 +108,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
 styleConstants:
   - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame and the repeater stay at the left edge there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
+  - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
+  - DockOffset=max((containerGridWidth-DockRepeaterWidth-20)/2,0)
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
@@ -118,15 +122,15 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - MaxWidth={{TrayInFrameWidth==``?(containerGridWidth>0?containerGridWidth:`Infinity`):taskbarDock==`vertical`?(containerGridWidth>0?containerGridWidth:`Infinity`):skip()}}
-      - Grid.Column={{TrayInFrameWidth==``?1:taskbarDock==`vertical`?1:0}}
-      - Grid.ColumnSpan={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():4}}
+      - MaxWidth={{$TrayInFrame?skip():containerGridWidth>0?containerGridWidth:`Infinity`}}
+      - Grid.Column={{$TrayInFrame?0:1}}
+      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height={{taskbarDock==`vertical`?skip():80}}
       - MaxHeight=80
-      - HorizontalAlignment={{TrayInFrameWidth==``?`Center`:taskbarDock==`vertical`?`Center`:`Left`}}
-      - MinWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-DockRepeaterWidth-20)/2,0)+DockRepeaterWidth-TrayInFrameWidth+20}}
-      - // Makes room for the dock background on builds where the tray is an item of the taskbar frame, since the item offset below isn't part of the repeater's width.
+      - HorizontalAlignment={{$TrayInFrame?`Left`:`Center`}}
+      - MinWidth={{$TrayInFrame?$DockOffset+DockRepeaterWidth-TrayInFrameWidth+20:skip()}}
+      - // Makes room for the dock background, since the item offset below isn't part of the repeater's width.
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
       - Height=24
@@ -150,11 +154,11 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Margin=0,8,0,2
-      - Padding={{TrayInFrameWidth==``?`20,0,20,0`:taskbarDock==`vertical`?`20,0,20,0`:0}}
+      - Padding={{$TrayInFrame?0:`20,0,20,0`}}
       - BorderBrush=#40FFFFFF
   - target: Grid#RootGrid > Taskbar.TaskbarBackground
     styles:
-      - Margin={{TrayInFrameWidth==``?-20:taskbarDock==`vertical`?-20:max((containerGridWidth-DockRepeaterWidth-20)/2,0)}},0,{{TrayInFrameWidth==``?-20:taskbarDock==`vertical`?-20:max(TrayInFrameWidth-20-max((containerGridWidth-DockRepeaterWidth-20)/2,0),0)}},0
+      - Margin={{$TrayInFrame?$DockOffset:-20}},0,{{$TrayInFrame?max(TrayInFrameWidth-20-$DockOffset,0):-20}},0
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
@@ -304,7 +308,7 @@ controlStyles:
       - Grid.Column=2
       - Width=Auto
       - HorizontalAlignment=Left
-      - Margin={{TrayInFrameWidth==``?`0,-2,0.5,2`:taskbarDock==`vertical`?`0,-2,0.5,2`:`20,-10,0,0`}}
+      - Margin={{$TrayInFrame?`20,-10,0,0`:`0,-2,0.5,2`}}
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,0,0.5,0
@@ -551,13 +555,12 @@ controlStyles:
       - ActualWidth=>TrayInFrameWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
-      - MaxWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():containerGridWidth-20}}
+      - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
+      - MaxWidth={{$TrayInFrame?containerGridWidth-20:skip()}}
       - ActualWidth=>DockRepeaterWidth
-      - // Builds where the tray is an item of the taskbar frame. The frame and the repeater stay at the left edge, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
     styles:
-      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():20+max((containerGridWidth-DockRepeaterWidth-20)/2,0)}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(20+max((containerGridWidth-DockRepeaterWidth-20)/2,0))}},0
+      - Margin={{$TrayInFrame?20+$DockOffset:skip()}},0,{{$TrayInFrame?-(20+$DockOffset):skip()}},0
       - // Moves each item by the dock offset. The negative right margin keeps the item's width, and so the repeater's, independent of the offset. Also replaces the gap Explorer adds before the tray.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:
@@ -577,6 +580,10 @@ themeResourceVariables:
 styleConstants:
   - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame and the repeater stay at the left edge there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
+  - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
+  - DockOffset=max((containerGridWidth-DockRepeaterWidth-20)/2,0)
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
@@ -587,15 +594,15 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - MaxWidth={{TrayInFrameWidth==``?(containerGridWidth>0?containerGridWidth:`Infinity`):taskbarDock==`vertical`?(containerGridWidth>0?containerGridWidth:`Infinity`):skip()}}
-      - Grid.Column={{TrayInFrameWidth==``?1:taskbarDock==`vertical`?1:0}}
-      - Grid.ColumnSpan={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():4}}
+      - MaxWidth={{$TrayInFrame?skip():containerGridWidth>0?containerGridWidth:`Infinity`}}
+      - Grid.Column={{$TrayInFrame?0:1}}
+      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height={{taskbarDock==`vertical`?skip():70}}
       - MaxHeight=80
-      - HorizontalAlignment={{TrayInFrameWidth==``?`Center`:taskbarDock==`vertical`?`Center`:`Left`}}
-      - MinWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-DockRepeaterWidth-20)/2,0)+DockRepeaterWidth-TrayInFrameWidth+20}}
-      - // Makes room for the dock background on builds where the tray is an item of the taskbar frame, since the item offset below isn't part of the repeater's width.
+      - HorizontalAlignment={{$TrayInFrame?`Left`:`Center`}}
+      - MinWidth={{$TrayInFrame?$DockOffset+DockRepeaterWidth-TrayInFrameWidth+20:skip()}}
+      - // Makes room for the dock background, since the item offset below isn't part of the repeater's width.
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
       - Height=24
@@ -621,11 +628,11 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Margin=0,8,0,2
-      - Padding={{TrayInFrameWidth==``?`20,0,20,0`:taskbarDock==`vertical`?`20,0,20,0`:0}}
+      - Padding={{$TrayInFrame?0:`20,0,20,0`}}
       - BorderBrush=#40FFFFFF
   - target: Grid#RootGrid > Taskbar.TaskbarBackground
     styles:
-      - Margin={{TrayInFrameWidth==``?-20:taskbarDock==`vertical`?-20:max((containerGridWidth-DockRepeaterWidth-20)/2,0)}},0,{{TrayInFrameWidth==``?-20:taskbarDock==`vertical`?-20:max(TrayInFrameWidth-20-max((containerGridWidth-DockRepeaterWidth-20)/2,0),0)}},0
+      - Margin={{$TrayInFrame?$DockOffset:-20}},0,{{$TrayInFrame?max(TrayInFrameWidth-20-$DockOffset,0):-20}},0
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
@@ -775,7 +782,7 @@ controlStyles:
       - Grid.Column=2
       - Width=Auto
       - HorizontalAlignment=Left
-      - Margin={{TrayInFrameWidth==``?`0,-2,0.5,2`:taskbarDock==`vertical`?`0,-2,0.5,2`:`20,-10,0,0`}}
+      - Margin={{$TrayInFrame?`20,-10,0,0`:`0,-2,0.5,2`}}
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,0,0.5,0
@@ -1022,13 +1029,12 @@ controlStyles:
       - ActualWidth=>TrayInFrameWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
-      - MaxWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():containerGridWidth-20}}
+      - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
+      - MaxWidth={{$TrayInFrame?containerGridWidth-20:skip()}}
       - ActualWidth=>DockRepeaterWidth
-      - // Builds where the tray is an item of the taskbar frame. The frame and the repeater stay at the left edge, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
     styles:
-      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():20+max((containerGridWidth-DockRepeaterWidth-20)/2,0)}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(20+max((containerGridWidth-DockRepeaterWidth-20)/2,0))}},0
+      - Margin={{$TrayInFrame?20+$DockOffset:skip()}},0,{{$TrayInFrame?-(20+$DockOffset):skip()}},0
       - // Moves each item by the dock offset. The negative right margin keeps the item's width, and so the repeater's, independent of the offset. Also replaces the gap Explorer adds before the tray.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:
@@ -1380,6 +1386,10 @@ themeResourceVariables:
 styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.04,-0.14" EndPoint="1.22,1.10"><GradientStop Offset="0.18" Color="#4FFFFFFF"/><GradientStop Offset="0.34" Color="#661D1D1D"/><GradientStop Offset="0.63" Color="#00000000"/><GradientStop Offset="0.72" Color="#662D2D2D"/><GradientStop Offset="0.84" Color="#4FFFFFFF"/></LinearGradientBrush>
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame and the repeater stay at the left edge there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
+  - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
+  - DockOffset=max((containerGridWidth-DockRepeaterWidth-20)/2,0)
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
@@ -1390,15 +1400,15 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - MaxWidth={{TrayInFrameWidth==``?(containerGridWidth>0?containerGridWidth:`Infinity`):taskbarDock==`vertical`?(containerGridWidth>0?containerGridWidth:`Infinity`):skip()}}
-      - Grid.Column={{TrayInFrameWidth==``?1:taskbarDock==`vertical`?1:0}}
-      - Grid.ColumnSpan={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():4}}
+      - MaxWidth={{$TrayInFrame?skip():containerGridWidth>0?containerGridWidth:`Infinity`}}
+      - Grid.Column={{$TrayInFrame?0:1}}
+      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height={{taskbarDock==`vertical`?skip():80}}
       - MaxHeight=80
-      - HorizontalAlignment={{TrayInFrameWidth==``?`Center`:taskbarDock==`vertical`?`Center`:`Left`}}
-      - MinWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-DockRepeaterWidth-20)/2,0)+DockRepeaterWidth-TrayInFrameWidth+20}}
-      - // Makes room for the dock background on builds where the tray is an item of the taskbar frame, since the item offset below isn't part of the repeater's width.
+      - HorizontalAlignment={{$TrayInFrame?`Left`:`Center`}}
+      - MinWidth={{$TrayInFrame?$DockOffset+DockRepeaterWidth-TrayInFrameWidth+20:skip()}}
+      - // Makes room for the dock background, since the item offset below isn't part of the repeater's width.
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
       - Height=24
@@ -1422,11 +1432,11 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Margin=0,8,0,2
-      - Padding={{TrayInFrameWidth==``?`20,0,20,0`:taskbarDock==`vertical`?`20,0,20,0`:0}}
+      - Padding={{$TrayInFrame?0:`20,0,20,0`}}
       - BorderBrush=#40FFFFFF
   - target: Grid#RootGrid > Taskbar.TaskbarBackground
     styles:
-      - Margin={{TrayInFrameWidth==``?-20:taskbarDock==`vertical`?-20:max((containerGridWidth-DockRepeaterWidth-20)/2,0)}},0,{{TrayInFrameWidth==``?-20:taskbarDock==`vertical`?-20:max(TrayInFrameWidth-20-max((containerGridWidth-DockRepeaterWidth-20)/2,0),0)}},0
+      - Margin={{$TrayInFrame?$DockOffset:-20}},0,{{$TrayInFrame?max(TrayInFrameWidth-20-$DockOffset,0):-20}},0
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
@@ -1576,7 +1586,7 @@ controlStyles:
       - Grid.Column=2
       - Width=Auto
       - HorizontalAlignment=Left
-      - Margin={{TrayInFrameWidth==``?`0,-2,0.5,2`:taskbarDock==`vertical`?`0,-2,0.5,2`:`20,-10,0,0`}}
+      - Margin={{$TrayInFrame?`20,-10,0,0`:`0,-2,0.5,2`}}
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,0,0.5,0
@@ -1823,13 +1833,12 @@ controlStyles:
       - ActualWidth=>TrayInFrameWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
-      - MaxWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():containerGridWidth-20}}
+      - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
+      - MaxWidth={{$TrayInFrame?containerGridWidth-20:skip()}}
       - ActualWidth=>DockRepeaterWidth
-      - // Builds where the tray is an item of the taskbar frame. The frame and the repeater stay at the left edge, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
     styles:
-      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():20+max((containerGridWidth-DockRepeaterWidth-20)/2,0)}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(20+max((containerGridWidth-DockRepeaterWidth-20)/2,0))}},0
+      - Margin={{$TrayInFrame?20+$DockOffset:skip()}},0,{{$TrayInFrame?-(20+$DockOffset):skip()}},0
       - // Moves each item by the dock offset. The negative right margin keeps the item's width, and so the repeater's, independent of the offset. Also replaces the gap Explorer adds before the tray.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:
@@ -1849,6 +1858,10 @@ themeResourceVariables:
 styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.04,-0.14" EndPoint="1.22,1.10"><GradientStop Offset="0.18" Color="#4FFFFFFF"/><GradientStop Offset="0.34" Color="#661D1D1D"/><GradientStop Offset="0.63" Color="#00000000"/><GradientStop Offset="0.72" Color="#662D2D2D"/><GradientStop Offset="0.84" Color="#4FFFFFFF"/></LinearGradientBrush>
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame and the repeater stay at the left edge there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
+  - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
+  - DockOffset=max((containerGridWidth-DockRepeaterWidth-20)/2,0)
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
@@ -1859,15 +1872,15 @@ controlStyles:
   - target: Taskbar.TaskbarFrame
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - MaxWidth={{TrayInFrameWidth==``?(containerGridWidth>0?containerGridWidth:`Infinity`):taskbarDock==`vertical`?(containerGridWidth>0?containerGridWidth:`Infinity`):skip()}}
-      - Grid.Column={{TrayInFrameWidth==``?1:taskbarDock==`vertical`?1:0}}
-      - Grid.ColumnSpan={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():4}}
+      - MaxWidth={{$TrayInFrame?skip():containerGridWidth>0?containerGridWidth:`Infinity`}}
+      - Grid.Column={{$TrayInFrame?0:1}}
+      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height={{taskbarDock==`vertical`?skip():70}}
       - MaxHeight=80
-      - HorizontalAlignment={{TrayInFrameWidth==``?`Center`:taskbarDock==`vertical`?`Center`:`Left`}}
-      - MinWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():max((containerGridWidth-DockRepeaterWidth-20)/2,0)+DockRepeaterWidth-TrayInFrameWidth+20}}
-      - // Makes room for the dock background on builds where the tray is an item of the taskbar frame, since the item offset below isn't part of the repeater's width.
+      - HorizontalAlignment={{$TrayInFrame?`Left`:`Center`}}
+      - MinWidth={{$TrayInFrame?$DockOffset+DockRepeaterWidth-TrayInFrameWidth+20:skip()}}
+      - // Makes room for the dock background, since the item offset below isn't part of the repeater's width.
   - target: Grid#IconPanel > Image#Icon, Taskbar.TaskListLabeledButtonPanel#IconPanel > Image#Icon
     styles:
       - Height=24
@@ -1893,11 +1906,11 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Margin=0,8,0,2
-      - Padding={{TrayInFrameWidth==``?`20,0,20,0`:taskbarDock==`vertical`?`20,0,20,0`:0}}
+      - Padding={{$TrayInFrame?0:`20,0,20,0`}}
       - BorderBrush=#40FFFFFF
   - target: Grid#RootGrid > Taskbar.TaskbarBackground
     styles:
-      - Margin={{TrayInFrameWidth==``?-20:taskbarDock==`vertical`?-20:max((containerGridWidth-DockRepeaterWidth-20)/2,0)}},0,{{TrayInFrameWidth==``?-20:taskbarDock==`vertical`?-20:max(TrayInFrameWidth-20-max((containerGridWidth-DockRepeaterWidth-20)/2,0),0)}},0
+      - Margin={{$TrayInFrame?$DockOffset:-20}},0,{{$TrayInFrame?max(TrayInFrameWidth-20-$DockOffset,0):-20}},0
   - target: Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
@@ -2047,7 +2060,7 @@ controlStyles:
       - Grid.Column=2
       - Width=Auto
       - HorizontalAlignment=Left
-      - Margin={{TrayInFrameWidth==``?`0,-2,0.5,2`:taskbarDock==`vertical`?`0,-2,0.5,2`:`20,-10,0,0`}}
+      - Margin={{$TrayInFrame?`20,-10,0,0`:`0,-2,0.5,2`}}
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Margin=0,0,0.5,0
@@ -2294,13 +2307,12 @@ controlStyles:
       - ActualWidth=>TrayInFrameWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - HorizontalAlignment={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():`Left`}}
-      - MaxWidth={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():containerGridWidth-20}}
+      - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
+      - MaxWidth={{$TrayInFrame?containerGridWidth-20:skip()}}
       - ActualWidth=>DockRepeaterWidth
-      - // Builds where the tray is an item of the taskbar frame. The frame and the repeater stay at the left edge, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
     styles:
-      - Margin={{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():20+max((containerGridWidth-DockRepeaterWidth-20)/2,0)}},0,{{TrayInFrameWidth==``?skip():taskbarDock==`vertical`?skip():-(20+max((containerGridWidth-DockRepeaterWidth-20)/2,0))}},0
+      - Margin={{$TrayInFrame?20+$DockOffset:skip()}},0,{{$TrayInFrame?-(20+$DockOffset):skip()}},0
       - // Moves each item by the dock offset. The negative right margin keeps the item's width, and so the repeater's, independent of the offset. Also replaces the gap Explorer adds before the tray.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:
