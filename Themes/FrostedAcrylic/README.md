@@ -90,7 +90,7 @@ styleConstants:
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 
 controlStyles:
-  - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
+  - target: ':root > ScrollViewer > ScrollContentPresenter > Border'
     styles:
       - ActualWidth=>containerGridWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
