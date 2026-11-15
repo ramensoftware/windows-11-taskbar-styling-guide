@@ -58,7 +58,6 @@ controlStyles:
       - HorizontalAlignment=Stretch
       - RowDefinitions:=<RowDefinitionCollection><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></RowDefinitionCollection>
       - VerticalAlignment=Stretch
-      - ActualHeight=>containerGridHeight
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
       - Tag=horizontal
@@ -149,5 +148,6 @@ controlStyles:
   - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:
       - ActualWidth=>containerGridWidth
+      - ActualHeight=>containerGridHeight
 ```
 </details>
