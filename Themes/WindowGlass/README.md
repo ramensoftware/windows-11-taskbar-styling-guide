@@ -99,7 +99,7 @@ styleConstants:
   - TrayPadding=2,4,2,4
   - Height=70
   - TaskbarFrameMaxWidth=1895
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
   - DockOffset=max((containerGridWidth-20-WGRepeaterWidth)/2,0)
@@ -117,8 +117,7 @@ controlStyles:
       - MinWidth={{$TrayInFrame?$DockOffset+20+WGRepeaterWidth-TrayInFrameWidth-0:skip()}}
       - // Makes room for the dock background, since the item offset below isn't part of the repeater's width.
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
-      - Grid.Column={{$TrayInFrame?0:1}}
-      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
+      - Grid.Column=1
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Margin={{$TrayInFrame?0:10}},2,0,2
@@ -378,7 +377,7 @@ styleConstants:
   - TrayPadding=2,4,2,4
   - Height=70
   - TaskbarFrameMaxWidth=1895
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
   - DockOffset=max((containerGridWidth-20-WGRepeaterWidth)/2,0)
@@ -391,8 +390,7 @@ controlStyles:
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Grid.Column={{$TrayInFrame?0:1}}
-      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
+      - Grid.Column=1
       - MaxWidth={{$TrayInFrame?skip():containerGridWidth>0?min($TaskbarFrameMaxWidth,containerGridWidth):$TaskbarFrameMaxWidth}}
       - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
       - MinWidth={{$TrayInFrame?$DockOffset+20+WGRepeaterWidth-TrayInFrameWidth-3:skip()}}

@@ -353,7 +353,7 @@ styleConstants:
   - ElementBorderThickness=0.3,0.3,0.3,1
   - CornerRadius=12
   - ElementCornerRadius=8
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's width and its distance from the screen's left edge.
   - DockWidth=(DockRepeaterWidth-TrayInFrameWidth-13+2.6)
@@ -393,9 +393,6 @@ controlStyles:
   - target: Rectangle#BackgroundStroke
     styles:
       - Visibility=1
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
-    styles:
-      - Margin=-3,0
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background:=$ElementBackground

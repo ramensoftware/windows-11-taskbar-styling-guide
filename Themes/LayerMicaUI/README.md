@@ -239,7 +239,7 @@ styleConstants:
   - ThemeControlBorder=<SolidColorBrush Color="{ThemeResource ControlBorder}" />
   - ThFntWt=Normal
   - ThemeFlyout=<AcrylicBrush BackgroundSource="Backdrop" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.1" TintLuminosityOpacity="0.8" FallbackColor="{ThemeResource SystemChromeMediumColor}" />
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 controlStyles:
   - target: Border#BackgroundDimmingLayer

@@ -86,7 +86,7 @@ styleConstants:
   - ElementBorderThickness=0.3,0.3,0.3,1
   - ElementCornerRadius=12
   - TrayPadding=2,4,2,4
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The repeater stays at the frame's top left corner there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The items take the root grid's offset instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The repeater stays at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if it started at the left edge.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 
 controlStyles:
@@ -192,17 +192,6 @@ controlStyles:
     styles:
       - Visibility=Collapsed
       - Margin=0
-  - target: Taskbar.TaskListButtonPanel > Grid > TextBlock
-    styles:
-      - Visibility=Collapsed
-      - Margin=0
-  - target: Taskbar.TaskListButtonPanel > Grid > StackPanel > TextBlock
-    styles:
-      - Visibility=Collapsed
-      - Opacity=0
-      - Width=0
-      - MinWidth=0
-      - MaxWidth=0
   - target: Taskbar.TaskListButtonPanel > Grid > Grid > TextBlock
     styles:
       - Visibility=Collapsed

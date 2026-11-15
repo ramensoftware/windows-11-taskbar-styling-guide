@@ -44,7 +44,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 ```yaml
 styleConstants:
   - separateWidget=1
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
   - DockOffset=max((containerGridWidth-DockRepeaterWidth-3)/2,0)
@@ -61,8 +61,7 @@ controlStyles:
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Grid.Column={{$TrayInFrame?0:1}}
-      - Grid.ColumnSpan={{$TrayInFrame?5:skip()}}
+      - Grid.Column=1
       - HorizontalAlignment={{$TrayInFrame?`Left`:`Right`}}
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - Height={{taskbarDock==`vertical`?skip():56}}

@@ -67,7 +67,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 styleConstants:
   - IconBackground=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/template.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
   - IconBorder=transparent
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
   - DockOffset=max((containerGridWidth-DockRepeaterWidth-20)/2,0)
@@ -480,8 +480,7 @@ controlStyles:
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MaxWidth={{$TrayInFrame?skip():containerGridWidth>0?containerGridWidth:`Infinity`}}
-      - Grid.Column={{$TrayInFrame?0:1}}
-      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
+      - Grid.Column=1
       - MinWidth={{$TrayInFrame?$DockOffset+DockRepeaterWidth-TrayInFrameWidth+20:skip()}}
       - // Makes room for the dock background, since the item offset below isn't part of the repeater's width.
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
@@ -827,7 +826,7 @@ themeResourceVariables:
 styleConstants:
   - IconBackground=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/template.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
   - IconBorder=transparent
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The repeater stays at the frame's top left corner there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The items take the root grid's offset instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The repeater stays at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if it started at the left edge.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 controlStyles:
 # OneUI icon pack

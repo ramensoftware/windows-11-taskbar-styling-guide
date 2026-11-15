@@ -108,7 +108,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 styleConstants:
   - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
   - DockOffset=max((containerGridWidth-DockRepeaterWidth-20)/2,0)
@@ -123,8 +123,7 @@ controlStyles:
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MaxWidth={{$TrayInFrame?skip():containerGridWidth>0?containerGridWidth:`Infinity`}}
-      - Grid.Column={{$TrayInFrame?0:1}}
-      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
+      - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height={{taskbarDock==`vertical`?skip():80}}
       - MaxHeight=80
@@ -583,7 +582,7 @@ themeResourceVariables:
 styleConstants:
   - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
   - DockOffset=max((containerGridWidth-DockRepeaterWidth-20)/2,0)
@@ -598,8 +597,7 @@ controlStyles:
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MaxWidth={{$TrayInFrame?skip():containerGridWidth>0?containerGridWidth:`Infinity`}}
-      - Grid.Column={{$TrayInFrame?0:1}}
-      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
+      - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height={{taskbarDock==`vertical`?skip():70}}
       - MaxHeight=80
@@ -1061,7 +1059,7 @@ themeResourceVariables:
 styleConstants:
   - IconBackground=<ImageBrush ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/OS26%20Liquid%20Glass/Assets/tahoeappbg.png" Stretch="UniformtoFill"/>
   - IconBorder= <LinearGradientBrush EndPoint="1,1" StartPoint="0,0"><GradientStop Color="#F5ffffff" Offset="0.0"/><GradientStop Color="#40ffffff" Offset="0.4"/><GradientStop Color="#20ffffff" Offset="0.6"/><GradientStop Color="#90ffffff" Offset="1.0"/></LinearGradientBrush>
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The repeater stays at the frame's top left corner there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The items take the root grid's offset instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The repeater stays at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if it started at the left edge.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 controlStyles:
   - target: Taskbar.TaskbarFrame
@@ -1249,13 +1247,6 @@ controlStyles:
       - BorderBrush:=$IconBorder
       - Margin=2
       - BorderThickness=1.2
-  - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
-    styles:
-      - CornerRadius=12
-      - Background:=$IconBackground
-      - BorderBrush:=$IconBorder
-      - Margin=2
-      - BorderThickness=1.2
   - target: Border#OverflowFlyoutBackgroundBorder
     styles:
       - Background:=<WindhawkBlur BlurAmount="8" TintColor="#2D101010"/>
@@ -1406,7 +1397,7 @@ themeResourceVariables:
 styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.04,-0.14" EndPoint="1.22,1.10"><GradientStop Offset="0.18" Color="#4FFFFFFF"/><GradientStop Offset="0.34" Color="#661D1D1D"/><GradientStop Offset="0.63" Color="#00000000"/><GradientStop Offset="0.72" Color="#662D2D2D"/><GradientStop Offset="0.84" Color="#4FFFFFFF"/></LinearGradientBrush>
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
   - DockOffset=max((containerGridWidth-DockRepeaterWidth-20)/2,0)
@@ -1421,8 +1412,7 @@ controlStyles:
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MaxWidth={{$TrayInFrame?skip():containerGridWidth>0?containerGridWidth:`Infinity`}}
-      - Grid.Column={{$TrayInFrame?0:1}}
-      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
+      - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height={{taskbarDock==`vertical`?skip():80}}
       - MaxHeight=80
@@ -1881,7 +1871,7 @@ themeResourceVariables:
 styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.04,-0.14" EndPoint="1.22,1.10"><GradientStop Offset="0.18" Color="#4FFFFFFF"/><GradientStop Offset="0.34" Color="#661D1D1D"/><GradientStop Offset="0.63" Color="#00000000"/><GradientStop Offset="0.72" Color="#662D2D2D"/><GradientStop Offset="0.84" Color="#4FFFFFFF"/></LinearGradientBrush>
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
   - DockOffset=max((containerGridWidth-DockRepeaterWidth-20)/2,0)
@@ -1896,8 +1886,7 @@ controlStyles:
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - MaxWidth={{$TrayInFrame?skip():containerGridWidth>0?containerGridWidth:`Infinity`}}
-      - Grid.Column={{$TrayInFrame?0:1}}
-      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
+      - Grid.Column=1
       - Transitions:=<TransitionCollection><RepositionThemeTransition IsStaggeringEnabled="False"/></TransitionCollection>
       - Height={{taskbarDock==`vertical`?skip():70}}
       - MaxHeight=80
@@ -2359,7 +2348,7 @@ themeResourceVariables:
 styleConstants:
   - IconBackground=<LinearGradientBrush StartPoint="0.47,-0.29" EndPoint="0.50,1.29"><GradientStop Offset="0.18" Color="#2F2F2F"/><GradientStop Offset="0.3" Color="#292929"/><GradientStop Offset="0.5" Color="#141414"/><GradientStop Offset="0.68" Color="#080808"/><GradientStop Offset="0.81" Color="#000000"/></LinearGradientBrush>
   - IconBorder=<LinearGradientBrush StartPoint="0.25,-0.20" EndPoint="0.99,1.39"><GradientStop Offset="0.11" Color="#50FFFFFF"/><GradientStop Offset="0.3" Color="#631C1C1C"/><GradientStop Offset="0.62" Color="#591C1C1C"/><GradientStop Offset="0.77" Color="#50FFFFFF"/></LinearGradientBrush>
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The repeater stays at the frame's top left corner there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The items take the root grid's offset instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The repeater stays at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if it started at the left edge.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 controlStyles:
   - target: Taskbar.TaskbarFrame
@@ -2540,13 +2529,6 @@ controlStyles:
       - Margin=0,-5,0,5
       - Canvas.ZIndex=1
 
-  - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
-    styles:
-      - CornerRadius=12
-      - Background:=$IconBackground
-      - BorderBrush:=$IconBorder
-      - Margin=2
-      - BorderThickness=1.2
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - CornerRadius=12

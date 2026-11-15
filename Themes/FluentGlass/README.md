@@ -99,7 +99,7 @@ styleConstants:
   - ItemPadding=8,6,8,6
   - LiquidBackground=<WindhawkBlur BlurAmount="22" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.15" />
   - LiquidBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="0.0" /><GradientStop Color="#50404040" Offset="1" /></LinearGradientBrush>
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The bar is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid
@@ -114,8 +114,7 @@ controlStyles:
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Grid.Column={{$TrayInFrame?0:1}}
-      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
+      - Grid.Column=1
       - Width={{taskbarDock==`vertical`?skip():$TrayInFrame?`Auto`:$TaskbarFrameWidth}}
       - MinWidth={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0)+$TaskbarFrameWidth:skip()}}
       - Height={{taskbarDock==`vertical`?skip():($TaskbarHeight+$BottomGap)}}
@@ -151,7 +150,7 @@ controlStyles:
       - VerticalAlignment=Center
       - Height=$TaskbarHeight
       - MinWidth=250
-      - Margin={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0):`0,0,0,$BottomGap`}}{{$TrayInFrame?`,0,`:``}}{{$TrayInFrame?-max((containerGridWidth-$TaskbarFrameWidth)/2,0):``}}{{$TrayInFrame?`,0`:``}}
+      - Margin={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0):0}},0,{{$TrayInFrame?-max((containerGridWidth-$TaskbarFrameWidth)/2,0):0}},{{$TrayInFrame?0:$BottomGap}}
       - // On builds where the tray is an item of the taskbar frame, moves the tray by the bar offset like the items. The negative right margin keeps the tray item's width independent of the offset.
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:

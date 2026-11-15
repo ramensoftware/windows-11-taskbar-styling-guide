@@ -54,7 +54,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 styleConstants:
   - IconBackground= <ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Minecraft%20Hotbar/Assets/hotbar.png" />
   - ActiveBackground= <ImageBrush Stretch="UniformtoFill" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Minecraft%20Hotbar/Assets/hotbaractive.png" />
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The hotbar is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the hotbar's distance from the screen's left edge, less the 20 pixels that the items and the background add, as the root grid padding does on other builds.
   - HotbarOffset=max((containerGridWidth-DockRepeaterWidth-40)/2,0)
@@ -88,10 +88,6 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonControl > Grid > SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - MinWidth=55
-  - target: Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
-    styles:
-      - CornerRadius=0
-      - Margin=0,5.5,0,5.5
   - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
     styles:
       - Tag=horizontal
@@ -104,8 +100,7 @@ controlStyles:
       - MaxWidth={{$TrayInFrame?skip():containerGridWidth>0?containerGridWidth:`Infinity`}}
       - Height={{taskbarDock==`vertical`?skip():70}}
 
-      - Grid.Column={{$TrayInFrame?0:1}}
-      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
+      - Grid.Column=1
       - HorizontalAlignment={{$TrayInFrame?`Left`:`Center`}}
       - MinWidth={{$TrayInFrame?$HotbarOffset+DockRepeaterWidth-TrayInFrameWidth+20:skip()}}
       - // Makes room for the hotbar background, since the item offset below isn't part of the repeater's width.

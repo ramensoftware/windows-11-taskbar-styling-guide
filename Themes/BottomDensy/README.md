@@ -191,7 +191,6 @@ controlStyles:
     styles:
       - BorderThickness=0 #≝
       - CornerRadius=0 #≝
-      - MinHeight=32 #≝48
   - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid
     styles:
       - Padding=0,0,0,0 #≝20,0,20,0
@@ -333,7 +332,6 @@ controlStyles:
     styles:
       - BorderThickness=0 #≝
       - CornerRadius=0 #≝
-      - MinHeight=32 #≝48
   - target: ScrollViewer > ScrollContentPresenter > Border > HWConfirmatorUI.ConfirmatorHostControl > Canvas#ConfirmatorFrameCanvas > Grid
     styles:
       - Padding=0,0,0,0 #≝20,0,20,0

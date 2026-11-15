@@ -192,10 +192,6 @@ controlStyles:
       - CornerRadius=13
       - Padding=6,0,6,0
       - HorizontalContentAlignment=Left
-  - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
-    styles:
-      - FontSize=16
-      - Foreground=#facc15
   - target: SystemTray.NotifyIconView#NotifyItemIcon
     styles:
       - MinWidth=25
@@ -238,7 +234,6 @@ controlStyles:
   - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
     styles:
       - FontSize=13
-      - Foreground=#facc15
   - target: TextBlock#LabelControl
     styles:
       - FontFamily=Segoe UI Medium

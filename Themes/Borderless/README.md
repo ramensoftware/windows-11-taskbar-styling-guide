@@ -49,7 +49,7 @@ styleConstants:
   - TaskbarFrameWidth=800
   - TaskbarFrameHeight=56
   - Shadows=
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The bar is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid
@@ -71,8 +71,7 @@ controlStyles:
       - MaxWidth={{taskbarDock==`vertical`?skip():$TrayInFrame?skip():$TaskbarFrameWidth}}
       - MinWidth={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0)+$TaskbarFrameWidth:skip()}}
       - Height={{taskbarDock==`vertical`?min($TaskbarFrameWidth,containerGridHeight):$TaskbarFrameHeight}}
-      - Grid.Column={{$TrayInFrame?0:1}}
-      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
+      - Grid.Column=1
       - Grid.Row=1
       - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
   - target: SystemTray.SystemTrayFrame

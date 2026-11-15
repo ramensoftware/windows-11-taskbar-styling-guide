@@ -51,9 +51,6 @@ controlStyles:
   - target: Taskbar.TaskListButton
     styles:
       - CornerRadius=3
-  - target: SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
-    styles:
-      - FontSize=16
   - target: SystemTray.NotifyIconView#NotifyItemIcon
     styles:
       - MinWidth=25

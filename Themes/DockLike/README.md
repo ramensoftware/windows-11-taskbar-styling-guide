@@ -130,7 +130,7 @@ styleConstants:
   - DockTopGap=0
   - DockBottomGap=0
   - DockBackground=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.8" FallbackColor="{ThemeResource SystemChromeLowColor}" />
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's distance from the screen's left edge. It is computed from the repeater's content width, which the item margins don't change. Widths measured inside the frame would feed back through pixel rounding and never settle.
   - DockOffset=(DockNativeAlignment==`Left`?0:max(min((DockContainerWidth-DockRepeaterWidth-6+TrayInFrameWidth)/2,DockContainerWidth-DockRepeaterWidth-6),0))

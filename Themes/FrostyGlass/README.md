@@ -113,7 +113,7 @@ styleConstants:
   - ElementCornerRadius=10
   - Background3=Transparent
   - BorderBrush3=Transparent
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's width and its distance from the screen's left edge.
   - DockWidth=(FrostyRepeaterWidth-TrayInFrameWidth+5.5)
@@ -384,12 +384,6 @@ controlStyles:
       - BorderThickness:=$BorderThickness
       - BorderBrush:=$BorderBrush
       - CornerRadius:=$CornerRadius
-  - target: Taskbar.TaskbarFrame > Grid#RootGrid
-    styles:
-      - Background:={{$TrayInFrame?skip():`$Background`}}
-      - BorderBrush:={{$TrayInFrame?skip():`$BorderBrush`}}
-      - BorderThickness={{$TrayInFrame?0:$BorderThickness}}
-      - CornerRadius={{$TrayInFrame?0:10}}
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:={{$TrayInFrame?`$Background`:skip()}}

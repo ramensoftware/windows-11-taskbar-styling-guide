@@ -83,7 +83,7 @@ styleConstants:
   - IslandVerticalMargin=3
   - IslandHorizontalMargin=5
   - TaskbarFrameMaxWidth=8000
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The islands are moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the island's distance from the screen's left edge.
   - IslandOffset=max((containerGridWidth-IslandRepeaterWidth-25)/2,0)
@@ -101,8 +101,7 @@ controlStyles:
       - Tag=>taskbarDock
   - target: Taskbar.TaskbarFrame
     styles:
-      - Grid.Column={{$TrayInFrame?0:1}}
-      - Grid.ColumnSpan={{$TrayInFrame?4:skip()}}
+      - Grid.Column=1
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - HorizontalAlignment={{$TrayInFrame?`Left`:`Right`}}
       - Margin=0,0,$IslandHorizontalMargin,0
