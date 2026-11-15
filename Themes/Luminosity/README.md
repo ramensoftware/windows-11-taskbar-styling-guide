@@ -897,13 +897,21 @@ controlStyles:
       - BorderBrush=$bb
       - CornerRadius=$mcr
 # Widget To Program Window Buttons Gap Remove
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
+    styles:
+      - Margin={{$TrayInFrame?0:skip()}},{{-($DockTopGap)}},0,{{-($DockBottomGap)}}
+      - // Where TrayInFrame is set, keeps the repeater at the top of the frame, and the items take the root grid's vertical offset instead.
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.OverflowToggleButton
+    styles:
+      - Margin={{$TrayInFrame?0:skip()}},$DockTopGap,0,$DockBottomGap
+      - // The tray item keeps Explorer's gap before it, and the tray takes the gaps instead, see below.
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
     styles:
-      - Margin={{$TrayInFrame?($LeftAligned?0:$DockMargin):0}},0,$WidgetGap57,0
+      - Margin={{$TrayInFrame?($LeftAligned?0:$DockMargin):0}},{{$TrayInFrame?$DockTopGap:0}},$WidgetGap57,{{$TrayInFrame?$DockBottomGap:0}}
       - // With Center alignment on builds where the tray is an item of the taskbar frame, the widgets button is the dock's first item, see Dock Side Margins.
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
     styles:
-      - Margin={{$TrayInFrame?($LeftAligned?$DockMargin:0):skip()}},0,0,0
+      - Margin={{$TrayInFrame?($LeftAligned?$DockMargin:0):skip()}},$DockTopGap,0,$DockBottomGap
       - // With Left alignment on builds where the tray is an item of the taskbar frame, Start is the dock's first item, see Dock Side Margins.
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
@@ -919,7 +927,7 @@ controlStyles:
 # System Tray Dock Alignment (Builds Where the Tray Is Inside the Dock, Which Already Applies the Gaps)
   - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
     styles:
-      - Margin=0,0,{{$TrayInFrame?$DockMargin:0}},0
+      - Margin=0,{{$TrayInFrame?$DockTopGap:0}},{{$TrayInFrame?$DockMargin:0}},{{$TrayInFrame?$DockBottomGap:0}}
       - ActualWidth=>TrayInFrameWidth
 # Matches Window Preview and Taskbar Overflow Flyout Height With Flyouts
   - target: Grid#HoverFlyoutGrid

@@ -33,16 +33,16 @@ This gives it an appearance closer to the MacOS dock.
 
 1. Use the mod [Taskbar height and icon size](https://windhawk.net/mods/taskbar-icon-size) to increase the height of the taskbar by 4 (usually from 48 to 52). This compensates for the added spacing.
 
-2. Add the following control styles:
+2. Set the following style constants in the mod settings under "Style constants":
 
-Target:
 ```
-Taskbar.TaskbarFrame > Grid#RootGrid
+DockTopGap=1
 ```
-Style:
 ```
-Margin=0,1,0,3
+DockBottomGap=3
 ```
+
+3. Add the following control styles:
 
 Target:
 ```
@@ -126,8 +126,11 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```yaml
 styleConstants:
+  - // The dock's distance from the taskbar's top and bottom edges, see the floating taskbar tweak.
+  - DockTopGap=0
+  - DockBottomGap=0
   - DockBackground=<AcrylicBrush TintColor="{ThemeResource SystemChromeAltHighColor}" TintOpacity="0.8" FallbackColor="{ThemeResource SystemChromeLowColor}" />
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame and the repeater stay at the left edge there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's distance from the screen's left edge. It is computed from the repeater's content width, which the item margins don't change. Widths measured inside the frame would feed back through pixel rounding and never settle.
   - DockOffset=(DockNativeAlignment==`Left`?0:max(min((DockContainerWidth-DockRepeaterWidth-6+TrayInFrameWidth)/2,DockContainerWidth-DockRepeaterWidth-6),0))
@@ -153,7 +156,7 @@ controlStyles:
       - ActualWidth=>DockContainerWidth
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
     styles:
-      - Margin={{DockNativeAlignment==`Left`?-DockWidgetsWidth:$TrayInFrame?6+$DockOffset:skip()}},0,{{DockNativeAlignment==`Left`?0:$TrayInFrame?-(6+$DockOffset):skip()}},0
+      - Margin={{DockNativeAlignment==`Left`?-DockWidgetsWidth:$TrayInFrame?6+$DockOffset:skip()}},{{$TrayInFrame?$DockTopGap:0}},{{DockNativeAlignment==`Left`?0:$TrayInFrame?-(6+$DockOffset):skip()}},{{$TrayInFrame?$DockBottomGap:0}}
       - RenderTransform:=<TranslateTransform X="{{DockNativeAlignment==`Left`?DockContainerWidth-DockFrameWidth:skip()}}" />
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
     styles:
@@ -173,19 +176,21 @@ controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
       - Padding={{$TrayInFrame?0:`6,0,6,0`}}
+      - Margin={{$TrayInFrame?0:`0,$DockTopGap,0,$DockBottomGap`}}
+      - // Where TrayInFrame is set, the dock background and the items take the gaps, which keeps the repeater at the top of the frame.
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
       - Margin={{$TrayInFrame?0:skip()}},0,0,0
       - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
       - ActualWidth=>DockRepeaterWidth
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.OverflowToggleButton
     styles:
-      - Margin={{$TrayInFrame?6+$DockOffset:skip()}},0,{{$TrayInFrame?-(6+$DockOffset):skip()}},0
+      - Margin={{$TrayInFrame?6+$DockOffset:skip()}},$DockTopGap,{{$TrayInFrame?-(6+$DockOffset):skip()}},$DockBottomGap
       - // Moves each item by the dock offset. The negative right margin keeps the item's width, and so the repeater's, independent of the offset.
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
     styles:
       - Background:=$DockBackground
-      - Margin={{$TrayInFrame?$DockOffset:-6}},0,{{$TrayInFrame?max(TrayInFrameWidth-6-$DockOffset,0):-6}},0
+      - Margin={{$TrayInFrame?$DockOffset:-6}},{{$TrayInFrame?$DockTopGap:0}},{{$TrayInFrame?max(TrayInFrameWidth-6-$DockOffset,0):-6}},{{$TrayInFrame?$DockBottomGap:0}}
       - CornerRadius={{DockNativeAlignment==`Left`?`0,8,0,0`:`8,8,0,0`}}
       - BorderBrush:=<SolidColorBrush Color="{ThemeResource SurfaceStrokeColorDefault}" />
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill

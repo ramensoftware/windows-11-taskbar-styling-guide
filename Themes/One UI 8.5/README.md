@@ -67,7 +67,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 styleConstants:
   - IconBackground=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/template.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
   - IconBorder=transparent
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame and the repeater stay at the left edge there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
   - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
   - DockOffset=max((containerGridWidth-DockRepeaterWidth-20)/2,0)
@@ -536,12 +536,14 @@ controlStyles:
       - ActualWidth=>TrayInFrameWidth
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
+      - Margin={{$TrayInFrame?`0,-8,0,-2`:skip()}}
+      - // Where TrayInFrame is set, keeps the repeater at the top of the frame, and the items take the root grid's vertical offset instead.
       - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
       - MaxWidth={{$TrayInFrame?containerGridWidth-20:skip()}}
       - ActualWidth=>DockRepeaterWidth
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.OverflowToggleButton
     styles:
-      - Margin={{$TrayInFrame?20+$DockOffset:skip()}},0,{{$TrayInFrame?-(20+$DockOffset):skip()}},0
+      - Margin={{$TrayInFrame?20+$DockOffset:skip()}},8,{{$TrayInFrame?-(20+$DockOffset):skip()}},2
       - // Moves each item by the dock offset. The negative right margin keeps the item's width, and so the repeater's, independent of the offset. Also replaces the gap Explorer adds before the tray.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
@@ -825,6 +827,8 @@ themeResourceVariables:
 styleConstants:
   - IconBackground=<ImageBrush Stretch="Uniform"> <ImageBrush.ImageSource> <BitmapImage UriSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/One%20UI%208.5/Assets/template.png" DecodePixelType="Logical" DecodePixelWidth="64" DecodePixelHeight="64" /> </ImageBrush.ImageSource> </ImageBrush> 
   - IconBorder=transparent
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The repeater stays at the frame's top left corner there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The items take the root grid's offset instead.
+  - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 controlStyles:
 # OneUI icon pack
   # --- XBOX APP ---
@@ -1225,6 +1229,17 @@ controlStyles:
     styles:
       - Margin=0,8,0,2
       - BorderBrush=#40FFFFFF
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
+    styles:
+      - Margin={{$TrayInFrame?`0,-8,0,8`:skip()}}
+      - // Where TrayInFrame is set, keeps the repeater at the frame's top left corner with its size, and the items take the root grid's offset instead.
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.OverflowToggleButton
+    styles:
+      - Margin={{$TrayInFrame?`0,8,0,-8`:skip()}}
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement > ContentPresenter > SearchUx.SearchUI.SearchButtonControl
+    styles:
+      - Margin={{$TrayInFrame?`0,8,0,-8`:skip()}}
+      - // The search and tray items keep Explorer's margins, which include the gap before the tray. The search button and the tray take the offset instead.
   - target: Grid#RootGrid > Taskbar.TaskbarBackground
     styles:
       - Margin=5,0,5,0
@@ -1245,7 +1260,8 @@ controlStyles:
   - target: SystemTray.SystemTrayFrame
     styles:
       - Height=70
-      - Margin={{TrayInFrameWidth==``?`0,-2,0.5,2`:`0,-10,0.5,0`}}
+      - Margin={{TrayInFrameWidth==``?`0,-2,0.5,2`:$TrayInFrame?`0,-2,0.5,-8`:`0,-10,0.5,0`}}
+      - // Where TrayInFrame is set, also takes the root grid's offset like the items.
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - VerticalAlignment=bottom

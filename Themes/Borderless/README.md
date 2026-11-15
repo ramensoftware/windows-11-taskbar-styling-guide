@@ -49,7 +49,7 @@ styleConstants:
   - TaskbarFrameWidth=800
   - TaskbarFrameHeight=56
   - Shadows=
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame and the repeater stay at the left edge there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The bar is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The bar is moved by margins on the items instead.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid
@@ -92,13 +92,13 @@ controlStyles:
       - Visibility=Collapsed
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - Margin={{$TrayInFrame?0:4}},4,{{$TrayInFrame?0:4}},4
+      - Margin={{$TrayInFrame?0:4}}
+      - // Where TrayInFrame is set, the items take the top and bottom margins, which keeps the repeater at the top of the frame.
       - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
-      - MaxWidth={{$TrayInFrame?$TaskbarFrameWidth-8:skip()}}
-      - ActualWidth=>BarRepeaterWidth
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
+      - Width={{$TrayInFrame?$TaskbarFrameWidth-8:skip()}}
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.OverflowToggleButton
     styles:
-      - Margin={{$TrayInFrame?4+max((containerGridWidth-$TaskbarFrameWidth)/2,0):skip()}},0,{{$TrayInFrame?-(4+max((containerGridWidth-$TaskbarFrameWidth)/2,0)):skip()}},0
+      - Margin={{$TrayInFrame?4+max((containerGridWidth-$TaskbarFrameWidth)/2,0):skip()}},4,{{$TrayInFrame?-(4+max((containerGridWidth-$TaskbarFrameWidth)/2,0)):skip()}},4
       - // Moves each item by the bar offset. The negative right margin keeps the item's width, and so the repeater's, independent of the offset.
   - target: Windows.UI.Xaml.Controls.Border#OverflowFlyoutBackgroundBorder
     styles:
@@ -147,8 +147,6 @@ controlStyles:
   - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
     styles:
       - ActualWidth=>TrayInFrameWidth
-      - Margin={{$TrayInFrame?max($TaskbarFrameWidth-8-BarRepeaterWidth,0):skip()}},0,{{$TrayInFrame?-max($TaskbarFrameWidth-8-BarRepeaterWidth,0):skip()}},0
-      - // Moves the tray to the bar's right edge. The negative right margin keeps the repeater's width independent of the move.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:
       - ActualWidth=>containerGridWidth

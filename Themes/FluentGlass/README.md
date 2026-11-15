@@ -99,7 +99,7 @@ styleConstants:
   - ItemPadding=8,6,8,6
   - LiquidBackground=<WindhawkBlur BlurAmount="22" TintColor="{ThemeResource SystemAltLowColor}" TintOpacity="0.15" />
   - LiquidBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50808080" Offset="0.0" /><GradientStop Color="#50404040" Offset="1" /></LinearGradientBrush>
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame and the repeater stay at the left edge there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The bar is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The bar is moved by margins on the items instead.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 controlStyles:
   - target: ScrollViewer > ScrollContentPresenter > Border > Grid
@@ -132,7 +132,7 @@ controlStyles:
       - BorderBrush:={{$TrayInFrame?`$LiquidBorder`:skip()}}
       - BorderThickness={{$TrayInFrame?`0.5,1,0.5,1`:skip()}}
       - CornerRadius={{$TrayInFrame?$GlobalRadius:skip()}}
-      - Margin={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0):skip()}},0,{{$TrayInFrame?max(FluentRepeaterWidth-max((containerGridWidth-$TaskbarFrameWidth)/2,0)-$TaskbarFrameWidth,0):skip()}},0
+      - Margin={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0):skip()}},0,0,0
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle
     styles:
       - Visibility=Collapsed
@@ -151,8 +151,8 @@ controlStyles:
       - VerticalAlignment=Center
       - Height=$TaskbarHeight
       - MinWidth=250
-      - Margin={{$TrayInFrame?max($TaskbarFrameWidth-FluentRepeaterWidth,0):`0,0,0,$BottomGap`}}{{$TrayInFrame?`,0,`:``}}{{$TrayInFrame?-max($TaskbarFrameWidth-FluentRepeaterWidth,0):``}}{{$TrayInFrame?`,0`:``}}
-      - // On builds where the tray is an item of the taskbar frame, moves the tray to the bar's right edge. The negative right margin keeps the repeater's width independent of the move.
+      - Margin={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0):`0,0,0,$BottomGap`}}{{$TrayInFrame?`,0,`:``}}{{$TrayInFrame?-max((containerGridWidth-$TaskbarFrameWidth)/2,0):``}}{{$TrayInFrame?`,0`:``}}
+      - // On builds where the tray is an item of the taskbar frame, moves the tray by the bar offset like the items. The negative right margin keeps the tray item's width independent of the offset.
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
       - Background=Transparent
@@ -176,14 +176,22 @@ controlStyles:
       - Padding=$ItemPadding
       - VerticalAlignment=Center
       - Height=$IconHeight
-  - target: Taskbar.TaskListButton, Taskbar.ExperienceToggleButton, Taskbar.AugmentedEntryPointButton
+  - target: Taskbar.AugmentedEntryPointButton
+    styles:
+      - Margin=$ItemMargin
+      - RenderTransform:=<TranslateTransform X="{{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0):skip()}}" />
+      - // Where TrayInFrame is set, moves the button by the bar offset without changing the layout, which keeps Explorer's gap after it.
+      - Padding=$ItemPadding
+      - VerticalAlignment=Center
+      - Height=$IconHeight
+  - target: Taskbar.TaskListButton, Taskbar.ExperienceToggleButton
     styles:
       - Margin={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0):`$ItemMargin`}}{{$TrayInFrame?`,0,`:``}}{{$TrayInFrame?-max((containerGridWidth-$TaskbarFrameWidth)/2,0):``}}{{$TrayInFrame?`,0`:``}}
       - // On builds where the tray is an item of the taskbar frame, moves each item by the bar offset, with the item margin on its template root below. The negative right margin keeps the item's width, and so the repeater's, independent of the offset.
       - Padding=$ItemPadding
       - VerticalAlignment=Center
       - Height=$IconHeight
-  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel, Taskbar.ExperienceToggleButton > Taskbar.TaskListButtonPanel, Taskbar.AugmentedEntryPointButton > Taskbar.TaskListButtonPanel
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel, Taskbar.ExperienceToggleButton > Taskbar.TaskListButtonPanel
     styles:
       - Margin={{$TrayInFrame?`$ItemMargin`:skip()}}
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Grid > Border#BackgroundElement, Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchIconButton > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel@CommonStates > Border#BackgroundElement
@@ -213,11 +221,14 @@ controlStyles:
     styles:
       - VerticalAlignment=Center
       - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
-      - MaxWidth={{$TrayInFrame?$TaskbarFrameWidth:skip()}}
-      - ActualWidth=>FluentRepeaterWidth
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
+      - Width={{$TrayInFrame?$TaskbarFrameWidth:skip()}}
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.OverflowToggleButton
     styles:
       - Margin={{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0):skip()}},0,{{$TrayInFrame?-max((containerGridWidth-$TaskbarFrameWidth)/2,0):skip()}},0
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement > ContentPresenter > SearchUx.SearchUI.SearchButtonControl
+    styles:
+      - RenderTransform:=<TranslateTransform X="{{$TrayInFrame?max((containerGridWidth-$TaskbarFrameWidth)/2,0):skip()}}" />
+      - // The search and tray items keep Explorer's margins, which include the gap before the tray. A transform moves the search button, which keeps its item margin, and the tray takes the offset as a margin.
   - target: Grid#AugmentedEntryPointContentGrid
     styles:
       - Margin=5,0,0,0

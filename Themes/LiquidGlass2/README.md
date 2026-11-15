@@ -171,8 +171,10 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```yaml
 styleConstants:
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame and the repeater stay at the left edge there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there. The dock is moved by margins on the items instead.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
+  - // 1 with Left taskbar alignment, see the Start button width captures below.
+  - LeftAligned=(StartWidth==``?0:StartInnerWidth==``?0:StartInnerWidth<=0?0:StartWidth-StartInnerWidth>8)
   - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
   - DockOffset=max((containerGridWidth-DockRepeaterWidth+TrayInFrameWidth+9)/2,0)
 controlStyles:
@@ -230,7 +232,8 @@ controlStyles:
       - Padding={{$TrayInFrame?0:`41,0,41,0`}}
       - Margin=0,0,0,4
       - Background:=Transparent
-      - HorizontalAlignment={{$TrayInFrame?`Left`:`Center`}}
+      - HorizontalAlignment={{$TrayInFrame?`Stretch`:`Center`}}
+      - // Where TrayInFrame is set, spans the frame, which leaves room for the dock background.
       - Width=Auto
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground
     styles:
@@ -487,7 +490,8 @@ controlStyles:
   - target: Taskbar.OverflowToggleButton
     styles:
       - MinWidth=60
-      - Margin=5,0,5,0
+      - Margin={{$TrayInFrame?46+$DockOffset:5}},0,{{$TrayInFrame?-(36+$DockOffset):5}},0
+      - // Where TrayInFrame is set, also moves the button by the dock offset, see the items below.
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background=Transparent
@@ -679,6 +683,17 @@ controlStyles:
     styles:
       - Margin={{$TrayInFrame?41+$DockOffset:skip()}},0,{{$TrayInFrame?-(41+$DockOffset):skip()}},0
       - // Moves each item by the dock offset. The negative right margin keeps the item's width, and so the repeater's, independent of the offset. Also replaces the gap Explorer adds before the tray.
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton
+    styles:
+      - Margin={{$TrayInFrame?41+$DockOffset-($LeftAligned?421:0):skip()}},0,{{$TrayInFrame?-(41+$DockOffset-($LeftAligned?421:0)):skip()}},0
+      - // With Left alignment, the widgets button follows the other items. Other builds draw it 421 pixels further left than it ends up where TrayInFrame is set, which keeps it before the dock.
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Width=>StartWidth
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+    styles:
+      - ActualWidth=>StartInnerWidth
+      - // Left alignment is detected from the Start button's native padding, which has extra space on the left.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:
       - ActualWidth=>containerGridWidth

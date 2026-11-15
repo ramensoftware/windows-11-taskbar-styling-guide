@@ -227,6 +227,7 @@ The theme styles can also be imported manually. To do that, follow these steps:
 ```yaml
 styleConstants:
   - ThemeBlur=<WindhawkBlur BlurAmount="12" TintColor="{ThemeResource SystemChromeMediumColor}" TintSaturation="1.25" NoiseOpacity="0.1" NoiseDensity="0.8" TintOpacity="0.2" TintLuminosityOpacity="0.3" />
+  - BaseBlur=<WindhawkBlur BlurAmount="5" TintColor="{ThemeResource SystemChromeMediumColor}" TintSaturation="2" NoiseOpacity="0.19" NoiseDensity="0.8" TintOpacity="0.2" TintLuminosityOpacity="0" />
   - ThemeLayer=<AcrylicBrush BackgroundSource="Backdrop" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="{ThemeResource bgOpacity}" TintLuminosityOpacity="{ThemeResource bgLuminosity}" FallbackColor="{ThemeResource SystemChromeMediumColor}" />
   - OuterRadius=10
   - InnerRadius=8
@@ -238,7 +239,7 @@ styleConstants:
   - ThemeControlBorder=<SolidColorBrush Color="{ThemeResource ControlBorder}" />
   - ThFntWt=Normal
   - ThemeFlyout=<AcrylicBrush BackgroundSource="Backdrop" TintColor="{ThemeResource SystemChromeMediumColor}" TintOpacity="0.1" TintLuminosityOpacity="0.8" FallbackColor="{ThemeResource SystemChromeMediumColor}" />
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame and the repeater stay at the left edge there, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there.
+  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the left edge there and the repeater at the frame's top left corner, since Explorer positions the tray, its flyouts and the jump lists from item positions within the repeater as if it started there.
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
 controlStyles:
   - target: Border#BackgroundDimmingLayer
@@ -421,6 +422,10 @@ controlStyles:
       - BorderBrush:=$ThemeControlBorder
       - BorderThickness=1
       - // Taskbar Buttons > Main List buttons > Button Background
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton
+    styles:
+      - Margin={{$TrayInFrame?`0,2,0,2`:`0,-1,0,-1`}}
+      - // Adds the root grid's vertical margins where TrayInFrame is set, see the repeater.
   - target: Taskbar.TaskbarBackground#BackgroundControl
     styles:
       - Opacity={{$TrayInFrame?1:0}}
@@ -564,7 +569,8 @@ controlStyles:
       - // Menu Flyouts Root (Background + TextBlock Styles)
   - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - Margin=0,0,{{$TrayInFrame?0:2}},0
+      - Margin={{$TrayInFrame?`0,-3,0,-3`:`0,0,2,0`}}
+      - // Where TrayInFrame is set, keeps the repeater at the top of the frame, and the items take the root grid's vertical offset instead.
       - // IDR what this was for
       - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
       - MaxWidth={{$TrayInFrame?containerGridWidth-16:skip()}}
@@ -573,10 +579,10 @@ controlStyles:
     styles:
       - Visibility=1
       - // Thin Line running along the top of the Taskbar (edge)
-  - target: ScrollViewer > ScrollContentPresenter > Border
+  - target: ScrollViewer > ScrollContentPresenter > Border > Grid
     styles:
-      - Background:=<WindhawkBlur BlurAmount="5" TintColor="{ThemeResource SystemChromeMediumColor}" TintSaturation="2" NoiseOpacity="0.19" NoiseDensity="0.8" TintOpacity="0.2" TintLuminosityOpacity="0" />
-      - // Taskbar Root > Base Presenter > Base Border (Usually transparent, Styled by this theme)
+      - Background:=$BaseBlur
+      - // Taskbar Root > Base Presenter > Base Grid (Usually transparent, Styled by this theme)
   - target: SearchUx.SearchUI.SearchBoxButton#SearchBox
     styles:
       - Margin=0,-1,0,0
@@ -622,12 +628,14 @@ controlStyles:
       - ActualWidth=>TrayInFrameWidth
       - Margin={{$TrayInFrame?containerGridWidth-DockRepeaterWidth:skip()}},-4,{{$TrayInFrame?-(containerGridWidth-DockRepeaterWidth):skip()}},-4
       - // Builds where the tray is an item of the taskbar frame. Moves the tray to the screen edge. The negative right margin keeps the repeater's width independent of the move.
-  - target: Taskbar.TaskbarExtensionElement
+  - target: Taskbar.TaskbarExtensionElement, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.OverflowToggleButton
     styles:
-      - Margin={{$TrayInFrame?0:skip()}}
-      - // Explorer's gap before the tray. The search item's margin is already 0.
+      - Margin={{$TrayInFrame?`0,3,0,3`:skip()}}
+      - // Explorer's gap before the tray. The search item's margin is already 0. The vertical margins are the root grid's, see the repeater.
   - target: :root > ScrollViewer > ScrollContentPresenter > Border
     styles:
+      - Background:={{TrayInFrameWidth==``?skip():`$BaseBlur`}}
+      - // Builds where the tray is an item of the taskbar frame have no base grid. Matched from the root, since the flyouts have the same border.
       - ActualWidth=>containerGridWidth
 themeResourceVariables:
   - Accent1@Dark={ThemeResource SystemAccentColorLight3}
