@@ -179,10 +179,17 @@ controlStyles:
   - target: Grid#IconPanel > Rectangle#DefaultIcon, Taskbar.TaskListLabeledButtonPanel > Rectangle#DefaultIcon
     styles:
       - Visibility=Collapsed
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedLeft=vertical
+      - Tag@DockedRight=vertical
+      - Tag=>taskbarDock
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel
     styles:
-      - MinWidth=60
-      - Margin=0,0,$taskListMargin,0
+      - MinWidth={{taskbarDock==`vertical`?skip():60}}
+      - Margin={{taskbarDock==`vertical`?`$taskListMargin,0,$taskListMargin,0`:`0,0,$taskListMargin,0`}}
+      - // On a vertical taskbar, which is narrower than the minimum width, the button is centered like the others.
   - target: Taskbar.SearchBoxButton > Taskbar.TaskListButtonPanel@CommonStates
     styles:
       - Padding=0
