@@ -39,22 +39,35 @@ The theme styles can also be imported manually. To do that, follow these steps:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
+styleConstants:
+  - // Rotates the taskbar's and the tray's gradients so that their top is at the taskbar's inner edge.
+  - GradientAngle={{taskbarDock==`left`?90:taskbarDock==`right`?-90:taskbarDock==`top`?180:0}}
+  - Vertical=(taskbarDock==`left`?1:taskbarDock==`right`)
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedTop=top
+      - Tag@DockedLeft=left
+      - Tag@DockedRight=right
+      - Tag=>taskbarDock
   - target: Rectangle#BackgroundStroke
     styles:
-      - Fill:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#3168d5" Offset="0.0" /> <GradientStop Color="#4993e6" Offset="0.08" /> <GradientStop Color="#245dd7" Offset="0.18" /> <GradientStop Color="#2561de" Offset="0.9" /> <GradientStop Color="#1941a5" Offset="1.0" /></LinearGradientBrush>
+      - Fill:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <LinearGradientBrush.RelativeTransform><RotateTransform CenterX="0.5" CenterY="0.5" Angle="$GradientAngle" /></LinearGradientBrush.RelativeTransform> <GradientStop Color="#3168d5" Offset="0.0" /> <GradientStop Color="#4993e6" Offset="0.08" /> <GradientStop Color="#245dd7" Offset="0.18" /> <GradientStop Color="#2561de" Offset="0.9" /> <GradientStop Color="#1941a5" Offset="1.0" /></LinearGradientBrush>
       - VerticalAlignment=Stretch
       - Height=Auto
+      - HorizontalAlignment=Stretch
+      - Width=Auto
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#3168d5" Offset="0.0" /> <GradientStop Color="#4993E6" Offset="0.1" /> <GradientStop Color="#2157D7" Offset="0.35" /> <GradientStop Color="#2663E0" Offset="0.8" /> <GradientStop Color="#1941A5" Offset="1.0" /></LinearGradientBrush>
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
     styles:
-      - Margin=-9,0,10,0
+      - Margin={{$Vertical?0:`-9,0,10,0`}}
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel
     styles:
       - Padding=0
-      - Width=60
+      - Width={{$Vertical?skip():60}}
       - CornerRadius=9
       - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#2D6B2D" Offset="0.0" /> <GradientStop Color="#7ED57E" Offset="0.08" /> <GradientStop Color="#3DB43D" Offset="0.35" /> <GradientStop Color="#2A752E" Offset="0.85" /> <GradientStop Color="#144818" Offset="1.0" /></LinearGradientBrush>
       - BorderThickness=0,0,2,0
@@ -99,13 +112,14 @@ controlStyles:
       - Margin=-2
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
-      - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#16acf0" Offset="0.0" /> <GradientStop Color="#19b6f2" Offset="0.08" /> <GradientStop Color="#0c8eea" Offset="0.18" /> <GradientStop Color="#0c8eea" Offset="0.9" /> <GradientStop Color="#095bc9" Offset="1.0" /></LinearGradientBrush>
-      - BorderThickness=2,1,0,1
+      - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <LinearGradientBrush.RelativeTransform><RotateTransform CenterX="0.5" CenterY="0.5" Angle="$GradientAngle" /></LinearGradientBrush.RelativeTransform> <GradientStop Color="#16acf0" Offset="0.0" /> <GradientStop Color="#19b6f2" Offset="0.08" /> <GradientStop Color="#0c8eea" Offset="0.18" /> <GradientStop Color="#0c8eea" Offset="0.9" /> <GradientStop Color="#095bc9" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness={{$Vertical?`1,2,1,0`:`2,1,0,1`}}
       - BorderBrush=#095BC9
-      - Padding={{-ChevronIconWidth/2}},0,0,0
+      - Padding={{$Vertical?0:-ChevronIconWidth/2}},{{$Vertical?-ChevronIconHeight/2:0}},0,0
   - target: SystemTray.Stack#NotifyIconStack
     styles:
       - ActualWidth=>ChevronIconWidth
+      - ActualHeight=>ChevronIconHeight
   - target: Grid#OverflowRootGrid > Border
     styles:
       - Background:=<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1"> <GradientStop Color="#16acf0" Offset="0.0" /> <GradientStop Color="#19b6f2" Offset="0.08" /> <GradientStop Color="#0c8eea" Offset="0.18" /> <GradientStop Color="#0c8eea" Offset="0.9" /> <GradientStop Color="#095bc9" Offset="1.0" /></LinearGradientBrush>
@@ -125,16 +139,27 @@ controlStyles:
 <summary>Content to import (click to expand)</summary>
 
 ```yaml
+styleConstants:
+  - // Rotates the taskbar's and the tray's gradients so that their top is at the taskbar's inner edge.
+  - GradientAngle={{taskbarDock==`left`?90:taskbarDock==`right`?-90:taskbarDock==`top`?180:0}}
+  - Vertical=(taskbarDock==`left`?1:taskbarDock==`right`)
 controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid@DockingStates
+    styles:
+      - Tag=horizontal
+      - Tag@DockedTop=top
+      - Tag@DockedLeft=left
+      - Tag@DockedRight=right
+      - Tag=>taskbarDock
   - target: Rectangle#BackgroundFill
     styles:
-      - Fill:=<LinearGradientBrush StartPoint="0.5,0.5" EndPoint="0.5,1"> <GradientStop Color="#656565" Offset="0.0" /> <GradientStop Color="#363636" Offset="0.1" /> <GradientStop Color="#363636" Offset="0.35" /> <GradientStop Color="#363636" Offset="0.8" /> <GradientStop Color="#363636" Offset="1.0" /></LinearGradientBrush>
+      - Fill:=<LinearGradientBrush StartPoint="0.5,0.5" EndPoint="0.5,1"> <LinearGradientBrush.RelativeTransform><RotateTransform CenterX="0.5" CenterY="0.5" Angle="$GradientAngle" /></LinearGradientBrush.RelativeTransform> <GradientStop Color="#656565" Offset="0.0" /> <GradientStop Color="#363636" Offset="0.1" /> <GradientStop Color="#363636" Offset="0.35" /> <GradientStop Color="#363636" Offset="0.8" /> <GradientStop Color="#363636" Offset="1.0" /></LinearGradientBrush>
       - VerticalAlignment=Stretch
       - Height=Auto
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
     styles:
       - CornerRadius=0
-      - Margin=-4,0,4,0
+      - Margin={{$Vertical?0:`-4,0,4,0`}}
       - MaxWidth=48
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel
     styles:
@@ -182,16 +207,16 @@ controlStyles:
       - Fill=#858585
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
-      - Background:=<LinearGradientBrush StartPoint="0.5,0.42" EndPoint="0.5,0.75"> <GradientStop Color="#454545" Offset="0.0" /> <GradientStop Color="#313131" Offset="0.5" /> <GradientStop Color="#363636" Offset="0.35" /> <GradientStop Color="#1D1D1D" Offset="0.8" /> <GradientStop Color="#1D1D1D" Offset="1.0" /></LinearGradientBrush>
-      - BorderThickness=1,0,0,0
+      - Background:=<LinearGradientBrush StartPoint="0.5,0.42" EndPoint="0.5,0.75"> <LinearGradientBrush.RelativeTransform><RotateTransform CenterX="0.5" CenterY="0.5" Angle="$GradientAngle" /></LinearGradientBrush.RelativeTransform> <GradientStop Color="#454545" Offset="0.0" /> <GradientStop Color="#313131" Offset="0.5" /> <GradientStop Color="#363636" Offset="0.35" /> <GradientStop Color="#1D1D1D" Offset="0.8" /> <GradientStop Color="#1D1D1D" Offset="1.0" /></LinearGradientBrush>
+      - BorderThickness={{$Vertical?`0,1,0,0`:`1,0,0,0`}}
       - BorderBrush=#222222
-      - Padding=4,0,0,0
+      - Padding={{$Vertical?`0,4,0,0`:`4,0,0,0`}}
   - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Image#Icon, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Image#Icon
     styles:
       - Height@NoRunningIndicator=16
   - target: Taskbar.TaskListButton#TaskListButton > Grid#IconPanel@RunningIndicatorStates, Taskbar.TaskListButton#TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel@RunningIndicatorStates
     styles:
-      - Margin@NoRunningIndicator=-7,0,-7,0
+      - Margin@NoRunningIndicator={{$Vertical?`0,-7,0,-7`:`-7,0,-7,0`}}
       - Padding@NoRunningIndicator=0
   - target: Taskbar.TaskListButton
     styles:
