@@ -342,6 +342,101 @@ pixels, i.e. `DockMargin` should stay below `(screen width - that value) / 2`.
 
 <br>
 
+### Auto-Width Single-Pill Dock Guide - By [Eureka-o](https://github.com/Eureka-o)
+
+<details>
+<summary>(Click to expand guide)</summary>
+
+The default **Dock** variant uses a fixed `DockMargin`. If you want the single floating pill (icons + embedded system tray) to grow and shrink dynamically with the number of open apps — while visually centering icons and keeping secondary monitors compact when they only show a clock (`ClockOnlyDock`) — keep the **Luminosity (Dock)** theme selected, enable **Click-through taskbar** in the mod settings, and add these overrides under **Style constants** and **Control styles** (Textual mode):
+
+```yaml
+styleConstants:
+  - ClockOnlyDock=max((DockSecondaryClockWidth==``?0:DockSecondaryClockWidth>0),(TrayInFrameWidth==``?0:DockClockButtonWidth==``?0:DockClockButtonWidth>0?TrayInFrameWidth<=DockClockButtonWidth+24:0))
+  - MinDockWidth=($ClockOnlyDock?0:900)
+  - DockEdgeGap=16
+  - DockLeftPad=($ClockOnlyDock?56:40)
+  - DockMiddleGap=52
+  - DockRightPad=($ClockOnlyDock?2:0)
+  - DockReady=(DockContainerWidth==``?0:DockRepeaterWidth==``?0:DockContainerWidth>0?DockRepeaterWidth>0:0)
+  - DockNaturalWidth=(DockRepeaterWidth+$DockLeftPad+$DockMiddleGap+$DockRightPad)
+  - DockWidth=min(max($DockNaturalWidth,$MinDockWidth),DockContainerWidth-2*$DockEdgeGap)
+  - DockSideMargin=max((DockContainerWidth-$DockWidth)/2,$DockEdgeGap)
+  - MainIconBalance=($ClockOnlyDock?0:($DockMiddleGap-$DockLeftPad+max($DockWidth-$DockNaturalWidth,0)+9.5)/2)
+  - TrayExtraShift=($DockMiddleGap+max($DockWidth-$DockNaturalWidth,0)-$MainIconBalance)
+  - DockRepeaterMaxWidth=(DockContainerWidth==``?skip():max(DockContainerWidth-2*$DockEdgeGap-$DockLeftPad-$DockMiddleGap-$DockRightPad,200))
+  - IconsShift=($DockSideMargin+$DockLeftPad+$MainIconBalance)
+controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
+    styles:
+      - Margin={{$TrayInFrame?$DockReady?$DockSideMargin:skip():skip()}},0,{{$TrayInFrame?$DockReady?$DockSideMargin:skip():skip()}},0
+  - target: :root > ScrollViewer > ScrollContentPresenter > Border
+    styles:
+      - ActualWidth=>DockContainerWidth
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
+    styles:
+      - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
+      - MaxWidth={{$TrayInFrame?$DockRepeaterMaxWidth:skip()}}
+      - ActualWidth=>DockRepeaterWidth
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.OverflowToggleButton
+    styles:
+      - Margin={{$TrayInFrame?$DockReady?$IconsShift:skip():skip()}},$DockTopGap,{{$TrayInFrame?$DockReady?-($IconsShift):skip():skip()}},$DockBottomGap
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton
+    styles:
+      - Margin={{$TrayInFrame?$DockReady?$IconsShift:skip():skip()}},0,{{$TrayInFrame?$DockReady?-($IconsShift):skip():skip()}},$DockBottomGap
+  - target: Taskbar.TaskListButton > Grid#IconPanel, Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel#IconPanel
+    styles:
+      - Margin={{$TrayInFrame?0:skip()}},$DockTopGap,0,0
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]
+    styles:
+      - Margin={{$TrayInFrame?$DockReady?$IconsShift:skip():skip()}},0,{{$TrayInFrame?$DockReady?-($IconsShift):skip():skip()}},$DockBottomGap
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Margin={{$TrayInFrame?0:skip()}},$DockTopGap,0,0
+  - target: Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{$TrayInFrame?$DockReady?$IconsShift:skip():skip()}},0,{{$TrayInFrame?$DockReady?-($IconsShift):skip():skip()}},0
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
+      - Margin={{$TrayInFrame?$DockReady?$TrayExtraShift:skip():skip()}},{{$TrayInFrame?$DockTopGap:0}},{{$TrayInFrame?$DockReady?-($TrayExtraShift):skip():skip()}},{{$TrayInFrame?$DockBottomGap:0}}
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
+    styles:
+      - Margin={{$TrayInFrame?$DockReady?$IconsShift:skip():skip()}},{{$TrayInFrame?$DockTopGap:0}},{{$TrayInFrame?$DockReady?-($IconsShift):skip():skip()}},{{$TrayInFrame?$DockBottomGap:0}}
+  - target: SystemTray.OmniButton#NotificationCenterButton > Grid
+    styles:
+      - ActualWidth=>DockClockButtonWidth
+  - target: SystemTray.Stack#SecondaryClockStack
+    styles:
+      - ActualWidth=>DockSecondaryClockWidth
+  # Windows 11 26H2 Search button alignment
+  - target: ComposerTaskbarUX.SystemComposerEntryButton
+    styles:
+      - Margin={{$TrayInFrame?0:skip()}},$DockTopGap,0,$DockBottomGap
+      - CornerRadius=$bcr
+  - target: ComposerTaskbarUX.SystemComposerTaskbarIconHost > Grid#RootPanel
+    styles:
+      - MinHeight=0
+      - Padding=2,4,2,4
+  - target: ComposerTaskbarUX.SystemComposerTaskbarIconHost > Grid#RootPanel > Border#BackgroundElement
+    styles:
+      - CornerRadius=$bcr
+      - BorderThickness=$bbt
+      - BackgroundSizing=InnerBorderEdge
+      - BackgroundTransition:=<BrushTransition Duration="$FadeSpeed" />
+  - target: Grid#HoverFlyoutGrid
+    styles:
+      - Margin=0,0,0,0
+```
+
+**Notes:**
+- **Tight fit on all monitors:** Set `MinDockWidth=0` under **Style constants** if you want the primary dock to shrink tightly to content as well instead of keeping a `900` DIP minimum width.
+- **Secondary monitors (`ClockOnlyDock`):** Automatically detects when the in-frame tray holds only the clock (`SecondaryClockStack` / compact `NotificationCenterButton`) and removes the primary minimum-width floor and icon-balance padding.
+- **Optional headroom for hover-zoom mods:** If you use **Taskbar Dock Animation** alongside **Taskbar height and icon size** (`TaskbarHeight: 78`) and **Taskbar Dock Animation**'s smooth layout transition, you can set `DockHeight=78` and `DockTopGap=25` for icon-zoom headroom, and add `Transitions:=<TransitionCollection />` on `Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame` so Windows' built-in `RepositionThemeTransition` doesn't stack with the FLIP spring.
+
+</details>
+
+<br>
+
 ## Theme selection
 
 The theme is integrated into the mod and can be selected directly from the mod's settings:
