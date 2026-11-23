@@ -34,8 +34,8 @@ magnification on hover.
 Set these under **Style constants** in the mod's settings, keeping the theme selected:
 
 - `AttentionPlate=Transparent` (default) hides Windows' red plate on an app that wants attention;
-  the orange dot still shows it. To bring the plate back, set a brush, for example
-  `AttentionPlate=<SolidColorBrush Color="#80C42B1C" />`.
+  the orange dot still shows it. To bring the plate back, set a colour as `#AARRGGBB`, for example
+  `AttentionPlate=#80C42B1C`.
 - `TrayGap=0` is the space in pixels between the tray notch and the right screen edge.
 
 ## Theme selection
@@ -179,6 +179,35 @@ controlStyles:
       - BorderBrush=Transparent
       - Opacity=0
       - BackgroundTransition:=<BrushTransition Duration="$HoverFade" />
+      - Background@RequestingAttention=$AttentionPlate
+      - Background@RequestingAttentionPointerOver=$AttentionPlate
+      - Background@RequestingAttentionPressed=$AttentionPlate
+      - Background@RequestingAttentionMulti=$AttentionPlate
+      - Background@RequestingAttentionMultiPointerOver=$AttentionPlate
+      - Background@RequestingAttentionMultiPressed=$AttentionPlate
+      - Background@RequestingAttentionMultiWindowSharing=$AttentionPlate
+      - Background@RequestingAttentionMultiWindowSharingPointerOver=$AttentionPlate
+      - Background@RequestingAttentionMultiWindowSharingPressed=$AttentionPlate
+      - Opacity@RequestingAttention=1
+      - Opacity@RequestingAttentionPointerOver=1
+      - Opacity@RequestingAttentionPressed=1
+      - Opacity@RequestingAttentionMulti=1
+      - Opacity@RequestingAttentionMultiPointerOver=1
+      - Opacity@RequestingAttentionMultiPressed=1
+      - Opacity@RequestingAttentionMultiWindowSharing=1
+      - Opacity@RequestingAttentionMultiWindowSharingPointerOver=1
+      - Opacity@RequestingAttentionMultiWindowSharingPressed=1
+  - target: 'Grid#IconPanel@CommonStates > Border#MultiWindowElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#MultiWindowElement'
+    styles:
+      - Background@RequestingAttentionMulti=$AttentionPlate
+      - Background@RequestingAttentionMultiPointerOver=$AttentionPlate
+      - Background@RequestingAttentionMultiPressed=$AttentionPlate
+      - Background@RequestingAttentionMultiWindowSharing=$AttentionPlate
+      - Background@RequestingAttentionMultiWindowSharingPointerOver=$AttentionPlate
+      - Background@RequestingAttentionMultiWindowSharingPressed=$AttentionPlate
+      - BorderBrush@RequestingAttentionMulti=$AttentionPlate
+      - BorderBrush@RequestingAttentionMultiPointerOver=$AttentionPlate
+      - BorderBrush@RequestingAttentionMultiPressed=$AttentionPlate
   - target: 'Grid#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator'
     styles:
       - Height={{dockH<40?3:4}}
@@ -190,10 +219,6 @@ controlStyles:
       - Fill=#8E8E93
       - Fill@ActiveRunningIndicator=#F5F5F7
       - Fill@RequestingAttentionRunningIndicator=#FF9F0A
-  - target: 'Grid#IconPanel@RunningIndicatorStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Border#BackgroundElement'
-    styles:
-      - Background@RequestingAttentionRunningIndicator=$AttentionPlate
-      - BorderBrush@RequestingAttentionRunningIndicator=$AttentionPlate
   - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
     styles:
       - Visibility=Collapsed
