@@ -2,13 +2,13 @@
 
 **Author**: [nkswalih](https://github.com/nkswalih)
 
-A dark Liquid Glass floating dock and separated system tray theme for Windows 11 Taskbar Styler, with muted gradient glass borders and matching styling for the hidden icons menu, volume OSD, hover thumbnails, and language switcher.
+A dark Liquid Glass floating dock and separated system tray theme for Windows 11 Taskbar Styler, with muted gradient glass borders and matching styling for the hidden icons menu, volume and brightness OSD, hover thumbnails, and language switcher.
 
 
 ![Screenshot](screenshot.png)
 ![Screenshot2](screenshot2.png)
 ![Screenshot3](screenshot3.png)
-![Screenshot](screenshot.png)
+![Screenshot](screenshot4.png)
 
 ## Features
 
@@ -16,6 +16,7 @@ A dark Liquid Glass floating dock and separated system tray theme for Windows 11
 * **Windows 11 Update-Proof (`TrayInFrame` Support):** Automatically handles both classic Windows 11 taskbars and newer 25H2/26H2 builds where the system tray is merged inside `TaskbarFrameRepeater`.
 * **Dark Liquid Glass Blur:** Uses `WindhawkBlur` (`BlurAmount="24"`, `TintColor="#30000000"`) with Windows' default opaque background fill and top border line removed.
 * **Muted Specular Gradient Borders:** Uses a toned-down angled gradient border (`$DockBorder`) across the dock, tray, and flyouts for crisp edge shading without excessive brightness.
+* **Proper Show Desktop Corner Button:** Cleanly removes excess right-side tray padding and aligns the **Show Desktop (`|`)** button snugly inside the far-right rounded corner, keeping it easily accessible without breaking the rounded pill aesthetic.
 * **Dock Hover Zoom Animation:** Smooth `1.12x` scale-up animation on taskbar app icons with transparent hover plates.
 * **Fully Styled Taskbar Popups:**
   * **Tray Overflow Menu (Hidden Icons)** & rounded chevron button (`^`)
