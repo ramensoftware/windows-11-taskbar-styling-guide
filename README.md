@@ -212,6 +212,7 @@ Taskbar Styler mod. The following themes are available:
 | ----- | ----------
 | [TranslucentTaskbar](Themes/TranslucentTaskbar/README.md) | [![TranslucentTaskbar](Themes/TranslucentTaskbar/screenshot.png)](Themes/TranslucentTaskbar/screenshot.png)
 | [DockLike](Themes/DockLike/README.md) | [![DockLike](Themes/DockLike/screenshot.png)](Themes/DockLike/screenshot.png)
+| [DarkGlassDock](Themes/DarkGlassDock/README.md) | [![DarkGlassDock](Themes/DarkGlassDock/screenshot5.png)](Themes/Blob/screenshot.png)
 | [SimplyTransparent](Themes/SimplyTransparent/README.md) | [![SimplyTransparent](Themes/SimplyTransparent/screenshot.png)](Themes/SimplyTransparent/screenshot.png)
 | [Squircle](Themes/Squircle/README.md) | [![Squircle](Themes/Squircle/screenshot.png)](Themes/Squircle/screenshot.png)
 | [Matter](Themes/Matter/README.md) | [![Matter](Themes/Matter/screenshot.png)](Themes/Matter/screenshot.png)
