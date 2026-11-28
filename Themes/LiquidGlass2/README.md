@@ -171,43 +171,20 @@ The theme styles can also be imported manually. To do that, follow these steps:
 
 ```yaml
 styleConstants:
-  - // Builds where the tray is an item of the taskbar frame, with a horizontal taskbar. The frame stays at the taskbar's left edge and the repeater at the frame's top left corner there, since Explorer places the tray, its flyouts and the jump lists as if the repeater started there.
+  - PillPad=max(46,min(80,TaskHeight*0.67))
+  - PillGap=max(46,min(80,TaskHeight*0.725))
+  - WidgetW=(WidgetsWidth==``?0:WidgetsWidth)
+  - HoverFlyRadius=max(34,min(45,HoverFlyHyt*0.22))
   - TrayInFrame=(TrayInFrameWidth==``?0:taskbarDock!=`vertical`)
-  - // 1 with Left taskbar alignment, see the Start button width captures below.
-  - LeftAligned=(StartWidth==``?0:StartInnerWidth==``?0:StartInnerWidth<=0?0:StartWidth-StartInnerWidth>8)
-  - // Where TrayInFrame is set, the dock's distance from the screen's left edge.
-  - DockOffset=max((containerGridWidth-DockRepeaterWidth+TrayInFrameWidth+9)/2,0)
+  - DockOffset=max((containerGridWidth-RepeaterWidth+TrayInFrameWidth-(WidgetsWidth==``?0:WidgetsWidth))/2,0)
 controlStyles:
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
     styles:
-      - Margin=0
-      - BorderThickness=0
-  - target: Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid
+      - RenderTransform:=<TransformGroup><RotateTransform Angle="0"/><RotateTransform Angle="0"/><RotateTransform Angle="0"/><RotateTransform Angle="0"/></TransformGroup>
+  - target: ':root > ScrollViewer > ScrollContentPresenter > Border'
     styles:
-      - Margin=12,0,0,0
-      - HorizontalAlignment=Left
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
-    styles:
-      - Margin=0
-      - Visibility={{clickThroughTaskbar}}
-  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
-    styles:
-      - Margin=-400,0,0,0
-      - Height={{TaskHeight - 8}}
-      - MinWidth=80
-      - MaxWidth=200
-      - Width=Auto
-      - CornerRadius=30
-      - Padding=0
-      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#39101010" TintSaturation="1.5"/>
-      - CornerRadius={{(TaskHeight/4)*1.8}}
-      - BorderThickness=1.2,1,1.2,1
-      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.1" /><GradientStop Color="#60404040" Offset="0.25" /><GradientStop Color="#70202020" Offset="0.5" /><GradientStop Color="#90404040" Offset="0.75" /><GradientStop Color="#90404040" Offset="0.9" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
-  - target: Grid#IconPanel@RunningIndicatorStates > Rectangle, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle
-    styles:
-      - Width=4.5
-      - Height=4.2
-      - Fill@Inactive=#50ffffff
+      - ActualWidth=>containerGridWidth
+      - ActualHeight=>TaskHeight
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
       - ColumnDefinitions:=<ColumnDefinitionCollection><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/></ColumnDefinitionCollection>
@@ -218,13 +195,15 @@ controlStyles:
       - Tag@DockedLeft=vertical
       - Tag@DockedRight=vertical
       - Tag=>taskbarDock
+  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
+    styles:
+      - ActualWidth=>TrayInFrameWidth
   - target: Taskbar.TaskbarFrame
     styles:
       - Width={{taskbarDock==`vertical`?skip():`Auto`}}
       - HorizontalAlignment={{$TrayInFrame?`Left`:`Center`}}
-      - MaxWidth={{$TrayInFrame?skip():containerGridWidth>0?max(containerGridWidth-2*(trayWidth+50),100):`Infinity`}}
-      - MinWidth={{$TrayInFrame?$DockOffset+82+(DockRepeaterWidth-TrayInFrameWidth-91):skip()}}
-      - // Makes room for the dock background, since the item offset below isn't part of the repeater's width.
+      - MinWidth={{$TrayInFrame?min($DockOffset+RepeaterWidth+$PillPad+$PillGap,containerGridWidth):100}}
+      - MaxWidth={{$TrayInFrame?containerGridWidth:containerGridWidth>0?max(containerGridWidth-2*(trayWidth+50),100):`Infinity`}}
       - Grid.Column=1
   - target: Taskbar.TaskbarFrame > Grid#RootGrid
     styles:
@@ -232,11 +211,18 @@ controlStyles:
       - Margin=0,0,0,4
       - Background:=Transparent
       - HorizontalAlignment={{$TrayInFrame?`Stretch`:`Center`}}
-      - // Where TrayInFrame is set, spans the frame, which leaves room for the dock background.
       - Width=Auto
-  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
     styles:
-      - Margin={{$TrayInFrame?$DockOffset+1:-40}},0,{{$TrayInFrame?max(TrayInFrameWidth+10-$DockOffset,0):-40}},0
+      - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
+      - MaxWidth={{$TrayInFrame?max(containerGridWidth-2*(trayWidth+$PillPad+$PillGap),100)+TrayInFrameWidth+$WidgetW:skip()}}
+      - ActualWidth=>RepeaterWidth
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
+    styles:
+      - Margin={{$TrayInFrame?$DockOffset:skip()}},0,{{$TrayInFrame?-$DockOffset:skip()}},0
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid
+    styles:
+      - Margin={{$TrayInFrame?max($DockOffset+$WidgetW-$PillPad,0):skip()}},0,{{$TrayInFrame?max(TrayInFrameWidth+$PillGap,0):skip()}},0
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<WindhawkBlur BlurAmount="3" TintColor="#14090909" TintSaturation="1.2"/>
@@ -244,7 +230,8 @@ controlStyles:
       - RadiusY={{(TaskHeight/4.1)*2}}
       - StrokeThickness=1
       - Canvas.ZIndex=1
-      - Stroke:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69E0E0E0" Offset="0.0" /><GradientStop Color="#70707070" Offset="0.1" /><GradientStop Color="#70505050" Offset="0.25" /><GradientStop Color="#70292929" Offset="0.5" /><GradientStop Color="#70505050" Offset="0.75" /><GradientStop Color="#70707070" Offset="0.9" /><GradientStop Color="#65D0D0D0" Offset="1" /></LinearGradientBrush>
+      - Margin={{$TrayInFrame?0:`-40,0,-40,0`}}
+      - Stroke:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69E0E0E0" Offset="0.0" /><GradientStop Color="#70707070" Offset="0.1" /><GradientStop Color="#50505050" Offset="0.25" /><GradientStop Color="#70292929" Offset="0.5" /><GradientStop Color="#50505050" Offset="0.75" /><GradientStop Color="#70707070" Offset="0.9" /><GradientStop Color="#65D0D0D0" Offset="1" /></LinearGradientBrush>
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundStroke
     styles:
       - Visibility=Visible
@@ -256,6 +243,7 @@ controlStyles:
       - VerticalAlignment=Stretch
       - HorizontalAlignment=Stretch
       - Height=NaN
+      - Margin={{$TrayInFrame?0:`-40,0,-40,0`}}
       - Fill:=<WindhawkBlur BlurAmount="0" TintColor="#00101010"/>
   - target: StackPanel#SystemTrayFrameGrid, Grid#SystemTrayFrameGrid
     styles:
@@ -271,8 +259,43 @@ controlStyles:
   - target: SystemTray.SystemTrayFrame
     styles:
       - HorizontalAlignment=Left
-      - Margin={{$TrayInFrame?`91,0,0,-4`:`50,0,0,0`}}
+      - Margin={{$TrayInFrame?($PillPad+$PillGap):50}},0,{{$TrayInFrame?-($PillPad+$PillGap):0}},{{$TrayInFrame?-4:0}}
       - Grid.Column=2
+  - target: Border#MultiWindowElement
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
+    styles:
+      - Margin=0
+      - BorderThickness=0
+  - target: Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid
+    styles:
+      - Margin=12,0,0,0
+      - HorizontalAlignment=Left
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton
+    styles:
+      - ActualWidth=>WidgetsWidth
+      - Margin={{$TrayInFrame?max($DockOffset-$PillPad-$PillGap,0):0}},0,{{$TrayInFrame?-max($DockOffset-$PillPad-$PillGap,0):0}},0
+      - Visibility={{clickThroughTaskbar}}
+      - RenderTransform:=<TransformGroup><RotateTransform Angle="0"/><RotateTransform Angle="0"/><RotateTransform Angle="0"/><RotateTransform Angle="0"/></TransformGroup>
+  - target: Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Margin={{$TrayInFrame?0:`-400,0,0,0`}}
+      - Height={{TaskHeight - 8}}
+      - MinWidth=80
+      - MaxWidth=200
+      - Width=Auto
+      - Padding=0
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#39101010" TintSaturation="1.5"/>
+      - CornerRadius={{(TaskHeight/4)*1.8}}
+      - BorderThickness=1.2,1,1.2,1
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.1" /><GradientStop Color="#60404040" Offset="0.25" /><GradientStop Color="#70202020" Offset="0.5" /><GradientStop Color="#90404040" Offset="0.75" /><GradientStop Color="#90404040" Offset="0.9" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
+  - target: Grid#IconPanel@RunningIndicatorStates > Rectangle#RunningIndicator, Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator
+    styles:
+      - Width={{ max(4.5, min(6.5, TaskHeight * 0.065)) }}
+      - Width@ActiveRunningIndicator={{ max(10, min(14.5, TaskHeight * 0.145)) }}
+      - Height={{ max(4.2, min(6.5, TaskHeight * 0.061)) }}
+      - Fill@Inactive=#50ffffff
   - target: Taskbar.Gripper#GripperControl
     styles:
       - MinWidth=24
@@ -290,7 +313,7 @@ controlStyles:
       - // Win+X flyout
   - target: Grid#ConfirmatorMainGrid
     styles:
-      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#1C101010" TintSaturation="1.2"/>
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#1C101010" TintSaturation="1.3"/>
       - CornerRadius=34
       - ActualWidth=>FlyWid
       - ActualHeight=>FlyHyt
@@ -335,14 +358,21 @@ controlStyles:
     styles:
       - FontSize=14
       - FontWeight=Medium
+  - target: Taskbar.TaskbarFrame#TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.OverflowToggleButton#OverflowButton
+    styles:
+      - Background:=Transparent
   - target: Border#OverflowFlyoutBackgroundBorder
     styles:
-      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#15101010"/>
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#15101010" TintSaturation="1.5"/>
       - BorderThickness=1
       - CornerRadius={{ max(27, min(48, (OverflowHeight / 2) * 1)) }}
       - ActualHeight=>OverflowHeight
-      - Margin={{ max(-4, min(-15, OverflowHeight * 0.35)) }},{{ max(-4, min(-8.5, OverflowHeight * 0.2)) }},{{ max(-4, min(-15, OverflowHeight * 0.35)) }},{{ max(-4, min(-9, OverflowHeight * 0.2)) }}
+      - Margin={{ max(-4, min(-14, OverflowHeight * 0.35)) }},{{ max(-4, min(-8.5, OverflowHeight * 0.2)) }},{{ max(-4, min(-14, OverflowHeight * 0.35)) }},{{ max(-4, min(-9, OverflowHeight * 0.2)) }}
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#50404040" Offset="0.15" /><GradientStop Color="#45404040" Offset="0.28" /><GradientStop Color="#55252525" Offset="0.5" /><GradientStop Color="#45404040" Offset="0.72" /><GradientStop Color="#50404040" Offset="0.85" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
+  - target: SystemTray.NotificationAreaOverflow > Grid#OverflowRootGrid > ItemsControl#OverflowItemsControl > ItemsPresenter > WrapGrid > ContentPresenter
+    styles:
+      - RenderTransform:=<ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+      - RenderTransformOrigin=0.5,0.5
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
     styles:
       - Background:=<WindhawkBlur BlurAmount="5" TintColor="#1C101010"/>
@@ -351,7 +381,7 @@ controlStyles:
       - Background=Transparent
   - target: Windows.UI.Xaml.Controls.ToolTip > Windows.UI.Xaml.Controls.ContentPresenter#LayoutRoot
     styles:
-      - Background:=<WindhawkBlur BlurAmount="4" TintColor="#20000000"/>
+      - Background:=<WindhawkBlur BlurAmount="4" TintColor="#20000000" TintSaturation="1.5"/>
       - BorderThickness=1
       - CornerRadius={{ max(19, min(40, (TooltipHeight / 2) * 1)) }}
       - ActualHeight=>TooltipHeight
@@ -359,11 +389,16 @@ controlStyles:
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#59505050" Offset="0.15" /><GradientStop Color="#60404040" Offset="0.28" /><GradientStop Color="#60202020" Offset="0.5" /><GradientStop Color="#60404040" Offset="0.72" /><GradientStop Color="#50595959" Offset="0.85" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
       - FontSize=14
       - FontWeight=Medium
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
+    styles:
+      - RenderTransformOrigin=0.5,0.5
+      - RenderTransform:=<ScaleTransform ScaleX="1.35" ScaleY="1.35" />
+      - Margin={{ max(3, min(5, HoverFlyHyt * 0.019)) }},{{ max(1, min(2, HoverFlyHyt * 0.0065)) }},0,0
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
-      - Fill:=<WindhawkBlur BlurAmount="3.5" TintColor="#1D101010"/>
-      - RadiusX=34
-      - RadiusY=34
+      - Fill:=<WindhawkBlur BlurAmount="3.5" TintColor="#1D101010" TintSaturation="1.3"/>
+      - RadiusX={{$HoverFlyRadius}}
+      - RadiusY={{$HoverFlyRadius}}
       - StrokeThickness:=1
       - Stroke:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70C0C0C0" Offset="0.0" /><GradientStop Color="#60696969" Offset="0.5" /><GradientStop Color="#50505050" Offset="1" /></LinearGradientBrush>
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundStroke
@@ -371,8 +406,8 @@ controlStyles:
       - Visibility=Visible
       - Stroke:=<WindhawkBlur BlurAmount="30" TintColor="#10303030"/>
       - StrokeThickness=6
-      - RadiusX=30
-      - RadiusY=30
+      - RadiusX={{$HoverFlyRadius - 4}}
+      - RadiusY={{$HoverFlyRadius - 4}}
       - Canvas.ZIndex=-1
       - VerticalAlignment=Stretch
       - HorizontalAlignment=Stretch
@@ -381,22 +416,26 @@ controlStyles:
       - Fill:=<WindhawkBlur BlurAmount="0" TintColor="#00101010"/>
   - target: Border#HoverFlyoutBackground
     styles:
+      - ActualHeight=>HoverFlyHyt
       - Background:=Transparent
       - BorderThickness=0
-      - CornerRadius=34
+      - CornerRadius={{$HoverFlyRadius}}
   - target: ContentPresenter#HoverFlyoutContent
     styles:
-      - CornerRadius=30
+      - CornerRadius={{$HoverFlyRadius - 4}}
       - BorderThickness=0
       - Padding=5,2,5,7
       - Margin:=1
       - Background:=Transparent
-  - target: Windows.UI.Xaml.Controls.TextBlock#DisplayName
+
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Windows.UI.Xaml.Controls.Grid#Root
     styles:
-      - ''
-  - target: Windows.UI.Xaml.Controls.Grid#Root > Windows.UI.Xaml.Controls.Image#Iconlmage
+      - ActualHeight=>AltCardHyt
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Windows.UI.Xaml.Controls.Grid#Root > Windows.UI.Xaml.Controls.Image#IconImage
     styles:
-      - ''
+      - RenderTransformOrigin=0.5,0.5
+      - RenderTransform:=<ScaleTransform ScaleX="1.35" ScaleY="1.35" />
+      - Margin={{ max(12, min(18, AltCardHyt * 0.057)) }},{{ max(4, min(7, AltCardHyt * 0.019)) }},{{ max(9, min(14, AltCardHyt * 0.047)) }},{{ max(2, min(3.5, AltCardHyt * 0.0095)) }}
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - CornerRadius={{ max(68, min(90, (AltTabHeight / 5) * 1.75)) }}
@@ -405,7 +444,7 @@ controlStyles:
       - Background=Transparent
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
-      - Background:=<WindhawkBlur BlurAmount="6" TintColor="#20000000" TintSaturation="1.2"/>
+      - Background:=<WindhawkBlur BlurAmount="6" TintColor="#20000000" TintSaturation="1.3"/>
       - CornerRadius={{ max(68, min(90, (AltTabHeight / 5) * 1.75)) }}
       - BorderThickness=1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69D3D3D3" Offset="0.0" /><GradientStop Color="#5F303030" Offset="0.1" /><GradientStop Color="#70303030" Offset="0.5" /><GradientStop Color="#5F303030" Offset="0.9" /><GradientStop Color="#69D3D3D3" Offset="1" /></LinearGradientBrush>
@@ -427,7 +466,7 @@ controlStyles:
       - Height=21
   - target: Windows.UI.Xaml.Controls.Border#SnapBarBorder
     styles:
-      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#1B242424"/>
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#1B242424" TintSaturation="1.5"/>
       - BorderThickness=1.2,1,1.2,1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#60D3D3D3" Offset="0.0" /><GradientStop Color="#4F494949" Offset="0.1" /><GradientStop Color="#60505050" Offset="0.5" /><GradientStop Color="#4F494949" Offset="0.9" /><GradientStop Color="#60D3D3D3" Offset="1" /></LinearGradientBrush>
       - CornerRadius=27
@@ -436,17 +475,42 @@ controlStyles:
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.SnapAssistList > Grid > Border#ListBackground
     styles:
       - ActualHeight=>SnapAssistHyt
-      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#20181818"/>
+      - Background:=<WindhawkBlur BlurAmount="10" TintColor="#30181818"/>
       - BorderThickness=1.2,1,1.2,1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#4F494949" Offset="0.15" /><GradientStop Color="#50505050" Offset="0.5" /><GradientStop Color="#4F494949" Offset="0.85" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
-      - // Proportional rounded corners based on the layout height
-      - CornerRadius={{ max(20, min(30, SnapAssistHyt * 0.05)) }}
+      - CornerRadius={{ max(20, min(35, SnapAssistHyt * 0.05)) }}
       - Margin=8
       - Padding=8
+      - // Main Background of Snap Assist
   - target: Border#BackgroundDimmingLayer
     styles:
-      - Background:=<WindhawkBlur BlurAmount="12" TintColor="#101F1F1F"/>
+      - Background:=<WindhawkBlur BlurAmount="8" TintColor="#101F1F1F" TintSaturation="1.5"/>
       - //Desktop Switcher's main bg layer
+  - target: Border#VirtualDesktopSwitcherBackground
+    styles:
+      - Background:=Transparent
+      - CornerRadius=40
+      - Margin=0
+      - BorderThickness=5.5
+      - BorderBrush:=<WindhawkBlur BlurAmount="35" TintColor="#2D101010" TintSaturation="1.5"/>
+      - // Taskview flyout background
+  - target: ScrollViewer > ScrollContentPresenter > Border > WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopBarElement > Grid#GridElement > ScrollViewer#DesktopsListScrollViewer
+    styles:
+      - // Background of open desktops inside task view flyout
+      - Background:=<WindhawkBlur BlurAmount="3.5" TintColor="#2D101010" TintSaturation="1.3"/>
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69D3D3D3" Offset="0.0" /><GradientStop Color="#5F303030" Offset="0.1" /><GradientStop Color="#70202020" Offset="0.5" /><GradientStop Color="#5F303030" Offset="0.9" /><GradientStop Color="#69D3D3D3" Offset="1" /></LinearGradientBrush>
+      - BorderThickness=1
+      - Margin=0
+      - CornerRadius=40
+      - Padding=5,2,5,2
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid
+    styles:
+      - ActualHeight=>WinTabTitleHyt
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid > Windows.UI.Xaml.Controls.Image#IconImage
+    styles:
+      - RenderTransformOrigin=0.5,0.5
+      - RenderTransform:=<ScaleTransform ScaleX="1.35" ScaleY="1.35" />
+      - Margin={{ max(12, min(18, WinTabTitleHyt * 0.315)) }},{{ max(3, min(5, WinTabTitleHyt * 0.08)) }},{{ max(7, min(11, WinTabTitleHyt * 0.185)) }},{{ max(1, min(2, WinTabTitleHyt * 0.026)) }}
   - target: Border#VirtualDesktopBarBackground
     styles:
       - Background:=<WindhawkBlur BlurAmount="15" TintColor="#6B242424"/>
@@ -456,41 +520,58 @@ controlStyles:
       - CornerRadius=45
   - target: TextBlock#VirtualDesktopNameBlock
     styles:
-      - Margin=12,8,0,5
+      - Margin=15,8,0,5
       - FontSize=14
       - //Desktop 1,2 header text in desktop bar's opened desktop boxes
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed > Grid#MainGrid > TextBlock
     styles:
-      - Margin=12,8,0,0
+      - Margin=15,8,0,0
       - FontSize=14
       - //New Desktop header text in desktop bar's new desktop opener box
+  - target: Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter#Root > Border
+    styles:
+      - CornerRadius=23
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid@CommonStates > Border#MainBorder
+    styles:
+      - CornerRadius=23
+      - Background=Transparent
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#MainBorder
     styles:
-      - CornerRadius=19
+      - CornerRadius=23
+      - Background=Transparent
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed > Grid#MainGrid > Border#MainBorder
     styles:
-      - CornerRadius=19
+      - CornerRadius=23
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#BorderHighlight
     styles:
-      - CornerRadius=19
-      - Background:=<WindhawkBlur BlurAmount="0" TintColor="#35252525"/>
+      - CornerRadius=23
+      - Background:=<WindhawkBlur BlurAmount="0" TintColor="#65252525"/>
       - BorderThickness=1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50C1C1C1" Offset="0.0" /><GradientStop Color="#20696969" Offset="0.5" /><GradientStop Color="#50AFAFAF" Offset="1" /></LinearGradientBrush>
+      - // Target for active "Desktop 1" "Desktop 2" background, etc
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.NewVirtualDesktopElementThemed > Grid#MainGrid > Border#BorderHighlight
     styles:
-      - CornerRadius=19
-      - Background:=<WindhawkBlur BlurAmount="0" TintColor="#35252525"/>
+      - CornerRadius=23
+      - Background:=<WindhawkBlur BlurAmount="0" TintColor="#65252525"/>
       - BorderThickness=1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#50C1C1C1" Offset="0.0" /><GradientStop Color="#20696969" Offset="0.5" /><GradientStop Color="#50AFAFAF" Offset="1" /></LinearGradientBrush>
+      - // Target for "New Desktop" button's background etc
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed > Grid#MainGrid > Border#ActiveDesktopPill
     styles:
       - Margin=0,0,0,2.5
       - Width=60
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.VirtualDesktopElementThemed Windows.UI.Xaml.Controls.Button
+    styles:
+      - CornerRadius=14
+      - Margin=0,4,4,0
+      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#2D101010"/>
+      - BorderThickness=1
+      - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#60404040" Offset="0.15" /><GradientStop Color="#55404040" Offset="0.28" /><GradientStop Color="#65252525" Offset="0.5" /><GradientStop Color="#55404040" Offset="0.72" /><GradientStop Color="#60404040" Offset="0.85" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
+      - // Close button inside each Virtual Desktop card
   - target: Taskbar.OverflowToggleButton
     styles:
       - MinWidth=60
-      - Margin={{$TrayInFrame?46+$DockOffset:5}},0,{{$TrayInFrame?-(36+$DockOffset):5}},0
-      - // Where TrayInFrame is set, also moves the button by the dock offset, see the items below.
+      - Margin={{$TrayInFrame?5+$DockOffset:5}},0,{{$TrayInFrame?5-$DockOffset:5}},0
   - target: Grid#IconPanel@CommonStates > Border#BackgroundElement, Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement
     styles:
       - Background=Transparent
@@ -523,12 +604,6 @@ controlStyles:
   - target: SystemTray.OmniButton#NotificationCenterButton
     styles:
       - RenderTransform:=<TranslateTransform X="0" Y="0" />
-  - target: SystemTray.DateTimeIconContent > Grid#ContainerGrid > StackPanel > TextBlock#TimeInnerTextBlock
-    styles:
-      - ''
-  - target: SystemTray.DateTimeIconContent > Grid#ContainerGrid > StackPanel > TextBlock#DateInnerTextBlock
-    styles:
-      - ''
   - target: SystemTray.OmniButton#ControlCenterButton@CommonStates > Grid > Border#BackgroundBorder
     styles:
       - Background:=Transparent
@@ -539,6 +614,14 @@ controlStyles:
       - RenderTransform:=<ScaleTransform ScaleX="1.2" ScaleY="1.2" />
       - RenderTransform@PointerOver:=<ScaleTransform ScaleX="1.3" ScaleY="1.3" />
       - RenderTransform@Pressed:=<ScaleTransform ScaleX="1.0" ScaleY="1.0" />
+  - target: SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.IconView#SystemTrayIcon > Grid#ContainerGrid > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid
+    styles:
+      - Background=Transparent
+      - Margin=1,0,-2.2,0
+  - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.OmniButton#ControlCenterButton > Grid > ContentPresenter#ContentPresenter > ItemsPresenter > StackPanel > ContentPresenter
+    styles:
+      - Background=Transparent
+      - Margin=-2,0,0,0
   - target: SystemTray.OmniButton#ControlCenterButton > Grid@CommonStates
     styles:
       - RenderTransformOrigin=0.5,0.5
@@ -551,19 +634,20 @@ controlStyles:
       - RenderTransform:=<ScaleTransform ScaleX="1.05" ScaleY="1.05" />
       - RenderTransform@PointerOver:=<ScaleTransform ScaleX="1.15" ScaleY="1.15" />
       - RenderTransform@Pressed:=<ScaleTransform ScaleX="0.9" ScaleY="0.9" />
-  - target: SystemTray.ChevronIconView > Grid#ContainerGrid@
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid@CommonStates
     styles:
       - RenderTransformOrigin=0.5,0.5
-      - RenderTransform:=<ScaleTransform ScaleX="1.28" ScaleY="1.28" />
-      - RenderTransform@Normal:=<ScaleTransform ScaleX="1.28" ScaleY="1.28" />
-      - RenderTransform@PointerOver:=<ScaleTransform ScaleX="1.37" ScaleY="1.37" />
+      - RenderTransform:=<ScaleTransform ScaleX="1.27" ScaleY="1.27" />
+      - RenderTransform@Normal:=<ScaleTransform ScaleX="1.27" ScaleY="1.27" />
+      - RenderTransform@PointerOver:=<ScaleTransform ScaleX="1.38" ScaleY="1.38" />
       - RenderTransform@Pressed:=<ScaleTransform ScaleX="1.1" ScaleY="1.1" />
       - RenderTransform@CheckedNormal:=<ScaleTransform ScaleX="1.37" ScaleY="1.37" />
       - RenderTransform@CheckedPointerOver:=<ScaleTransform ScaleX="1.37" ScaleY="1.37" />
       - RenderTransform@CheckedPressed:=<ScaleTransform ScaleX="1.1" ScaleY="1.1" />
-  - target: SystemTray.SystemTrayFrame > StackPanel#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock, SystemTray.SystemTrayFrame > Grid#SystemTrayFrameGrid > SystemTray.Stack#NotifyIconStack > Grid#Content > SystemTray.StackListView#IconStack > ItemsPresenter > StackPanel > ContentPresenter > SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
+  - target: SystemTray.ChevronIconView > Grid#ContainerGrid > ContentPresenter#ContentPresenter > Grid#ContentGrid > SystemTray.TextIconContent > Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > TextBlock#InnerTextBlock
     styles:
       - Margin=2,0,3,0
+      - Text:=&#xED14;
   - target: SystemTray.OmniButton#NotificationCenterButton@CommonStates > Grid > Border#BackgroundBorder
     styles:
       - Background:=Transparent
@@ -572,9 +656,6 @@ controlStyles:
     styles:
       - Background:=Transparent
       - BorderBrush:=Transparent
-  - target: SystemTray.ChevronIconView > * > TextBlock#InnerTextBlock[Text=], SystemTray.ChevronIconView > * > TextBlock#InnerTextBlock[Text=]
-    styles:
-      - Text:=&#xED14;
   - target: SystemTray.NotifyIconView@CommonStates > Grid#ContainerGrid > Border#BackgroundBorder
     styles:
       - Background:=<SolidColorBrush Color="Transparent"/>
@@ -618,7 +699,7 @@ controlStyles:
       - CornerRadius=33
   - target: Windows.UI.Xaml.Controls.Border#SnapPickerBorder
     styles:
-      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#2D101010"/>
+      - Background:=<WindhawkBlur BlurAmount="5" TintColor="#2D101010" TintSaturation="1.5"/>
       - BorderBrush:=<WindhawkBlur BlurAmount="40" TintColor="#3D404040"/>
       - BorderThickness=1
       - Padding=2,3,2,3
@@ -626,10 +707,13 @@ controlStyles:
       - Canvas.ZIndex=-5
   - target: Windows.UI.Xaml.Controls.Border#LayoutBorder
     styles:
-      - Background:=<WindhawkBlur BlurAmount="15" TintColor="#30505050"/>
+      - Background:=<WindhawkBlur BlurAmount="0" TintColor="#70505050"/>
       - BorderThickness=1
       - BorderBrush:=<SolidColorBrush Color="#50FFFFFF"/>
       - CornerRadius=12
+  - target: SnapLayout.SnapLayoutControl#SuggestionSnapLayout Windows.UI.Xaml.Controls.Border#LayoutBorder
+    styles:
+      - Background:=Transparent
   - target: Windows.UI.Xaml.Controls.Grid#LayoutGrid > Windows.UI.Xaml.Controls.Button
     styles:
       - BorderBrush:=<SolidColorBrush Color="#70BBBBBB"/>
@@ -656,12 +740,12 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Visibility=1
+      - // Search Icon & Label option
   - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Visibility=1
   - target: SearchUx.SearchUI.SearchPillButton#SearchPill > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
-      - Visibility=0
       - Background:=<WindhawkBlur BlurAmount="15" TintColor="#30505050"/>
       - CornerRadius=20
       - Margin=0,10,0,10
@@ -670,32 +754,5 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#SearchPillBackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#SearchPillBackgroundElement
     styles:
       - Visibility=1
-  - target: Taskbar.TaskbarExtensionElement > ContentPresenter > SystemTray.SystemTrayFrame
-    styles:
-      - ActualWidth=>TrayInFrameWidth
-  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater
-    styles:
-      - HorizontalAlignment={{$TrayInFrame?`Left`:skip()}}
-      - MaxWidth={{$TrayInFrame?max(containerGridWidth-2*(trayWidth+50),100)+TrayInFrameWidth+9:skip()}}
-      - ActualWidth=>DockRepeaterWidth
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.ExperienceToggleButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskListButton, Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.TaskbarExtensionElement
-    styles:
-      - Margin={{$TrayInFrame?41+$DockOffset:skip()}},0,{{$TrayInFrame?-(41+$DockOffset):skip()}},0
-      - // Moves each item by the dock offset. The negative right margin keeps the item's width, and so the repeater's, independent of the offset. Also replaces the gap Explorer adds before the tray.
-  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#TaskbarFrameRepeater > Taskbar.AugmentedEntryPointButton
-    styles:
-      - Margin={{$TrayInFrame?41+$DockOffset-($LeftAligned?421:0):skip()}},0,{{$TrayInFrame?-(41+$DockOffset-($LeftAligned?421:0)):skip()}},0
-      - // With Left alignment, the widgets button follows the other items. Other builds draw it 421 pixels further left than it ends up where TrayInFrame is set, which keeps it before the dock.
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
-    styles:
-      - Width=>StartWidth
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Grid > Border#BackgroundElement, Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel > Border#BackgroundElement
-    styles:
-      - ActualWidth=>StartInnerWidth
-      - // Left alignment is detected from the Start button's native padding, which has extra space on the left.
-  - target: :root > ScrollViewer > ScrollContentPresenter > Border
-    styles:
-      - ActualWidth=>containerGridWidth
-      - ActualHeight=>TaskHeight
 ```
 </details>
