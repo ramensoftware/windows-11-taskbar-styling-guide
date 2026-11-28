@@ -389,6 +389,11 @@ controlStyles:
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#70D3D3D3" Offset="0.0" /><GradientStop Color="#59505050" Offset="0.15" /><GradientStop Color="#60404040" Offset="0.28" /><GradientStop Color="#60202020" Offset="0.5" /><GradientStop Color="#60404040" Offset="0.72" /><GradientStop Color="#50595959" Offset="0.85" /><GradientStop Color="#70C1C1C1" Offset="1" /></LinearGradientBrush>
       - FontSize=14
       - FontWeight=Medium
+  - target: Microsoft.UI.Xaml.Controls.ItemsRepeater#IconsRepeater > Windows.UI.Xaml.Controls.Image
+    styles:
+      - RenderTransformOrigin=0.5,0.5
+      - RenderTransform:=<ScaleTransform ScaleX="1.35" ScaleY="1.35" />
+      - Margin={{ max(3, min(5, HoverFlyHyt * 0.019)) }},{{ max(1, min(2, HoverFlyHyt * 0.0065)) }},0,0
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=<WindhawkBlur BlurAmount="3.5" TintColor="#1D101010" TintSaturation="1.3"/>
@@ -422,6 +427,15 @@ controlStyles:
       - Padding=5,2,5,7
       - Margin:=1
       - Background:=Transparent
+
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Windows.UI.Xaml.Controls.Grid#Root
+    styles:
+      - ActualHeight=>AltCardHyt
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemControl > Windows.UI.Xaml.Controls.Grid#Root > Windows.UI.Xaml.Controls.Image#IconImage
+    styles:
+      - RenderTransformOrigin=0.5,0.5
+      - RenderTransform:=<ScaleTransform ScaleX="1.35" ScaleY="1.35" />
+      - Margin={{ max(12, min(18, AltCardHyt * 0.057)) }},{{ max(4, min(7, AltCardHyt * 0.019)) }},{{ max(9, min(14, AltCardHyt * 0.047)) }},{{ max(2, min(3.5, AltCardHyt * 0.0095)) }}
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement
     styles:
       - CornerRadius={{ max(68, min(90, (AltTabHeight / 5) * 1.75)) }}
@@ -430,7 +444,7 @@ controlStyles:
       - Background=Transparent
   - target: WindowsInternal.ComposableShell.Experiences.Switcher.AltTab > Grid#ModalRootGrid > Border#BackgroundElement > WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemList
     styles:
-      - Background:=<WindhawkBlur BlurAmount="6" TintColor="#20000000" TintSaturation="1.5"/>
+      - Background:=<WindhawkBlur BlurAmount="6" TintColor="#20000000" TintSaturation="1.3"/>
       - CornerRadius={{ max(68, min(90, (AltTabHeight / 5) * 1.75)) }}
       - BorderThickness=1
       - BorderBrush:=<LinearGradientBrush StartPoint="0,0" EndPoint="0,1"><GradientStop Color="#69D3D3D3" Offset="0.0" /><GradientStop Color="#5F303030" Offset="0.1" /><GradientStop Color="#70303030" Offset="0.5" /><GradientStop Color="#5F303030" Offset="0.9" /><GradientStop Color="#69D3D3D3" Offset="1" /></LinearGradientBrush>
@@ -489,6 +503,14 @@ controlStyles:
       - Margin=0
       - CornerRadius=40
       - Padding=5,2,5,2
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid
+    styles:
+      - ActualHeight=>WinTabTitleHyt
+  - target: WindowsInternal.ComposableShell.Experiences.Switcher.SwitchItemElement > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Grid#TitleGrid > Windows.UI.Xaml.Controls.Image#IconImage
+    styles:
+      - RenderTransformOrigin=0.5,0.5
+      - RenderTransform:=<ScaleTransform ScaleX="1.35" ScaleY="1.35" />
+      - Margin={{ max(12, min(18, WinTabTitleHyt * 0.315)) }},{{ max(3, min(5, WinTabTitleHyt * 0.08)) }},{{ max(7, min(11, WinTabTitleHyt * 0.185)) }},{{ max(1, min(2, WinTabTitleHyt * 0.026)) }}
   - target: Border#VirtualDesktopBarBackground
     styles:
       - Background:=<WindhawkBlur BlurAmount="15" TintColor="#6B242424"/>
@@ -718,12 +740,12 @@ controlStyles:
   - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
       - Visibility=1
+      - // Search Icon & Label option
   - target: SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Grid > Border#BackgroundElement, SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel > Border#BackgroundElement
     styles:
       - Visibility=1
   - target: SearchUx.SearchUI.SearchPillButton#SearchPill > SearchUx.SearchUI.SearchButtonRootGrid#SearchBoxButtonRootPanel
     styles:
-      - Visibility=0
       - Background:=<WindhawkBlur BlurAmount="15" TintColor="#30505050"/>
       - CornerRadius=20
       - Margin=0,10,0,10
